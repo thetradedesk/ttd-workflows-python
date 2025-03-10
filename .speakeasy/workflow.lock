@@ -1,0 +1,36 @@
+speakeasyVersion: 1.513.6
+sources:
+    Workflows API:
+        sourceNamespace: workflows-api
+        sourceRevisionDigest: sha256:845409a116e26803311fb6a4f035cb8771947a83d938433fa928c2207867665f
+        sourceBlobDigest: sha256:c47fe488ebe8a7f2929ff62b70e2f03464c1c272f2bf67485cc1b19388c9c2ee
+        tags:
+            - latest
+            - v1
+targets:
+    workflows:
+        source: Workflows API
+        sourceNamespace: workflows-api
+        sourceRevisionDigest: sha256:845409a116e26803311fb6a4f035cb8771947a83d938433fa928c2207867665f
+        sourceBlobDigest: sha256:c47fe488ebe8a7f2929ff62b70e2f03464c1c272f2bf67485cc1b19388c9c2ee
+        codeSamplesNamespace: workflows-api-python-code-samples
+        codeSamplesRevisionDigest: sha256:f41ea30d240c750351b06efb806d4a992c75edc84e24262a9dcbd965e5db0796
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Workflows API:
+            inputs:
+                - location: ./api_spec.json
+            registry:
+                location: registry.speakeasyapi.dev/thetradedesk/workflows/workflows-api
+    targets:
+        workflows:
+            target: python
+            source: Workflows API
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/thetradedesk/workflows/workflows-api-python-code-samples
+                labelOverride:
+                    fixedValue: Python (SDK)
+                blocking: false
