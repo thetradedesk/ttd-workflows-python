@@ -12,6 +12,9 @@ targets:
     workflows:
         target: python
         source: Workflows API
+        publish:
+            pypi:
+                token: $pypi_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/thetradedesk/workflows/workflows-api-python-code-samples
