@@ -1,0 +1,141 @@
+lockVersion: 2.0.0
+id: f803c176-84c0-412f-93ec-3006a124047d
+management:
+  docChecksum: 3812b530863a75410cd759618b041534
+  docVersion: v1
+  speakeasyVersion: 1.513.6
+  generationVersion: 2.545.7
+  releaseVersion: 0.0.1
+  configChecksum: b1bb768ac1e985e363b869d52d841f28
+features:
+  python:
+    additionalDependencies: 1.0.0
+    additionalProperties: 1.0.1
+    core: 5.12.2
+    defaultEnabledRetries: 0.2.0
+    devContainers: 3.0.0
+    enumUnions: 0.1.0
+    envVarSecurityUsage: 0.3.2
+    flattening: 3.1.1
+    globalSecurity: 3.0.3
+    globalSecurityCallbacks: 1.0.0
+    globalSecurityFlattening: 1.0.0
+    globalServerURLs: 3.1.0
+    methodArguments: 1.0.2
+    nullables: 1.0.1
+    responseFormat: 1.0.1
+    retries: 3.0.2
+    sdkHooks: 1.0.1
+generatedFiles:
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
+  - .gitattributes
+  - .python-version
+  - .vscode/settings.json
+  - USAGE.md
+  - docs/models/campaignchannel.md
+  - docs/models/campaigncreateroigoalinput.md
+  - docs/models/campaigncreationinput.md
+  - docs/models/campaignflightcreationinput.md
+  - docs/models/contextualdatainput.md
+  - docs/models/getcampaignidversionrequest.md
+  - docs/models/graphqlqueryinput.md
+  - docs/models/problemdetailserror.md
+  - docs/models/security.md
+  - docs/models/seedcreationinput.md
+  - docs/models/seedtargetingdatainput.md
+  - docs/models/sharedcampaign.md
+  - docs/models/sharedseed.md
+  - docs/models/thirdpartydatainput.md
+  - docs/models/utils/retryconfig.md
+  - docs/sdks/graphql/README.md
+  - docs/sdks/sdkcampaign/README.md
+  - docs/sdks/sdkseed/README.md
+  - docs/sdks/workflows/README.md
+  - poetry.toml
+  - py.typed
+  - pylintrc
+  - pyproject.toml
+  - scripts/prepare_readme.py
+  - scripts/publish.sh
+  - src/ttd_workflows/__init__.py
+  - src/ttd_workflows/_hooks/__init__.py
+  - src/ttd_workflows/_hooks/sdkhooks.py
+  - src/ttd_workflows/_hooks/types.py
+  - src/ttd_workflows/_version.py
+  - src/ttd_workflows/basesdk.py
+  - src/ttd_workflows/graphql.py
+  - src/ttd_workflows/httpclient.py
+  - src/ttd_workflows/models/__init__.py
+  - src/ttd_workflows/models/apierror.py
+  - src/ttd_workflows/models/campaignchannel.py
+  - src/ttd_workflows/models/campaigncreateroigoalinput.py
+  - src/ttd_workflows/models/campaigncreationinput.py
+  - src/ttd_workflows/models/campaignflightcreationinput.py
+  - src/ttd_workflows/models/contextualdatainput.py
+  - src/ttd_workflows/models/get_campaign_id_versionop.py
+  - src/ttd_workflows/models/graphqlqueryinput.py
+  - src/ttd_workflows/models/problemdetails_error.py
+  - src/ttd_workflows/models/security.py
+  - src/ttd_workflows/models/seedcreationinput.py
+  - src/ttd_workflows/models/seedtargetingdatainput.py
+  - src/ttd_workflows/models/shared_campaign.py
+  - src/ttd_workflows/models/shared_seed.py
+  - src/ttd_workflows/models/thirdpartydatainput.py
+  - src/ttd_workflows/py.typed
+  - src/ttd_workflows/sdk.py
+  - src/ttd_workflows/sdk_campaign.py
+  - src/ttd_workflows/sdk_seed.py
+  - src/ttd_workflows/sdkconfiguration.py
+  - src/ttd_workflows/types/__init__.py
+  - src/ttd_workflows/types/basemodel.py
+  - src/ttd_workflows/utils/__init__.py
+  - src/ttd_workflows/utils/annotations.py
+  - src/ttd_workflows/utils/enums.py
+  - src/ttd_workflows/utils/eventstreaming.py
+  - src/ttd_workflows/utils/forms.py
+  - src/ttd_workflows/utils/headers.py
+  - src/ttd_workflows/utils/logger.py
+  - src/ttd_workflows/utils/metadata.py
+  - src/ttd_workflows/utils/queryparams.py
+  - src/ttd_workflows/utils/requestbodies.py
+  - src/ttd_workflows/utils/retries.py
+  - src/ttd_workflows/utils/security.py
+  - src/ttd_workflows/utils/serializers.py
+  - src/ttd_workflows/utils/url.py
+  - src/ttd_workflows/utils/values.py
+examples:
+  post_/campaign:
+    speakeasy-default-post-/campaign:
+      responses:
+        "201":
+          application/json: {"advertiserId": "<id>", "campaignName": "<value>"}
+        "400":
+          application/json: {"key": "<value>"}
+  get_/campaign/{id}/version:
+    speakeasy-default-get-/campaign/{id}/version:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"advertiserId": "<id>", "campaignName": "<value>"}
+        "400":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+  post_/graphql:
+    speakeasy-default-post-/graphql:
+      responses:
+        "200":
+          application/json: {"id": 462947, "seedName": "<value>", "advertiserId": "<id>"}
+        "400":
+          application/json: {"key": "<value>"}
+  post_/seed:
+    speakeasy-default-post-/seed:
+      responses:
+        "201":
+          application/json: {"id": 18556, "seedName": "<value>", "advertiserId": "<id>"}
+        "400":
+          application/json: {"key": "<value>"}
+examplesVersion: 1.0.0
+generatedTests: {}

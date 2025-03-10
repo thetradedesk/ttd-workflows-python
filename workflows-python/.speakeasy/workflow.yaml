@@ -1,0 +1,18 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    Workflows API:
+        inputs:
+            - location: ../api_spec.json
+        registry:
+            location: registry.speakeasyapi.dev/thetradedesk/workflows/workflows-api
+targets:
+    workflows:
+        target: python
+        source: Workflows API
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/thetradedesk/workflows/workflows-api-python-code-samples
+            labelOverride:
+                fixedValue: Python (SDK)
+            blocking: false
