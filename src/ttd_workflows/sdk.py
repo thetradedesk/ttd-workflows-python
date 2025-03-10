@@ -8,7 +8,7 @@ from .utils.retries import RetryConfig
 import httpx
 from ttd_workflows import models, utils
 from ttd_workflows._hooks import SDKHooks
-from ttd_workflows.graphql import GraphQL
+from ttd_workflows.graphql import Graphql
 from ttd_workflows.sdk_campaign import SDKCampaign
 from ttd_workflows.sdk_seed import SDKSeed
 from ttd_workflows.types import OptionalNullable, UNSET
@@ -20,7 +20,7 @@ class Workflows(BaseSDK):
     r"""Workflows API: A RESTful service for commonly used workflows."""
 
     campaign: SDKCampaign
-    graph_ql: GraphQL
+    graphql: Graphql
     seed: SDKSeed
 
     def __init__(
@@ -120,7 +120,7 @@ class Workflows(BaseSDK):
 
     def _init_sdks(self):
         self.campaign = SDKCampaign(self.sdk_configuration)
-        self.graph_ql = GraphQL(self.sdk_configuration)
+        self.graphql = Graphql(self.sdk_configuration)
         self.seed = SDKSeed(self.sdk_configuration)
 
     def __enter__(self):

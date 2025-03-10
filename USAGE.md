@@ -9,7 +9,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.campaign.post_campaign()
+    res = workflows.campaign.create()
 
     # Handle response
     print(res)
@@ -30,7 +30,7 @@ async def main():
         ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
     ) as workflows:
 
-        res = await workflows.campaign.post_campaign_async()
+        res = await workflows.campaign.create_async()
 
         # Handle response
         print(res)

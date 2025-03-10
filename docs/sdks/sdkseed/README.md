@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [post_seed](#post_seed) - Create a new seed with required fields
+* [create](#create) - Create a new seed with required fields
 
-## post_seed
+## create
 
 Create a new seed with required fields
 
@@ -22,7 +22,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.seed.post_seed()
+    res = workflows.seed.create()
 
     # Handle response
     print(res)

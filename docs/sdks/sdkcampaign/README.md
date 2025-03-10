@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [post_campaign](#post_campaign) - Create a new campaign with required fields
-* [get_campaign_id_version](#get_campaign_id_version) - GET a campaign's version
+* [create](#create) - Create a new campaign with required fields
+* [get_version](#get_version) - GET a campaign's version
 
-## post_campaign
+## create
 
 Create a new campaign with required fields
 
@@ -23,7 +23,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.campaign.post_campaign()
+    res = workflows.campaign.create()
 
     # Handle response
     print(res)
@@ -48,7 +48,7 @@ with Workflows(
 | models.ProblemDetailsError | 400                        | application/json           |
 | models.APIError            | 4XX, 5XX                   | \*/\*                      |
 
-## get_campaign_id_version
+## get_version
 
 GET a campaign's version
 
@@ -63,7 +63,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.campaign.get_campaign_id_version(id="<id>")
+    res = workflows.campaign.get_version(id="<id>")
 
     # Handle response
     print(res)

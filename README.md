@@ -111,7 +111,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.campaign.post_campaign()
+    res = workflows.campaign.create()
 
     # Handle response
     print(res)
@@ -132,7 +132,7 @@ async def main():
         ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
     ) as workflows:
 
-        res = await workflows.campaign.post_campaign_async()
+        res = await workflows.campaign.create_async()
 
         # Handle response
         print(res)
@@ -162,7 +162,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.campaign.post_campaign()
+    res = workflows.campaign.create()
 
     # Handle response
     print(res)
@@ -178,16 +178,16 @@ with Workflows(
 
 ### [campaign](docs/sdks/sdkcampaign/README.md)
 
-* [post_campaign](docs/sdks/sdkcampaign/README.md#post_campaign) - Create a new campaign with required fields
-* [get_campaign_id_version](docs/sdks/sdkcampaign/README.md#get_campaign_id_version) - GET a campaign's version
+* [create](docs/sdks/sdkcampaign/README.md#create) - Create a new campaign with required fields
+* [get_version](docs/sdks/sdkcampaign/README.md#get_version) - GET a campaign's version
 
-### [graph_ql](docs/sdks/graphql/README.md)
+### [graphql](docs/sdks/graphql/README.md)
 
-* [post_graphql](docs/sdks/graphql/README.md#post_graphql) - An endpoint that executes valid GraphQL queries.
+* [execute](docs/sdks/graphql/README.md#execute) - An endpoint that executes valid GraphQL queries.
 
 ### [seed](docs/sdks/sdkseed/README.md)
 
-* [post_seed](docs/sdks/sdkseed/README.md#post_seed) - Create a new seed with required fields
+* [create](docs/sdks/sdkseed/README.md#create) - Create a new seed with required fields
 
 
 </details>
@@ -209,7 +209,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.campaign.post_campaign(,
+    res = workflows.campaign.create(,
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
     # Handle response
@@ -229,7 +229,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.campaign.post_campaign()
+    res = workflows.campaign.create()
 
     # Handle response
     print(res)
@@ -251,7 +251,7 @@ By default, an API error will raise a models.APIError exception, which has the f
 | `.raw_response` | *httpx.Response* | The raw HTTP response |
 | `.body`         | *str*            | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `post_campaign_async` method may raise the following exceptions:
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_async` method may raise the following exceptions:
 
 | Error Type                 | Status Code | Content Type     |
 | -------------------------- | ----------- | ---------------- |
@@ -271,7 +271,7 @@ with Workflows(
     res = None
     try:
 
-        res = workflows.campaign.post_campaign()
+        res = workflows.campaign.create()
 
         # Handle response
         print(res)
@@ -301,7 +301,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.campaign.post_campaign()
+    res = workflows.campaign.create()
 
     # Handle response
     print(res)
