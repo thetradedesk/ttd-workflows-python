@@ -1,13 +1,13 @@
-# GraphQL
-(*graph_ql*)
+# Graphql
+(*graphql*)
 
 ## Overview
 
 ### Available Operations
 
-* [post_graphql](#post_graphql) - An endpoint that executes valid GraphQL queries.
+* [execute](#execute) - An endpoint that executes valid GraphQL queries.
 
-## post_graphql
+## execute
 
 An endpoint that executes valid GraphQL queries.
 
@@ -22,7 +22,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.graph_ql.post_graphql()
+    res = workflows.graphql.execute()
 
     # Handle response
     print(res)

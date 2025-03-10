@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 3812b530863a75410cd759618b041534
+  docChecksum: 3eb5702d68ce3c321e942be145c09061
   docVersion: v1
   speakeasyVersion: 1.513.6
   generationVersion: 2.545.7
-  releaseVersion: 0.0.1
-  configChecksum: b1bb768ac1e985e363b869d52d841f28
+  releaseVersion: 0.1.3
+  configChecksum: 37e8ea12ebe5829d9d1900bdd686c00e
 features:
   python:
     additionalDependencies: 1.0.0
@@ -21,7 +21,9 @@ features:
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.1.0
+    groups: 3.0.0
     methodArguments: 1.0.2
+    nameOverrides: 3.0.1
     nullables: 1.0.1
     responseFormat: 1.0.1
     retries: 3.0.2
