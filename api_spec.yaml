@@ -20,7 +20,7 @@ paths:
   /campaign:
     post:
       tags:
-      - Campaign
+        - Campaign
       summary: Create a new campaign with required fields
       requestBody:
         content:
@@ -40,24 +40,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
-  /campaign/{id}/version:
+  '/campaign/{id}/version':
     get:
       tags:
-      - Campaign
+        - Campaign
       summary: GET a campaign's version
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Campaign'
+                $ref: '#/components/schemas/CampaignVersionResponse'
         '400':
           description: Bad Request
           content:
@@ -87,7 +87,7 @@ paths:
   /graphql:
     post:
       tags:
-      - GraphQL
+        - GraphQL
       summary: An endpoint that executes valid GraphQL queries.
       requestBody:
         content:
@@ -132,7 +132,7 @@ paths:
   /seed:
     post:
       tags:
-      - Seed
+        - Seed
       summary: Create a new seed with required fields
       requestBody:
         content:
@@ -156,8 +156,8 @@ components:
   schemas:
     Campaign:
       required:
-      - advertiserId
-      - campaignName
+        - advertiserId
+        - campaignName
       type: object
       properties:
         id:
@@ -176,14 +176,14 @@ components:
       description: This is a campaign response
     CampaignChannel:
       enum:
-      - None
-      - Display
-      - Audio
-      - Video
-      - TV
-      - NativeVideo
-      - NativeDisplay
-      - DOOH
+        - None
+        - Display
+        - Audio
+        - Video
+        - TV
+        - NativeVideo
+        - NativeDisplay
+        - DOOH
       type: string
     CampaignCreateROIGoalInput:
       type: object
@@ -194,8 +194,7 @@ components:
           nullable: true
         maximizeLtvIncrementalReach:
           type: boolean
-          description: The goal is to reach as many users as possible beyond those
-            who have already reached on Linear TV.
+          description: The goal is to reach as many users as possible beyond those who have already reached on Linear TV.
           nullable: true
         cpcInAdvertiserCurrency:
           type: number
@@ -204,14 +203,12 @@ components:
           nullable: true
         ctrInPercent:
           type: number
-          description: The Click Through Rate goal (in percent), for example, 1 =
-            1% (1 in 100).
+          description: 'The Click Through Rate goal (in percent), for example, 1 = 1% (1 in 100).'
           format: double
           nullable: true
         nielsenOTPInPercent:
           type: number
-          description: The Nielsen On Target Percentage goal (in percent), for example,
-            1 = 1% (1 in 100).
+          description: 'The Nielsen On Target Percentage goal (in percent), for example, 1 = 1% (1 in 100).'
           format: double
           nullable: true
         cpaInAdvertiserCurrency:
@@ -226,20 +223,17 @@ components:
           nullable: true
         vcrInPercent:
           type: number
-          description: The Video Completion Rate goal (in percent), for example, 1
-            = 1% (1 in 100).
+          description: 'The Video Completion Rate goal (in percent), for example, 1 = 1% (1 in 100).'
           format: double
           nullable: true
         viewabilityInPercent:
           type: number
-          description: The Viewability goal (in percent), for example, 1 = 1% (1 in
-            100).
+          description: 'The Viewability goal (in percent), for example, 1 = 1% (1 in 100).'
           format: double
           nullable: true
         vcpmInAdvertiserCurrency:
           type: number
-          description: The Estimated Viewable Cost Per Mille (thousand) goal (in the
-            Advertiser currency).
+          description: The Estimated Viewable Cost Per Mille (thousand) goal (in the Advertiser currency).
           format: double
           nullable: true
         cpcvInAdvertiserCurrency:
@@ -250,11 +244,11 @@ components:
       additionalProperties: false
     CampaignCreationInput:
       required:
-      - advertiserId
-      - campaignFlights
-      - campaignName
-      - primaryChannel
-      - primaryGoal
+        - advertiserId
+        - campaignFlights
+        - campaignName
+        - primaryChannel
+        - primaryGoal
       type: object
       properties:
         advertiserId:
@@ -278,48 +272,50 @@ components:
       description: Schema with required fields for creating a new campaign
     CampaignFlightCreationInput:
       required:
-      - budgetInAdvertiserCurrency
-      - startDateInclusiveUTC
+        - budgetInAdvertiserCurrency
+        - startDateInclusiveUTC
       type: object
       properties:
         startDateInclusiveUTC:
           type: string
-          description: The date and time (in UTC) when the campaign flight is to start
-            spending.
+          description: The date and time (in UTC) when the campaign flight is to start spending.
           format: date-time
         endDateExclusiveUTC:
           type: string
-          description: The date and time (in UTC) when the campaign flight is to stop
-            spending if it has not yet exhausted its budget. To create or update a
-            campaign flight, you may not set this property value to a date in the
-            past.
+          description: 'The date and time (in UTC) when the campaign flight is to stop spending if it has not yet exhausted its budget. To create or update a campaign flight, you may not set this property value to a date in the past.'
           format: date-time
           nullable: true
         budgetInAdvertiserCurrency:
           type: number
-          description: The maximum amount the campaign flight may spend. This must
-            be in the currency of the advertiser that owns the campaign.
+          description: The maximum amount the campaign flight may spend. This must be in the currency of the advertiser that owns the campaign.
           format: double
         budgetInImpressions:
           type: integer
-          description: The maximum amount of impressions the campaign flight should
-            buy.
+          description: The maximum amount of impressions the campaign flight should buy.
           format: int64
           nullable: true
         dailyTargetInAdvertiserCurrency:
           type: number
-          description: The total amount the campaign flight should spend in a single
-            day, if possible. If you do not want to limit the daily spend, you may
-            set it to null. This must be in the currency of the advertiser that owns
-            the campaign.
+          description: 'The total amount the campaign flight should spend in a single day, if possible. If you do not want to limit the daily spend, you may set it to null. This must be in the currency of the advertiser that owns the campaign.'
           format: double
           nullable: true
         dailyTargetInImpressions:
           type: integer
-          description: The total amount of impressions the campaign flight should
-            buy in a single day, if possible. If you do not want to limit the daily
-            impressions, you may set it to null.
+          description: 'The total amount of impressions the campaign flight should buy in a single day, if possible. If you do not want to limit the daily impressions, you may set it to null.'
           format: int64
+          nullable: true
+      additionalProperties: false
+    CampaignVersionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        version:
+          type: string
+          nullable: true
+        budgetingVersion:
+          type: string
           nullable: true
       additionalProperties: false
     ContextualDataInput:
@@ -340,7 +336,7 @@ components:
       additionalProperties: false
     GraphQLQueryInput:
       required:
-      - query
+        - query
       type: object
       properties:
         query:
@@ -371,12 +367,12 @@ components:
         instance:
           type: string
           nullable: true
-      additionalProperties: {}
+      additionalProperties: { }
     Seed:
       required:
-      - advertiserId
-      - id
-      - seedName
+        - advertiserId
+        - id
+        - seedName
       type: object
       properties:
         id:
@@ -395,10 +391,10 @@ components:
       description: Seed entity
     SeedCreationInput:
       required:
-      - advertiserId
-      - isDefault
-      - seedName
-      - targetingData
+        - advertiserId
+        - isDefault
+        - seedName
+        - targetingData
       type: object
       properties:
         advertiserId:
@@ -449,7 +445,7 @@ components:
       additionalProperties: false
     ThirdPartyDataInput:
       required:
-      - thirdPartyDataBrandId
+        - thirdPartyDataBrandId
       type: object
       properties:
         thirdPartyDataId:
