@@ -9,18 +9,18 @@ Workflows API: A RESTful service for commonly used workflows.
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
-* [ttd-workflows-python](#ttd-workflows-python)
-  * [SDK Installation](#sdk-installation)
-  * [IDE Support](#ide-support)
-  * [SDK Example Usage](#sdk-example-usage)
-  * [Authentication](#authentication)
-  * [Available Resources and Operations](#available-resources-and-operations)
-  * [Retries](#retries)
-  * [Error Handling](#error-handling)
-  * [Server Selection](#server-selection)
-  * [Custom HTTP Client](#custom-http-client)
-  * [Resource Management](#resource-management)
-  * [Debugging](#debugging)
+* [ttd-workflows-python](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#ttd-workflows-python)
+  * [SDK Installation](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#sdk-installation)
+  * [IDE Support](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#ide-support)
+  * [SDK Example Usage](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#sdk-example-usage)
+  * [Authentication](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#authentication)
+  * [Available Resources and Operations](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#available-resources-and-operations)
+  * [Retries](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#retries)
+  * [Error Handling](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#error-handling)
+  * [Server Selection](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#server-selection)
+  * [Custom HTTP Client](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#custom-http-client)
+  * [Resource Management](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#resource-management)
+  * [Debugging](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#debugging)
 
 <!-- End Table of Contents [toc] -->
 
@@ -172,18 +172,18 @@ with Workflows(
 <details open>
 <summary>Available methods</summary>
 
-### [campaign](docs/sdks/sdkcampaign/README.md)
+### [campaign](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/sdkcampaign/README.md)
 
-* [create](docs/sdks/sdkcampaign/README.md#create) - Create a new campaign with required fields
-* [get_version](docs/sdks/sdkcampaign/README.md#get_version) - GET a campaign's version
+* [create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/sdkcampaign/README.md#create) - Create a new campaign with required fields
+* [get_version](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/sdkcampaign/README.md#get_version) - GET a campaign's version
 
-### [graphql](docs/sdks/graphql/README.md)
+### [graphql](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphql/README.md)
 
-* [execute](docs/sdks/graphql/README.md#execute) - An endpoint that executes valid GraphQL queries.
+* [execute](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphql/README.md#execute) - An endpoint that executes valid GraphQL queries.
 
-### [seed](docs/sdks/sdkseed/README.md)
+### [seed](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/sdkseed/README.md)
 
-* [create](docs/sdks/sdkseed/README.md#create) - Create a new seed with required fields
+* [create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/sdkseed/README.md#create) - Create a new seed with required fields
 
 
 </details>

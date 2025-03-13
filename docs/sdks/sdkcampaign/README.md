@@ -79,7 +79,7 @@ with Workflows(
 
 ### Response
 
-**[models.SharedCampaign](../../models/sharedcampaign.md)**
+**[models.CampaignVersionResponse](../../models/campaignversionresponse.md)**
 
 ### Errors
 

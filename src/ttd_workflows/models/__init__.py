@@ -11,6 +11,10 @@ from .campaignflightcreationinput import (
     CampaignFlightCreationInput,
     CampaignFlightCreationInputTypedDict,
 )
+from .campaignversionresponse import (
+    CampaignVersionResponse,
+    CampaignVersionResponseTypedDict,
+)
 from .contextualdatainput import ContextualDataInput, ContextualDataInputTypedDict
 from .get_campaign_id_versionop import (
     GetCampaignIDVersionRequest,
@@ -38,6 +42,8 @@ __all__ = [
     "CampaignCreationInputTypedDict",
     "CampaignFlightCreationInput",
     "CampaignFlightCreationInputTypedDict",
+    "CampaignVersionResponse",
+    "CampaignVersionResponseTypedDict",
     "ContextualDataInput",
     "ContextualDataInputTypedDict",
     "GetCampaignIDVersionRequest",
