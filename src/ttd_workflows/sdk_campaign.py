@@ -229,7 +229,7 @@ class SDKCampaign(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.SharedCampaign:
+    ) -> models.CampaignVersionResponse:
         r"""GET a campaign's version
 
         :param id:
@@ -296,7 +296,7 @@ class SDKCampaign(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.SharedCampaign)
+            return utils.unmarshal_json(http_res.text, models.CampaignVersionResponse)
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
@@ -332,7 +332,7 @@ class SDKCampaign(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.SharedCampaign:
+    ) -> models.CampaignVersionResponse:
         r"""GET a campaign's version
 
         :param id:
@@ -399,7 +399,7 @@ class SDKCampaign(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.SharedCampaign)
+            return utils.unmarshal_json(http_res.text, models.CampaignVersionResponse)
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):

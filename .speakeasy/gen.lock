@@ -1,17 +1,18 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 3eb5702d68ce3c321e942be145c09061
+  docChecksum: 033c265edfa0fd87766a4ea87f4c3761
   docVersion: v1
-  speakeasyVersion: 1.513.6
-  generationVersion: 2.545.7
-  releaseVersion: 0.1.3
-  configChecksum: 37e8ea12ebe5829d9d1900bdd686c00e
+  speakeasyVersion: 1.517.3
+  generationVersion: 2.548.6
+  releaseVersion: 0.1.4
+  configChecksum: 426f7b3f16cbde1dd59ab2284b06519b
+  published: true
 features:
   python:
     additionalDependencies: 1.0.0
     additionalProperties: 1.0.1
-    core: 5.12.2
+    core: 5.12.3
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     enumUnions: 0.1.0
@@ -40,9 +41,11 @@ generatedFiles:
   - docs/models/campaigncreateroigoalinput.md
   - docs/models/campaigncreationinput.md
   - docs/models/campaignflightcreationinput.md
+  - docs/models/campaignversionresponse.md
   - docs/models/contextualdatainput.md
   - docs/models/getcampaignidversionrequest.md
   - docs/models/graphqlqueryinput.md
+  - docs/models/postgraphqlresponse.md
   - docs/models/problemdetailserror.md
   - docs/models/security.md
   - docs/models/seedcreationinput.md
@@ -75,9 +78,11 @@ generatedFiles:
   - src/ttd_workflows/models/campaigncreateroigoalinput.py
   - src/ttd_workflows/models/campaigncreationinput.py
   - src/ttd_workflows/models/campaignflightcreationinput.py
+  - src/ttd_workflows/models/campaignversionresponse.py
   - src/ttd_workflows/models/contextualdatainput.py
   - src/ttd_workflows/models/get_campaign_id_versionop.py
   - src/ttd_workflows/models/graphqlqueryinput.py
+  - src/ttd_workflows/models/post_graphqlop.py
   - src/ttd_workflows/models/problemdetails_error.py
   - src/ttd_workflows/models/security.py
   - src/ttd_workflows/models/seedcreationinput.py
@@ -122,14 +127,14 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"advertiserId": "<id>", "campaignName": "<value>"}
+          application/json: {}
         "400":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   post_/graphql:
     speakeasy-default-post-/graphql:
       responses:
         "200":
-          application/json: {"id": 462947, "seedName": "<value>", "advertiserId": "<id>"}
+          application/json: {}
         "400":
           application/json: {"key": "<value>"}
   post_/seed:

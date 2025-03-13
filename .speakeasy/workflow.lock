@@ -1,9 +1,9 @@
-speakeasyVersion: 1.513.6
+speakeasyVersion: 1.517.3
 sources:
     Workflows API:
         sourceNamespace: workflows-api
-        sourceRevisionDigest: sha256:5d0642b92ce89c13242fae5fd9e6fd10f3240be0fc82116d6f0a99f625a184d7
-        sourceBlobDigest: sha256:1c7b580562c5a549f67cfea6ca12400ddb416af316658e81b1cb5168a5862a97
+        sourceRevisionDigest: sha256:6763c7a4ca6af412bb15291b862418bf62facd320eac8478a50ade34435b9ea5
+        sourceBlobDigest: sha256:f7aa1acaf85a0e5fa49ab1f7ca09fce49e7b0abce4a600e0f556623f1f854b5a
         tags:
             - latest
             - v1
@@ -11,10 +11,10 @@ targets:
     workflows:
         source: Workflows API
         sourceNamespace: workflows-api
-        sourceRevisionDigest: sha256:5d0642b92ce89c13242fae5fd9e6fd10f3240be0fc82116d6f0a99f625a184d7
-        sourceBlobDigest: sha256:1c7b580562c5a549f67cfea6ca12400ddb416af316658e81b1cb5168a5862a97
+        sourceRevisionDigest: sha256:6763c7a4ca6af412bb15291b862418bf62facd320eac8478a50ade34435b9ea5
+        sourceBlobDigest: sha256:f7aa1acaf85a0e5fa49ab1f7ca09fce49e7b0abce4a600e0f556623f1f854b5a
         codeSamplesNamespace: workflows-api-python-code-samples
-        codeSamplesRevisionDigest: sha256:97e0fa6430ef756f0fe5f039813ec905665791d15d9ef669034690393e160ca8
+        codeSamplesRevisionDigest: sha256:e0a7f59abb491b2d3c7d7a34483e8a475a4a44b60d03436ea0025d3c31918bad
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -30,6 +30,9 @@ workflow:
         workflows:
             target: python
             source: Workflows API
+            publish:
+                pypi:
+                    token: $pypi_token
             codeSamples:
                 registry:
                     location: registry.speakeasyapi.dev/thetradedesk/workflows/workflows-api-python-code-samples

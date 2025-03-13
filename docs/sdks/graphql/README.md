@@ -38,7 +38,7 @@ with Workflows(
 
 ### Response
 
-**[models.SharedSeed](../../models/sharedseed.md)**
+**[models.PostGraphqlResponse](../../models/postgraphqlresponse.md)**
 
 ### Errors
 
