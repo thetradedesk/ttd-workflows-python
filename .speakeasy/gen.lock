@@ -1,14 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 033c265edfa0fd87766a4ea87f4c3761
+  docChecksum: 77589de233fedc4cd69591731347d9dd
   docVersion: v1
-  speakeasyVersion: 1.519.0
-  generationVersion: 2.552.1
-  releaseVersion: 0.1.5
-  configChecksum: 147a213c36bea9574631eadd62b78d4b
-  repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
-  installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
+  speakeasyVersion: 1.520.0
+  generationVersion: 2.555.1
+  releaseVersion: 0.1.8
+  configChecksum: 1fd0f26860076fd3f983be9125151772
   published: true
 features:
   python:
@@ -44,10 +42,10 @@ generatedFiles:
   - docs/models/campaigncreationinput.md
   - docs/models/campaignflightcreationinput.md
   - docs/models/campaignversionresponse.md
+  - docs/models/contentresult.md
   - docs/models/contextualdatainput.md
   - docs/models/getcampaignidversionrequest.md
   - docs/models/graphqlqueryinput.md
-  - docs/models/postgraphqlresponse.md
   - docs/models/problemdetailserror.md
   - docs/models/security.md
   - docs/models/seedcreationinput.md
@@ -81,10 +79,10 @@ generatedFiles:
   - src/ttd_workflows/models/campaigncreationinput.py
   - src/ttd_workflows/models/campaignflightcreationinput.py
   - src/ttd_workflows/models/campaignversionresponse.py
+  - src/ttd_workflows/models/contentresult.py
   - src/ttd_workflows/models/contextualdatainput.py
   - src/ttd_workflows/models/get_campaign_id_versionop.py
   - src/ttd_workflows/models/graphqlqueryinput.py
-  - src/ttd_workflows/models/post_graphqlop.py
   - src/ttd_workflows/models/problemdetails_error.py
   - src/ttd_workflows/models/security.py
   - src/ttd_workflows/models/seedcreationinput.py
