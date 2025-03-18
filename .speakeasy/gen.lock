@@ -3,16 +3,18 @@ id: f803c176-84c0-412f-93ec-3006a124047d
 management:
   docChecksum: 033c265edfa0fd87766a4ea87f4c3761
   docVersion: v1
-  speakeasyVersion: 1.517.3
-  generationVersion: 2.548.6
-  releaseVersion: 0.1.4
-  configChecksum: 426f7b3f16cbde1dd59ab2284b06519b
+  speakeasyVersion: 1.519.0
+  generationVersion: 2.552.1
+  releaseVersion: 0.1.5
+  configChecksum: 147a213c36bea9574631eadd62b78d4b
+  repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
+  installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
 features:
   python:
     additionalDependencies: 1.0.0
     additionalProperties: 1.0.1
-    core: 5.12.3
+    core: 5.12.4
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     enumUnions: 0.1.0
