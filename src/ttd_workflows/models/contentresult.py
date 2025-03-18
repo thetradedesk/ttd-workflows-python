@@ -13,31 +13,27 @@ from ttd_workflows.types import (
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class CampaignVersionResponseTypedDict(TypedDict):
-    id: str
-    r"""ID of the campaign."""
-    version: NotRequired[Nullable[str]]
-    r"""The campaign version."""
-    budgeting_version: NotRequired[Nullable[str]]
-    r"""The campaign budget version."""
+class ContentResultTypedDict(TypedDict):
+    content: NotRequired[Nullable[str]]
+    content_type: NotRequired[Nullable[str]]
+    status_code: NotRequired[Nullable[int]]
 
 
-class CampaignVersionResponse(BaseModel):
-    id: str
-    r"""ID of the campaign."""
+class ContentResult(BaseModel):
+    content: OptionalNullable[str] = UNSET
 
-    version: OptionalNullable[str] = UNSET
-    r"""The campaign version."""
-
-    budgeting_version: Annotated[
-        OptionalNullable[str], pydantic.Field(alias="budgetingVersion")
+    content_type: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="contentType")
     ] = UNSET
-    r"""The campaign budget version."""
+
+    status_code: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="statusCode")
+    ] = UNSET
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["version", "budgetingVersion"]
-        nullable_fields = ["version", "budgetingVersion"]
+        optional_fields = ["content", "contentType", "statusCode"]
+        nullable_fields = ["content", "contentType", "statusCode"]
         null_default_fields = []
 
         serialized = handler(self)

@@ -15,13 +15,13 @@ from .campaignversionresponse import (
     CampaignVersionResponse,
     CampaignVersionResponseTypedDict,
 )
+from .contentresult import ContentResult, ContentResultTypedDict
 from .contextualdatainput import ContextualDataInput, ContextualDataInputTypedDict
 from .get_campaign_id_versionop import (
     GetCampaignIDVersionRequest,
     GetCampaignIDVersionRequestTypedDict,
 )
 from .graphqlqueryinput import GraphQLQueryInput, GraphQLQueryInputTypedDict
-from .post_graphqlop import PostGraphqlResponse, PostGraphqlResponseTypedDict
 from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
 from .security import Security, SecurityTypedDict
 from .seedcreationinput import SeedCreationInput, SeedCreationInputTypedDict
@@ -45,14 +45,14 @@ __all__ = [
     "CampaignFlightCreationInputTypedDict",
     "CampaignVersionResponse",
     "CampaignVersionResponseTypedDict",
+    "ContentResult",
+    "ContentResultTypedDict",
     "ContextualDataInput",
     "ContextualDataInputTypedDict",
     "GetCampaignIDVersionRequest",
     "GetCampaignIDVersionRequestTypedDict",
     "GraphQLQueryInput",
     "GraphQLQueryInputTypedDict",
-    "PostGraphqlResponse",
-    "PostGraphqlResponseTypedDict",
     "ProblemDetailsError",
     "ProblemDetailsErrorData",
     "Security",

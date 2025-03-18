@@ -100,7 +100,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/ContentResult'
         '400':
           description: Bad Request
           content:
@@ -306,16 +306,35 @@ components:
           nullable: true
       additionalProperties: false
     CampaignVersionResponse:
+      required:
+        - id
       type: object
       properties:
         id:
+          minLength: 1
           type: string
-          nullable: true
+          description: ID of the campaign.
         version:
           type: string
+          description: The campaign version.
           nullable: true
         budgetingVersion:
           type: string
+          description: The campaign budget version.
+          nullable: true
+      additionalProperties: false
+    ContentResult:
+      type: object
+      properties:
+        content:
+          type: string
+          nullable: true
+        contentType:
+          type: string
+          nullable: true
+        statusCode:
+          type: integer
+          format: int32
           nullable: true
       additionalProperties: false
     ContextualDataInput:
@@ -465,4 +484,4 @@ components:
       name: TTD-Auth
       in: header
 security:
-- TTD-Auth: []
+  - TTD-Auth: []

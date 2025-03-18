@@ -38,7 +38,7 @@ with Workflows(
 
 ### Response
 
-**[models.PostGraphqlResponse](../../models/postgraphqlresponse.md)**
+**[models.ContentResult](../../models/contentresult.md)**
 
 ### Errors
 
