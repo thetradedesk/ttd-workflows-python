@@ -9,8 +9,15 @@ from ttd_workflows.types import (
     UNSET,
     UNSET_SENTINEL,
 )
-from typing import Any
 from typing_extensions import NotRequired, TypedDict
+
+
+class VariablesTypedDict(TypedDict):
+    r"""Variables to substitute into the query."""
+
+
+class Variables(BaseModel):
+    r"""Variables to substitute into the query."""
 
 
 class GraphQLQueryInputTypedDict(TypedDict):
@@ -18,7 +25,7 @@ class GraphQLQueryInputTypedDict(TypedDict):
 
     query: str
     r"""The GraphQL query to execute."""
-    variables: NotRequired[Nullable[Any]]
+    variables: NotRequired[Nullable[VariablesTypedDict]]
     r"""Variables to substitute into the query."""
 
 
@@ -28,7 +35,7 @@ class GraphQLQueryInput(BaseModel):
     query: str
     r"""The GraphQL query to execute."""
 
-    variables: OptionalNullable[Any] = UNSET
+    variables: OptionalNullable[Variables] = UNSET
     r"""Variables to substitute into the query."""
 
     @model_serializer(mode="wrap")

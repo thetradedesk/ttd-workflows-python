@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 77589de233fedc4cd69591731347d9dd
+  docChecksum: e94ad8b891ff2cc5bbc5819a8e5067de
   docVersion: v1
-  speakeasyVersion: 1.520.0
-  generationVersion: 2.555.1
-  releaseVersion: 0.1.8
-  configChecksum: 1fd0f26860076fd3f983be9125151772
+  speakeasyVersion: 1.520.1
+  generationVersion: 2.556.1
+  releaseVersion: 0.1.12
+  configChecksum: 3a468ca96afbdc9be72ecc6a1eb2da29
   published: true
 features:
   python:
@@ -42,10 +42,10 @@ generatedFiles:
   - docs/models/campaigncreationinput.md
   - docs/models/campaignflightcreationinput.md
   - docs/models/campaignversionresponse.md
-  - docs/models/contentresult.md
   - docs/models/contextualdatainput.md
   - docs/models/getcampaignidversionrequest.md
   - docs/models/graphqlqueryinput.md
+  - docs/models/problemdetails.md
   - docs/models/problemdetailserror.md
   - docs/models/security.md
   - docs/models/seedcreationinput.md
@@ -54,6 +54,7 @@ generatedFiles:
   - docs/models/sharedseed.md
   - docs/models/thirdpartydatainput.md
   - docs/models/utils/retryconfig.md
+  - docs/models/variables.md
   - docs/sdks/graphql/README.md
   - docs/sdks/sdkcampaign/README.md
   - docs/sdks/sdkseed/README.md
@@ -79,10 +80,10 @@ generatedFiles:
   - src/ttd_workflows/models/campaigncreationinput.py
   - src/ttd_workflows/models/campaignflightcreationinput.py
   - src/ttd_workflows/models/campaignversionresponse.py
-  - src/ttd_workflows/models/contentresult.py
   - src/ttd_workflows/models/contextualdatainput.py
   - src/ttd_workflows/models/get_campaign_id_versionop.py
   - src/ttd_workflows/models/graphqlqueryinput.py
+  - src/ttd_workflows/models/problemdetails.py
   - src/ttd_workflows/models/problemdetails_error.py
   - src/ttd_workflows/models/security.py
   - src/ttd_workflows/models/seedcreationinput.py
@@ -119,7 +120,7 @@ examples:
         "201":
           application/json: {"advertiserId": "<id>", "campaignName": "<value>"}
         "400":
-          application/json: {"key": "<value>"}
+          application/json: {"key": {}}
   get_/campaign/{id}/version:
     speakeasy-default-get-/campaign/{id}/version:
       parameters:
@@ -129,20 +130,20 @@ examples:
         "200":
           application/json: {}
         "400":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": {}, "key1": {}, "key2": {}}
   post_/graphql:
     speakeasy-default-post-/graphql:
       responses:
         "200":
-          application/json: {}
-        "400":
           application/json: {"key": "<value>"}
+        "400":
+          application/json: {"key": {}}
   post_/seed:
     speakeasy-default-post-/seed:
       responses:
         "201":
           application/json: {"id": 18556, "seedName": "<value>", "advertiserId": "<id>"}
         "400":
-          application/json: {"key": "<value>"}
+          application/json: {"key": {}}
 examplesVersion: 1.0.0
 generatedTests: {}

@@ -15,13 +15,18 @@ from .campaignversionresponse import (
     CampaignVersionResponse,
     CampaignVersionResponseTypedDict,
 )
-from .contentresult import ContentResult, ContentResultTypedDict
 from .contextualdatainput import ContextualDataInput, ContextualDataInputTypedDict
 from .get_campaign_id_versionop import (
     GetCampaignIDVersionRequest,
     GetCampaignIDVersionRequestTypedDict,
 )
-from .graphqlqueryinput import GraphQLQueryInput, GraphQLQueryInputTypedDict
+from .graphqlqueryinput import (
+    GraphQLQueryInput,
+    GraphQLQueryInputTypedDict,
+    Variables,
+    VariablesTypedDict,
+)
+from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
 from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
 from .security import Security, SecurityTypedDict
 from .seedcreationinput import SeedCreationInput, SeedCreationInputTypedDict
@@ -45,16 +50,16 @@ __all__ = [
     "CampaignFlightCreationInputTypedDict",
     "CampaignVersionResponse",
     "CampaignVersionResponseTypedDict",
-    "ContentResult",
-    "ContentResultTypedDict",
     "ContextualDataInput",
     "ContextualDataInputTypedDict",
     "GetCampaignIDVersionRequest",
     "GetCampaignIDVersionRequestTypedDict",
     "GraphQLQueryInput",
     "GraphQLQueryInputTypedDict",
+    "ProblemDetails",
     "ProblemDetailsError",
     "ProblemDetailsErrorData",
+    "ProblemDetailsTypedDict",
     "Security",
     "SecurityTypedDict",
     "SeedCreationInput",
@@ -67,4 +72,6 @@ __all__ = [
     "SharedSeedTypedDict",
     "ThirdPartyDataInput",
     "ThirdPartyDataInputTypedDict",
+    "Variables",
+    "VariablesTypedDict",
 ]

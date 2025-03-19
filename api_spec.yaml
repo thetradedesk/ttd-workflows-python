@@ -100,7 +100,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ContentResult'
+                type: object
+                additionalProperties: true
         '400':
           description: Bad Request
           content:
@@ -323,20 +324,6 @@ components:
           description: The campaign budget version.
           nullable: true
       additionalProperties: false
-    ContentResult:
-      type: object
-      properties:
-        content:
-          type: string
-          nullable: true
-        contentType:
-          type: string
-          nullable: true
-        statusCode:
-          type: integer
-          format: int32
-          nullable: true
-      additionalProperties: false
     ContextualDataInput:
       type: object
       properties:
@@ -363,6 +350,7 @@ components:
           type: string
           description: The GraphQL query to execute.
         variables:
+          type: object
           description: Variables to substitute into the query.
           nullable: true
       additionalProperties: false
@@ -386,7 +374,8 @@ components:
         instance:
           type: string
           nullable: true
-      additionalProperties: { }
+      additionalProperties:
+        type: object
     Seed:
       required:
         - advertiserId
@@ -484,4 +473,4 @@ components:
       name: TTD-Auth
       in: header
 security:
-  - TTD-Auth: []
+  - TTD-Auth: [ ]
