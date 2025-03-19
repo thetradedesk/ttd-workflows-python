@@ -38,7 +38,7 @@ with Workflows(
 
 ### Response
 
-**[models.ContentResult](../../models/contentresult.md)**
+**[Dict[str, Any]](../../models/.md)**
 
 ### Errors
 
