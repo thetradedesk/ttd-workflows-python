@@ -22,7 +22,10 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.graphql.execute()
+    res = workflows.graphql.execute(request={
+        "query": "<value>",
+        "variables": {},
+    })
 
     # Handle response
     print(res)
@@ -38,7 +41,7 @@ with Workflows(
 
 ### Response
 
-**[Dict[str, Any]](../../models/.md)**
+**[models.PostGraphqlResponse](../../models/postgraphqlresponse.md)**
 
 ### Errors
 
