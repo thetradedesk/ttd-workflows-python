@@ -8,9 +8,9 @@ from .utils.retries import RetryConfig
 import httpx
 from ttd_workflows import models, utils
 from ttd_workflows._hooks import SDKHooks
+from ttd_workflows.campaign import Campaign
 from ttd_workflows.graphql import Graphql
-from ttd_workflows.sdk_campaign import SDKCampaign
-from ttd_workflows.sdk_seed import SDKSeed
+from ttd_workflows.seed_sdk import SeedSDK
 from ttd_workflows.types import OptionalNullable, UNSET
 from typing import Any, Callable, Dict, Optional, Union, cast
 import weakref
@@ -19,9 +19,9 @@ import weakref
 class Workflows(BaseSDK):
     r"""Workflows API: A RESTful service for commonly used workflows."""
 
-    campaign: SDKCampaign
+    campaign: Campaign
     graphql: Graphql
-    seed: SDKSeed
+    seed: SeedSDK
 
     def __init__(
         self,
@@ -119,9 +119,9 @@ class Workflows(BaseSDK):
         self._init_sdks()
 
     def _init_sdks(self):
-        self.campaign = SDKCampaign(self.sdk_configuration)
+        self.campaign = Campaign(self.sdk_configuration)
         self.graphql = Graphql(self.sdk_configuration)
-        self.seed = SDKSeed(self.sdk_configuration)
+        self.seed = SeedSDK(self.sdk_configuration)
 
     def __enter__(self):
         return self

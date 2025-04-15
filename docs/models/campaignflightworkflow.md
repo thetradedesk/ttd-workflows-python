@@ -1,0 +1,14 @@
+# CampaignFlightWorkflow
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `id`                                                                 | *Nullable[str]*                                                      | :heavy_check_mark:                                                   | N/A                                                                  |
+| `start_date_inclusive_utc`                                           | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | N/A                                                                  |
+| `end_date_exclusive_utc`                                             | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `budget_in_advertiser_currency`                                      | *float*                                                              | :heavy_check_mark:                                                   | N/A                                                                  |
+| `budget_in_impressions`                                              | *OptionalNullable[int]*                                              | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `daily_target_in_advertiser_currency`                                | *OptionalNullable[float]*                                            | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `daily_target_in_impressions`                                        | *OptionalNullable[int]*                                              | :heavy_minus_sign:                                                   | N/A                                                                  |

@@ -5,7 +5,7 @@ from ttd_workflows import models, utils
 from ttd_workflows._hooks import HookContext
 from ttd_workflows.types import BaseModel, OptionalNullable, UNSET
 from ttd_workflows.utils import get_security_from_env
-from typing import Any, Dict, Mapping, Optional, Union, cast
+from typing import Any, Mapping, Optional, Union, cast
 
 
 class Graphql(BaseSDK):
@@ -19,7 +19,7 @@ class Graphql(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Dict[str, Any]:
+    ) -> models.PostGraphqlResponse:
         r"""An endpoint that executes valid GraphQL queries.
 
         :param request: The request object to send.
@@ -89,7 +89,7 @@ class Graphql(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, Dict[str, Any])
+            return utils.unmarshal_json(http_res.text, models.PostGraphqlResponse)
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
@@ -127,7 +127,7 @@ class Graphql(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Dict[str, Any]:
+    ) -> models.PostGraphqlResponse:
         r"""An endpoint that executes valid GraphQL queries.
 
         :param request: The request object to send.
@@ -197,7 +197,7 @@ class Graphql(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, Dict[str, Any])
+            return utils.unmarshal_json(http_res.text, models.PostGraphqlResponse)
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
