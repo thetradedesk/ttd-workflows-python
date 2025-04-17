@@ -68,6 +68,7 @@ from .adgroupworkflow import AdGroupWorkflow, AdGroupWorkflowTypedDict
 from .allocationtype import AllocationType
 from .apierror import APIError
 from .budgetworkflow import BudgetWorkflow, BudgetWorkflowTypedDict
+from .campaignbulkpayload import CampaignBulkPayload, CampaignBulkPayloadTypedDict
 from .campaignchanneltype import CampaignChannelType
 from .campaignconversionreportingcolumnworkflow import (
     CampaignConversionReportingColumnWorkflow,
@@ -108,7 +109,6 @@ from .campaignversionworkflow import (
     CampaignVersionWorkflowTypedDict,
 )
 from .campaignworkflow import CampaignWorkflow, CampaignWorkflowTypedDict
-from .contextualdatainput import ContextualDataInput, ContextualDataInputTypedDict
 from .customcpatype import CustomCPAType
 from .customroasconfig import CustomROASConfig, CustomROASConfigTypedDict
 from .dimensionalbiddingdimensions import DimensionalBiddingDimensions
@@ -127,16 +127,9 @@ from .post_graphqlop import PostGraphqlResponse, PostGraphqlResponseTypedDict
 from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
 from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
 from .security import Security, SecurityTypedDict
-from .seed import Seed, SeedTypedDict
-from .seedcreationinput import SeedCreationInput, SeedCreationInputTypedDict
-from .seedtargetingdatainput import (
-    SeedTargetingDataInput,
-    SeedTargetingDataInputTypedDict,
-)
 from .targetingendage import TargetingEndAge
 from .targetinggender import TargetingGender
 from .targetingstartage import TargetingStartAge
-from .thirdpartydatainput import ThirdPartyDataInput, ThirdPartyDataInputTypedDict
 from .usererror import UserError, UserErrorTypedDict
 
 
@@ -189,6 +182,8 @@ __all__ = [
     "AllocationType",
     "BudgetWorkflow",
     "BudgetWorkflowTypedDict",
+    "CampaignBulkPayload",
+    "CampaignBulkPayloadTypedDict",
     "CampaignChannelType",
     "CampaignConversionReportingColumnWorkflow",
     "CampaignConversionReportingColumnWorkflowTypedDict",
@@ -213,8 +208,6 @@ __all__ = [
     "CampaignVersionWorkflowTypedDict",
     "CampaignWorkflow",
     "CampaignWorkflowTypedDict",
-    "ContextualDataInput",
-    "ContextualDataInputTypedDict",
     "CustomCPAType",
     "CustomROASConfig",
     "CustomROASConfigTypedDict",
@@ -232,17 +225,9 @@ __all__ = [
     "ProblemDetailsTypedDict",
     "Security",
     "SecurityTypedDict",
-    "Seed",
-    "SeedCreationInput",
-    "SeedCreationInputTypedDict",
-    "SeedTargetingDataInput",
-    "SeedTargetingDataInputTypedDict",
-    "SeedTypedDict",
     "TargetingEndAge",
     "TargetingGender",
     "TargetingStartAge",
-    "ThirdPartyDataInput",
-    "ThirdPartyDataInputTypedDict",
     "UserError",
     "UserErrorTypedDict",
     "Variables",
