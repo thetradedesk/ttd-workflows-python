@@ -11,26 +11,23 @@ from ttd_workflows.types import (
     UNSET,
     UNSET_SENTINEL,
 )
-from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class BudgetWorkflowTypedDict(TypedDict):
+    pacing_mode: CampaignPacingMode
     budget_in_advertiser_currency: float
-    pacing_mode: NotRequired[CampaignPacingMode]
     budget_in_impressions: NotRequired[Nullable[int]]
     daily_target_in_advertiser_currency: NotRequired[Nullable[float]]
     daily_target_in_impressions: NotRequired[Nullable[int]]
 
 
 class BudgetWorkflow(BaseModel):
+    pacing_mode: Annotated[CampaignPacingMode, pydantic.Field(alias="pacingMode")]
+
     budget_in_advertiser_currency: Annotated[
         float, pydantic.Field(alias="budgetInAdvertiserCurrency")
     ]
-
-    pacing_mode: Annotated[
-        Optional[CampaignPacingMode], pydantic.Field(alias="pacingMode")
-    ] = None
 
     budget_in_impressions: Annotated[
         OptionalNullable[int], pydantic.Field(alias="budgetInImpressions")
@@ -47,7 +44,6 @@ class BudgetWorkflow(BaseModel):
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
-            "pacingMode",
             "budgetInImpressions",
             "dailyTargetInAdvertiserCurrency",
             "dailyTargetInImpressions",
