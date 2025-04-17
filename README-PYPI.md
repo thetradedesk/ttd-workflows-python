@@ -297,9 +297,7 @@ with Workflows(
                         "allow_open_market_bidding_when_targeting_contracts": True,
                     },
                     "dimensional_bidding_auto_optimization_settings": [
-                        [
-
-                        ],
+                        [],
                         [
                             ttd_workflows.DimensionalBiddingDimensions.HAS_VIDEO_COMPLETION_RATE_SCORE_RANGE,
                         ],
@@ -675,9 +673,7 @@ async def main():
                             "allow_open_market_bidding_when_targeting_contracts": True,
                         },
                         "dimensional_bidding_auto_optimization_settings": [
-                            [
-
-                            ],
+                            [],
                             [
                                 ttd_workflows.DimensionalBiddingDimensions.HAS_VIDEO_COMPLETION_RATE_SCORE_RANGE,
                             ],
@@ -1062,9 +1058,7 @@ with Workflows(
                         "allow_open_market_bidding_when_targeting_contracts": True,
                     },
                     "dimensional_bidding_auto_optimization_settings": [
-                        [
-
-                        ],
+                        [],
                         [
                             ttd_workflows.DimensionalBiddingDimensions.HAS_VIDEO_COMPLETION_RATE_SCORE_RANGE,
                         ],
@@ -1246,15 +1240,12 @@ with Workflows(
 ### [campaign](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md)
 
 * [create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#create) - Create a new campaign with required fields
+* [post_campaign_bulk](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#post_campaign_bulk) - Create a new campaign with required fields
 * [get_version](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#get_version) - GET a campaign's version
 
 ### [graphql](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphql/README.md)
 
 * [execute](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphql/README.md#execute) - An endpoint that executes valid GraphQL queries.
-
-### [seed](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/seedsdk/README.md)
-
-* [create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/seedsdk/README.md#create) - Create a new seed with required fields
 
 
 </details>
@@ -1466,9 +1457,7 @@ with Workflows(
                         "allow_open_market_bidding_when_targeting_contracts": True,
                     },
                     "dimensional_bidding_auto_optimization_settings": [
-                        [
-
-                        ],
+                        [],
                         [
                             ttd_workflows.DimensionalBiddingDimensions.HAS_VIDEO_COMPLETION_RATE_SCORE_RANGE,
                         ],
@@ -1843,9 +1832,7 @@ with Workflows(
                         "allow_open_market_bidding_when_targeting_contracts": True,
                     },
                     "dimensional_bidding_auto_optimization_settings": [
-                        [
-
-                        ],
+                        [],
                         [
                             ttd_workflows.DimensionalBiddingDimensions.HAS_VIDEO_COMPLETION_RATE_SCORE_RANGE,
                         ],
@@ -2242,9 +2229,7 @@ with Workflows(
                             "allow_open_market_bidding_when_targeting_contracts": True,
                         },
                         "dimensional_bidding_auto_optimization_settings": [
-                            [
-
-                            ],
+                            [],
                             [
                                 ttd_workflows.DimensionalBiddingDimensions.HAS_VIDEO_COMPLETION_RATE_SCORE_RANGE,
                             ],
@@ -2629,9 +2614,7 @@ with Workflows(
                         "allow_open_market_bidding_when_targeting_contracts": True,
                     },
                     "dimensional_bidding_auto_optimization_settings": [
-                        [
-
-                        ],
+                        [],
                         [
                             ttd_workflows.DimensionalBiddingDimensions.HAS_VIDEO_COMPLETION_RATE_SCORE_RANGE,
                         ],

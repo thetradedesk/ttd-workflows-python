@@ -45,12 +45,10 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class AdGroupWorkflowTypedDict(TypedDict):
-    id: str
-    name: str
-    campaign_id: str
+    id: Nullable[str]
+    name: Nullable[str]
+    campaign_id: Nullable[str]
     is_enabled: bool
-    channel: AdGroupChannel
-    funnel_location: AdGroupFunnelLocation
     budget: AdGroupBudgetTypedDict
     roi_goal: AdGroupRoiGoalTypedDict
     creative_ids: Nullable[List[str]]
@@ -65,6 +63,8 @@ class AdGroupWorkflowTypedDict(TypedDict):
     is_use_secondary_conversions_enabled: bool
     description: NotRequired[Nullable[str]]
     programmatic_guaranteed_private_contract_id: NotRequired[Nullable[str]]
+    channel_type: NotRequired[AdGroupChannel]
+    funnel_location: NotRequired[AdGroupFunnelLocation]
     base_bid_cpm_in_advertiser_currency: NotRequired[Nullable[float]]
     max_bid_cpm_in_advertiser_currency: NotRequired[Nullable[float]]
     audience_targeting: NotRequired[AdGroupAudienceTargetingTypedDict]
@@ -73,19 +73,13 @@ class AdGroupWorkflowTypedDict(TypedDict):
 
 
 class AdGroupWorkflow(BaseModel):
-    id: str
+    id: Nullable[str]
 
-    name: str
+    name: Nullable[str]
 
-    campaign_id: Annotated[str, pydantic.Field(alias="campaignId")]
+    campaign_id: Annotated[Nullable[str], pydantic.Field(alias="campaignId")]
 
     is_enabled: Annotated[bool, pydantic.Field(alias="isEnabled")]
-
-    channel: AdGroupChannel
-
-    funnel_location: Annotated[
-        AdGroupFunnelLocation, pydantic.Field(alias="funnelLocation")
-    ]
 
     budget: AdGroupBudget
 
@@ -128,6 +122,14 @@ class AdGroupWorkflow(BaseModel):
         pydantic.Field(alias="programmaticGuaranteedPrivateContractId"),
     ] = UNSET
 
+    channel_type: Annotated[
+        Optional[AdGroupChannel], pydantic.Field(alias="channelType")
+    ] = None
+
+    funnel_location: Annotated[
+        Optional[AdGroupFunnelLocation], pydantic.Field(alias="funnelLocation")
+    ] = None
+
     base_bid_cpm_in_advertiser_currency: Annotated[
         OptionalNullable[float], pydantic.Field(alias="baseBidCpmInAdvertiserCurrency")
     ] = UNSET
@@ -155,6 +157,8 @@ class AdGroupWorkflow(BaseModel):
         optional_fields = [
             "description",
             "programmaticGuaranteedPrivateContractId",
+            "channelType",
+            "funnelLocation",
             "baseBidCpmInAdvertiserCurrency",
             "maxBidCpmInAdvertiserCurrency",
             "audienceTargeting",
@@ -162,6 +166,9 @@ class AdGroupWorkflow(BaseModel):
             "nielsenTrackingAttributes",
         ]
         nullable_fields = [
+            "id",
+            "name",
+            "campaignId",
             "description",
             "programmaticGuaranteedPrivateContractId",
             "baseBidCpmInAdvertiserCurrency",
