@@ -14,13 +14,13 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class CampaignVersionWorkflowTypedDict(TypedDict):
-    id: str
+    id: Nullable[str]
     version: NotRequired[Nullable[str]]
     budgeting_version: NotRequired[Nullable[str]]
 
 
 class CampaignVersionWorkflow(BaseModel):
-    id: str
+    id: Nullable[str]
 
     version: OptionalNullable[str] = UNSET
 
@@ -31,7 +31,7 @@ class CampaignVersionWorkflow(BaseModel):
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["version", "budgetingVersion"]
-        nullable_fields = ["version", "budgetingVersion"]
+        nullable_fields = ["id", "version", "budgetingVersion"]
         null_default_fields = []
 
         serialized = handler(self)

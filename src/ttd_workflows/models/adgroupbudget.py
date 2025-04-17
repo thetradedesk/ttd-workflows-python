@@ -11,26 +11,23 @@ from ttd_workflows.types import (
     UNSET,
     UNSET_SENTINEL,
 )
-from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class AdGroupBudgetTypedDict(TypedDict):
+    allocation_type: AllocationType
     budget_in_advertiser_currency: float
-    allocation_type: NotRequired[AllocationType]
     budget_in_impressions: NotRequired[Nullable[int]]
     daily_target_in_advertiser_currency: NotRequired[Nullable[float]]
     daily_target_in_impressions: NotRequired[Nullable[int]]
 
 
 class AdGroupBudget(BaseModel):
+    allocation_type: Annotated[AllocationType, pydantic.Field(alias="allocationType")]
+
     budget_in_advertiser_currency: Annotated[
         float, pydantic.Field(alias="budgetInAdvertiserCurrency")
     ]
-
-    allocation_type: Annotated[
-        Optional[AllocationType], pydantic.Field(alias="allocationType")
-    ] = None
 
     budget_in_impressions: Annotated[
         OptionalNullable[int], pydantic.Field(alias="budgetInImpressions")
@@ -47,7 +44,6 @@ class AdGroupBudget(BaseModel):
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
-            "allocationType",
             "budgetInImpressions",
             "dailyTargetInAdvertiserCurrency",
             "dailyTargetInImpressions",

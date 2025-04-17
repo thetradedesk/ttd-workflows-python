@@ -10,7 +10,6 @@ from ttd_workflows import models, utils
 from ttd_workflows._hooks import SDKHooks
 from ttd_workflows.campaign import Campaign
 from ttd_workflows.graphql import Graphql
-from ttd_workflows.seed_sdk import SeedSDK
 from ttd_workflows.types import OptionalNullable, UNSET
 from typing import Any, Callable, Dict, Optional, Union, cast
 import weakref
@@ -21,7 +20,6 @@ class Workflows(BaseSDK):
 
     campaign: Campaign
     graphql: Graphql
-    seed: SeedSDK
 
     def __init__(
         self,
@@ -121,7 +119,6 @@ class Workflows(BaseSDK):
     def _init_sdks(self):
         self.campaign = Campaign(self.sdk_configuration)
         self.graphql = Graphql(self.sdk_configuration)
-        self.seed = SeedSDK(self.sdk_configuration)
 
     def __enter__(self):
         return self

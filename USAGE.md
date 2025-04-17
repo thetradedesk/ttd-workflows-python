@@ -199,9 +199,7 @@ with Workflows(
                         "allow_open_market_bidding_when_targeting_contracts": True,
                     },
                     "dimensional_bidding_auto_optimization_settings": [
-                        [
-
-                        ],
+                        [],
                         [
                             ttd_workflows.DimensionalBiddingDimensions.HAS_VIDEO_COMPLETION_RATE_SCORE_RANGE,
                         ],
@@ -577,9 +575,7 @@ async def main():
                             "allow_open_market_bidding_when_targeting_contracts": True,
                         },
                         "dimensional_bidding_auto_optimization_settings": [
-                            [
-
-                            ],
+                            [],
                             [
                                 ttd_workflows.DimensionalBiddingDimensions.HAS_VIDEO_COMPLETION_RATE_SCORE_RANGE,
                             ],

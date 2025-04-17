@@ -23,7 +23,9 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 class CampaignWorkflowTypedDict(TypedDict):
     id: Nullable[str]
-    name: NotRequired[Nullable[str]]
+    name: Nullable[str]
+    primary_channel: CampaignChannelType
+    primary_goal: Nullable[str]
     description: NotRequired[Nullable[str]]
     start_date: NotRequired[Nullable[datetime]]
     end_date: NotRequired[Nullable[datetime]]
@@ -32,8 +34,6 @@ class CampaignWorkflowTypedDict(TypedDict):
     custom_cpa_viewthrough_weight: NotRequired[Nullable[float]]
     custom_cpa_type: NotRequired[CustomCPAType]
     impressions_only_budgeting_cpm: NotRequired[Nullable[float]]
-    primary_channel: NotRequired[CampaignChannelType]
-    primary_goal: NotRequired[Nullable[str]]
     seed_id: NotRequired[Nullable[str]]
     conversion_reporting_columns_count: NotRequired[Nullable[int]]
     flights: NotRequired[Nullable[List[CampaignFlightWorkflowTypedDict]]]
@@ -42,7 +42,13 @@ class CampaignWorkflowTypedDict(TypedDict):
 class CampaignWorkflow(BaseModel):
     id: Nullable[str]
 
-    name: OptionalNullable[str] = UNSET
+    name: Nullable[str]
+
+    primary_channel: Annotated[
+        CampaignChannelType, pydantic.Field(alias="primaryChannel")
+    ]
+
+    primary_goal: Annotated[Nullable[str], pydantic.Field(alias="primaryGoal")]
 
     description: OptionalNullable[str] = UNSET
 
@@ -74,14 +80,6 @@ class CampaignWorkflow(BaseModel):
         OptionalNullable[float], pydantic.Field(alias="impressionsOnlyBudgetingCpm")
     ] = UNSET
 
-    primary_channel: Annotated[
-        Optional[CampaignChannelType], pydantic.Field(alias="primaryChannel")
-    ] = None
-
-    primary_goal: Annotated[
-        OptionalNullable[str], pydantic.Field(alias="primaryGoal")
-    ] = UNSET
-
     seed_id: Annotated[OptionalNullable[str], pydantic.Field(alias="seedId")] = UNSET
 
     conversion_reporting_columns_count: Annotated[
@@ -93,7 +91,6 @@ class CampaignWorkflow(BaseModel):
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
-            "name",
             "description",
             "startDate",
             "endDate",
@@ -102,8 +99,6 @@ class CampaignWorkflow(BaseModel):
             "customCPAViewthroughWeight",
             "customCPAType",
             "impressionsOnlyBudgetingCpm",
-            "primaryChannel",
-            "primaryGoal",
             "seedId",
             "conversionReportingColumnsCount",
             "flights",
