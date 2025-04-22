@@ -6,7 +6,8 @@
 ### Available Operations
 
 * [create](#create) - Create a new campaign with required fields
-* [post_campaign_bulk](#post_campaign_bulk) - Create a new campaign with required fields
+* [post_campaign_bulk](#post_campaign_bulk) - Create a list of campaigns with required fields. `ValidationOnly` value should be the same for all campaigns.
+* [post_campaign_archive](#post_campaign_archive) - Archive a list of campaigns
 * [get_version](#get_version) - GET a campaign's version
 
 ## create
@@ -68,9 +69,9 @@ with Workflows(
                     "reporting_column_id": 17207,
                     "roas_config": {
                         "include_in_custom_roas": True,
-                        "custom_roas_weight": 8441.62,
-                        "custom_roas_click_weight": 3535.31,
-                        "custom_roas_viewthrough_weight": 4287.45,
+                        "custom_roas_weight": 6384.24,
+                        "custom_roas_click_weight": 4174.58,
+                        "custom_roas_viewthrough_weight": 1343.65,
                     },
                     "weight": 6798.85,
                     "cross_device_attribution_model_id": "<id>",
@@ -80,10 +81,10 @@ with Workflows(
                     "include_in_custom_cpa": True,
                     "reporting_column_id": 860420,
                     "roas_config": {
-                        "include_in_custom_roas": False,
-                        "custom_roas_weight": 5665.12,
-                        "custom_roas_click_weight": 2955.58,
-                        "custom_roas_viewthrough_weight": 2032.57,
+                        "include_in_custom_roas": True,
+                        "custom_roas_weight": 7964.74,
+                        "custom_roas_click_weight": 9510.62,
+                        "custom_roas_viewthrough_weight": 0.86,
                     },
                     "weight": 4332.24,
                     "cross_device_attribution_model_id": "<id>",
@@ -93,10 +94,10 @@ with Workflows(
                     "include_in_custom_cpa": False,
                     "reporting_column_id": 995852,
                     "roas_config": {
-                        "include_in_custom_roas": False,
-                        "custom_roas_weight": 2127.75,
-                        "custom_roas_click_weight": 6207.47,
-                        "custom_roas_viewthrough_weight": 2841.2,
+                        "include_in_custom_roas": True,
+                        "custom_roas_weight": 899.64,
+                        "custom_roas_click_weight": 7926.2,
+                        "custom_roas_viewthrough_weight": 8165.88,
                     },
                     "weight": 6083.84,
                     "cross_device_attribution_model_id": "<id>",
@@ -131,8 +132,8 @@ with Workflows(
                     "daily_target_in_advertiser_currency": 3385.24,
                     "daily_target_in_impressions": 913221,
                 },
-                "base_bid_cpm_in_advertiser_currency": 1541.5,
-                "max_bid_cpm_in_advertiser_currency": 7218.8,
+                "base_bid_cpm_in_advertiser_currency": 5862.2,
+                "max_bid_cpm_in_advertiser_currency": 7524.38,
                 "audience_targeting": {
                     "audience_id": "<id>",
                     "audience_accelerator_exclusions_enabled": False,
@@ -172,29 +173,6 @@ with Workflows(
                     },
                 ],
                 "advanced_settings": {
-                    "flights": [
-                        {
-                            "allocation_type": ttd_workflows.AllocationType.MINIMUM,
-                            "budget_in_advertiser_currency": 4285.01,
-                            "budget_in_impressions": 838181,
-                            "daily_target_in_advertiser_currency": 9525.44,
-                            "daily_target_in_impressions": 188907,
-                        },
-                        {
-                            "allocation_type": ttd_workflows.AllocationType.FIXED,
-                            "budget_in_advertiser_currency": 8833.21,
-                            "budget_in_impressions": 892770,
-                            "daily_target_in_advertiser_currency": 1993.11,
-                            "daily_target_in_impressions": 564854,
-                        },
-                        {
-                            "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
-                            "budget_in_advertiser_currency": 7458.53,
-                            "budget_in_impressions": 290123,
-                            "daily_target_in_advertiser_currency": 700.72,
-                            "daily_target_in_impressions": 547483,
-                        },
-                    ],
                     "koa_optimization_settings": {
                         "are_future_koa_features_enabled": False,
                         "predictive_clearing_enabled": False,
@@ -252,6 +230,29 @@ with Workflows(
                             "reset_interval_in_minutes": 500290,
                         },
                     ],
+                    "flights": [
+                        {
+                            "allocation_type": ttd_workflows.AllocationType.MINIMUM,
+                            "budget_in_advertiser_currency": 4285.01,
+                            "budget_in_impressions": 838181,
+                            "daily_target_in_advertiser_currency": 9525.44,
+                            "daily_target_in_impressions": 188907,
+                        },
+                        {
+                            "allocation_type": ttd_workflows.AllocationType.FIXED,
+                            "budget_in_advertiser_currency": 8833.21,
+                            "budget_in_impressions": 892770,
+                            "daily_target_in_advertiser_currency": 1993.11,
+                            "daily_target_in_impressions": 564854,
+                        },
+                        {
+                            "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                            "budget_in_advertiser_currency": 7458.53,
+                            "budget_in_impressions": 290123,
+                            "daily_target_in_advertiser_currency": 700.72,
+                            "daily_target_in_impressions": 547483,
+                        },
+                    ],
                 },
             },
             {
@@ -268,8 +269,8 @@ with Workflows(
                     "daily_target_in_advertiser_currency": 4040.62,
                     "daily_target_in_impressions": 421607,
                 },
-                "base_bid_cpm_in_advertiser_currency": 9476.87,
-                "max_bid_cpm_in_advertiser_currency": 703.96,
+                "base_bid_cpm_in_advertiser_currency": 9574.09,
+                "max_bid_cpm_in_advertiser_currency": 3570.21,
                 "audience_targeting": {
                     "audience_id": "<id>",
                     "audience_accelerator_exclusions_enabled": True,
@@ -308,29 +309,6 @@ with Workflows(
                     },
                 ],
                 "advanced_settings": {
-                    "flights": [
-                        {
-                            "allocation_type": ttd_workflows.AllocationType.FIXED,
-                            "budget_in_advertiser_currency": 87.86,
-                            "budget_in_impressions": 992162,
-                            "daily_target_in_advertiser_currency": 6912.82,
-                            "daily_target_in_impressions": 856665,
-                        },
-                        {
-                            "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
-                            "budget_in_advertiser_currency": 2102.57,
-                            "budget_in_impressions": 784309,
-                            "daily_target_in_advertiser_currency": 9390.93,
-                            "daily_target_in_impressions": 704061,
-                        },
-                        {
-                            "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
-                            "budget_in_advertiser_currency": 6477.52,
-                            "budget_in_impressions": 511670,
-                            "daily_target_in_advertiser_currency": 4530.79,
-                            "daily_target_in_impressions": 275977,
-                        },
-                    ],
                     "koa_optimization_settings": {
                         "are_future_koa_features_enabled": False,
                         "predictive_clearing_enabled": True,
@@ -375,6 +353,29 @@ with Workflows(
                             "reset_interval_in_minutes": 967917,
                         },
                     ],
+                    "flights": [
+                        {
+                            "allocation_type": ttd_workflows.AllocationType.FIXED,
+                            "budget_in_advertiser_currency": 87.86,
+                            "budget_in_impressions": 992162,
+                            "daily_target_in_advertiser_currency": 6912.82,
+                            "daily_target_in_impressions": 856665,
+                        },
+                        {
+                            "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                            "budget_in_advertiser_currency": 2102.57,
+                            "budget_in_impressions": 784309,
+                            "daily_target_in_advertiser_currency": 9390.93,
+                            "daily_target_in_impressions": 704061,
+                        },
+                        {
+                            "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                            "budget_in_advertiser_currency": 6477.52,
+                            "budget_in_impressions": 511670,
+                            "daily_target_in_advertiser_currency": 4530.79,
+                            "daily_target_in_impressions": 275977,
+                        },
+                    ],
                 },
             },
         ],
@@ -395,7 +396,7 @@ with Workflows(
 
 ### Response
 
-**[models.CampaignPayload](../../models/campaignpayload.md)**
+**[models.CampaignSinglePayload](../../models/campaignsinglepayload.md)**
 
 ### Errors
 
@@ -406,7 +407,7 @@ with Workflows(
 
 ## post_campaign_bulk
 
-Create a new campaign with required fields
+Create a list of campaigns with required fields. `ValidationOnly` value should be the same for all campaigns.
 
 ### Example Usage
 
@@ -463,10 +464,10 @@ with Workflows(
                         "include_in_custom_cpa": True,
                         "reporting_column_id": 928266,
                         "roas_config": {
-                            "include_in_custom_roas": False,
-                            "custom_roas_weight": 3132.81,
-                            "custom_roas_click_weight": 8003.45,
-                            "custom_roas_viewthrough_weight": 1193.63,
+                            "include_in_custom_roas": True,
+                            "custom_roas_weight": 4670.85,
+                            "custom_roas_click_weight": 9092.6,
+                            "custom_roas_viewthrough_weight": 5190.03,
                         },
                         "weight": 4966.24,
                         "cross_device_attribution_model_id": "<id>",
@@ -476,10 +477,10 @@ with Workflows(
                         "include_in_custom_cpa": True,
                         "reporting_column_id": 791395,
                         "roas_config": {
-                            "include_in_custom_roas": False,
-                            "custom_roas_weight": 4225.21,
-                            "custom_roas_click_weight": 2874.97,
-                            "custom_roas_viewthrough_weight": 8684.93,
+                            "include_in_custom_roas": True,
+                            "custom_roas_weight": 5418.19,
+                            "custom_roas_click_weight": 8332.64,
+                            "custom_roas_viewthrough_weight": 7586.39,
                         },
                         "weight": 2544.89,
                         "cross_device_attribution_model_id": "<id>",
@@ -522,8 +523,8 @@ with Workflows(
                         "daily_target_in_advertiser_currency": 6197.34,
                         "daily_target_in_impressions": 40746,
                     },
-                    "base_bid_cpm_in_advertiser_currency": 5534.59,
-                    "max_bid_cpm_in_advertiser_currency": 6326.42,
+                    "base_bid_cpm_in_advertiser_currency": 6535.26,
+                    "max_bid_cpm_in_advertiser_currency": 5557.28,
                     "audience_targeting": {
                         "audience_id": "<id>",
                         "audience_accelerator_exclusions_enabled": True,
@@ -565,15 +566,6 @@ with Workflows(
                         },
                     ],
                     "advanced_settings": {
-                        "flights": [
-                            {
-                                "allocation_type": ttd_workflows.AllocationType.MINIMUM,
-                                "budget_in_advertiser_currency": 5017.64,
-                                "budget_in_impressions": 635802,
-                                "daily_target_in_advertiser_currency": 9399.82,
-                                "daily_target_in_impressions": 311869,
-                            },
-                        ],
                         "koa_optimization_settings": {
                             "are_future_koa_features_enabled": False,
                             "predictive_clearing_enabled": False,
@@ -621,6 +613,15 @@ with Workflows(
                                 "reset_interval_in_minutes": 883515,
                             },
                         ],
+                        "flights": [
+                            {
+                                "allocation_type": ttd_workflows.AllocationType.MINIMUM,
+                                "budget_in_advertiser_currency": 5017.64,
+                                "budget_in_impressions": 635802,
+                                "daily_target_in_advertiser_currency": 9399.82,
+                                "daily_target_in_impressions": 311869,
+                            },
+                        ],
                     },
                 },
                 {
@@ -637,8 +638,8 @@ with Workflows(
                         "daily_target_in_advertiser_currency": 3116.56,
                         "daily_target_in_impressions": 768111,
                     },
-                    "base_bid_cpm_in_advertiser_currency": 6687.67,
-                    "max_bid_cpm_in_advertiser_currency": 4386.78,
+                    "base_bid_cpm_in_advertiser_currency": 6062.21,
+                    "max_bid_cpm_in_advertiser_currency": 6093.82,
                     "audience_targeting": {
                         "audience_id": "<id>",
                         "audience_accelerator_exclusions_enabled": True,
@@ -689,29 +690,6 @@ with Workflows(
                         },
                     ],
                     "advanced_settings": {
-                        "flights": [
-                            {
-                                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
-                                "budget_in_advertiser_currency": 5368.14,
-                                "budget_in_impressions": 159994,
-                                "daily_target_in_advertiser_currency": 4701.02,
-                                "daily_target_in_impressions": 581943,
-                            },
-                            {
-                                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
-                                "budget_in_advertiser_currency": 9104.31,
-                                "budget_in_impressions": 153893,
-                                "daily_target_in_advertiser_currency": 4231.63,
-                                "daily_target_in_impressions": 772933,
-                            },
-                            {
-                                "allocation_type": ttd_workflows.AllocationType.FIXED,
-                                "budget_in_advertiser_currency": 6064.88,
-                                "budget_in_impressions": 542744,
-                                "daily_target_in_advertiser_currency": 7557.84,
-                                "daily_target_in_impressions": 267592,
-                            },
-                        ],
                         "koa_optimization_settings": {
                             "are_future_koa_features_enabled": False,
                             "predictive_clearing_enabled": True,
@@ -765,6 +743,29 @@ with Workflows(
                                 "reset_interval_in_minutes": 423321,
                             },
                         ],
+                        "flights": [
+                            {
+                                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                                "budget_in_advertiser_currency": 5368.14,
+                                "budget_in_impressions": 159994,
+                                "daily_target_in_advertiser_currency": 4701.02,
+                                "daily_target_in_impressions": 581943,
+                            },
+                            {
+                                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                                "budget_in_advertiser_currency": 9104.31,
+                                "budget_in_impressions": 153893,
+                                "daily_target_in_advertiser_currency": 4231.63,
+                                "daily_target_in_impressions": 772933,
+                            },
+                            {
+                                "allocation_type": ttd_workflows.AllocationType.FIXED,
+                                "budget_in_advertiser_currency": 6064.88,
+                                "budget_in_impressions": 542744,
+                                "daily_target_in_advertiser_currency": 7557.84,
+                                "daily_target_in_impressions": 267592,
+                            },
+                        ],
                     },
                 },
                 {
@@ -781,8 +782,8 @@ with Workflows(
                         "daily_target_in_advertiser_currency": 2906.22,
                         "daily_target_in_impressions": 801561,
                     },
-                    "base_bid_cpm_in_advertiser_currency": 3102.42,
-                    "max_bid_cpm_in_advertiser_currency": 1452.26,
+                    "base_bid_cpm_in_advertiser_currency": 5414.16,
+                    "max_bid_cpm_in_advertiser_currency": 5531.73,
                     "audience_targeting": {
                         "audience_id": "<id>",
                         "audience_accelerator_exclusions_enabled": True,
@@ -832,15 +833,6 @@ with Workflows(
                         },
                     ],
                     "advanced_settings": {
-                        "flights": [
-                            {
-                                "allocation_type": ttd_workflows.AllocationType.MINIMUM,
-                                "budget_in_advertiser_currency": 3736.14,
-                                "budget_in_impressions": 478825,
-                                "daily_target_in_advertiser_currency": 3340.68,
-                                "daily_target_in_impressions": 811346,
-                            },
-                        ],
                         "koa_optimization_settings": {
                             "are_future_koa_features_enabled": True,
                             "predictive_clearing_enabled": True,
@@ -896,6 +888,15 @@ with Workflows(
                                 "reset_interval_in_minutes": 656522,
                             },
                         ],
+                        "flights": [
+                            {
+                                "allocation_type": ttd_workflows.AllocationType.MINIMUM,
+                                "budget_in_advertiser_currency": 3736.14,
+                                "budget_in_impressions": 478825,
+                                "daily_target_in_advertiser_currency": 3340.68,
+                                "daily_target_in_impressions": 811346,
+                            },
+                        ],
                     },
                 },
             ],
@@ -918,6 +919,50 @@ with Workflows(
 ### Response
 
 **[List[models.CampaignBulkPayload]](../../models/.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ProblemDetailsError | 400                        | application/json           |
+| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## post_campaign_archive
+
+Archive a list of campaigns
+
+### Example Usage
+
+```python
+import os
+from ttd_workflows import Workflows
+
+
+with Workflows(
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+) as workflows:
+
+    res = workflows.campaign.post_campaign_archive(request=[
+        "<value>",
+        "<value>",
+        "<value>",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [List[str]](../../models/.md)                                       | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[List[str]](../../models/.md)**
 
 ### Errors
 

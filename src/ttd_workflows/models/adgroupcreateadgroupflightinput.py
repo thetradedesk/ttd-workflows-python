@@ -15,7 +15,8 @@ from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class AdGroupFlightInputTypedDict(TypedDict):
+class AdGroupCreateAdGroupFlightInputTypedDict(TypedDict):
+    campaign_flight_id: int
     allocation_type: NotRequired[AllocationType]
     budget_in_advertiser_currency: NotRequired[Nullable[float]]
     budget_in_impressions: NotRequired[Nullable[int]]
@@ -23,7 +24,9 @@ class AdGroupFlightInputTypedDict(TypedDict):
     daily_target_in_impressions: NotRequired[Nullable[int]]
 
 
-class AdGroupFlightInput(BaseModel):
+class AdGroupCreateAdGroupFlightInput(BaseModel):
+    campaign_flight_id: Annotated[int, pydantic.Field(alias="campaignFlightId")]
+
     allocation_type: Annotated[
         Optional[AllocationType], pydantic.Field(alias="allocationType")
     ] = None

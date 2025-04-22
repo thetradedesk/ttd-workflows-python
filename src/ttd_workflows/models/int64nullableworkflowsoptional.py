@@ -2,25 +2,27 @@
 
 from __future__ import annotations
 from pydantic import model_serializer
-from ttd_workflows.types import BaseModel, Nullable, UNSET_SENTINEL
-from typing import List
-from typing_extensions import TypedDict
+from ttd_workflows.types import (
+    BaseModel,
+    Nullable,
+    OptionalNullable,
+    UNSET,
+    UNSET_SENTINEL,
+)
+from typing_extensions import NotRequired, TypedDict
 
 
-class UserErrorTypedDict(TypedDict):
-    message: Nullable[str]
-    field: Nullable[List[str]]
+class Int64NullableWorkflowsOptionalTypedDict(TypedDict):
+    value: NotRequired[Nullable[int]]
 
 
-class UserError(BaseModel):
-    message: Nullable[str]
-
-    field: Nullable[List[str]]
+class Int64NullableWorkflowsOptional(BaseModel):
+    value: OptionalNullable[int] = UNSET
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = []
-        nullable_fields = ["message", "field"]
+        optional_fields = ["value"]
+        nullable_fields = ["value"]
         null_default_fields = []
 
         serialized = handler(self)
