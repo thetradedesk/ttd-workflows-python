@@ -3,7 +3,6 @@
 from __future__ import annotations
 from .adgroupworkflow import AdGroupWorkflow, AdGroupWorkflowTypedDict
 from .campaignworkflow import CampaignWorkflow, CampaignWorkflowTypedDict
-from .usererror import UserError, UserErrorTypedDict
 import pydantic
 from pydantic import model_serializer
 from ttd_workflows.types import (
@@ -17,27 +16,22 @@ from typing import List, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class CampaignPayloadTypedDict(TypedDict):
+class CampaignSinglePayloadTypedDict(TypedDict):
     campaign: NotRequired[CampaignWorkflowTypedDict]
     ad_groups: NotRequired[Nullable[List[AdGroupWorkflowTypedDict]]]
-    user_errors: NotRequired[Nullable[List[UserErrorTypedDict]]]
 
 
-class CampaignPayload(BaseModel):
+class CampaignSinglePayload(BaseModel):
     campaign: Optional[CampaignWorkflow] = None
 
     ad_groups: Annotated[
         OptionalNullable[List[AdGroupWorkflow]], pydantic.Field(alias="adGroups")
     ] = UNSET
 
-    user_errors: Annotated[
-        OptionalNullable[List[UserError]], pydantic.Field(alias="userErrors")
-    ] = UNSET
-
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["campaign", "adGroups", "userErrors"]
-        nullable_fields = ["adGroups", "userErrors"]
+        optional_fields = ["campaign", "adGroups"]
+        nullable_fields = ["adGroups"]
         null_default_fields = []
 
         serialized = handler(self)

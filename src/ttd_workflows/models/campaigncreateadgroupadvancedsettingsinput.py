@@ -9,7 +9,6 @@ from .adgroupcontracttargetinginput import (
     AdGroupContractTargetingInput,
     AdGroupContractTargetingInputTypedDict,
 )
-from .adgroupflightinput import AdGroupFlightInput, AdGroupFlightInputTypedDict
 from .adgroupkoaoptimizationsettingsinput import (
     AdGroupKoaOptimizationSettingsInput,
     AdGroupKoaOptimizationSettingsInputTypedDict,
@@ -21,6 +20,10 @@ from .adgroupnewfrequencyconfiginput import (
 from .adgroupnielsentrackingattributesinput import (
     AdGroupNielsenTrackingAttributesInput,
     AdGroupNielsenTrackingAttributesInputTypedDict,
+)
+from .campaigncreateadgroupflightinput import (
+    CampaignCreateAdGroupFlightInput,
+    CampaignCreateAdGroupFlightInputTypedDict,
 )
 from .dimensionalbiddingdimensions import DimensionalBiddingDimensions
 import pydantic
@@ -36,8 +39,7 @@ from typing import List, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class AdGroupAdvancedSettingsInputTypedDict(TypedDict):
-    flights: NotRequired[Nullable[List[AdGroupFlightInputTypedDict]]]
+class CampaignCreateAdGroupAdvancedSettingsInputTypedDict(TypedDict):
     koa_optimization_settings: NotRequired[AdGroupKoaOptimizationSettingsInputTypedDict]
     comscore_settings: NotRequired[AdGroupComscoreSettingsInputTypedDict]
     contract_targeting: NotRequired[AdGroupContractTargetingInputTypedDict]
@@ -52,11 +54,10 @@ class AdGroupAdvancedSettingsInputTypedDict(TypedDict):
     new_frequency_configs: NotRequired[
         Nullable[List[AdGroupNewFrequencyConfigInputTypedDict]]
     ]
+    flights: NotRequired[Nullable[List[CampaignCreateAdGroupFlightInputTypedDict]]]
 
 
-class AdGroupAdvancedSettingsInput(BaseModel):
-    flights: OptionalNullable[List[AdGroupFlightInput]] = UNSET
-
+class CampaignCreateAdGroupAdvancedSettingsInput(BaseModel):
     koa_optimization_settings: Annotated[
         Optional[AdGroupKoaOptimizationSettingsInput],
         pydantic.Field(alias="koaOptimizationSettings"),
@@ -94,10 +95,11 @@ class AdGroupAdvancedSettingsInput(BaseModel):
         pydantic.Field(alias="newFrequencyConfigs"),
     ] = UNSET
 
+    flights: OptionalNullable[List[CampaignCreateAdGroupFlightInput]] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
-            "flights",
             "koaOptimizationSettings",
             "comscoreSettings",
             "contractTargeting",
@@ -106,13 +108,14 @@ class AdGroupAdvancedSettingsInput(BaseModel):
             "isUseSecondaryConversionsEnabled",
             "nielsenTrackingAttributes",
             "newFrequencyConfigs",
+            "flights",
         ]
         nullable_fields = [
-            "flights",
             "dimensionalBiddingAutoOptimizationSettings",
             "isUseClicksAsConversionsEnabled",
             "isUseSecondaryConversionsEnabled",
             "newFrequencyConfigs",
+            "flights",
         ]
         null_default_fields = []
 

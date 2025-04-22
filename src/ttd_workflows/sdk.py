@@ -8,6 +8,7 @@ from .utils.retries import RetryConfig
 import httpx
 from ttd_workflows import models, utils
 from ttd_workflows._hooks import SDKHooks
+from ttd_workflows.adgroup import AdGroup
 from ttd_workflows.campaign import Campaign
 from ttd_workflows.graphql import Graphql
 from ttd_workflows.types import OptionalNullable, UNSET
@@ -18,6 +19,7 @@ import weakref
 class Workflows(BaseSDK):
     r"""Workflows API: A RESTful service for commonly used workflows."""
 
+    ad_group: AdGroup
     campaign: Campaign
     graphql: Graphql
 
@@ -117,6 +119,7 @@ class Workflows(BaseSDK):
         self._init_sdks()
 
     def _init_sdks(self):
+        self.ad_group = AdGroup(self.sdk_configuration)
         self.campaign = Campaign(self.sdk_configuration)
         self.graphql = Graphql(self.sdk_configuration)
 

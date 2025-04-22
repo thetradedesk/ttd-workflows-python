@@ -32,7 +32,7 @@ class CampaignConversionReportingColumnWorkflow(BaseModel):
     reporting_column_id: Annotated[int, pydantic.Field(alias="reportingColumnId")]
 
     roas_config: Annotated[
-        Optional[CustomROASConfig], pydantic.Field(alias="roasConfig")
+        Optional[CustomROASConfig], pydantic.Field(alias="ROASConfig")
     ] = None
 
     weight: OptionalNullable[float] = UNSET
@@ -43,7 +43,7 @@ class CampaignConversionReportingColumnWorkflow(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["roasConfig", "weight", "crossDeviceAttributionModelId"]
+        optional_fields = ["ROASConfig", "weight", "crossDeviceAttributionModelId"]
         nullable_fields = ["weight", "crossDeviceAttributionModelId"]
         null_default_fields = []
 
