@@ -1,10 +1,10 @@
 <!-- Start SDK Example Usage [usage] -->
 ```python
 # Synchronous Example
-import dateutil.parser
 import os
 import ttd_workflows
 from ttd_workflows import Workflows
+from ttd_workflows.utils import parse_datetime
 
 
 with Workflows(
@@ -43,8 +43,8 @@ with Workflows(
                 "cpcv_in_advertiser_currency": 8133.97,
                 "miaozhen_otp_in_percent": 8891.64,
             },
-            "start_date_in_utc": dateutil.parser.isoparse("2023-01-06T22:59:38.009Z"),
-            "end_date_in_utc": dateutil.parser.isoparse("2025-09-26T06:26:29.839Z"),
+            "start_date_in_utc": parse_datetime("2023-01-06T22:59:38.009Z"),
+            "end_date_in_utc": parse_datetime("2025-09-26T06:26:29.839Z"),
             "seed_id": "<id>",
             "campaign_conversion_reporting_columns": [
                 {
@@ -91,8 +91,8 @@ with Workflows(
         "campaign_create_advanced_input": {
             "flights": [
                 {
-                    "start_date_inclusive_utc": dateutil.parser.isoparse("2024-06-28T18:56:13.043Z"),
-                    "end_date_exclusive_utc": dateutil.parser.isoparse("2024-10-30T06:59:44.964Z"),
+                    "start_date_inclusive_utc": parse_datetime("2024-06-28T18:56:13.043Z"),
+                    "end_date_exclusive_utc": parse_datetime("2024-10-30T06:59:44.964Z"),
                     "budget_in_advertiser_currency": 5200.49,
                     "budget_in_impressions": 728836,
                     "daily_target_in_advertiser_currency": 8007.59,
@@ -376,10 +376,10 @@ The same SDK client can also be used to make asychronous requests by importing a
 ```python
 # Asynchronous Example
 import asyncio
-import dateutil.parser
 import os
 import ttd_workflows
 from ttd_workflows import Workflows
+from ttd_workflows.utils import parse_datetime
 
 async def main():
 
@@ -419,8 +419,8 @@ async def main():
                     "cpcv_in_advertiser_currency": 8133.97,
                     "miaozhen_otp_in_percent": 8891.64,
                 },
-                "start_date_in_utc": dateutil.parser.isoparse("2023-01-06T22:59:38.009Z"),
-                "end_date_in_utc": dateutil.parser.isoparse("2025-09-26T06:26:29.839Z"),
+                "start_date_in_utc": parse_datetime("2023-01-06T22:59:38.009Z"),
+                "end_date_in_utc": parse_datetime("2025-09-26T06:26:29.839Z"),
                 "seed_id": "<id>",
                 "campaign_conversion_reporting_columns": [
                     {
@@ -467,8 +467,8 @@ async def main():
             "campaign_create_advanced_input": {
                 "flights": [
                     {
-                        "start_date_inclusive_utc": dateutil.parser.isoparse("2024-06-28T18:56:13.043Z"),
-                        "end_date_exclusive_utc": dateutil.parser.isoparse("2024-10-30T06:59:44.964Z"),
+                        "start_date_inclusive_utc": parse_datetime("2024-06-28T18:56:13.043Z"),
+                        "end_date_exclusive_utc": parse_datetime("2024-10-30T06:59:44.964Z"),
                         "budget_in_advertiser_currency": 5200.49,
                         "budget_in_impressions": 728836,
                         "daily_target_in_advertiser_currency": 8007.59,

@@ -41,7 +41,7 @@ with Workflows(
 
 ### Response
 
-**[models.PostGraphqlResponse](../../models/postgraphqlresponse.md)**
+**[Dict[str, Any]](../../models/.md)**
 
 ### Errors
 
