@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 9dbf402a7daacd4a181cf92539988565
+  docChecksum: 885ee03bedb0d4200d410e3fb5422b24
   docVersion: v1
-  speakeasyVersion: 1.534.0
-  generationVersion: 2.585.0
-  releaseVersion: 0.2.1
-  configChecksum: 8d146dfc923c6463cfa0e3a9049361de
+  speakeasyVersion: 1.537.0
+  generationVersion: 2.588.0
+  releaseVersion: 0.2.2
+  configChecksum: 3a5facd1323400218f540c6da005c929
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
@@ -14,7 +14,7 @@ features:
   python:
     additionalDependencies: 1.0.0
     additionalProperties: 1.0.1
-    core: 5.14.0
+    core: 5.15.0
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     enumUnions: 0.1.0
@@ -84,7 +84,6 @@ generatedFiles:
   - docs/models/enhancednielsenreportingoptions.md
   - docs/models/getcampaignidversionrequest.md
   - docs/models/graphqlqueryinput.md
-  - docs/models/postgraphqlresponse.md
   - docs/models/problemdetails.md
   - docs/models/problemdetailserror.md
   - docs/models/security.md
@@ -159,7 +158,6 @@ generatedFiles:
   - src/ttd_workflows/models/enhancednielsenreportingoptions.py
   - src/ttd_workflows/models/get_campaign_id_versionop.py
   - src/ttd_workflows/models/graphqlqueryinput.py
-  - src/ttd_workflows/models/post_graphqlop.py
   - src/ttd_workflows/models/problemdetails.py
   - src/ttd_workflows/models/problemdetails_error.py
   - src/ttd_workflows/models/security.py
@@ -174,6 +172,7 @@ generatedFiles:
   - src/ttd_workflows/types/basemodel.py
   - src/ttd_workflows/utils/__init__.py
   - src/ttd_workflows/utils/annotations.py
+  - src/ttd_workflows/utils/datetimes.py
   - src/ttd_workflows/utils/enums.py
   - src/ttd_workflows/utils/eventstreaming.py
   - src/ttd_workflows/utils/forms.py
@@ -213,7 +212,7 @@ examples:
         application/json: {"query": "<value>"}
       responses:
         "200":
-          application/json: {}
+          application/json: {"key": "<value>"}
         "400":
           application/json: {"type": "<value>", "title": "<value>", "status": 246815, "detail": "<value>", "instance": "<value>", "key": {}}
   post_/seed:
