@@ -10,28 +10,48 @@ from ttd_workflows.types import (
     UNSET,
     UNSET_SENTINEL,
 )
+from typing import List
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class CampaignVersionWorkflowTypedDict(TypedDict):
-    id: Nullable[str]
-    version: NotRequired[Nullable[str]]
-    budgeting_version: NotRequired[Nullable[str]]
+class AdGroupUpdateComscoreSettingsInputTypedDict(TypedDict):
+    is_enabled: NotRequired[Nullable[bool]]
+    population_id: NotRequired[Nullable[int]]
+    demographic_member_ids: NotRequired[Nullable[List[int]]]
+    mobile_demographic_member_ids: NotRequired[Nullable[List[int]]]
 
 
-class CampaignVersionWorkflow(BaseModel):
-    id: Annotated[Nullable[str], pydantic.Field(alias="Id")]
+class AdGroupUpdateComscoreSettingsInput(BaseModel):
+    is_enabled: Annotated[OptionalNullable[bool], pydantic.Field(alias="isEnabled")] = (
+        UNSET
+    )
 
-    version: OptionalNullable[str] = UNSET
+    population_id: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="populationId")
+    ] = UNSET
 
-    budgeting_version: Annotated[
-        OptionalNullable[str], pydantic.Field(alias="budgetingVersion")
+    demographic_member_ids: Annotated[
+        OptionalNullable[List[int]], pydantic.Field(alias="demographicMemberIds")
+    ] = UNSET
+
+    mobile_demographic_member_ids: Annotated[
+        OptionalNullable[List[int]], pydantic.Field(alias="mobileDemographicMemberIds")
     ] = UNSET
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["version", "budgetingVersion"]
-        nullable_fields = ["Id", "version", "budgetingVersion"]
+        optional_fields = [
+            "isEnabled",
+            "populationId",
+            "demographicMemberIds",
+            "mobileDemographicMemberIds",
+        ]
+        nullable_fields = [
+            "isEnabled",
+            "populationId",
+            "demographicMemberIds",
+            "mobileDemographicMemberIds",
+        ]
         null_default_fields = []
 
         serialized = handler(self)
