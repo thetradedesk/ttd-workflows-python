@@ -229,41 +229,6 @@ paths:
           description: Service Unavailable
 components:
   schemas:
-    AdGroupAdvancedSettingsInput:
-      type: object
-      properties:
-        flights:
-          type: array
-          items:
-            $ref: '#/components/schemas/AdGroupFlightInput'
-          nullable: true
-        koaOptimizationSettings:
-          $ref: '#/components/schemas/AdGroupKoaOptimizationSettingsInput'
-        comscoreSettings:
-          $ref: '#/components/schemas/AdGroupComscoreSettingsInput'
-        contractTargeting:
-          $ref: '#/components/schemas/AdGroupContractTargetingInput'
-        dimensionalBiddingAutoOptimizationSettings:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/DimensionalBiddingDimensions'
-          nullable: true
-        isUseClicksAsConversionsEnabled:
-          type: boolean
-          nullable: true
-        isUseSecondaryConversionsEnabled:
-          type: boolean
-          nullable: true
-        nielsenTrackingAttributes:
-          $ref: '#/components/schemas/AdGroupNielsenTrackingAttributesInput'
-        newFrequencyConfigs:
-          type: array
-          items:
-            $ref: '#/components/schemas/AdGroupNewFrequencyConfigInput'
-          nullable: true
-      additionalProperties: false
     AdGroupAssociateBidList:
       required:
         - bidListId
@@ -489,6 +454,122 @@ components:
           type: boolean
           nullable: true
       additionalProperties: false
+    AdGroupCreateAdGroupFlightInput:
+      required:
+        - campaignFlightId
+      type: object
+      properties:
+        allocationType:
+          $ref: '#/components/schemas/AllocationType'
+        budgetInAdvertiserCurrency:
+          type: number
+          format: double
+          nullable: true
+        budgetInImpressions:
+          type: integer
+          format: int64
+          nullable: true
+        dailyTargetInAdvertiserCurrency:
+          type: number
+          format: double
+          nullable: true
+        dailyTargetInImpressions:
+          type: integer
+          format: int64
+          nullable: true
+        campaignFlightId:
+          type: integer
+          format: int64
+      additionalProperties: false
+    AdGroupCreateAdvancedSettingsInput:
+      type: object
+      properties:
+        koaOptimizationSettings:
+          $ref: '#/components/schemas/AdGroupKoaOptimizationSettingsInput'
+        comscoreSettings:
+          $ref: '#/components/schemas/AdGroupComscoreSettingsInput'
+        contractTargeting:
+          $ref: '#/components/schemas/AdGroupContractTargetingInput'
+        dimensionalBiddingAutoOptimizationSettings:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/DimensionalBiddingDimensions'
+          nullable: true
+        isUseClicksAsConversionsEnabled:
+          type: boolean
+          nullable: true
+        isUseSecondaryConversionsEnabled:
+          type: boolean
+          nullable: true
+        nielsenTrackingAttributes:
+          $ref: '#/components/schemas/AdGroupNielsenTrackingAttributesInput'
+        newFrequencyConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdGroupNewFrequencyConfigInput'
+          nullable: true
+        flights:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdGroupCreateAdGroupFlightInput'
+          nullable: true
+      additionalProperties: false
+    AdGroupCreateWorkflowInput:
+      required:
+        - campaignId
+        - channel
+        - funnelLocation
+        - name
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        isEnabled:
+          type: boolean
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        programmaticGuaranteedPrivateContractId:
+          type: string
+          nullable: true
+        channel:
+          $ref: '#/components/schemas/AdGroupChannel'
+        funnelLocation:
+          $ref: '#/components/schemas/AdGroupFunnelLocation'
+        budget:
+          $ref: '#/components/schemas/AdGroupBudgetInput'
+        baseBidCPMInAdvertiserCurrency:
+          type: number
+          format: double
+          nullable: true
+        maxBidCPMInAdvertiserCurrency:
+          type: number
+          format: double
+          nullable: true
+        audienceTargeting:
+          $ref: '#/components/schemas/AdGroupAudienceTargetingInput'
+        roiGoal:
+          $ref: '#/components/schemas/AdGroupRoiGoalInput'
+        creativeIds:
+          type: array
+          items:
+            type: string
+          nullable: true
+        associatedBidLists:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdGroupAssociateBidListInput'
+          nullable: true
+        campaignId:
+          type: string
+          nullable: true
+        advancedSettings:
+          $ref: '#/components/schemas/AdGroupCreateAdvancedSettingsInput'
+      additionalProperties: false
     AdGroupFlight:
       required:
         - adGroupId
@@ -519,28 +600,6 @@ components:
           format: int64
         adGroupId:
           type: string
-          nullable: true
-      additionalProperties: false
-    AdGroupFlightInput:
-      type: object
-      properties:
-        allocationType:
-          $ref: '#/components/schemas/AllocationType'
-        budgetInAdvertiserCurrency:
-          type: number
-          format: double
-          nullable: true
-        budgetInImpressions:
-          type: integer
-          format: int64
-          nullable: true
-        dailyTargetInAdvertiserCurrency:
-          type: number
-          format: double
-          nullable: true
-        dailyTargetInImpressions:
-          type: integer
-          format: int64
           nullable: true
       additionalProperties: false
     AdGroupFunnelLocation:
@@ -632,6 +691,12 @@ components:
           items:
             type: string
           nullable: true
+      additionalProperties: false
+    AdGroupPayload:
+      type: object
+      properties:
+        adGroup:
+          $ref: '#/components/schemas/AdGroupWorkflow'
       additionalProperties: false
     AdGroupRoiGoal:
       type: object
@@ -733,16 +798,224 @@ components:
           format: double
           nullable: true
       additionalProperties: false
+    AdGroupUpdateAdGroupFlightInput:
+      required:
+        - campaignFlightId
+      type: object
+      properties:
+        allocationType:
+          $ref: '#/components/schemas/AllocationType'
+        budgetInAdvertiserCurrency:
+          type: number
+          format: double
+          nullable: true
+        budgetInImpressions:
+          type: integer
+          format: int64
+          nullable: true
+        dailyTargetInAdvertiserCurrency:
+          type: number
+          format: double
+          nullable: true
+        dailyTargetInImpressions:
+          type: integer
+          format: int64
+          nullable: true
+        campaignFlightId:
+          type: integer
+          format: int64
+      additionalProperties: false
+    AdGroupUpdateAdvancedSettingsInput:
+      type: object
+      properties:
+        flights:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdGroupUpdateAdGroupFlightInput'
+          nullable: true
+        koaOptimizationSettings:
+          $ref: '#/components/schemas/AdGroupKoaOptimizationSettingsInput'
+        comscoreSettings:
+          $ref: '#/components/schemas/AdGroupUpdateComscoreSettingsInput'
+        contractTargeting:
+          $ref: '#/components/schemas/AdGroupContractTargetingInput'
+        dimensionalBiddingAutoOptimizationSettings:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/DimensionalBiddingDimensions'
+          nullable: true
+        isUseClicksAsConversionsEnabled:
+          type: boolean
+          nullable: true
+        isUseSecondaryConversionsEnabled:
+          type: boolean
+          nullable: true
+        nielsenTrackingAttributes:
+          $ref: '#/components/schemas/AdGroupUpdateNielsenTrackingAttributesInputWorkflowsOptional'
+        newFrequencyConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdGroupNewFrequencyConfigInput'
+          nullable: true
+      additionalProperties: false
+    AdGroupUpdateAudienceTargetingInput:
+      type: object
+      properties:
+        audienceId:
+          $ref: '#/components/schemas/StringWorkflowsOptional'
+        audienceAcceleratorExclusionsEnabled:
+          type: boolean
+          nullable: true
+        audienceBoosterEnabled:
+          type: boolean
+          nullable: true
+        audienceExcluderEnabled:
+          type: boolean
+          nullable: true
+        audiencePredictorEnabled:
+          type: boolean
+          nullable: true
+        crossDeviceVendorListForAudience:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+        recencyExclusionWindowInMinutes:
+          type: integer
+          format: int32
+          nullable: true
+        targetTrackableUsersEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    AdGroupUpdateBudgetInput:
+      type: object
+      properties:
+        allocationType:
+          $ref: '#/components/schemas/AllocationType'
+        budgetInAdvertiserCurrency:
+          type: number
+          format: double
+          nullable: true
+        budgetInImpressions:
+          $ref: '#/components/schemas/Int64NullableWorkflowsOptional'
+        dailyTargetInAdvertiserCurrency:
+          $ref: '#/components/schemas/DecimalNullableWorkflowsOptional'
+        dailyTargetInImpressions:
+          $ref: '#/components/schemas/Int64NullableWorkflowsOptional'
+      additionalProperties: false
+    AdGroupUpdateComscoreSettingsInput:
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+        populationId:
+          type: integer
+          format: int32
+          nullable: true
+        demographicMemberIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+        mobileDemographicMemberIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+      additionalProperties: false
+    AdGroupUpdateNielsenTrackingAttributesInput:
+      type: object
+      properties:
+        enhancedReportingOption:
+          $ref: '#/components/schemas/EnhancedNielsenReportingOptions'
+        gender:
+          $ref: '#/components/schemas/TargetingGender'
+        startAge:
+          $ref: '#/components/schemas/TargetingStartAge'
+        endAge:
+          $ref: '#/components/schemas/TargetingEndAge'
+        countries:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    AdGroupUpdateNielsenTrackingAttributesInputWorkflowsOptional:
+      type: object
+      properties:
+        hasValue:
+          type: boolean
+          readOnly: true
+        value:
+          $ref: '#/components/schemas/AdGroupUpdateNielsenTrackingAttributesInput'
+      additionalProperties: false
+    AdGroupUpdateWorkflowInput:
+      required:
+        - id
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        isEnabled:
+          type: boolean
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        channel:
+          $ref: '#/components/schemas/AdGroupChannel'
+        funnelLocation:
+          $ref: '#/components/schemas/AdGroupFunnelLocation'
+        budget:
+          $ref: '#/components/schemas/AdGroupUpdateBudgetInput'
+        baseBidCPMInAdvertiserCurrency:
+          type: number
+          format: double
+          nullable: true
+        maxBidCPMInAdvertiserCurrency:
+          type: number
+          format: double
+          nullable: true
+        audienceTargeting:
+          $ref: '#/components/schemas/AdGroupUpdateAudienceTargetingInput'
+        roiGoal:
+          $ref: '#/components/schemas/AdGroupRoiGoalInput'
+        creativeIds:
+          type: array
+          items:
+            type: string
+          nullable: true
+        associatedBidLists:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdGroupAssociateBidListInput'
+          nullable: true
+        advancedSettings:
+          $ref: '#/components/schemas/AdGroupUpdateAdvancedSettingsInput'
+      additionalProperties: false
     AdGroupWorkflow:
       required:
         - associatedBidLists
         - budget
         - campaignId
+        - channel
         - comscoreSettings
         - contractTargeting
         - creativeIds
         - dimensionalBiddingAutoOptimizationSettings
         - flights
+        - funnelLocation
         - id
         - isEnabled
         - isUseClicksAsConversionsEnabled
@@ -768,17 +1041,17 @@ components:
         programmaticGuaranteedPrivateContractId:
           type: string
           nullable: true
-        channelType:
+        channel:
           $ref: '#/components/schemas/AdGroupChannel'
         funnelLocation:
           $ref: '#/components/schemas/AdGroupFunnelLocation'
         budget:
           $ref: '#/components/schemas/AdGroupBudget'
-        baseBidCpmInAdvertiserCurrency:
+        baseBidCPMInAdvertiserCurrency:
           type: number
           format: double
           nullable: true
-        maxBidCpmInAdvertiserCurrency:
+        maxBidCPMInAdvertiserCurrency:
           type: number
           format: double
           nullable: true
@@ -862,11 +1135,6 @@ components:
         name:
           type: string
           nullable: true
-        userErrors:
-          type: array
-          items:
-            $ref: '#/components/schemas/UserError'
-          nullable: true
       additionalProperties: false
     CampaignChannelType:
       enum:
@@ -894,7 +1162,7 @@ components:
         reportingColumnId:
           type: integer
           format: int32
-        roasConfig:
+        ROASConfig:
           $ref: '#/components/schemas/CustomROASConfig'
         weight:
           type: number
@@ -903,6 +1171,113 @@ components:
         crossDeviceAttributionModelId:
           type: string
           nullable: true
+      additionalProperties: false
+    CampaignCreateAdGroupAdvancedSettingsInput:
+      type: object
+      properties:
+        koaOptimizationSettings:
+          $ref: '#/components/schemas/AdGroupKoaOptimizationSettingsInput'
+        comscoreSettings:
+          $ref: '#/components/schemas/AdGroupComscoreSettingsInput'
+        contractTargeting:
+          $ref: '#/components/schemas/AdGroupContractTargetingInput'
+        dimensionalBiddingAutoOptimizationSettings:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/DimensionalBiddingDimensions'
+          nullable: true
+        isUseClicksAsConversionsEnabled:
+          type: boolean
+          nullable: true
+        isUseSecondaryConversionsEnabled:
+          type: boolean
+          nullable: true
+        nielsenTrackingAttributes:
+          $ref: '#/components/schemas/AdGroupNielsenTrackingAttributesInput'
+        newFrequencyConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdGroupNewFrequencyConfigInput'
+          nullable: true
+        flights:
+          type: array
+          items:
+            $ref: '#/components/schemas/CampaignCreateAdGroupFlightInput'
+          nullable: true
+      additionalProperties: false
+    CampaignCreateAdGroupFlightInput:
+      type: object
+      properties:
+        allocationType:
+          $ref: '#/components/schemas/AllocationType'
+        budgetInAdvertiserCurrency:
+          type: number
+          format: double
+          nullable: true
+        budgetInImpressions:
+          type: integer
+          format: int64
+          nullable: true
+        dailyTargetInAdvertiserCurrency:
+          type: number
+          format: double
+          nullable: true
+        dailyTargetInImpressions:
+          type: integer
+          format: int64
+          nullable: true
+      additionalProperties: false
+    CampaignCreateAdGroupInput:
+      required:
+        - channel
+        - funnelLocation
+        - name
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        isEnabled:
+          type: boolean
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        programmaticGuaranteedPrivateContractId:
+          type: string
+          nullable: true
+        channel:
+          $ref: '#/components/schemas/AdGroupChannel'
+        funnelLocation:
+          $ref: '#/components/schemas/AdGroupFunnelLocation'
+        budget:
+          $ref: '#/components/schemas/AdGroupBudgetInput'
+        baseBidCPMInAdvertiserCurrency:
+          type: number
+          format: double
+          nullable: true
+        maxBidCPMInAdvertiserCurrency:
+          type: number
+          format: double
+          nullable: true
+        audienceTargeting:
+          $ref: '#/components/schemas/AdGroupAudienceTargetingInput'
+        roiGoal:
+          $ref: '#/components/schemas/AdGroupRoiGoalInput'
+        creativeIds:
+          type: array
+          items:
+            type: string
+          nullable: true
+        associatedBidLists:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdGroupAssociateBidListInput'
+          nullable: true
+        advancedSettings:
+          $ref: '#/components/schemas/CampaignCreateAdGroupAdvancedSettingsInput'
       additionalProperties: false
     CampaignCreateROIGoalWorkflow:
       type: object
@@ -978,7 +1353,7 @@ components:
         adGroups:
           type: array
           items:
-            $ref: '#/components/schemas/CampaignCreationAdGroupInput'
+            $ref: '#/components/schemas/CampaignCreateAdGroupInput'
           nullable: true
         validationOnly:
           type: boolean
@@ -1040,56 +1415,6 @@ components:
           items:
             $ref: '#/components/schemas/CampaignConversionReportingColumnWorkflow'
           nullable: true
-      additionalProperties: false
-    CampaignCreationAdGroupInput:
-      required:
-        - channel
-        - funnelLocation
-        - name
-      type: object
-      properties:
-        name:
-          minLength: 1
-          type: string
-        isEnabled:
-          type: boolean
-          nullable: true
-        description:
-          type: string
-          nullable: true
-        programmaticGuaranteedPrivateContractId:
-          type: string
-          nullable: true
-        channel:
-          $ref: '#/components/schemas/AdGroupChannel'
-        funnelLocation:
-          $ref: '#/components/schemas/AdGroupFunnelLocation'
-        budget:
-          $ref: '#/components/schemas/AdGroupBudgetInput'
-        baseBidCpmInAdvertiserCurrency:
-          type: number
-          format: double
-          nullable: true
-        maxBidCpmInAdvertiserCurrency:
-          type: number
-          format: double
-          nullable: true
-        audienceTargeting:
-          $ref: '#/components/schemas/AdGroupAudienceTargetingInput'
-        roiGoal:
-          $ref: '#/components/schemas/AdGroupRoiGoalInput'
-        creativeIds:
-          type: array
-          items:
-            type: string
-          nullable: true
-        associatedBidLists:
-          type: array
-          items:
-            $ref: '#/components/schemas/AdGroupAssociateBidListInput'
-          nullable: true
-        advancedSettings:
-          $ref: '#/components/schemas/AdGroupAdvancedSettingsInput'
       additionalProperties: false
     CampaignFlightWorkflow:
       required:
@@ -1160,7 +1485,7 @@ components:
         - PaceToDailyCap
         - PaceAsSoonAsPossible
       type: string
-    CampaignPayload:
+    CampaignSinglePayload:
       type: object
       properties:
         campaign:
@@ -1170,18 +1495,13 @@ components:
           items:
             $ref: '#/components/schemas/AdGroupWorkflow'
           nullable: true
-        userErrors:
-          type: array
-          items:
-            $ref: '#/components/schemas/UserError'
-          nullable: true
       additionalProperties: false
     CampaignVersionWorkflow:
       required:
-        - id
+        - Id
       type: object
       properties:
-        id:
+        Id:
           type: string
           nullable: true
         version:
@@ -1195,8 +1515,6 @@ components:
       required:
         - id
         - name
-        - primaryChannel
-        - primaryGoal
       type: object
       properties:
         id:
@@ -1273,6 +1591,17 @@ components:
           format: double
           nullable: true
         customROASViewthroughWeight:
+          type: number
+          format: double
+          nullable: true
+      additionalProperties: false
+    DecimalNullableWorkflowsOptional:
+      type: object
+      properties:
+        hasValue:
+          type: boolean
+          readOnly: true
+        value:
           type: number
           format: double
           nullable: true
@@ -1391,6 +1720,17 @@ components:
           nullable: true
       additionalProperties: false
       description: Required fields for executing a GraphQL query
+    Int64NullableWorkflowsOptional:
+      type: object
+      properties:
+        hasValue:
+          type: boolean
+          readOnly: true
+        value:
+          type: integer
+          format: int64
+          nullable: true
+      additionalProperties: false
     ProblemDetails:
       type: object
       properties:
@@ -1412,6 +1752,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    StringWorkflowsOptional:
+      type: object
+      properties:
+        hasValue:
+          type: boolean
+          readOnly: true
+        value:
+          type: string
+          nullable: true
+      additionalProperties: false
     TargetingEndAge:
       enum:
         - Seventeen
@@ -1447,21 +1797,6 @@ components:
         - FiftyFive
         - SixtyFive
       type: string
-    UserError:
-      required:
-        - field
-        - message
-      type: object
-      properties:
-        message:
-          type: string
-          nullable: true
-        field:
-          type: array
-          items:
-            type: string
-          nullable: true
-      additionalProperties: false
   securitySchemes:
     TTD-Auth:
       type: apiKey
