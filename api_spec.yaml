@@ -17,6 +17,49 @@ x-speakeasy-retries:
     - 5XX
   retryConnectionErrors: true
 paths:
+  /adgroup:
+    post:
+      tags:
+        - AdGroup
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdGroupCreateWorkflowInput'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdGroupPayload'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    patch:
+      tags:
+        - AdGroup
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdGroupUpdateWorkflowInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdGroupPayload'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
   /campaign:
     post:
       tags:
@@ -33,7 +76,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CampaignPayload'
+                $ref: '#/components/schemas/CampaignSinglePayload'
         '400':
           description: Bad Request
           content:
@@ -44,7 +87,7 @@ paths:
     post:
       tags:
         - Campaign
-      summary: Create a new campaign with required fields
+      summary: Create a list of campaigns with required fields. `ValidationOnly` value should be the same for all campaigns.
       requestBody:
         content:
           application/json:
@@ -61,6 +104,33 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/CampaignBulkPayload'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /campaign/archive:
+    post:
+      tags:
+        - Campaign
+      summary: Archive a list of campaigns
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+      responses:
+        '204':
+          description: No Content
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
         '400':
           description: Bad Request
           content:
