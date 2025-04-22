@@ -123,7 +123,6 @@ from .graphqlqueryinput import (
     Variables,
     VariablesTypedDict,
 )
-from .post_graphqlop import PostGraphqlResponse, PostGraphqlResponseTypedDict
 from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
 from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
 from .security import Security, SecurityTypedDict
@@ -217,8 +216,6 @@ __all__ = [
     "GetCampaignIDVersionRequestTypedDict",
     "GraphQLQueryInput",
     "GraphQLQueryInputTypedDict",
-    "PostGraphqlResponse",
-    "PostGraphqlResponseTypedDict",
     "ProblemDetails",
     "ProblemDetailsError",
     "ProblemDetailsErrorData",
