@@ -4,7 +4,7 @@ info:
   description: A RESTful service for commonly used workflows.
   version: v1
 servers:
-  - url: https://api.thetradedesk.com/workflows
+  - url: https://jennifertenzer-dev.switch.dev.gen.adsrvr.org/workflows
     description: The Trade Desk Workflows API
 x-speakeasy-retries:
   strategy: backoff
@@ -60,6 +60,108 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+  /bulkjob/submit/1PD:
+    post:
+      tags:
+        - BulkJob
+      summary: Submits a query for First Party Data to Hydra
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Submit1PDInput'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Submit1PDInput'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Submit1PDInput'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkJobSubmitResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+        '503':
+          description: Service Unavailable
+  '/bulkjob/{id}/status':
+    get:
+      tags:
+        - BulkJob
+      summary: Get the status of a bulk job you submitted earlier
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkJobStatusResponse'
+        '302':
+          description: Found
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+        '503':
+          description: Service Unavailable
   /campaign:
     post:
       tags:
@@ -1124,6 +1226,54 @@ components:
           format: int64
           nullable: true
       additionalProperties: false
+    BulkJobStatusResponse:
+      required:
+        - completionPercentage
+        - createdAtUtc
+        - id
+        - status
+      type: object
+      properties:
+        id:
+          type: integer
+          description: ID of the bulk job.
+          format: int64
+        completedAtUtc:
+          type: string
+          description: Time of completion for this bulk job in UTC.
+          format: date-time
+          nullable: true
+        completionPercentage:
+          type: number
+          description: Completion percentage for that bulk job.
+          format: double
+        createdAtUtc:
+          type: string
+          description: Time of creation for that bulk job in UTC.
+          format: date-time
+        status:
+          minLength: 1
+          type: string
+          description: Status of that bulk job.
+        url:
+          type: string
+          description: The url where the result can be picked up
+          nullable: true
+        gqlErrors:
+          type: string
+          description: Any GraphQl errors
+          nullable: true
+      additionalProperties: false
+    BulkJobSubmitResponse:
+      required:
+        - id
+      type: object
+      properties:
+        id:
+          type: integer
+          description: ID of the bulk job.
+          format: int64
+      additionalProperties: false
     CampaignBulkPayload:
       required:
         - name
@@ -1762,6 +1912,17 @@ components:
           type: string
           nullable: true
       additionalProperties: false
+    Submit1PDInput:
+      required:
+        - advertiserId
+      type: object
+      properties:
+        advertiserId:
+          minLength: 1
+          type: string
+          description: The advertiser id to query for.
+      additionalProperties: false
+      description: Required fields for submitting a bulk job for 1PD
     TargetingEndAge:
       enum:
         - Seventeen
