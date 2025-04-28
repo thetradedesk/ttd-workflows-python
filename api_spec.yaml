@@ -4,7 +4,7 @@ info:
   description: A RESTful service for commonly used workflows.
   version: v1
 servers:
-  - url: https://api.thetradedesk.com/workflows
+  - url: https://jennifertenzer-dev.switch.dev.gen.adsrvr.org/workflows
     description: The Trade Desk Workflows API
 x-speakeasy-retries:
   strategy: backoff
@@ -114,6 +114,7 @@ paths:
             application/json:
               schema:
                 type: object
+		additionalProperties: true
         '503':
           description: Service Unavailable
   '/bulkjob/{id}/status':
@@ -181,6 +182,7 @@ paths:
             application/json:
               schema:
                 type: object
+		additionalProperties: true
         '503':
           description: Service Unavailable
   /campaign:
