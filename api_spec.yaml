@@ -114,7 +114,7 @@ paths:
             application/json:
               schema:
                 type: object
-		additionalProperties: true
+                additionalProperties: true
         '503':
           description: Service Unavailable
   '/bulkjob/{id}/status':
@@ -182,7 +182,7 @@ paths:
             application/json:
               schema:
                 type: object
-		additionalProperties: true
+                additionalProperties: true
         '503':
           description: Service Unavailable
   /campaign:
