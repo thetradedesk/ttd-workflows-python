@@ -60,7 +60,40 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
-  /bulkjob/submit/1PD:
+  /adgroup/archive:
+    post:
+      tags:
+        - AdGroup
+      summary: Archive a list of AdGroups
+      parameters:
+        - name: forceArchive
+          in: query
+          schema:
+            type: boolean
+            default: false
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /bulkjob/firstpartydata:
     post:
       tags:
         - BulkJob
@@ -69,13 +102,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Submit1PDInput'
+              $ref: '#/components/schemas/FirstPartyDataInput'
           text/json:
             schema:
-              $ref: '#/components/schemas/Submit1PDInput'
+              $ref: '#/components/schemas/FirstPartyDataInput'
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Submit1PDInput'
+              $ref: '#/components/schemas/FirstPartyDataInput'
       responses:
         '202':
           description: Accepted
@@ -109,6 +142,10 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
         '503':
           description: Service Unavailable
   '/bulkjob/{id}/status':
@@ -130,10 +167,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BulkJobStatusResponse'
-        '302':
-          description: Found
-        '204':
-          description: No Content
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkJobStatusResponse'
         '400':
           description: Bad Request
           content:
@@ -160,6 +199,10 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
         '503':
           description: Service Unavailable
   /campaign:
@@ -217,6 +260,12 @@ paths:
       tags:
         - Campaign
       summary: Archive a list of campaigns
+      parameters:
+        - name: forceArchive
+          in: query
+          schema:
+            type: boolean
+            default: false
       requestBody:
         content:
           application/json:
@@ -225,8 +274,8 @@ paths:
               items:
                 type: string
       responses:
-        '204':
-          description: No Content
+        '200':
+          description: OK
           content:
             application/json:
               schema:
@@ -283,16 +332,16 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal Server Error
-  /graphql:
+  /graphql-request:
     post:
       tags:
         - GraphQL
-      summary: An endpoint that executes valid GraphQL queries.
+      summary: An endpoint that executes valid GraphQL queries or mutations.
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GraphQLQueryInput'
+              $ref: '#/components/schemas/GraphQLRequestInput'
       responses:
         '200':
           description: OK
@@ -1259,6 +1308,10 @@ components:
           type: string
           description: The url where the result can be picked up
           nullable: true
+        rawResult:
+          type: string
+          description: The raw result if the response is small enough
+          nullable: true
         gqlErrors:
           type: string
           description: Any GraphQl errors
@@ -1855,12 +1908,23 @@ components:
         - Audience
         - Site
       type: string
-    GraphQLQueryInput:
+    FirstPartyDataInput:
       required:
-        - query
+        - advertiserId
       type: object
       properties:
-        query:
+        advertiserId:
+          minLength: 1
+          type: string
+          description: The advertiser id to query for.
+      additionalProperties: false
+      description: Required fields for submitting a bulk job for first party data
+    GraphQLRequestInput:
+      required:
+        - request
+      type: object
+      properties:
+        request:
           minLength: 1
           type: string
           description: The GraphQL query to execute.
@@ -1912,17 +1976,6 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    Submit1PDInput:
-      required:
-        - advertiserId
-      type: object
-      properties:
-        advertiserId:
-          minLength: 1
-          type: string
-          description: The advertiser id to query for.
-      additionalProperties: false
-      description: Required fields for submitting a bulk job for 1PD
     TargetingEndAge:
       enum:
         - Seventeen
