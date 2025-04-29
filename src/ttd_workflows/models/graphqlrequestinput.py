@@ -20,19 +20,19 @@ class Variables(BaseModel):
     r"""Variables to substitute into the query."""
 
 
-class GraphQLQueryInputTypedDict(TypedDict):
+class GraphQLRequestInputTypedDict(TypedDict):
     r"""Required fields for executing a GraphQL query"""
 
-    query: str
+    request: str
     r"""The GraphQL query to execute."""
     variables: NotRequired[Nullable[VariablesTypedDict]]
     r"""Variables to substitute into the query."""
 
 
-class GraphQLQueryInput(BaseModel):
+class GraphQLRequestInput(BaseModel):
     r"""Required fields for executing a GraphQL query"""
 
-    query: str
+    request: str
     r"""The GraphQL query to execute."""
 
     variables: OptionalNullable[Variables] = UNSET

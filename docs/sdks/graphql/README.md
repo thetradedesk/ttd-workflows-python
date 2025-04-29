@@ -1,15 +1,15 @@
-# Graphql
-(*graphql*)
+# GraphQL
+(*graph_ql*)
 
 ## Overview
 
 ### Available Operations
 
-* [execute](#execute) - An endpoint that executes valid GraphQL queries.
+* [post_graphql_request](#post_graphql_request) - An endpoint that executes valid GraphQL queries or mutations.
 
-## execute
+## post_graphql_request
 
-An endpoint that executes valid GraphQL queries.
+An endpoint that executes valid GraphQL queries or mutations.
 
 ### Example Usage
 
@@ -22,8 +22,8 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.graphql.execute(request={
-        "query": "<value>",
+    res = workflows.graph_ql.post_graphql_request(request={
+        "request": "<value>",
         "variables": {},
     })
 
@@ -36,7 +36,7 @@ with Workflows(
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `request`                                                           | [models.GraphQLQueryInput](../../models/graphqlqueryinput.md)       | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `request`                                                           | [models.GraphQLRequestInput](../../models/graphqlrequestinput.md)   | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response

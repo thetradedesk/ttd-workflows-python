@@ -617,6 +617,12 @@ with Workflows(
 
 * [post_adgroup](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md#post_adgroup)
 * [patch_adgroup](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md#patch_adgroup)
+* [post_adgroup_archive](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md#post_adgroup_archive) - Archive a list of AdGroups
+
+### [bulk_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/bulkjob/README.md)
+
+* [post_bulkjob_firstpartydata](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/bulkjob/README.md#post_bulkjob_firstpartydata) - Submits a query for First Party Data to Hydra
+* [get_bulkjob_id_status](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/bulkjob/README.md#get_bulkjob_id_status) - Get the status of a bulk job you submitted earlier
 
 ### [campaign](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md)
 
@@ -625,9 +631,9 @@ with Workflows(
 * [post_campaign_archive](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#post_campaign_archive) - Archive a list of campaigns
 * [get_version](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#get_version) - GET a campaign's version
 
-### [graphql](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphql/README.md)
+### [graph_ql](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphql/README.md)
 
-* [execute](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphql/README.md#execute) - An endpoint that executes valid GraphQL queries.
+* [post_graphql_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphql/README.md#post_graphql_request) - An endpoint that executes valid GraphQL queries or mutations.
 
 
 </details>

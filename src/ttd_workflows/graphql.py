@@ -8,19 +8,19 @@ from ttd_workflows.utils import get_security_from_env
 from typing import Any, Dict, Mapping, Optional, Union, cast
 
 
-class Graphql(BaseSDK):
-    def execute(
+class GraphQL(BaseSDK):
+    def post_graphql_request(
         self,
         *,
         request: Optional[
-            Union[models.GraphQLQueryInput, models.GraphQLQueryInputTypedDict]
+            Union[models.GraphQLRequestInput, models.GraphQLRequestInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> Dict[str, Any]:
-        r"""An endpoint that executes valid GraphQL queries.
+        r"""An endpoint that executes valid GraphQL queries or mutations.
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -39,12 +39,12 @@ class Graphql(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.GraphQLQueryInput])
-        request = cast(Optional[models.GraphQLQueryInput], request)
+            request = utils.unmarshal(request, Optional[models.GraphQLRequestInput])
+        request = cast(Optional[models.GraphQLRequestInput], request)
 
         req = self._build_request(
             method="POST",
-            path="/graphql",
+            path="/graphql-request",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -56,7 +56,7 @@ class Graphql(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.GraphQLQueryInput]
+                request, False, True, "json", Optional[models.GraphQLRequestInput]
             ),
             timeout_ms=timeout_ms,
         )
@@ -76,7 +76,7 @@ class Graphql(BaseSDK):
         http_res = self.do_request(
             hook_ctx=HookContext(
                 base_url=base_url or "",
-                operation_id="post_/graphql",
+                operation_id="post_/graphql-request",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -117,18 +117,18 @@ class Graphql(BaseSDK):
             http_res,
         )
 
-    async def execute_async(
+    async def post_graphql_request_async(
         self,
         *,
         request: Optional[
-            Union[models.GraphQLQueryInput, models.GraphQLQueryInputTypedDict]
+            Union[models.GraphQLRequestInput, models.GraphQLRequestInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> Dict[str, Any]:
-        r"""An endpoint that executes valid GraphQL queries.
+        r"""An endpoint that executes valid GraphQL queries or mutations.
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -147,12 +147,12 @@ class Graphql(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.GraphQLQueryInput])
-        request = cast(Optional[models.GraphQLQueryInput], request)
+            request = utils.unmarshal(request, Optional[models.GraphQLRequestInput])
+        request = cast(Optional[models.GraphQLRequestInput], request)
 
         req = self._build_request_async(
             method="POST",
-            path="/graphql",
+            path="/graphql-request",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -164,7 +164,7 @@ class Graphql(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.GraphQLQueryInput]
+                request, False, True, "json", Optional[models.GraphQLRequestInput]
             ),
             timeout_ms=timeout_ms,
         )
@@ -184,7 +184,7 @@ class Graphql(BaseSDK):
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
                 base_url=base_url or "",
-                operation_id="post_/graphql",
+                operation_id="post_/graphql-request",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security

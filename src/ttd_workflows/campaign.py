@@ -472,7 +472,8 @@ class Campaign(BaseSDK):
     def post_campaign_archive(
         self,
         *,
-        request: Optional[List[str]] = None,
+        force_archive: Optional[bool] = False,
+        request_body: Optional[List[str]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -480,7 +481,8 @@ class Campaign(BaseSDK):
     ) -> List[str]:
         r"""Archive a list of campaigns
 
-        :param request: The request object to send.
+        :param force_archive:
+        :param request_body:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -496,6 +498,11 @@ class Campaign(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
+        request = models.PostCampaignArchiveRequest(
+            force_archive=force_archive,
+            request_body=request_body,
+        )
+
         req = self._build_request(
             method="POST",
             path="/campaign/archive",
@@ -510,7 +517,7 @@ class Campaign(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[List[str]]
+                request.request_body, False, True, "json", Optional[List[str]]
             ),
             timeout_ms=timeout_ms,
         )
@@ -542,7 +549,7 @@ class Campaign(BaseSDK):
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "204", "application/json"):
+        if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(http_res.text, List[str])
         if utils.match_response(http_res, "400", "application/json"):
             response_data = utils.unmarshal_json(
@@ -572,7 +579,8 @@ class Campaign(BaseSDK):
     async def post_campaign_archive_async(
         self,
         *,
-        request: Optional[List[str]] = None,
+        force_archive: Optional[bool] = False,
+        request_body: Optional[List[str]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -580,7 +588,8 @@ class Campaign(BaseSDK):
     ) -> List[str]:
         r"""Archive a list of campaigns
 
-        :param request: The request object to send.
+        :param force_archive:
+        :param request_body:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -596,6 +605,11 @@ class Campaign(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
+        request = models.PostCampaignArchiveRequest(
+            force_archive=force_archive,
+            request_body=request_body,
+        )
+
         req = self._build_request_async(
             method="POST",
             path="/campaign/archive",
@@ -610,7 +624,7 @@ class Campaign(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[List[str]]
+                request.request_body, False, True, "json", Optional[List[str]]
             ),
             timeout_ms=timeout_ms,
         )
@@ -642,7 +656,7 @@ class Campaign(BaseSDK):
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "204", "application/json"):
+        if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(http_res.text, List[str])
         if utils.match_response(http_res, "400", "application/json"):
             response_data = utils.unmarshal_json(
