@@ -5,25 +5,23 @@ from ttd_workflows import models, utils
 from ttd_workflows._hooks import HookContext
 from ttd_workflows.types import BaseModel, OptionalNullable, UNSET
 from ttd_workflows.utils import get_security_from_env
-from typing import Any, List, Mapping, Optional, Union, cast
+from typing import Any, Mapping, Optional, Union, cast
 
 
-class AdGroup(BaseSDK):
-    def post_adgroup(
+class BulkJob(BaseSDK):
+    def post_bulkjob_firstpartydata(
         self,
         *,
         request: Optional[
-            Union[
-                models.AdGroupCreateWorkflowInput,
-                models.AdGroupCreateWorkflowInputTypedDict,
-            ]
+            Union[models.FirstPartyDataInput, models.FirstPartyDataInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.AdGroupPayload:
-        r"""
+    ) -> models.BulkJobSubmitResponse:
+        r"""Submits a query for First Party Data to Hydra
+
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -41,14 +39,12 @@ class AdGroup(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[models.AdGroupCreateWorkflowInput]
-            )
-        request = cast(Optional[models.AdGroupCreateWorkflowInput], request)
+            request = utils.unmarshal(request, Optional[models.FirstPartyDataInput])
+        request = cast(Optional[models.FirstPartyDataInput], request)
 
         req = self._build_request(
             method="POST",
-            path="/adgroup",
+            path="/bulkjob/firstpartydata",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -60,11 +56,7 @@ class AdGroup(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[models.AdGroupCreateWorkflowInput],
+                request, False, True, "json", Optional[models.FirstPartyDataInput]
             ),
             timeout_ms=timeout_ms,
         )
@@ -84,21 +76,23 @@ class AdGroup(BaseSDK):
         http_res = self.do_request(
             hook_ctx=HookContext(
                 base_url=base_url or "",
-                operation_id="post_/adgroup",
+                operation_id="post_/bulkjob/firstpartydata",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
             ),
             request=req,
-            error_status_codes=["400", "4XX", "5XX"],
+            error_status_codes=["400", "401", "403", "404", "4XX", "500", "503", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "201", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.AdGroupPayload)
-        if utils.match_response(http_res, "400", "application/json"):
+        if utils.match_response(http_res, "202", "application/json"):
+            return utils.unmarshal_json(http_res.text, models.BulkJobSubmitResponse)
+        if utils.match_response(
+            http_res, ["400", "401", "403", "404"], "application/json"
+        ):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )
@@ -108,7 +102,7 @@ class AdGroup(BaseSDK):
             raise models.APIError(
                 "API error occurred", http_res.status_code, http_res_text, http_res
             )
-        if utils.match_response(http_res, "5XX", "*"):
+        if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
             raise models.APIError(
                 "API error occurred", http_res.status_code, http_res_text, http_res
@@ -123,21 +117,19 @@ class AdGroup(BaseSDK):
             http_res,
         )
 
-    async def post_adgroup_async(
+    async def post_bulkjob_firstpartydata_async(
         self,
         *,
         request: Optional[
-            Union[
-                models.AdGroupCreateWorkflowInput,
-                models.AdGroupCreateWorkflowInputTypedDict,
-            ]
+            Union[models.FirstPartyDataInput, models.FirstPartyDataInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.AdGroupPayload:
-        r"""
+    ) -> models.BulkJobSubmitResponse:
+        r"""Submits a query for First Party Data to Hydra
+
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -155,14 +147,12 @@ class AdGroup(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[models.AdGroupCreateWorkflowInput]
-            )
-        request = cast(Optional[models.AdGroupCreateWorkflowInput], request)
+            request = utils.unmarshal(request, Optional[models.FirstPartyDataInput])
+        request = cast(Optional[models.FirstPartyDataInput], request)
 
         req = self._build_request_async(
             method="POST",
-            path="/adgroup",
+            path="/bulkjob/firstpartydata",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -174,11 +164,7 @@ class AdGroup(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[models.AdGroupCreateWorkflowInput],
+                request, False, True, "json", Optional[models.FirstPartyDataInput]
             ),
             timeout_ms=timeout_ms,
         )
@@ -198,21 +184,23 @@ class AdGroup(BaseSDK):
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
                 base_url=base_url or "",
-                operation_id="post_/adgroup",
+                operation_id="post_/bulkjob/firstpartydata",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
             ),
             request=req,
-            error_status_codes=["400", "4XX", "5XX"],
+            error_status_codes=["400", "401", "403", "404", "4XX", "500", "503", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "201", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.AdGroupPayload)
-        if utils.match_response(http_res, "400", "application/json"):
+        if utils.match_response(http_res, "202", "application/json"):
+            return utils.unmarshal_json(http_res.text, models.BulkJobSubmitResponse)
+        if utils.match_response(
+            http_res, ["400", "401", "403", "404"], "application/json"
+        ):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )
@@ -222,7 +210,7 @@ class AdGroup(BaseSDK):
             raise models.APIError(
                 "API error occurred", http_res.status_code, http_res_text, http_res
             )
-        if utils.match_response(http_res, "5XX", "*"):
+        if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
             raise models.APIError(
                 "API error occurred", http_res.status_code, http_res_text, http_res
@@ -237,22 +225,18 @@ class AdGroup(BaseSDK):
             http_res,
         )
 
-    def patch_adgroup(
+    def get_bulkjob_id_status(
         self,
         *,
-        request: Optional[
-            Union[
-                models.AdGroupUpdateWorkflowInput,
-                models.AdGroupUpdateWorkflowInputTypedDict,
-            ]
-        ] = None,
+        id: int,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.AdGroupPayload:
-        r"""
-        :param request: The request object to send.
+    ) -> models.BulkJobStatusResponse:
+        r"""Get the status of a bulk job you submitted earlier
+
+        :param id:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -268,32 +252,23 @@ class AdGroup(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[models.AdGroupUpdateWorkflowInput]
-            )
-        request = cast(Optional[models.AdGroupUpdateWorkflowInput], request)
+        request = models.GetBulkjobIDStatusRequest(
+            id=id,
+        )
 
         req = self._build_request(
-            method="PATCH",
-            path="/adgroup",
+            method="GET",
+            path="/bulkjob/{id}/status",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
             request_body_required=False,
-            request_has_path_params=False,
+            request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[models.AdGroupUpdateWorkflowInput],
-            ),
             timeout_ms=timeout_ms,
         )
 
@@ -307,26 +282,28 @@ class AdGroup(BaseSDK):
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
+            retry_config = (retries, ["202"])
 
         http_res = self.do_request(
             hook_ctx=HookContext(
                 base_url=base_url or "",
-                operation_id="patch_/adgroup",
+                operation_id="get_/bulkjob/{id}/status",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
             ),
             request=req,
-            error_status_codes=["400", "4XX", "5XX"],
+            error_status_codes=["400", "401", "403", "404", "4XX", "500", "503", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.AdGroupPayload)
-        if utils.match_response(http_res, "400", "application/json"):
+        if utils.match_response(http_res, ["200", "202"], "application/json"):
+            return utils.unmarshal_json(http_res.text, models.BulkJobStatusResponse)
+        if utils.match_response(
+            http_res, ["400", "401", "403", "404"], "application/json"
+        ):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )
@@ -336,7 +313,7 @@ class AdGroup(BaseSDK):
             raise models.APIError(
                 "API error occurred", http_res.status_code, http_res_text, http_res
             )
-        if utils.match_response(http_res, "5XX", "*"):
+        if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
             raise models.APIError(
                 "API error occurred", http_res.status_code, http_res_text, http_res
@@ -351,22 +328,18 @@ class AdGroup(BaseSDK):
             http_res,
         )
 
-    async def patch_adgroup_async(
+    async def get_bulkjob_id_status_async(
         self,
         *,
-        request: Optional[
-            Union[
-                models.AdGroupUpdateWorkflowInput,
-                models.AdGroupUpdateWorkflowInputTypedDict,
-            ]
-        ] = None,
+        id: int,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.AdGroupPayload:
-        r"""
-        :param request: The request object to send.
+    ) -> models.BulkJobStatusResponse:
+        r"""Get the status of a bulk job you submitted earlier
+
+        :param id:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -382,32 +355,23 @@ class AdGroup(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[models.AdGroupUpdateWorkflowInput]
-            )
-        request = cast(Optional[models.AdGroupUpdateWorkflowInput], request)
+        request = models.GetBulkjobIDStatusRequest(
+            id=id,
+        )
 
         req = self._build_request_async(
-            method="PATCH",
-            path="/adgroup",
+            method="GET",
+            path="/bulkjob/{id}/status",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
             request_body_required=False,
-            request_has_path_params=False,
+            request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[models.AdGroupUpdateWorkflowInput],
-            ),
             timeout_ms=timeout_ms,
         )
 
@@ -421,26 +385,28 @@ class AdGroup(BaseSDK):
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
+            retry_config = (retries, ["202"])
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
                 base_url=base_url or "",
-                operation_id="patch_/adgroup",
+                operation_id="get_/bulkjob/{id}/status",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
             ),
             request=req,
-            error_status_codes=["400", "4XX", "5XX"],
+            error_status_codes=["400", "401", "403", "404", "4XX", "500", "503", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.AdGroupPayload)
-        if utils.match_response(http_res, "400", "application/json"):
+        if utils.match_response(http_res, ["200", "202"], "application/json"):
+            return utils.unmarshal_json(http_res.text, models.BulkJobStatusResponse)
+        if utils.match_response(
+            http_res, ["400", "401", "403", "404"], "application/json"
+        ):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )
@@ -450,221 +416,7 @@ class AdGroup(BaseSDK):
             raise models.APIError(
                 "API error occurred", http_res.status_code, http_res_text, http_res
             )
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
-
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise models.APIError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
-
-    def post_adgroup_archive(
-        self,
-        *,
-        force_archive: Optional[bool] = False,
-        request_body: Optional[List[str]] = None,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> List[str]:
-        r"""Archive a list of AdGroups
-
-        :param force_archive:
-        :param request_body:
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.PostAdgroupArchiveRequest(
-            force_archive=force_archive,
-            request_body=request_body,
-        )
-
-        req = self._build_request(
-            method="POST",
-            path="/adgroup/archive",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=False,
-            request_has_path_params=False,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body, False, True, "json", Optional[List[str]]
-            ),
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = self.do_request(
-            hook_ctx=HookContext(
-                base_url=base_url or "",
-                operation_id="post_/adgroup/archive",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["400", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, List[str])
-        if utils.match_response(http_res, "400", "application/json"):
-            response_data = utils.unmarshal_json(
-                http_res.text, models.ProblemDetailsErrorData
-            )
-            raise models.ProblemDetailsError(data=response_data)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
-
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise models.APIError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
-
-    async def post_adgroup_archive_async(
-        self,
-        *,
-        force_archive: Optional[bool] = False,
-        request_body: Optional[List[str]] = None,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> List[str]:
-        r"""Archive a list of AdGroups
-
-        :param force_archive:
-        :param request_body:
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.PostAdgroupArchiveRequest(
-            force_archive=force_archive,
-            request_body=request_body,
-        )
-
-        req = self._build_request_async(
-            method="POST",
-            path="/adgroup/archive",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=False,
-            request_has_path_params=False,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body, False, True, "json", Optional[List[str]]
-            ),
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = await self.do_request_async(
-            hook_ctx=HookContext(
-                base_url=base_url or "",
-                operation_id="post_/adgroup/archive",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["400", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, List[str])
-        if utils.match_response(http_res, "400", "application/json"):
-            response_data = utils.unmarshal_json(
-                http_res.text, models.ProblemDetailsErrorData
-            )
-            raise models.ProblemDetailsError(data=response_data)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
-        if utils.match_response(http_res, "5XX", "*"):
+        if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
             raise models.APIError(
                 "API error occurred", http_res.status_code, http_res_text, http_res

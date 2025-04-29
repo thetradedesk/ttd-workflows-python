@@ -108,6 +108,8 @@ from .adgroupworkflow import AdGroupWorkflow, AdGroupWorkflowTypedDict
 from .allocationtype import AllocationType
 from .apierror import APIError
 from .budgetworkflow import BudgetWorkflow, BudgetWorkflowTypedDict
+from .bulkjobstatusresponse import BulkJobStatusResponse, BulkJobStatusResponseTypedDict
+from .bulkjobsubmitresponse import BulkJobSubmitResponse, BulkJobSubmitResponseTypedDict
 from .campaignbulkpayload import CampaignBulkPayload, CampaignBulkPayloadTypedDict
 from .campaignchanneltype import CampaignChannelType
 from .campaignconversionreportingcolumnworkflow import (
@@ -165,19 +167,32 @@ from .decimalnullableworkflowsoptional import (
 )
 from .dimensionalbiddingdimensions import DimensionalBiddingDimensions
 from .enhancednielsenreportingoptions import EnhancedNielsenReportingOptions
+from .firstpartydatainput import FirstPartyDataInput, FirstPartyDataInputTypedDict
+from .get_bulkjob_id_statusop import (
+    GetBulkjobIDStatusRequest,
+    GetBulkjobIDStatusRequestTypedDict,
+)
 from .get_campaign_id_versionop import (
     GetCampaignIDVersionRequest,
     GetCampaignIDVersionRequestTypedDict,
 )
-from .graphqlqueryinput import (
-    GraphQLQueryInput,
-    GraphQLQueryInputTypedDict,
+from .graphqlrequestinput import (
+    GraphQLRequestInput,
+    GraphQLRequestInputTypedDict,
     Variables,
     VariablesTypedDict,
 )
 from .int64nullableworkflowsoptional import (
     Int64NullableWorkflowsOptional,
     Int64NullableWorkflowsOptionalTypedDict,
+)
+from .post_adgroup_archiveop import (
+    PostAdgroupArchiveRequest,
+    PostAdgroupArchiveRequestTypedDict,
+)
+from .post_campaign_archiveop import (
+    PostCampaignArchiveRequest,
+    PostCampaignArchiveRequestTypedDict,
 )
 from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
 from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
@@ -260,6 +275,10 @@ __all__ = [
     "AllocationType",
     "BudgetWorkflow",
     "BudgetWorkflowTypedDict",
+    "BulkJobStatusResponse",
+    "BulkJobStatusResponseTypedDict",
+    "BulkJobSubmitResponse",
+    "BulkJobSubmitResponseTypedDict",
     "CampaignBulkPayload",
     "CampaignBulkPayloadTypedDict",
     "CampaignChannelType",
@@ -297,12 +316,20 @@ __all__ = [
     "DecimalNullableWorkflowsOptionalTypedDict",
     "DimensionalBiddingDimensions",
     "EnhancedNielsenReportingOptions",
+    "FirstPartyDataInput",
+    "FirstPartyDataInputTypedDict",
+    "GetBulkjobIDStatusRequest",
+    "GetBulkjobIDStatusRequestTypedDict",
     "GetCampaignIDVersionRequest",
     "GetCampaignIDVersionRequestTypedDict",
-    "GraphQLQueryInput",
-    "GraphQLQueryInputTypedDict",
+    "GraphQLRequestInput",
+    "GraphQLRequestInputTypedDict",
     "Int64NullableWorkflowsOptional",
     "Int64NullableWorkflowsOptionalTypedDict",
+    "PostAdgroupArchiveRequest",
+    "PostAdgroupArchiveRequestTypedDict",
+    "PostCampaignArchiveRequest",
+    "PostCampaignArchiveRequestTypedDict",
     "ProblemDetails",
     "ProblemDetailsError",
     "ProblemDetailsErrorData",

@@ -7,6 +7,7 @@
 
 * [post_adgroup](#post_adgroup)
 * [patch_adgroup](#patch_adgroup)
+* [post_adgroup_archive](#post_adgroup_archive) - Archive a list of AdGroups
 
 ## post_adgroup
 
@@ -366,6 +367,49 @@ with Workflows(
 ### Response
 
 **[models.AdGroupPayload](../../models/adgrouppayload.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ProblemDetailsError | 400                        | application/json           |
+| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## post_adgroup_archive
+
+Archive a list of AdGroups
+
+### Example Usage
+
+```python
+import os
+from ttd_workflows import Workflows
+
+
+with Workflows(
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+) as workflows:
+
+    res = workflows.ad_group.post_adgroup_archive(request_body=[
+        "<value>",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `force_archive`                                                     | *Optional[bool]*                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `request_body`                                                      | List[*str*]                                                         | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[List[str]](../../models/.md)**
 
 ### Errors
 

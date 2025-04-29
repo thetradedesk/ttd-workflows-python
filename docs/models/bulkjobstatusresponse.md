@@ -1,0 +1,15 @@
+# BulkJobStatusResponse
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `id`                                                                 | *int*                                                                | :heavy_check_mark:                                                   | ID of the bulk job.                                                  |
+| `completed_at_utc`                                                   | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_minus_sign:                                                   | Time of completion for this bulk job in UTC.                         |
+| `completion_percentage`                                              | *float*                                                              | :heavy_check_mark:                                                   | Completion percentage for that bulk job.                             |
+| `created_at_utc`                                                     | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | Time of creation for that bulk job in UTC.                           |
+| `status`                                                             | *str*                                                                | :heavy_check_mark:                                                   | Status of that bulk job.                                             |
+| `url`                                                                | *OptionalNullable[str]*                                              | :heavy_minus_sign:                                                   | The url where the result can be picked up                            |
+| `raw_result`                                                         | *OptionalNullable[str]*                                              | :heavy_minus_sign:                                                   | The raw result if the response is small enough                       |
+| `gql_errors`                                                         | *OptionalNullable[str]*                                              | :heavy_minus_sign:                                                   | Any GraphQl errors                                                   |

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 245b53018cae95667e33fbb9a6905be5
+  docChecksum: 719c9d740eae6e16310808e72e8ec6e6
   docVersion: v1
-  speakeasyVersion: 1.537.1
-  generationVersion: 2.588.4
-  releaseVersion: 0.2.3
-  configChecksum: 54af598f2760cf3ca984b38a76951d3a
+  speakeasyVersion: 1.540.1
+  generationVersion: 2.593.4
+  releaseVersion: 0.3.0
+  configChecksum: 58f7e04e8461248517bd8068848eeb5d
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
@@ -14,7 +14,8 @@ features:
   python:
     additionalDependencies: 1.0.0
     additionalProperties: 1.0.1
-    core: 5.15.0
+    constsAndDefaults: 1.0.5
+    core: 5.16.0
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     enumUnions: 0.1.0
@@ -24,7 +25,6 @@ features:
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.1.0
-    groups: 3.0.0
     inputOutputModels: 3.0.0
     methodArguments: 1.0.2
     nameOverrides: 3.0.1
@@ -75,6 +75,8 @@ generatedFiles:
   - docs/models/adgroupworkflow.md
   - docs/models/allocationtype.md
   - docs/models/budgetworkflow.md
+  - docs/models/bulkjobstatusresponse.md
+  - docs/models/bulkjobsubmitresponse.md
   - docs/models/campaignbulkpayload.md
   - docs/models/campaignchanneltype.md
   - docs/models/campaignconversionreportingcolumnworkflow.md
@@ -96,9 +98,13 @@ generatedFiles:
   - docs/models/decimalnullableworkflowsoptional.md
   - docs/models/dimensionalbiddingdimensions.md
   - docs/models/enhancednielsenreportingoptions.md
+  - docs/models/firstpartydatainput.md
+  - docs/models/getbulkjobidstatusrequest.md
   - docs/models/getcampaignidversionrequest.md
-  - docs/models/graphqlqueryinput.md
+  - docs/models/graphqlrequestinput.md
   - docs/models/int64nullableworkflowsoptional.md
+  - docs/models/postadgrouparchiverequest.md
+  - docs/models/postcampaignarchiverequest.md
   - docs/models/problemdetails.md
   - docs/models/problemdetailserror.md
   - docs/models/security.md
@@ -109,6 +115,7 @@ generatedFiles:
   - docs/models/utils/retryconfig.md
   - docs/models/variables.md
   - docs/sdks/adgroup/README.md
+  - docs/sdks/bulkjob/README.md
   - docs/sdks/campaign/README.md
   - docs/sdks/graphql/README.md
   - docs/sdks/workflows/README.md
@@ -125,6 +132,7 @@ generatedFiles:
   - src/ttd_workflows/_version.py
   - src/ttd_workflows/adgroup.py
   - src/ttd_workflows/basesdk.py
+  - src/ttd_workflows/bulkjob.py
   - src/ttd_workflows/campaign.py
   - src/ttd_workflows/graphql.py
   - src/ttd_workflows/httpclient.py
@@ -165,6 +173,8 @@ generatedFiles:
   - src/ttd_workflows/models/allocationtype.py
   - src/ttd_workflows/models/apierror.py
   - src/ttd_workflows/models/budgetworkflow.py
+  - src/ttd_workflows/models/bulkjobstatusresponse.py
+  - src/ttd_workflows/models/bulkjobsubmitresponse.py
   - src/ttd_workflows/models/campaignbulkpayload.py
   - src/ttd_workflows/models/campaignchanneltype.py
   - src/ttd_workflows/models/campaignconversionreportingcolumnworkflow.py
@@ -186,9 +196,13 @@ generatedFiles:
   - src/ttd_workflows/models/decimalnullableworkflowsoptional.py
   - src/ttd_workflows/models/dimensionalbiddingdimensions.py
   - src/ttd_workflows/models/enhancednielsenreportingoptions.py
+  - src/ttd_workflows/models/firstpartydatainput.py
+  - src/ttd_workflows/models/get_bulkjob_id_statusop.py
   - src/ttd_workflows/models/get_campaign_id_versionop.py
-  - src/ttd_workflows/models/graphqlqueryinput.py
+  - src/ttd_workflows/models/graphqlrequestinput.py
   - src/ttd_workflows/models/int64nullableworkflowsoptional.py
+  - src/ttd_workflows/models/post_adgroup_archiveop.py
+  - src/ttd_workflows/models/post_campaign_archiveop.py
   - src/ttd_workflows/models/problemdetails.py
   - src/ttd_workflows/models/problemdetails_error.py
   - src/ttd_workflows/models/security.py
@@ -284,6 +298,9 @@ examples:
           application/json: {"type": "<value>", "title": "<value>", "status": 971038, "detail": "<value>", "instance": "<value>", "key": {}}
   post_/campaign/archive:
     speakeasy-default-post-/campaign/archive:
+      parameters:
+        query:
+          forceArchive: false
       requestBody:
         application/json: ["<value>", "<value>", "<value>"]
       responses:
@@ -291,5 +308,49 @@ examples:
           application/json: ["<value>"]
         "400":
           application/json: {"type": "<value>", "title": "<value>", "status": 17623, "detail": "<value>", "instance": "<value>", "key": {}, "key1": {}}
+        "200":
+          application/json: ["<value>", "<value>", "<value>"]
+  post_/adgroup/archive:
+    speakeasy-default-post-/adgroup/archive:
+      parameters:
+        query:
+          forceArchive: false
+      requestBody:
+        application/json: ["<value>"]
+      responses:
+        "200":
+          application/json: ["<value>"]
+        "400":
+          application/json: {"type": "<value>", "title": "<value>", "status": 386932, "detail": "<value>", "instance": "<value>", "key": {}, "key1": {}}
+  post_/bulkjob/firstpartydata:
+    speakeasy-default-post-/bulkjob/firstpartydata:
+      requestBody:
+        application/json: {"advertiserId": "<id>"}
+        text/json: {"advertiserId": "<id>"}
+        application/*+json: {"advertiserId": "<id>"}
+      responses:
+        "202":
+          application/json: {"id": 40494}
+        "400":
+          application/json: {"type": "<value>", "title": "<value>", "status": 14172, "detail": "<value>", "instance": "<value>", "key": {}, "key1": {}, "key2": {}}
+  get_/bulkjob/{id}/status:
+    speakeasy-default-get-/bulkjob/{id}/status:
+      parameters:
+        path:
+          id: 887039
+      responses:
+        "200":
+          application/json: {"id": 264149, "completedAtUtc": "2024-02-05T16:14:18.626Z", "completionPercentage": 397.57, "createdAtUtc": "2023-07-22T19:09:38.014Z", "status": "<value>", "url": "https://soupy-subsidy.org", "rawResult": "<value>", "gqlErrors": "<value>"}
+        "400":
+          application/json: {"type": "<value>", "title": "<value>", "status": 977493, "detail": "<value>", "instance": "<value>", "key": {}, "key1": {}, "key2": {}}
+  post_/graphql-request:
+    speakeasy-default-post-/graphql-request:
+      requestBody:
+        application/json: {"request": "<value>"}
+      responses:
+        "200":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "400":
+          application/json: {"type": "<value>", "title": "<value>", "status": 124367, "detail": "<value>", "instance": "<value>", "key": {}, "key1": {}}
 examplesVersion: 1.0.1
 generatedTests: {}
