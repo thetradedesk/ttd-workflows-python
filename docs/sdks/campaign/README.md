@@ -942,7 +942,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.campaign.post_campaign_archive(request=[
+    res = workflows.campaign.post_campaign_archive(request_body=[
         "<value>",
         "<value>",
         "<value>",
@@ -957,7 +957,8 @@ with Workflows(
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `request`                                                           | [List[str]](../../models/.md)                                       | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `force_archive`                                                     | *Optional[bool]*                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `request_body`                                                      | List[*str*]                                                         | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
