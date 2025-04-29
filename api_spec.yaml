@@ -4,7 +4,7 @@ info:
   description: A RESTful service for commonly used workflows.
   version: v1
 servers:
-  - url: https://jennifertenzer-dev.switch.dev.gen.adsrvr.org/workflows
+  - url: https://api.thetradedesk.com/workflows
     description: The Trade Desk Workflows API
 x-speakeasy-retries:
   strategy: backoff
@@ -60,7 +60,39 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
- 
+  /adgroup/archive:
+    post:
+      tags:
+        - AdGroup
+      summary: Archive a list of AdGroups
+      parameters:
+        - name: forceArchive
+          in: query
+          schema:
+            type: boolean
+            default: false
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
   /bulkjob/firstpartydata:
     post:
       tags:
@@ -125,9 +157,9 @@ paths:
       x-speakeasy-retries:
         strategy: backoff
         backoff:
-          initialInterval: 60000 # 1 minute now - before 500 milliseconds
-          maxInterval: 600000 # 10 minutes now - before 60 seconds
-          maxElapsedTime: 10800000 # 3 hours now - before 1 hour 3600000
+          initialInterval: 500 # 500 milliseconds
+          maxInterval: 60000 # 60 seconds
+          maxElapsedTime: 3600000 # 1 hour
           exponent: 1.5
         statusCodes:
           - 202
@@ -240,6 +272,12 @@ paths:
       tags:
         - Campaign
       summary: Archive a list of campaigns
+      parameters:
+        - name: forceArchive
+          in: query
+          schema:
+            type: boolean
+            default: false
       requestBody:
         content:
           application/json:
@@ -248,8 +286,8 @@ paths:
               items:
                 type: string
       responses:
-        '204':
-          description: No Content
+        '200':
+          description: OK
           content:
             application/json:
               schema:
@@ -306,16 +344,16 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal Server Error
-  /graphql:
+  /graphql-request:
     post:
       tags:
         - GraphQL
-      summary: An endpoint that executes valid GraphQL queries.
+      summary: An endpoint that executes valid GraphQL queries or mutations.
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GraphQLQueryInput'
+              $ref: '#/components/schemas/GraphQLRequestInput'
       responses:
         '200':
           description: OK
@@ -1893,12 +1931,12 @@ components:
           description: The advertiser id to query for.
       additionalProperties: false
       description: Required fields for submitting a bulk job for first party data
-    GraphQLQueryInput:
+    GraphQLRequestInput:
       required:
-        - query
+        - request
       type: object
       properties:
-        query:
+        request:
           minLength: 1
           type: string
           description: The GraphQL query to execute.
