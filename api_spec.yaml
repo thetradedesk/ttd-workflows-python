@@ -154,16 +154,17 @@ paths:
       tags:
         - BulkJob
       summary: Get the status of a bulk job you submitted earlier
-      x-speakeasy-retries:
-        strategy: backoff
-        backoff:
-          initialInterval: 500 # 500 milliseconds
-          maxInterval: 60000 # 60 seconds
-          maxElapsedTime: 3600000 # 1 hour
-          exponent: 1.5
-        statusCodes:
-          - 202
-        retryConnectionErrors: true
+      # The following section is for automatically retrying on a 202 status code
+      # x-speakeasy-retries:
+      #  strategy: backoff
+      #  backoff:
+      #    initialInterval: 500 # 500 milliseconds
+      #    maxInterval: 60000 # 60 seconds
+      #    maxElapsedTime: 3600000 # 1 hour
+      #    exponent: 1.5
+      #  statusCodes:
+      #    - 202
+      #  retryConnectionErrors: true
       parameters:
         - name: id
           in: path
@@ -1322,7 +1323,7 @@ components:
           nullable: true
         rawResult:
           type: string
-          description: The raw result if the response is small enough
+          description: The raw result if the response is less than 5MB in size
           nullable: true
         gqlErrors:
           type: string
@@ -1929,6 +1930,14 @@ components:
           minLength: 1
           type: string
           description: The advertiser id to query for.
+        nameFilter:
+          type: string
+          description: "The name to filter by in the query. This filter will be applied to the results for the advertiser.\r\nIf there are no nodes which match the filter, a response with empty nodes with no first party data will be returned."
+          nullable: true
+        queryShape:
+          type: string
+          description: "The shape of the query with the fields being asked for, which is sent downstream.\r\nThis determines how the response will look like.\r\nIf this is not provided the default query shape will be used:\r\n            \r\nnodes {\r\n   name\r\n   id\r\n   activeUniques {\r\n      householdCount\r\n      idsConnectedTvCount\r\n      idsCount\r\n      idsInAppCount\r\n      idsWebCount\r\n      personsCount\r\n   }\r\n}"
+          nullable: true
       additionalProperties: false
       description: Required fields for submitting a bulk job for first party data
     GraphQLRequestInput:
