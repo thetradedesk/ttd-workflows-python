@@ -28,7 +28,7 @@ class BulkJobStatusResponseTypedDict(TypedDict):
     url: NotRequired[Nullable[str]]
     r"""The url where the result can be picked up"""
     raw_result: NotRequired[Nullable[str]]
-    r"""The raw result if the response is small enough"""
+    r"""The raw result if the response is less than 5MB in size"""
     gql_errors: NotRequired[Nullable[str]]
     r"""Any GraphQl errors"""
 
@@ -59,7 +59,7 @@ class BulkJobStatusResponse(BaseModel):
     raw_result: Annotated[OptionalNullable[str], pydantic.Field(alias="rawResult")] = (
         UNSET
     )
-    r"""The raw result if the response is small enough"""
+    r"""The raw result if the response is less than 5MB in size"""
 
     gql_errors: Annotated[OptionalNullable[str], pydantic.Field(alias="gqlErrors")] = (
         UNSET
