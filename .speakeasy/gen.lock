@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: b2f79a5a10c9acda119bae3cfd586bd6
+  docChecksum: bee0b2780ef793b7772cb042b9282d57
   docVersion: v1
   speakeasyVersion: 1.541.2
   generationVersion: 2.595.4
-  releaseVersion: 0.3.1
-  configChecksum: 84d0db335e285ae3fce612dc332764d5
+  releaseVersion: 0.3.2
+  configChecksum: 80a3a379cfb0cde1c6e061fdbbf8a642
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
