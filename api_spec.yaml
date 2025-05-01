@@ -1290,7 +1290,6 @@ components:
       additionalProperties: false
     BulkJobStatusResponse:
       required:
-        - completionPercentage
         - createdAtUtc
         - id
         - status
@@ -1309,6 +1308,7 @@ components:
           type: number
           description: Completion percentage for that bulk job.
           format: double
+          nullable: true
         createdAtUtc:
           type: string
           description: Time of creation for that bulk job in UTC.
