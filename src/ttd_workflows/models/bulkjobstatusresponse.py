@@ -17,18 +17,18 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class BulkJobStatusResponseTypedDict(TypedDict):
     id: int
     r"""ID of the bulk job."""
-    completion_percentage: float
-    r"""Completion percentage for that bulk job."""
     created_at_utc: datetime
     r"""Time of creation for that bulk job in UTC."""
     status: str
     r"""Status of that bulk job."""
     completed_at_utc: NotRequired[Nullable[datetime]]
     r"""Time of completion for this bulk job in UTC."""
+    completion_percentage: NotRequired[Nullable[float]]
+    r"""Completion percentage for that bulk job."""
     url: NotRequired[Nullable[str]]
     r"""The url where the result can be picked up"""
     raw_result: NotRequired[Nullable[str]]
-    r"""The raw result if the response is small enough"""
+    r"""The raw result if the response is less than 5MB in size"""
     gql_errors: NotRequired[Nullable[str]]
     r"""Any GraphQl errors"""
 
@@ -36,11 +36,6 @@ class BulkJobStatusResponseTypedDict(TypedDict):
 class BulkJobStatusResponse(BaseModel):
     id: int
     r"""ID of the bulk job."""
-
-    completion_percentage: Annotated[
-        float, pydantic.Field(alias="completionPercentage")
-    ]
-    r"""Completion percentage for that bulk job."""
 
     created_at_utc: Annotated[datetime, pydantic.Field(alias="createdAtUtc")]
     r"""Time of creation for that bulk job in UTC."""
@@ -53,13 +48,18 @@ class BulkJobStatusResponse(BaseModel):
     ] = UNSET
     r"""Time of completion for this bulk job in UTC."""
 
+    completion_percentage: Annotated[
+        OptionalNullable[float], pydantic.Field(alias="completionPercentage")
+    ] = UNSET
+    r"""Completion percentage for that bulk job."""
+
     url: OptionalNullable[str] = UNSET
     r"""The url where the result can be picked up"""
 
     raw_result: Annotated[OptionalNullable[str], pydantic.Field(alias="rawResult")] = (
         UNSET
     )
-    r"""The raw result if the response is small enough"""
+    r"""The raw result if the response is less than 5MB in size"""
 
     gql_errors: Annotated[OptionalNullable[str], pydantic.Field(alias="gqlErrors")] = (
         UNSET
@@ -68,8 +68,20 @@ class BulkJobStatusResponse(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["completedAtUtc", "url", "rawResult", "gqlErrors"]
-        nullable_fields = ["completedAtUtc", "url", "rawResult", "gqlErrors"]
+        optional_fields = [
+            "completedAtUtc",
+            "completionPercentage",
+            "url",
+            "rawResult",
+            "gqlErrors",
+        ]
+        nullable_fields = [
+            "completedAtUtc",
+            "completionPercentage",
+            "url",
+            "rawResult",
+            "gqlErrors",
+        ]
         null_default_fields = []
 
         serialized = handler(self)

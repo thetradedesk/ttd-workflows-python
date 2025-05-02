@@ -25,6 +25,8 @@ with Workflows(
 
     res = workflows.bulk_job.post_bulkjob_firstpartydata(request={
         "advertiser_id": "<id>",
+        "name_filter": "<value>",
+        "query_shape": "<value>",
     })
 
     # Handle response
