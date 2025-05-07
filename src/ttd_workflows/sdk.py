@@ -11,6 +11,7 @@ from ttd_workflows._hooks import SDKHooks
 from ttd_workflows.adgroup import AdGroup
 from ttd_workflows.bulkjob import BulkJob
 from ttd_workflows.campaign import Campaign
+from ttd_workflows.demo import Demo
 from ttd_workflows.graphql import GraphQL
 from ttd_workflows.types import OptionalNullable, UNSET
 from typing import Any, Callable, Dict, Optional, Union, cast
@@ -20,6 +21,7 @@ import weakref
 class Workflows(BaseSDK):
     r"""Workflows API: A RESTful service for commonly used workflows."""
 
+    demo: Demo
     ad_group: AdGroup
     bulk_job: BulkJob
     campaign: Campaign
@@ -121,6 +123,7 @@ class Workflows(BaseSDK):
         self._init_sdks()
 
     def _init_sdks(self):
+        self.demo = Demo(self.sdk_configuration)
         self.ad_group = AdGroup(self.sdk_configuration)
         self.bulk_job = BulkJob(self.sdk_configuration)
         self.campaign = Campaign(self.sdk_configuration)
