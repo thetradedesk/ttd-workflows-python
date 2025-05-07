@@ -17,6 +17,17 @@ x-speakeasy-retries:
     - 5XX
   retryConnectionErrors: true
 paths:
+  /demo:
+    get:
+      tags:
+        - Demo
+      responses:
+        '200':
+          description: demo only
+          content:
+            application/json:
+              schema:
+                type: string
   /adgroup:
     post:
       tags:
