@@ -4,48 +4,27 @@ from .adgroupassociatebidlist import (
     AdGroupAssociateBidList,
     AdGroupAssociateBidListTypedDict,
 )
-from .adgroupassociatebidlistinput import (
-    AdGroupAssociateBidListInput,
-    AdGroupAssociateBidListInputTypedDict,
-)
 from .adgroupaudiencetargeting import (
     AdGroupAudienceTargeting,
     AdGroupAudienceTargetingTypedDict,
 )
-from .adgroupaudiencetargetinginput import (
-    AdGroupAudienceTargetingInput,
-    AdGroupAudienceTargetingInputTypedDict,
-)
 from .adgroupbudget import AdGroupBudget, AdGroupBudgetTypedDict
-from .adgroupbudgetinput import AdGroupBudgetInput, AdGroupBudgetInputTypedDict
 from .adgroupchannel import AdGroupChannel
 from .adgroupcomscoresettings import (
     AdGroupComscoreSettings,
     AdGroupComscoreSettingsTypedDict,
 )
-from .adgroupcomscoresettingsinput import (
-    AdGroupComscoreSettingsInput,
-    AdGroupComscoreSettingsInputTypedDict,
-)
 from .adgroupcontracttargeting import (
     AdGroupContractTargeting,
     AdGroupContractTargetingTypedDict,
 )
-from .adgroupcontracttargetinginput import (
-    AdGroupContractTargetingInput,
-    AdGroupContractTargetingInputTypedDict,
-)
-from .adgroupcreateadgroupflightinput import (
-    AdGroupCreateAdGroupFlightInput,
-    AdGroupCreateAdGroupFlightInputTypedDict,
-)
-from .adgroupcreateadvancedsettingsinput import (
-    AdGroupCreateAdvancedSettingsInput,
-    AdGroupCreateAdvancedSettingsInputTypedDict,
-)
 from .adgroupcreateworkflowinput import (
     AdGroupCreateWorkflowInput,
     AdGroupCreateWorkflowInputTypedDict,
+)
+from .adgroupcreateworkflowprimaryinput import (
+    AdGroupCreateWorkflowPrimaryInput,
+    AdGroupCreateWorkflowPrimaryInputTypedDict,
 )
 from .adgroupflight import AdGroupFlight, AdGroupFlightTypedDict
 from .adgroupfunnellocation import AdGroupFunnelLocation
@@ -53,88 +32,85 @@ from .adgroupkoaoptimizationsettings import (
     AdGroupKoaOptimizationSettings,
     AdGroupKoaOptimizationSettingsTypedDict,
 )
-from .adgroupkoaoptimizationsettingsinput import (
-    AdGroupKoaOptimizationSettingsInput,
-    AdGroupKoaOptimizationSettingsInputTypedDict,
-)
-from .adgroupnewfrequencyconfiginput import (
-    AdGroupNewFrequencyConfigInput,
-    AdGroupNewFrequencyConfigInputTypedDict,
-)
 from .adgroupnielsentrackingattributes import (
     AdGroupNielsenTrackingAttributes,
     AdGroupNielsenTrackingAttributesTypedDict,
 )
-from .adgroupnielsentrackingattributesinput import (
-    AdGroupNielsenTrackingAttributesInput,
-    AdGroupNielsenTrackingAttributesInputTypedDict,
-)
 from .adgrouppayload import AdGroupPayload, AdGroupPayloadTypedDict
-from .adgrouproigoal import AdGroupRoiGoal, AdGroupRoiGoalTypedDict
-from .adgrouproigoalinput import AdGroupRoiGoalInput, AdGroupRoiGoalInputTypedDict
-from .adgroupupdateadgroupflightinput import (
-    AdGroupUpdateAdGroupFlightInput,
-    AdGroupUpdateAdGroupFlightInputTypedDict,
-)
-from .adgroupupdateadvancedsettingsinput import (
-    AdGroupUpdateAdvancedSettingsInput,
-    AdGroupUpdateAdvancedSettingsInputTypedDict,
-)
-from .adgroupupdateaudiencetargetinginput import (
-    AdGroupUpdateAudienceTargetingInput,
-    AdGroupUpdateAudienceTargetingInputTypedDict,
-)
-from .adgroupupdatebudgetinput import (
-    AdGroupUpdateBudgetInput,
-    AdGroupUpdateBudgetInputTypedDict,
-)
-from .adgroupupdatecomscoresettingsinput import (
-    AdGroupUpdateComscoreSettingsInput,
-    AdGroupUpdateComscoreSettingsInputTypedDict,
-)
-from .adgroupupdatenielsentrackingattributesinput import (
-    AdGroupUpdateNielsenTrackingAttributesInput,
-    AdGroupUpdateNielsenTrackingAttributesInputTypedDict,
-)
-from .adgroupupdatenielsentrackingattributesinputworkflowsoptional import (
-    AdGroupUpdateNielsenTrackingAttributesInputWorkflowsOptional,
-    AdGroupUpdateNielsenTrackingAttributesInputWorkflowsOptionalTypedDict,
-)
+from .adgrouproigoal import AdGroupROIGoal, AdGroupROIGoalTypedDict
 from .adgroupupdateworkflowinput import (
     AdGroupUpdateWorkflowInput,
     AdGroupUpdateWorkflowInputTypedDict,
 )
+from .adgroupupdateworkflowprimaryinput import (
+    AdGroupUpdateWorkflowPrimaryInput,
+    AdGroupUpdateWorkflowPrimaryInputTypedDict,
+)
 from .adgroupworkflow import AdGroupWorkflow, AdGroupWorkflowTypedDict
+from .adgroupworkflowadvancedinput import (
+    AdGroupWorkflowAdvancedInput,
+    AdGroupWorkflowAdvancedInputTypedDict,
+)
+from .adgroupworkflowassociatebidlistinput import (
+    AdGroupWorkflowAssociateBidListInput,
+    AdGroupWorkflowAssociateBidListInputTypedDict,
+)
+from .adgroupworkflowaudiencetargetinginput import (
+    AdGroupWorkflowAudienceTargetingInput,
+    AdGroupWorkflowAudienceTargetingInputTypedDict,
+)
+from .adgroupworkflowbudgetinput import (
+    AdGroupWorkflowBudgetInput,
+    AdGroupWorkflowBudgetInputTypedDict,
+)
+from .adgroupworkflowcomscoresettingsinput import (
+    AdGroupWorkflowComscoreSettingsInput,
+    AdGroupWorkflowComscoreSettingsInputTypedDict,
+)
+from .adgroupworkflowcontracttargetinginput import (
+    AdGroupWorkflowContractTargetingInput,
+    AdGroupWorkflowContractTargetingInputTypedDict,
+)
+from .adgroupworkflowflightinput import (
+    AdGroupWorkflowFlightInput,
+    AdGroupWorkflowFlightInputTypedDict,
+)
+from .adgroupworkflowkoaoptimizationsettingsinput import (
+    AdGroupWorkflowKoaOptimizationSettingsInput,
+    AdGroupWorkflowKoaOptimizationSettingsInputTypedDict,
+)
+from .adgroupworkflownewfrequencyconfiginput import (
+    AdGroupWorkflowNewFrequencyConfigInput,
+    AdGroupWorkflowNewFrequencyConfigInputTypedDict,
+)
+from .adgroupworkflownielsentrackingattributesinput import (
+    AdGroupWorkflowNielsenTrackingAttributesInput,
+    AdGroupWorkflowNielsenTrackingAttributesInputTypedDict,
+)
+from .adgroupworkflowroigoalinput import (
+    AdGroupWorkflowROIGoalInput,
+    AdGroupWorkflowROIGoalInputTypedDict,
+)
 from .allocationtype import AllocationType
 from .apierror import APIError
-from .budgetworkflow import BudgetWorkflow, BudgetWorkflowTypedDict
 from .bulkjobstatusresponse import BulkJobStatusResponse, BulkJobStatusResponseTypedDict
 from .bulkjobsubmitresponse import BulkJobSubmitResponse, BulkJobSubmitResponseTypedDict
-from .campaignbulkpayload import CampaignBulkPayload, CampaignBulkPayloadTypedDict
+from .callpubapiworkflowinput import (
+    CallPubAPIWorkflowInput,
+    CallPubAPIWorkflowInputTypedDict,
+)
 from .campaignchanneltype import CampaignChannelType
-from .campaignconversionreportingcolumnworkflow import (
-    CampaignConversionReportingColumnWorkflow,
-    CampaignConversionReportingColumnWorkflowTypedDict,
+from .campaigncreateworkflowadgroupadvancedinput import (
+    CampaignCreateWorkflowAdGroupAdvancedInput,
+    CampaignCreateWorkflowAdGroupAdvancedInputTypedDict,
 )
-from .campaigncreateadgroupadvancedsettingsinput import (
-    CampaignCreateAdGroupAdvancedSettingsInput,
-    CampaignCreateAdGroupAdvancedSettingsInputTypedDict,
+from .campaigncreateworkflowadgroupflightinput import (
+    CampaignCreateWorkflowAdGroupFlightInput,
+    CampaignCreateWorkflowAdGroupFlightInputTypedDict,
 )
-from .campaigncreateadgroupflightinput import (
-    CampaignCreateAdGroupFlightInput,
-    CampaignCreateAdGroupFlightInputTypedDict,
-)
-from .campaigncreateadgroupinput import (
-    CampaignCreateAdGroupInput,
-    CampaignCreateAdGroupInputTypedDict,
-)
-from .campaigncreateroigoalworkflow import (
-    CampaignCreateROIGoalWorkflow,
-    CampaignCreateROIGoalWorkflowTypedDict,
-)
-from .campaigncreateworkflowadvancedinput import (
-    CampaignCreateWorkflowAdvancedInput,
-    CampaignCreateWorkflowAdvancedInputTypedDict,
+from .campaigncreateworkflowadgroupinput import (
+    CampaignCreateWorkflowAdGroupInput,
+    CampaignCreateWorkflowAdGroupInputTypedDict,
 )
 from .campaigncreateworkflowinput import (
     CampaignCreateWorkflowInput,
@@ -148,23 +124,43 @@ from .campaignflightworkflow import (
     CampaignFlightWorkflow,
     CampaignFlightWorkflowTypedDict,
 )
-from .campaignflightworkflowinput import (
-    CampaignFlightWorkflowInput,
-    CampaignFlightWorkflowInputTypedDict,
-)
 from .campaignpacingmode import CampaignPacingMode
-from .campaignsinglepayload import CampaignSinglePayload, CampaignSinglePayloadTypedDict
+from .campaignpayload import CampaignPayload, CampaignPayloadTypedDict
+from .campaignupdateworkflowinput import (
+    CampaignUpdateWorkflowInput,
+    CampaignUpdateWorkflowInputTypedDict,
+)
+from .campaignupdateworkflowprimaryinput import (
+    CampaignUpdateWorkflowPrimaryInput,
+    CampaignUpdateWorkflowPrimaryInputTypedDict,
+)
 from .campaignversionworkflow import (
     CampaignVersionWorkflow,
     CampaignVersionWorkflowTypedDict,
 )
 from .campaignworkflow import CampaignWorkflow, CampaignWorkflowTypedDict
+from .campaignworkflowadvancedinput import (
+    CampaignWorkflowAdvancedInput,
+    CampaignWorkflowAdvancedInputTypedDict,
+)
+from .campaignworkflowbudgetinput import (
+    CampaignWorkflowBudgetInput,
+    CampaignWorkflowBudgetInputTypedDict,
+)
+from .campaignworkflowconversionreportingcolumninput import (
+    CampaignWorkflowConversionReportingColumnInput,
+    CampaignWorkflowConversionReportingColumnInputTypedDict,
+)
+from .campaignworkflowflightinput import (
+    CampaignWorkflowFlightInput,
+    CampaignWorkflowFlightInputTypedDict,
+)
+from .campaignworkflowroigoalinput import (
+    CampaignWorkflowROIGoalInput,
+    CampaignWorkflowROIGoalInputTypedDict,
+)
 from .customcpatype import CustomCPAType
 from .customroasconfig import CustomROASConfig, CustomROASConfigTypedDict
-from .decimalnullableworkflowsoptional import (
-    DecimalNullableWorkflowsOptional,
-    DecimalNullableWorkflowsOptionalTypedDict,
-)
 from .dimensionalbiddingdimensions import DimensionalBiddingDimensions
 from .enhancednielsenreportingoptions import EnhancedNielsenReportingOptions
 from .firstpartydatainput import FirstPartyDataInput, FirstPartyDataInputTypedDict
@@ -182,10 +178,6 @@ from .graphqlrequestinput import (
     Variables,
     VariablesTypedDict,
 )
-from .int64nullableworkflowsoptional import (
-    Int64NullableWorkflowsOptional,
-    Int64NullableWorkflowsOptionalTypedDict,
-)
 from .post_adgroup_archiveop import (
     PostAdgroupArchiveRequest,
     PostAdgroupArchiveRequestTypedDict,
@@ -194,126 +186,117 @@ from .post_campaign_archiveop import (
     PostCampaignArchiveRequest,
     PostCampaignArchiveRequestTypedDict,
 )
+from .post_pubapiop import PostPubapiResponse, PostPubapiResponseTypedDict
 from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
 from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
+from .pubapimethodtype import PubAPIMethodType
 from .security import Security, SecurityTypedDict
-from .stringworkflowsoptional import (
-    StringWorkflowsOptional,
-    StringWorkflowsOptionalTypedDict,
-)
 from .targetingendage import TargetingEndAge
 from .targetinggender import TargetingGender
 from .targetingstartage import TargetingStartAge
+from .workflowstatus import WorkflowStatus
 
 
 __all__ = [
     "APIError",
     "AdGroupAssociateBidList",
-    "AdGroupAssociateBidListInput",
-    "AdGroupAssociateBidListInputTypedDict",
     "AdGroupAssociateBidListTypedDict",
     "AdGroupAudienceTargeting",
-    "AdGroupAudienceTargetingInput",
-    "AdGroupAudienceTargetingInputTypedDict",
     "AdGroupAudienceTargetingTypedDict",
     "AdGroupBudget",
-    "AdGroupBudgetInput",
-    "AdGroupBudgetInputTypedDict",
     "AdGroupBudgetTypedDict",
     "AdGroupChannel",
     "AdGroupComscoreSettings",
-    "AdGroupComscoreSettingsInput",
-    "AdGroupComscoreSettingsInputTypedDict",
     "AdGroupComscoreSettingsTypedDict",
     "AdGroupContractTargeting",
-    "AdGroupContractTargetingInput",
-    "AdGroupContractTargetingInputTypedDict",
     "AdGroupContractTargetingTypedDict",
-    "AdGroupCreateAdGroupFlightInput",
-    "AdGroupCreateAdGroupFlightInputTypedDict",
-    "AdGroupCreateAdvancedSettingsInput",
-    "AdGroupCreateAdvancedSettingsInputTypedDict",
     "AdGroupCreateWorkflowInput",
     "AdGroupCreateWorkflowInputTypedDict",
+    "AdGroupCreateWorkflowPrimaryInput",
+    "AdGroupCreateWorkflowPrimaryInputTypedDict",
     "AdGroupFlight",
     "AdGroupFlightTypedDict",
     "AdGroupFunnelLocation",
     "AdGroupKoaOptimizationSettings",
-    "AdGroupKoaOptimizationSettingsInput",
-    "AdGroupKoaOptimizationSettingsInputTypedDict",
     "AdGroupKoaOptimizationSettingsTypedDict",
-    "AdGroupNewFrequencyConfigInput",
-    "AdGroupNewFrequencyConfigInputTypedDict",
     "AdGroupNielsenTrackingAttributes",
-    "AdGroupNielsenTrackingAttributesInput",
-    "AdGroupNielsenTrackingAttributesInputTypedDict",
     "AdGroupNielsenTrackingAttributesTypedDict",
     "AdGroupPayload",
     "AdGroupPayloadTypedDict",
-    "AdGroupRoiGoal",
-    "AdGroupRoiGoalInput",
-    "AdGroupRoiGoalInputTypedDict",
-    "AdGroupRoiGoalTypedDict",
-    "AdGroupUpdateAdGroupFlightInput",
-    "AdGroupUpdateAdGroupFlightInputTypedDict",
-    "AdGroupUpdateAdvancedSettingsInput",
-    "AdGroupUpdateAdvancedSettingsInputTypedDict",
-    "AdGroupUpdateAudienceTargetingInput",
-    "AdGroupUpdateAudienceTargetingInputTypedDict",
-    "AdGroupUpdateBudgetInput",
-    "AdGroupUpdateBudgetInputTypedDict",
-    "AdGroupUpdateComscoreSettingsInput",
-    "AdGroupUpdateComscoreSettingsInputTypedDict",
-    "AdGroupUpdateNielsenTrackingAttributesInput",
-    "AdGroupUpdateNielsenTrackingAttributesInputTypedDict",
-    "AdGroupUpdateNielsenTrackingAttributesInputWorkflowsOptional",
-    "AdGroupUpdateNielsenTrackingAttributesInputWorkflowsOptionalTypedDict",
+    "AdGroupROIGoal",
+    "AdGroupROIGoalTypedDict",
     "AdGroupUpdateWorkflowInput",
     "AdGroupUpdateWorkflowInputTypedDict",
+    "AdGroupUpdateWorkflowPrimaryInput",
+    "AdGroupUpdateWorkflowPrimaryInputTypedDict",
     "AdGroupWorkflow",
+    "AdGroupWorkflowAdvancedInput",
+    "AdGroupWorkflowAdvancedInputTypedDict",
+    "AdGroupWorkflowAssociateBidListInput",
+    "AdGroupWorkflowAssociateBidListInputTypedDict",
+    "AdGroupWorkflowAudienceTargetingInput",
+    "AdGroupWorkflowAudienceTargetingInputTypedDict",
+    "AdGroupWorkflowBudgetInput",
+    "AdGroupWorkflowBudgetInputTypedDict",
+    "AdGroupWorkflowComscoreSettingsInput",
+    "AdGroupWorkflowComscoreSettingsInputTypedDict",
+    "AdGroupWorkflowContractTargetingInput",
+    "AdGroupWorkflowContractTargetingInputTypedDict",
+    "AdGroupWorkflowFlightInput",
+    "AdGroupWorkflowFlightInputTypedDict",
+    "AdGroupWorkflowKoaOptimizationSettingsInput",
+    "AdGroupWorkflowKoaOptimizationSettingsInputTypedDict",
+    "AdGroupWorkflowNewFrequencyConfigInput",
+    "AdGroupWorkflowNewFrequencyConfigInputTypedDict",
+    "AdGroupWorkflowNielsenTrackingAttributesInput",
+    "AdGroupWorkflowNielsenTrackingAttributesInputTypedDict",
+    "AdGroupWorkflowROIGoalInput",
+    "AdGroupWorkflowROIGoalInputTypedDict",
     "AdGroupWorkflowTypedDict",
     "AllocationType",
-    "BudgetWorkflow",
-    "BudgetWorkflowTypedDict",
     "BulkJobStatusResponse",
     "BulkJobStatusResponseTypedDict",
     "BulkJobSubmitResponse",
     "BulkJobSubmitResponseTypedDict",
-    "CampaignBulkPayload",
-    "CampaignBulkPayloadTypedDict",
+    "CallPubAPIWorkflowInput",
+    "CallPubAPIWorkflowInputTypedDict",
     "CampaignChannelType",
-    "CampaignConversionReportingColumnWorkflow",
-    "CampaignConversionReportingColumnWorkflowTypedDict",
-    "CampaignCreateAdGroupAdvancedSettingsInput",
-    "CampaignCreateAdGroupAdvancedSettingsInputTypedDict",
-    "CampaignCreateAdGroupFlightInput",
-    "CampaignCreateAdGroupFlightInputTypedDict",
-    "CampaignCreateAdGroupInput",
-    "CampaignCreateAdGroupInputTypedDict",
-    "CampaignCreateROIGoalWorkflow",
-    "CampaignCreateROIGoalWorkflowTypedDict",
-    "CampaignCreateWorkflowAdvancedInput",
-    "CampaignCreateWorkflowAdvancedInputTypedDict",
+    "CampaignCreateWorkflowAdGroupAdvancedInput",
+    "CampaignCreateWorkflowAdGroupAdvancedInputTypedDict",
+    "CampaignCreateWorkflowAdGroupFlightInput",
+    "CampaignCreateWorkflowAdGroupFlightInputTypedDict",
+    "CampaignCreateWorkflowAdGroupInput",
+    "CampaignCreateWorkflowAdGroupInputTypedDict",
     "CampaignCreateWorkflowInput",
     "CampaignCreateWorkflowInputTypedDict",
     "CampaignCreateWorkflowPrimaryInput",
     "CampaignCreateWorkflowPrimaryInputTypedDict",
     "CampaignFlightWorkflow",
-    "CampaignFlightWorkflowInput",
-    "CampaignFlightWorkflowInputTypedDict",
     "CampaignFlightWorkflowTypedDict",
     "CampaignPacingMode",
-    "CampaignSinglePayload",
-    "CampaignSinglePayloadTypedDict",
+    "CampaignPayload",
+    "CampaignPayloadTypedDict",
+    "CampaignUpdateWorkflowInput",
+    "CampaignUpdateWorkflowInputTypedDict",
+    "CampaignUpdateWorkflowPrimaryInput",
+    "CampaignUpdateWorkflowPrimaryInputTypedDict",
     "CampaignVersionWorkflow",
     "CampaignVersionWorkflowTypedDict",
     "CampaignWorkflow",
+    "CampaignWorkflowAdvancedInput",
+    "CampaignWorkflowAdvancedInputTypedDict",
+    "CampaignWorkflowBudgetInput",
+    "CampaignWorkflowBudgetInputTypedDict",
+    "CampaignWorkflowConversionReportingColumnInput",
+    "CampaignWorkflowConversionReportingColumnInputTypedDict",
+    "CampaignWorkflowFlightInput",
+    "CampaignWorkflowFlightInputTypedDict",
+    "CampaignWorkflowROIGoalInput",
+    "CampaignWorkflowROIGoalInputTypedDict",
     "CampaignWorkflowTypedDict",
     "CustomCPAType",
     "CustomROASConfig",
     "CustomROASConfigTypedDict",
-    "DecimalNullableWorkflowsOptional",
-    "DecimalNullableWorkflowsOptionalTypedDict",
     "DimensionalBiddingDimensions",
     "EnhancedNielsenReportingOptions",
     "FirstPartyDataInput",
@@ -324,23 +307,23 @@ __all__ = [
     "GetCampaignIDVersionRequestTypedDict",
     "GraphQLRequestInput",
     "GraphQLRequestInputTypedDict",
-    "Int64NullableWorkflowsOptional",
-    "Int64NullableWorkflowsOptionalTypedDict",
     "PostAdgroupArchiveRequest",
     "PostAdgroupArchiveRequestTypedDict",
     "PostCampaignArchiveRequest",
     "PostCampaignArchiveRequestTypedDict",
+    "PostPubapiResponse",
+    "PostPubapiResponseTypedDict",
     "ProblemDetails",
     "ProblemDetailsError",
     "ProblemDetailsErrorData",
     "ProblemDetailsTypedDict",
+    "PubAPIMethodType",
     "Security",
     "SecurityTypedDict",
-    "StringWorkflowsOptional",
-    "StringWorkflowsOptionalTypedDict",
     "TargetingEndAge",
     "TargetingGender",
     "TargetingStartAge",
     "Variables",
     "VariablesTypedDict",
+    "WorkflowStatus",
 ]

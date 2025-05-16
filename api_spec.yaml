@@ -160,10 +160,6 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                type: object
         '503':
           description: Service Unavailable
   '/bulkjob/{id}/status':
@@ -217,10 +213,6 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                type: object
         '503':
           description: Service Unavailable
   /campaign:
@@ -307,10 +299,6 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                type: object
         '503':
           description: Service Unavailable
   /campaign/archive:

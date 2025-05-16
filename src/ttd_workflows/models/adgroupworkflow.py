@@ -29,7 +29,7 @@ from .adgroupnielsentrackingattributes import (
     AdGroupNielsenTrackingAttributes,
     AdGroupNielsenTrackingAttributesTypedDict,
 )
-from .adgrouproigoal import AdGroupRoiGoal, AdGroupRoiGoalTypedDict
+from .adgrouproigoal import AdGroupROIGoal, AdGroupROIGoalTypedDict
 from .dimensionalbiddingdimensions import DimensionalBiddingDimensions
 import pydantic
 from pydantic import model_serializer
@@ -52,7 +52,7 @@ class AdGroupWorkflowTypedDict(TypedDict):
     channel: AdGroupChannel
     funnel_location: AdGroupFunnelLocation
     budget: AdGroupBudgetTypedDict
-    roi_goal: AdGroupRoiGoalTypedDict
+    roi_goal: AdGroupROIGoalTypedDict
     creative_ids: Nullable[List[str]]
     associated_bid_lists: Nullable[List[AdGroupAssociateBidListTypedDict]]
     flights: Nullable[List[AdGroupFlightTypedDict]]
@@ -89,7 +89,7 @@ class AdGroupWorkflow(BaseModel):
 
     budget: AdGroupBudget
 
-    roi_goal: Annotated[AdGroupRoiGoal, pydantic.Field(alias="roiGoal")]
+    roi_goal: Annotated[AdGroupROIGoal, pydantic.Field(alias="roiGoal")]
 
     creative_ids: Annotated[Nullable[List[str]], pydantic.Field(alias="creativeIds")]
 

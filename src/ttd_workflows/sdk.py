@@ -12,6 +12,7 @@ from ttd_workflows.adgroup import AdGroup
 from ttd_workflows.bulkjob import BulkJob
 from ttd_workflows.campaign import Campaign
 from ttd_workflows.graphql import GraphQL
+from ttd_workflows.pubapi import PubAPI
 from ttd_workflows.types import OptionalNullable, UNSET
 from typing import Any, Callable, Dict, Optional, Union, cast
 import weakref
@@ -24,6 +25,7 @@ class Workflows(BaseSDK):
     bulk_job: BulkJob
     campaign: Campaign
     graph_ql: GraphQL
+    pub_api: PubAPI
 
     def __init__(
         self,
@@ -125,6 +127,7 @@ class Workflows(BaseSDK):
         self.bulk_job = BulkJob(self.sdk_configuration)
         self.campaign = Campaign(self.sdk_configuration)
         self.graph_ql = GraphQL(self.sdk_configuration)
+        self.pub_api = PubAPI(self.sdk_configuration)
 
     def __enter__(self):
         return self
