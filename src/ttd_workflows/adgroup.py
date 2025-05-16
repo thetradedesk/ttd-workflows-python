@@ -91,14 +91,14 @@ class AdGroup(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=["400", "4XX", "5XX"],
+            error_status_codes=["400", "403", "4XX", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
             return utils.unmarshal_json(http_res.text, models.AdGroupPayload)
-        if utils.match_response(http_res, "400", "application/json"):
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )
@@ -205,14 +205,14 @@ class AdGroup(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=["400", "4XX", "5XX"],
+            error_status_codes=["400", "403", "4XX", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
             return utils.unmarshal_json(http_res.text, models.AdGroupPayload)
-        if utils.match_response(http_res, "400", "application/json"):
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )
@@ -319,14 +319,14 @@ class AdGroup(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=["400", "4XX", "5XX"],
+            error_status_codes=["400", "403", "4XX", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(http_res.text, models.AdGroupPayload)
-        if utils.match_response(http_res, "400", "application/json"):
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )
@@ -433,14 +433,14 @@ class AdGroup(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=["400", "4XX", "5XX"],
+            error_status_codes=["400", "403", "4XX", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(http_res.text, models.AdGroupPayload)
-        if utils.match_response(http_res, "400", "application/json"):
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )
@@ -475,7 +475,7 @@ class AdGroup(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> List[str]:
-        r"""Archive a list of AdGroups
+        r"""Archive a list of ad groups
 
         :param force_archive:
         :param request_body:
@@ -540,14 +540,14 @@ class AdGroup(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=["400", "4XX", "5XX"],
+            error_status_codes=["400", "403", "4XX", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(http_res.text, List[str])
-        if utils.match_response(http_res, "400", "application/json"):
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )
@@ -582,7 +582,7 @@ class AdGroup(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> List[str]:
-        r"""Archive a list of AdGroups
+        r"""Archive a list of ad groups
 
         :param force_archive:
         :param request_body:
@@ -647,14 +647,14 @@ class AdGroup(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=["400", "4XX", "5XX"],
+            error_status_codes=["400", "403", "4XX", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(http_res.text, List[str])
-        if utils.match_response(http_res, "400", "application/json"):
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )

@@ -1,0 +1,10 @@
+# CampaignUpdateWorkflowInput
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `primary_input`                                                                              | [models.CampaignUpdateWorkflowPrimaryInput](../models/campaignupdateworkflowprimaryinput.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `advanced_input`                                                                             | [Optional[models.CampaignWorkflowAdvancedInput]](../models/campaignworkflowadvancedinput.md) | :heavy_minus_sign:                                                                           | N/A                                                                                          |
+| `validation_only`                                                                            | *OptionalNullable[bool]*                                                                     | :heavy_minus_sign:                                                                           | N/A                                                                                          |

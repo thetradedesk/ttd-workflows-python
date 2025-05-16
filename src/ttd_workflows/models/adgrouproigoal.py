@@ -13,7 +13,7 @@ from ttd_workflows.types import (
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class AdGroupRoiGoalTypedDict(TypedDict):
+class AdGroupROIGoalTypedDict(TypedDict):
     maximize_reach: NotRequired[Nullable[bool]]
     maximize_ltv_incremental_reach: NotRequired[Nullable[bool]]
     cpc_in_advertiser_currency: NotRequired[Nullable[float]]
@@ -28,7 +28,7 @@ class AdGroupRoiGoalTypedDict(TypedDict):
     miaozhen_otp_in_percent: NotRequired[Nullable[float]]
 
 
-class AdGroupRoiGoal(BaseModel):
+class AdGroupROIGoal(BaseModel):
     maximize_reach: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="maximizeReach")
     ] = UNSET
