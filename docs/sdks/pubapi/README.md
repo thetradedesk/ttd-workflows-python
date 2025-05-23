@@ -22,9 +22,9 @@ with Workflows(
 ) as workflows:
 
     res = workflows.pub_api.post_pubapi(request={
-        "method_type": ttd_workflows.PubAPIMethodType.PUT,
+        "method_type": ttd_workflows.PubAPIMethodType.DELETE,
         "endpoint": "<value>",
-        "data_body": "<value>",
+        "data_body": None,
     })
 
     # Handle response

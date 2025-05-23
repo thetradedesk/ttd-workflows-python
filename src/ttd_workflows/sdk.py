@@ -6,26 +6,36 @@ from .sdkconfiguration import SDKConfiguration
 from .utils.logger import Logger, get_default_logger
 from .utils.retries import RetryConfig
 import httpx
+import importlib
 from ttd_workflows import models, utils
 from ttd_workflows._hooks import SDKHooks
-from ttd_workflows.adgroup import AdGroup
-from ttd_workflows.bulkjob import BulkJob
-from ttd_workflows.campaign import Campaign
-from ttd_workflows.graphql import GraphQL
-from ttd_workflows.pubapi import PubAPI
 from ttd_workflows.types import OptionalNullable, UNSET
-from typing import Any, Callable, Dict, Optional, Union, cast
+from typing import Any, Callable, Dict, Optional, TYPE_CHECKING, Union, cast
 import weakref
+
+if TYPE_CHECKING:
+    from ttd_workflows.adgroup import AdGroup
+    from ttd_workflows.bulkjob import BulkJob
+    from ttd_workflows.campaign import Campaign
+    from ttd_workflows.graphql import GraphQL
+    from ttd_workflows.pubapi import PubAPI
 
 
 class Workflows(BaseSDK):
     r"""Workflows API: A RESTful service for commonly used workflows."""
 
-    ad_group: AdGroup
-    bulk_job: BulkJob
-    campaign: Campaign
-    graph_ql: GraphQL
-    pub_api: PubAPI
+    ad_group: "AdGroup"
+    bulk_job: "BulkJob"
+    campaign: "Campaign"
+    graph_ql: "GraphQL"
+    pub_api: "PubAPI"
+    _sub_sdk_map = {
+        "ad_group": ("ttd_workflows.adgroup", "AdGroup"),
+        "bulk_job": ("ttd_workflows.bulkjob", "BulkJob"),
+        "campaign": ("ttd_workflows.campaign", "Campaign"),
+        "graph_ql": ("ttd_workflows.graphql", "GraphQL"),
+        "pub_api": ("ttd_workflows.pubapi", "PubAPI"),
+    }
 
     def __init__(
         self,
@@ -120,14 +130,32 @@ class Workflows(BaseSDK):
             self.sdk_configuration.async_client_supplied,
         )
 
-        self._init_sdks()
+    def __getattr__(self, name: str):
+        if name in self._sub_sdk_map:
+            module_path, class_name = self._sub_sdk_map[name]
+            try:
+                module = importlib.import_module(module_path)
+                klass = getattr(module, class_name)
+                instance = klass(self.sdk_configuration)
+                setattr(self, name, instance)
+                return instance
+            except ImportError as e:
+                raise AttributeError(
+                    f"Failed to import module {module_path} for attribute {name}: {e}"
+                ) from e
+            except AttributeError as e:
+                raise AttributeError(
+                    f"Failed to find class {class_name} in module {module_path} for attribute {name}: {e}"
+                ) from e
 
-    def _init_sdks(self):
-        self.ad_group = AdGroup(self.sdk_configuration)
-        self.bulk_job = BulkJob(self.sdk_configuration)
-        self.campaign = Campaign(self.sdk_configuration)
-        self.graph_ql = GraphQL(self.sdk_configuration)
-        self.pub_api = PubAPI(self.sdk_configuration)
+        raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+
+    def __dir__(self):
+        default_attrs = list(super().__dir__())
+        lazy_attrs = list(self._sub_sdk_map.keys())
+        return sorted(list(set(default_attrs + lazy_attrs)))
 
     def __enter__(self):
         return self

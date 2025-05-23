@@ -30,7 +30,7 @@ class CampaignCreateWorkflowInputTypedDict(TypedDict):
     primary_input: CampaignCreateWorkflowPrimaryInputTypedDict
     advanced_input: NotRequired[CampaignWorkflowAdvancedInputTypedDict]
     ad_groups: NotRequired[Nullable[List[CampaignCreateWorkflowAdGroupInputTypedDict]]]
-    validation_only: NotRequired[Nullable[bool]]
+    validate_input_only: NotRequired[Nullable[bool]]
 
 
 class CampaignCreateWorkflowInput(BaseModel):
@@ -47,14 +47,14 @@ class CampaignCreateWorkflowInput(BaseModel):
         pydantic.Field(alias="adGroups"),
     ] = UNSET
 
-    validation_only: Annotated[
-        OptionalNullable[bool], pydantic.Field(alias="validationOnly")
+    validate_input_only: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="validateInputOnly")
     ] = UNSET
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["advancedInput", "adGroups", "validationOnly"]
-        nullable_fields = ["adGroups", "validationOnly"]
+        optional_fields = ["advancedInput", "adGroups", "validateInputOnly"]
+        nullable_fields = ["adGroups", "validateInputOnly"]
         null_default_fields = []
 
         serialized = handler(self)
