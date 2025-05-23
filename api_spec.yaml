@@ -270,7 +270,7 @@ paths:
     post:
       tags:
         - Campaign
-      summary: Create a list of campaigns with required fields. `ValidationOnly` value should be the same for all campaigns.
+      summary: Create a list of campaigns with required fields. `ValidateInputOnly` value should be the same for all campaigns.
       requestBody:
         content:
           application/json:
@@ -1363,7 +1363,7 @@ components:
           items:
             $ref: '#/components/schemas/CampaignCreateWorkflowAdGroupInput'
           nullable: true
-        validationOnly:
+        validateInputOnly:
           type: boolean
           nullable: true
       additionalProperties: false
@@ -1484,7 +1484,7 @@ components:
           $ref: '#/components/schemas/CampaignUpdateWorkflowPrimaryInput'
         advancedInput:
           $ref: '#/components/schemas/CampaignWorkflowAdvancedInput'
-        validationOnly:
+        validateInputOnly:
           type: boolean
           nullable: true
       additionalProperties: false
@@ -1560,7 +1560,6 @@ components:
     CampaignWorkflow:
       required:
         - id
-        - name
       type: object
       properties:
         id:

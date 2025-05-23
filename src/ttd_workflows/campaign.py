@@ -483,7 +483,7 @@ class Campaign(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.BulkJobSubmitResponse:
-        r"""Create a list of campaigns with required fields. `ValidationOnly` value should be the same for all campaigns.
+        r"""Create a list of campaigns with required fields. `ValidateInputOnly` value should be the same for all campaigns.
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -598,7 +598,7 @@ class Campaign(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.BulkJobSubmitResponse:
-        r"""Create a list of campaigns with required fields. `ValidationOnly` value should be the same for all campaigns.
+        r"""Create a list of campaigns with required fields. `ValidateInputOnly` value should be the same for all campaigns.
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
