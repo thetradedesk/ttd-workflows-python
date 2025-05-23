@@ -67,7 +67,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.bulk_job.get_bulkjob_id_status(id=887039)
+    res = workflows.bulk_job.get_bulkjob_id_status(id=582277)
 
     # Handle response
     print(res)

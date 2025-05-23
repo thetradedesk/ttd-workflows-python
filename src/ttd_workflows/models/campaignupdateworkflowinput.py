@@ -25,7 +25,7 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class CampaignUpdateWorkflowInputTypedDict(TypedDict):
     primary_input: CampaignUpdateWorkflowPrimaryInputTypedDict
     advanced_input: NotRequired[CampaignWorkflowAdvancedInputTypedDict]
-    validation_only: NotRequired[Nullable[bool]]
+    validate_input_only: NotRequired[Nullable[bool]]
 
 
 class CampaignUpdateWorkflowInput(BaseModel):
@@ -37,14 +37,14 @@ class CampaignUpdateWorkflowInput(BaseModel):
         Optional[CampaignWorkflowAdvancedInput], pydantic.Field(alias="advancedInput")
     ] = None
 
-    validation_only: Annotated[
-        OptionalNullable[bool], pydantic.Field(alias="validationOnly")
+    validate_input_only: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="validateInputOnly")
     ] = UNSET
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["advancedInput", "validationOnly"]
-        nullable_fields = ["validationOnly"]
+        optional_fields = ["advancedInput", "validateInputOnly"]
+        nullable_fields = ["validateInputOnly"]
         null_default_fields = []
 
         serialized = handler(self)

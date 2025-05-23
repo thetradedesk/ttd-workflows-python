@@ -23,7 +23,7 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 class CampaignWorkflowTypedDict(TypedDict):
     id: Nullable[str]
-    name: Nullable[str]
+    name: NotRequired[Nullable[str]]
     description: NotRequired[Nullable[str]]
     start_date: NotRequired[Nullable[datetime]]
     end_date: NotRequired[Nullable[datetime]]
@@ -42,7 +42,7 @@ class CampaignWorkflowTypedDict(TypedDict):
 class CampaignWorkflow(BaseModel):
     id: Nullable[str]
 
-    name: Nullable[str]
+    name: OptionalNullable[str] = UNSET
 
     description: OptionalNullable[str] = UNSET
 
@@ -93,6 +93,7 @@ class CampaignWorkflow(BaseModel):
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
+            "name",
             "description",
             "startDate",
             "endDate",
