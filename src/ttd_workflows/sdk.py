@@ -14,27 +14,30 @@ from typing import Any, Callable, Dict, Optional, TYPE_CHECKING, Union, cast
 import weakref
 
 if TYPE_CHECKING:
-    from ttd_workflows.adgroup import AdGroup
-    from ttd_workflows.bulkjob import BulkJob
+    from ttd_workflows.adgroups import AdGroups
+    from ttd_workflows.bulkjobs import BulkJobs
     from ttd_workflows.campaign import Campaign
-    from ttd_workflows.graphql import GraphQL
-    from ttd_workflows.pubapi import PubAPI
+    from ttd_workflows.campaigns import Campaigns
+    from ttd_workflows.graphql import GraphQl
+    from ttd_workflows.pubapis import PubApis
 
 
 class Workflows(BaseSDK):
     r"""Workflows API: A RESTful service for commonly used workflows."""
 
-    ad_group: "AdGroup"
-    bulk_job: "BulkJob"
+    ad_groups: "AdGroups"
+    bulk_jobs: "BulkJobs"
     campaign: "Campaign"
-    graph_ql: "GraphQL"
-    pub_api: "PubAPI"
+    campaigns: "Campaigns"
+    graph_ql: "GraphQl"
+    pub_apis: "PubApis"
     _sub_sdk_map = {
-        "ad_group": ("ttd_workflows.adgroup", "AdGroup"),
-        "bulk_job": ("ttd_workflows.bulkjob", "BulkJob"),
+        "ad_groups": ("ttd_workflows.adgroups", "AdGroups"),
+        "bulk_jobs": ("ttd_workflows.bulkjobs", "BulkJobs"),
         "campaign": ("ttd_workflows.campaign", "Campaign"),
-        "graph_ql": ("ttd_workflows.graphql", "GraphQL"),
-        "pub_api": ("ttd_workflows.pubapi", "PubAPI"),
+        "campaigns": ("ttd_workflows.campaigns", "Campaigns"),
+        "graph_ql": ("ttd_workflows.graphql", "GraphQl"),
+        "pub_apis": ("ttd_workflows.pubapis", "PubApis"),
     }
 
     def __init__(

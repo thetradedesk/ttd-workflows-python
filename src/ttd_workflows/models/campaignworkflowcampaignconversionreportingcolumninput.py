@@ -15,7 +15,7 @@ from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class CampaignWorkflowConversionReportingColumnInputTypedDict(TypedDict):
+class CampaignWorkflowCampaignConversionReportingColumnInputTypedDict(TypedDict):
     tracking_tag_id: str
     include_in_custom_cpa: bool
     reporting_column_id: int
@@ -24,7 +24,7 @@ class CampaignWorkflowConversionReportingColumnInputTypedDict(TypedDict):
     cross_device_attribution_model_id: NotRequired[Nullable[str]]
 
 
-class CampaignWorkflowConversionReportingColumnInput(BaseModel):
+class CampaignWorkflowCampaignConversionReportingColumnInput(BaseModel):
     tracking_tag_id: Annotated[str, pydantic.Field(alias="trackingTagId")]
 
     include_in_custom_cpa: Annotated[bool, pydantic.Field(alias="includeInCustomCPA")]

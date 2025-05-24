@@ -1,13 +1,13 @@
-# PubAPI
-(*pub_api*)
+# PubApis
+(*pub_apis*)
 
 ## Overview
 
 ### Available Operations
 
-* [post_pubapi](#post_pubapi)
+* [post](#post)
 
-## post_pubapi
+## post
 
 ### Example Usage
 
@@ -21,7 +21,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.pub_api.post_pubapi(request={
+    res = workflows.pub_apis.post(request={
         "method_type": ttd_workflows.PubAPIMethodType.DELETE,
         "endpoint": "<value>",
         "data_body": None,

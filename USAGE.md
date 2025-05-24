@@ -10,13 +10,10 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_group.post_adgroup(request={
+    res = workflows.ad_groups.create(request={
         "primary_input": {
-            "name": "<value>",
             "is_enabled": True,
             "description": "into save rosy forsaken well",
-            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "budget": {
                 "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                 "budget_in_advertiser_currency": 6554.77,
@@ -74,6 +71,9 @@ with Workflows(
                     "is_default_for_dimension": None,
                 },
             ],
+            "name": "<value>",
+            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": None,
         },
         "campaign_id": "<id>",
@@ -147,13 +147,10 @@ async def main():
         ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
     ) as workflows:
 
-        res = await workflows.ad_group.post_adgroup_async(request={
+        res = await workflows.ad_groups.create_async(request={
             "primary_input": {
-                "name": "<value>",
                 "is_enabled": True,
                 "description": "into save rosy forsaken well",
-                "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-                "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
                 "budget": {
                     "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                     "budget_in_advertiser_currency": 6554.77,
@@ -211,6 +208,9 @@ async def main():
                         "is_default_for_dimension": None,
                     },
                 ],
+                "name": "<value>",
+                "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+                "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
                 "programmatic_guaranteed_private_contract_id": None,
             },
             "campaign_id": "<id>",
