@@ -33,9 +33,6 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class AdGroupUpdateWorkflowPrimaryInputTypedDict(TypedDict):
-    name: Nullable[str]
-    channel: AdGroupChannel
-    funnel_location: AdGroupFunnelLocation
     is_enabled: NotRequired[Nullable[bool]]
     description: NotRequired[Nullable[str]]
     budget: NotRequired[AdGroupWorkflowBudgetInputTypedDict]
@@ -47,17 +44,12 @@ class AdGroupUpdateWorkflowPrimaryInputTypedDict(TypedDict):
     associated_bid_lists: NotRequired[
         Nullable[List[AdGroupWorkflowAssociateBidListInputTypedDict]]
     ]
+    name: NotRequired[Nullable[str]]
+    channel: NotRequired[AdGroupChannel]
+    funnel_location: NotRequired[AdGroupFunnelLocation]
 
 
 class AdGroupUpdateWorkflowPrimaryInput(BaseModel):
-    name: Nullable[str]
-
-    channel: AdGroupChannel
-
-    funnel_location: Annotated[
-        AdGroupFunnelLocation, pydantic.Field(alias="funnelLocation")
-    ]
-
     is_enabled: Annotated[OptionalNullable[bool], pydantic.Field(alias="isEnabled")] = (
         UNSET
     )
@@ -92,6 +84,14 @@ class AdGroupUpdateWorkflowPrimaryInput(BaseModel):
         pydantic.Field(alias="associatedBidLists"),
     ] = UNSET
 
+    name: OptionalNullable[str] = UNSET
+
+    channel: Optional[AdGroupChannel] = None
+
+    funnel_location: Annotated[
+        Optional[AdGroupFunnelLocation], pydantic.Field(alias="funnelLocation")
+    ] = None
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -104,15 +104,18 @@ class AdGroupUpdateWorkflowPrimaryInput(BaseModel):
             "roiGoal",
             "creativeIds",
             "associatedBidLists",
+            "name",
+            "channel",
+            "funnelLocation",
         ]
         nullable_fields = [
-            "name",
             "isEnabled",
             "description",
             "baseBidCPMInAdvertiserCurrency",
             "maxBidCPMInAdvertiserCurrency",
             "creativeIds",
             "associatedBidLists",
+            "name",
         ]
         null_default_fields = []
 

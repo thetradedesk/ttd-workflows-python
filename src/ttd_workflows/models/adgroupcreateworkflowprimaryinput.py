@@ -113,13 +113,13 @@ class AdGroupCreateWorkflowPrimaryInput(BaseModel):
             "programmaticGuaranteedPrivateContractId",
         ]
         nullable_fields = [
-            "name",
             "isEnabled",
             "description",
             "baseBidCPMInAdvertiserCurrency",
             "maxBidCPMInAdvertiserCurrency",
             "creativeIds",
             "associatedBidLists",
+            "name",
             "programmaticGuaranteedPrivateContractId",
         ]
         null_default_fields = []

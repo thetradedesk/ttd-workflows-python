@@ -157,9 +157,9 @@ if TYPE_CHECKING:
         CampaignWorkflowBudgetInput,
         CampaignWorkflowBudgetInputTypedDict,
     )
-    from .campaignworkflowconversionreportingcolumninput import (
-        CampaignWorkflowConversionReportingColumnInput,
-        CampaignWorkflowConversionReportingColumnInputTypedDict,
+    from .campaignworkflowcampaignconversionreportingcolumninput import (
+        CampaignWorkflowCampaignConversionReportingColumnInput,
+        CampaignWorkflowCampaignConversionReportingColumnInputTypedDict,
     )
     from .campaignworkflowflightinput import (
         CampaignWorkflowFlightInput,
@@ -191,6 +191,10 @@ if TYPE_CHECKING:
     from .post_adgroup_archiveop import (
         PostAdgroupArchiveRequest,
         PostAdgroupArchiveRequestTypedDict,
+    )
+    from .post_bulkjob_callbackop import (
+        PostBulkjobCallbackResponse,
+        PostBulkjobCallbackResponseTypedDict,
     )
     from .post_campaign_archiveop import (
         PostCampaignArchiveRequest,
@@ -296,8 +300,8 @@ __all__ = [
     "CampaignWorkflowAdvancedInputTypedDict",
     "CampaignWorkflowBudgetInput",
     "CampaignWorkflowBudgetInputTypedDict",
-    "CampaignWorkflowConversionReportingColumnInput",
-    "CampaignWorkflowConversionReportingColumnInputTypedDict",
+    "CampaignWorkflowCampaignConversionReportingColumnInput",
+    "CampaignWorkflowCampaignConversionReportingColumnInputTypedDict",
     "CampaignWorkflowFlightInput",
     "CampaignWorkflowFlightInputTypedDict",
     "CampaignWorkflowROIGoalInput",
@@ -318,6 +322,8 @@ __all__ = [
     "GraphQLRequestInputTypedDict",
     "PostAdgroupArchiveRequest",
     "PostAdgroupArchiveRequestTypedDict",
+    "PostBulkjobCallbackResponse",
+    "PostBulkjobCallbackResponseTypedDict",
     "PostCampaignArchiveRequest",
     "PostCampaignArchiveRequestTypedDict",
     "PostPubapiResponse",
@@ -428,8 +434,8 @@ _dynamic_imports: dict[str, str] = {
     "CampaignWorkflowAdvancedInputTypedDict": ".campaignworkflowadvancedinput",
     "CampaignWorkflowBudgetInput": ".campaignworkflowbudgetinput",
     "CampaignWorkflowBudgetInputTypedDict": ".campaignworkflowbudgetinput",
-    "CampaignWorkflowConversionReportingColumnInput": ".campaignworkflowconversionreportingcolumninput",
-    "CampaignWorkflowConversionReportingColumnInputTypedDict": ".campaignworkflowconversionreportingcolumninput",
+    "CampaignWorkflowCampaignConversionReportingColumnInput": ".campaignworkflowcampaignconversionreportingcolumninput",
+    "CampaignWorkflowCampaignConversionReportingColumnInputTypedDict": ".campaignworkflowcampaignconversionreportingcolumninput",
     "CampaignWorkflowFlightInput": ".campaignworkflowflightinput",
     "CampaignWorkflowFlightInputTypedDict": ".campaignworkflowflightinput",
     "CampaignWorkflowROIGoalInput": ".campaignworkflowroigoalinput",
@@ -451,6 +457,8 @@ _dynamic_imports: dict[str, str] = {
     "VariablesTypedDict": ".graphqlrequestinput",
     "PostAdgroupArchiveRequest": ".post_adgroup_archiveop",
     "PostAdgroupArchiveRequestTypedDict": ".post_adgroup_archiveop",
+    "PostBulkjobCallbackResponse": ".post_bulkjob_callbackop",
+    "PostBulkjobCallbackResponseTypedDict": ".post_bulkjob_callbackop",
     "PostCampaignArchiveRequest": ".post_campaign_archiveop",
     "PostCampaignArchiveRequestTypedDict": ".post_campaign_archiveop",
     "PostPubapiResponse": ".post_pubapiop",

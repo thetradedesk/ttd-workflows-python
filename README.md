@@ -108,13 +108,10 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_group.post_adgroup(request={
+    res = workflows.ad_groups.create(request={
         "primary_input": {
-            "name": "<value>",
             "is_enabled": True,
             "description": "into save rosy forsaken well",
-            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "budget": {
                 "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                 "budget_in_advertiser_currency": 6554.77,
@@ -172,6 +169,9 @@ with Workflows(
                     "is_default_for_dimension": None,
                 },
             ],
+            "name": "<value>",
+            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": None,
         },
         "campaign_id": "<id>",
@@ -245,13 +245,10 @@ async def main():
         ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
     ) as workflows:
 
-        res = await workflows.ad_group.post_adgroup_async(request={
+        res = await workflows.ad_groups.create_async(request={
             "primary_input": {
-                "name": "<value>",
                 "is_enabled": True,
                 "description": "into save rosy forsaken well",
-                "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-                "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
                 "budget": {
                     "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                     "budget_in_advertiser_currency": 6554.77,
@@ -309,6 +306,9 @@ async def main():
                         "is_default_for_dimension": None,
                     },
                 ],
+                "name": "<value>",
+                "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+                "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
                 "programmatic_guaranteed_private_contract_id": None,
             },
             "campaign_id": "<id>",
@@ -391,13 +391,10 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_group.post_adgroup(request={
+    res = workflows.ad_groups.create(request={
         "primary_input": {
-            "name": "<value>",
             "is_enabled": True,
             "description": "into save rosy forsaken well",
-            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "budget": {
                 "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                 "budget_in_advertiser_currency": 6554.77,
@@ -455,6 +452,9 @@ with Workflows(
                     "is_default_for_dimension": None,
                 },
             ],
+            "name": "<value>",
+            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": None,
         },
         "campaign_id": "<id>",
@@ -520,32 +520,38 @@ with Workflows(
 <details open>
 <summary>Available methods</summary>
 
-### [ad_group](docs/sdks/adgroup/README.md)
+### [ad_groups](docs/sdks/adgroups/README.md)
 
-* [post_adgroup](docs/sdks/adgroup/README.md#post_adgroup)
-* [patch_adgroup](docs/sdks/adgroup/README.md#patch_adgroup)
-* [post_adgroup_archive](docs/sdks/adgroup/README.md#post_adgroup_archive) - Archive a list of ad groups
+* [create](docs/sdks/adgroups/README.md#create)
+* [update](docs/sdks/adgroups/README.md#update)
+* [archive](docs/sdks/adgroups/README.md#archive) - Archive a list of ad groups
+* [bulk_create](docs/sdks/adgroups/README.md#bulk_create) - Create a list of ad groups with required fields. `ValidateInputOnly` value should be the same for all ad groups.
 
-### [bulk_job](docs/sdks/bulkjob/README.md)
+### [bulk_jobs](docs/sdks/bulkjobs/README.md)
 
-* [post_bulkjob_firstpartydata](docs/sdks/bulkjob/README.md#post_bulkjob_firstpartydata) - Submits a query for First Party Data to Hydra
-* [get_bulkjob_id_status](docs/sdks/bulkjob/README.md#get_bulkjob_id_status) - Get the status of a bulk job you submitted earlier
+* [submit_first_party_data](docs/sdks/bulkjobs/README.md#submit_first_party_data) - Submit a query for First Party Data to Hydra
+* [callback](docs/sdks/bulkjobs/README.md#callback) - Used for receiving a callback from Hydra once a job is completed
+* [get_status](docs/sdks/bulkjobs/README.md#get_status) - Get the status of a bulk job you submitted earlier
 
 ### [campaign](docs/sdks/campaign/README.md)
 
 * [create](docs/sdks/campaign/README.md#create) - Create a new campaign with required fields
-* [patch_campaign](docs/sdks/campaign/README.md#patch_campaign) - Update an existing campaign with specified fields
-* [post_campaign_bulk](docs/sdks/campaign/README.md#post_campaign_bulk) - Create a list of campaigns with required fields. `ValidateInputOnly` value should be the same for all campaigns.
-* [post_campaign_archive](docs/sdks/campaign/README.md#post_campaign_archive) - Archive a list of campaigns
 * [get_version](docs/sdks/campaign/README.md#get_version) - GET a campaign's version
+
+### [campaigns](docs/sdks/campaigns/README.md)
+
+* [update](docs/sdks/campaigns/README.md#update) - Update an existing campaign with specified fields
+* [bulk_create](docs/sdks/campaigns/README.md#bulk_create) - Create a list of campaigns with required fields. `ValidateInputOnly` value should be the same for all campaigns.
+* [bulk_update](docs/sdks/campaigns/README.md#bulk_update) - Update a list of existing campaigns with specified fields. `ValidateInputOnly` value should be the same for all campaigns.
+* [archive](docs/sdks/campaigns/README.md#archive) - Archive a list of campaigns
 
 ### [graph_ql](docs/sdks/graphql/README.md)
 
-* [post_graphql_request](docs/sdks/graphql/README.md#post_graphql_request) - An endpoint that executes valid GraphQL queries or mutations.
+* [post_request](docs/sdks/graphql/README.md#post_request) - An endpoint that executes valid GraphQL queries or mutations.
 
-### [pub_api](docs/sdks/pubapi/README.md)
+### [pub_apis](docs/sdks/pubapis/README.md)
 
-* [post_pubapi](docs/sdks/pubapi/README.md#post_pubapi)
+* [post](docs/sdks/pubapis/README.md#post)
 
 
 </details>
@@ -568,13 +574,10 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_group.post_adgroup(request={
+    res = workflows.ad_groups.create(request={
         "primary_input": {
-            "name": "<value>",
             "is_enabled": True,
             "description": "into save rosy forsaken well",
-            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "budget": {
                 "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                 "budget_in_advertiser_currency": 6554.77,
@@ -632,6 +635,9 @@ with Workflows(
                     "is_default_for_dimension": None,
                 },
             ],
+            "name": "<value>",
+            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": None,
         },
         "campaign_id": "<id>",
@@ -704,13 +710,10 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_group.post_adgroup(request={
+    res = workflows.ad_groups.create(request={
         "primary_input": {
-            "name": "<value>",
             "is_enabled": True,
             "description": "into save rosy forsaken well",
-            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "budget": {
                 "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                 "budget_in_advertiser_currency": 6554.77,
@@ -768,6 +771,9 @@ with Workflows(
                     "is_default_for_dimension": None,
                 },
             ],
+            "name": "<value>",
+            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": None,
         },
         "campaign_id": "<id>",
@@ -841,7 +847,7 @@ By default, an API error will raise a models.APIError exception, which has the f
 | `.raw_response` | *httpx.Response* | The raw HTTP response |
 | `.body`         | *str*            | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `post_adgroup_async` method may raise the following exceptions:
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_async` method may raise the following exceptions:
 
 | Error Type                 | Status Code | Content Type     |
 | -------------------------- | ----------- | ---------------- |
@@ -862,13 +868,10 @@ with Workflows(
     res = None
     try:
 
-        res = workflows.ad_group.post_adgroup(request={
+        res = workflows.ad_groups.create(request={
             "primary_input": {
-                "name": "<value>",
                 "is_enabled": True,
                 "description": "into save rosy forsaken well",
-                "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-                "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
                 "budget": {
                     "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                     "budget_in_advertiser_currency": 6554.77,
@@ -926,6 +929,9 @@ with Workflows(
                         "is_default_for_dimension": None,
                     },
                 ],
+                "name": "<value>",
+                "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+                "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
                 "programmatic_guaranteed_private_contract_id": None,
             },
             "campaign_id": "<id>",
@@ -1008,13 +1014,10 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_group.post_adgroup(request={
+    res = workflows.ad_groups.create(request={
         "primary_input": {
-            "name": "<value>",
             "is_enabled": True,
             "description": "into save rosy forsaken well",
-            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "budget": {
                 "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                 "budget_in_advertiser_currency": 6554.77,
@@ -1072,6 +1075,9 @@ with Workflows(
                     "is_default_for_dimension": None,
                 },
             ],
+            "name": "<value>",
+            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": None,
         },
         "campaign_id": "<id>",

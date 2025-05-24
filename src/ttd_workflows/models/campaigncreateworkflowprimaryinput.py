@@ -6,9 +6,9 @@ from .campaignworkflowbudgetinput import (
     CampaignWorkflowBudgetInput,
     CampaignWorkflowBudgetInputTypedDict,
 )
-from .campaignworkflowconversionreportingcolumninput import (
-    CampaignWorkflowConversionReportingColumnInput,
-    CampaignWorkflowConversionReportingColumnInputTypedDict,
+from .campaignworkflowcampaignconversionreportingcolumninput import (
+    CampaignWorkflowCampaignConversionReportingColumnInput,
+    CampaignWorkflowCampaignConversionReportingColumnInputTypedDict,
 )
 from .campaignworkflowroigoalinput import (
     CampaignWorkflowROIGoalInput,
@@ -44,7 +44,7 @@ class CampaignCreateWorkflowPrimaryInputTypedDict(TypedDict):
     end_date_in_utc: NotRequired[Nullable[datetime]]
     seed_id: NotRequired[Nullable[str]]
     campaign_conversion_reporting_columns: NotRequired[
-        Nullable[List[CampaignWorkflowConversionReportingColumnInputTypedDict]]
+        Nullable[List[CampaignWorkflowCampaignConversionReportingColumnInputTypedDict]]
     ]
     start_date_in_utc: NotRequired[Nullable[datetime]]
 
@@ -93,7 +93,7 @@ class CampaignCreateWorkflowPrimaryInput(BaseModel):
     seed_id: Annotated[OptionalNullable[str], pydantic.Field(alias="seedId")] = UNSET
 
     campaign_conversion_reporting_columns: Annotated[
-        OptionalNullable[List[CampaignWorkflowConversionReportingColumnInput]],
+        OptionalNullable[List[CampaignWorkflowCampaignConversionReportingColumnInput]],
         pydantic.Field(alias="campaignConversionReportingColumns"),
     ] = UNSET
 

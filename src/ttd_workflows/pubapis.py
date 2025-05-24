@@ -8,8 +8,8 @@ from ttd_workflows.utils import get_security_from_env
 from typing import Any, Mapping, Optional, Union, cast
 
 
-class PubAPI(BaseSDK):
-    def post_pubapi(
+class PubApis(BaseSDK):
+    def post(
         self,
         *,
         request: Optional[
@@ -118,7 +118,7 @@ class PubAPI(BaseSDK):
             http_res,
         )
 
-    async def post_pubapi_async(
+    async def post_async(
         self,
         *,
         request: Optional[

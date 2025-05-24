@@ -8,8 +8,8 @@ from ttd_workflows.utils import get_security_from_env
 from typing import Any, Dict, Mapping, Optional, Union, cast
 
 
-class GraphQL(BaseSDK):
-    def post_graphql_request(
+class GraphQl(BaseSDK):
+    def post_request(
         self,
         *,
         request: Optional[
@@ -117,7 +117,7 @@ class GraphQL(BaseSDK):
             http_res,
         )
 
-    async def post_graphql_request_async(
+    async def post_request_async(
         self,
         *,
         request: Optional[

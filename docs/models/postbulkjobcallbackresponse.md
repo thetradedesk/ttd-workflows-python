@@ -1,6 +1,6 @@
-# PostBulkjobFirstpartydataInternalServerError
+# PostBulkjobCallbackResponse
 
-Internal Server Error
+OK
 
 
 ## Fields
