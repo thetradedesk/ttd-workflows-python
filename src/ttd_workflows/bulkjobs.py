@@ -75,6 +75,7 @@ class BulkJobs(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/bulkjob/firstpartydata",
                 oauth2_scopes=[],
@@ -183,6 +184,7 @@ class BulkJobs(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/bulkjob/firstpartydata",
                 oauth2_scopes=[],
@@ -279,6 +281,7 @@ class BulkJobs(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/bulkjob/callback",
                 oauth2_scopes=[],
@@ -369,6 +372,7 @@ class BulkJobs(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/bulkjob/callback",
                 oauth2_scopes=[],
@@ -466,6 +470,7 @@ class BulkJobs(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="get_/bulkjob/{id}/status",
                 oauth2_scopes=[],
@@ -569,6 +574,7 @@ class BulkJobs(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="get_/bulkjob/{id}/status",
                 oauth2_scopes=[],
