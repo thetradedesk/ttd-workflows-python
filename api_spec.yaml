@@ -25,7 +25,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AdGroupCreateWorkflowInput'
+              $ref: '#/components/schemas/AdGroupCreateWorkflowInputWithValidation'
       responses:
         '201':
           description: Created
@@ -33,6 +33,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AdGroupPayload'
+        '200':
+          description: OK
         '400':
           description: Bad Request
           content:
@@ -52,7 +54,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AdGroupUpdateWorkflowInput'
+              $ref: '#/components/schemas/AdGroupUpdateWorkflowInputWithValidation'
       responses:
         '200':
           description: OK
@@ -115,14 +117,44 @@ paths:
     post:
       tags:
         - AdGroup
+      summary: Create a list of ad groups with required fields.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdGroupBulkCreateWorkflowInputWithValidation'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkJobSubmitResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+        '503':
+          description: Service Unavailable
+    patch:
+      tags:
+        - AdGroup
       summary: Create a list of ad groups with required fields. `ValidateInputOnly` value should be the same for all ad groups.
       requestBody:
         content:
           application/json:
             schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/AdGroupCreateWorkflowInput'
+              $ref: '#/components/schemas/AdGroupBulkUpdateWorkflowInputWithValidation'
       responses:
         '202':
           description: Accepted
@@ -199,10 +231,6 @@ paths:
       responses:
         '200':
           description: OK
-          content:
-            application/json:
-              schema:
-                type: object
         '500':
           description: Internal Server Error
         '503':
@@ -211,7 +239,7 @@ paths:
     get:
       tags:
         - BulkJob
-      summary: Get the status of a bulk job you submitted earlier
+      summary: Get the status of a bulk job workflow you submitted earlier
       parameters:
         - name: id
           in: path
@@ -263,7 +291,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CampaignCreateWorkflowInput'
+              $ref: '#/components/schemas/CampaignCreateWorkflowInputWithValidation'
       responses:
         '201':
           description: Created
@@ -291,7 +319,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CampaignUpdateWorkflowInput'
+              $ref: '#/components/schemas/CampaignUpdateWorkflowInputWithValidation'
       responses:
         '200':
           description: OK
@@ -314,9 +342,7 @@ paths:
         content:
           application/json:
             schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/CampaignCreateWorkflowInput'
+              $ref: '#/components/schemas/CampaignBulkCreateWorkflowInputWithValidation'
       responses:
         '202':
           description: Accepted
@@ -348,9 +374,7 @@ paths:
         content:
           application/json:
             schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/CampaignUpdateWorkflowInput'
+              $ref: '#/components/schemas/CampaignBulkUpdateWorkflowInputWithValidation'
       responses:
         '202':
           description: Accepted
@@ -623,6 +647,34 @@ components:
           format: int64
           nullable: true
       additionalProperties: false
+    AdGroupBulkCreateWorkflowInputWithValidation:
+      required:
+        - input
+      type: object
+      properties:
+        input:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdGroupCreateWorkflowInput'
+          nullable: true
+        validateInputOnly:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    AdGroupBulkUpdateWorkflowInputWithValidation:
+      required:
+        - input
+      type: object
+      properties:
+        input:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdGroupUpdateWorkflowInput'
+          nullable: true
+        validateInputOnly:
+          type: boolean
+          nullable: true
+      additionalProperties: false
     AdGroupChannel:
       enum:
         - Other
@@ -682,6 +734,23 @@ components:
           nullable: true
         advancedInput:
           $ref: '#/components/schemas/AdGroupWorkflowAdvancedInput'
+      additionalProperties: false
+    AdGroupCreateWorkflowInputWithValidation:
+      required:
+        - campaignId
+        - primaryInput
+      type: object
+      properties:
+        primaryInput:
+          $ref: '#/components/schemas/AdGroupCreateWorkflowPrimaryInput'
+        campaignId:
+          type: string
+          nullable: true
+        advancedInput:
+          $ref: '#/components/schemas/AdGroupWorkflowAdvancedInput'
+        validateInputOnly:
+          type: boolean
+          nullable: true
       additionalProperties: false
     AdGroupCreateWorkflowPrimaryInput:
       required:
@@ -870,6 +939,23 @@ components:
           $ref: '#/components/schemas/AdGroupUpdateWorkflowPrimaryInput'
         advancedInput:
           $ref: '#/components/schemas/AdGroupWorkflowAdvancedInput'
+      additionalProperties: false
+    AdGroupUpdateWorkflowInputWithValidation:
+      required:
+        - id
+        - primaryInput
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        primaryInput:
+          $ref: '#/components/schemas/AdGroupUpdateWorkflowPrimaryInput'
+        advancedInput:
+          $ref: '#/components/schemas/AdGroupWorkflowAdvancedInput'
+        validateInputOnly:
+          type: boolean
+          nullable: true
       additionalProperties: false
     AdGroupUpdateWorkflowPrimaryInput:
       type: object
@@ -1340,6 +1426,34 @@ components:
           type: string
           nullable: true
       additionalProperties: false
+    CampaignBulkCreateWorkflowInputWithValidation:
+      required:
+        - input
+      type: object
+      properties:
+        input:
+          type: array
+          items:
+            $ref: '#/components/schemas/CampaignCreateWorkflowInput'
+          nullable: true
+        validateInputOnly:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    CampaignBulkUpdateWorkflowInputWithValidation:
+      required:
+        - input
+      type: object
+      properties:
+        input:
+          type: array
+          items:
+            $ref: '#/components/schemas/CampaignUpdateWorkflowInput'
+          nullable: true
+        validateInputOnly:
+          type: boolean
+          nullable: true
+      additionalProperties: false
     CampaignChannelType:
       enum:
         - None
@@ -1419,6 +1533,21 @@ components:
           $ref: '#/components/schemas/CampaignCreateWorkflowAdGroupAdvancedInput'
       additionalProperties: false
     CampaignCreateWorkflowInput:
+      required:
+        - primaryInput
+      type: object
+      properties:
+        primaryInput:
+          $ref: '#/components/schemas/CampaignCreateWorkflowPrimaryInput'
+        advancedInput:
+          $ref: '#/components/schemas/CampaignWorkflowAdvancedInput'
+        adGroups:
+          type: array
+          items:
+            $ref: '#/components/schemas/CampaignCreateWorkflowAdGroupInput'
+          nullable: true
+      additionalProperties: false
+    CampaignCreateWorkflowInputWithValidation:
       required:
         - primaryInput
       type: object
@@ -1545,6 +1674,16 @@ components:
           nullable: true
       additionalProperties: false
     CampaignUpdateWorkflowInput:
+      required:
+        - primaryInput
+      type: object
+      properties:
+        primaryInput:
+          $ref: '#/components/schemas/CampaignUpdateWorkflowPrimaryInput'
+        advancedInput:
+          $ref: '#/components/schemas/CampaignWorkflowAdvancedInput'
+      additionalProperties: false
+    CampaignUpdateWorkflowInputWithValidation:
       required:
         - primaryInput
       type: object

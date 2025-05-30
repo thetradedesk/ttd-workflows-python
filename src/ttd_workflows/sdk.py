@@ -14,6 +14,7 @@ from typing import Any, Callable, Dict, Optional, TYPE_CHECKING, Union, cast
 import weakref
 
 if TYPE_CHECKING:
+    from ttd_workflows.adgroup import AdGroup
     from ttd_workflows.adgroups import AdGroups
     from ttd_workflows.bulkjobs import BulkJobs
     from ttd_workflows.campaign import Campaign
@@ -26,6 +27,7 @@ class Workflows(BaseSDK):
     r"""Workflows API: A RESTful service for commonly used workflows."""
 
     ad_groups: "AdGroups"
+    ad_group: "AdGroup"
     bulk_jobs: "BulkJobs"
     campaign: "Campaign"
     campaigns: "Campaigns"
@@ -33,6 +35,7 @@ class Workflows(BaseSDK):
     pub_apis: "PubApis"
     _sub_sdk_map = {
         "ad_groups": ("ttd_workflows.adgroups", "AdGroups"),
+        "ad_group": ("ttd_workflows.adgroup", "AdGroup"),
         "bulk_jobs": ("ttd_workflows.bulkjobs", "BulkJobs"),
         "campaign": ("ttd_workflows.campaign", "Campaign"),
         "campaigns": ("ttd_workflows.campaigns", "Campaigns"),
@@ -113,15 +116,15 @@ class Workflows(BaseSDK):
 
         hooks = SDKHooks()
 
+        # pylint: disable=protected-access
+        self.sdk_configuration.__dict__["_hooks"] = hooks
+
         current_server_url, *_ = self.sdk_configuration.get_server_details()
         server_url, self.sdk_configuration.client = hooks.sdk_init(
             current_server_url, client
         )
         if current_server_url != server_url:
             self.sdk_configuration.server_url = server_url
-
-        # pylint: disable=protected-access
-        self.sdk_configuration.__dict__["_hooks"] = hooks
 
         weakref.finalize(
             self,

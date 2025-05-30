@@ -75,6 +75,7 @@ class BulkJobs(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/bulkjob/firstpartydata",
                 oauth2_scopes=[],
@@ -183,6 +184,7 @@ class BulkJobs(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/bulkjob/firstpartydata",
                 oauth2_scopes=[],
@@ -232,7 +234,7 @@ class BulkJobs(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.PostBulkjobCallbackResponse:
+    ):
         r"""Used for receiving a callback from Hydra once a job is completed
 
         :param retries: Override the default retry configuration for this method
@@ -259,7 +261,7 @@ class BulkJobs(BaseSDK):
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
-            accept_header_value="application/json",
+            accept_header_value="*/*",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
@@ -279,6 +281,7 @@ class BulkJobs(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/bulkjob/callback",
                 oauth2_scopes=[],
@@ -291,10 +294,8 @@ class BulkJobs(BaseSDK):
             retry_config=retry_config,
         )
 
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.PostBulkjobCallbackResponse
-            )
+        if utils.match_response(http_res, "200", "*"):
+            return
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
             raise models.APIError(
@@ -322,7 +323,7 @@ class BulkJobs(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.PostBulkjobCallbackResponse:
+    ):
         r"""Used for receiving a callback from Hydra once a job is completed
 
         :param retries: Override the default retry configuration for this method
@@ -349,7 +350,7 @@ class BulkJobs(BaseSDK):
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
-            accept_header_value="application/json",
+            accept_header_value="*/*",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
@@ -369,6 +370,7 @@ class BulkJobs(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/bulkjob/callback",
                 oauth2_scopes=[],
@@ -381,10 +383,8 @@ class BulkJobs(BaseSDK):
             retry_config=retry_config,
         )
 
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.PostBulkjobCallbackResponse
-            )
+        if utils.match_response(http_res, "200", "*"):
+            return
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
             raise models.APIError(
@@ -414,7 +414,7 @@ class BulkJobs(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.BulkJobStatusResponse:
-        r"""Get the status of a bulk job you submitted earlier
+        r"""Get the status of a bulk job workflow you submitted earlier
 
         :param id:
         :param retries: Override the default retry configuration for this method
@@ -466,6 +466,7 @@ class BulkJobs(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="get_/bulkjob/{id}/status",
                 oauth2_scopes=[],
@@ -517,7 +518,7 @@ class BulkJobs(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.BulkJobStatusResponse:
-        r"""Get the status of a bulk job you submitted earlier
+        r"""Get the status of a bulk job workflow you submitted earlier
 
         :param id:
         :param retries: Override the default retry configuration for this method
@@ -569,6 +570,7 @@ class BulkJobs(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="get_/bulkjob/{id}/status",
                 oauth2_scopes=[],
