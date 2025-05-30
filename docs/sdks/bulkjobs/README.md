@@ -7,7 +7,7 @@
 
 * [submit_first_party_data](#submit_first_party_data) - Submit a query for First Party Data to Hydra
 * [callback](#callback) - Used for receiving a callback from Hydra once a job is completed
-* [get_status](#get_status) - Get the status of a bulk job you submitted earlier
+* [get_status](#get_status) - Get the status of a bulk job workflow you submitted earlier
 
 ## submit_first_party_data
 
@@ -68,10 +68,9 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.bulk_jobs.callback()
+    workflows.bulk_jobs.callback()
 
-    # Handle response
-    print(res)
+    # Use the SDK ...
 
 ```
 
@@ -81,10 +80,6 @@ with Workflows(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-### Response
-
-**[models.PostBulkjobCallbackResponse](../../models/postbulkjobcallbackresponse.md)**
-
 ### Errors
 
 | Error Type      | Status Code     | Content Type    |
@@ -93,7 +88,7 @@ with Workflows(
 
 ## get_status
 
-Get the status of a bulk job you submitted earlier
+Get the status of a bulk job workflow you submitted earlier
 
 ### Example Usage
 

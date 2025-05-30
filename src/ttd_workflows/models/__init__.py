@@ -13,6 +13,14 @@ if TYPE_CHECKING:
         AdGroupAudienceTargetingTypedDict,
     )
     from .adgroupbudget import AdGroupBudget, AdGroupBudgetTypedDict
+    from .adgroupbulkcreateworkflowinputwithvalidation import (
+        AdGroupBulkCreateWorkflowInputWithValidation,
+        AdGroupBulkCreateWorkflowInputWithValidationTypedDict,
+    )
+    from .adgroupbulkupdateworkflowinputwithvalidation import (
+        AdGroupBulkUpdateWorkflowInputWithValidation,
+        AdGroupBulkUpdateWorkflowInputWithValidationTypedDict,
+    )
     from .adgroupchannel import AdGroupChannel
     from .adgroupcomscoresettings import (
         AdGroupComscoreSettings,
@@ -25,6 +33,10 @@ if TYPE_CHECKING:
     from .adgroupcreateworkflowinput import (
         AdGroupCreateWorkflowInput,
         AdGroupCreateWorkflowInputTypedDict,
+    )
+    from .adgroupcreateworkflowinputwithvalidation import (
+        AdGroupCreateWorkflowInputWithValidation,
+        AdGroupCreateWorkflowInputWithValidationTypedDict,
     )
     from .adgroupcreateworkflowprimaryinput import (
         AdGroupCreateWorkflowPrimaryInput,
@@ -45,6 +57,10 @@ if TYPE_CHECKING:
     from .adgroupupdateworkflowinput import (
         AdGroupUpdateWorkflowInput,
         AdGroupUpdateWorkflowInputTypedDict,
+    )
+    from .adgroupupdateworkflowinputwithvalidation import (
+        AdGroupUpdateWorkflowInputWithValidation,
+        AdGroupUpdateWorkflowInputWithValidationTypedDict,
     )
     from .adgroupupdateworkflowprimaryinput import (
         AdGroupUpdateWorkflowPrimaryInput,
@@ -109,6 +125,14 @@ if TYPE_CHECKING:
         CallPubAPIWorkflowInput,
         CallPubAPIWorkflowInputTypedDict,
     )
+    from .campaignbulkcreateworkflowinputwithvalidation import (
+        CampaignBulkCreateWorkflowInputWithValidation,
+        CampaignBulkCreateWorkflowInputWithValidationTypedDict,
+    )
+    from .campaignbulkupdateworkflowinputwithvalidation import (
+        CampaignBulkUpdateWorkflowInputWithValidation,
+        CampaignBulkUpdateWorkflowInputWithValidationTypedDict,
+    )
     from .campaignchanneltype import CampaignChannelType
     from .campaigncreateworkflowadgroupadvancedinput import (
         CampaignCreateWorkflowAdGroupAdvancedInput,
@@ -126,6 +150,10 @@ if TYPE_CHECKING:
         CampaignCreateWorkflowInput,
         CampaignCreateWorkflowInputTypedDict,
     )
+    from .campaigncreateworkflowinputwithvalidation import (
+        CampaignCreateWorkflowInputWithValidation,
+        CampaignCreateWorkflowInputWithValidationTypedDict,
+    )
     from .campaigncreateworkflowprimaryinput import (
         CampaignCreateWorkflowPrimaryInput,
         CampaignCreateWorkflowPrimaryInputTypedDict,
@@ -139,6 +167,10 @@ if TYPE_CHECKING:
     from .campaignupdateworkflowinput import (
         CampaignUpdateWorkflowInput,
         CampaignUpdateWorkflowInputTypedDict,
+    )
+    from .campaignupdateworkflowinputwithvalidation import (
+        CampaignUpdateWorkflowInputWithValidation,
+        CampaignUpdateWorkflowInputWithValidationTypedDict,
     )
     from .campaignupdateworkflowprimaryinput import (
         CampaignUpdateWorkflowPrimaryInput,
@@ -192,10 +224,6 @@ if TYPE_CHECKING:
         PostAdgroupArchiveRequest,
         PostAdgroupArchiveRequestTypedDict,
     )
-    from .post_bulkjob_callbackop import (
-        PostBulkjobCallbackResponse,
-        PostBulkjobCallbackResponseTypedDict,
-    )
     from .post_campaign_archiveop import (
         PostCampaignArchiveRequest,
         PostCampaignArchiveRequestTypedDict,
@@ -218,6 +246,10 @@ __all__ = [
     "AdGroupAudienceTargetingTypedDict",
     "AdGroupBudget",
     "AdGroupBudgetTypedDict",
+    "AdGroupBulkCreateWorkflowInputWithValidation",
+    "AdGroupBulkCreateWorkflowInputWithValidationTypedDict",
+    "AdGroupBulkUpdateWorkflowInputWithValidation",
+    "AdGroupBulkUpdateWorkflowInputWithValidationTypedDict",
     "AdGroupChannel",
     "AdGroupComscoreSettings",
     "AdGroupComscoreSettingsTypedDict",
@@ -225,6 +257,8 @@ __all__ = [
     "AdGroupContractTargetingTypedDict",
     "AdGroupCreateWorkflowInput",
     "AdGroupCreateWorkflowInputTypedDict",
+    "AdGroupCreateWorkflowInputWithValidation",
+    "AdGroupCreateWorkflowInputWithValidationTypedDict",
     "AdGroupCreateWorkflowPrimaryInput",
     "AdGroupCreateWorkflowPrimaryInputTypedDict",
     "AdGroupFlight",
@@ -240,6 +274,8 @@ __all__ = [
     "AdGroupROIGoalTypedDict",
     "AdGroupUpdateWorkflowInput",
     "AdGroupUpdateWorkflowInputTypedDict",
+    "AdGroupUpdateWorkflowInputWithValidation",
+    "AdGroupUpdateWorkflowInputWithValidationTypedDict",
     "AdGroupUpdateWorkflowPrimaryInput",
     "AdGroupUpdateWorkflowPrimaryInputTypedDict",
     "AdGroupWorkflow",
@@ -273,6 +309,10 @@ __all__ = [
     "BulkJobSubmitResponseTypedDict",
     "CallPubAPIWorkflowInput",
     "CallPubAPIWorkflowInputTypedDict",
+    "CampaignBulkCreateWorkflowInputWithValidation",
+    "CampaignBulkCreateWorkflowInputWithValidationTypedDict",
+    "CampaignBulkUpdateWorkflowInputWithValidation",
+    "CampaignBulkUpdateWorkflowInputWithValidationTypedDict",
     "CampaignChannelType",
     "CampaignCreateWorkflowAdGroupAdvancedInput",
     "CampaignCreateWorkflowAdGroupAdvancedInputTypedDict",
@@ -282,6 +322,8 @@ __all__ = [
     "CampaignCreateWorkflowAdGroupInputTypedDict",
     "CampaignCreateWorkflowInput",
     "CampaignCreateWorkflowInputTypedDict",
+    "CampaignCreateWorkflowInputWithValidation",
+    "CampaignCreateWorkflowInputWithValidationTypedDict",
     "CampaignCreateWorkflowPrimaryInput",
     "CampaignCreateWorkflowPrimaryInputTypedDict",
     "CampaignFlightWorkflow",
@@ -291,6 +333,8 @@ __all__ = [
     "CampaignPayloadTypedDict",
     "CampaignUpdateWorkflowInput",
     "CampaignUpdateWorkflowInputTypedDict",
+    "CampaignUpdateWorkflowInputWithValidation",
+    "CampaignUpdateWorkflowInputWithValidationTypedDict",
     "CampaignUpdateWorkflowPrimaryInput",
     "CampaignUpdateWorkflowPrimaryInputTypedDict",
     "CampaignVersionWorkflow",
@@ -322,8 +366,6 @@ __all__ = [
     "GraphQLRequestInputTypedDict",
     "PostAdgroupArchiveRequest",
     "PostAdgroupArchiveRequestTypedDict",
-    "PostBulkjobCallbackResponse",
-    "PostBulkjobCallbackResponseTypedDict",
     "PostCampaignArchiveRequest",
     "PostCampaignArchiveRequestTypedDict",
     "PostPubapiResponse",
@@ -350,6 +392,10 @@ _dynamic_imports: dict[str, str] = {
     "AdGroupAudienceTargetingTypedDict": ".adgroupaudiencetargeting",
     "AdGroupBudget": ".adgroupbudget",
     "AdGroupBudgetTypedDict": ".adgroupbudget",
+    "AdGroupBulkCreateWorkflowInputWithValidation": ".adgroupbulkcreateworkflowinputwithvalidation",
+    "AdGroupBulkCreateWorkflowInputWithValidationTypedDict": ".adgroupbulkcreateworkflowinputwithvalidation",
+    "AdGroupBulkUpdateWorkflowInputWithValidation": ".adgroupbulkupdateworkflowinputwithvalidation",
+    "AdGroupBulkUpdateWorkflowInputWithValidationTypedDict": ".adgroupbulkupdateworkflowinputwithvalidation",
     "AdGroupChannel": ".adgroupchannel",
     "AdGroupComscoreSettings": ".adgroupcomscoresettings",
     "AdGroupComscoreSettingsTypedDict": ".adgroupcomscoresettings",
@@ -357,6 +403,8 @@ _dynamic_imports: dict[str, str] = {
     "AdGroupContractTargetingTypedDict": ".adgroupcontracttargeting",
     "AdGroupCreateWorkflowInput": ".adgroupcreateworkflowinput",
     "AdGroupCreateWorkflowInputTypedDict": ".adgroupcreateworkflowinput",
+    "AdGroupCreateWorkflowInputWithValidation": ".adgroupcreateworkflowinputwithvalidation",
+    "AdGroupCreateWorkflowInputWithValidationTypedDict": ".adgroupcreateworkflowinputwithvalidation",
     "AdGroupCreateWorkflowPrimaryInput": ".adgroupcreateworkflowprimaryinput",
     "AdGroupCreateWorkflowPrimaryInputTypedDict": ".adgroupcreateworkflowprimaryinput",
     "AdGroupFlight": ".adgroupflight",
@@ -372,6 +420,8 @@ _dynamic_imports: dict[str, str] = {
     "AdGroupROIGoalTypedDict": ".adgrouproigoal",
     "AdGroupUpdateWorkflowInput": ".adgroupupdateworkflowinput",
     "AdGroupUpdateWorkflowInputTypedDict": ".adgroupupdateworkflowinput",
+    "AdGroupUpdateWorkflowInputWithValidation": ".adgroupupdateworkflowinputwithvalidation",
+    "AdGroupUpdateWorkflowInputWithValidationTypedDict": ".adgroupupdateworkflowinputwithvalidation",
     "AdGroupUpdateWorkflowPrimaryInput": ".adgroupupdateworkflowprimaryinput",
     "AdGroupUpdateWorkflowPrimaryInputTypedDict": ".adgroupupdateworkflowprimaryinput",
     "AdGroupWorkflow": ".adgroupworkflow",
@@ -406,6 +456,10 @@ _dynamic_imports: dict[str, str] = {
     "BulkJobSubmitResponseTypedDict": ".bulkjobsubmitresponse",
     "CallPubAPIWorkflowInput": ".callpubapiworkflowinput",
     "CallPubAPIWorkflowInputTypedDict": ".callpubapiworkflowinput",
+    "CampaignBulkCreateWorkflowInputWithValidation": ".campaignbulkcreateworkflowinputwithvalidation",
+    "CampaignBulkCreateWorkflowInputWithValidationTypedDict": ".campaignbulkcreateworkflowinputwithvalidation",
+    "CampaignBulkUpdateWorkflowInputWithValidation": ".campaignbulkupdateworkflowinputwithvalidation",
+    "CampaignBulkUpdateWorkflowInputWithValidationTypedDict": ".campaignbulkupdateworkflowinputwithvalidation",
     "CampaignChannelType": ".campaignchanneltype",
     "CampaignCreateWorkflowAdGroupAdvancedInput": ".campaigncreateworkflowadgroupadvancedinput",
     "CampaignCreateWorkflowAdGroupAdvancedInputTypedDict": ".campaigncreateworkflowadgroupadvancedinput",
@@ -415,6 +469,8 @@ _dynamic_imports: dict[str, str] = {
     "CampaignCreateWorkflowAdGroupInputTypedDict": ".campaigncreateworkflowadgroupinput",
     "CampaignCreateWorkflowInput": ".campaigncreateworkflowinput",
     "CampaignCreateWorkflowInputTypedDict": ".campaigncreateworkflowinput",
+    "CampaignCreateWorkflowInputWithValidation": ".campaigncreateworkflowinputwithvalidation",
+    "CampaignCreateWorkflowInputWithValidationTypedDict": ".campaigncreateworkflowinputwithvalidation",
     "CampaignCreateWorkflowPrimaryInput": ".campaigncreateworkflowprimaryinput",
     "CampaignCreateWorkflowPrimaryInputTypedDict": ".campaigncreateworkflowprimaryinput",
     "CampaignFlightWorkflow": ".campaignflightworkflow",
@@ -424,6 +480,8 @@ _dynamic_imports: dict[str, str] = {
     "CampaignPayloadTypedDict": ".campaignpayload",
     "CampaignUpdateWorkflowInput": ".campaignupdateworkflowinput",
     "CampaignUpdateWorkflowInputTypedDict": ".campaignupdateworkflowinput",
+    "CampaignUpdateWorkflowInputWithValidation": ".campaignupdateworkflowinputwithvalidation",
+    "CampaignUpdateWorkflowInputWithValidationTypedDict": ".campaignupdateworkflowinputwithvalidation",
     "CampaignUpdateWorkflowPrimaryInput": ".campaignupdateworkflowprimaryinput",
     "CampaignUpdateWorkflowPrimaryInputTypedDict": ".campaignupdateworkflowprimaryinput",
     "CampaignVersionWorkflow": ".campaignversionworkflow",
@@ -457,8 +515,6 @@ _dynamic_imports: dict[str, str] = {
     "VariablesTypedDict": ".graphqlrequestinput",
     "PostAdgroupArchiveRequest": ".post_adgroup_archiveop",
     "PostAdgroupArchiveRequestTypedDict": ".post_adgroup_archiveop",
-    "PostBulkjobCallbackResponse": ".post_bulkjob_callbackop",
-    "PostBulkjobCallbackResponseTypedDict": ".post_bulkjob_callbackop",
     "PostCampaignArchiveRequest": ".post_campaign_archiveop",
     "PostCampaignArchiveRequestTypedDict": ".post_campaign_archiveop",
     "PostPubapiResponse": ".post_pubapiop",

@@ -223,7 +223,10 @@ with Workflows(
             ],
             "flights": None,
         },
+        "validate_input_only": True,
     })
+
+    assert res is not None
 
     # Handle response
     print(res)
@@ -360,7 +363,10 @@ async def main():
                 ],
                 "flights": None,
             },
+            "validate_input_only": True,
         })
+
+        assert res is not None
 
         # Handle response
         print(res)
@@ -506,7 +512,10 @@ with Workflows(
             ],
             "flights": None,
         },
+        "validate_input_only": True,
     })
+
+    assert res is not None
 
     # Handle response
     print(res)
@@ -520,18 +529,22 @@ with Workflows(
 <details open>
 <summary>Available methods</summary>
 
+### [ad_group](docs/sdks/adgroup/README.md)
+
+* [patch_adgroup_bulk](docs/sdks/adgroup/README.md#patch_adgroup_bulk) - Create a list of ad groups with required fields. `ValidateInputOnly` value should be the same for all ad groups.
+
 ### [ad_groups](docs/sdks/adgroups/README.md)
 
 * [create](docs/sdks/adgroups/README.md#create)
 * [update](docs/sdks/adgroups/README.md#update)
 * [archive](docs/sdks/adgroups/README.md#archive) - Archive a list of ad groups
-* [bulk_create](docs/sdks/adgroups/README.md#bulk_create) - Create a list of ad groups with required fields. `ValidateInputOnly` value should be the same for all ad groups.
+* [bulk_create](docs/sdks/adgroups/README.md#bulk_create) - Create a list of ad groups with required fields.
 
 ### [bulk_jobs](docs/sdks/bulkjobs/README.md)
 
 * [submit_first_party_data](docs/sdks/bulkjobs/README.md#submit_first_party_data) - Submit a query for First Party Data to Hydra
 * [callback](docs/sdks/bulkjobs/README.md#callback) - Used for receiving a callback from Hydra once a job is completed
-* [get_status](docs/sdks/bulkjobs/README.md#get_status) - Get the status of a bulk job you submitted earlier
+* [get_status](docs/sdks/bulkjobs/README.md#get_status) - Get the status of a bulk job workflow you submitted earlier
 
 ### [campaign](docs/sdks/campaign/README.md)
 
@@ -689,8 +702,11 @@ with Workflows(
             ],
             "flights": None,
         },
+        "validate_input_only": True,
     },
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
+
+    assert res is not None
 
     # Handle response
     print(res)
@@ -825,7 +841,10 @@ with Workflows(
             ],
             "flights": None,
         },
+        "validate_input_only": True,
     })
+
+    assert res is not None
 
     # Handle response
     print(res)
@@ -983,7 +1002,10 @@ with Workflows(
                 ],
                 "flights": None,
             },
+            "validate_input_only": True,
         })
+
+        assert res is not None
 
         # Handle response
         print(res)
@@ -1129,7 +1151,10 @@ with Workflows(
             ],
             "flights": None,
         },
+        "validate_input_only": True,
     })
+
+    assert res is not None
 
     # Handle response
     print(res)

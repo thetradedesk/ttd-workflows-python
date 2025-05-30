@@ -14,15 +14,15 @@ class AdGroups(BaseSDK):
         *,
         request: Optional[
             Union[
-                models.AdGroupCreateWorkflowInput,
-                models.AdGroupCreateWorkflowInputTypedDict,
+                models.AdGroupCreateWorkflowInputWithValidation,
+                models.AdGroupCreateWorkflowInputWithValidationTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.AdGroupPayload:
+    ) -> Optional[models.AdGroupPayload]:
         r"""
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -42,9 +42,11 @@ class AdGroups(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[models.AdGroupCreateWorkflowInput]
+                request, Optional[models.AdGroupCreateWorkflowInputWithValidation]
             )
-        request = cast(Optional[models.AdGroupCreateWorkflowInput], request)
+        request = cast(
+            Optional[models.AdGroupCreateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request(
             method="POST",
@@ -64,7 +66,7 @@ class AdGroups(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[models.AdGroupCreateWorkflowInput],
+                Optional[models.AdGroupCreateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -83,6 +85,7 @@ class AdGroups(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/adgroup",
                 oauth2_scopes=[],
@@ -96,6 +99,8 @@ class AdGroups(BaseSDK):
         )
 
         response_data: Any = None
+        if utils.match_response(http_res, "200", "*"):
+            return None
         if utils.match_response(http_res, "201", "application/json"):
             return utils.unmarshal_json(http_res.text, models.AdGroupPayload)
         if utils.match_response(http_res, ["400", "403"], "application/json"):
@@ -128,15 +133,15 @@ class AdGroups(BaseSDK):
         *,
         request: Optional[
             Union[
-                models.AdGroupCreateWorkflowInput,
-                models.AdGroupCreateWorkflowInputTypedDict,
+                models.AdGroupCreateWorkflowInputWithValidation,
+                models.AdGroupCreateWorkflowInputWithValidationTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.AdGroupPayload:
+    ) -> Optional[models.AdGroupPayload]:
         r"""
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -156,9 +161,11 @@ class AdGroups(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[models.AdGroupCreateWorkflowInput]
+                request, Optional[models.AdGroupCreateWorkflowInputWithValidation]
             )
-        request = cast(Optional[models.AdGroupCreateWorkflowInput], request)
+        request = cast(
+            Optional[models.AdGroupCreateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request_async(
             method="POST",
@@ -178,7 +185,7 @@ class AdGroups(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[models.AdGroupCreateWorkflowInput],
+                Optional[models.AdGroupCreateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -197,6 +204,7 @@ class AdGroups(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/adgroup",
                 oauth2_scopes=[],
@@ -210,6 +218,8 @@ class AdGroups(BaseSDK):
         )
 
         response_data: Any = None
+        if utils.match_response(http_res, "200", "*"):
+            return None
         if utils.match_response(http_res, "201", "application/json"):
             return utils.unmarshal_json(http_res.text, models.AdGroupPayload)
         if utils.match_response(http_res, ["400", "403"], "application/json"):
@@ -242,8 +252,8 @@ class AdGroups(BaseSDK):
         *,
         request: Optional[
             Union[
-                models.AdGroupUpdateWorkflowInput,
-                models.AdGroupUpdateWorkflowInputTypedDict,
+                models.AdGroupUpdateWorkflowInputWithValidation,
+                models.AdGroupUpdateWorkflowInputWithValidationTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -270,9 +280,11 @@ class AdGroups(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[models.AdGroupUpdateWorkflowInput]
+                request, Optional[models.AdGroupUpdateWorkflowInputWithValidation]
             )
-        request = cast(Optional[models.AdGroupUpdateWorkflowInput], request)
+        request = cast(
+            Optional[models.AdGroupUpdateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request(
             method="PATCH",
@@ -292,7 +304,7 @@ class AdGroups(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[models.AdGroupUpdateWorkflowInput],
+                Optional[models.AdGroupUpdateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -311,6 +323,7 @@ class AdGroups(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="patch_/adgroup",
                 oauth2_scopes=[],
@@ -356,8 +369,8 @@ class AdGroups(BaseSDK):
         *,
         request: Optional[
             Union[
-                models.AdGroupUpdateWorkflowInput,
-                models.AdGroupUpdateWorkflowInputTypedDict,
+                models.AdGroupUpdateWorkflowInputWithValidation,
+                models.AdGroupUpdateWorkflowInputWithValidationTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -384,9 +397,11 @@ class AdGroups(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[models.AdGroupUpdateWorkflowInput]
+                request, Optional[models.AdGroupUpdateWorkflowInputWithValidation]
             )
-        request = cast(Optional[models.AdGroupUpdateWorkflowInput], request)
+        request = cast(
+            Optional[models.AdGroupUpdateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request_async(
             method="PATCH",
@@ -406,7 +421,7 @@ class AdGroups(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[models.AdGroupUpdateWorkflowInput],
+                Optional[models.AdGroupUpdateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -425,6 +440,7 @@ class AdGroups(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="patch_/adgroup",
                 oauth2_scopes=[],
@@ -532,6 +548,7 @@ class AdGroups(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/adgroup/archive",
                 oauth2_scopes=[],
@@ -639,6 +656,7 @@ class AdGroups(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/adgroup/archive",
                 oauth2_scopes=[],
@@ -684,8 +702,8 @@ class AdGroups(BaseSDK):
         *,
         request: Optional[
             Union[
-                List[models.AdGroupCreateWorkflowInput],
-                List[models.AdGroupCreateWorkflowInputTypedDict],
+                models.AdGroupBulkCreateWorkflowInputWithValidation,
+                models.AdGroupBulkCreateWorkflowInputWithValidationTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -693,7 +711,7 @@ class AdGroups(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.BulkJobSubmitResponse:
-        r"""Create a list of ad groups with required fields. `ValidateInputOnly` value should be the same for all ad groups.
+        r"""Create a list of ad groups with required fields.
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -713,9 +731,11 @@ class AdGroups(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[List[models.AdGroupCreateWorkflowInput]]
+                request, Optional[models.AdGroupBulkCreateWorkflowInputWithValidation]
             )
-        request = cast(Optional[List[models.AdGroupCreateWorkflowInput]], request)
+        request = cast(
+            Optional[models.AdGroupBulkCreateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request(
             method="POST",
@@ -735,7 +755,7 @@ class AdGroups(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[List[models.AdGroupCreateWorkflowInput]],
+                Optional[models.AdGroupBulkCreateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -754,6 +774,7 @@ class AdGroups(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/adgroup/bulk",
                 oauth2_scopes=[],
@@ -799,8 +820,8 @@ class AdGroups(BaseSDK):
         *,
         request: Optional[
             Union[
-                List[models.AdGroupCreateWorkflowInput],
-                List[models.AdGroupCreateWorkflowInputTypedDict],
+                models.AdGroupBulkCreateWorkflowInputWithValidation,
+                models.AdGroupBulkCreateWorkflowInputWithValidationTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -808,7 +829,7 @@ class AdGroups(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.BulkJobSubmitResponse:
-        r"""Create a list of ad groups with required fields. `ValidateInputOnly` value should be the same for all ad groups.
+        r"""Create a list of ad groups with required fields.
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -828,9 +849,11 @@ class AdGroups(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[List[models.AdGroupCreateWorkflowInput]]
+                request, Optional[models.AdGroupBulkCreateWorkflowInputWithValidation]
             )
-        request = cast(Optional[List[models.AdGroupCreateWorkflowInput]], request)
+        request = cast(
+            Optional[models.AdGroupBulkCreateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request_async(
             method="POST",
@@ -850,7 +873,7 @@ class AdGroups(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[List[models.AdGroupCreateWorkflowInput]],
+                Optional[models.AdGroupBulkCreateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -869,6 +892,7 @@ class AdGroups(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/adgroup/bulk",
                 oauth2_scopes=[],

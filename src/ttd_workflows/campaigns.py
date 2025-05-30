@@ -14,8 +14,8 @@ class Campaigns(BaseSDK):
         *,
         request: Optional[
             Union[
-                models.CampaignUpdateWorkflowInput,
-                models.CampaignUpdateWorkflowInputTypedDict,
+                models.CampaignUpdateWorkflowInputWithValidation,
+                models.CampaignUpdateWorkflowInputWithValidationTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -43,9 +43,11 @@ class Campaigns(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[models.CampaignUpdateWorkflowInput]
+                request, Optional[models.CampaignUpdateWorkflowInputWithValidation]
             )
-        request = cast(Optional[models.CampaignUpdateWorkflowInput], request)
+        request = cast(
+            Optional[models.CampaignUpdateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request(
             method="PATCH",
@@ -65,7 +67,7 @@ class Campaigns(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[models.CampaignUpdateWorkflowInput],
+                Optional[models.CampaignUpdateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -84,6 +86,7 @@ class Campaigns(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="patch_/campaign",
                 oauth2_scopes=[],
@@ -129,8 +132,8 @@ class Campaigns(BaseSDK):
         *,
         request: Optional[
             Union[
-                models.CampaignUpdateWorkflowInput,
-                models.CampaignUpdateWorkflowInputTypedDict,
+                models.CampaignUpdateWorkflowInputWithValidation,
+                models.CampaignUpdateWorkflowInputWithValidationTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -158,9 +161,11 @@ class Campaigns(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[models.CampaignUpdateWorkflowInput]
+                request, Optional[models.CampaignUpdateWorkflowInputWithValidation]
             )
-        request = cast(Optional[models.CampaignUpdateWorkflowInput], request)
+        request = cast(
+            Optional[models.CampaignUpdateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request_async(
             method="PATCH",
@@ -180,7 +185,7 @@ class Campaigns(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[models.CampaignUpdateWorkflowInput],
+                Optional[models.CampaignUpdateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -199,6 +204,7 @@ class Campaigns(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="patch_/campaign",
                 oauth2_scopes=[],
@@ -244,8 +250,8 @@ class Campaigns(BaseSDK):
         *,
         request: Optional[
             Union[
-                List[models.CampaignCreateWorkflowInput],
-                List[models.CampaignCreateWorkflowInputTypedDict],
+                models.CampaignBulkCreateWorkflowInputWithValidation,
+                models.CampaignBulkCreateWorkflowInputWithValidationTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -273,9 +279,11 @@ class Campaigns(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[List[models.CampaignCreateWorkflowInput]]
+                request, Optional[models.CampaignBulkCreateWorkflowInputWithValidation]
             )
-        request = cast(Optional[List[models.CampaignCreateWorkflowInput]], request)
+        request = cast(
+            Optional[models.CampaignBulkCreateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request(
             method="POST",
@@ -295,7 +303,7 @@ class Campaigns(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[List[models.CampaignCreateWorkflowInput]],
+                Optional[models.CampaignBulkCreateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -314,6 +322,7 @@ class Campaigns(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/campaign/bulk",
                 oauth2_scopes=[],
@@ -359,8 +368,8 @@ class Campaigns(BaseSDK):
         *,
         request: Optional[
             Union[
-                List[models.CampaignCreateWorkflowInput],
-                List[models.CampaignCreateWorkflowInputTypedDict],
+                models.CampaignBulkCreateWorkflowInputWithValidation,
+                models.CampaignBulkCreateWorkflowInputWithValidationTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -388,9 +397,11 @@ class Campaigns(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[List[models.CampaignCreateWorkflowInput]]
+                request, Optional[models.CampaignBulkCreateWorkflowInputWithValidation]
             )
-        request = cast(Optional[List[models.CampaignCreateWorkflowInput]], request)
+        request = cast(
+            Optional[models.CampaignBulkCreateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request_async(
             method="POST",
@@ -410,7 +421,7 @@ class Campaigns(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[List[models.CampaignCreateWorkflowInput]],
+                Optional[models.CampaignBulkCreateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -429,6 +440,7 @@ class Campaigns(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/campaign/bulk",
                 oauth2_scopes=[],
@@ -474,8 +486,8 @@ class Campaigns(BaseSDK):
         *,
         request: Optional[
             Union[
-                List[models.CampaignUpdateWorkflowInput],
-                List[models.CampaignUpdateWorkflowInputTypedDict],
+                models.CampaignBulkUpdateWorkflowInputWithValidation,
+                models.CampaignBulkUpdateWorkflowInputWithValidationTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -503,9 +515,11 @@ class Campaigns(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[List[models.CampaignUpdateWorkflowInput]]
+                request, Optional[models.CampaignBulkUpdateWorkflowInputWithValidation]
             )
-        request = cast(Optional[List[models.CampaignUpdateWorkflowInput]], request)
+        request = cast(
+            Optional[models.CampaignBulkUpdateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request(
             method="PATCH",
@@ -525,7 +539,7 @@ class Campaigns(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[List[models.CampaignUpdateWorkflowInput]],
+                Optional[models.CampaignBulkUpdateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -544,6 +558,7 @@ class Campaigns(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="patch_/campaign/bulk",
                 oauth2_scopes=[],
@@ -589,8 +604,8 @@ class Campaigns(BaseSDK):
         *,
         request: Optional[
             Union[
-                List[models.CampaignUpdateWorkflowInput],
-                List[models.CampaignUpdateWorkflowInputTypedDict],
+                models.CampaignBulkUpdateWorkflowInputWithValidation,
+                models.CampaignBulkUpdateWorkflowInputWithValidationTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -618,9 +633,11 @@ class Campaigns(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[List[models.CampaignUpdateWorkflowInput]]
+                request, Optional[models.CampaignBulkUpdateWorkflowInputWithValidation]
             )
-        request = cast(Optional[List[models.CampaignUpdateWorkflowInput]], request)
+        request = cast(
+            Optional[models.CampaignBulkUpdateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request_async(
             method="PATCH",
@@ -640,7 +657,7 @@ class Campaigns(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[List[models.CampaignUpdateWorkflowInput]],
+                Optional[models.CampaignBulkUpdateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -659,6 +676,7 @@ class Campaigns(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="patch_/campaign/bulk",
                 oauth2_scopes=[],
@@ -766,6 +784,7 @@ class Campaigns(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/campaign/archive",
                 oauth2_scopes=[],
@@ -873,6 +892,7 @@ class Campaigns(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="post_/campaign/archive",
                 oauth2_scopes=[],

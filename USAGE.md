@@ -125,7 +125,10 @@ with Workflows(
             ],
             "flights": None,
         },
+        "validate_input_only": True,
     })
+
+    assert res is not None
 
     # Handle response
     print(res)
@@ -262,7 +265,10 @@ async def main():
                 ],
                 "flights": None,
             },
+            "validate_input_only": True,
         })
+
+        assert res is not None
 
         # Handle response
         print(res)
