@@ -8,7 +8,7 @@ actions:
   - target: $.servers
     update:
       - url: https://api.thetradedesk.com/workflows
-        description: "A RESTful service for commonly used workflows."
+        description: "A RESTful service for commonly used workflows." 
   - target: $
     update:
       x-speakeasy-retries:

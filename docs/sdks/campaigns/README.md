@@ -28,6 +28,7 @@ with Workflows(
 ) as workflows:
 
     res = workflows.campaigns.update(request={
+        "id": "<id>",
         "primary_input": {
             "description": "until notwithstanding bump",
             "time_zone": None,
@@ -85,7 +86,6 @@ with Workflows(
                     "cross_device_attribution_model_id": "<id>",
                 },
             ],
-            "id": "<id>",
             "name": "<value>",
             "primary_channel": ttd_workflows.CampaignChannelType.NONE,
             "primary_goal": {
@@ -220,6 +220,7 @@ with Workflows(
     res = workflows.campaigns.bulk_update(request={
         "input": [
             {
+                "id": "<id>",
                 "primary_input": {
                     "description": "make innocently gerbil",
                     "time_zone": "America/Halifax",
@@ -251,7 +252,6 @@ with Workflows(
                             "cross_device_attribution_model_id": "<id>",
                         },
                     ],
-                    "id": "<id>",
                     "name": "<value>",
                     "primary_channel": ttd_workflows.CampaignChannelType.DOOH,
                     "primary_goal": {

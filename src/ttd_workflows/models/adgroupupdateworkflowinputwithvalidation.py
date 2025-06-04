@@ -24,7 +24,7 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 class AdGroupUpdateWorkflowInputWithValidationTypedDict(TypedDict):
     id: Nullable[str]
-    primary_input: AdGroupUpdateWorkflowPrimaryInputTypedDict
+    primary_input: NotRequired[AdGroupUpdateWorkflowPrimaryInputTypedDict]
     advanced_input: NotRequired[AdGroupWorkflowAdvancedInputTypedDict]
     validate_input_only: NotRequired[Nullable[bool]]
 
@@ -33,8 +33,9 @@ class AdGroupUpdateWorkflowInputWithValidation(BaseModel):
     id: Nullable[str]
 
     primary_input: Annotated[
-        AdGroupUpdateWorkflowPrimaryInput, pydantic.Field(alias="primaryInput")
-    ]
+        Optional[AdGroupUpdateWorkflowPrimaryInput],
+        pydantic.Field(alias="primaryInput"),
+    ] = None
 
     advanced_input: Annotated[
         Optional[AdGroupWorkflowAdvancedInput], pydantic.Field(alias="advancedInput")
@@ -46,7 +47,7 @@ class AdGroupUpdateWorkflowInputWithValidation(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["advancedInput", "validateInputOnly"]
+        optional_fields = ["primaryInput", "advancedInput", "validateInputOnly"]
         nullable_fields = ["id", "validateInputOnly"]
         null_default_fields = []
 

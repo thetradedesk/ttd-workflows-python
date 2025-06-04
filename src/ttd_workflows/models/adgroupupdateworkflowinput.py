@@ -18,7 +18,7 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 class AdGroupUpdateWorkflowInputTypedDict(TypedDict):
     id: Nullable[str]
-    primary_input: AdGroupUpdateWorkflowPrimaryInputTypedDict
+    primary_input: NotRequired[AdGroupUpdateWorkflowPrimaryInputTypedDict]
     advanced_input: NotRequired[AdGroupWorkflowAdvancedInputTypedDict]
 
 
@@ -26,8 +26,9 @@ class AdGroupUpdateWorkflowInput(BaseModel):
     id: Nullable[str]
 
     primary_input: Annotated[
-        AdGroupUpdateWorkflowPrimaryInput, pydantic.Field(alias="primaryInput")
-    ]
+        Optional[AdGroupUpdateWorkflowPrimaryInput],
+        pydantic.Field(alias="primaryInput"),
+    ] = None
 
     advanced_input: Annotated[
         Optional[AdGroupWorkflowAdvancedInput], pydantic.Field(alias="advancedInput")
@@ -35,7 +36,7 @@ class AdGroupUpdateWorkflowInput(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["advancedInput"]
+        optional_fields = ["primaryInput", "advancedInput"]
         nullable_fields = ["id"]
         null_default_fields = []
 

@@ -547,7 +547,6 @@ with Workflows(
 ### [bulk_jobs](docs/sdks/bulkjobs/README.md)
 
 * [submit_first_party_data](docs/sdks/bulkjobs/README.md#submit_first_party_data) - Submit a query for First Party Data to Hydra
-* [callback](docs/sdks/bulkjobs/README.md#callback) - Used for receiving a callback from Hydra once a job is completed
 * [get_status](docs/sdks/bulkjobs/README.md#get_status) - Get the status of a bulk job workflow you submitted earlier
 
 ### [campaign](docs/sdks/campaign/README.md)
