@@ -28,6 +28,7 @@ with Workflows(
 ) as workflows:
 
     res = workflows.campaigns.update(request={
+        "id": "<id>",
         "primary_input": {
             "description": "until notwithstanding bump",
             "time_zone": None,
@@ -85,7 +86,6 @@ with Workflows(
                     "cross_device_attribution_model_id": "<id>",
                 },
             ],
-            "id": "<id>",
             "name": "<value>",
             "primary_channel": ttd_workflows.CampaignChannelType.NONE,
             "primary_goal": {
@@ -169,6 +169,12 @@ with Workflows(
     res = workflows.campaigns.bulk_create(request={
         "input": None,
         "validate_input_only": True,
+        "callback_input": {
+            "callback_url": "https://dental-divine.org/",
+            "callback_headers": {
+                "key": "<value>",
+            },
+        },
     })
 
     # Handle response
@@ -214,6 +220,7 @@ with Workflows(
     res = workflows.campaigns.bulk_update(request={
         "input": [
             {
+                "id": "<id>",
                 "primary_input": {
                     "description": "make innocently gerbil",
                     "time_zone": "America/Halifax",
@@ -245,7 +252,6 @@ with Workflows(
                             "cross_device_attribution_model_id": "<id>",
                         },
                     ],
-                    "id": "<id>",
                     "name": "<value>",
                     "primary_channel": ttd_workflows.CampaignChannelType.DOOH,
                     "primary_goal": {
@@ -271,6 +277,12 @@ with Workflows(
             },
         ],
         "validate_input_only": False,
+        "callback_input": {
+            "callback_url": "https://grizzled-riser.com/",
+            "callback_headers": {
+                "key": "<value>",
+            },
+        },
     })
 
     # Handle response
@@ -311,7 +323,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.campaigns.archive(request_body=[
+    res = workflows.campaigns.archive(force_archive=False, request_body=[
         "<value 1>",
     ])
 

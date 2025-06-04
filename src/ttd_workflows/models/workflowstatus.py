@@ -8,3 +8,4 @@ class WorkflowStatus(str, Enum):
     IN_PROGRESS = "InProgress"
     FAILURE = "Failure"
     SUCCESS = "Success"
+    PARTIAL_SUCCESS = "PartialSuccess"

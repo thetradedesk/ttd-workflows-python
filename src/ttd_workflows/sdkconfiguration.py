@@ -17,7 +17,7 @@ from typing import Callable, Dict, Optional, Tuple, Union
 
 SERVERS = [
     "https://api.thetradedesk.com/workflows",
-    # The Trade Desk Workflows API
+    # A RESTful service for commonly used workflows.
 ]
 """Contains the list of servers available to the SDK"""
 

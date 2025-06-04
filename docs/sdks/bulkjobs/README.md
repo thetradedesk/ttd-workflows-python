@@ -6,7 +6,6 @@
 ### Available Operations
 
 * [submit_first_party_data](#submit_first_party_data) - Submit a query for First Party Data to Hydra
-* [callback](#callback) - Used for receiving a callback from Hydra once a job is completed
 * [get_status](#get_status) - Get the status of a bulk job workflow you submitted earlier
 
 ## submit_first_party_data
@@ -28,6 +27,13 @@ with Workflows(
         "advertiser_id": "<id>",
         "name_filter": "<value>",
         "query_shape": "<value>",
+        "callback_input": {
+            "callback_url": "https://querulous-knight.name/",
+            "callback_headers": {
+                "key": "<value>",
+                "key1": "<value>",
+            },
+        },
     })
 
     # Handle response
@@ -52,39 +58,6 @@ with Workflows(
 | -------------------------- | -------------------------- | -------------------------- |
 | models.ProblemDetailsError | 400, 401, 403, 404         | application/json           |
 | models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
-## callback
-
-Used for receiving a callback from Hydra once a job is completed
-
-### Example Usage
-
-```python
-import os
-from ttd_workflows import Workflows
-
-
-with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
-
-    workflows.bulk_jobs.callback()
-
-    # Use the SDK ...
-
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| models.APIError | 4XX, 5XX        | \*/\*           |
 
 ## get_status
 

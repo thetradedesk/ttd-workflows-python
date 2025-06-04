@@ -30,7 +30,6 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class CampaignUpdateWorkflowPrimaryInputTypedDict(TypedDict):
-    id: Nullable[str]
     description: NotRequired[Nullable[str]]
     time_zone: NotRequired[Nullable[str]]
     custom_cpa_click_weight: NotRequired[Nullable[float]]
@@ -50,8 +49,6 @@ class CampaignUpdateWorkflowPrimaryInputTypedDict(TypedDict):
 
 
 class CampaignUpdateWorkflowPrimaryInput(BaseModel):
-    id: Nullable[str]
-
     description: OptionalNullable[str] = UNSET
 
     time_zone: Annotated[OptionalNullable[str], pydantic.Field(alias="timeZone")] = (
@@ -128,7 +125,6 @@ class CampaignUpdateWorkflowPrimaryInput(BaseModel):
             "endDateInUtc",
             "seedId",
             "campaignConversionReportingColumns",
-            "id",
             "name",
             "startDateInUtc",
         ]
