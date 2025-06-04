@@ -15,48 +15,43 @@ from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class FirstPartyDataInputTypedDict(TypedDict):
-    r"""Required fields for submitting a bulk job for first party data"""
+class ThirdPartyDataInputTypedDict(TypedDict):
+    r"""Required fields for submitting a bulk job for third party data"""
 
-    advertiser_id: str
-    r"""The advertiser id to query for."""
-    name_filter: NotRequired[Nullable[str]]
-    r"""The name to filter by in the query. This filter will be applied to the results for the advertiser.
-    If there are no nodes which match the filter, a response with empty nodes with no first party data will be returned.
-    """
+    partner_id: str
+    r"""The partner id to query for."""
     query_shape: NotRequired[Nullable[str]]
     r"""The shape of the query with the fields being asked for, which is sent downstream.
     This determines how the response will look like.
     If this is not provided the default query shape will be used:
 
     nodes {
-    name
     id
+    name
+    providerId
+    providerElementId
+    description
+    buyable
+    fullPath
     activeUniques {
     householdCount
     idsConnectedTvCount
-    idsCount
     idsInAppCount
     idsWebCount
     personsCount
+    thirdPartyDataOverlapCount
+    lastUpdated
     }
     }
     """
     callback_input: NotRequired[WorkflowCallbackInputTypedDict]
 
 
-class FirstPartyDataInput(BaseModel):
-    r"""Required fields for submitting a bulk job for first party data"""
+class ThirdPartyDataInput(BaseModel):
+    r"""Required fields for submitting a bulk job for third party data"""
 
-    advertiser_id: Annotated[str, pydantic.Field(alias="advertiserId")]
-    r"""The advertiser id to query for."""
-
-    name_filter: Annotated[
-        OptionalNullable[str], pydantic.Field(alias="nameFilter")
-    ] = UNSET
-    r"""The name to filter by in the query. This filter will be applied to the results for the advertiser.
-    If there are no nodes which match the filter, a response with empty nodes with no first party data will be returned.
-    """
+    partner_id: Annotated[str, pydantic.Field(alias="partnerId")]
+    r"""The partner id to query for."""
 
     query_shape: Annotated[
         OptionalNullable[str], pydantic.Field(alias="queryShape")
@@ -66,15 +61,21 @@ class FirstPartyDataInput(BaseModel):
     If this is not provided the default query shape will be used:
 
     nodes {
-    name
     id
+    name
+    providerId
+    providerElementId
+    description
+    buyable
+    fullPath
     activeUniques {
     householdCount
     idsConnectedTvCount
-    idsCount
     idsInAppCount
     idsWebCount
     personsCount
+    thirdPartyDataOverlapCount
+    lastUpdated
     }
     }
     """
@@ -85,8 +86,8 @@ class FirstPartyDataInput(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["nameFilter", "queryShape", "callbackInput"]
-        nullable_fields = ["nameFilter", "queryShape"]
+        optional_fields = ["queryShape", "callbackInput"]
+        nullable_fields = ["queryShape"]
         null_default_fields = []
 
         serialized = handler(self)

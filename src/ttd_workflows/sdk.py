@@ -16,6 +16,7 @@ import weakref
 if TYPE_CHECKING:
     from ttd_workflows.adgroup import AdGroup
     from ttd_workflows.adgroups import AdGroups
+    from ttd_workflows.bulkjob import BulkJob
     from ttd_workflows.bulkjobs import BulkJobs
     from ttd_workflows.campaign import Campaign
     from ttd_workflows.campaigns import Campaigns
@@ -29,6 +30,7 @@ class Workflows(BaseSDK):
     ad_groups: "AdGroups"
     ad_group: "AdGroup"
     bulk_jobs: "BulkJobs"
+    bulk_job: "BulkJob"
     campaign: "Campaign"
     campaigns: "Campaigns"
     graph_ql: "GraphQl"
@@ -37,6 +39,7 @@ class Workflows(BaseSDK):
         "ad_groups": ("ttd_workflows.adgroups", "AdGroups"),
         "ad_group": ("ttd_workflows.adgroup", "AdGroup"),
         "bulk_jobs": ("ttd_workflows.bulkjobs", "BulkJobs"),
+        "bulk_job": ("ttd_workflows.bulkjob", "BulkJob"),
         "campaign": ("ttd_workflows.campaign", "Campaign"),
         "campaigns": ("ttd_workflows.campaigns", "Campaigns"),
         "graph_ql": ("ttd_workflows.graphql", "GraphQl"),

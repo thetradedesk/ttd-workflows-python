@@ -5,6 +5,7 @@ from .campaignupdateworkflowinput import (
     CampaignUpdateWorkflowInput,
     CampaignUpdateWorkflowInputTypedDict,
 )
+from .workflowcallbackinput import WorkflowCallbackInput, WorkflowCallbackInputTypedDict
 import pydantic
 from pydantic import model_serializer
 from ttd_workflows.types import (
@@ -14,13 +15,14 @@ from ttd_workflows.types import (
     UNSET,
     UNSET_SENTINEL,
 )
-from typing import List
+from typing import List, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class CampaignBulkUpdateWorkflowInputWithValidationTypedDict(TypedDict):
     input: Nullable[List[CampaignUpdateWorkflowInputTypedDict]]
     validate_input_only: NotRequired[Nullable[bool]]
+    callback_input: NotRequired[WorkflowCallbackInputTypedDict]
 
 
 class CampaignBulkUpdateWorkflowInputWithValidation(BaseModel):
@@ -30,9 +32,13 @@ class CampaignBulkUpdateWorkflowInputWithValidation(BaseModel):
         OptionalNullable[bool], pydantic.Field(alias="validateInputOnly")
     ] = UNSET
 
+    callback_input: Annotated[
+        Optional[WorkflowCallbackInput], pydantic.Field(alias="callbackInput")
+    ] = None
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["validateInputOnly"]
+        optional_fields = ["validateInputOnly", "callbackInput"]
         nullable_fields = ["input", "validateInputOnly"]
         null_default_fields = []
 

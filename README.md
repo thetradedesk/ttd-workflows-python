@@ -540,6 +540,10 @@ with Workflows(
 * [archive](docs/sdks/adgroups/README.md#archive) - Archive a list of ad groups
 * [bulk_create](docs/sdks/adgroups/README.md#bulk_create) - Create a list of ad groups with required fields.
 
+### [bulk_job](docs/sdks/bulkjob/README.md)
+
+* [post_bulkjob_thirdpartydata](docs/sdks/bulkjob/README.md#post_bulkjob_thirdpartydata) - Submits a query for Third Party Data to Hydra
+
 ### [bulk_jobs](docs/sdks/bulkjobs/README.md)
 
 * [submit_first_party_data](docs/sdks/bulkjobs/README.md#submit_first_party_data) - Submit a query for First Party Data to Hydra

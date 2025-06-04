@@ -169,6 +169,12 @@ with Workflows(
     res = workflows.campaigns.bulk_create(request={
         "input": None,
         "validate_input_only": True,
+        "callback_input": {
+            "callback_url": "https://dental-divine.org/",
+            "callback_headers": {
+                "key": "<value>",
+            },
+        },
     })
 
     # Handle response
@@ -271,6 +277,12 @@ with Workflows(
             },
         ],
         "validate_input_only": False,
+        "callback_input": {
+            "callback_url": "https://grizzled-riser.com/",
+            "callback_headers": {
+                "key": "<value>",
+            },
+        },
     })
 
     # Handle response
@@ -311,7 +323,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.campaigns.archive(request_body=[
+    res = workflows.campaigns.archive(force_archive=False, request_body=[
         "<value 1>",
     ])
 

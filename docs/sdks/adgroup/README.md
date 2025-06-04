@@ -267,6 +267,13 @@ with Workflows(
             },
         ],
         "validate_input_only": True,
+        "callback_input": {
+            "callback_url": "https://musty-ecliptic.com/",
+            "callback_headers": {
+                "key": "<value>",
+                "key1": "<value>",
+            },
+        },
     })
 
     # Handle response

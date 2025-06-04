@@ -236,6 +236,11 @@ if TYPE_CHECKING:
     from .targetingendage import TargetingEndAge
     from .targetinggender import TargetingGender
     from .targetingstartage import TargetingStartAge
+    from .thirdpartydatainput import ThirdPartyDataInput, ThirdPartyDataInputTypedDict
+    from .workflowcallbackinput import (
+        WorkflowCallbackInput,
+        WorkflowCallbackInputTypedDict,
+    )
     from .workflowstatus import WorkflowStatus
 
 __all__ = [
@@ -380,8 +385,12 @@ __all__ = [
     "TargetingEndAge",
     "TargetingGender",
     "TargetingStartAge",
+    "ThirdPartyDataInput",
+    "ThirdPartyDataInputTypedDict",
     "Variables",
     "VariablesTypedDict",
+    "WorkflowCallbackInput",
+    "WorkflowCallbackInputTypedDict",
     "WorkflowStatus",
 ]
 
@@ -529,6 +538,10 @@ _dynamic_imports: dict[str, str] = {
     "TargetingEndAge": ".targetingendage",
     "TargetingGender": ".targetinggender",
     "TargetingStartAge": ".targetingstartage",
+    "ThirdPartyDataInput": ".thirdpartydatainput",
+    "ThirdPartyDataInputTypedDict": ".thirdpartydatainput",
+    "WorkflowCallbackInput": ".workflowcallbackinput",
+    "WorkflowCallbackInputTypedDict": ".workflowcallbackinput",
     "WorkflowStatus": ".workflowstatus",
 }
 

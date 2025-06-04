@@ -344,7 +344,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_groups.archive(request_body=[
+    res = workflows.ad_groups.archive(force_archive=False, request_body=[
         "<value 1>",
         "<value 2>",
         "<value 3>",
@@ -811,6 +811,12 @@ with Workflows(
             },
         ],
         "validate_input_only": True,
+        "callback_input": {
+            "callback_url": "https://thorny-packaging.net",
+            "callback_headers": {
+                "key": "<value>",
+            },
+        },
     })
 
     # Handle response

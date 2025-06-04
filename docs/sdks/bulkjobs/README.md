@@ -28,6 +28,13 @@ with Workflows(
         "advertiser_id": "<id>",
         "name_filter": "<value>",
         "query_shape": "<value>",
+        "callback_input": {
+            "callback_url": "https://querulous-knight.name/",
+            "callback_headers": {
+                "key": "<value>",
+                "key1": "<value>",
+            },
+        },
     })
 
     # Handle response
