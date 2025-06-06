@@ -1,31 +1,35 @@
-speakeasyVersion: 1.555.3
+speakeasyVersion: 1.557.0
 sources:
     Workflows API:
         sourceNamespace: workflows-api
-        sourceRevisionDigest: sha256:8b5b34dd813be19323121711069ebfca629e89f7df84a10c1c9a762dd4d89139
-        sourceBlobDigest: sha256:1e49b78731c10214fd5832e7c43af01fce713bfac9dae8e4a157afc698fcef89
+        sourceRevisionDigest: sha256:23df897f99085d8d999636448894c381211606ee675b91588a6cc07b2c734100
+        sourceBlobDigest: sha256:a35689e2f42b9eb41636a6b2450c9f7ddb36c93a503ac06d60fc777336b0b1c6
         tags:
             - latest
+            - speakeasy-sdk-regen-1749232917
             - v1
 targets:
     workflows:
         source: Workflows API
         sourceNamespace: workflows-api
-        sourceRevisionDigest: sha256:8b5b34dd813be19323121711069ebfca629e89f7df84a10c1c9a762dd4d89139
-        sourceBlobDigest: sha256:1e49b78731c10214fd5832e7c43af01fce713bfac9dae8e4a157afc698fcef89
+        sourceRevisionDigest: sha256:23df897f99085d8d999636448894c381211606ee675b91588a6cc07b2c734100
+        sourceBlobDigest: sha256:a35689e2f42b9eb41636a6b2450c9f7ddb36c93a503ac06d60fc777336b0b1c6
         codeSamplesNamespace: workflows-api-python-code-samples
-        codeSamplesRevisionDigest: sha256:7c3d2af9e3533b4b352022f5440b2f4eece96cd53009174d0f12be607ab6fa32
+        codeSamplesRevisionDigest: sha256:d88d56c73028f22e0d56b018cb7742effb3284161c2afe48ce7278a563c30083
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
         Workflows API:
             inputs:
-                - location: ./api_spec.yaml
+                - location: https://api.thetradedesk.com/workflows/swagger/v1/swagger.yaml
+                  authHeader: TTD-Auth
+                  authSecret: $openapi_doc_auth_token
             overlays:
                 - location: .speakeasy/speakeasy-modifications-overlay.yaml
                 - location: .speakeasy/speakeasy-config-overlay.yaml
                 - location: .speakeasy/api-spec-overlay.yaml
+            output: combined_api_spec.yaml
             registry:
                 location: registry.speakeasyapi.dev/thetradedesk/workflows/workflows-api
     targets:
