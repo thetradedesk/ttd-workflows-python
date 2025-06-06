@@ -108,13 +108,10 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_group.post_adgroup(request={
+    res = workflows.ad_groups.create(request={
         "primary_input": {
-            "name": "<value>",
             "is_enabled": True,
             "description": "into save rosy forsaken well",
-            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "budget": {
                 "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                 "budget_in_advertiser_currency": 6554.77,
@@ -172,6 +169,9 @@ with Workflows(
                     "is_default_for_dimension": None,
                 },
             ],
+            "name": "<value>",
+            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": None,
         },
         "campaign_id": "<id>",
@@ -223,7 +223,10 @@ with Workflows(
             ],
             "flights": None,
         },
+        "validate_input_only": True,
     })
+
+    assert res is not None
 
     # Handle response
     print(res)
@@ -245,13 +248,10 @@ async def main():
         ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
     ) as workflows:
 
-        res = await workflows.ad_group.post_adgroup_async(request={
+        res = await workflows.ad_groups.create_async(request={
             "primary_input": {
-                "name": "<value>",
                 "is_enabled": True,
                 "description": "into save rosy forsaken well",
-                "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-                "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
                 "budget": {
                     "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                     "budget_in_advertiser_currency": 6554.77,
@@ -309,6 +309,9 @@ async def main():
                         "is_default_for_dimension": None,
                     },
                 ],
+                "name": "<value>",
+                "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+                "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
                 "programmatic_guaranteed_private_contract_id": None,
             },
             "campaign_id": "<id>",
@@ -360,7 +363,10 @@ async def main():
                 ],
                 "flights": None,
             },
+            "validate_input_only": True,
         })
+
+        assert res is not None
 
         # Handle response
         print(res)
@@ -391,13 +397,10 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_group.post_adgroup(request={
+    res = workflows.ad_groups.create(request={
         "primary_input": {
-            "name": "<value>",
             "is_enabled": True,
             "description": "into save rosy forsaken well",
-            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "budget": {
                 "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                 "budget_in_advertiser_currency": 6554.77,
@@ -455,6 +458,9 @@ with Workflows(
                     "is_default_for_dimension": None,
                 },
             ],
+            "name": "<value>",
+            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": None,
         },
         "campaign_id": "<id>",
@@ -506,7 +512,10 @@ with Workflows(
             ],
             "flights": None,
         },
+        "validate_input_only": True,
     })
+
+    assert res is not None
 
     # Handle response
     print(res)
@@ -522,30 +531,43 @@ with Workflows(
 
 ### [ad_group](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md)
 
-* [post_adgroup](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md#post_adgroup)
-* [patch_adgroup](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md#patch_adgroup)
-* [post_adgroup_archive](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md#post_adgroup_archive) - Archive a list of ad groups
+* [patch_adgroup_bulk](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md#patch_adgroup_bulk) - Create a list of ad groups with required fields. `ValidateInputOnly` value should be the same for all ad groups.
+
+### [ad_groups](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md)
+
+* [create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md#create)
+* [update](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md#update)
+* [archive](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md#archive) - Archive a list of ad groups
+* [bulk_create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md#bulk_create) - Create a list of ad groups with required fields.
 
 ### [bulk_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/bulkjob/README.md)
 
-* [post_bulkjob_firstpartydata](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/bulkjob/README.md#post_bulkjob_firstpartydata) - Submits a query for First Party Data to Hydra
-* [get_bulkjob_id_status](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/bulkjob/README.md#get_bulkjob_id_status) - Get the status of a bulk job you submitted earlier
+* [post_bulkjob_thirdpartydata](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/bulkjob/README.md#post_bulkjob_thirdpartydata) - Submits a query for Third Party Data to Hydra
+
+### [bulk_jobs](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/bulkjobs/README.md)
+
+* [submit_first_party_data](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/bulkjobs/README.md#submit_first_party_data) - Submit a query for First Party Data to Hydra
+* [get_status](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/bulkjobs/README.md#get_status) - Get the status of a bulk job workflow you submitted earlier
 
 ### [campaign](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md)
 
 * [create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#create) - Create a new campaign with required fields
-* [patch_campaign](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#patch_campaign) - Update an existing campaign with specified fields
-* [post_campaign_bulk](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#post_campaign_bulk) - Create a list of campaigns with required fields. `ValidateInputOnly` value should be the same for all campaigns.
-* [post_campaign_archive](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#post_campaign_archive) - Archive a list of campaigns
 * [get_version](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#get_version) - GET a campaign's version
+
+### [campaigns](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md)
+
+* [update](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md#update) - Update an existing campaign with specified fields
+* [bulk_create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md#bulk_create) - Create a list of campaigns with required fields. `ValidateInputOnly` value should be the same for all campaigns.
+* [bulk_update](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md#bulk_update) - Update a list of existing campaigns with specified fields. `ValidateInputOnly` value should be the same for all campaigns.
+* [archive](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md#archive) - Archive a list of campaigns
 
 ### [graph_ql](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphql/README.md)
 
-* [post_graphql_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphql/README.md#post_graphql_request) - An endpoint that executes valid GraphQL queries or mutations.
+* [post_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphql/README.md#post_request) - An endpoint that executes valid GraphQL queries or mutations.
 
-### [pub_api](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/pubapi/README.md)
+### [pub_apis](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/pubapis/README.md)
 
-* [post_pubapi](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/pubapi/README.md#post_pubapi)
+* [post](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/pubapis/README.md#post)
 
 
 </details>
@@ -568,13 +590,10 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_group.post_adgroup(request={
+    res = workflows.ad_groups.create(request={
         "primary_input": {
-            "name": "<value>",
             "is_enabled": True,
             "description": "into save rosy forsaken well",
-            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "budget": {
                 "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                 "budget_in_advertiser_currency": 6554.77,
@@ -632,6 +651,9 @@ with Workflows(
                     "is_default_for_dimension": None,
                 },
             ],
+            "name": "<value>",
+            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": None,
         },
         "campaign_id": "<id>",
@@ -683,8 +705,11 @@ with Workflows(
             ],
             "flights": None,
         },
+        "validate_input_only": True,
     },
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
+
+    assert res is not None
 
     # Handle response
     print(res)
@@ -704,13 +729,10 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_group.post_adgroup(request={
+    res = workflows.ad_groups.create(request={
         "primary_input": {
-            "name": "<value>",
             "is_enabled": True,
             "description": "into save rosy forsaken well",
-            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "budget": {
                 "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                 "budget_in_advertiser_currency": 6554.77,
@@ -768,6 +790,9 @@ with Workflows(
                     "is_default_for_dimension": None,
                 },
             ],
+            "name": "<value>",
+            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": None,
         },
         "campaign_id": "<id>",
@@ -819,7 +844,10 @@ with Workflows(
             ],
             "flights": None,
         },
+        "validate_input_only": True,
     })
+
+    assert res is not None
 
     # Handle response
     print(res)
@@ -841,7 +869,7 @@ By default, an API error will raise a models.APIError exception, which has the f
 | `.raw_response` | *httpx.Response* | The raw HTTP response |
 | `.body`         | *str*            | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `post_adgroup_async` method may raise the following exceptions:
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_async` method may raise the following exceptions:
 
 | Error Type                 | Status Code | Content Type     |
 | -------------------------- | ----------- | ---------------- |
@@ -862,13 +890,10 @@ with Workflows(
     res = None
     try:
 
-        res = workflows.ad_group.post_adgroup(request={
+        res = workflows.ad_groups.create(request={
             "primary_input": {
-                "name": "<value>",
                 "is_enabled": True,
                 "description": "into save rosy forsaken well",
-                "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-                "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
                 "budget": {
                     "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                     "budget_in_advertiser_currency": 6554.77,
@@ -926,6 +951,9 @@ with Workflows(
                         "is_default_for_dimension": None,
                     },
                 ],
+                "name": "<value>",
+                "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+                "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
                 "programmatic_guaranteed_private_contract_id": None,
             },
             "campaign_id": "<id>",
@@ -977,7 +1005,10 @@ with Workflows(
                 ],
                 "flights": None,
             },
+            "validate_input_only": True,
         })
+
+        assert res is not None
 
         # Handle response
         print(res)
@@ -1008,13 +1039,10 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_group.post_adgroup(request={
+    res = workflows.ad_groups.create(request={
         "primary_input": {
-            "name": "<value>",
             "is_enabled": True,
             "description": "into save rosy forsaken well",
-            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "budget": {
                 "allocation_type": ttd_workflows.AllocationType.MINIMUM,
                 "budget_in_advertiser_currency": 6554.77,
@@ -1072,6 +1100,9 @@ with Workflows(
                     "is_default_for_dimension": None,
                 },
             ],
+            "name": "<value>",
+            "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": None,
         },
         "campaign_id": "<id>",
@@ -1123,7 +1154,10 @@ with Workflows(
             ],
             "flights": None,
         },
+        "validate_input_only": True,
     })
+
+    assert res is not None
 
     # Handle response
     print(res)
