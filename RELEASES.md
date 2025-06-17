@@ -99,3 +99,13 @@ Based on:
 - [python v0.5.2] .
 ### Releases
 - [PyPI v0.5.2] https://pypi.org/project/ttd-workflows/0.5.2 - .
+
+## 2025-06-17 01:50:27
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.563.4 (2.630.6) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.6.0] .
+### Releases
+- [PyPI v0.6.0] https://pypi.org/project/ttd-workflows/0.6.0 - .

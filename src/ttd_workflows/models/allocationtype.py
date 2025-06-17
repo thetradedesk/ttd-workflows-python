@@ -6,5 +6,5 @@ from enum import Enum
 
 class AllocationType(str, Enum):
     MINIMUM = "Minimum"
-    MAXIMUM = "Maximum"
     FIXED = "Fixed"
+    MAXIMUM = "Maximum"
