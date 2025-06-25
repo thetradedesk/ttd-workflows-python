@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [post_graphqlrequest](#post_graphqlrequest) - Submit a valid GraphQL query or mutation
+* [submit_graph_ql_request](#submit_graph_ql_request) - Submit a valid GraphQL query or mutation
 
-## post_graphqlrequest
+## submit_graph_ql_request
 
 This generic operation can be used to execute any valid GraphQL request.
 To explore the available GraphQL operations, see the [GraphQL Schema Explorer](https://partner.thetradedesk.com/v3/portal/api/graphql-schema).
@@ -23,7 +23,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.graph_ql_request.post_graphqlrequest(request={
+    res = workflows.graph_ql_request.submit_graph_ql_request(request={
         "request": "<value>",
         "variables": {},
     })
@@ -42,7 +42,7 @@ with Workflows(
 
 ### Response
 
-**[models.PostGraphqlrequestResponse](../../models/postgraphqlrequestresponse.md)**
+**[models.SubmitGraphQlRequestResponse](../../models/submitgraphqlrequestresponse.md)**
 
 ### Errors
 

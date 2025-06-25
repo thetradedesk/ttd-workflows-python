@@ -113,6 +113,14 @@ if TYPE_CHECKING:
     )
     from .allocationtype import AllocationType
     from .apierror import APIError
+    from .archiveadgroupsop import (
+        ArchiveAdGroupsRequest,
+        ArchiveAdGroupsRequestTypedDict,
+    )
+    from .archivecampaignsop import (
+        ArchiveCampaignsRequest,
+        ArchiveCampaignsRequestTypedDict,
+    )
     from .callpubapiworkflowinput import (
         CallPubAPIWorkflowInput,
         CallPubAPIWorkflowInputTypedDict,
@@ -198,40 +206,29 @@ if TYPE_CHECKING:
     from .dimensionalbiddingdimensions import DimensionalBiddingDimensions
     from .enhancednielsenreportingoptions import EnhancedNielsenReportingOptions
     from .firstpartydatainput import FirstPartyDataInput, FirstPartyDataInputTypedDict
-    from .get_campaign_id_versionop import (
-        GetCampaignIDVersionRequest,
-        GetCampaignIDVersionRequestTypedDict,
+    from .getcampaignversionop import (
+        GetCampaignVersionRequest,
+        GetCampaignVersionRequestTypedDict,
     )
-    from .get_typebasedjob_id_statusop import (
-        GetTypebasedjobIDStatusRequest,
-        GetTypebasedjobIDStatusRequestTypedDict,
-    )
+    from .getjobstatusop import GetJobStatusRequest, GetJobStatusRequestTypedDict
     from .graphqlrequestinput import (
         GraphQLRequestInput,
         GraphQLRequestInputTypedDict,
         Variables,
         VariablesTypedDict,
     )
-    from .post_adgroup_archiveop import (
-        PostAdgroupArchiveRequest,
-        PostAdgroupArchiveRequestTypedDict,
-    )
-    from .post_campaign_archiveop import (
-        PostCampaignArchiveRequest,
-        PostCampaignArchiveRequestTypedDict,
-    )
-    from .post_graphqlrequestop import (
-        PostGraphqlrequestResponse,
-        PostGraphqlrequestResponseTypedDict,
-    )
-    from .post_restrequestop import (
-        PostRestrequestResponse,
-        PostRestrequestResponseTypedDict,
-    )
     from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
     from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
     from .pubapimethodtype import PubAPIMethodType
     from .security import Security, SecurityTypedDict
+    from .submitgraphqlrequestop import (
+        SubmitGraphQlRequestResponse,
+        SubmitGraphQlRequestResponseTypedDict,
+    )
+    from .submitrestrequestop import (
+        SubmitRestRequestResponse,
+        SubmitRestRequestResponseTypedDict,
+    )
     from .targetingendage import TargetingEndAge
     from .targetinggender import TargetingGender
     from .targetingstartage import TargetingStartAge
@@ -315,6 +312,10 @@ __all__ = [
     "AdGroupWorkflowROIGoalInputTypedDict",
     "AdGroupWorkflowTypedDict",
     "AllocationType",
+    "ArchiveAdGroupsRequest",
+    "ArchiveAdGroupsRequestTypedDict",
+    "ArchiveCampaignsRequest",
+    "ArchiveCampaignsRequestTypedDict",
     "CallPubAPIWorkflowInput",
     "CallPubAPIWorkflowInputTypedDict",
     "CampaignBulkCreateWorkflowInputWithValidation",
@@ -366,20 +367,12 @@ __all__ = [
     "EnhancedNielsenReportingOptions",
     "FirstPartyDataInput",
     "FirstPartyDataInputTypedDict",
-    "GetCampaignIDVersionRequest",
-    "GetCampaignIDVersionRequestTypedDict",
-    "GetTypebasedjobIDStatusRequest",
-    "GetTypebasedjobIDStatusRequestTypedDict",
+    "GetCampaignVersionRequest",
+    "GetCampaignVersionRequestTypedDict",
+    "GetJobStatusRequest",
+    "GetJobStatusRequestTypedDict",
     "GraphQLRequestInput",
     "GraphQLRequestInputTypedDict",
-    "PostAdgroupArchiveRequest",
-    "PostAdgroupArchiveRequestTypedDict",
-    "PostCampaignArchiveRequest",
-    "PostCampaignArchiveRequestTypedDict",
-    "PostGraphqlrequestResponse",
-    "PostGraphqlrequestResponseTypedDict",
-    "PostRestrequestResponse",
-    "PostRestrequestResponseTypedDict",
     "ProblemDetails",
     "ProblemDetailsError",
     "ProblemDetailsErrorData",
@@ -387,6 +380,10 @@ __all__ = [
     "PubAPIMethodType",
     "Security",
     "SecurityTypedDict",
+    "SubmitGraphQlRequestResponse",
+    "SubmitGraphQlRequestResponseTypedDict",
+    "SubmitRestRequestResponse",
+    "SubmitRestRequestResponseTypedDict",
     "TargetingEndAge",
     "TargetingGender",
     "TargetingStartAge",
@@ -468,6 +465,10 @@ _dynamic_imports: dict[str, str] = {
     "AdGroupWorkflowROIGoalInputTypedDict": ".adgroupworkflowroigoalinput",
     "AllocationType": ".allocationtype",
     "APIError": ".apierror",
+    "ArchiveAdGroupsRequest": ".archiveadgroupsop",
+    "ArchiveAdGroupsRequestTypedDict": ".archiveadgroupsop",
+    "ArchiveCampaignsRequest": ".archivecampaignsop",
+    "ArchiveCampaignsRequestTypedDict": ".archivecampaignsop",
     "CallPubAPIWorkflowInput": ".callpubapiworkflowinput",
     "CallPubAPIWorkflowInputTypedDict": ".callpubapiworkflowinput",
     "CampaignBulkCreateWorkflowInputWithValidation": ".campaignbulkcreateworkflowinputwithvalidation",
@@ -519,22 +520,14 @@ _dynamic_imports: dict[str, str] = {
     "EnhancedNielsenReportingOptions": ".enhancednielsenreportingoptions",
     "FirstPartyDataInput": ".firstpartydatainput",
     "FirstPartyDataInputTypedDict": ".firstpartydatainput",
-    "GetCampaignIDVersionRequest": ".get_campaign_id_versionop",
-    "GetCampaignIDVersionRequestTypedDict": ".get_campaign_id_versionop",
-    "GetTypebasedjobIDStatusRequest": ".get_typebasedjob_id_statusop",
-    "GetTypebasedjobIDStatusRequestTypedDict": ".get_typebasedjob_id_statusop",
+    "GetCampaignVersionRequest": ".getcampaignversionop",
+    "GetCampaignVersionRequestTypedDict": ".getcampaignversionop",
+    "GetJobStatusRequest": ".getjobstatusop",
+    "GetJobStatusRequestTypedDict": ".getjobstatusop",
     "GraphQLRequestInput": ".graphqlrequestinput",
     "GraphQLRequestInputTypedDict": ".graphqlrequestinput",
     "Variables": ".graphqlrequestinput",
     "VariablesTypedDict": ".graphqlrequestinput",
-    "PostAdgroupArchiveRequest": ".post_adgroup_archiveop",
-    "PostAdgroupArchiveRequestTypedDict": ".post_adgroup_archiveop",
-    "PostCampaignArchiveRequest": ".post_campaign_archiveop",
-    "PostCampaignArchiveRequestTypedDict": ".post_campaign_archiveop",
-    "PostGraphqlrequestResponse": ".post_graphqlrequestop",
-    "PostGraphqlrequestResponseTypedDict": ".post_graphqlrequestop",
-    "PostRestrequestResponse": ".post_restrequestop",
-    "PostRestrequestResponseTypedDict": ".post_restrequestop",
     "ProblemDetails": ".problemdetails",
     "ProblemDetailsTypedDict": ".problemdetails",
     "ProblemDetailsError": ".problemdetails_error",
@@ -542,6 +535,10 @@ _dynamic_imports: dict[str, str] = {
     "PubAPIMethodType": ".pubapimethodtype",
     "Security": ".security",
     "SecurityTypedDict": ".security",
+    "SubmitGraphQlRequestResponse": ".submitgraphqlrequestop",
+    "SubmitGraphQlRequestResponseTypedDict": ".submitgraphqlrequestop",
+    "SubmitRestRequestResponse": ".submitrestrequestop",
+    "SubmitRestRequestResponseTypedDict": ".submitrestrequestop",
     "TargetingEndAge": ".targetingendage",
     "TargetingGender": ".targetinggender",
     "TargetingStartAge": ".targetingstartage",

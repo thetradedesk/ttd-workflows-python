@@ -9,7 +9,7 @@ from typing import Any, Mapping, Optional, Union, cast
 
 
 class RESTRequest(BaseSDK):
-    def post_restrequest(
+    def submit_rest_request(
         self,
         *,
         request: Optional[
@@ -21,7 +21,7 @@ class RESTRequest(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.PostRestrequestResponse:
+    ) -> models.SubmitRestRequestResponse:
         r"""Submit a valid REST request
 
         This generic operation can be used to execute any valid REST request.
@@ -82,7 +82,7 @@ class RESTRequest(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/restrequest",
+                operation_id="submitRestRequest",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -95,7 +95,7 @@ class RESTRequest(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.PostRestrequestResponse)
+            return utils.unmarshal_json(http_res.text, models.SubmitRestRequestResponse)
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
@@ -123,7 +123,7 @@ class RESTRequest(BaseSDK):
             http_res,
         )
 
-    async def post_restrequest_async(
+    async def submit_rest_request_async(
         self,
         *,
         request: Optional[
@@ -135,7 +135,7 @@ class RESTRequest(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.PostRestrequestResponse:
+    ) -> models.SubmitRestRequestResponse:
         r"""Submit a valid REST request
 
         This generic operation can be used to execute any valid REST request.
@@ -196,7 +196,7 @@ class RESTRequest(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/restrequest",
+                operation_id="submitRestRequest",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -209,7 +209,7 @@ class RESTRequest(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.PostRestrequestResponse)
+            return utils.unmarshal_json(http_res.text, models.SubmitRestRequestResponse)
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):

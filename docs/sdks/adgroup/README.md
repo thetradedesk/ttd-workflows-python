@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [post_typebasedjob_adgroup_bulk](#post_typebasedjob_adgroup_bulk) - Create multiple new ad groups with required fields
-* [patch_typebasedjob_adgroup_bulk](#patch_typebasedjob_adgroup_bulk) - Update multiple ad groups with specified fields
+* [create_ad_groups_job](#create_ad_groups_job) - Create multiple new ad groups with required fields
+* [update_ad_groups_job](#update_ad_groups_job) - Update multiple ad groups with specified fields
 
-## post_typebasedjob_adgroup_bulk
+## create_ad_groups_job
 
 Create multiple new ad groups with required fields
 
@@ -23,11 +23,11 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_group.post_typebasedjob_adgroup_bulk(request={
+    res = workflows.ad_group.create_ad_groups_job(request={
         "input": [],
-        "validate_input_only": True,
+        "validate_input_only": False,
         "callback_input": {
-            "callback_url": "https://unhealthy-toothbrush.biz/",
+            "callback_url": "https://fantastic-daughter.biz/",
             "callback_headers": {
                 "key": "<value>",
                 "key1": "<value>",
@@ -59,7 +59,7 @@ with Workflows(
 | models.ProblemDetailsError | 400, 403                   | application/json           |
 | models.APIError            | 4XX, 5XX                   | \*/\*                      |
 
-## patch_typebasedjob_adgroup_bulk
+## update_ad_groups_job
 
 Only the fields provided in the request payload for each specific ad group will be updated.
 
@@ -75,52 +75,52 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.ad_group.patch_typebasedjob_adgroup_bulk(request={
+    res = workflows.ad_group.update_ad_groups_job(request={
         "input": [
             {
                 "id": "<id>",
                 "primary_input": {
-                    "is_enabled": True,
-                    "description": None,
+                    "is_enabled": False,
+                    "description": "stealthily miserable imaginary er since athwart er blah marten",
                     "budget": {
                         "allocation_type": ttd_workflows.AllocationType.MINIMUM,
-                        "budget_in_advertiser_currency": 4365.6,
-                        "budget_in_impressions": 797262,
-                        "daily_target_in_advertiser_currency": 2847.63,
-                        "daily_target_in_impressions": None,
+                        "budget_in_advertiser_currency": 5440.47,
+                        "budget_in_impressions": None,
+                        "daily_target_in_advertiser_currency": 6251.13,
+                        "daily_target_in_impressions": 931411,
                     },
-                    "base_bid_cpm_in_advertiser_currency": 1985.29,
-                    "max_bid_cpm_in_advertiser_currency": 4757.87,
+                    "base_bid_cpm_in_advertiser_currency": 188.02,
+                    "max_bid_cpm_in_advertiser_currency": 6077.98,
                     "audience_targeting": {
                         "audience_id": "<id>",
-                        "audience_accelerator_exclusions_enabled": False,
-                        "audience_booster_enabled": False,
+                        "audience_accelerator_exclusions_enabled": True,
+                        "audience_booster_enabled": True,
                         "audience_excluder_enabled": False,
                         "audience_predictor_enabled": False,
                         "cross_device_vendor_list_for_audience": [
-                            66244,
-                            540186,
-                            225330,
+                            27262,
                         ],
-                        "recency_exclusion_window_in_minutes": 524436,
-                        "target_trackable_users_enabled": False,
-                        "use_mc_id_as_primary": False,
+                        "recency_exclusion_window_in_minutes": 676417,
+                        "target_trackable_users_enabled": True,
+                        "use_mc_id_as_primary": True,
                     },
                     "roi_goal": {
-                        "maximize_reach": True,
+                        "maximize_reach": False,
                         "maximize_ltv_incremental_reach": True,
-                        "cpc_in_advertiser_currency": 4773.66,
-                        "ctr_in_percent": 8842.31,
-                        "nielsen_otp_in_percent": None,
-                        "cpa_in_advertiser_currency": 1316.63,
-                        "return_on_ad_spend_percent": 3656.49,
-                        "vcr_in_percent": 8557.42,
-                        "viewability_in_percent": 7299.96,
-                        "vcpm_in_advertiser_currency": 7239.85,
-                        "cpcv_in_advertiser_currency": None,
-                        "miaozhen_otp_in_percent": 2809.53,
+                        "cpc_in_advertiser_currency": None,
+                        "ctr_in_percent": 2972.79,
+                        "nielsen_otp_in_percent": 4206.38,
+                        "cpa_in_advertiser_currency": None,
+                        "return_on_ad_spend_percent": 842.94,
+                        "vcr_in_percent": 6307.13,
+                        "viewability_in_percent": 9286.78,
+                        "vcpm_in_advertiser_currency": 8251.2,
+                        "cpcv_in_advertiser_currency": 4502.77,
+                        "miaozhen_otp_in_percent": 2362.43,
                     },
-                    "creative_ids": None,
+                    "creative_ids": [
+                        "<value 1>",
+                    ],
                     "associated_bid_lists": [
                         {
                             "bid_list_id": "<id>",
@@ -129,24 +129,21 @@ with Workflows(
                         },
                     ],
                     "name": "<value>",
-                    "channel": ttd_workflows.AdGroupChannel.NATIVE_DISPLAY,
+                    "channel": ttd_workflows.AdGroupChannel.TV,
                     "funnel_location": ttd_workflows.AdGroupFunnelLocation.NONE,
                 },
                 "advanced_input": {
                     "koa_optimization_settings": {
                         "are_future_koa_features_enabled": True,
-                        "predictive_clearing_enabled": True,
+                        "predictive_clearing_enabled": False,
                     },
                     "comscore_settings": {
-                        "is_enabled": False,
-                        "population_id": 809148,
-                        "demographic_member_ids": [
-                            532747,
-                            484388,
-                        ],
+                        "is_enabled": True,
+                        "population_id": 907569,
+                        "demographic_member_ids": None,
                         "mobile_demographic_member_ids": [
-                            529979,
-                            812676,
+                            169306,
+                            568551,
                         ],
                     },
                     "contract_targeting": {
@@ -154,41 +151,37 @@ with Workflows(
                     },
                     "dimensional_bidding_auto_optimization_settings": [
                         [
-                            ttd_workflows.DimensionalBiddingDimensions.HAS_VIDEO_MUTED_STATE_ID,
+                            ttd_workflows.DimensionalBiddingDimensions.HAS_FREQUENCY_ADJUSTMENT_ID,
                         ],
-                        [],
                     ],
                     "is_use_clicks_as_conversions_enabled": True,
-                    "is_use_secondary_conversions_enabled": False,
+                    "is_use_secondary_conversions_enabled": True,
                     "nielsen_tracking_attributes": {
-                        "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.NONE,
-                        "gender": ttd_workflows.TargetingGender.BOTH,
-                        "start_age": ttd_workflows.TargetingStartAge.SIXTY_FIVE,
-                        "end_age": ttd_workflows.TargetingEndAge.TWENTY,
+                        "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.AUDIENCE,
+                        "gender": ttd_workflows.TargetingGender.FEMALE,
+                        "start_age": ttd_workflows.TargetingStartAge.FORTY_FIVE,
+                        "end_age": ttd_workflows.TargetingEndAge.THIRTY_FOUR,
                         "countries": [
                             "<value 1>",
+                            "<value 2>",
                         ],
                     },
-                    "new_frequency_configs": None,
-                    "flights": [
+                    "new_frequency_configs": [
                         {
-                            "allocation_type": ttd_workflows.AllocationType.MINIMUM,
-                            "budget_in_advertiser_currency": 3571.65,
-                            "budget_in_impressions": None,
-                            "daily_target_in_advertiser_currency": 9076.57,
-                            "daily_target_in_impressions": 864528,
-                            "campaign_flight_id": 284595,
+                            "counter_name": "<value>",
+                            "frequency_cap": 25438,
+                            "frequency_goal": 637221,
+                            "reset_interval_in_minutes": 375296,
                         },
                     ],
+                    "flights": None,
                 },
             },
         ],
-        "validate_input_only": False,
+        "validate_input_only": True,
         "callback_input": {
-            "callback_url": "https://funny-prohibition.org/",
-            "callback_headers": {
-                "key": "<value>",
-            },
+            "callback_url": "https://winged-bathhouse.net",
+            "callback_headers": None,
         },
     })
 

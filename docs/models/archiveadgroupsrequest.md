@@ -1,4 +1,4 @@
-# PostAdgroupArchiveRequest
+# ArchiveAdGroupsRequest
 
 
 ## Fields
