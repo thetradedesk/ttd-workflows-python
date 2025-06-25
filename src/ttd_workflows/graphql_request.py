@@ -8,19 +8,22 @@ from ttd_workflows.utils import get_security_from_env
 from typing import Any, Mapping, Optional, Union, cast
 
 
-class BulkJob(BaseSDK):
-    def post_bulkjob_thirdpartydata(
+class GraphQLRequest(BaseSDK):
+    def post_graphqlrequest(
         self,
         *,
         request: Optional[
-            Union[models.ThirdPartyDataInput, models.ThirdPartyDataInputTypedDict]
+            Union[models.GraphQLRequestInput, models.GraphQLRequestInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.BulkJobSubmitResponse:
-        r"""Submits a query for Third Party Data to Hydra
+    ) -> models.PostGraphqlrequestResponse:
+        r"""Submit a valid GraphQL query or mutation
+
+        This generic operation can be used to execute any valid GraphQL request.
+        To explore the available GraphQL operations, see the [GraphQL Schema Explorer](https://partner.thetradedesk.com/v3/portal/api/graphql-schema).
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -39,12 +42,12 @@ class BulkJob(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.ThirdPartyDataInput])
-        request = cast(Optional[models.ThirdPartyDataInput], request)
+            request = utils.unmarshal(request, Optional[models.GraphQLRequestInput])
+        request = cast(Optional[models.GraphQLRequestInput], request)
 
         req = self._build_request(
             method="POST",
-            path="/bulkjob/thirdpartydata",
+            path="/graphqlrequest",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -56,7 +59,7 @@ class BulkJob(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.ThirdPartyDataInput]
+                request, False, True, "json", Optional[models.GraphQLRequestInput]
             ),
             timeout_ms=timeout_ms,
         )
@@ -77,7 +80,7 @@ class BulkJob(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/bulkjob/thirdpartydata",
+                operation_id="post_/graphqlrequest",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -89,8 +92,10 @@ class BulkJob(BaseSDK):
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.BulkJobSubmitResponse)
+        if utils.match_response(http_res, "200", "application/json"):
+            return utils.unmarshal_json(
+                http_res.text, models.PostGraphqlrequestResponse
+            )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
@@ -118,18 +123,21 @@ class BulkJob(BaseSDK):
             http_res,
         )
 
-    async def post_bulkjob_thirdpartydata_async(
+    async def post_graphqlrequest_async(
         self,
         *,
         request: Optional[
-            Union[models.ThirdPartyDataInput, models.ThirdPartyDataInputTypedDict]
+            Union[models.GraphQLRequestInput, models.GraphQLRequestInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.BulkJobSubmitResponse:
-        r"""Submits a query for Third Party Data to Hydra
+    ) -> models.PostGraphqlrequestResponse:
+        r"""Submit a valid GraphQL query or mutation
+
+        This generic operation can be used to execute any valid GraphQL request.
+        To explore the available GraphQL operations, see the [GraphQL Schema Explorer](https://partner.thetradedesk.com/v3/portal/api/graphql-schema).
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -148,12 +156,12 @@ class BulkJob(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.ThirdPartyDataInput])
-        request = cast(Optional[models.ThirdPartyDataInput], request)
+            request = utils.unmarshal(request, Optional[models.GraphQLRequestInput])
+        request = cast(Optional[models.GraphQLRequestInput], request)
 
         req = self._build_request_async(
             method="POST",
-            path="/bulkjob/thirdpartydata",
+            path="/graphqlrequest",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -165,7 +173,7 @@ class BulkJob(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.ThirdPartyDataInput]
+                request, False, True, "json", Optional[models.GraphQLRequestInput]
             ),
             timeout_ms=timeout_ms,
         )
@@ -186,7 +194,7 @@ class BulkJob(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/bulkjob/thirdpartydata",
+                operation_id="post_/graphqlrequest",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -198,8 +206,10 @@ class BulkJob(BaseSDK):
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.BulkJobSubmitResponse)
+        if utils.match_response(http_res, "200", "application/json"):
+            return utils.unmarshal_json(
+                http_res.text, models.PostGraphqlrequestResponse
+            )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):

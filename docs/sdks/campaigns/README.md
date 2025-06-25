@@ -5,14 +5,12 @@
 
 ### Available Operations
 
-* [update](#update) - Update an existing campaign with specified fields
-* [bulk_create](#bulk_create) - Create a list of campaigns with required fields. `ValidateInputOnly` value should be the same for all campaigns.
-* [bulk_update](#bulk_update) - Update a list of existing campaigns with specified fields. `ValidateInputOnly` value should be the same for all campaigns.
-* [archive](#archive) - Archive a list of campaigns
+* [update](#update) - Update a campaign with specified fields
+* [archive](#archive) - Archive multiple campaigns
 
 ## update
 
-Update an existing campaign with specified fields
+Only the fields provided in the request payload will be updated.
 
 ### Example Usage
 
@@ -151,166 +149,9 @@ with Workflows(
 | models.ProblemDetailsError | 400                        | application/json           |
 | models.APIError            | 4XX, 5XX                   | \*/\*                      |
 
-## bulk_create
-
-Create a list of campaigns with required fields. `ValidateInputOnly` value should be the same for all campaigns.
-
-### Example Usage
-
-```python
-import os
-from ttd_workflows import Workflows
-
-
-with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
-
-    res = workflows.campaigns.bulk_create(request={
-        "input": None,
-        "validate_input_only": True,
-        "callback_input": {
-            "callback_url": "https://dental-divine.org/",
-            "callback_headers": {
-                "key": "<value>",
-            },
-        },
-    })
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                             | [models.CampaignBulkCreateWorkflowInputWithValidation](../../models/campaignbulkcreateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                                    | The request object to use for the request.                                                                            |
-| `retries`                                                                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                      | :heavy_minus_sign:                                                                                                    | Configuration to override the default retry behavior of the client.                                                   |
-
-### Response
-
-**[models.BulkJobSubmitResponse](../../models/bulkjobsubmitresponse.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 403                   | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
-## bulk_update
-
-Update a list of existing campaigns with specified fields. `ValidateInputOnly` value should be the same for all campaigns.
-
-### Example Usage
-
-```python
-import os
-import ttd_workflows
-from ttd_workflows import Workflows
-from ttd_workflows.utils import parse_datetime
-
-
-with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
-
-    res = workflows.campaigns.bulk_update(request={
-        "input": [
-            {
-                "id": "<id>",
-                "primary_input": {
-                    "description": "make innocently gerbil",
-                    "time_zone": "America/Halifax",
-                    "custom_cpa_click_weight": 90.53,
-                    "custom_cpa_viewthrough_weight": 6332.3,
-                    "custom_cpa_type": ttd_workflows.CustomCPAType.DISABLED,
-                    "impressions_only_budgeting_cpm": None,
-                    "budget": {
-                        "pacing_mode": ttd_workflows.CampaignPacingMode.PACE_TO_DAILY_CAP,
-                        "budget_in_advertiser_currency": 7811.09,
-                        "budget_in_impressions": None,
-                        "daily_target_in_advertiser_currency": 3493.9,
-                        "daily_target_in_impressions": 530411,
-                    },
-                    "end_date_in_utc": parse_datetime("2024-04-14T22:55:04.136Z"),
-                    "seed_id": "<id>",
-                    "campaign_conversion_reporting_columns": [
-                        {
-                            "tracking_tag_id": "<id>",
-                            "include_in_custom_cpa": False,
-                            "reporting_column_id": 75289,
-                            "roas_config": {
-                                "include_in_custom_roas": True,
-                                "custom_roas_weight": 8299.16,
-                                "custom_roas_click_weight": None,
-                                "custom_roas_viewthrough_weight": 764.33,
-                            },
-                            "weight": 9258.39,
-                            "cross_device_attribution_model_id": "<id>",
-                        },
-                    ],
-                    "name": "<value>",
-                    "primary_channel": ttd_workflows.CampaignChannelType.DOOH,
-                    "primary_goal": {
-                        "maximize_reach": True,
-                        "maximize_ltv_incremental_reach": False,
-                        "cpc_in_advertiser_currency": 6613.91,
-                        "ctr_in_percent": None,
-                        "nielsen_otp_in_percent": 8409.91,
-                        "cpa_in_advertiser_currency": 5081.39,
-                        "return_on_ad_spend_percent": 8381.93,
-                        "vcr_in_percent": 940.02,
-                        "viewability_in_percent": 6474.82,
-                        "vcpm_in_advertiser_currency": 8867.76,
-                        "cpcv_in_advertiser_currency": 9393.86,
-                        "miaozhen_otp_in_percent": 218.76,
-                    },
-                    "start_date_in_utc": parse_datetime("2024-01-25T12:04:17.661Z"),
-                },
-                "advanced_input": {
-                    "flights": None,
-                    "purchase_order_number": "<value>",
-                },
-            },
-        ],
-        "validate_input_only": False,
-        "callback_input": {
-            "callback_url": "https://grizzled-riser.com/",
-            "callback_headers": {
-                "key": "<value>",
-            },
-        },
-    })
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                             | [models.CampaignBulkUpdateWorkflowInputWithValidation](../../models/campaignbulkupdateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                                    | The request object to use for the request.                                                                            |
-| `retries`                                                                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                      | :heavy_minus_sign:                                                                                                    | Configuration to override the default retry behavior of the client.                                                   |
-
-### Response
-
-**[models.BulkJobSubmitResponse](../../models/bulkjobsubmitresponse.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 403                   | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
 ## archive
 
-Archive a list of campaigns
+**NOTE**: Once archived, campaigns cannot be un-archived.
 
 ### Example Usage
 

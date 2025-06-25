@@ -1,4 +1,4 @@
-# GetBulkjobIDStatusRequest
+# GetTypebasedjobIDStatusRequest
 
 
 ## Fields

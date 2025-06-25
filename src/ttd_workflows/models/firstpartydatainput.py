@@ -16,13 +16,13 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class FirstPartyDataInputTypedDict(TypedDict):
-    r"""Required fields for submitting a bulk job for first party data"""
+    r"""Required fields for submitting a bulk job for first-party data."""
 
     advertiser_id: str
-    r"""The advertiser id to query for."""
+    r"""The advertiser ID to query for."""
     name_filter: NotRequired[Nullable[str]]
     r"""The name to filter by in the query. This filter will be applied to the results for the advertiser.
-    If there are no nodes which match the filter, a response with empty nodes with no first party data will be returned.
+    If there are no nodes which match the filter, a response with empty nodes with no first-party data will be returned.
     """
     query_shape: NotRequired[Nullable[str]]
     r"""The shape of the query with the fields being asked for, which is sent downstream.
@@ -46,16 +46,16 @@ class FirstPartyDataInputTypedDict(TypedDict):
 
 
 class FirstPartyDataInput(BaseModel):
-    r"""Required fields for submitting a bulk job for first party data"""
+    r"""Required fields for submitting a bulk job for first-party data."""
 
     advertiser_id: Annotated[str, pydantic.Field(alias="advertiserId")]
-    r"""The advertiser id to query for."""
+    r"""The advertiser ID to query for."""
 
     name_filter: Annotated[
         OptionalNullable[str], pydantic.Field(alias="nameFilter")
     ] = UNSET
     r"""The name to filter by in the query. This filter will be applied to the results for the advertiser.
-    If there are no nodes which match the filter, a response with empty nodes with no first party data will be returned.
+    If there are no nodes which match the filter, a response with empty nodes with no first-party data will be returned.
     """
 
     query_shape: Annotated[

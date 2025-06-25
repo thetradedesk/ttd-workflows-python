@@ -1,15 +1,16 @@
-# BulkJob
-(*bulk_job*)
+# GraphQLRequest
+(*graph_ql_request*)
 
 ## Overview
 
 ### Available Operations
 
-* [post_bulkjob_thirdpartydata](#post_bulkjob_thirdpartydata) - Submits a query for Third Party Data to Hydra
+* [post_graphqlrequest](#post_graphqlrequest) - Submit a valid GraphQL query or mutation
 
-## post_bulkjob_thirdpartydata
+## post_graphqlrequest
 
-Submits a query for Third Party Data to Hydra
+This generic operation can be used to execute any valid GraphQL request.
+To explore the available GraphQL operations, see the [GraphQL Schema Explorer](https://partner.thetradedesk.com/v3/portal/api/graphql-schema).
 
 ### Example Usage
 
@@ -22,17 +23,9 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.bulk_job.post_bulkjob_thirdpartydata(request={
-        "partner_id": "<id>",
-        "query_shape": "<value>",
-        "callback_input": {
-            "callback_url": "https://impolite-coal.name/",
-            "callback_headers": {
-                "key": "<value>",
-                "key1": "<value>",
-                "key2": "<value>",
-            },
-        },
+    res = workflows.graph_ql_request.post_graphqlrequest(request={
+        "request": "<value>",
+        "variables": {},
     })
 
     # Handle response
@@ -44,12 +37,12 @@ with Workflows(
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `request`                                                           | [models.ThirdPartyDataInput](../../models/thirdpartydatainput.md)   | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `request`                                                           | [models.GraphQLRequestInput](../../models/graphqlrequestinput.md)   | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 
-**[models.BulkJobSubmitResponse](../../models/bulkjobsubmitresponse.md)**
+**[models.PostGraphqlrequestResponse](../../models/postgraphqlrequestresponse.md)**
 
 ### Errors
 

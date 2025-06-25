@@ -113,14 +113,6 @@ if TYPE_CHECKING:
     )
     from .allocationtype import AllocationType
     from .apierror import APIError
-    from .bulkjobstatusresponse import (
-        BulkJobStatusResponse,
-        BulkJobStatusResponseTypedDict,
-    )
-    from .bulkjobsubmitresponse import (
-        BulkJobSubmitResponse,
-        BulkJobSubmitResponseTypedDict,
-    )
     from .callpubapiworkflowinput import (
         CallPubAPIWorkflowInput,
         CallPubAPIWorkflowInputTypedDict,
@@ -206,13 +198,13 @@ if TYPE_CHECKING:
     from .dimensionalbiddingdimensions import DimensionalBiddingDimensions
     from .enhancednielsenreportingoptions import EnhancedNielsenReportingOptions
     from .firstpartydatainput import FirstPartyDataInput, FirstPartyDataInputTypedDict
-    from .get_bulkjob_id_statusop import (
-        GetBulkjobIDStatusRequest,
-        GetBulkjobIDStatusRequestTypedDict,
-    )
     from .get_campaign_id_versionop import (
         GetCampaignIDVersionRequest,
         GetCampaignIDVersionRequestTypedDict,
+    )
+    from .get_typebasedjob_id_statusop import (
+        GetTypebasedjobIDStatusRequest,
+        GetTypebasedjobIDStatusRequestTypedDict,
     )
     from .graphqlrequestinput import (
         GraphQLRequestInput,
@@ -228,7 +220,14 @@ if TYPE_CHECKING:
         PostCampaignArchiveRequest,
         PostCampaignArchiveRequestTypedDict,
     )
-    from .post_pubapiop import PostPubapiResponse, PostPubapiResponseTypedDict
+    from .post_graphqlrequestop import (
+        PostGraphqlrequestResponse,
+        PostGraphqlrequestResponseTypedDict,
+    )
+    from .post_restrequestop import (
+        PostRestrequestResponse,
+        PostRestrequestResponseTypedDict,
+    )
     from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
     from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
     from .pubapimethodtype import PubAPIMethodType
@@ -237,6 +236,14 @@ if TYPE_CHECKING:
     from .targetinggender import TargetingGender
     from .targetingstartage import TargetingStartAge
     from .thirdpartydatainput import ThirdPartyDataInput, ThirdPartyDataInputTypedDict
+    from .typebasedjobstatusresponse import (
+        TypeBasedJobStatusResponse,
+        TypeBasedJobStatusResponseTypedDict,
+    )
+    from .typebasedjobsubmitresponse import (
+        TypeBasedJobSubmitResponse,
+        TypeBasedJobSubmitResponseTypedDict,
+    )
     from .workflowcallbackinput import (
         WorkflowCallbackInput,
         WorkflowCallbackInputTypedDict,
@@ -308,10 +315,6 @@ __all__ = [
     "AdGroupWorkflowROIGoalInputTypedDict",
     "AdGroupWorkflowTypedDict",
     "AllocationType",
-    "BulkJobStatusResponse",
-    "BulkJobStatusResponseTypedDict",
-    "BulkJobSubmitResponse",
-    "BulkJobSubmitResponseTypedDict",
     "CallPubAPIWorkflowInput",
     "CallPubAPIWorkflowInputTypedDict",
     "CampaignBulkCreateWorkflowInputWithValidation",
@@ -363,18 +366,20 @@ __all__ = [
     "EnhancedNielsenReportingOptions",
     "FirstPartyDataInput",
     "FirstPartyDataInputTypedDict",
-    "GetBulkjobIDStatusRequest",
-    "GetBulkjobIDStatusRequestTypedDict",
     "GetCampaignIDVersionRequest",
     "GetCampaignIDVersionRequestTypedDict",
+    "GetTypebasedjobIDStatusRequest",
+    "GetTypebasedjobIDStatusRequestTypedDict",
     "GraphQLRequestInput",
     "GraphQLRequestInputTypedDict",
     "PostAdgroupArchiveRequest",
     "PostAdgroupArchiveRequestTypedDict",
     "PostCampaignArchiveRequest",
     "PostCampaignArchiveRequestTypedDict",
-    "PostPubapiResponse",
-    "PostPubapiResponseTypedDict",
+    "PostGraphqlrequestResponse",
+    "PostGraphqlrequestResponseTypedDict",
+    "PostRestrequestResponse",
+    "PostRestrequestResponseTypedDict",
     "ProblemDetails",
     "ProblemDetailsError",
     "ProblemDetailsErrorData",
@@ -387,6 +392,10 @@ __all__ = [
     "TargetingStartAge",
     "ThirdPartyDataInput",
     "ThirdPartyDataInputTypedDict",
+    "TypeBasedJobStatusResponse",
+    "TypeBasedJobStatusResponseTypedDict",
+    "TypeBasedJobSubmitResponse",
+    "TypeBasedJobSubmitResponseTypedDict",
     "Variables",
     "VariablesTypedDict",
     "WorkflowCallbackInput",
@@ -459,10 +468,6 @@ _dynamic_imports: dict[str, str] = {
     "AdGroupWorkflowROIGoalInputTypedDict": ".adgroupworkflowroigoalinput",
     "AllocationType": ".allocationtype",
     "APIError": ".apierror",
-    "BulkJobStatusResponse": ".bulkjobstatusresponse",
-    "BulkJobStatusResponseTypedDict": ".bulkjobstatusresponse",
-    "BulkJobSubmitResponse": ".bulkjobsubmitresponse",
-    "BulkJobSubmitResponseTypedDict": ".bulkjobsubmitresponse",
     "CallPubAPIWorkflowInput": ".callpubapiworkflowinput",
     "CallPubAPIWorkflowInputTypedDict": ".callpubapiworkflowinput",
     "CampaignBulkCreateWorkflowInputWithValidation": ".campaignbulkcreateworkflowinputwithvalidation",
@@ -514,10 +519,10 @@ _dynamic_imports: dict[str, str] = {
     "EnhancedNielsenReportingOptions": ".enhancednielsenreportingoptions",
     "FirstPartyDataInput": ".firstpartydatainput",
     "FirstPartyDataInputTypedDict": ".firstpartydatainput",
-    "GetBulkjobIDStatusRequest": ".get_bulkjob_id_statusop",
-    "GetBulkjobIDStatusRequestTypedDict": ".get_bulkjob_id_statusop",
     "GetCampaignIDVersionRequest": ".get_campaign_id_versionop",
     "GetCampaignIDVersionRequestTypedDict": ".get_campaign_id_versionop",
+    "GetTypebasedjobIDStatusRequest": ".get_typebasedjob_id_statusop",
+    "GetTypebasedjobIDStatusRequestTypedDict": ".get_typebasedjob_id_statusop",
     "GraphQLRequestInput": ".graphqlrequestinput",
     "GraphQLRequestInputTypedDict": ".graphqlrequestinput",
     "Variables": ".graphqlrequestinput",
@@ -526,8 +531,10 @@ _dynamic_imports: dict[str, str] = {
     "PostAdgroupArchiveRequestTypedDict": ".post_adgroup_archiveop",
     "PostCampaignArchiveRequest": ".post_campaign_archiveop",
     "PostCampaignArchiveRequestTypedDict": ".post_campaign_archiveop",
-    "PostPubapiResponse": ".post_pubapiop",
-    "PostPubapiResponseTypedDict": ".post_pubapiop",
+    "PostGraphqlrequestResponse": ".post_graphqlrequestop",
+    "PostGraphqlrequestResponseTypedDict": ".post_graphqlrequestop",
+    "PostRestrequestResponse": ".post_restrequestop",
+    "PostRestrequestResponseTypedDict": ".post_restrequestop",
     "ProblemDetails": ".problemdetails",
     "ProblemDetailsTypedDict": ".problemdetails",
     "ProblemDetailsError": ".problemdetails_error",
@@ -540,6 +547,10 @@ _dynamic_imports: dict[str, str] = {
     "TargetingStartAge": ".targetingstartage",
     "ThirdPartyDataInput": ".thirdpartydatainput",
     "ThirdPartyDataInputTypedDict": ".thirdpartydatainput",
+    "TypeBasedJobStatusResponse": ".typebasedjobstatusresponse",
+    "TypeBasedJobStatusResponseTypedDict": ".typebasedjobstatusresponse",
+    "TypeBasedJobSubmitResponse": ".typebasedjobsubmitresponse",
+    "TypeBasedJobSubmitResponseTypedDict": ".typebasedjobsubmitresponse",
     "WorkflowCallbackInput": ".workflowcallbackinput",
     "WorkflowCallbackInputTypedDict": ".workflowcallbackinput",
     "WorkflowStatus": ".workflowstatus",

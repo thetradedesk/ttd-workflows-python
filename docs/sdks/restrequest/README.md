@@ -1,13 +1,16 @@
-# PubApis
-(*pub_apis*)
+# RESTRequest
+(*rest_request*)
 
 ## Overview
 
 ### Available Operations
 
-* [post](#post)
+* [post_restrequest](#post_restrequest) - Submit a valid REST request
 
-## post
+## post_restrequest
+
+This generic operation can be used to execute any valid REST request.
+To explore the available REST operations, see the [REST API Reference](https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform).
 
 ### Example Usage
 
@@ -21,10 +24,10 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.pub_apis.post(request={
-        "method_type": ttd_workflows.PubAPIMethodType.DELETE,
+    res = workflows.rest_request.post_restrequest(request={
+        "method_type": ttd_workflows.PubAPIMethodType.POST,
         "endpoint": "<value>",
-        "data_body": None,
+        "data_body": "<value>",
     })
 
     # Handle response
@@ -41,7 +44,7 @@ with Workflows(
 
 ### Response
 
-**[models.PostPubapiResponse](../../models/postpubapiresponse.md)**
+**[models.PostRestrequestResponse](../../models/postrestrequestresponse.md)**
 
 ### Errors
 
