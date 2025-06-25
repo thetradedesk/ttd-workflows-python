@@ -9,7 +9,7 @@ from typing import Any, Mapping, Optional
 
 
 class JobStatus(BaseSDK):
-    def get_typebasedjob_id_status(
+    def get_job_status(
         self,
         *,
         id: int,
@@ -39,7 +39,7 @@ class JobStatus(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetTypebasedjobIDStatusRequest(
+        request = models.GetJobStatusRequest(
             id=id,
         )
 
@@ -75,7 +75,7 @@ class JobStatus(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_/typebasedjob/{id}/status",
+                operation_id="getJobStatus",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -118,7 +118,7 @@ class JobStatus(BaseSDK):
             http_res,
         )
 
-    async def get_typebasedjob_id_status_async(
+    async def get_job_status_async(
         self,
         *,
         id: int,
@@ -148,7 +148,7 @@ class JobStatus(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetTypebasedjobIDStatusRequest(
+        request = models.GetJobStatusRequest(
             id=id,
         )
 
@@ -184,7 +184,7 @@ class JobStatus(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_/typebasedjob/{id}/status",
+                operation_id="getJobStatus",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security

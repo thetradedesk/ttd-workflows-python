@@ -1,8 +1,8 @@
-# GetTypebasedjobIDStatusRequest
+# GetCampaignVersionRequest
 
 
 ## Fields
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *int*              | :heavy_check_mark: | N/A                |
+| `id`               | *str*              | :heavy_check_mark: | N/A                |

@@ -88,7 +88,7 @@ class Campaign(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/campaign",
+                operation_id="createCampaign",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -206,7 +206,7 @@ class Campaign(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/campaign",
+                operation_id="createCampaign",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -245,7 +245,7 @@ class Campaign(BaseSDK):
             http_res,
         )
 
-    def post_typebasedjob_campaign_bulk(
+    def create_campaigns_job(
         self,
         *,
         request: Optional[
@@ -324,7 +324,7 @@ class Campaign(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/typebasedjob/campaign/bulk",
+                operation_id="createCampaignsJob",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -365,7 +365,7 @@ class Campaign(BaseSDK):
             http_res,
         )
 
-    async def post_typebasedjob_campaign_bulk_async(
+    async def create_campaigns_job_async(
         self,
         *,
         request: Optional[
@@ -444,7 +444,7 @@ class Campaign(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/typebasedjob/campaign/bulk",
+                operation_id="createCampaignsJob",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -485,7 +485,7 @@ class Campaign(BaseSDK):
             http_res,
         )
 
-    def patch_typebasedjob_campaign_bulk(
+    def update_campaigns_job(
         self,
         *,
         request: Optional[
@@ -566,7 +566,7 @@ class Campaign(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="patch_/typebasedjob/campaign/bulk",
+                operation_id="updateCampaignsJob",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -607,7 +607,7 @@ class Campaign(BaseSDK):
             http_res,
         )
 
-    async def patch_typebasedjob_campaign_bulk_async(
+    async def update_campaigns_job_async(
         self,
         *,
         request: Optional[
@@ -688,7 +688,7 @@ class Campaign(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="patch_/typebasedjob/campaign/bulk",
+                operation_id="updateCampaignsJob",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -756,7 +756,7 @@ class Campaign(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetCampaignIDVersionRequest(
+        request = models.GetCampaignVersionRequest(
             id=id,
         )
 
@@ -792,7 +792,7 @@ class Campaign(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_/campaign/{id}/version",
+                operation_id="getCampaignVersion",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -860,7 +860,7 @@ class Campaign(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetCampaignIDVersionRequest(
+        request = models.GetCampaignVersionRequest(
             id=id,
         )
 
@@ -896,7 +896,7 @@ class Campaign(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_/campaign/{id}/version",
+                operation_id="getCampaignVersion",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security

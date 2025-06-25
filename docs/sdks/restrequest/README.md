@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [post_restrequest](#post_restrequest) - Submit a valid REST request
+* [submit_rest_request](#submit_rest_request) - Submit a valid REST request
 
-## post_restrequest
+## submit_rest_request
 
 This generic operation can be used to execute any valid REST request.
 To explore the available REST operations, see the [REST API Reference](https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform).
@@ -24,8 +24,8 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.rest_request.post_restrequest(request={
-        "method_type": ttd_workflows.PubAPIMethodType.POST,
+    res = workflows.rest_request.submit_rest_request(request={
+        "method_type": ttd_workflows.PubAPIMethodType.GET,
         "endpoint": "<value>",
         "data_body": "<value>",
     })
@@ -44,7 +44,7 @@ with Workflows(
 
 ### Response
 
-**[models.PostRestrequestResponse](../../models/postrestrequestresponse.md)**
+**[models.SubmitRestRequestResponse](../../models/submitrestrequestresponse.md)**
 
 ### Errors
 

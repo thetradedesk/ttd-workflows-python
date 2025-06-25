@@ -1,4 +1,4 @@
-# PostGraphqlrequestResponse
+# SubmitGraphQlRequestResponse
 
 OK
 
