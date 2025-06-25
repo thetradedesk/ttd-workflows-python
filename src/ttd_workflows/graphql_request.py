@@ -9,7 +9,7 @@ from typing import Any, Mapping, Optional, Union, cast
 
 
 class GraphQLRequest(BaseSDK):
-    def post_graphqlrequest(
+    def submit_graph_ql_request(
         self,
         *,
         request: Optional[
@@ -19,7 +19,7 @@ class GraphQLRequest(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.PostGraphqlrequestResponse:
+    ) -> models.SubmitGraphQlRequestResponse:
         r"""Submit a valid GraphQL query or mutation
 
         This generic operation can be used to execute any valid GraphQL request.
@@ -80,7 +80,7 @@ class GraphQLRequest(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/graphqlrequest",
+                operation_id="submitGraphQlRequest",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -94,7 +94,7 @@ class GraphQLRequest(BaseSDK):
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(
-                http_res.text, models.PostGraphqlrequestResponse
+                http_res.text, models.SubmitGraphQlRequestResponse
             )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
@@ -123,7 +123,7 @@ class GraphQLRequest(BaseSDK):
             http_res,
         )
 
-    async def post_graphqlrequest_async(
+    async def submit_graph_ql_request_async(
         self,
         *,
         request: Optional[
@@ -133,7 +133,7 @@ class GraphQLRequest(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.PostGraphqlrequestResponse:
+    ) -> models.SubmitGraphQlRequestResponse:
         r"""Submit a valid GraphQL query or mutation
 
         This generic operation can be used to execute any valid GraphQL request.
@@ -194,7 +194,7 @@ class GraphQLRequest(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/graphqlrequest",
+                operation_id="submitGraphQlRequest",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -208,7 +208,7 @@ class GraphQLRequest(BaseSDK):
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(
-                http_res.text, models.PostGraphqlrequestResponse
+                http_res.text, models.SubmitGraphQlRequestResponse
             )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"

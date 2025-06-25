@@ -88,7 +88,7 @@ class AdGroups(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/adgroup",
+                operation_id="createAdGroup",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -208,7 +208,7 @@ class AdGroups(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/adgroup",
+                operation_id="createAdGroup",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -330,7 +330,7 @@ class AdGroups(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="patch_/adgroup",
+                operation_id="updateAdGroup",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -450,7 +450,7 @@ class AdGroups(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="patch_/adgroup",
+                operation_id="updateAdGroup",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -520,7 +520,7 @@ class AdGroups(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.PostAdgroupArchiveRequest(
+        request = models.ArchiveAdGroupsRequest(
             force_archive=force_archive,
             request_body=request_body,
         )
@@ -560,7 +560,7 @@ class AdGroups(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/adgroup/archive",
+                operation_id="archiveAdGroups",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -630,7 +630,7 @@ class AdGroups(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.PostAdgroupArchiveRequest(
+        request = models.ArchiveAdGroupsRequest(
             force_archive=force_archive,
             request_body=request_body,
         )
@@ -670,7 +670,7 @@ class AdGroups(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/adgroup/archive",
+                operation_id="archiveAdGroups",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security

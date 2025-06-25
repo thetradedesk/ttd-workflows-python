@@ -9,7 +9,7 @@ from typing import Any, Mapping, Optional, Union, cast
 
 
 class AdGroup(BaseSDK):
-    def post_typebasedjob_adgroup_bulk(
+    def create_ad_groups_job(
         self,
         *,
         request: Optional[
@@ -88,7 +88,7 @@ class AdGroup(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/typebasedjob/adgroup/bulk",
+                operation_id="createAdGroupsJob",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -129,7 +129,7 @@ class AdGroup(BaseSDK):
             http_res,
         )
 
-    async def post_typebasedjob_adgroup_bulk_async(
+    async def create_ad_groups_job_async(
         self,
         *,
         request: Optional[
@@ -208,7 +208,7 @@ class AdGroup(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/typebasedjob/adgroup/bulk",
+                operation_id="createAdGroupsJob",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -249,7 +249,7 @@ class AdGroup(BaseSDK):
             http_res,
         )
 
-    def patch_typebasedjob_adgroup_bulk(
+    def update_ad_groups_job(
         self,
         *,
         request: Optional[
@@ -330,7 +330,7 @@ class AdGroup(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="patch_/typebasedjob/adgroup/bulk",
+                operation_id="updateAdGroupsJob",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -371,7 +371,7 @@ class AdGroup(BaseSDK):
             http_res,
         )
 
-    async def patch_typebasedjob_adgroup_bulk_async(
+    async def update_ad_groups_job_async(
         self,
         *,
         request: Optional[
@@ -452,7 +452,7 @@ class AdGroup(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="patch_/typebasedjob/adgroup/bulk",
+                operation_id="updateAdGroupsJob",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security

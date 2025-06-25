@@ -90,7 +90,7 @@ class Campaigns(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="patch_/campaign",
+                operation_id="updateCampaign",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -210,7 +210,7 @@ class Campaigns(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="patch_/campaign",
+                operation_id="updateCampaign",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -280,7 +280,7 @@ class Campaigns(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.PostCampaignArchiveRequest(
+        request = models.ArchiveCampaignsRequest(
             force_archive=force_archive,
             request_body=request_body,
         )
@@ -320,7 +320,7 @@ class Campaigns(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/campaign/archive",
+                operation_id="archiveCampaigns",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -390,7 +390,7 @@ class Campaigns(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.PostCampaignArchiveRequest(
+        request = models.ArchiveCampaignsRequest(
             force_archive=force_archive,
             request_body=request_body,
         )
@@ -430,7 +430,7 @@ class Campaigns(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/campaign/archive",
+                operation_id="archiveCampaigns",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security

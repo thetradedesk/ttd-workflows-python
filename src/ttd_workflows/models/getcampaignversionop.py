@@ -6,11 +6,11 @@ from ttd_workflows.utils import FieldMetadata, PathParamMetadata
 from typing_extensions import Annotated, TypedDict
 
 
-class GetCampaignIDVersionRequestTypedDict(TypedDict):
+class GetCampaignVersionRequestTypedDict(TypedDict):
     id: str
 
 
-class GetCampaignIDVersionRequest(BaseModel):
+class GetCampaignVersionRequest(BaseModel):
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]

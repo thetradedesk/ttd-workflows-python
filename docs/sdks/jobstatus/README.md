@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [get_typebasedjob_id_status](#get_typebasedjob_id_status) - Get the status of a previously submitted type-based job
+* [get_job_status](#get_job_status) - Get the status of a previously submitted type-based job
 
-## get_typebasedjob_id_status
+## get_job_status
 
 Use this operation to get a previously submitted job's status and completion percentage.
 Once a job is complete, this operation will return the URL from which to download the job results.
@@ -23,7 +23,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.job_status.get_typebasedjob_id_status(id=416928)
+    res = workflows.job_status.get_job_status(id=412651)
 
     # Handle response
     print(res)

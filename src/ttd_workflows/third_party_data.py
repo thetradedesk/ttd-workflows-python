@@ -9,7 +9,7 @@ from typing import Any, Mapping, Optional, Union, cast
 
 
 class ThirdPartyData(BaseSDK):
-    def post_typebasedjob_thirdpartydata(
+    def get_third_party_data_job(
         self,
         *,
         request: Optional[
@@ -80,7 +80,7 @@ class ThirdPartyData(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/typebasedjob/thirdpartydata",
+                operation_id="getThirdPartyDataJob",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -123,7 +123,7 @@ class ThirdPartyData(BaseSDK):
             http_res,
         )
 
-    async def post_typebasedjob_thirdpartydata_async(
+    async def get_third_party_data_job_async(
         self,
         *,
         request: Optional[
@@ -194,7 +194,7 @@ class ThirdPartyData(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/typebasedjob/thirdpartydata",
+                operation_id="getThirdPartyDataJob",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
