@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 00c521b8d8fe64f2f205a72efed1e9a9
+  docChecksum: 3cae9f3620f715f498ee047cf750e2d3
   docVersion: v1
-  speakeasyVersion: 1.563.4
-  generationVersion: 2.630.6
-  releaseVersion: 0.6.0
-  configChecksum: 9675f2268b09cd869bb64d35c02e2dc9
+  speakeasyVersion: 1.568.2
+  generationVersion: 2.634.2
+  releaseVersion: 0.6.1
+  configChecksum: 092bfcd99dd78c6f698d94d66e3f5c5f
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
@@ -74,8 +74,6 @@ generatedFiles:
   - docs/models/adgroupworkflownielsentrackingattributesinput.md
   - docs/models/adgroupworkflowroigoalinput.md
   - docs/models/allocationtype.md
-  - docs/models/bulkjobstatusresponse.md
-  - docs/models/bulkjobsubmitresponse.md
   - docs/models/callpubapiworkflowinput.md
   - docs/models/campaignbulkcreateworkflowinputwithvalidation.md
   - docs/models/campaignbulkupdateworkflowinputwithvalidation.md
@@ -104,12 +102,13 @@ generatedFiles:
   - docs/models/dimensionalbiddingdimensions.md
   - docs/models/enhancednielsenreportingoptions.md
   - docs/models/firstpartydatainput.md
-  - docs/models/getbulkjobidstatusrequest.md
   - docs/models/getcampaignidversionrequest.md
+  - docs/models/gettypebasedjobidstatusrequest.md
   - docs/models/graphqlrequestinput.md
   - docs/models/postadgrouparchiverequest.md
   - docs/models/postcampaignarchiverequest.md
-  - docs/models/postpubapiresponse.md
+  - docs/models/postgraphqlrequestresponse.md
+  - docs/models/postrestrequestresponse.md
   - docs/models/problemdetails.md
   - docs/models/problemdetailserror.md
   - docs/models/pubapimethodtype.md
@@ -118,18 +117,21 @@ generatedFiles:
   - docs/models/targetinggender.md
   - docs/models/targetingstartage.md
   - docs/models/thirdpartydatainput.md
+  - docs/models/typebasedjobstatusresponse.md
+  - docs/models/typebasedjobsubmitresponse.md
   - docs/models/utils/retryconfig.md
   - docs/models/variables.md
   - docs/models/workflowcallbackinput.md
   - docs/models/workflowstatus.md
   - docs/sdks/adgroup/README.md
   - docs/sdks/adgroups/README.md
-  - docs/sdks/bulkjob/README.md
-  - docs/sdks/bulkjobs/README.md
   - docs/sdks/campaign/README.md
   - docs/sdks/campaigns/README.md
-  - docs/sdks/graphql/README.md
-  - docs/sdks/pubapis/README.md
+  - docs/sdks/firstpartydata/README.md
+  - docs/sdks/graphqlrequest/README.md
+  - docs/sdks/jobstatus/README.md
+  - docs/sdks/restrequest/README.md
+  - docs/sdks/thirdpartydata/README.md
   - docs/sdks/workflows/README.md
   - poetry.toml
   - py.typed
@@ -142,15 +144,15 @@ generatedFiles:
   - src/ttd_workflows/_hooks/sdkhooks.py
   - src/ttd_workflows/_hooks/types.py
   - src/ttd_workflows/_version.py
-  - src/ttd_workflows/adgroup.py
+  - src/ttd_workflows/ad_group.py
   - src/ttd_workflows/adgroups.py
   - src/ttd_workflows/basesdk.py
-  - src/ttd_workflows/bulkjob.py
-  - src/ttd_workflows/bulkjobs.py
   - src/ttd_workflows/campaign.py
   - src/ttd_workflows/campaigns.py
-  - src/ttd_workflows/graphql.py
+  - src/ttd_workflows/first_party_data.py
+  - src/ttd_workflows/graphql_request.py
   - src/ttd_workflows/httpclient.py
+  - src/ttd_workflows/job_status.py
   - src/ttd_workflows/models/__init__.py
   - src/ttd_workflows/models/adgroupassociatebidlist.py
   - src/ttd_workflows/models/adgroupaudiencetargeting.py
@@ -186,8 +188,6 @@ generatedFiles:
   - src/ttd_workflows/models/adgroupworkflowroigoalinput.py
   - src/ttd_workflows/models/allocationtype.py
   - src/ttd_workflows/models/apierror.py
-  - src/ttd_workflows/models/bulkjobstatusresponse.py
-  - src/ttd_workflows/models/bulkjobsubmitresponse.py
   - src/ttd_workflows/models/callpubapiworkflowinput.py
   - src/ttd_workflows/models/campaignbulkcreateworkflowinputwithvalidation.py
   - src/ttd_workflows/models/campaignbulkupdateworkflowinputwithvalidation.py
@@ -216,12 +216,13 @@ generatedFiles:
   - src/ttd_workflows/models/dimensionalbiddingdimensions.py
   - src/ttd_workflows/models/enhancednielsenreportingoptions.py
   - src/ttd_workflows/models/firstpartydatainput.py
-  - src/ttd_workflows/models/get_bulkjob_id_statusop.py
   - src/ttd_workflows/models/get_campaign_id_versionop.py
+  - src/ttd_workflows/models/get_typebasedjob_id_statusop.py
   - src/ttd_workflows/models/graphqlrequestinput.py
   - src/ttd_workflows/models/post_adgroup_archiveop.py
   - src/ttd_workflows/models/post_campaign_archiveop.py
-  - src/ttd_workflows/models/post_pubapiop.py
+  - src/ttd_workflows/models/post_graphqlrequestop.py
+  - src/ttd_workflows/models/post_restrequestop.py
   - src/ttd_workflows/models/problemdetails.py
   - src/ttd_workflows/models/problemdetails_error.py
   - src/ttd_workflows/models/pubapimethodtype.py
@@ -230,12 +231,15 @@ generatedFiles:
   - src/ttd_workflows/models/targetinggender.py
   - src/ttd_workflows/models/targetingstartage.py
   - src/ttd_workflows/models/thirdpartydatainput.py
+  - src/ttd_workflows/models/typebasedjobstatusresponse.py
+  - src/ttd_workflows/models/typebasedjobsubmitresponse.py
   - src/ttd_workflows/models/workflowcallbackinput.py
   - src/ttd_workflows/models/workflowstatus.py
-  - src/ttd_workflows/pubapis.py
   - src/ttd_workflows/py.typed
+  - src/ttd_workflows/rest_request.py
   - src/ttd_workflows/sdk.py
   - src/ttd_workflows/sdkconfiguration.py
+  - src/ttd_workflows/third_party_data.py
   - src/ttd_workflows/types/__init__.py
   - src/ttd_workflows/types/basemodel.py
   - src/ttd_workflows/utils/__init__.py
@@ -416,5 +420,89 @@ examples:
           application/json: {"id": 525756}
         "400":
           application/json: {"type": "<value>", "title": "<value>", "status": 397180, "detail": "<value>", "instance": "<value>"}
+  post_/typebasedjob/adgroup/bulk:
+    speakeasy-default-post-/typebasedjob/adgroup/bulk:
+      requestBody:
+        application/json: {"input": [], "validateInputOnly": true, "callbackInput": {"callbackUrl": "https://unhealthy-toothbrush.biz/", "callbackHeaders": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}}
+      responses:
+        "202":
+          application/json: {"id": 218171}
+        "400":
+          application/json: {"type": "<value>", "title": "<value>", "status": 632149, "detail": "<value>", "instance": "<value>"}
+  patch_/typebasedjob/adgroup/bulk:
+    speakeasy-default-patch-/typebasedjob/adgroup/bulk:
+      requestBody:
+        application/json: {"input": [{"id": "<id>", "primaryInput": {"isEnabled": true, "description": null, "budget": {"allocationType": "Minimum", "budgetInAdvertiserCurrency": 4365.6, "budgetInImpressions": 797262, "dailyTargetInAdvertiserCurrency": 2847.63, "dailyTargetInImpressions": null}, "baseBidCPMInAdvertiserCurrency": 1985.29, "maxBidCPMInAdvertiserCurrency": 4757.87, "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": false, "audienceBoosterEnabled": false, "audienceExcluderEnabled": false, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [66244, 540186, 225330], "recencyExclusionWindowInMinutes": 524436, "targetTrackableUsersEnabled": false, "useMcIdAsPrimary": false}, "roiGoal": {"maximizeReach": true, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 4773.66, "ctrInPercent": 8842.31, "nielsenOTPInPercent": null, "cpaInAdvertiserCurrency": 1316.63, "returnOnAdSpendPercent": 3656.49, "vcrInPercent": 8557.42, "viewabilityInPercent": 7299.96, "vcpmInAdvertiserCurrency": 7239.85, "cpcvInAdvertiserCurrency": null, "miaozhenOTPInPercent": 2809.53}, "creativeIds": null, "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": true}], "name": "<value>", "channel": "NativeDisplay", "funnelLocation": "None"}, "advancedInput": {"koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": true, "predictiveClearingEnabled": true}, "comscoreSettings": {"isEnabled": false, "populationId": 809148, "demographicMemberIds": [532747, 484388], "mobileDemographicMemberIds": [529979, 812676]}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasVideoMutedStateId"], []], "isUseClicksAsConversionsEnabled": true, "isUseSecondaryConversionsEnabled": false, "nielsenTrackingAttributes": {"enhancedReportingOption": "None", "gender": "Both", "startAge": "SixtyFive", "endAge": "Twenty", "countries": ["<value 1>"]}, "newFrequencyConfigs": null, "flights": [{"allocationType": "Minimum", "budgetInAdvertiserCurrency": 3571.65, "budgetInImpressions": null, "dailyTargetInAdvertiserCurrency": 9076.57, "dailyTargetInImpressions": 864528, "campaignFlightId": 284595}]}}], "validateInputOnly": false, "callbackInput": {"callbackUrl": "https://funny-prohibition.org/", "callbackHeaders": {"key": "<value>"}}}
+      responses:
+        "202":
+          application/json: {"id": 322237}
+        "400":
+          application/json: {"type": null, "title": "<value>", "status": null, "detail": "<value>", "instance": "<value>"}
+  post_/typebasedjob/campaign/bulk:
+    speakeasy-default-post-/typebasedjob/campaign/bulk:
+      requestBody:
+        application/json: {"input": [{"primaryInput": {"description": "terribly someplace deflect", "timeZone": "America/Miquelon", "customCPAClickWeight": 779.21, "customCPAViewthroughWeight": 1198.23, "customCPAType": "PixelWeighting", "impressionsOnlyBudgetingCpm": 5375.63, "budget": {"pacingMode": "PaceAhead", "budgetInAdvertiserCurrency": 4629.97, "budgetInImpressions": 808130, "dailyTargetInAdvertiserCurrency": 4067.56, "dailyTargetInImpressions": 243576}, "endDateInUtc": "2025-12-15T08:27:00.961Z", "seedId": null, "campaignConversionReportingColumns": [{"trackingTagId": "<id>", "includeInCustomCPA": true, "reportingColumnId": 265596, "ROASConfig": {"includeInCustomROAS": false, "customROASWeight": 1659.76, "customROASClickWeight": 7838.93, "customROASViewthroughWeight": 7814.81}, "weight": 9286.55, "crossDeviceAttributionModelId": "<id>"}], "advertiserId": "<id>", "name": "<value>", "primaryChannel": "None", "primaryGoal": {"maximizeReach": null, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 7342.9, "ctrInPercent": 4157.33, "nielsenOTPInPercent": 1508.37, "cpaInAdvertiserCurrency": 5200.65, "returnOnAdSpendPercent": 2714.64, "vcrInPercent": 4408.66, "viewabilityInPercent": 4646.22, "vcpmInAdvertiserCurrency": 5303.62, "cpcvInAdvertiserCurrency": 7628.07, "miaozhenOTPInPercent": 2965.51}, "startDateInUtc": null}, "advancedInput": {"flights": [{"startDateInclusiveUTC": "2023-05-29T15:44:07.749Z", "endDateExclusiveUTC": "2024-01-24T07:42:34.281Z", "budgetInAdvertiserCurrency": 9558.91, "budgetInImpressions": 73147, "dailyTargetInAdvertiserCurrency": 4332.71, "dailyTargetInImpressions": 768928}], "purchaseOrderNumber": "<value>"}, "adGroups": [{"primaryInput": {"isEnabled": true, "description": null, "budget": {"allocationType": "Maximum", "budgetInAdvertiserCurrency": 6785.04, "budgetInImpressions": 835320, "dailyTargetInAdvertiserCurrency": 4763.51, "dailyTargetInImpressions": 267343}, "baseBidCPMInAdvertiserCurrency": 2929.53, "maxBidCPMInAdvertiserCurrency": 3306.27, "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": true, "audienceBoosterEnabled": true, "audienceExcluderEnabled": false, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [745991, 421485, 187325], "recencyExclusionWindowInMinutes": 651644, "targetTrackableUsersEnabled": null, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 3342.73, "ctrInPercent": 8498.13, "nielsenOTPInPercent": null, "cpaInAdvertiserCurrency": 4541.91, "returnOnAdSpendPercent": 1951.31, "vcrInPercent": 4890.16, "viewabilityInPercent": 7796.33, "vcpmInAdvertiserCurrency": 9686.38, "cpcvInAdvertiserCurrency": 5397.14, "miaozhenOTPInPercent": 6837.51}, "creativeIds": null, "associatedBidLists": [{"bidListId": "<id>", "isEnabled": false, "isDefaultForDimension": null}], "name": "<value>", "channel": "Audio", "funnelLocation": "Awareness", "programmaticGuaranteedPrivateContractId": "<id>"}, "advancedInput": {"koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": null, "predictiveClearingEnabled": true}, "comscoreSettings": {"isEnabled": false, "populationId": 392396, "demographicMemberIds": [815546, 208096, 412653], "mobileDemographicMemberIds": null}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasFrequencyV2AdjustmentId"]], "isUseClicksAsConversionsEnabled": false, "isUseSecondaryConversionsEnabled": true, "nielsenTrackingAttributes": {"enhancedReportingOption": "Site", "gender": "Male", "startAge": "Thirty", "endAge": "TwentyNine", "countries": ["<value 1>", "<value 2>"]}, "newFrequencyConfigs": [{"counterName": "<value>", "frequencyCap": 26304, "frequencyGoal": 197135, "resetIntervalInMinutes": 993919}], "flights": [{"allocationType": "Fixed", "budgetInAdvertiserCurrency": 1254.25, "budgetInImpressions": 426962, "dailyTargetInAdvertiserCurrency": 3971.88, "dailyTargetInImpressions": 746686}]}}]}], "validateInputOnly": false, "callbackInput": {"callbackUrl": "https://neat-inspection.biz/", "callbackHeaders": {"key": "<value>", "key1": "<value>"}}}
+      responses:
+        "202":
+          application/json: {"id": 761635}
+        "400":
+          application/json: {"type": "<value>", "title": null, "status": 900111, "detail": "<value>", "instance": "<value>"}
+  patch_/typebasedjob/campaign/bulk:
+    speakeasy-default-patch-/typebasedjob/campaign/bulk:
+      requestBody:
+        application/json: {"input": [{"id": "<id>", "primaryInput": {"description": "dreamily oxygenate swine instead cannon indeed concerning clamp queasily", "timeZone": "America/North_Dakota/New_Salem", "customCPAClickWeight": 2069.39, "customCPAViewthroughWeight": 6500.84, "customCPAType": "ClickViewthroughWeighting", "impressionsOnlyBudgetingCpm": 6512.22, "budget": {"pacingMode": "PaceEvenly", "budgetInAdvertiserCurrency": 4239.6, "budgetInImpressions": 22149, "dailyTargetInAdvertiserCurrency": 2521.81, "dailyTargetInImpressions": 843774}, "endDateInUtc": "2024-08-25T01:07:39.538Z", "seedId": "<id>", "campaignConversionReportingColumns": null, "name": null, "primaryChannel": "NativeDisplay", "primaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 7023.26, "ctrInPercent": null, "nielsenOTPInPercent": 7851.49, "cpaInAdvertiserCurrency": null, "returnOnAdSpendPercent": 8228.66, "vcrInPercent": 1734.42, "viewabilityInPercent": 9398.46, "vcpmInAdvertiserCurrency": 3476.53, "cpcvInAdvertiserCurrency": 6537.87, "miaozhenOTPInPercent": 4667.23}, "startDateInUtc": null}, "advancedInput": {"flights": [{"startDateInclusiveUTC": "2025-05-03T18:31:10.973Z", "endDateExclusiveUTC": "2023-02-05T18:37:52.192Z", "budgetInAdvertiserCurrency": 1936.69, "budgetInImpressions": 216227, "dailyTargetInAdvertiserCurrency": 3384.57, "dailyTargetInImpressions": 677379}], "purchaseOrderNumber": "<value>"}}], "validateInputOnly": false, "callbackInput": {"callbackUrl": "https://hollow-rosemary.biz/", "callbackHeaders": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}}
+      responses:
+        "202":
+          application/json: {"id": 390367}
+        "400":
+          application/json: {"type": "<value>", "title": "<value>", "status": 980623, "detail": null, "instance": "<value>"}
+  post_/typebasedjob/firstpartydata:
+    speakeasy-default-post-/typebasedjob/firstpartydata:
+      requestBody:
+        application/json: {"advertiserId": "<id>", "nameFilter": "<value>", "queryShape": null, "callbackInput": {"callbackUrl": "https://ashamed-traffic.info", "callbackHeaders": {"key": "<value>", "key1": "<value>"}}}
+      responses:
+        "202":
+          application/json: {"id": 190248}
+        "400":
+          application/json: {"type": "<value>", "title": "<value>", "status": 318340, "detail": "<value>", "instance": "<value>"}
+  post_/graphqlrequest:
+    speakeasy-default-post-/graphqlrequest:
+      requestBody:
+        application/json: {"request": "<value>", "variables": {}}
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: {"type": null, "title": "<value>", "status": 432705, "detail": "<value>", "instance": "<value>"}
+  post_/restrequest:
+    speakeasy-default-post-/restrequest:
+      requestBody:
+        application/json: {"methodType": "POST", "endpoint": "<value>", "dataBody": "<value>"}
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: {"type": "<value>", "title": "<value>", "status": null, "detail": "<value>", "instance": "<value>"}
+  post_/typebasedjob/thirdpartydata:
+    speakeasy-default-post-/typebasedjob/thirdpartydata:
+      requestBody:
+        application/json: {"partnerId": "<id>", "queryShape": "<value>", "callbackInput": {"callbackUrl": "https://colorful-utilization.com/", "callbackHeaders": {"key": "<value>", "key1": "<value>"}}}
+        text/json: {"partnerId": "<id>", "queryShape": "<value>", "callbackInput": {"callbackUrl": "https://colorful-utilization.com/", "callbackHeaders": {"key": "<value>", "key1": "<value>"}}}
+        application/*+json: {"partnerId": "<id>", "queryShape": "<value>", "callbackInput": {"callbackUrl": "https://colorful-utilization.com/", "callbackHeaders": {"key": "<value>", "key1": "<value>"}}}
+      responses:
+        "202":
+          application/json: {"id": 263834}
+        "400":
+          application/json: {"type": "<value>", "title": "<value>", "status": 406731, "detail": "<value>", "instance": "<value>"}
+  get_/typebasedjob/{id}/status:
+    speakeasy-default-get-/typebasedjob/{id}/status:
+      parameters:
+        path:
+          id: 416928
+      responses:
+        "200":
+          application/json: {"id": 807492, "completedAtUtc": "2025-07-02T10:31:44.663Z", "completionPercentage": 8874.55, "createdAtUtc": "2025-04-20T14:07:20.297Z", "status": "Failure", "url": null, "rawResult": "<value>", "errors": "<value>"}
+        "400":
+          application/json: {"type": "<value>", "title": "<value>", "status": 268224, "detail": "<value>", "instance": null}
 examplesVersion: 1.0.2
 generatedTests: {}

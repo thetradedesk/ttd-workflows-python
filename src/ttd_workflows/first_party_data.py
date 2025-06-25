@@ -5,22 +5,25 @@ from ttd_workflows import models, utils
 from ttd_workflows._hooks import HookContext
 from ttd_workflows.types import BaseModel, OptionalNullable, UNSET
 from ttd_workflows.utils import get_security_from_env
-from typing import Any, Dict, Mapping, Optional, Union, cast
+from typing import Any, Mapping, Optional, Union, cast
 
 
-class GraphQl(BaseSDK):
-    def post_request(
+class FirstPartyData(BaseSDK):
+    def post_typebasedjob_firstpartydata(
         self,
         *,
         request: Optional[
-            Union[models.GraphQLRequestInput, models.GraphQLRequestInputTypedDict]
+            Union[models.FirstPartyDataInput, models.FirstPartyDataInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Dict[str, Any]:
-        r"""An endpoint that executes valid GraphQL queries or mutations.
+    ) -> models.TypeBasedJobSubmitResponse:
+        r"""Submit a type-based job for first-party data retrieval for an advertiser
+
+        When a first-party data query is submitted, a job ID is returned.
+        This job ID can be used to poll for the job's status using the associated operation under \"Job Status\".
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -39,12 +42,12 @@ class GraphQl(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.GraphQLRequestInput])
-        request = cast(Optional[models.GraphQLRequestInput], request)
+            request = utils.unmarshal(request, Optional[models.FirstPartyDataInput])
+        request = cast(Optional[models.FirstPartyDataInput], request)
 
         req = self._build_request(
             method="POST",
-            path="/graphql-request",
+            path="/typebasedjob/firstpartydata",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -56,7 +59,7 @@ class GraphQl(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.GraphQLRequestInput]
+                request, False, True, "json", Optional[models.FirstPartyDataInput]
             ),
             timeout_ms=timeout_ms,
         )
@@ -77,7 +80,7 @@ class GraphQl(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/graphql-request",
+                operation_id="post_/typebasedjob/firstpartydata",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -89,8 +92,10 @@ class GraphQl(BaseSDK):
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, Dict[str, Any])
+        if utils.match_response(http_res, "202", "application/json"):
+            return utils.unmarshal_json(
+                http_res.text, models.TypeBasedJobSubmitResponse
+            )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
@@ -118,18 +123,21 @@ class GraphQl(BaseSDK):
             http_res,
         )
 
-    async def post_request_async(
+    async def post_typebasedjob_firstpartydata_async(
         self,
         *,
         request: Optional[
-            Union[models.GraphQLRequestInput, models.GraphQLRequestInputTypedDict]
+            Union[models.FirstPartyDataInput, models.FirstPartyDataInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Dict[str, Any]:
-        r"""An endpoint that executes valid GraphQL queries or mutations.
+    ) -> models.TypeBasedJobSubmitResponse:
+        r"""Submit a type-based job for first-party data retrieval for an advertiser
+
+        When a first-party data query is submitted, a job ID is returned.
+        This job ID can be used to poll for the job's status using the associated operation under \"Job Status\".
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -148,12 +156,12 @@ class GraphQl(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.GraphQLRequestInput])
-        request = cast(Optional[models.GraphQLRequestInput], request)
+            request = utils.unmarshal(request, Optional[models.FirstPartyDataInput])
+        request = cast(Optional[models.FirstPartyDataInput], request)
 
         req = self._build_request_async(
             method="POST",
-            path="/graphql-request",
+            path="/typebasedjob/firstpartydata",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -165,7 +173,7 @@ class GraphQl(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.GraphQLRequestInput]
+                request, False, True, "json", Optional[models.FirstPartyDataInput]
             ),
             timeout_ms=timeout_ms,
         )
@@ -186,7 +194,7 @@ class GraphQl(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/graphql-request",
+                operation_id="post_/typebasedjob/firstpartydata",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -198,8 +206,10 @@ class GraphQl(BaseSDK):
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, Dict[str, Any])
+        if utils.match_response(http_res, "202", "application/json"):
+            return utils.unmarshal_json(
+                http_res.text, models.TypeBasedJobSubmitResponse
+            )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):

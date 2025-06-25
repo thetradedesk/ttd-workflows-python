@@ -5,11 +5,9 @@ from ttd_workflows.types import BaseModel
 from typing_extensions import TypedDict
 
 
-class BulkJobSubmitResponseTypedDict(TypedDict):
-    id: int
-    r"""ID of the bulk job."""
+class PostGraphqlrequestResponseTypedDict(TypedDict):
+    r"""OK"""
 
 
-class BulkJobSubmitResponse(BaseModel):
-    id: int
-    r"""ID of the bulk job."""
+class PostGraphqlrequestResponse(BaseModel):
+    r"""OK"""

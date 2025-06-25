@@ -14,36 +14,58 @@ from typing import Any, Callable, Dict, Optional, TYPE_CHECKING, Union, cast
 import weakref
 
 if TYPE_CHECKING:
-    from ttd_workflows.adgroup import AdGroup
+    from ttd_workflows.ad_group import AdGroup
     from ttd_workflows.adgroups import AdGroups
-    from ttd_workflows.bulkjob import BulkJob
-    from ttd_workflows.bulkjobs import BulkJobs
     from ttd_workflows.campaign import Campaign
     from ttd_workflows.campaigns import Campaigns
-    from ttd_workflows.graphql import GraphQl
-    from ttd_workflows.pubapis import PubApis
+    from ttd_workflows.first_party_data import FirstPartyData
+    from ttd_workflows.graphql_request import GraphQLRequest
+    from ttd_workflows.job_status import JobStatus
+    from ttd_workflows.rest_request import RESTRequest
+    from ttd_workflows.third_party_data import ThirdPartyData
 
 
 class Workflows(BaseSDK):
-    r"""Workflows API: A RESTful service for commonly used workflows."""
+    r"""Workflows Service: ## Operations for commonly used workflows.
+    This service provides operations for commonly used workflows on The Trade Desk's platform.
+    In addition, this service provides generic operations for submitting:
+
+    - GraphQL API requests
+    - REST API requests
+
+    To interface with this service, we provide SDKs in multiple languages.
+    For each available language, there is a code sample displayed to the right of each operation.
+
+    To get started with the SDK in your language of choice, see the associated guide:
+
+    - Java - coming soon
+    - [Python](https://pypi.org/project/ttd-workflows/)
+
+    For further explanation on the entities encountered in this documentation (e.g.,
+    [campaigns](https://partner.thetradedesk.com/v3/portal/api/doc/Campaigns) and
+    [ad groups](https://partner.thetradedesk.com/v3/portal/api/doc/AdGroup)), visit the
+    [Partner Portal](https://partner.thetradedesk.com/v3/portal/api/doc/ApiUseCases).
+    """
 
     ad_groups: "AdGroups"
     ad_group: "AdGroup"
-    bulk_jobs: "BulkJobs"
-    bulk_job: "BulkJob"
     campaign: "Campaign"
     campaigns: "Campaigns"
-    graph_ql: "GraphQl"
-    pub_apis: "PubApis"
+    first_party_data: "FirstPartyData"
+    graph_ql_request: "GraphQLRequest"
+    rest_request: "RESTRequest"
+    third_party_data: "ThirdPartyData"
+    job_status: "JobStatus"
     _sub_sdk_map = {
         "ad_groups": ("ttd_workflows.adgroups", "AdGroups"),
-        "ad_group": ("ttd_workflows.adgroup", "AdGroup"),
-        "bulk_jobs": ("ttd_workflows.bulkjobs", "BulkJobs"),
-        "bulk_job": ("ttd_workflows.bulkjob", "BulkJob"),
+        "ad_group": ("ttd_workflows.ad_group", "AdGroup"),
         "campaign": ("ttd_workflows.campaign", "Campaign"),
         "campaigns": ("ttd_workflows.campaigns", "Campaigns"),
-        "graph_ql": ("ttd_workflows.graphql", "GraphQl"),
-        "pub_apis": ("ttd_workflows.pubapis", "PubApis"),
+        "first_party_data": ("ttd_workflows.first_party_data", "FirstPartyData"),
+        "graph_ql_request": ("ttd_workflows.graphql_request", "GraphQLRequest"),
+        "rest_request": ("ttd_workflows.rest_request", "RESTRequest"),
+        "third_party_data": ("ttd_workflows.third_party_data", "ThirdPartyData"),
+        "job_status": ("ttd_workflows.job_status", "JobStatus"),
     }
 
     def __init__(

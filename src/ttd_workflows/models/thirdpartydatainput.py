@@ -16,10 +16,10 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class ThirdPartyDataInputTypedDict(TypedDict):
-    r"""Required fields for submitting a bulk job for third party data"""
+    r"""Required fields for submitting a bulk job for third-party data."""
 
     partner_id: str
-    r"""The partner id to query for."""
+    r"""The partner ID to query for."""
     query_shape: NotRequired[Nullable[str]]
     r"""The shape of the query with the fields being asked for, which is sent downstream.
     This determines how the response will look like.
@@ -48,10 +48,10 @@ class ThirdPartyDataInputTypedDict(TypedDict):
 
 
 class ThirdPartyDataInput(BaseModel):
-    r"""Required fields for submitting a bulk job for third party data"""
+    r"""Required fields for submitting a bulk job for third-party data."""
 
     partner_id: Annotated[str, pydantic.Field(alias="partnerId")]
-    r"""The partner id to query for."""
+    r"""The partner ID to query for."""
 
     query_shape: Annotated[
         OptionalNullable[str], pydantic.Field(alias="queryShape")

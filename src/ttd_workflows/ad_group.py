@@ -8,19 +8,22 @@ from ttd_workflows.utils import get_security_from_env
 from typing import Any, Mapping, Optional, Union, cast
 
 
-class BulkJobs(BaseSDK):
-    def submit_first_party_data(
+class AdGroup(BaseSDK):
+    def post_typebasedjob_adgroup_bulk(
         self,
         *,
         request: Optional[
-            Union[models.FirstPartyDataInput, models.FirstPartyDataInputTypedDict]
+            Union[
+                models.AdGroupBulkCreateWorkflowInputWithValidation,
+                models.AdGroupBulkCreateWorkflowInputWithValidationTypedDict,
+            ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.BulkJobSubmitResponse:
-        r"""Submit a query for First Party Data to Hydra
+    ) -> models.TypeBasedJobSubmitResponse:
+        r"""Create multiple new ad groups with required fields
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -39,12 +42,16 @@ class BulkJobs(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.FirstPartyDataInput])
-        request = cast(Optional[models.FirstPartyDataInput], request)
+            request = utils.unmarshal(
+                request, Optional[models.AdGroupBulkCreateWorkflowInputWithValidation]
+            )
+        request = cast(
+            Optional[models.AdGroupBulkCreateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request(
             method="POST",
-            path="/bulkjob/firstpartydata",
+            path="/typebasedjob/adgroup/bulk",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -56,7 +63,11 @@ class BulkJobs(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.FirstPartyDataInput]
+                request,
+                False,
+                True,
+                "json",
+                Optional[models.AdGroupBulkCreateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -77,23 +88,23 @@ class BulkJobs(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/bulkjob/firstpartydata",
+                operation_id="post_/typebasedjob/adgroup/bulk",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
             ),
             request=req,
-            error_status_codes=["400", "401", "403", "404", "4XX", "500", "503", "5XX"],
+            error_status_codes=["400", "403", "4XX", "500", "503", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.BulkJobSubmitResponse)
-        if utils.match_response(
-            http_res, ["400", "401", "403", "404"], "application/json"
-        ):
+            return utils.unmarshal_json(
+                http_res.text, models.TypeBasedJobSubmitResponse
+            )
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )
@@ -118,18 +129,21 @@ class BulkJobs(BaseSDK):
             http_res,
         )
 
-    async def submit_first_party_data_async(
+    async def post_typebasedjob_adgroup_bulk_async(
         self,
         *,
         request: Optional[
-            Union[models.FirstPartyDataInput, models.FirstPartyDataInputTypedDict]
+            Union[
+                models.AdGroupBulkCreateWorkflowInputWithValidation,
+                models.AdGroupBulkCreateWorkflowInputWithValidationTypedDict,
+            ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.BulkJobSubmitResponse:
-        r"""Submit a query for First Party Data to Hydra
+    ) -> models.TypeBasedJobSubmitResponse:
+        r"""Create multiple new ad groups with required fields
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -148,12 +162,16 @@ class BulkJobs(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.FirstPartyDataInput])
-        request = cast(Optional[models.FirstPartyDataInput], request)
+            request = utils.unmarshal(
+                request, Optional[models.AdGroupBulkCreateWorkflowInputWithValidation]
+            )
+        request = cast(
+            Optional[models.AdGroupBulkCreateWorkflowInputWithValidation], request
+        )
 
         req = self._build_request_async(
             method="POST",
-            path="/bulkjob/firstpartydata",
+            path="/typebasedjob/adgroup/bulk",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -165,7 +183,11 @@ class BulkJobs(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.FirstPartyDataInput]
+                request,
+                False,
+                True,
+                "json",
+                Optional[models.AdGroupBulkCreateWorkflowInputWithValidation],
             ),
             timeout_ms=timeout_ms,
         )
@@ -186,23 +208,23 @@ class BulkJobs(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/bulkjob/firstpartydata",
+                operation_id="post_/typebasedjob/adgroup/bulk",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
             ),
             request=req,
-            error_status_codes=["400", "401", "403", "404", "4XX", "500", "503", "5XX"],
+            error_status_codes=["400", "403", "4XX", "500", "503", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.BulkJobSubmitResponse)
-        if utils.match_response(
-            http_res, ["400", "401", "403", "404"], "application/json"
-        ):
+            return utils.unmarshal_json(
+                http_res.text, models.TypeBasedJobSubmitResponse
+            )
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )
@@ -227,18 +249,25 @@ class BulkJobs(BaseSDK):
             http_res,
         )
 
-    def get_status(
+    def patch_typebasedjob_adgroup_bulk(
         self,
         *,
-        id: int,
+        request: Optional[
+            Union[
+                models.AdGroupBulkUpdateWorkflowInputWithValidation,
+                models.AdGroupBulkUpdateWorkflowInputWithValidationTypedDict,
+            ]
+        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.BulkJobStatusResponse:
-        r"""Get the status of a bulk job workflow you submitted earlier
+    ) -> models.TypeBasedJobSubmitResponse:
+        r"""Update multiple ad groups with specified fields
 
-        :param id:
+        Only the fields provided in the request payload for each specific ad group will be updated.
+
+        :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -254,23 +283,34 @@ class BulkJobs(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetBulkjobIDStatusRequest(
-            id=id,
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[models.AdGroupBulkUpdateWorkflowInputWithValidation]
+            )
+        request = cast(
+            Optional[models.AdGroupBulkUpdateWorkflowInputWithValidation], request
         )
 
         req = self._build_request(
-            method="GET",
-            path="/bulkjob/{id}/status",
+            method="PATCH",
+            path="/typebasedjob/adgroup/bulk",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
             request_body_required=False,
-            request_has_path_params=True,
+            request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request,
+                False,
+                True,
+                "json",
+                Optional[models.AdGroupBulkUpdateWorkflowInputWithValidation],
+            ),
             timeout_ms=timeout_ms,
         )
 
@@ -290,23 +330,23 @@ class BulkJobs(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_/bulkjob/{id}/status",
+                operation_id="patch_/typebasedjob/adgroup/bulk",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
             ),
             request=req,
-            error_status_codes=["400", "401", "403", "404", "4XX", "500", "503", "5XX"],
+            error_status_codes=["400", "403", "4XX", "500", "503", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.BulkJobStatusResponse)
-        if utils.match_response(
-            http_res, ["400", "401", "403", "404"], "application/json"
-        ):
+        if utils.match_response(http_res, "202", "application/json"):
+            return utils.unmarshal_json(
+                http_res.text, models.TypeBasedJobSubmitResponse
+            )
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )
@@ -331,18 +371,25 @@ class BulkJobs(BaseSDK):
             http_res,
         )
 
-    async def get_status_async(
+    async def patch_typebasedjob_adgroup_bulk_async(
         self,
         *,
-        id: int,
+        request: Optional[
+            Union[
+                models.AdGroupBulkUpdateWorkflowInputWithValidation,
+                models.AdGroupBulkUpdateWorkflowInputWithValidationTypedDict,
+            ]
+        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.BulkJobStatusResponse:
-        r"""Get the status of a bulk job workflow you submitted earlier
+    ) -> models.TypeBasedJobSubmitResponse:
+        r"""Update multiple ad groups with specified fields
 
-        :param id:
+        Only the fields provided in the request payload for each specific ad group will be updated.
+
+        :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -358,23 +405,34 @@ class BulkJobs(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetBulkjobIDStatusRequest(
-            id=id,
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[models.AdGroupBulkUpdateWorkflowInputWithValidation]
+            )
+        request = cast(
+            Optional[models.AdGroupBulkUpdateWorkflowInputWithValidation], request
         )
 
         req = self._build_request_async(
-            method="GET",
-            path="/bulkjob/{id}/status",
+            method="PATCH",
+            path="/typebasedjob/adgroup/bulk",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
             request_body_required=False,
-            request_has_path_params=True,
+            request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request,
+                False,
+                True,
+                "json",
+                Optional[models.AdGroupBulkUpdateWorkflowInputWithValidation],
+            ),
             timeout_ms=timeout_ms,
         )
 
@@ -394,23 +452,23 @@ class BulkJobs(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_/bulkjob/{id}/status",
+                operation_id="patch_/typebasedjob/adgroup/bulk",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
             ),
             request=req,
-            error_status_codes=["400", "401", "403", "404", "4XX", "500", "503", "5XX"],
+            error_status_codes=["400", "403", "4XX", "500", "503", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.BulkJobStatusResponse)
-        if utils.match_response(
-            http_res, ["400", "401", "403", "404"], "application/json"
-        ):
+        if utils.match_response(http_res, "202", "application/json"):
+            return utils.unmarshal_json(
+                http_res.text, models.TypeBasedJobSubmitResponse
+            )
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
             )

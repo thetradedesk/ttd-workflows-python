@@ -15,57 +15,57 @@ from ttd_workflows.types import (
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class BulkJobStatusResponseTypedDict(TypedDict):
+class TypeBasedJobStatusResponseTypedDict(TypedDict):
     id: int
-    r"""ID of the bulk job."""
+    r"""The ID of the job."""
     created_at_utc: datetime
-    r"""Time of creation for that bulk job in UTC."""
+    r"""The UTC date and time that the job was created."""
     status: WorkflowStatus
     completed_at_utc: NotRequired[Nullable[datetime]]
-    r"""Time of completion for this bulk job in UTC."""
+    r"""The UTC data and time that the job completed."""
     completion_percentage: NotRequired[Nullable[float]]
-    r"""Completion percentage for that bulk job."""
+    r"""The job completion percentage."""
     url: NotRequired[Nullable[str]]
-    r"""The url where the result can be picked up"""
+    r"""The URL from which the job result can be downloaded."""
     raw_result: NotRequired[Nullable[str]]
-    r"""The raw result if the response is less than 5MB in size. If the result is too large and size is larger
-    than this threshold, then null is returned.
+    r"""The raw job result if the response is less than or equal to 20MB in size.
+    If the job result is larger than 20MB, then null is returned.
     """
     errors: NotRequired[Nullable[str]]
-    r"""Any errors encountered during workflow processing"""
+    r"""A list of errors encountered during workflow processing."""
 
 
-class BulkJobStatusResponse(BaseModel):
+class TypeBasedJobStatusResponse(BaseModel):
     id: int
-    r"""ID of the bulk job."""
+    r"""The ID of the job."""
 
     created_at_utc: Annotated[datetime, pydantic.Field(alias="createdAtUtc")]
-    r"""Time of creation for that bulk job in UTC."""
+    r"""The UTC date and time that the job was created."""
 
     status: WorkflowStatus
 
     completed_at_utc: Annotated[
         OptionalNullable[datetime], pydantic.Field(alias="completedAtUtc")
     ] = UNSET
-    r"""Time of completion for this bulk job in UTC."""
+    r"""The UTC data and time that the job completed."""
 
     completion_percentage: Annotated[
         OptionalNullable[float], pydantic.Field(alias="completionPercentage")
     ] = UNSET
-    r"""Completion percentage for that bulk job."""
+    r"""The job completion percentage."""
 
     url: OptionalNullable[str] = UNSET
-    r"""The url where the result can be picked up"""
+    r"""The URL from which the job result can be downloaded."""
 
     raw_result: Annotated[OptionalNullable[str], pydantic.Field(alias="rawResult")] = (
         UNSET
     )
-    r"""The raw result if the response is less than 5MB in size. If the result is too large and size is larger
-    than this threshold, then null is returned.
+    r"""The raw job result if the response is less than or equal to 20MB in size.
+    If the job result is larger than 20MB, then null is returned.
     """
 
     errors: OptionalNullable[str] = UNSET
-    r"""Any errors encountered during workflow processing"""
+    r"""A list of errors encountered during workflow processing."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

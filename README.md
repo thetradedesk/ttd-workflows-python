@@ -3,7 +3,25 @@
 <!-- Start Summary [summary] -->
 ## Summary
 
-Workflows API: A RESTful service for commonly used workflows.
+Workflows Service: ## Operations for commonly used workflows.
+This service provides operations for commonly used workflows on The Trade Desk's platform.
+In addition, this service provides generic operations for submitting:
+
+- GraphQL API requests
+- REST API requests
+
+To interface with this service, we provide SDKs in multiple languages.
+For each available language, there is a code sample displayed to the right of each operation.
+
+To get started with the SDK in your language of choice, see the associated guide:
+
+- Java - coming soon
+- [Python](https://pypi.org/project/ttd-workflows/)
+
+For further explanation on the entities encountered in this documentation (e.g.,
+[campaigns](https://partner.thetradedesk.com/v3/portal/api/doc/Campaigns) and
+[ad groups](https://partner.thetradedesk.com/v3/portal/api/doc/AdGroup)), visit the
+[Partner Portal](https://partner.thetradedesk.com/v3/portal/api/doc/ApiUseCases).
 <!-- End Summary [summary] -->
 
 <!-- Start Table of Contents [toc] -->
@@ -531,43 +549,46 @@ with Workflows(
 
 ### [ad_group](docs/sdks/adgroup/README.md)
 
-* [patch_adgroup_bulk](docs/sdks/adgroup/README.md#patch_adgroup_bulk) - Create a list of ad groups with required fields. `ValidateInputOnly` value should be the same for all ad groups.
+* [post_typebasedjob_adgroup_bulk](docs/sdks/adgroup/README.md#post_typebasedjob_adgroup_bulk) - Create multiple new ad groups with required fields
+* [patch_typebasedjob_adgroup_bulk](docs/sdks/adgroup/README.md#patch_typebasedjob_adgroup_bulk) - Update multiple ad groups with specified fields
 
 ### [ad_groups](docs/sdks/adgroups/README.md)
 
-* [create](docs/sdks/adgroups/README.md#create)
-* [update](docs/sdks/adgroups/README.md#update)
-* [archive](docs/sdks/adgroups/README.md#archive) - Archive a list of ad groups
-* [bulk_create](docs/sdks/adgroups/README.md#bulk_create) - Create a list of ad groups with required fields.
-
-### [bulk_job](docs/sdks/bulkjob/README.md)
-
-* [post_bulkjob_thirdpartydata](docs/sdks/bulkjob/README.md#post_bulkjob_thirdpartydata) - Submits a query for Third Party Data to Hydra
-
-### [bulk_jobs](docs/sdks/bulkjobs/README.md)
-
-* [submit_first_party_data](docs/sdks/bulkjobs/README.md#submit_first_party_data) - Submit a query for First Party Data to Hydra
-* [get_status](docs/sdks/bulkjobs/README.md#get_status) - Get the status of a bulk job workflow you submitted earlier
+* [create](docs/sdks/adgroups/README.md#create) - Create a new ad group with required fields
+* [update](docs/sdks/adgroups/README.md#update) - Update an ad group with specified fields
+* [archive](docs/sdks/adgroups/README.md#archive) - Archive multiple ad groups
 
 ### [campaign](docs/sdks/campaign/README.md)
 
 * [create](docs/sdks/campaign/README.md#create) - Create a new campaign with required fields
-* [get_version](docs/sdks/campaign/README.md#get_version) - GET a campaign's version
+* [post_typebasedjob_campaign_bulk](docs/sdks/campaign/README.md#post_typebasedjob_campaign_bulk) - Create multiple new campaigns with required fields
+* [patch_typebasedjob_campaign_bulk](docs/sdks/campaign/README.md#patch_typebasedjob_campaign_bulk) - Update multiple campaigns with specified fields
+* [get_version](docs/sdks/campaign/README.md#get_version) - Get a campaign's version
 
 ### [campaigns](docs/sdks/campaigns/README.md)
 
-* [update](docs/sdks/campaigns/README.md#update) - Update an existing campaign with specified fields
-* [bulk_create](docs/sdks/campaigns/README.md#bulk_create) - Create a list of campaigns with required fields. `ValidateInputOnly` value should be the same for all campaigns.
-* [bulk_update](docs/sdks/campaigns/README.md#bulk_update) - Update a list of existing campaigns with specified fields. `ValidateInputOnly` value should be the same for all campaigns.
-* [archive](docs/sdks/campaigns/README.md#archive) - Archive a list of campaigns
+* [update](docs/sdks/campaigns/README.md#update) - Update a campaign with specified fields
+* [archive](docs/sdks/campaigns/README.md#archive) - Archive multiple campaigns
 
-### [graph_ql](docs/sdks/graphql/README.md)
+### [first_party_data](docs/sdks/firstpartydata/README.md)
 
-* [post_request](docs/sdks/graphql/README.md#post_request) - An endpoint that executes valid GraphQL queries or mutations.
+* [post_typebasedjob_firstpartydata](docs/sdks/firstpartydata/README.md#post_typebasedjob_firstpartydata) - Submit a type-based job for first-party data retrieval for an advertiser
 
-### [pub_apis](docs/sdks/pubapis/README.md)
+### [graph_ql_request](docs/sdks/graphqlrequest/README.md)
 
-* [post](docs/sdks/pubapis/README.md#post)
+* [post_graphqlrequest](docs/sdks/graphqlrequest/README.md#post_graphqlrequest) - Submit a valid GraphQL query or mutation
+
+### [job_status](docs/sdks/jobstatus/README.md)
+
+* [get_typebasedjob_id_status](docs/sdks/jobstatus/README.md#get_typebasedjob_id_status) - Get the status of a previously submitted type-based job
+
+### [rest_request](docs/sdks/restrequest/README.md)
+
+* [post_restrequest](docs/sdks/restrequest/README.md#post_restrequest) - Submit a valid REST request
+
+### [third_party_data](docs/sdks/thirdpartydata/README.md)
+
+* [post_typebasedjob_thirdpartydata](docs/sdks/thirdpartydata/README.md#post_typebasedjob_thirdpartydata) - Submit a type-based job for third-party data retrieval for an advertiser
 
 
 </details>

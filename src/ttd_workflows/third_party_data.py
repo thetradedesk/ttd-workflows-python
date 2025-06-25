@@ -8,21 +8,23 @@ from ttd_workflows.utils import get_security_from_env
 from typing import Any, Mapping, Optional, Union, cast
 
 
-class PubApis(BaseSDK):
-    def post(
+class ThirdPartyData(BaseSDK):
+    def post_typebasedjob_thirdpartydata(
         self,
         *,
         request: Optional[
-            Union[
-                models.CallPubAPIWorkflowInput, models.CallPubAPIWorkflowInputTypedDict
-            ]
+            Union[models.ThirdPartyDataInput, models.ThirdPartyDataInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.PostPubapiResponse:
-        r"""
+    ) -> models.TypeBasedJobSubmitResponse:
+        r"""Submit a type-based job for third-party data retrieval for an advertiser
+
+        When a third-party data query is submitted, a job ID is returned.
+        This job ID can be used to poll for the job's status using the associated operation under \"Job Status\".
+
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -40,12 +42,12 @@ class PubApis(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.CallPubAPIWorkflowInput])
-        request = cast(Optional[models.CallPubAPIWorkflowInput], request)
+            request = utils.unmarshal(request, Optional[models.ThirdPartyDataInput])
+        request = cast(Optional[models.ThirdPartyDataInput], request)
 
         req = self._build_request(
             method="POST",
-            path="/pubapi",
+            path="/typebasedjob/thirdpartydata",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -57,7 +59,7 @@ class PubApis(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.CallPubAPIWorkflowInput]
+                request, False, True, "json", Optional[models.ThirdPartyDataInput]
             ),
             timeout_ms=timeout_ms,
         )
@@ -78,20 +80,22 @@ class PubApis(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/pubapi",
+                operation_id="post_/typebasedjob/thirdpartydata",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
             ),
             request=req,
-            error_status_codes=["400", "401", "403", "404", "4XX", "500", "5XX"],
+            error_status_codes=["400", "401", "403", "404", "4XX", "500", "503", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.PostPubapiResponse)
+        if utils.match_response(http_res, "202", "application/json"):
+            return utils.unmarshal_json(
+                http_res.text, models.TypeBasedJobSubmitResponse
+            )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
@@ -104,7 +108,7 @@ class PubApis(BaseSDK):
             raise models.APIError(
                 "API error occurred", http_res.status_code, http_res_text, http_res
             )
-        if utils.match_response(http_res, ["500", "5XX"], "*"):
+        if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
             raise models.APIError(
                 "API error occurred", http_res.status_code, http_res_text, http_res
@@ -119,20 +123,22 @@ class PubApis(BaseSDK):
             http_res,
         )
 
-    async def post_async(
+    async def post_typebasedjob_thirdpartydata_async(
         self,
         *,
         request: Optional[
-            Union[
-                models.CallPubAPIWorkflowInput, models.CallPubAPIWorkflowInputTypedDict
-            ]
+            Union[models.ThirdPartyDataInput, models.ThirdPartyDataInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.PostPubapiResponse:
-        r"""
+    ) -> models.TypeBasedJobSubmitResponse:
+        r"""Submit a type-based job for third-party data retrieval for an advertiser
+
+        When a third-party data query is submitted, a job ID is returned.
+        This job ID can be used to poll for the job's status using the associated operation under \"Job Status\".
+
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -150,12 +156,12 @@ class PubApis(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.CallPubAPIWorkflowInput])
-        request = cast(Optional[models.CallPubAPIWorkflowInput], request)
+            request = utils.unmarshal(request, Optional[models.ThirdPartyDataInput])
+        request = cast(Optional[models.ThirdPartyDataInput], request)
 
         req = self._build_request_async(
             method="POST",
-            path="/pubapi",
+            path="/typebasedjob/thirdpartydata",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -167,7 +173,7 @@ class PubApis(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.CallPubAPIWorkflowInput]
+                request, False, True, "json", Optional[models.ThirdPartyDataInput]
             ),
             timeout_ms=timeout_ms,
         )
@@ -188,20 +194,22 @@ class PubApis(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="post_/pubapi",
+                operation_id="post_/typebasedjob/thirdpartydata",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
             ),
             request=req,
-            error_status_codes=["400", "401", "403", "404", "4XX", "500", "5XX"],
+            error_status_codes=["400", "401", "403", "404", "4XX", "500", "503", "5XX"],
             retry_config=retry_config,
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.PostPubapiResponse)
+        if utils.match_response(http_res, "202", "application/json"):
+            return utils.unmarshal_json(
+                http_res.text, models.TypeBasedJobSubmitResponse
+            )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
@@ -214,7 +222,7 @@ class PubApis(BaseSDK):
             raise models.APIError(
                 "API error occurred", http_res.status_code, http_res_text, http_res
             )
-        if utils.match_response(http_res, ["500", "5XX"], "*"):
+        if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
             raise models.APIError(
                 "API error occurred", http_res.status_code, http_res_text, http_res
