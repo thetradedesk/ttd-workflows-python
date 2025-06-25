@@ -5,9 +5,9 @@ from ttd_workflows.types import BaseModel
 from typing_extensions import TypedDict
 
 
-class PostGraphqlrequestResponseTypedDict(TypedDict):
+class SubmitRestRequestResponseTypedDict(TypedDict):
     r"""OK"""
 
 
-class PostGraphqlrequestResponse(BaseModel):
+class SubmitRestRequestResponse(BaseModel):
     r"""OK"""

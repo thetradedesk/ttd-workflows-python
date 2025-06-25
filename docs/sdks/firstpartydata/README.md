@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [post_typebasedjob_firstpartydata](#post_typebasedjob_firstpartydata) - Submit a type-based job for first-party data retrieval for an advertiser
+* [get_first_party_data_job](#get_first_party_data_job) - Submit a type-based job for first-party data retrieval for an advertiser
 
-## post_typebasedjob_firstpartydata
+## get_first_party_data_job
 
 When a first-party data query is submitted, a job ID is returned.
 This job ID can be used to poll for the job's status using the associated operation under "Job Status".
@@ -23,15 +23,16 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.first_party_data.post_typebasedjob_firstpartydata(request={
+    res = workflows.first_party_data.get_first_party_data_job(request={
         "advertiser_id": "<id>",
         "name_filter": "<value>",
-        "query_shape": None,
+        "query_shape": "<value>",
         "callback_input": {
-            "callback_url": "https://ashamed-traffic.info",
+            "callback_url": "https://difficult-pocket-watch.com",
             "callback_headers": {
                 "key": "<value>",
                 "key1": "<value>",
+                "key2": "<value>",
             },
         },
     })

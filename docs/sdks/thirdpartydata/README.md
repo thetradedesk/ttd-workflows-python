@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [post_typebasedjob_thirdpartydata](#post_typebasedjob_thirdpartydata) - Submit a type-based job for third-party data retrieval for an advertiser
+* [get_third_party_data_job](#get_third_party_data_job) - Submit a type-based job for third-party data retrieval for an advertiser
 
-## post_typebasedjob_thirdpartydata
+## get_third_party_data_job
 
 When a third-party data query is submitted, a job ID is returned.
 This job ID can be used to poll for the job's status using the associated operation under "Job Status".
@@ -23,11 +23,11 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.third_party_data.post_typebasedjob_thirdpartydata(request={
+    res = workflows.third_party_data.get_third_party_data_job(request={
         "partner_id": "<id>",
         "query_shape": "<value>",
         "callback_input": {
-            "callback_url": "https://colorful-utilization.com/",
+            "callback_url": "https://extroverted-intent.net",
             "callback_headers": {
                 "key": "<value>",
                 "key1": "<value>",

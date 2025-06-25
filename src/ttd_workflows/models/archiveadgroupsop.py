@@ -8,12 +8,12 @@ from typing import List, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class PostAdgroupArchiveRequestTypedDict(TypedDict):
+class ArchiveAdGroupsRequestTypedDict(TypedDict):
     force_archive: NotRequired[bool]
     request_body: NotRequired[List[str]]
 
 
-class PostAdgroupArchiveRequest(BaseModel):
+class ArchiveAdGroupsRequest(BaseModel):
     force_archive: Annotated[
         Optional[bool],
         pydantic.Field(alias="forceArchive"),
