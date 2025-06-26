@@ -25,7 +25,7 @@ with Workflows(
 ) as workflows:
 
     res = workflows.rest_request.submit_rest_request(request={
-        "method_type": ttd_workflows.PubAPIMethodType.GET,
+        "method_type": ttd_workflows.RestAPIMethodType.GET,
         "endpoint": "<value>",
         "data_body": "<value>",
     })
@@ -37,10 +37,10 @@ with Workflows(
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [models.CallPubAPIWorkflowInput](../../models/callpubapiworkflowinput.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
-| `retries`                                                                 | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)          | :heavy_minus_sign:                                                        | Configuration to override the default retry behavior of the client.       |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [models.CallRestAPIWorkflowInput](../../models/callrestapiworkflowinput.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| `retries`                                                                   | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)            | :heavy_minus_sign:                                                          | Configuration to override the default retry behavior of the client.         |
 
 ### Response
 

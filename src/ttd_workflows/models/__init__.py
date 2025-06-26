@@ -121,9 +121,9 @@ if TYPE_CHECKING:
         ArchiveCampaignsRequest,
         ArchiveCampaignsRequestTypedDict,
     )
-    from .callpubapiworkflowinput import (
-        CallPubAPIWorkflowInput,
-        CallPubAPIWorkflowInputTypedDict,
+    from .callrestapiworkflowinput import (
+        CallRestAPIWorkflowInput,
+        CallRestAPIWorkflowInputTypedDict,
     )
     from .campaignbulkcreateworkflowinputwithvalidation import (
         CampaignBulkCreateWorkflowInputWithValidation,
@@ -219,7 +219,7 @@ if TYPE_CHECKING:
     )
     from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
     from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
-    from .pubapimethodtype import PubAPIMethodType
+    from .restapimethodtype import RestAPIMethodType
     from .security import Security, SecurityTypedDict
     from .submitgraphqlrequestop import (
         SubmitGraphQlRequestResponse,
@@ -316,8 +316,8 @@ __all__ = [
     "ArchiveAdGroupsRequestTypedDict",
     "ArchiveCampaignsRequest",
     "ArchiveCampaignsRequestTypedDict",
-    "CallPubAPIWorkflowInput",
-    "CallPubAPIWorkflowInputTypedDict",
+    "CallRestAPIWorkflowInput",
+    "CallRestAPIWorkflowInputTypedDict",
     "CampaignBulkCreateWorkflowInputWithValidation",
     "CampaignBulkCreateWorkflowInputWithValidationTypedDict",
     "CampaignBulkUpdateWorkflowInputWithValidation",
@@ -377,7 +377,7 @@ __all__ = [
     "ProblemDetailsError",
     "ProblemDetailsErrorData",
     "ProblemDetailsTypedDict",
-    "PubAPIMethodType",
+    "RestAPIMethodType",
     "Security",
     "SecurityTypedDict",
     "SubmitGraphQlRequestResponse",
@@ -469,8 +469,8 @@ _dynamic_imports: dict[str, str] = {
     "ArchiveAdGroupsRequestTypedDict": ".archiveadgroupsop",
     "ArchiveCampaignsRequest": ".archivecampaignsop",
     "ArchiveCampaignsRequestTypedDict": ".archivecampaignsop",
-    "CallPubAPIWorkflowInput": ".callpubapiworkflowinput",
-    "CallPubAPIWorkflowInputTypedDict": ".callpubapiworkflowinput",
+    "CallRestAPIWorkflowInput": ".callrestapiworkflowinput",
+    "CallRestAPIWorkflowInputTypedDict": ".callrestapiworkflowinput",
     "CampaignBulkCreateWorkflowInputWithValidation": ".campaignbulkcreateworkflowinputwithvalidation",
     "CampaignBulkCreateWorkflowInputWithValidationTypedDict": ".campaignbulkcreateworkflowinputwithvalidation",
     "CampaignBulkUpdateWorkflowInputWithValidation": ".campaignbulkupdateworkflowinputwithvalidation",
@@ -532,7 +532,7 @@ _dynamic_imports: dict[str, str] = {
     "ProblemDetailsTypedDict": ".problemdetails",
     "ProblemDetailsError": ".problemdetails_error",
     "ProblemDetailsErrorData": ".problemdetails_error",
-    "PubAPIMethodType": ".pubapimethodtype",
+    "RestAPIMethodType": ".restapimethodtype",
     "Security": ".security",
     "SecurityTypedDict": ".security",
     "SubmitGraphQlRequestResponse": ".submitgraphqlrequestop",

@@ -4,7 +4,7 @@ from __future__ import annotations
 from enum import Enum
 
 
-class PubAPIMethodType(str, Enum):
+class RestAPIMethodType(str, Enum):
     POST = "POST"
     PUT = "PUT"
     GET = "GET"
