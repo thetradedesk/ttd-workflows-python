@@ -558,9 +558,10 @@ with Workflows(
 * [update](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md#update) - Update a campaign with specified fields
 * [archive](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md#archive) - Archive multiple campaigns
 
-### [first_party_data](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/firstpartydata/README.md)
+### [dmp](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/dmp/README.md)
 
-* [get_first_party_data_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/firstpartydata/README.md#get_first_party_data_job) - Submit a type-based job for first-party data retrieval for an advertiser
+* [get_first_party_data_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/dmp/README.md#get_first_party_data_job) - Submit a job for first-party data retrieval for an advertiser
+* [get_third_party_data_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/dmp/README.md#get_third_party_data_job) - Submit a job for third-party data retrieval for a partner
 
 ### [graph_ql_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphqlrequest/README.md)
 
@@ -568,15 +569,11 @@ with Workflows(
 
 ### [job_status](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/jobstatus/README.md)
 
-* [get_job_status](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/jobstatus/README.md#get_job_status) - Get the status of a previously submitted type-based job
+* [get_job_status](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/jobstatus/README.md#get_job_status) - Get the status of a previously submitted job
 
 ### [rest_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/restrequest/README.md)
 
 * [submit_rest_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/restrequest/README.md#submit_rest_request) - Submit a valid REST request
-
-### [third_party_data](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/thirdpartydata/README.md)
-
-* [get_third_party_data_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/thirdpartydata/README.md#get_third_party_data_job) - Submit a type-based job for third-party data retrieval for an advertiser
 
 
 </details>

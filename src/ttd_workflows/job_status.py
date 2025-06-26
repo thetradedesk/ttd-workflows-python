@@ -18,7 +18,7 @@ class JobStatus(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.TypeBasedJobStatusResponse:
-        r"""Get the status of a previously submitted type-based job
+        r"""Get the status of a previously submitted job
 
         Use this operation to get a previously submitted job's status and completion percentage.
         Once a job is complete, this operation will return the URL from which to download the job results.
@@ -127,7 +127,7 @@ class JobStatus(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.TypeBasedJobStatusResponse:
-        r"""Get the status of a previously submitted type-based job
+        r"""Get the status of a previously submitted job
 
         Use this operation to get a previously submitted job's status and completion percentage.
         Once a job is complete, this operation will return the URL from which to download the job results.

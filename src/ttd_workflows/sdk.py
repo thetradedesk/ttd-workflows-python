@@ -18,11 +18,10 @@ if TYPE_CHECKING:
     from ttd_workflows.adgroups import AdGroups
     from ttd_workflows.campaign import Campaign
     from ttd_workflows.campaigns import Campaigns
-    from ttd_workflows.first_party_data import FirstPartyData
+    from ttd_workflows.dmp import Dmp
     from ttd_workflows.graphql_request import GraphQLRequest
     from ttd_workflows.job_status import JobStatus
     from ttd_workflows.rest_request import RESTRequest
-    from ttd_workflows.third_party_data import ThirdPartyData
 
 
 class Workflows(BaseSDK):
@@ -51,20 +50,18 @@ class Workflows(BaseSDK):
     ad_group: "AdGroup"
     campaign: "Campaign"
     campaigns: "Campaigns"
-    first_party_data: "FirstPartyData"
+    dmp: "Dmp"
     graph_ql_request: "GraphQLRequest"
     rest_request: "RESTRequest"
-    third_party_data: "ThirdPartyData"
     job_status: "JobStatus"
     _sub_sdk_map = {
         "ad_groups": ("ttd_workflows.adgroups", "AdGroups"),
         "ad_group": ("ttd_workflows.ad_group", "AdGroup"),
         "campaign": ("ttd_workflows.campaign", "Campaign"),
         "campaigns": ("ttd_workflows.campaigns", "Campaigns"),
-        "first_party_data": ("ttd_workflows.first_party_data", "FirstPartyData"),
+        "dmp": ("ttd_workflows.dmp", "Dmp"),
         "graph_ql_request": ("ttd_workflows.graphql_request", "GraphQLRequest"),
         "rest_request": ("ttd_workflows.rest_request", "RESTRequest"),
-        "third_party_data": ("ttd_workflows.third_party_data", "ThirdPartyData"),
         "job_status": ("ttd_workflows.job_status", "JobStatus"),
     }
 
