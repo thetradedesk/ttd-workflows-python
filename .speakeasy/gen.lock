@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: faf4be0381774b04020817f9d6810c7f
+  docChecksum: 2bf076649064763ae5df70ed5e64e73e
   docVersion: v1
-  speakeasyVersion: 1.570.1
-  generationVersion: 2.638.1
-  releaseVersion: 0.7.1
-  configChecksum: b1b90f8d9fa812a74870fe6ce8d6856c
+  speakeasyVersion: 1.570.2
+  generationVersion: 2.638.5
+  releaseVersion: 0.7.2
+  configChecksum: e6ec8666969d0bb18b617c1353dc08c4
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
@@ -127,11 +127,10 @@ generatedFiles:
   - docs/sdks/adgroups/README.md
   - docs/sdks/campaign/README.md
   - docs/sdks/campaigns/README.md
-  - docs/sdks/firstpartydata/README.md
+  - docs/sdks/dmp/README.md
   - docs/sdks/graphqlrequest/README.md
   - docs/sdks/jobstatus/README.md
   - docs/sdks/restrequest/README.md
-  - docs/sdks/thirdpartydata/README.md
   - docs/sdks/workflows/README.md
   - poetry.toml
   - py.typed
@@ -149,7 +148,7 @@ generatedFiles:
   - src/ttd_workflows/basesdk.py
   - src/ttd_workflows/campaign.py
   - src/ttd_workflows/campaigns.py
-  - src/ttd_workflows/first_party_data.py
+  - src/ttd_workflows/dmp.py
   - src/ttd_workflows/graphql_request.py
   - src/ttd_workflows/httpclient.py
   - src/ttd_workflows/job_status.py
@@ -239,7 +238,6 @@ generatedFiles:
   - src/ttd_workflows/rest_request.py
   - src/ttd_workflows/sdk.py
   - src/ttd_workflows/sdkconfiguration.py
-  - src/ttd_workflows/third_party_data.py
   - src/ttd_workflows/types/__init__.py
   - src/ttd_workflows/types/basemodel.py
   - src/ttd_workflows/utils/__init__.py

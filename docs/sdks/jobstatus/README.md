@@ -5,7 +5,7 @@
 
 ### Available Operations
 
-* [get_job_status](#get_job_status) - Get the status of a previously submitted type-based job
+* [get_job_status](#get_job_status) - Get the status of a previously submitted job
 
 ## get_job_status
 
