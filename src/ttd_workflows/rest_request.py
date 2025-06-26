@@ -14,7 +14,8 @@ class RESTRequest(BaseSDK):
         *,
         request: Optional[
             Union[
-                models.CallPubAPIWorkflowInput, models.CallPubAPIWorkflowInputTypedDict
+                models.CallRestAPIWorkflowInput,
+                models.CallRestAPIWorkflowInputTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -44,8 +45,10 @@ class RESTRequest(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.CallPubAPIWorkflowInput])
-        request = cast(Optional[models.CallPubAPIWorkflowInput], request)
+            request = utils.unmarshal(
+                request, Optional[models.CallRestAPIWorkflowInput]
+            )
+        request = cast(Optional[models.CallRestAPIWorkflowInput], request)
 
         req = self._build_request(
             method="POST",
@@ -61,7 +64,7 @@ class RESTRequest(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.CallPubAPIWorkflowInput]
+                request, False, True, "json", Optional[models.CallRestAPIWorkflowInput]
             ),
             timeout_ms=timeout_ms,
         )
@@ -128,7 +131,8 @@ class RESTRequest(BaseSDK):
         *,
         request: Optional[
             Union[
-                models.CallPubAPIWorkflowInput, models.CallPubAPIWorkflowInputTypedDict
+                models.CallRestAPIWorkflowInput,
+                models.CallRestAPIWorkflowInputTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -158,8 +162,10 @@ class RESTRequest(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.CallPubAPIWorkflowInput])
-        request = cast(Optional[models.CallPubAPIWorkflowInput], request)
+            request = utils.unmarshal(
+                request, Optional[models.CallRestAPIWorkflowInput]
+            )
+        request = cast(Optional[models.CallRestAPIWorkflowInput], request)
 
         req = self._build_request_async(
             method="POST",
@@ -175,7 +181,7 @@ class RESTRequest(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.CallPubAPIWorkflowInput]
+                request, False, True, "json", Optional[models.CallRestAPIWorkflowInput]
             ),
             timeout_ms=timeout_ms,
         )

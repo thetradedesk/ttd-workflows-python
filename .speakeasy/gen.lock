@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 0401a431c11a85bfbbadf41a257ca77f
+  docChecksum: faf4be0381774b04020817f9d6810c7f
   docVersion: v1
-  speakeasyVersion: 1.570.0
-  generationVersion: 2.638.0
-  releaseVersion: 0.7.0
-  configChecksum: 0bca4d05889347dabe58e5897fcf41f7
+  speakeasyVersion: 1.570.1
+  generationVersion: 2.638.1
+  releaseVersion: 0.7.1
+  configChecksum: b1b90f8d9fa812a74870fe6ce8d6856c
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
@@ -76,7 +76,7 @@ generatedFiles:
   - docs/models/allocationtype.md
   - docs/models/archiveadgroupsrequest.md
   - docs/models/archivecampaignsrequest.md
-  - docs/models/callpubapiworkflowinput.md
+  - docs/models/callrestapiworkflowinput.md
   - docs/models/campaignbulkcreateworkflowinputwithvalidation.md
   - docs/models/campaignbulkupdateworkflowinputwithvalidation.md
   - docs/models/campaignchanneltype.md
@@ -109,7 +109,7 @@ generatedFiles:
   - docs/models/graphqlrequestinput.md
   - docs/models/problemdetails.md
   - docs/models/problemdetailserror.md
-  - docs/models/pubapimethodtype.md
+  - docs/models/restapimethodtype.md
   - docs/models/security.md
   - docs/models/submitgraphqlrequestresponse.md
   - docs/models/submitrestrequestresponse.md
@@ -190,7 +190,7 @@ generatedFiles:
   - src/ttd_workflows/models/apierror.py
   - src/ttd_workflows/models/archiveadgroupsop.py
   - src/ttd_workflows/models/archivecampaignsop.py
-  - src/ttd_workflows/models/callpubapiworkflowinput.py
+  - src/ttd_workflows/models/callrestapiworkflowinput.py
   - src/ttd_workflows/models/campaignbulkcreateworkflowinputwithvalidation.py
   - src/ttd_workflows/models/campaignbulkupdateworkflowinputwithvalidation.py
   - src/ttd_workflows/models/campaignchanneltype.py
@@ -223,7 +223,7 @@ generatedFiles:
   - src/ttd_workflows/models/graphqlrequestinput.py
   - src/ttd_workflows/models/problemdetails.py
   - src/ttd_workflows/models/problemdetails_error.py
-  - src/ttd_workflows/models/pubapimethodtype.py
+  - src/ttd_workflows/models/restapimethodtype.py
   - src/ttd_workflows/models/security.py
   - src/ttd_workflows/models/submitgraphqlrequestop.py
   - src/ttd_workflows/models/submitrestrequestop.py
