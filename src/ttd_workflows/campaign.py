@@ -258,7 +258,7 @@ class Campaign(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobSubmitResponse:
+    ) -> models.StandardJobSubmitResponse:
         r"""Create multiple new campaigns with required fields
 
         :param request: The request object to send.
@@ -287,7 +287,7 @@ class Campaign(BaseSDK):
 
         req = self._build_request(
             method="POST",
-            path="/typebasedjob/campaign/bulk",
+            path="/standardjob/campaign/bulk",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -337,9 +337,7 @@ class Campaign(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobSubmitResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
         if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
@@ -378,7 +376,7 @@ class Campaign(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobSubmitResponse:
+    ) -> models.StandardJobSubmitResponse:
         r"""Create multiple new campaigns with required fields
 
         :param request: The request object to send.
@@ -407,7 +405,7 @@ class Campaign(BaseSDK):
 
         req = self._build_request_async(
             method="POST",
-            path="/typebasedjob/campaign/bulk",
+            path="/standardjob/campaign/bulk",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -457,9 +455,7 @@ class Campaign(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobSubmitResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
         if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
@@ -498,7 +494,7 @@ class Campaign(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobSubmitResponse:
+    ) -> models.StandardJobSubmitResponse:
         r"""Update multiple campaigns with specified fields
 
         Only the fields provided in the request payload for each specific campaign will be updated.
@@ -529,7 +525,7 @@ class Campaign(BaseSDK):
 
         req = self._build_request(
             method="PATCH",
-            path="/typebasedjob/campaign/bulk",
+            path="/standardjob/campaign/bulk",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -579,9 +575,7 @@ class Campaign(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobSubmitResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
         if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
@@ -620,7 +614,7 @@ class Campaign(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobSubmitResponse:
+    ) -> models.StandardJobSubmitResponse:
         r"""Update multiple campaigns with specified fields
 
         Only the fields provided in the request payload for each specific campaign will be updated.
@@ -651,7 +645,7 @@ class Campaign(BaseSDK):
 
         req = self._build_request_async(
             method="PATCH",
-            path="/typebasedjob/campaign/bulk",
+            path="/standardjob/campaign/bulk",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -701,9 +695,7 @@ class Campaign(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobSubmitResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
         if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData

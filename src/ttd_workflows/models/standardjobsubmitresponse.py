@@ -5,11 +5,11 @@ from ttd_workflows.types import BaseModel
 from typing_extensions import TypedDict
 
 
-class TypeBasedJobSubmitResponseTypedDict(TypedDict):
+class StandardJobSubmitResponseTypedDict(TypedDict):
     id: int
     r"""The ID of the job."""
 
 
-class TypeBasedJobSubmitResponse(BaseModel):
+class StandardJobSubmitResponse(BaseModel):
     id: int
     r"""The ID of the job."""

@@ -439,7 +439,7 @@ with Workflows(
 
 ### Response
 
-**[models.TypeBasedJobSubmitResponse](../../models/typebasedjobsubmitresponse.md)**
+**[models.StandardJobSubmitResponse](../../models/standardjobsubmitresponse.md)**
 
 ### Errors
 
@@ -558,7 +558,7 @@ with Workflows(
 
 ### Response
 
-**[models.TypeBasedJobSubmitResponse](../../models/typebasedjobsubmitresponse.md)**
+**[models.StandardJobSubmitResponse](../../models/standardjobsubmitresponse.md)**
 
 ### Errors
 

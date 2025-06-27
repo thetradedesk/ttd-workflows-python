@@ -26,9 +26,13 @@ class FirstPartyDataInputTypedDict(TypedDict):
     """
     query_shape: NotRequired[Nullable[str]]
     r"""The shape of the query with the fields being asked for, which is sent downstream.
-    This determines how the response will look like.
+    This determines what the response will look like.
+
+    For example, a query shape equal to `\"nodes {id name}\"` will return the `id` and `name` fields only.
+
     If this is not provided the default query shape will be used:
 
+    ```graphql
     nodes {
     name
     id
@@ -41,6 +45,7 @@ class FirstPartyDataInputTypedDict(TypedDict):
     personsCount
     }
     }
+    ```
     """
     callback_input: NotRequired[WorkflowCallbackInputTypedDict]
 
@@ -62,9 +67,13 @@ class FirstPartyDataInput(BaseModel):
         OptionalNullable[str], pydantic.Field(alias="queryShape")
     ] = UNSET
     r"""The shape of the query with the fields being asked for, which is sent downstream.
-    This determines how the response will look like.
+    This determines what the response will look like.
+
+    For example, a query shape equal to `\"nodes {id name}\"` will return the `id` and `name` fields only.
+
     If this is not provided the default query shape will be used:
 
+    ```graphql
     nodes {
     name
     id
@@ -77,6 +86,7 @@ class FirstPartyDataInput(BaseModel):
     personsCount
     }
     }
+    ```
     """
 
     callback_input: Annotated[

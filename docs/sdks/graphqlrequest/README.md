@@ -6,7 +6,7 @@
 ### Available Operations
 
 * [submit_graph_ql_request](#submit_graph_ql_request) - Submit a valid GraphQL query or mutation
-* [submit_graph_ql_query_job](#submit_graph_ql_query_job) - Submit a valid bulk GraphQL query.
+* [submit_graph_ql_query_job](#submit_graph_ql_query_job) - Submit a valid bulk GraphQL query
 
 ## submit_graph_ql_request
 
@@ -55,7 +55,7 @@ with Workflows(
 ## submit_graph_ql_query_job
 
 This generic operation can be used to execute any valid bulk GraphQL query.
-For information on bulk GraphQ query syntax, see [GraphQL API Bulk Operations](https://partner.thetradedesk.com/v3/portal/api/doc/GqlBulkOperations).
+For information on bulk GraphQL query syntax, see [GraphQL API Bulk Operations](https://partner.thetradedesk.com/v3/portal/api/doc/GqlBulkOperations).
 
 ### Example Usage
 
