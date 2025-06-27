@@ -52,8 +52,8 @@ class Workflows(BaseSDK):
     campaigns: "Campaigns"
     dmp: "Dmp"
     graph_ql_request: "GraphQLRequest"
-    rest_request: "RESTRequest"
     job_status: "JobStatus"
+    rest_request: "RESTRequest"
     _sub_sdk_map = {
         "ad_groups": ("ttd_workflows.adgroups", "AdGroups"),
         "ad_group": ("ttd_workflows.ad_group", "AdGroup"),
@@ -61,8 +61,8 @@ class Workflows(BaseSDK):
         "campaigns": ("ttd_workflows.campaigns", "Campaigns"),
         "dmp": ("ttd_workflows.dmp", "Dmp"),
         "graph_ql_request": ("ttd_workflows.graphql_request", "GraphQLRequest"),
-        "rest_request": ("ttd_workflows.rest_request", "RESTRequest"),
         "job_status": ("ttd_workflows.job_status", "JobStatus"),
+        "rest_request": ("ttd_workflows.rest_request", "RESTRequest"),
     }
 
     def __init__(
