@@ -566,9 +566,11 @@ with Workflows(
 ### [graph_ql_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphqlrequest/README.md)
 
 * [submit_graph_ql_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphqlrequest/README.md#submit_graph_ql_request) - Submit a valid GraphQL query or mutation
+* [submit_graph_ql_query_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphqlrequest/README.md#submit_graph_ql_query_job) - Submit a valid bulk GraphQL query.
 
 ### [job_status](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/jobstatus/README.md)
 
+* [get_graph_ql_query_job_status](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/jobstatus/README.md#get_graph_ql_query_job_status) - Get the status of a previously submitted GraphQL query job.
 * [get_job_status](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/jobstatus/README.md#get_job_status) - Get the status of a previously submitted job
 
 ### [rest_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/restrequest/README.md)

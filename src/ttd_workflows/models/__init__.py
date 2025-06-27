@@ -121,6 +121,7 @@ if TYPE_CHECKING:
         ArchiveCampaignsRequest,
         ArchiveCampaignsRequestTypedDict,
     )
+    from .bulkjobstatus import BulkJobStatus
     from .callrestapiworkflowinput import (
         CallRestAPIWorkflowInput,
         CallRestAPIWorkflowInputTypedDict,
@@ -210,12 +211,45 @@ if TYPE_CHECKING:
         GetCampaignVersionRequest,
         GetCampaignVersionRequestTypedDict,
     )
+    from .getgraphqlqueryjobstatusop import (
+        GetGraphQlQueryJobStatusRequest,
+        GetGraphQlQueryJobStatusRequestTypedDict,
+    )
     from .getjobstatusop import GetJobStatusRequest, GetJobStatusRequestTypedDict
+    from .graphqljobcallbackinput import (
+        GraphQlJobCallbackInput,
+        GraphQlJobCallbackInputTypedDict,
+    )
+    from .graphqlqueryjob import GraphQlQueryJob, GraphQlQueryJobTypedDict
+    from .graphqlqueryjoberror import (
+        GraphQLQueryJobError,
+        GraphQLQueryJobErrorTypedDict,
+    )
+    from .graphqlqueryjobinput import (
+        GraphQlQueryJobInput,
+        GraphQlQueryJobInputTypedDict,
+    )
+    from .graphqlqueryjobpayload import (
+        GraphQlQueryJobPayload,
+        GraphQlQueryJobPayloadTypedDict,
+    )
+    from .graphqlqueryjobresponse import (
+        GraphQlQueryJobResponse,
+        GraphQlQueryJobResponseTypedDict,
+    )
+    from .graphqlqueryjobretrievalresponse import (
+        GraphQLQueryJobRetrievalResponse,
+        GraphQLQueryJobRetrievalResponseTypedDict,
+    )
     from .graphqlrequestinput import (
         GraphQLRequestInput,
         GraphQLRequestInputTypedDict,
         Variables,
         VariablesTypedDict,
+    )
+    from .keyvaluepairofstringandstringinput import (
+        KeyValuePairOfStringAndStringInput,
+        KeyValuePairOfStringAndStringInputTypedDict,
     )
     from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
     from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
@@ -316,6 +350,7 @@ __all__ = [
     "ArchiveAdGroupsRequestTypedDict",
     "ArchiveCampaignsRequest",
     "ArchiveCampaignsRequestTypedDict",
+    "BulkJobStatus",
     "CallRestAPIWorkflowInput",
     "CallRestAPIWorkflowInputTypedDict",
     "CampaignBulkCreateWorkflowInputWithValidation",
@@ -369,10 +404,28 @@ __all__ = [
     "FirstPartyDataInputTypedDict",
     "GetCampaignVersionRequest",
     "GetCampaignVersionRequestTypedDict",
+    "GetGraphQlQueryJobStatusRequest",
+    "GetGraphQlQueryJobStatusRequestTypedDict",
     "GetJobStatusRequest",
     "GetJobStatusRequestTypedDict",
+    "GraphQLQueryJobError",
+    "GraphQLQueryJobErrorTypedDict",
+    "GraphQLQueryJobRetrievalResponse",
+    "GraphQLQueryJobRetrievalResponseTypedDict",
     "GraphQLRequestInput",
     "GraphQLRequestInputTypedDict",
+    "GraphQlJobCallbackInput",
+    "GraphQlJobCallbackInputTypedDict",
+    "GraphQlQueryJob",
+    "GraphQlQueryJobInput",
+    "GraphQlQueryJobInputTypedDict",
+    "GraphQlQueryJobPayload",
+    "GraphQlQueryJobPayloadTypedDict",
+    "GraphQlQueryJobResponse",
+    "GraphQlQueryJobResponseTypedDict",
+    "GraphQlQueryJobTypedDict",
+    "KeyValuePairOfStringAndStringInput",
+    "KeyValuePairOfStringAndStringInputTypedDict",
     "ProblemDetails",
     "ProblemDetailsError",
     "ProblemDetailsErrorData",
@@ -469,6 +522,7 @@ _dynamic_imports: dict[str, str] = {
     "ArchiveAdGroupsRequestTypedDict": ".archiveadgroupsop",
     "ArchiveCampaignsRequest": ".archivecampaignsop",
     "ArchiveCampaignsRequestTypedDict": ".archivecampaignsop",
+    "BulkJobStatus": ".bulkjobstatus",
     "CallRestAPIWorkflowInput": ".callrestapiworkflowinput",
     "CallRestAPIWorkflowInputTypedDict": ".callrestapiworkflowinput",
     "CampaignBulkCreateWorkflowInputWithValidation": ".campaignbulkcreateworkflowinputwithvalidation",
@@ -522,12 +576,30 @@ _dynamic_imports: dict[str, str] = {
     "FirstPartyDataInputTypedDict": ".firstpartydatainput",
     "GetCampaignVersionRequest": ".getcampaignversionop",
     "GetCampaignVersionRequestTypedDict": ".getcampaignversionop",
+    "GetGraphQlQueryJobStatusRequest": ".getgraphqlqueryjobstatusop",
+    "GetGraphQlQueryJobStatusRequestTypedDict": ".getgraphqlqueryjobstatusop",
     "GetJobStatusRequest": ".getjobstatusop",
     "GetJobStatusRequestTypedDict": ".getjobstatusop",
+    "GraphQlJobCallbackInput": ".graphqljobcallbackinput",
+    "GraphQlJobCallbackInputTypedDict": ".graphqljobcallbackinput",
+    "GraphQlQueryJob": ".graphqlqueryjob",
+    "GraphQlQueryJobTypedDict": ".graphqlqueryjob",
+    "GraphQLQueryJobError": ".graphqlqueryjoberror",
+    "GraphQLQueryJobErrorTypedDict": ".graphqlqueryjoberror",
+    "GraphQlQueryJobInput": ".graphqlqueryjobinput",
+    "GraphQlQueryJobInputTypedDict": ".graphqlqueryjobinput",
+    "GraphQlQueryJobPayload": ".graphqlqueryjobpayload",
+    "GraphQlQueryJobPayloadTypedDict": ".graphqlqueryjobpayload",
+    "GraphQlQueryJobResponse": ".graphqlqueryjobresponse",
+    "GraphQlQueryJobResponseTypedDict": ".graphqlqueryjobresponse",
+    "GraphQLQueryJobRetrievalResponse": ".graphqlqueryjobretrievalresponse",
+    "GraphQLQueryJobRetrievalResponseTypedDict": ".graphqlqueryjobretrievalresponse",
     "GraphQLRequestInput": ".graphqlrequestinput",
     "GraphQLRequestInputTypedDict": ".graphqlrequestinput",
     "Variables": ".graphqlrequestinput",
     "VariablesTypedDict": ".graphqlrequestinput",
+    "KeyValuePairOfStringAndStringInput": ".keyvaluepairofstringandstringinput",
+    "KeyValuePairOfStringAndStringInputTypedDict": ".keyvaluepairofstringandstringinput",
     "ProblemDetails": ".problemdetails",
     "ProblemDetailsTypedDict": ".problemdetails",
     "ProblemDetailsError": ".problemdetails_error",

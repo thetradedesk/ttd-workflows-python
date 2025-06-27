@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 2bf076649064763ae5df70ed5e64e73e
+  docChecksum: 20ff1beb02c6fa046350b8e6762e279b
   docVersion: v1
   speakeasyVersion: 1.570.2
   generationVersion: 2.638.5
-  releaseVersion: 0.7.2
-  configChecksum: e6ec8666969d0bb18b617c1353dc08c4
+  releaseVersion: 0.7.3
+  configChecksum: a3f85b0e5a01bc52623a4a4a2583d27e
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
@@ -76,6 +76,7 @@ generatedFiles:
   - docs/models/allocationtype.md
   - docs/models/archiveadgroupsrequest.md
   - docs/models/archivecampaignsrequest.md
+  - docs/models/bulkjobstatus.md
   - docs/models/callrestapiworkflowinput.md
   - docs/models/campaignbulkcreateworkflowinputwithvalidation.md
   - docs/models/campaignbulkupdateworkflowinputwithvalidation.md
@@ -105,8 +106,17 @@ generatedFiles:
   - docs/models/enhancednielsenreportingoptions.md
   - docs/models/firstpartydatainput.md
   - docs/models/getcampaignversionrequest.md
+  - docs/models/getgraphqlqueryjobstatusrequest.md
   - docs/models/getjobstatusrequest.md
+  - docs/models/graphqljobcallbackinput.md
+  - docs/models/graphqlqueryjob.md
+  - docs/models/graphqlqueryjoberror.md
+  - docs/models/graphqlqueryjobinput.md
+  - docs/models/graphqlqueryjobpayload.md
+  - docs/models/graphqlqueryjobresponse.md
+  - docs/models/graphqlqueryjobretrievalresponse.md
   - docs/models/graphqlrequestinput.md
+  - docs/models/keyvaluepairofstringandstringinput.md
   - docs/models/problemdetails.md
   - docs/models/problemdetailserror.md
   - docs/models/restapimethodtype.md
@@ -189,6 +199,7 @@ generatedFiles:
   - src/ttd_workflows/models/apierror.py
   - src/ttd_workflows/models/archiveadgroupsop.py
   - src/ttd_workflows/models/archivecampaignsop.py
+  - src/ttd_workflows/models/bulkjobstatus.py
   - src/ttd_workflows/models/callrestapiworkflowinput.py
   - src/ttd_workflows/models/campaignbulkcreateworkflowinputwithvalidation.py
   - src/ttd_workflows/models/campaignbulkupdateworkflowinputwithvalidation.py
@@ -218,8 +229,17 @@ generatedFiles:
   - src/ttd_workflows/models/enhancednielsenreportingoptions.py
   - src/ttd_workflows/models/firstpartydatainput.py
   - src/ttd_workflows/models/getcampaignversionop.py
+  - src/ttd_workflows/models/getgraphqlqueryjobstatusop.py
   - src/ttd_workflows/models/getjobstatusop.py
+  - src/ttd_workflows/models/graphqljobcallbackinput.py
+  - src/ttd_workflows/models/graphqlqueryjob.py
+  - src/ttd_workflows/models/graphqlqueryjoberror.py
+  - src/ttd_workflows/models/graphqlqueryjobinput.py
+  - src/ttd_workflows/models/graphqlqueryjobpayload.py
+  - src/ttd_workflows/models/graphqlqueryjobresponse.py
+  - src/ttd_workflows/models/graphqlqueryjobretrievalresponse.py
   - src/ttd_workflows/models/graphqlrequestinput.py
+  - src/ttd_workflows/models/keyvaluepairofstringandstringinput.py
   - src/ttd_workflows/models/problemdetails.py
   - src/ttd_workflows/models/problemdetails_error.py
   - src/ttd_workflows/models/restapimethodtype.py
@@ -656,5 +676,24 @@ examples:
           application/json: {"id": 106154, "completedAtUtc": "2025-08-19T20:27:29.416Z", "completionPercentage": 3686.8, "createdAtUtc": "2025-12-31T02:30:43.441Z", "status": "PartialSuccess", "url": "https://strict-consistency.info/", "rawResult": "<value>", "errors": "<value>"}
         "400":
           application/json: {"type": "<value>", "title": null, "status": 631723, "detail": "<value>", "instance": "<value>"}
+  submitGraphQlQueryJob:
+    speakeasy-default-submit-graph-ql-query-job:
+      requestBody:
+        application/json: {"query": "<value>", "callbackInput": {"callbackUrl": "https://wilted-cork.net/", "callbackHeaders": [{"key": "<key>", "value": "<value>"}]}}
+      responses:
+        "200":
+          application/json: {"payload": {"data": {"id": 512334, "completedAt": "2024-05-11T16:37:12.732Z", "completionPercentage": 6222.78, "createdAt": "2024-04-15T15:09:56.887Z", "status": "InProgress", "url": "https://whirlwind-slipper.info/", "rawResult": "<value>", "queryGqlErrors": ["<value 1>"], "runtimeErrors": ["<value 1>"]}, "errors": [{"message": "<value>", "field": ["<value 1>", "<value 2>"], "additionalData": null}]}, "errors": "<value>"}
+        "400":
+          application/json: {"type": "<value>", "title": "<value>", "status": 77071, "detail": "<value>", "instance": "<value>"}
+  getGraphQlQueryJobStatus:
+    speakeasy-default-get-graph-ql-query-job-status:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"job": {"id": 538179, "completedAt": "2025-03-24T07:03:20.469Z", "completionPercentage": 2374.76, "createdAt": "2024-08-26T00:26:23.894Z", "status": "InProgress", "url": null, "rawResult": "<value>", "queryGqlErrors": ["<value 1>", "<value 2>", "<value 3>"], "runtimeErrors": ["<value 1>"]}, "errors": "<value>"}
+        "400":
+          application/json: {"type": "<value>", "title": "<value>", "status": null, "detail": "<value>", "instance": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}

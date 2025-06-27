@@ -4,9 +4,10 @@ from __future__ import annotations
 from enum import Enum
 
 
-class WorkflowStatus(str, Enum):
+class BulkJobStatus(str, Enum):
+    QUEUED = "Queued"
     IN_PROGRESS = "InProgress"
+    PARTIAL_SUCCESS = "PartialSuccess"
     FAILURE = "Failure"
     SUCCESS = "Success"
-    PARTIAL_SUCCESS = "PartialSuccess"
-    RESULTS_EXPIRED = "ResultsExpired"
+    CANCELLED = "Cancelled"
