@@ -52,7 +52,7 @@ with Workflows(
 
 ### Response
 
-**[models.TypeBasedJobSubmitResponse](../../models/typebasedjobsubmitresponse.md)**
+**[models.StandardJobSubmitResponse](../../models/standardjobsubmitresponse.md)**
 
 ### Errors
 
@@ -64,7 +64,8 @@ with Workflows(
 ## get_third_party_data_job
 
 When a third-party data query is submitted, a job ID is returned.
-This job ID can be used to poll for the job's status using the associated operation under "Job Status".
+This job ID can be used to poll for the job's status, and when complete, the results download link,
+using the associated operation under "Job Status".
 
 ### Example Usage
 
@@ -103,7 +104,7 @@ with Workflows(
 
 ### Response
 
-**[models.TypeBasedJobSubmitResponse](../../models/typebasedjobsubmitresponse.md)**
+**[models.StandardJobSubmitResponse](../../models/standardjobsubmitresponse.md)**
 
 ### Errors
 

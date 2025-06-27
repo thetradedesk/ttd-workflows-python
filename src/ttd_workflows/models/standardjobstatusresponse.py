@@ -15,7 +15,7 @@ from ttd_workflows.types import (
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class TypeBasedJobStatusResponseTypedDict(TypedDict):
+class StandardJobStatusResponseTypedDict(TypedDict):
     id: int
     r"""The ID of the job."""
     created_at_utc: datetime
@@ -35,7 +35,7 @@ class TypeBasedJobStatusResponseTypedDict(TypedDict):
     r"""A list of errors encountered during workflow processing."""
 
 
-class TypeBasedJobStatusResponse(BaseModel):
+class StandardJobStatusResponse(BaseModel):
     id: int
     r"""The ID of the job."""
 

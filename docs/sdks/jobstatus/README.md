@@ -53,6 +53,8 @@ with Workflows(
 
 Use this operation to get a previously submitted job's status and completion percentage.
 Once a job is complete, this operation will return the URL from which to download the job results.
+            
+Job results expire after 24 hours, at which point you will need to submit a new job.
 
 ### Example Usage
 
@@ -81,7 +83,7 @@ with Workflows(
 
 ### Response
 
-**[models.TypeBasedJobStatusResponse](../../models/typebasedjobstatusresponse.md)**
+**[models.StandardJobStatusResponse](../../models/standardjobstatusresponse.md)**
 
 ### Errors
 

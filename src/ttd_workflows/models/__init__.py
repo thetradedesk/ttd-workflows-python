@@ -255,6 +255,14 @@ if TYPE_CHECKING:
     from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
     from .restapimethodtype import RestAPIMethodType
     from .security import Security, SecurityTypedDict
+    from .standardjobstatusresponse import (
+        StandardJobStatusResponse,
+        StandardJobStatusResponseTypedDict,
+    )
+    from .standardjobsubmitresponse import (
+        StandardJobSubmitResponse,
+        StandardJobSubmitResponseTypedDict,
+    )
     from .submitgraphqlrequestop import (
         SubmitGraphQlRequestResponse,
         SubmitGraphQlRequestResponseTypedDict,
@@ -267,14 +275,6 @@ if TYPE_CHECKING:
     from .targetinggender import TargetingGender
     from .targetingstartage import TargetingStartAge
     from .thirdpartydatainput import ThirdPartyDataInput, ThirdPartyDataInputTypedDict
-    from .typebasedjobstatusresponse import (
-        TypeBasedJobStatusResponse,
-        TypeBasedJobStatusResponseTypedDict,
-    )
-    from .typebasedjobsubmitresponse import (
-        TypeBasedJobSubmitResponse,
-        TypeBasedJobSubmitResponseTypedDict,
-    )
     from .workflowcallbackinput import (
         WorkflowCallbackInput,
         WorkflowCallbackInputTypedDict,
@@ -433,6 +433,10 @@ __all__ = [
     "RestAPIMethodType",
     "Security",
     "SecurityTypedDict",
+    "StandardJobStatusResponse",
+    "StandardJobStatusResponseTypedDict",
+    "StandardJobSubmitResponse",
+    "StandardJobSubmitResponseTypedDict",
     "SubmitGraphQlRequestResponse",
     "SubmitGraphQlRequestResponseTypedDict",
     "SubmitRestRequestResponse",
@@ -442,10 +446,6 @@ __all__ = [
     "TargetingStartAge",
     "ThirdPartyDataInput",
     "ThirdPartyDataInputTypedDict",
-    "TypeBasedJobStatusResponse",
-    "TypeBasedJobStatusResponseTypedDict",
-    "TypeBasedJobSubmitResponse",
-    "TypeBasedJobSubmitResponseTypedDict",
     "Variables",
     "VariablesTypedDict",
     "WorkflowCallbackInput",
@@ -607,6 +607,10 @@ _dynamic_imports: dict[str, str] = {
     "RestAPIMethodType": ".restapimethodtype",
     "Security": ".security",
     "SecurityTypedDict": ".security",
+    "StandardJobStatusResponse": ".standardjobstatusresponse",
+    "StandardJobStatusResponseTypedDict": ".standardjobstatusresponse",
+    "StandardJobSubmitResponse": ".standardjobsubmitresponse",
+    "StandardJobSubmitResponseTypedDict": ".standardjobsubmitresponse",
     "SubmitGraphQlRequestResponse": ".submitgraphqlrequestop",
     "SubmitGraphQlRequestResponseTypedDict": ".submitgraphqlrequestop",
     "SubmitRestRequestResponse": ".submitrestrequestop",
@@ -616,10 +620,6 @@ _dynamic_imports: dict[str, str] = {
     "TargetingStartAge": ".targetingstartage",
     "ThirdPartyDataInput": ".thirdpartydatainput",
     "ThirdPartyDataInputTypedDict": ".thirdpartydatainput",
-    "TypeBasedJobStatusResponse": ".typebasedjobstatusresponse",
-    "TypeBasedJobStatusResponseTypedDict": ".typebasedjobstatusresponse",
-    "TypeBasedJobSubmitResponse": ".typebasedjobsubmitresponse",
-    "TypeBasedJobSubmitResponseTypedDict": ".typebasedjobsubmitresponse",
     "WorkflowCallbackInput": ".workflowcallbackinput",
     "WorkflowCallbackInputTypedDict": ".workflowcallbackinput",
     "WorkflowStatus": ".workflowstatus",

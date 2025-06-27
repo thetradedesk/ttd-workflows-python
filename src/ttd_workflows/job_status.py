@@ -235,11 +235,13 @@ class JobStatus(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobStatusResponse:
+    ) -> models.StandardJobStatusResponse:
         r"""Get the status of a previously submitted job
 
         Use this operation to get a previously submitted job's status and completion percentage.
         Once a job is complete, this operation will return the URL from which to download the job results.
+
+        Job results expire after 24 hours, at which point you will need to submit a new job.
 
         :param id:
         :param retries: Override the default retry configuration for this method
@@ -263,7 +265,7 @@ class JobStatus(BaseSDK):
 
         req = self._build_request(
             method="GET",
-            path="/typebasedjob/{id}/status",
+            path="/standardjob/{id}/status",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -306,9 +308,7 @@ class JobStatus(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobStatusResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobStatusResponse)
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
@@ -344,11 +344,13 @@ class JobStatus(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobStatusResponse:
+    ) -> models.StandardJobStatusResponse:
         r"""Get the status of a previously submitted job
 
         Use this operation to get a previously submitted job's status and completion percentage.
         Once a job is complete, this operation will return the URL from which to download the job results.
+
+        Job results expire after 24 hours, at which point you will need to submit a new job.
 
         :param id:
         :param retries: Override the default retry configuration for this method
@@ -372,7 +374,7 @@ class JobStatus(BaseSDK):
 
         req = self._build_request_async(
             method="GET",
-            path="/typebasedjob/{id}/status",
+            path="/standardjob/{id}/status",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -415,9 +417,7 @@ class JobStatus(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobStatusResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobStatusResponse)
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):

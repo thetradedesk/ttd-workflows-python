@@ -22,7 +22,7 @@ class AdGroup(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobSubmitResponse:
+    ) -> models.StandardJobSubmitResponse:
         r"""Create multiple new ad groups with required fields
 
         :param request: The request object to send.
@@ -51,7 +51,7 @@ class AdGroup(BaseSDK):
 
         req = self._build_request(
             method="POST",
-            path="/typebasedjob/adgroup/bulk",
+            path="/standardjob/adgroup/bulk",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -101,9 +101,7 @@ class AdGroup(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobSubmitResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
         if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
@@ -142,7 +140,7 @@ class AdGroup(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobSubmitResponse:
+    ) -> models.StandardJobSubmitResponse:
         r"""Create multiple new ad groups with required fields
 
         :param request: The request object to send.
@@ -171,7 +169,7 @@ class AdGroup(BaseSDK):
 
         req = self._build_request_async(
             method="POST",
-            path="/typebasedjob/adgroup/bulk",
+            path="/standardjob/adgroup/bulk",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -221,9 +219,7 @@ class AdGroup(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobSubmitResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
         if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
@@ -262,7 +258,7 @@ class AdGroup(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobSubmitResponse:
+    ) -> models.StandardJobSubmitResponse:
         r"""Update multiple ad groups with specified fields
 
         Only the fields provided in the request payload for each specific ad group will be updated.
@@ -293,7 +289,7 @@ class AdGroup(BaseSDK):
 
         req = self._build_request(
             method="PATCH",
-            path="/typebasedjob/adgroup/bulk",
+            path="/standardjob/adgroup/bulk",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -343,9 +339,7 @@ class AdGroup(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobSubmitResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
         if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData
@@ -384,7 +378,7 @@ class AdGroup(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobSubmitResponse:
+    ) -> models.StandardJobSubmitResponse:
         r"""Update multiple ad groups with specified fields
 
         Only the fields provided in the request payload for each specific ad group will be updated.
@@ -415,7 +409,7 @@ class AdGroup(BaseSDK):
 
         req = self._build_request_async(
             method="PATCH",
-            path="/typebasedjob/adgroup/bulk",
+            path="/standardjob/adgroup/bulk",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -465,9 +459,7 @@ class AdGroup(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobSubmitResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
         if utils.match_response(http_res, ["400", "403"], "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.ProblemDetailsErrorData

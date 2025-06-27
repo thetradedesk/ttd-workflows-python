@@ -3,20 +3,12 @@
 <!-- Start Summary [summary] -->
 ## Summary
 
-Workflows Service: ## Operations for commonly used workflows.
+Workflows Service: Operations for commonly used workflows.
 This service provides operations for commonly used workflows on The Trade Desk's platform.
 In addition, this service provides generic operations for submitting:
 
 - GraphQL API requests
 - REST API requests
-
-To interface with this service, we provide SDKs in multiple languages.
-For each available language, there is a code sample displayed to the right of each operation.
-
-To get started with the SDK in your language of choice, see the associated guide:
-
-- Java - coming soon
-- [Python](https://pypi.org/project/ttd-workflows/)
 
 For further explanation on the entities encountered in this documentation (e.g.,
 [campaigns](https://partner.thetradedesk.com/v3/portal/api/doc/Campaigns) and
@@ -566,7 +558,7 @@ with Workflows(
 ### [graph_ql_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphqlrequest/README.md)
 
 * [submit_graph_ql_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphqlrequest/README.md#submit_graph_ql_request) - Submit a valid GraphQL query or mutation
-* [submit_graph_ql_query_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphqlrequest/README.md#submit_graph_ql_query_job) - Submit a valid bulk GraphQL query.
+* [submit_graph_ql_query_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphqlrequest/README.md#submit_graph_ql_query_job) - Submit a valid bulk GraphQL query
 
 ### [job_status](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/jobstatus/README.md)
 

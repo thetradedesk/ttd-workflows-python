@@ -19,7 +19,7 @@ class Dmp(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobSubmitResponse:
+    ) -> models.StandardJobSubmitResponse:
         r"""Submit a job for first-party data retrieval for an advertiser
 
         When a first-party data query is submitted, a job ID is returned.
@@ -47,7 +47,7 @@ class Dmp(BaseSDK):
 
         req = self._build_request(
             method="POST",
-            path="/typebasedjob/firstpartydata",
+            path="/standardjob/firstpartydata",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -93,9 +93,7 @@ class Dmp(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobSubmitResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
@@ -133,7 +131,7 @@ class Dmp(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobSubmitResponse:
+    ) -> models.StandardJobSubmitResponse:
         r"""Submit a job for first-party data retrieval for an advertiser
 
         When a first-party data query is submitted, a job ID is returned.
@@ -161,7 +159,7 @@ class Dmp(BaseSDK):
 
         req = self._build_request_async(
             method="POST",
-            path="/typebasedjob/firstpartydata",
+            path="/standardjob/firstpartydata",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -207,9 +205,7 @@ class Dmp(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobSubmitResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
@@ -247,11 +243,12 @@ class Dmp(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobSubmitResponse:
+    ) -> models.StandardJobSubmitResponse:
         r"""Submit a job for third-party data retrieval for a partner
 
         When a third-party data query is submitted, a job ID is returned.
-        This job ID can be used to poll for the job's status using the associated operation under \"Job Status\".
+        This job ID can be used to poll for the job's status, and when complete, the results download link,
+        using the associated operation under \"Job Status\".
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -275,7 +272,7 @@ class Dmp(BaseSDK):
 
         req = self._build_request(
             method="POST",
-            path="/typebasedjob/thirdpartydata",
+            path="/standardjob/thirdpartydata",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -321,9 +318,7 @@ class Dmp(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobSubmitResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
@@ -361,11 +356,12 @@ class Dmp(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.TypeBasedJobSubmitResponse:
+    ) -> models.StandardJobSubmitResponse:
         r"""Submit a job for third-party data retrieval for a partner
 
         When a third-party data query is submitted, a job ID is returned.
-        This job ID can be used to poll for the job's status using the associated operation under \"Job Status\".
+        This job ID can be used to poll for the job's status, and when complete, the results download link,
+        using the associated operation under \"Job Status\".
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -389,7 +385,7 @@ class Dmp(BaseSDK):
 
         req = self._build_request_async(
             method="POST",
-            path="/typebasedjob/thirdpartydata",
+            path="/standardjob/thirdpartydata",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -435,9 +431,7 @@ class Dmp(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.TypeBasedJobSubmitResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):

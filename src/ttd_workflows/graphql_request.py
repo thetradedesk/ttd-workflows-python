@@ -248,10 +248,10 @@ class GraphQLRequest(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.GraphQlQueryJobResponse:
-        r"""Submit a valid bulk GraphQL query.
+        r"""Submit a valid bulk GraphQL query
 
         This generic operation can be used to execute any valid bulk GraphQL query.
-        For information on bulk GraphQ query syntax, see [GraphQL API Bulk Operations](https://partner.thetradedesk.com/v3/portal/api/doc/GqlBulkOperations).
+        For information on bulk GraphQL query syntax, see [GraphQL API Bulk Operations](https://partner.thetradedesk.com/v3/portal/api/doc/GqlBulkOperations).
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -360,10 +360,10 @@ class GraphQLRequest(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.GraphQlQueryJobResponse:
-        r"""Submit a valid bulk GraphQL query.
+        r"""Submit a valid bulk GraphQL query
 
         This generic operation can be used to execute any valid bulk GraphQL query.
-        For information on bulk GraphQ query syntax, see [GraphQL API Bulk Operations](https://partner.thetradedesk.com/v3/portal/api/doc/GqlBulkOperations).
+        For information on bulk GraphQL query syntax, see [GraphQL API Bulk Operations](https://partner.thetradedesk.com/v3/portal/api/doc/GqlBulkOperations).
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method

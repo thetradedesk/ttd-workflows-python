@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 20ff1beb02c6fa046350b8e6762e279b
+  docChecksum: 551b6512daf666e21c05d36e35296de4
   docVersion: v1
   speakeasyVersion: 1.570.2
   generationVersion: 2.638.5
-  releaseVersion: 0.7.3
-  configChecksum: a3f85b0e5a01bc52623a4a4a2583d27e
+  releaseVersion: 0.7.4
+  configChecksum: 718bc7770d68446bbaabc38c92759969
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
@@ -121,14 +121,14 @@ generatedFiles:
   - docs/models/problemdetailserror.md
   - docs/models/restapimethodtype.md
   - docs/models/security.md
+  - docs/models/standardjobstatusresponse.md
+  - docs/models/standardjobsubmitresponse.md
   - docs/models/submitgraphqlrequestresponse.md
   - docs/models/submitrestrequestresponse.md
   - docs/models/targetingendage.md
   - docs/models/targetinggender.md
   - docs/models/targetingstartage.md
   - docs/models/thirdpartydatainput.md
-  - docs/models/typebasedjobstatusresponse.md
-  - docs/models/typebasedjobsubmitresponse.md
   - docs/models/utils/retryconfig.md
   - docs/models/variables.md
   - docs/models/workflowcallbackinput.md
@@ -244,14 +244,14 @@ generatedFiles:
   - src/ttd_workflows/models/problemdetails_error.py
   - src/ttd_workflows/models/restapimethodtype.py
   - src/ttd_workflows/models/security.py
+  - src/ttd_workflows/models/standardjobstatusresponse.py
+  - src/ttd_workflows/models/standardjobsubmitresponse.py
   - src/ttd_workflows/models/submitgraphqlrequestop.py
   - src/ttd_workflows/models/submitrestrequestop.py
   - src/ttd_workflows/models/targetingendage.py
   - src/ttd_workflows/models/targetinggender.py
   - src/ttd_workflows/models/targetingstartage.py
   - src/ttd_workflows/models/thirdpartydatainput.py
-  - src/ttd_workflows/models/typebasedjobstatusresponse.py
-  - src/ttd_workflows/models/typebasedjobsubmitresponse.py
   - src/ttd_workflows/models/workflowcallbackinput.py
   - src/ttd_workflows/models/workflowstatus.py
   - src/ttd_workflows/py.typed
