@@ -7,8 +7,9 @@ from .utils.logger import Logger, get_default_logger
 from .utils.retries import RetryConfig
 import httpx
 import importlib
-from ttd_workflows import models, utils
+from ttd_workflows import utils
 from ttd_workflows._hooks import SDKHooks
+from ttd_workflows.models import components
 from ttd_workflows.types import OptionalNullable, UNSET
 from typing import Any, Callable, Dict, Optional, TYPE_CHECKING, Union, cast
 import weakref
@@ -24,8 +25,8 @@ if TYPE_CHECKING:
     from ttd_workflows.rest_request import RESTRequest
 
 
-class Workflows(BaseSDK):
-    r"""Workflows Service: Operations for commonly used workflows.
+class TtdWorkflows(BaseSDK):
+    r"""Workflows Service:
     This service provides operations for commonly used workflows on The Trade Desk's platform.
     In addition, this service provides generic operations for submitting:
 
@@ -104,9 +105,9 @@ class Workflows(BaseSDK):
         security: Any = None
         if callable(ttd_auth):
             # pylint: disable=unnecessary-lambda-assignment
-            security = lambda: models.Security(ttd_auth=ttd_auth())
+            security = lambda: components.Security(ttd_auth=ttd_auth())
         else:
-            security = models.Security(ttd_auth=ttd_auth)
+            security = components.Security(ttd_auth=ttd_auth)
 
         if server_url is not None:
             if url_params is not None:

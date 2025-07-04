@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 551b6512daf666e21c05d36e35296de4
+  docChecksum: 8ef393d710e3f396c9bf8ab5bea341ac
   docVersion: v1
-  speakeasyVersion: 1.570.2
-  generationVersion: 2.638.5
-  releaseVersion: 0.7.4
-  configChecksum: 718bc7770d68446bbaabc38c92759969
+  speakeasyVersion: 1.580.0
+  generationVersion: 2.654.2
+  releaseVersion: 0.7.5
+  configChecksum: 434a6cf7b6dc1f8e3a5c12d282d7aeeb
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
@@ -15,7 +15,7 @@ features:
     additionalDependencies: 1.0.0
     additionalProperties: 1.0.1
     constsAndDefaults: 1.0.5
-    core: 5.19.3
+    core: 5.19.4
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     enumUnions: 0.1.0
@@ -38,101 +38,119 @@ generatedFiles:
   - .devcontainer/devcontainer.json
   - .devcontainer/setup.sh
   - .gitattributes
-  - .python-version
   - .vscode/settings.json
   - USAGE.md
-  - docs/models/adgroupassociatebidlist.md
-  - docs/models/adgroupaudiencetargeting.md
-  - docs/models/adgroupbudget.md
-  - docs/models/adgroupbulkcreateworkflowinputwithvalidation.md
-  - docs/models/adgroupbulkupdateworkflowinputwithvalidation.md
-  - docs/models/adgroupchannel.md
-  - docs/models/adgroupcomscoresettings.md
-  - docs/models/adgroupcontracttargeting.md
-  - docs/models/adgroupcreateworkflowinput.md
-  - docs/models/adgroupcreateworkflowinputwithvalidation.md
-  - docs/models/adgroupcreateworkflowprimaryinput.md
-  - docs/models/adgroupflight.md
-  - docs/models/adgroupfunnellocation.md
-  - docs/models/adgroupkoaoptimizationsettings.md
-  - docs/models/adgroupnielsentrackingattributes.md
-  - docs/models/adgrouppayload.md
-  - docs/models/adgrouproigoal.md
-  - docs/models/adgroupupdateworkflowinput.md
-  - docs/models/adgroupupdateworkflowinputwithvalidation.md
-  - docs/models/adgroupupdateworkflowprimaryinput.md
-  - docs/models/adgroupworkflow.md
-  - docs/models/adgroupworkflowadvancedinput.md
-  - docs/models/adgroupworkflowassociatebidlistinput.md
-  - docs/models/adgroupworkflowaudiencetargetinginput.md
-  - docs/models/adgroupworkflowbudgetinput.md
-  - docs/models/adgroupworkflowcomscoresettingsinput.md
-  - docs/models/adgroupworkflowcontracttargetinginput.md
-  - docs/models/adgroupworkflowflightinput.md
-  - docs/models/adgroupworkflowkoaoptimizationsettingsinput.md
-  - docs/models/adgroupworkflownewfrequencyconfiginput.md
-  - docs/models/adgroupworkflownielsentrackingattributesinput.md
-  - docs/models/adgroupworkflowroigoalinput.md
-  - docs/models/allocationtype.md
-  - docs/models/archiveadgroupsrequest.md
-  - docs/models/archivecampaignsrequest.md
-  - docs/models/bulkjobstatus.md
-  - docs/models/callrestapiworkflowinput.md
-  - docs/models/campaignbulkcreateworkflowinputwithvalidation.md
-  - docs/models/campaignbulkupdateworkflowinputwithvalidation.md
-  - docs/models/campaignchanneltype.md
-  - docs/models/campaigncreateworkflowadgroupadvancedinput.md
-  - docs/models/campaigncreateworkflowadgroupflightinput.md
-  - docs/models/campaigncreateworkflowadgroupinput.md
-  - docs/models/campaigncreateworkflowinput.md
-  - docs/models/campaigncreateworkflowinputwithvalidation.md
-  - docs/models/campaigncreateworkflowprimaryinput.md
-  - docs/models/campaignflightworkflow.md
-  - docs/models/campaignpacingmode.md
-  - docs/models/campaignpayload.md
-  - docs/models/campaignupdateworkflowinput.md
-  - docs/models/campaignupdateworkflowinputwithvalidation.md
-  - docs/models/campaignupdateworkflowprimaryinput.md
-  - docs/models/campaignversionworkflow.md
-  - docs/models/campaignworkflow.md
-  - docs/models/campaignworkflowadvancedinput.md
-  - docs/models/campaignworkflowbudgetinput.md
-  - docs/models/campaignworkflowcampaignconversionreportingcolumninput.md
-  - docs/models/campaignworkflowflightinput.md
-  - docs/models/campaignworkflowroigoalinput.md
-  - docs/models/customcpatype.md
-  - docs/models/customroasconfig.md
-  - docs/models/dimensionalbiddingdimensions.md
-  - docs/models/enhancednielsenreportingoptions.md
-  - docs/models/firstpartydatainput.md
-  - docs/models/getcampaignversionrequest.md
-  - docs/models/getgraphqlqueryjobstatusrequest.md
-  - docs/models/getjobstatusrequest.md
-  - docs/models/graphqljobcallbackinput.md
-  - docs/models/graphqlqueryjob.md
-  - docs/models/graphqlqueryjoberror.md
-  - docs/models/graphqlqueryjobinput.md
-  - docs/models/graphqlqueryjobpayload.md
-  - docs/models/graphqlqueryjobresponse.md
-  - docs/models/graphqlqueryjobretrievalresponse.md
-  - docs/models/graphqlrequestinput.md
-  - docs/models/keyvaluepairofstringandstringinput.md
-  - docs/models/problemdetails.md
-  - docs/models/problemdetailserror.md
-  - docs/models/restapimethodtype.md
-  - docs/models/security.md
-  - docs/models/standardjobstatusresponse.md
-  - docs/models/standardjobsubmitresponse.md
-  - docs/models/submitgraphqlrequestresponse.md
-  - docs/models/submitrestrequestresponse.md
-  - docs/models/targetingendage.md
-  - docs/models/targetinggender.md
-  - docs/models/targetingstartage.md
-  - docs/models/thirdpartydatainput.md
+  - docs/models/components/adgroupassociatebidlist.md
+  - docs/models/components/adgroupaudiencetargeting.md
+  - docs/models/components/adgroupbudget.md
+  - docs/models/components/adgroupbulkcreateworkflowinputwithvalidation.md
+  - docs/models/components/adgroupbulkupdateworkflowinputwithvalidation.md
+  - docs/models/components/adgroupchannel.md
+  - docs/models/components/adgroupcomscoresettings.md
+  - docs/models/components/adgroupcontracttargeting.md
+  - docs/models/components/adgroupcreateworkflowinput.md
+  - docs/models/components/adgroupcreateworkflowinputwithvalidation.md
+  - docs/models/components/adgroupcreateworkflowprimaryinput.md
+  - docs/models/components/adgroupflight.md
+  - docs/models/components/adgroupfunnellocation.md
+  - docs/models/components/adgroupkoaoptimizationsettings.md
+  - docs/models/components/adgroupnielsentrackingattributes.md
+  - docs/models/components/adgrouppayload.md
+  - docs/models/components/adgrouproigoal.md
+  - docs/models/components/adgroupupdateworkflowinput.md
+  - docs/models/components/adgroupupdateworkflowinputwithvalidation.md
+  - docs/models/components/adgroupupdateworkflowprimaryinput.md
+  - docs/models/components/adgroupworkflow.md
+  - docs/models/components/adgroupworkflowadvancedinput.md
+  - docs/models/components/adgroupworkflowassociatebidlistinput.md
+  - docs/models/components/adgroupworkflowaudiencetargetinginput.md
+  - docs/models/components/adgroupworkflowbudgetinput.md
+  - docs/models/components/adgroupworkflowcomscoresettingsinput.md
+  - docs/models/components/adgroupworkflowcontracttargetinginput.md
+  - docs/models/components/adgroupworkflowflightinput.md
+  - docs/models/components/adgroupworkflowkoaoptimizationsettingsinput.md
+  - docs/models/components/adgroupworkflownewfrequencyconfiginput.md
+  - docs/models/components/adgroupworkflownielsentrackingattributesinput.md
+  - docs/models/components/adgroupworkflowroigoalinput.md
+  - docs/models/components/allocationtype.md
+  - docs/models/components/bulkjobstatus.md
+  - docs/models/components/callrestapiworkflowinput.md
+  - docs/models/components/campaignbulkcreateworkflowinputwithvalidation.md
+  - docs/models/components/campaignbulkupdateworkflowinputwithvalidation.md
+  - docs/models/components/campaignchanneltype.md
+  - docs/models/components/campaigncreateworkflowadgroupadvancedinput.md
+  - docs/models/components/campaigncreateworkflowadgroupflightinput.md
+  - docs/models/components/campaigncreateworkflowadgroupinput.md
+  - docs/models/components/campaigncreateworkflowinput.md
+  - docs/models/components/campaigncreateworkflowinputwithvalidation.md
+  - docs/models/components/campaigncreateworkflowprimaryinput.md
+  - docs/models/components/campaignflightworkflow.md
+  - docs/models/components/campaignpacingmode.md
+  - docs/models/components/campaignpayload.md
+  - docs/models/components/campaignupdateworkflowinput.md
+  - docs/models/components/campaignupdateworkflowinputwithvalidation.md
+  - docs/models/components/campaignupdateworkflowprimaryinput.md
+  - docs/models/components/campaignversionworkflow.md
+  - docs/models/components/campaignworkflow.md
+  - docs/models/components/campaignworkflowadvancedinput.md
+  - docs/models/components/campaignworkflowbudgetinput.md
+  - docs/models/components/campaignworkflowcampaignconversionreportingcolumninput.md
+  - docs/models/components/campaignworkflowflightinput.md
+  - docs/models/components/campaignworkflowroigoalinput.md
+  - docs/models/components/customcpatype.md
+  - docs/models/components/customroasconfig.md
+  - docs/models/components/dimensionalbiddingdimensions.md
+  - docs/models/components/enhancednielsenreportingoptions.md
+  - docs/models/components/firstpartydatainput.md
+  - docs/models/components/graphqljobcallbackinput.md
+  - docs/models/components/graphqlqueryjob.md
+  - docs/models/components/graphqlqueryjoberror.md
+  - docs/models/components/graphqlqueryjobinput.md
+  - docs/models/components/graphqlqueryjobpayload.md
+  - docs/models/components/graphqlqueryjobresponse.md
+  - docs/models/components/graphqlqueryjobretrievalresponse.md
+  - docs/models/components/graphqlrequestinput.md
+  - docs/models/components/httpmetadata.md
+  - docs/models/components/keyvaluepairofstringandstringinput.md
+  - docs/models/components/problemdetails.md
+  - docs/models/components/restapimethodtype.md
+  - docs/models/components/security.md
+  - docs/models/components/standardjobstatusresponse.md
+  - docs/models/components/standardjobsubmitresponse.md
+  - docs/models/components/targetingendage.md
+  - docs/models/components/targetinggender.md
+  - docs/models/components/targetingstartage.md
+  - docs/models/components/thirdpartydatainput.md
+  - docs/models/components/variables.md
+  - docs/models/components/workflowcallbackinput.md
+  - docs/models/components/workflowstatus.md
+  - docs/models/errors/problemdetailserror.md
+  - docs/models/operations/archiveadgroupsrequest.md
+  - docs/models/operations/archiveadgroupsresponse.md
+  - docs/models/operations/archivecampaignsrequest.md
+  - docs/models/operations/archivecampaignsresponse.md
+  - docs/models/operations/createadgroupresponse.md
+  - docs/models/operations/createadgroupsjobresponse.md
+  - docs/models/operations/createcampaignresponse.md
+  - docs/models/operations/createcampaignsjobresponse.md
+  - docs/models/operations/getcampaignversionrequest.md
+  - docs/models/operations/getcampaignversionresponse.md
+  - docs/models/operations/getfirstpartydatajobresponse.md
+  - docs/models/operations/getgraphqlqueryjobstatusrequest.md
+  - docs/models/operations/getgraphqlqueryjobstatusresponse.md
+  - docs/models/operations/getjobstatusrequest.md
+  - docs/models/operations/getjobstatusresponse.md
+  - docs/models/operations/getthirdpartydatajobresponse.md
+  - docs/models/operations/submitgraphqlqueryjobresponse.md
+  - docs/models/operations/submitgraphqlrequestresponse.md
+  - docs/models/operations/submitgraphqlrequestresponsebody.md
+  - docs/models/operations/submitrestrequestresponse.md
+  - docs/models/operations/submitrestrequestresponsebody.md
+  - docs/models/operations/updateadgroupresponse.md
+  - docs/models/operations/updateadgroupsjobresponse.md
+  - docs/models/operations/updatecampaignresponse.md
+  - docs/models/operations/updatecampaignsjobresponse.md
   - docs/models/utils/retryconfig.md
-  - docs/models/variables.md
-  - docs/models/workflowcallbackinput.md
-  - docs/models/workflowstatus.md
   - docs/sdks/adgroup/README.md
   - docs/sdks/adgroups/README.md
   - docs/sdks/campaign/README.md
@@ -141,7 +159,7 @@ generatedFiles:
   - docs/sdks/graphqlrequest/README.md
   - docs/sdks/jobstatus/README.md
   - docs/sdks/restrequest/README.md
-  - docs/sdks/workflows/README.md
+  - docs/sdks/ttdworkflows/README.md
   - poetry.toml
   - py.typed
   - pylintrc
@@ -163,97 +181,115 @@ generatedFiles:
   - src/ttd_workflows/httpclient.py
   - src/ttd_workflows/job_status.py
   - src/ttd_workflows/models/__init__.py
-  - src/ttd_workflows/models/adgroupassociatebidlist.py
-  - src/ttd_workflows/models/adgroupaudiencetargeting.py
-  - src/ttd_workflows/models/adgroupbudget.py
-  - src/ttd_workflows/models/adgroupbulkcreateworkflowinputwithvalidation.py
-  - src/ttd_workflows/models/adgroupbulkupdateworkflowinputwithvalidation.py
-  - src/ttd_workflows/models/adgroupchannel.py
-  - src/ttd_workflows/models/adgroupcomscoresettings.py
-  - src/ttd_workflows/models/adgroupcontracttargeting.py
-  - src/ttd_workflows/models/adgroupcreateworkflowinput.py
-  - src/ttd_workflows/models/adgroupcreateworkflowinputwithvalidation.py
-  - src/ttd_workflows/models/adgroupcreateworkflowprimaryinput.py
-  - src/ttd_workflows/models/adgroupflight.py
-  - src/ttd_workflows/models/adgroupfunnellocation.py
-  - src/ttd_workflows/models/adgroupkoaoptimizationsettings.py
-  - src/ttd_workflows/models/adgroupnielsentrackingattributes.py
-  - src/ttd_workflows/models/adgrouppayload.py
-  - src/ttd_workflows/models/adgrouproigoal.py
-  - src/ttd_workflows/models/adgroupupdateworkflowinput.py
-  - src/ttd_workflows/models/adgroupupdateworkflowinputwithvalidation.py
-  - src/ttd_workflows/models/adgroupupdateworkflowprimaryinput.py
-  - src/ttd_workflows/models/adgroupworkflow.py
-  - src/ttd_workflows/models/adgroupworkflowadvancedinput.py
-  - src/ttd_workflows/models/adgroupworkflowassociatebidlistinput.py
-  - src/ttd_workflows/models/adgroupworkflowaudiencetargetinginput.py
-  - src/ttd_workflows/models/adgroupworkflowbudgetinput.py
-  - src/ttd_workflows/models/adgroupworkflowcomscoresettingsinput.py
-  - src/ttd_workflows/models/adgroupworkflowcontracttargetinginput.py
-  - src/ttd_workflows/models/adgroupworkflowflightinput.py
-  - src/ttd_workflows/models/adgroupworkflowkoaoptimizationsettingsinput.py
-  - src/ttd_workflows/models/adgroupworkflownewfrequencyconfiginput.py
-  - src/ttd_workflows/models/adgroupworkflownielsentrackingattributesinput.py
-  - src/ttd_workflows/models/adgroupworkflowroigoalinput.py
-  - src/ttd_workflows/models/allocationtype.py
-  - src/ttd_workflows/models/apierror.py
-  - src/ttd_workflows/models/archiveadgroupsop.py
-  - src/ttd_workflows/models/archivecampaignsop.py
-  - src/ttd_workflows/models/bulkjobstatus.py
-  - src/ttd_workflows/models/callrestapiworkflowinput.py
-  - src/ttd_workflows/models/campaignbulkcreateworkflowinputwithvalidation.py
-  - src/ttd_workflows/models/campaignbulkupdateworkflowinputwithvalidation.py
-  - src/ttd_workflows/models/campaignchanneltype.py
-  - src/ttd_workflows/models/campaigncreateworkflowadgroupadvancedinput.py
-  - src/ttd_workflows/models/campaigncreateworkflowadgroupflightinput.py
-  - src/ttd_workflows/models/campaigncreateworkflowadgroupinput.py
-  - src/ttd_workflows/models/campaigncreateworkflowinput.py
-  - src/ttd_workflows/models/campaigncreateworkflowinputwithvalidation.py
-  - src/ttd_workflows/models/campaigncreateworkflowprimaryinput.py
-  - src/ttd_workflows/models/campaignflightworkflow.py
-  - src/ttd_workflows/models/campaignpacingmode.py
-  - src/ttd_workflows/models/campaignpayload.py
-  - src/ttd_workflows/models/campaignupdateworkflowinput.py
-  - src/ttd_workflows/models/campaignupdateworkflowinputwithvalidation.py
-  - src/ttd_workflows/models/campaignupdateworkflowprimaryinput.py
-  - src/ttd_workflows/models/campaignversionworkflow.py
-  - src/ttd_workflows/models/campaignworkflow.py
-  - src/ttd_workflows/models/campaignworkflowadvancedinput.py
-  - src/ttd_workflows/models/campaignworkflowbudgetinput.py
-  - src/ttd_workflows/models/campaignworkflowcampaignconversionreportingcolumninput.py
-  - src/ttd_workflows/models/campaignworkflowflightinput.py
-  - src/ttd_workflows/models/campaignworkflowroigoalinput.py
-  - src/ttd_workflows/models/customcpatype.py
-  - src/ttd_workflows/models/customroasconfig.py
-  - src/ttd_workflows/models/dimensionalbiddingdimensions.py
-  - src/ttd_workflows/models/enhancednielsenreportingoptions.py
-  - src/ttd_workflows/models/firstpartydatainput.py
-  - src/ttd_workflows/models/getcampaignversionop.py
-  - src/ttd_workflows/models/getgraphqlqueryjobstatusop.py
-  - src/ttd_workflows/models/getjobstatusop.py
-  - src/ttd_workflows/models/graphqljobcallbackinput.py
-  - src/ttd_workflows/models/graphqlqueryjob.py
-  - src/ttd_workflows/models/graphqlqueryjoberror.py
-  - src/ttd_workflows/models/graphqlqueryjobinput.py
-  - src/ttd_workflows/models/graphqlqueryjobpayload.py
-  - src/ttd_workflows/models/graphqlqueryjobresponse.py
-  - src/ttd_workflows/models/graphqlqueryjobretrievalresponse.py
-  - src/ttd_workflows/models/graphqlrequestinput.py
-  - src/ttd_workflows/models/keyvaluepairofstringandstringinput.py
-  - src/ttd_workflows/models/problemdetails.py
-  - src/ttd_workflows/models/problemdetails_error.py
-  - src/ttd_workflows/models/restapimethodtype.py
-  - src/ttd_workflows/models/security.py
-  - src/ttd_workflows/models/standardjobstatusresponse.py
-  - src/ttd_workflows/models/standardjobsubmitresponse.py
-  - src/ttd_workflows/models/submitgraphqlrequestop.py
-  - src/ttd_workflows/models/submitrestrequestop.py
-  - src/ttd_workflows/models/targetingendage.py
-  - src/ttd_workflows/models/targetinggender.py
-  - src/ttd_workflows/models/targetingstartage.py
-  - src/ttd_workflows/models/thirdpartydatainput.py
-  - src/ttd_workflows/models/workflowcallbackinput.py
-  - src/ttd_workflows/models/workflowstatus.py
+  - src/ttd_workflows/models/components/__init__.py
+  - src/ttd_workflows/models/components/adgroupassociatebidlist.py
+  - src/ttd_workflows/models/components/adgroupaudiencetargeting.py
+  - src/ttd_workflows/models/components/adgroupbudget.py
+  - src/ttd_workflows/models/components/adgroupbulkcreateworkflowinputwithvalidation.py
+  - src/ttd_workflows/models/components/adgroupbulkupdateworkflowinputwithvalidation.py
+  - src/ttd_workflows/models/components/adgroupchannel.py
+  - src/ttd_workflows/models/components/adgroupcomscoresettings.py
+  - src/ttd_workflows/models/components/adgroupcontracttargeting.py
+  - src/ttd_workflows/models/components/adgroupcreateworkflowinput.py
+  - src/ttd_workflows/models/components/adgroupcreateworkflowinputwithvalidation.py
+  - src/ttd_workflows/models/components/adgroupcreateworkflowprimaryinput.py
+  - src/ttd_workflows/models/components/adgroupflight.py
+  - src/ttd_workflows/models/components/adgroupfunnellocation.py
+  - src/ttd_workflows/models/components/adgroupkoaoptimizationsettings.py
+  - src/ttd_workflows/models/components/adgroupnielsentrackingattributes.py
+  - src/ttd_workflows/models/components/adgrouppayload.py
+  - src/ttd_workflows/models/components/adgrouproigoal.py
+  - src/ttd_workflows/models/components/adgroupupdateworkflowinput.py
+  - src/ttd_workflows/models/components/adgroupupdateworkflowinputwithvalidation.py
+  - src/ttd_workflows/models/components/adgroupupdateworkflowprimaryinput.py
+  - src/ttd_workflows/models/components/adgroupworkflow.py
+  - src/ttd_workflows/models/components/adgroupworkflowadvancedinput.py
+  - src/ttd_workflows/models/components/adgroupworkflowassociatebidlistinput.py
+  - src/ttd_workflows/models/components/adgroupworkflowaudiencetargetinginput.py
+  - src/ttd_workflows/models/components/adgroupworkflowbudgetinput.py
+  - src/ttd_workflows/models/components/adgroupworkflowcomscoresettingsinput.py
+  - src/ttd_workflows/models/components/adgroupworkflowcontracttargetinginput.py
+  - src/ttd_workflows/models/components/adgroupworkflowflightinput.py
+  - src/ttd_workflows/models/components/adgroupworkflowkoaoptimizationsettingsinput.py
+  - src/ttd_workflows/models/components/adgroupworkflownewfrequencyconfiginput.py
+  - src/ttd_workflows/models/components/adgroupworkflownielsentrackingattributesinput.py
+  - src/ttd_workflows/models/components/adgroupworkflowroigoalinput.py
+  - src/ttd_workflows/models/components/allocationtype.py
+  - src/ttd_workflows/models/components/bulkjobstatus.py
+  - src/ttd_workflows/models/components/callrestapiworkflowinput.py
+  - src/ttd_workflows/models/components/campaignbulkcreateworkflowinputwithvalidation.py
+  - src/ttd_workflows/models/components/campaignbulkupdateworkflowinputwithvalidation.py
+  - src/ttd_workflows/models/components/campaignchanneltype.py
+  - src/ttd_workflows/models/components/campaigncreateworkflowadgroupadvancedinput.py
+  - src/ttd_workflows/models/components/campaigncreateworkflowadgroupflightinput.py
+  - src/ttd_workflows/models/components/campaigncreateworkflowadgroupinput.py
+  - src/ttd_workflows/models/components/campaigncreateworkflowinput.py
+  - src/ttd_workflows/models/components/campaigncreateworkflowinputwithvalidation.py
+  - src/ttd_workflows/models/components/campaigncreateworkflowprimaryinput.py
+  - src/ttd_workflows/models/components/campaignflightworkflow.py
+  - src/ttd_workflows/models/components/campaignpacingmode.py
+  - src/ttd_workflows/models/components/campaignpayload.py
+  - src/ttd_workflows/models/components/campaignupdateworkflowinput.py
+  - src/ttd_workflows/models/components/campaignupdateworkflowinputwithvalidation.py
+  - src/ttd_workflows/models/components/campaignupdateworkflowprimaryinput.py
+  - src/ttd_workflows/models/components/campaignversionworkflow.py
+  - src/ttd_workflows/models/components/campaignworkflow.py
+  - src/ttd_workflows/models/components/campaignworkflowadvancedinput.py
+  - src/ttd_workflows/models/components/campaignworkflowbudgetinput.py
+  - src/ttd_workflows/models/components/campaignworkflowcampaignconversionreportingcolumninput.py
+  - src/ttd_workflows/models/components/campaignworkflowflightinput.py
+  - src/ttd_workflows/models/components/campaignworkflowroigoalinput.py
+  - src/ttd_workflows/models/components/customcpatype.py
+  - src/ttd_workflows/models/components/customroasconfig.py
+  - src/ttd_workflows/models/components/dimensionalbiddingdimensions.py
+  - src/ttd_workflows/models/components/enhancednielsenreportingoptions.py
+  - src/ttd_workflows/models/components/firstpartydatainput.py
+  - src/ttd_workflows/models/components/graphqljobcallbackinput.py
+  - src/ttd_workflows/models/components/graphqlqueryjob.py
+  - src/ttd_workflows/models/components/graphqlqueryjoberror.py
+  - src/ttd_workflows/models/components/graphqlqueryjobinput.py
+  - src/ttd_workflows/models/components/graphqlqueryjobpayload.py
+  - src/ttd_workflows/models/components/graphqlqueryjobresponse.py
+  - src/ttd_workflows/models/components/graphqlqueryjobretrievalresponse.py
+  - src/ttd_workflows/models/components/graphqlrequestinput.py
+  - src/ttd_workflows/models/components/httpmetadata.py
+  - src/ttd_workflows/models/components/keyvaluepairofstringandstringinput.py
+  - src/ttd_workflows/models/components/problemdetails.py
+  - src/ttd_workflows/models/components/restapimethodtype.py
+  - src/ttd_workflows/models/components/security.py
+  - src/ttd_workflows/models/components/standardjobstatusresponse.py
+  - src/ttd_workflows/models/components/standardjobsubmitresponse.py
+  - src/ttd_workflows/models/components/targetingendage.py
+  - src/ttd_workflows/models/components/targetinggender.py
+  - src/ttd_workflows/models/components/targetingstartage.py
+  - src/ttd_workflows/models/components/thirdpartydatainput.py
+  - src/ttd_workflows/models/components/workflowcallbackinput.py
+  - src/ttd_workflows/models/components/workflowstatus.py
+  - src/ttd_workflows/models/errors/__init__.py
+  - src/ttd_workflows/models/errors/apierror.py
+  - src/ttd_workflows/models/errors/no_response_error.py
+  - src/ttd_workflows/models/errors/problemdetails_error.py
+  - src/ttd_workflows/models/errors/responsevalidationerror.py
+  - src/ttd_workflows/models/errors/ttdworkflowserror.py
+  - src/ttd_workflows/models/operations/__init__.py
+  - src/ttd_workflows/models/operations/archiveadgroups.py
+  - src/ttd_workflows/models/operations/archivecampaigns.py
+  - src/ttd_workflows/models/operations/createadgroup.py
+  - src/ttd_workflows/models/operations/createadgroupsjob.py
+  - src/ttd_workflows/models/operations/createcampaign.py
+  - src/ttd_workflows/models/operations/createcampaignsjob.py
+  - src/ttd_workflows/models/operations/getcampaignversion.py
+  - src/ttd_workflows/models/operations/getfirstpartydatajob.py
+  - src/ttd_workflows/models/operations/getgraphqlqueryjobstatus.py
+  - src/ttd_workflows/models/operations/getjobstatus.py
+  - src/ttd_workflows/models/operations/getthirdpartydatajob.py
+  - src/ttd_workflows/models/operations/submitgraphqlqueryjob.py
+  - src/ttd_workflows/models/operations/submitgraphqlrequest.py
+  - src/ttd_workflows/models/operations/submitrestrequest.py
+  - src/ttd_workflows/models/operations/updateadgroup.py
+  - src/ttd_workflows/models/operations/updateadgroupsjob.py
+  - src/ttd_workflows/models/operations/updatecampaign.py
+  - src/ttd_workflows/models/operations/updatecampaignsjob.py
   - src/ttd_workflows/py.typed
   - src/ttd_workflows/rest_request.py
   - src/ttd_workflows/sdk.py
@@ -274,6 +310,7 @@ generatedFiles:
   - src/ttd_workflows/utils/retries.py
   - src/ttd_workflows/utils/security.py
   - src/ttd_workflows/utils/serializers.py
+  - src/ttd_workflows/utils/unmarshal_json_response.py
   - src/ttd_workflows/utils/url.py
   - src/ttd_workflows/utils/values.py
 examples:

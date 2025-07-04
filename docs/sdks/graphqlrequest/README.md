@@ -17,40 +17,42 @@ To explore the available GraphQL operations, see the [GraphQL Schema Explorer](h
 
 ```python
 import os
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.graph_ql_request.submit_graph_ql_request(request={
+    res = tw_client.graph_ql_request.submit_graph_ql_request(request={
         "request": "<value>",
         "variables": {},
     })
 
+    assert res.object is not None
+
     # Handle response
-    print(res)
+    print(res.object)
 
 ```
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `request`                                                           | [models.GraphQLRequestInput](../../models/graphqlrequestinput.md)   | :heavy_check_mark:                                                  | The request object to use for the request.                          |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [components.GraphQLRequestInput](../../models/components/graphqlrequestinput.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `retries`                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                 | :heavy_minus_sign:                                                               | Configuration to override the default retry behavior of the client.              |
 
 ### Response
 
-**[models.SubmitGraphQlRequestResponse](../../models/submitgraphqlrequestresponse.md)**
+**[operations.SubmitGraphQlRequestResponse](../../models/operations/submitgraphqlrequestresponse.md)**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 401, 403, 404         | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+| errors.ProblemDetailsError | 400, 401, 403, 404         | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## submit_graph_ql_query_job
 
@@ -61,14 +63,14 @@ For information on bulk GraphQL query syntax, see [GraphQL API Bulk Operations](
 
 ```python
 import os
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.graph_ql_request.submit_graph_ql_query_job(request={
+    res = tw_client.graph_ql_request.submit_graph_ql_query_job(request={
         "query": "<value>",
         "callback_input": {
             "callback_url": "https://wilted-cork.net/",
@@ -81,25 +83,27 @@ with Workflows(
         },
     })
 
+    assert res.graph_ql_query_job_response is not None
+
     # Handle response
-    print(res)
+    print(res.graph_ql_query_job_response)
 
 ```
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `request`                                                           | [models.GraphQlQueryJobInput](../../models/graphqlqueryjobinput.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [components.GraphQlQueryJobInput](../../models/components/graphqlqueryjobinput.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `retries`                                                                          | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                   | :heavy_minus_sign:                                                                 | Configuration to override the default retry behavior of the client.                |
 
 ### Response
 
-**[models.GraphQlQueryJobResponse](../../models/graphqlqueryjobresponse.md)**
+**[operations.SubmitGraphQlQueryJobResponse](../../models/operations/submitgraphqlqueryjobresponse.md)**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 401, 403, 404         | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+| errors.ProblemDetailsError | 400, 401, 403, 404         | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

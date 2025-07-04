@@ -18,25 +18,25 @@ Create a new campaign with required fields
 
 ```python
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 from ttd_workflows.utils import parse_datetime
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.campaign.create(request={
+    res = tw_client.campaign.create(request={
         "primary_input": {
             "description": "woot furthermore mentor",
             "time_zone": "Europe/Ulyanovsk",
             "custom_cpa_click_weight": 2561.01,
             "custom_cpa_viewthrough_weight": 5604.35,
-            "custom_cpa_type": ttd_workflows.CustomCPAType.CLICK_VIEWTHROUGH_WEIGHTING,
+            "custom_cpa_type": components.CustomCPAType.CLICK_VIEWTHROUGH_WEIGHTING,
             "impressions_only_budgeting_cpm": 1502.33,
             "budget": {
-                "pacing_mode": ttd_workflows.CampaignPacingMode.PACE_AS_SOON_AS_POSSIBLE,
+                "pacing_mode": components.CampaignPacingMode.PACE_AS_SOON_AS_POSSIBLE,
                 "budget_in_advertiser_currency": 6363.35,
                 "budget_in_impressions": 836518,
                 "daily_target_in_advertiser_currency": 7814.79,
@@ -61,7 +61,7 @@ with Workflows(
             ],
             "advertiser_id": "<id>",
             "name": "<value>",
-            "primary_channel": ttd_workflows.CampaignChannelType.DOOH,
+            "primary_channel": components.CampaignChannelType.DOOH,
             "primary_goal": {
                 "maximize_reach": False,
                 "maximize_ltv_incremental_reach": None,
@@ -97,7 +97,7 @@ with Workflows(
                     "is_enabled": False,
                     "description": "quash lightly rot bashfully slope",
                     "budget": {
-                        "allocation_type": ttd_workflows.AllocationType.MINIMUM,
+                        "allocation_type": components.AllocationType.MINIMUM,
                         "budget_in_advertiser_currency": 4043.98,
                         "budget_in_impressions": 907414,
                         "daily_target_in_advertiser_currency": 49.95,
@@ -144,8 +144,8 @@ with Workflows(
                         },
                     ],
                     "name": "<value>",
-                    "channel": ttd_workflows.AdGroupChannel.NATIVE_VIDEO,
-                    "funnel_location": ttd_workflows.AdGroupFunnelLocation.NONE,
+                    "channel": components.AdGroupChannel.NATIVE_VIDEO,
+                    "funnel_location": components.AdGroupFunnelLocation.NONE,
                     "programmatic_guaranteed_private_contract_id": "<id>",
                 },
                 "advanced_input": {
@@ -164,19 +164,19 @@ with Workflows(
                     },
                     "dimensional_bidding_auto_optimization_settings": [
                         [
-                            ttd_workflows.DimensionalBiddingDimensions.HAS_FULL_REFERRER_URL,
+                            components.DimensionalBiddingDimensions.HAS_FULL_REFERRER_URL,
                         ],
                         [
-                            ttd_workflows.DimensionalBiddingDimensions.HAS_PUBLISHER_ID,
+                            components.DimensionalBiddingDimensions.HAS_PUBLISHER_ID,
                         ],
                     ],
                     "is_use_clicks_as_conversions_enabled": None,
                     "is_use_secondary_conversions_enabled": True,
                     "nielsen_tracking_attributes": {
-                        "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                        "gender": ttd_workflows.TargetingGender.FEMALE,
-                        "start_age": ttd_workflows.TargetingStartAge.THIRTY_FIVE,
-                        "end_age": ttd_workflows.TargetingEndAge.FORTY_NINE,
+                        "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.SITE,
+                        "gender": components.TargetingGender.FEMALE,
+                        "start_age": components.TargetingStartAge.THIRTY_FIVE,
+                        "end_age": components.TargetingEndAge.FORTY_NINE,
                         "countries": [],
                     },
                     "new_frequency_configs": [
@@ -189,7 +189,7 @@ with Workflows(
                     ],
                     "flights": [
                         {
-                            "allocation_type": ttd_workflows.AllocationType.FIXED,
+                            "allocation_type": components.AllocationType.FIXED,
                             "budget_in_advertiser_currency": 5340.32,
                             "budget_in_impressions": 492382,
                             "daily_target_in_advertiser_currency": 5622.5,
@@ -202,28 +202,30 @@ with Workflows(
         "validate_input_only": False,
     })
 
+    assert res.campaign_payload is not None
+
     # Handle response
-    print(res)
+    print(res.campaign_payload)
 
 ```
 
 ### Parameters
 
-| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                     | [models.CampaignCreateWorkflowInputWithValidation](../../models/campaigncreateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                            | The request object to use for the request.                                                                    |
-| `retries`                                                                                                     | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                              | :heavy_minus_sign:                                                                                            | Configuration to override the default retry behavior of the client.                                           |
+| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                    | [components.CampaignCreateWorkflowInputWithValidation](../../models/components/campaigncreateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
+| `retries`                                                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                             | :heavy_minus_sign:                                                                                                           | Configuration to override the default retry behavior of the client.                                                          |
 
 ### Response
 
-**[models.CampaignPayload](../../models/campaignpayload.md)**
+**[operations.CreateCampaignResponse](../../models/operations/createcampaignresponse.md)**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 403                   | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+| errors.ProblemDetailsError | 400, 403                   | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## create_campaigns_job
 
@@ -233,16 +235,16 @@ Create multiple new campaigns with required fields
 
 ```python
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 from ttd_workflows.utils import parse_datetime
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.campaign.create_campaigns_job(request={
+    res = tw_client.campaign.create_campaigns_job(request={
         "input": [
             {
                 "primary_input": {
@@ -250,10 +252,10 @@ with Workflows(
                     "time_zone": "America/North_Dakota/Center",
                     "custom_cpa_click_weight": 9662.9,
                     "custom_cpa_viewthrough_weight": 3558.78,
-                    "custom_cpa_type": ttd_workflows.CustomCPAType.CLICK_VIEWTHROUGH_WEIGHTING,
+                    "custom_cpa_type": components.CustomCPAType.CLICK_VIEWTHROUGH_WEIGHTING,
                     "impressions_only_budgeting_cpm": 4427.56,
                     "budget": {
-                        "pacing_mode": ttd_workflows.CampaignPacingMode.PACE_AHEAD,
+                        "pacing_mode": components.CampaignPacingMode.PACE_AHEAD,
                         "budget_in_advertiser_currency": 5501.96,
                         "budget_in_impressions": 629784,
                         "daily_target_in_advertiser_currency": 2524.41,
@@ -278,7 +280,7 @@ with Workflows(
                     ],
                     "advertiser_id": "<id>",
                     "name": "<value>",
-                    "primary_channel": ttd_workflows.CampaignChannelType.NATIVE_VIDEO,
+                    "primary_channel": components.CampaignChannelType.NATIVE_VIDEO,
                     "primary_goal": {
                         "maximize_reach": False,
                         "maximize_ltv_incremental_reach": False,
@@ -314,7 +316,7 @@ with Workflows(
                             "is_enabled": True,
                             "description": "scenario dish gracefully through tame yahoo pension husband as atop",
                             "budget": {
-                                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                                "allocation_type": components.AllocationType.MAXIMUM,
                                 "budget_in_advertiser_currency": 2283.06,
                                 "budget_in_impressions": 301691,
                                 "daily_target_in_advertiser_currency": 9268.18,
@@ -362,8 +364,8 @@ with Workflows(
                                 },
                             ],
                             "name": "<value>",
-                            "channel": ttd_workflows.AdGroupChannel.DISPLAY,
-                            "funnel_location": ttd_workflows.AdGroupFunnelLocation.AWARENESS,
+                            "channel": components.AdGroupChannel.DISPLAY,
+                            "funnel_location": components.AdGroupFunnelLocation.AWARENESS,
                             "programmatic_guaranteed_private_contract_id": "<id>",
                         },
                         "advanced_input": {
@@ -385,17 +387,17 @@ with Workflows(
                             },
                             "dimensional_bidding_auto_optimization_settings": [
                                 [
-                                    ttd_workflows.DimensionalBiddingDimensions.HAS_AUDIENCE_REACH_PERCENTAGE_TIER_ID,
+                                    components.DimensionalBiddingDimensions.HAS_AUDIENCE_REACH_PERCENTAGE_TIER_ID,
                                 ],
                                 [],
                             ],
                             "is_use_clicks_as_conversions_enabled": False,
                             "is_use_secondary_conversions_enabled": True,
                             "nielsen_tracking_attributes": {
-                                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.NONE,
-                                "gender": ttd_workflows.TargetingGender.FEMALE,
-                                "start_age": ttd_workflows.TargetingStartAge.THIRTY_FIVE,
-                                "end_age": ttd_workflows.TargetingEndAge.TWENTY_FOUR,
+                                "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.NONE,
+                                "gender": components.TargetingGender.FEMALE,
+                                "start_age": components.TargetingStartAge.THIRTY_FIVE,
+                                "end_age": components.TargetingEndAge.TWENTY_FOUR,
                                 "countries": [
                                     "<value 1>",
                                     "<value 2>",
@@ -404,7 +406,7 @@ with Workflows(
                             "new_frequency_configs": None,
                             "flights": [
                                 {
-                                    "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                                    "allocation_type": components.AllocationType.MAXIMUM,
                                     "budget_in_advertiser_currency": 4838.47,
                                     "budget_in_impressions": 420224,
                                     "daily_target_in_advertiser_currency": 1513.78,
@@ -425,28 +427,30 @@ with Workflows(
         },
     })
 
+    assert res.standard_job_submit_response is not None
+
     # Handle response
-    print(res)
+    print(res.standard_job_submit_response)
 
 ```
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                             | [models.CampaignBulkCreateWorkflowInputWithValidation](../../models/campaignbulkcreateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                                    | The request object to use for the request.                                                                            |
-| `retries`                                                                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                      | :heavy_minus_sign:                                                                                                    | Configuration to override the default retry behavior of the client.                                                   |
+| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                            | [components.CampaignBulkCreateWorkflowInputWithValidation](../../models/components/campaignbulkcreateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
+| `retries`                                                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                     | :heavy_minus_sign:                                                                                                                   | Configuration to override the default retry behavior of the client.                                                                  |
 
 ### Response
 
-**[models.StandardJobSubmitResponse](../../models/standardjobsubmitresponse.md)**
+**[operations.CreateCampaignsJobResponse](../../models/operations/createcampaignsjobresponse.md)**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 403                   | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+| errors.ProblemDetailsError | 400, 403                   | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## update_campaigns_job
 
@@ -456,16 +460,16 @@ Only the fields provided in the request payload for each specific campaign will 
 
 ```python
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 from ttd_workflows.utils import parse_datetime
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.campaign.update_campaigns_job(request={
+    res = tw_client.campaign.update_campaigns_job(request={
         "input": [
             {
                 "id": "<id>",
@@ -474,10 +478,10 @@ with Workflows(
                     "time_zone": "America/Argentina/San_Juan",
                     "custom_cpa_click_weight": None,
                     "custom_cpa_viewthrough_weight": 8361.84,
-                    "custom_cpa_type": ttd_workflows.CustomCPAType.PIXEL_WEIGHTING,
+                    "custom_cpa_type": components.CustomCPAType.PIXEL_WEIGHTING,
                     "impressions_only_budgeting_cpm": 2706.4,
                     "budget": {
-                        "pacing_mode": ttd_workflows.CampaignPacingMode.PACE_AS_SOON_AS_POSSIBLE,
+                        "pacing_mode": components.CampaignPacingMode.PACE_AS_SOON_AS_POSSIBLE,
                         "budget_in_advertiser_currency": 2564.89,
                         "budget_in_impressions": 659726,
                         "daily_target_in_advertiser_currency": 6514.48,
@@ -501,7 +505,7 @@ with Workflows(
                         },
                     ],
                     "name": "<value>",
-                    "primary_channel": ttd_workflows.CampaignChannelType.NONE,
+                    "primary_channel": components.CampaignChannelType.NONE,
                     "primary_goal": {
                         "maximize_reach": True,
                         "maximize_ltv_incremental_reach": False,
@@ -544,28 +548,30 @@ with Workflows(
         },
     })
 
+    assert res.standard_job_submit_response is not None
+
     # Handle response
-    print(res)
+    print(res.standard_job_submit_response)
 
 ```
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                             | [models.CampaignBulkUpdateWorkflowInputWithValidation](../../models/campaignbulkupdateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                                    | The request object to use for the request.                                                                            |
-| `retries`                                                                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                      | :heavy_minus_sign:                                                                                                    | Configuration to override the default retry behavior of the client.                                                   |
+| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                            | [components.CampaignBulkUpdateWorkflowInputWithValidation](../../models/components/campaignbulkupdateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
+| `retries`                                                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                     | :heavy_minus_sign:                                                                                                                   | Configuration to override the default retry behavior of the client.                                                                  |
 
 ### Response
 
-**[models.StandardJobSubmitResponse](../../models/standardjobsubmitresponse.md)**
+**[operations.UpdateCampaignsJobResponse](../../models/operations/updatecampaignsjobresponse.md)**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 403                   | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+| errors.ProblemDetailsError | 400, 403                   | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## get_version
 
@@ -575,17 +581,19 @@ Get a campaign's version
 
 ```python
 import os
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.campaign.get_version(id="<id>")
+    res = tw_client.campaign.get_version(id="<id>")
+
+    assert res.campaign_version_workflow is not None
 
     # Handle response
-    print(res)
+    print(res.campaign_version_workflow)
 
 ```
 
@@ -598,11 +606,11 @@ with Workflows(
 
 ### Response
 
-**[models.CampaignVersionWorkflow](../../models/campaignversionworkflow.md)**
+**[operations.GetCampaignVersionResponse](../../models/operations/getcampaignversionresponse.md)**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 401, 403, 404         | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+| errors.ProblemDetailsError | 400, 401, 403, 404         | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

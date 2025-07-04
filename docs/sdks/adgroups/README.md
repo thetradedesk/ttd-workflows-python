@@ -17,20 +17,20 @@ Create a new ad group with required fields
 
 ```python
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.ad_groups.create(request={
+    res = tw_client.ad_groups.create(request={
         "primary_input": {
             "is_enabled": False,
             "description": "twine from gosh poor safely editor astride vice lost and",
             "budget": {
-                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                "allocation_type": components.AllocationType.MAXIMUM,
                 "budget_in_advertiser_currency": 3786.02,
                 "budget_in_impressions": 783190,
                 "daily_target_in_advertiser_currency": 9747.02,
@@ -74,8 +74,8 @@ with Workflows(
                 },
             ],
             "name": "<value>",
-            "channel": ttd_workflows.AdGroupChannel.DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+            "channel": components.AdGroupChannel.DISPLAY,
+            "funnel_location": components.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": "<id>",
         },
         "campaign_id": "<id>",
@@ -107,10 +107,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.SITE,
+                "gender": components.TargetingGender.MALE,
+                "start_age": components.TargetingStartAge.TWENTY_FIVE,
+                "end_age": components.TargetingEndAge.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -127,7 +127,7 @@ with Workflows(
             ],
             "flights": [
                 {
-                    "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                    "allocation_type": components.AllocationType.MAXIMUM,
                     "budget_in_advertiser_currency": 4070.96,
                     "budget_in_impressions": 901477,
                     "daily_target_in_advertiser_currency": 5847.35,
@@ -139,30 +139,30 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 
 ### Parameters
 
-| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                   | [models.AdGroupCreateWorkflowInputWithValidation](../../models/adgroupcreateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                          | The request object to use for the request.                                                                  |
-| `retries`                                                                                                   | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                            | :heavy_minus_sign:                                                                                          | Configuration to override the default retry behavior of the client.                                         |
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                  | [components.AdGroupCreateWorkflowInputWithValidation](../../models/components/adgroupcreateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
+| `retries`                                                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                           | :heavy_minus_sign:                                                                                                         | Configuration to override the default retry behavior of the client.                                                        |
 
 ### Response
 
-**[models.AdGroupPayload](../../models/adgrouppayload.md)**
+**[operations.CreateAdGroupResponse](../../models/operations/createadgroupresponse.md)**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 403                   | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+| errors.ProblemDetailsError | 400, 403                   | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## update
 
@@ -172,21 +172,21 @@ Only the fields provided in the request payload will be updated.
 
 ```python
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.ad_groups.update(request={
+    res = tw_client.ad_groups.update(request={
         "id": "<id>",
         "primary_input": {
             "is_enabled": None,
             "description": "likely upliftingly league that finally after owlishly when furthermore brush",
             "budget": {
-                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                "allocation_type": components.AllocationType.MAXIMUM,
                 "budget_in_advertiser_currency": 2166.43,
                 "budget_in_impressions": 508947,
                 "daily_target_in_advertiser_currency": 5830.53,
@@ -236,8 +236,8 @@ with Workflows(
                 },
             ],
             "name": "<value>",
-            "channel": ttd_workflows.AdGroupChannel.NATIVE,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONVERSION,
+            "channel": components.AdGroupChannel.NATIVE,
+            "funnel_location": components.AdGroupFunnelLocation.CONVERSION,
         },
         "advanced_input": {
             "koa_optimization_settings": {
@@ -263,16 +263,16 @@ with Workflows(
             },
             "dimensional_bidding_auto_optimization_settings": [
                 [
-                    ttd_workflows.DimensionalBiddingDimensions.HAS_CONTENT_LIVESTREAM,
+                    components.DimensionalBiddingDimensions.HAS_CONTENT_LIVESTREAM,
                 ],
             ],
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.NONE,
-                "gender": ttd_workflows.TargetingGender.FEMALE,
-                "start_age": ttd_workflows.TargetingStartAge.FIFTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SIXTY_FOUR_PLUS,
+                "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.NONE,
+                "gender": components.TargetingGender.FEMALE,
+                "start_age": components.TargetingStartAge.FIFTY_FIVE,
+                "end_age": components.TargetingEndAge.SIXTY_FOUR_PLUS,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -288,7 +288,7 @@ with Workflows(
             ],
             "flights": [
                 {
-                    "allocation_type": ttd_workflows.AllocationType.MINIMUM,
+                    "allocation_type": components.AllocationType.MINIMUM,
                     "budget_in_advertiser_currency": 5325.23,
                     "budget_in_impressions": 876101,
                     "daily_target_in_advertiser_currency": 44.58,
@@ -300,28 +300,30 @@ with Workflows(
         "validate_input_only": False,
     })
 
+    assert res.ad_group_payload is not None
+
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 
 ### Parameters
 
-| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                   | [models.AdGroupUpdateWorkflowInputWithValidation](../../models/adgroupupdateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                          | The request object to use for the request.                                                                  |
-| `retries`                                                                                                   | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                            | :heavy_minus_sign:                                                                                          | Configuration to override the default retry behavior of the client.                                         |
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                  | [components.AdGroupUpdateWorkflowInputWithValidation](../../models/components/adgroupupdateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
+| `retries`                                                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                           | :heavy_minus_sign:                                                                                                         | Configuration to override the default retry behavior of the client.                                                        |
 
 ### Response
 
-**[models.AdGroupPayload](../../models/adgrouppayload.md)**
+**[operations.UpdateAdGroupResponse](../../models/operations/updateadgroupresponse.md)**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 403                   | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+| errors.ProblemDetailsError | 400, 403                   | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## archive
 
@@ -331,20 +333,22 @@ with Workflows(
 
 ```python
 import os
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.ad_groups.archive(force_archive=False, request_body=[
+    res = tw_client.ad_groups.archive(force_archive=False, request_body=[
         "<value 1>",
         "<value 2>",
     ])
 
+    assert res.strings is not None
+
     # Handle response
-    print(res)
+    print(res.strings)
 
 ```
 
@@ -358,11 +362,11 @@ with Workflows(
 
 ### Response
 
-**[List[str]](../../models/.md)**
+**[operations.ArchiveAdGroupsResponse](../../models/operations/archiveadgroupsresponse.md)**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 403                   | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+| errors.ProblemDetailsError | 400, 403                   | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

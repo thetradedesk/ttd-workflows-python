@@ -16,26 +16,26 @@ Only the fields provided in the request payload will be updated.
 
 ```python
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 from ttd_workflows.utils import parse_datetime
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.campaigns.update(request={
+    res = tw_client.campaigns.update(request={
         "id": "<id>",
         "primary_input": {
             "description": "yahoo whether frail but into form sway neck notwithstanding",
             "time_zone": "Asia/Amman",
             "custom_cpa_click_weight": 1380.93,
             "custom_cpa_viewthrough_weight": 3991.98,
-            "custom_cpa_type": ttd_workflows.CustomCPAType.CLICK_VIEWTHROUGH_WEIGHTING,
+            "custom_cpa_type": components.CustomCPAType.CLICK_VIEWTHROUGH_WEIGHTING,
             "impressions_only_budgeting_cpm": 126.57,
             "budget": {
-                "pacing_mode": ttd_workflows.CampaignPacingMode.PACE_AS_SOON_AS_POSSIBLE,
+                "pacing_mode": components.CampaignPacingMode.PACE_AS_SOON_AS_POSSIBLE,
                 "budget_in_advertiser_currency": 6974.82,
                 "budget_in_impressions": 834352,
                 "daily_target_in_advertiser_currency": 8583.49,
@@ -59,7 +59,7 @@ with Workflows(
                 },
             ],
             "name": "<value>",
-            "primary_channel": ttd_workflows.CampaignChannelType.DISPLAY,
+            "primary_channel": components.CampaignChannelType.DISPLAY,
             "primary_goal": {
                 "maximize_reach": False,
                 "maximize_ltv_incremental_reach": True,
@@ -92,28 +92,30 @@ with Workflows(
         "validate_input_only": True,
     })
 
+    assert res.campaign_payload is not None
+
     # Handle response
-    print(res)
+    print(res.campaign_payload)
 
 ```
 
 ### Parameters
 
-| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                     | [models.CampaignUpdateWorkflowInputWithValidation](../../models/campaignupdateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                            | The request object to use for the request.                                                                    |
-| `retries`                                                                                                     | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                              | :heavy_minus_sign:                                                                                            | Configuration to override the default retry behavior of the client.                                           |
+| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                    | [components.CampaignUpdateWorkflowInputWithValidation](../../models/components/campaignupdateworkflowinputwithvalidation.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
+| `retries`                                                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                             | :heavy_minus_sign:                                                                                                           | Configuration to override the default retry behavior of the client.                                                          |
 
 ### Response
 
-**[models.CampaignPayload](../../models/campaignpayload.md)**
+**[operations.UpdateCampaignResponse](../../models/operations/updatecampaignresponse.md)**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400                        | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+| errors.ProblemDetailsError | 400                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## archive
 
@@ -123,21 +125,23 @@ with Workflows(
 
 ```python
 import os
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.campaigns.archive(force_archive=False, request_body=[
+    res = tw_client.campaigns.archive(force_archive=False, request_body=[
         "<value 1>",
         "<value 2>",
         "<value 3>",
     ])
 
+    assert res.strings is not None
+
     # Handle response
-    print(res)
+    print(res.strings)
 
 ```
 
@@ -151,11 +155,11 @@ with Workflows(
 
 ### Response
 
-**[List[str]](../../models/.md)**
+**[operations.ArchiveCampaignsResponse](../../models/operations/archivecampaignsresponse.md)**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 403                   | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+| errors.ProblemDetailsError | 400, 403                   | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

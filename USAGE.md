@@ -2,20 +2,20 @@
 ```python
 # Synchronous Example
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.ad_groups.create(request={
+    res = tw_client.ad_groups.create(request={
         "primary_input": {
             "is_enabled": False,
             "description": "twine from gosh poor safely editor astride vice lost and",
             "budget": {
-                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                "allocation_type": components.AllocationType.MAXIMUM,
                 "budget_in_advertiser_currency": 3786.02,
                 "budget_in_impressions": 783190,
                 "daily_target_in_advertiser_currency": 9747.02,
@@ -59,8 +59,8 @@ with Workflows(
                 },
             ],
             "name": "<value>",
-            "channel": ttd_workflows.AdGroupChannel.DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+            "channel": components.AdGroupChannel.DISPLAY,
+            "funnel_location": components.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": "<id>",
         },
         "campaign_id": "<id>",
@@ -92,10 +92,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.SITE,
+                "gender": components.TargetingGender.MALE,
+                "start_age": components.TargetingStartAge.TWENTY_FIVE,
+                "end_age": components.TargetingEndAge.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -112,7 +112,7 @@ with Workflows(
             ],
             "flights": [
                 {
-                    "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                    "allocation_type": components.AllocationType.MAXIMUM,
                     "budget_in_advertiser_currency": 4070.96,
                     "budget_in_impressions": 901477,
                     "daily_target_in_advertiser_currency": 5847.35,
@@ -124,10 +124,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 ```
 
 </br>
@@ -137,21 +137,21 @@ The same SDK client can also be used to make asychronous requests by importing a
 # Asynchronous Example
 import asyncio
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 
 async def main():
 
-    async with Workflows(
+    async with TtdWorkflows(
         ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-    ) as workflows:
+    ) as tw_client:
 
-        res = await workflows.ad_groups.create_async(request={
+        res = await tw_client.ad_groups.create_async(request={
             "primary_input": {
                 "is_enabled": False,
                 "description": "twine from gosh poor safely editor astride vice lost and",
                 "budget": {
-                    "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                    "allocation_type": components.AllocationType.MAXIMUM,
                     "budget_in_advertiser_currency": 3786.02,
                     "budget_in_impressions": 783190,
                     "daily_target_in_advertiser_currency": 9747.02,
@@ -195,8 +195,8 @@ async def main():
                     },
                 ],
                 "name": "<value>",
-                "channel": ttd_workflows.AdGroupChannel.DISPLAY,
-                "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+                "channel": components.AdGroupChannel.DISPLAY,
+                "funnel_location": components.AdGroupFunnelLocation.CONSIDERATION,
                 "programmatic_guaranteed_private_contract_id": "<id>",
             },
             "campaign_id": "<id>",
@@ -228,10 +228,10 @@ async def main():
                 "is_use_clicks_as_conversions_enabled": False,
                 "is_use_secondary_conversions_enabled": False,
                 "nielsen_tracking_attributes": {
-                    "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                    "gender": ttd_workflows.TargetingGender.MALE,
-                    "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                    "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                    "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.SITE,
+                    "gender": components.TargetingGender.MALE,
+                    "start_age": components.TargetingStartAge.TWENTY_FIVE,
+                    "end_age": components.TargetingEndAge.SEVENTEEN,
                     "countries": [
                         "<value 1>",
                         "<value 2>",
@@ -248,7 +248,7 @@ async def main():
                 ],
                 "flights": [
                     {
-                        "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                        "allocation_type": components.AllocationType.MAXIMUM,
                         "budget_in_advertiser_currency": 4070.96,
                         "budget_in_impressions": 901477,
                         "daily_target_in_advertiser_currency": 5847.35,
@@ -260,10 +260,10 @@ async def main():
             "validate_input_only": True,
         })
 
-        assert res is not None
+        assert res.ad_group_payload is not None
 
         # Handle response
-        print(res)
+        print(res.ad_group_payload)
 
 asyncio.run(main())
 ```

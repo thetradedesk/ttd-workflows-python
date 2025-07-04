@@ -17,17 +17,19 @@ Once a job is complete, this operation will return the URL from which to downloa
 
 ```python
 import os
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.job_status.get_graph_ql_query_job_status(id="<id>")
+    res = tw_client.job_status.get_graph_ql_query_job_status(id="<id>")
+
+    assert res.graph_ql_query_job_retrieval_response is not None
 
     # Handle response
-    print(res)
+    print(res.graph_ql_query_job_retrieval_response)
 
 ```
 
@@ -40,14 +42,14 @@ with Workflows(
 
 ### Response
 
-**[models.GraphQLQueryJobRetrievalResponse](../../models/graphqlqueryjobretrievalresponse.md)**
+**[operations.GetGraphQlQueryJobStatusResponse](../../models/operations/getgraphqlqueryjobstatusresponse.md)**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 401, 403, 404         | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+| errors.ProblemDetailsError | 400, 401, 403, 404         | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## get_job_status
 
@@ -60,17 +62,19 @@ Job results expire after 24 hours, at which point you will need to submit a new 
 
 ```python
 import os
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.job_status.get_job_status(id=412651)
+    res = tw_client.job_status.get_job_status(id=412651)
+
+    assert res.standard_job_status_response is not None
 
     # Handle response
-    print(res)
+    print(res.standard_job_status_response)
 
 ```
 
@@ -83,11 +87,11 @@ with Workflows(
 
 ### Response
 
-**[models.StandardJobStatusResponse](../../models/standardjobstatusresponse.md)**
+**[operations.GetJobStatusResponse](../../models/operations/getjobstatusresponse.md)**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ProblemDetailsError | 400, 401, 403, 404         | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+| errors.ProblemDetailsError | 400, 401, 403, 404         | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

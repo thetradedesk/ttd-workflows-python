@@ -2,12 +2,13 @@
 
 from .sdkconfiguration import SDKConfiguration
 import httpx
-from ttd_workflows import models, utils
+from ttd_workflows import utils
 from ttd_workflows._hooks import (
     AfterErrorContext,
     AfterSuccessContext,
     BeforeRequestContext,
 )
+from ttd_workflows.models import components, errors
 from ttd_workflows.utils import RetryConfig, SerializedRequestBody, get_body_content
 from typing import Callable, List, Mapping, Optional, Tuple
 from urllib.parse import parse_qs, urlparse
@@ -165,7 +166,7 @@ class BaseSDK:
         if security is not None:
             if callable(security):
                 security = security()
-        security = utils.get_security_from_env(security, models.Security)
+        security = utils.get_security_from_env(security, components.Security)
         if security is not None:
             security_headers, security_query_params = utils.get_security(security)
             headers = {**headers, **security_headers}
@@ -244,7 +245,7 @@ class BaseSDK:
 
             if http_res is None:
                 logger.debug("Raising no response SDK error")
-                raise models.APIError("No response received")
+                raise errors.NoResponseError("No response received")
 
             logger.debug(
                 "Response:\nStatus Code: %s\nURL: %s\nHeaders: %s\nBody: %s",
@@ -265,7 +266,7 @@ class BaseSDK:
                     http_res = result
                 else:
                     logger.debug("Raising unexpected SDK error")
-                    raise models.APIError("Unexpected error occurred")
+                    raise errors.APIError("Unexpected error occurred", http_res)
 
             return http_res
 
@@ -316,7 +317,7 @@ class BaseSDK:
 
             if http_res is None:
                 logger.debug("Raising no response SDK error")
-                raise models.APIError("No response received")
+                raise errors.NoResponseError("No response received")
 
             logger.debug(
                 "Response:\nStatus Code: %s\nURL: %s\nHeaders: %s\nBody: %s",
@@ -337,7 +338,7 @@ class BaseSDK:
                     http_res = result
                 else:
                     logger.debug("Raising unexpected SDK error")
-                    raise models.APIError("Unexpected error occurred")
+                    raise errors.APIError("Unexpected error occurred", http_res)
 
             return http_res
 

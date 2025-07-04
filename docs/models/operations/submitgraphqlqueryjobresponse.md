@@ -1,0 +1,9 @@
+# SubmitGraphQlQueryJobResponse
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `http_meta`                                                                                        | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                 | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `graph_ql_query_job_response`                                                                      | [Optional[components.GraphQlQueryJobResponse]](../../models/components/graphqlqueryjobresponse.md) | :heavy_minus_sign:                                                                                 | OK                                                                                                 |

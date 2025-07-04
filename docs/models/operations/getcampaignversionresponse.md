@@ -1,0 +1,9 @@
+# GetCampaignVersionResponse
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `http_meta`                                                                                        | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                 | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `campaign_version_workflow`                                                                        | [Optional[components.CampaignVersionWorkflow]](../../models/components/campaignversionworkflow.md) | :heavy_minus_sign:                                                                                 | OK                                                                                                 |

@@ -10,7 +10,7 @@ from .httpclient import AsyncHttpClient, HttpClient
 from .utils import Logger, RetryConfig, remove_suffix
 from dataclasses import dataclass
 from pydantic import Field
-from ttd_workflows import models
+from ttd_workflows.models import components
 from ttd_workflows.types import OptionalNullable, UNSET
 from typing import Callable, Dict, Optional, Tuple, Union
 
@@ -33,7 +33,9 @@ class SDKConfiguration:
     async_client: Union[AsyncHttpClient, None]
     async_client_supplied: bool
     debug_logger: Logger
-    security: Optional[Union[models.Security, Callable[[], models.Security]]] = None
+    security: Optional[
+        Union[components.Security, Callable[[], components.Security]]
+    ] = None
     server_url: Optional[str] = ""
     server: Optional[str] = ""
     language: str = "python"
