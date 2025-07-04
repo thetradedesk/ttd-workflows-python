@@ -39,7 +39,6 @@ python:
   flattenGlobalSecurity: true
   flattenRequests: true
   flatteningOrder: parameters-first
-  githubURL: github.com/thetradedesk/ttd-workflows-python
   imports:
     option: openapi
     paths:
@@ -55,7 +54,6 @@ python:
     url: https://mit-license.org/
   maxMethodParams: 999
   methodArguments: infer-optional-args
-  moduleName: ""
   outputModelSuffix: output
   packageName: ttd-workflows
   pytestFilterWarnings: []
