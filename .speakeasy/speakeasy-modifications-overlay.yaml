@@ -1,0 +1,164 @@
+overlay: 1.0.0
+x-speakeasy-jsonpath: rfc9535
+info:
+  title: Speakeasy Modifications
+  version: 0.0.3
+  x-speakeasy-metadata:
+    after: ""
+    before: ""
+    type: speakeasy-modifications
+actions:
+  - target: $["paths"]["/campaign"]["post"]
+    update:
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.campaign.create()
+      before: sdk.Campaign.post_/campaign()
+      created_at: 1741620469115
+      reviewed_at: 1741620492064
+      type: method-name
+  - target: $["paths"]["/campaign/{id}/version"]["get"]
+    update:
+      x-speakeasy-name-override: getVersion
+    x-speakeasy-metadata:
+      after: sdk.campaign.getVersion()
+      before: sdk.Campaign.get_/campaign/{id}/version()
+      created_at: 1741620469115
+      reviewed_at: 1741620492064
+      type: method-name
+  - target: $["paths"]["/graphql"]["post"]
+    update:
+      x-speakeasy-group: graphql
+      x-speakeasy-name-override: execute
+    x-speakeasy-metadata:
+      after: sdk.graphql.execute()
+      before: sdk.GraphQL.post_/graphql()
+      created_at: 1741620469115
+      reviewed_at: 1741620492064
+      type: method-name
+  - target: $["paths"]["/seed"]["post"]
+    update:
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.seed.create()
+      before: sdk.Seed.post_/seed()
+      created_at: 1741620469115
+      reviewed_at: 1741620492064
+      type: method-name
+  - target: $["paths"]["/campaign/bulk"]["patch"]
+    update:
+      x-speakeasy-group: campaigns
+      x-speakeasy-name-override: bulkUpdate
+    x-speakeasy-metadata:
+      after: sdk.campaigns.bulkUpdate()
+      before: sdk.Campaign.patch_/campaign/bulk()
+      created_at: 1748046244677
+      type: method-name
+  - target: $["paths"]["/campaign"]["patch"]
+    update:
+      x-speakeasy-group: campaigns
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.campaigns.update()
+      before: sdk.Campaign.patch_/campaign()
+      created_at: 1748046244677
+      type: method-name
+  - target: $["paths"]["/adgroup"]["patch"]
+    update:
+      x-speakeasy-group: adGroups
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.adGroups.update()
+      before: sdk.AdGroup.patch_/adgroup()
+      created_at: 1748046244679
+      type: method-name
+  - target: $["paths"]["/campaign/archive"]["post"]
+    update:
+      x-speakeasy-group: campaigns
+      x-speakeasy-name-override: archive
+    x-speakeasy-metadata:
+      after: sdk.campaigns.archive()
+      before: sdk.Campaign.post_/campaign/archive()
+      created_at: 1748046244679
+      type: method-name
+  - target: $["paths"]["/graphql-request"]["post"]
+    update:
+      x-speakeasy-group: graphQl
+      x-speakeasy-name-override: postRequest
+    x-speakeasy-metadata:
+      after: sdk.graphQl.postRequest()
+      before: sdk.GraphQL.post_/graphql-request()
+      created_at: 1748046244679
+      type: method-name
+  - target: $["paths"]["/adgroup"]["post"]
+    update:
+      x-speakeasy-group: adGroups
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.adGroups.create()
+      before: sdk.AdGroup.post_/adgroup()
+      created_at: 1748046244679
+      type: method-name
+  - target: $["paths"]["/campaign/bulk"]["post"]
+    update:
+      x-speakeasy-group: campaigns
+      x-speakeasy-name-override: bulkCreate
+    x-speakeasy-metadata:
+      after: sdk.campaigns.bulkCreate()
+      before: sdk.Campaign.post_/campaign/bulk()
+      created_at: 1748046244679
+      type: method-name
+  - target: $["paths"]["/adgroup/bulk"]["post"]
+    update:
+      x-speakeasy-group: adGroups
+      x-speakeasy-name-override: bulkCreate
+    x-speakeasy-metadata:
+      after: sdk.adGroups.bulkCreate()
+      before: sdk.AdGroup.post_/adgroup/bulk()
+      created_at: 1748046244679
+      type: method-name
+  - target: $["paths"]["/bulkjob/callback"]["post"]
+    update:
+      x-speakeasy-group: bulkJobs
+      x-speakeasy-name-override: callback
+    x-speakeasy-metadata:
+      after: sdk.bulkJobs.callback()
+      before: sdk.BulkJob.post_/bulkjob/callback()
+      created_at: 1748046244679
+      type: method-name
+  - target: $["paths"]["/bulkjob/{id}/status"]["get"]
+    update:
+      x-speakeasy-group: bulkJobs
+      x-speakeasy-name-override: getStatus
+    x-speakeasy-metadata:
+      after: sdk.bulkJobs.getStatus()
+      before: sdk.BulkJob.get_/bulkjob/{id}/status()
+      created_at: 1748046244679
+      type: method-name
+  - target: $["paths"]["/adgroup/archive"]["post"]
+    update:
+      x-speakeasy-group: adGroups
+      x-speakeasy-name-override: archive
+    x-speakeasy-metadata:
+      after: sdk.adGroups.archive()
+      before: sdk.AdGroup.post_/adgroup/archive()
+      created_at: 1748046244679
+      type: method-name
+  - target: $["paths"]["/pubapi"]["post"]
+    update:
+      x-speakeasy-group: pubApis
+      x-speakeasy-name-override: post
+    x-speakeasy-metadata:
+      after: sdk.pubApis.post()
+      before: sdk.PubApi.post_/pubapi()
+      created_at: 1748046244679
+      type: method-name
+  - target: $["paths"]["/bulkjob/firstpartydata"]["post"]
+    update:
+      x-speakeasy-group: bulkJobs
+      x-speakeasy-name-override: submitFirstPartyData
+    x-speakeasy-metadata:
+      after: sdk.bulkJobs.submitFirstPartyData()
+      before: sdk.BulkJob.post_/bulkjob/firstpartydata()
+      created_at: 1748046244679
+      type: method-name

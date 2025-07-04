@@ -1,0 +1,10 @@
+# AdGroupCreateWorkflowInput
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `primary_input`                                                                            | [models.AdGroupCreateWorkflowPrimaryInput](../models/adgroupcreateworkflowprimaryinput.md) | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `campaign_id`                                                                              | *Nullable[str]*                                                                            | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `advanced_input`                                                                           | [Optional[models.AdGroupWorkflowAdvancedInput]](../models/adgroupworkflowadvancedinput.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
