@@ -1,8 +1,5 @@
 configVersion: 2.0.0
 generation:
-  devContainers:
-    enabled: true
-    schemaPath: ./api_spec.json
   sdkClassName: Workflows
   maintainOpenAPIOrder: true
   usageSnippets:
@@ -24,7 +21,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 python:
-  version: 0.7.4
+  version: 0.8.1
   additionalDependencies:
     dev: {}
     main: {}
@@ -42,6 +39,7 @@ python:
   flattenGlobalSecurity: true
   flattenRequests: true
   flatteningOrder: parameters-first
+  githubURL: github.com/thetradedesk/ttd-workflows-python
   imports:
     option: openapi
     paths:
@@ -51,6 +49,10 @@ python:
       shared: ""
       webhooks: ""
   inputModelSuffix: input
+  license:
+    name: The MIT License (MIT)
+    shortName: MIT
+    url: https://mit-license.org/
   maxMethodParams: 999
   methodArguments: infer-optional-args
   moduleName: ""
@@ -58,5 +60,5 @@ python:
   packageName: ttd-workflows
   pytestFilterWarnings: []
   pytestTimeout: 0
-  responseFormat: flat
+  responseFormat: envelope-http
   templateVersion: v2

@@ -26,8 +26,10 @@ with Workflows(
 
     res = workflows.job_status.get_graph_ql_query_job_status(id="<id>")
 
+    assert res.graph_ql_query_job_retrieval_response is not None
+
     # Handle response
-    print(res)
+    print(res.graph_ql_query_job_retrieval_response)
 
 ```
 
@@ -40,7 +42,7 @@ with Workflows(
 
 ### Response
 
-**[models.GraphQLQueryJobRetrievalResponse](../../models/graphqlqueryjobretrievalresponse.md)**
+**[models.GetGraphQlQueryJobStatusResponse](../../models/getgraphqlqueryjobstatusresponse.md)**
 
 ### Errors
 
@@ -69,8 +71,10 @@ with Workflows(
 
     res = workflows.job_status.get_job_status(id=412651)
 
+    assert res.standard_job_status_response is not None
+
     # Handle response
-    print(res)
+    print(res.standard_job_status_response)
 
 ```
 
@@ -83,7 +87,7 @@ with Workflows(
 
 ### Response
 
-**[models.StandardJobStatusResponse](../../models/standardjobstatusresponse.md)**
+**[models.GetJobStatusResponse](../../models/getjobstatusresponse.md)**
 
 ### Errors
 
