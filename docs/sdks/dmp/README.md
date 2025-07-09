@@ -38,8 +38,10 @@ with Workflows(
         },
     })
 
+    assert res.standard_job_submit_response is not None
+
     # Handle response
-    print(res)
+    print(res.standard_job_submit_response)
 
 ```
 
@@ -52,7 +54,7 @@ with Workflows(
 
 ### Response
 
-**[models.StandardJobSubmitResponse](../../models/standardjobsubmitresponse.md)**
+**[models.GetFirstPartyDataJobResponse](../../models/getfirstpartydatajobresponse.md)**
 
 ### Errors
 
@@ -90,8 +92,10 @@ with Workflows(
         },
     })
 
+    assert res.standard_job_submit_response is not None
+
     # Handle response
-    print(res)
+    print(res.standard_job_submit_response)
 
 ```
 
@@ -104,7 +108,7 @@ with Workflows(
 
 ### Response
 
-**[models.StandardJobSubmitResponse](../../models/standardjobsubmitresponse.md)**
+**[models.GetThirdPartyDataJobResponse](../../models/getthirdpartydatajobresponse.md)**
 
 ### Errors
 

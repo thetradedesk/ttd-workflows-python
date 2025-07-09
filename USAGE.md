@@ -124,10 +124,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 ```
 
 </br>
@@ -260,10 +260,10 @@ async def main():
             "validate_input_only": True,
         })
 
-        assert res is not None
+        assert res.ad_group_payload is not None
 
         # Handle response
-        print(res)
+        print(res.ad_group_payload)
 
 asyncio.run(main())
 ```

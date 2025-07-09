@@ -36,8 +36,10 @@ with Workflows(
         },
     })
 
+    assert res.standard_job_submit_response is not None
+
     # Handle response
-    print(res)
+    print(res.standard_job_submit_response)
 
 ```
 
@@ -50,7 +52,7 @@ with Workflows(
 
 ### Response
 
-**[models.StandardJobSubmitResponse](../../models/standardjobsubmitresponse.md)**
+**[models.CreateAdGroupsJobResponse](../../models/createadgroupsjobresponse.md)**
 
 ### Errors
 
@@ -185,8 +187,10 @@ with Workflows(
         },
     })
 
+    assert res.standard_job_submit_response is not None
+
     # Handle response
-    print(res)
+    print(res.standard_job_submit_response)
 
 ```
 
@@ -199,7 +203,7 @@ with Workflows(
 
 ### Response
 
-**[models.StandardJobSubmitResponse](../../models/standardjobsubmitresponse.md)**
+**[models.UpdateAdGroupsJobResponse](../../models/updateadgroupsjobresponse.md)**
 
 ### Errors
 

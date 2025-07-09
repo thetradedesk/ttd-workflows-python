@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 from .problemdetails import ProblemDetails
+import httpx
 import pydantic
-from ttd_workflows import utils
+from ttd_workflows.models import WorkflowsError
 from ttd_workflows.types import BaseModel, OptionalNullable, UNSET
 from typing import Dict, Optional
 from typing_extensions import Annotated
@@ -25,11 +26,15 @@ class ProblemDetailsErrorData(BaseModel):
     ] = None
 
 
-class ProblemDetailsError(Exception):
+class ProblemDetailsError(WorkflowsError):
     data: ProblemDetailsErrorData
 
-    def __init__(self, data: ProblemDetailsErrorData):
+    def __init__(
+        self,
+        data: ProblemDetailsErrorData,
+        raw_response: httpx.Response,
+        body: Optional[str] = None,
+    ):
+        message = body or raw_response.text
+        super().__init__(message, raw_response, body)
         self.data = data
-
-    def __str__(self) -> str:
-        return utils.marshal_json(self.data, ProblemDetailsErrorData)
