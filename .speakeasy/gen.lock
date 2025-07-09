@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 551b6512daf666e21c05d36e35296de4
+  docChecksum: 8ef393d710e3f396c9bf8ab5bea341ac
   docVersion: v1
-  speakeasyVersion: 1.570.2
-  generationVersion: 2.638.5
-  releaseVersion: 0.7.4
-  configChecksum: 718bc7770d68446bbaabc38c92759969
+  speakeasyVersion: 1.580.1
+  generationVersion: 2.656.3
+  releaseVersion: 0.8.0
+  configChecksum: 5984cecd9652671175e448f14cae2015
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
@@ -15,9 +15,8 @@ features:
     additionalDependencies: 1.0.0
     additionalProperties: 1.0.1
     constsAndDefaults: 1.0.5
-    core: 5.19.3
+    core: 5.19.4
     defaultEnabledRetries: 0.2.0
-    devContainers: 3.0.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.3.2
     flattening: 3.1.1
@@ -34,11 +33,7 @@ features:
     sdkHooks: 1.1.0
     serverIDs: 3.0.0
 generatedFiles:
-  - .devcontainer/README.md
-  - .devcontainer/devcontainer.json
-  - .devcontainer/setup.sh
   - .gitattributes
-  - .python-version
   - .vscode/settings.json
   - USAGE.md
   - docs/models/adgroupassociatebidlist.md
@@ -75,7 +70,9 @@ generatedFiles:
   - docs/models/adgroupworkflowroigoalinput.md
   - docs/models/allocationtype.md
   - docs/models/archiveadgroupsrequest.md
+  - docs/models/archiveadgroupsresponse.md
   - docs/models/archivecampaignsrequest.md
+  - docs/models/archivecampaignsresponse.md
   - docs/models/bulkjobstatus.md
   - docs/models/callrestapiworkflowinput.md
   - docs/models/campaignbulkcreateworkflowinputwithvalidation.md
@@ -100,14 +97,23 @@ generatedFiles:
   - docs/models/campaignworkflowcampaignconversionreportingcolumninput.md
   - docs/models/campaignworkflowflightinput.md
   - docs/models/campaignworkflowroigoalinput.md
+  - docs/models/createadgroupresponse.md
+  - docs/models/createadgroupsjobresponse.md
+  - docs/models/createcampaignresponse.md
+  - docs/models/createcampaignsjobresponse.md
   - docs/models/customcpatype.md
   - docs/models/customroasconfig.md
   - docs/models/dimensionalbiddingdimensions.md
   - docs/models/enhancednielsenreportingoptions.md
   - docs/models/firstpartydatainput.md
   - docs/models/getcampaignversionrequest.md
+  - docs/models/getcampaignversionresponse.md
+  - docs/models/getfirstpartydatajobresponse.md
   - docs/models/getgraphqlqueryjobstatusrequest.md
+  - docs/models/getgraphqlqueryjobstatusresponse.md
   - docs/models/getjobstatusrequest.md
+  - docs/models/getjobstatusresponse.md
+  - docs/models/getthirdpartydatajobresponse.md
   - docs/models/graphqljobcallbackinput.md
   - docs/models/graphqlqueryjob.md
   - docs/models/graphqlqueryjoberror.md
@@ -116,6 +122,7 @@ generatedFiles:
   - docs/models/graphqlqueryjobresponse.md
   - docs/models/graphqlqueryjobretrievalresponse.md
   - docs/models/graphqlrequestinput.md
+  - docs/models/httpmetadata.md
   - docs/models/keyvaluepairofstringandstringinput.md
   - docs/models/problemdetails.md
   - docs/models/problemdetailserror.md
@@ -123,12 +130,19 @@ generatedFiles:
   - docs/models/security.md
   - docs/models/standardjobstatusresponse.md
   - docs/models/standardjobsubmitresponse.md
+  - docs/models/submitgraphqlqueryjobresponse.md
   - docs/models/submitgraphqlrequestresponse.md
+  - docs/models/submitgraphqlrequestresponsebody.md
   - docs/models/submitrestrequestresponse.md
+  - docs/models/submitrestrequestresponsebody.md
   - docs/models/targetingendage.md
   - docs/models/targetinggender.md
   - docs/models/targetingstartage.md
   - docs/models/thirdpartydatainput.md
+  - docs/models/updateadgroupresponse.md
+  - docs/models/updateadgroupsjobresponse.md
+  - docs/models/updatecampaignresponse.md
+  - docs/models/updatecampaignsjobresponse.md
   - docs/models/utils/retryconfig.md
   - docs/models/variables.md
   - docs/models/workflowcallbackinput.md
@@ -223,14 +237,20 @@ generatedFiles:
   - src/ttd_workflows/models/campaignworkflowcampaignconversionreportingcolumninput.py
   - src/ttd_workflows/models/campaignworkflowflightinput.py
   - src/ttd_workflows/models/campaignworkflowroigoalinput.py
+  - src/ttd_workflows/models/createadgroupop.py
+  - src/ttd_workflows/models/createadgroupsjobop.py
+  - src/ttd_workflows/models/createcampaignop.py
+  - src/ttd_workflows/models/createcampaignsjobop.py
   - src/ttd_workflows/models/customcpatype.py
   - src/ttd_workflows/models/customroasconfig.py
   - src/ttd_workflows/models/dimensionalbiddingdimensions.py
   - src/ttd_workflows/models/enhancednielsenreportingoptions.py
   - src/ttd_workflows/models/firstpartydatainput.py
   - src/ttd_workflows/models/getcampaignversionop.py
+  - src/ttd_workflows/models/getfirstpartydatajobop.py
   - src/ttd_workflows/models/getgraphqlqueryjobstatusop.py
   - src/ttd_workflows/models/getjobstatusop.py
+  - src/ttd_workflows/models/getthirdpartydatajobop.py
   - src/ttd_workflows/models/graphqljobcallbackinput.py
   - src/ttd_workflows/models/graphqlqueryjob.py
   - src/ttd_workflows/models/graphqlqueryjoberror.py
@@ -239,20 +259,29 @@ generatedFiles:
   - src/ttd_workflows/models/graphqlqueryjobresponse.py
   - src/ttd_workflows/models/graphqlqueryjobretrievalresponse.py
   - src/ttd_workflows/models/graphqlrequestinput.py
+  - src/ttd_workflows/models/httpmetadata.py
   - src/ttd_workflows/models/keyvaluepairofstringandstringinput.py
+  - src/ttd_workflows/models/no_response_error.py
   - src/ttd_workflows/models/problemdetails.py
   - src/ttd_workflows/models/problemdetails_error.py
+  - src/ttd_workflows/models/responsevalidationerror.py
   - src/ttd_workflows/models/restapimethodtype.py
   - src/ttd_workflows/models/security.py
   - src/ttd_workflows/models/standardjobstatusresponse.py
   - src/ttd_workflows/models/standardjobsubmitresponse.py
+  - src/ttd_workflows/models/submitgraphqlqueryjobop.py
   - src/ttd_workflows/models/submitgraphqlrequestop.py
   - src/ttd_workflows/models/submitrestrequestop.py
   - src/ttd_workflows/models/targetingendage.py
   - src/ttd_workflows/models/targetinggender.py
   - src/ttd_workflows/models/targetingstartage.py
   - src/ttd_workflows/models/thirdpartydatainput.py
+  - src/ttd_workflows/models/updateadgroupop.py
+  - src/ttd_workflows/models/updateadgroupsjobop.py
+  - src/ttd_workflows/models/updatecampaignop.py
+  - src/ttd_workflows/models/updatecampaignsjobop.py
   - src/ttd_workflows/models/workflowcallbackinput.py
+  - src/ttd_workflows/models/workflowserror.py
   - src/ttd_workflows/models/workflowstatus.py
   - src/ttd_workflows/py.typed
   - src/ttd_workflows/rest_request.py
@@ -274,6 +303,7 @@ generatedFiles:
   - src/ttd_workflows/utils/retries.py
   - src/ttd_workflows/utils/security.py
   - src/ttd_workflows/utils/serializers.py
+  - src/ttd_workflows/utils/unmarshal_json_response.py
   - src/ttd_workflows/utils/url.py
   - src/ttd_workflows/utils/values.py
 examples:

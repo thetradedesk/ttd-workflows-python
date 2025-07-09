@@ -5,6 +5,7 @@ from ttd_workflows import models, utils
 from ttd_workflows._hooks import HookContext
 from ttd_workflows.types import BaseModel, OptionalNullable, UNSET
 from ttd_workflows.utils import get_security_from_env
+from ttd_workflows.utils.unmarshal_json_response import unmarshal_json_response
 from typing import Any, Mapping, Optional, Union, cast
 
 
@@ -22,7 +23,7 @@ class AdGroup(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StandardJobSubmitResponse:
+    ) -> models.CreateAdGroupsJobResponse:
         r"""Create multiple new ad groups with required fields
 
         :param request: The request object to send.
@@ -101,31 +102,25 @@ class AdGroup(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
-        if utils.match_response(http_res, ["400", "403"], "application/json"):
-            response_data = utils.unmarshal_json(
-                http_res.text, models.ProblemDetailsErrorData
+            return models.CreateAdGroupsJobResponse(
+                standard_job_submit_response=unmarshal_json_response(
+                    Optional[models.StandardJobSubmitResponse], http_res
+                ),
+                http_meta=models.HTTPMetadata(request=req, response=http_res),
             )
-            raise models.ProblemDetailsError(data=response_data)
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
+            response_data = unmarshal_json_response(
+                models.ProblemDetailsErrorData, http_res
+            )
+            raise models.ProblemDetailsError(response_data, http_res)
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise models.APIError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise models.APIError("Unexpected response received", http_res)
 
     async def create_ad_groups_job_async(
         self,
@@ -140,7 +135,7 @@ class AdGroup(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StandardJobSubmitResponse:
+    ) -> models.CreateAdGroupsJobResponse:
         r"""Create multiple new ad groups with required fields
 
         :param request: The request object to send.
@@ -219,31 +214,25 @@ class AdGroup(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
-        if utils.match_response(http_res, ["400", "403"], "application/json"):
-            response_data = utils.unmarshal_json(
-                http_res.text, models.ProblemDetailsErrorData
+            return models.CreateAdGroupsJobResponse(
+                standard_job_submit_response=unmarshal_json_response(
+                    Optional[models.StandardJobSubmitResponse], http_res
+                ),
+                http_meta=models.HTTPMetadata(request=req, response=http_res),
             )
-            raise models.ProblemDetailsError(data=response_data)
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
+            response_data = unmarshal_json_response(
+                models.ProblemDetailsErrorData, http_res
+            )
+            raise models.ProblemDetailsError(response_data, http_res)
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise models.APIError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise models.APIError("Unexpected response received", http_res)
 
     def update_ad_groups_job(
         self,
@@ -258,7 +247,7 @@ class AdGroup(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StandardJobSubmitResponse:
+    ) -> models.UpdateAdGroupsJobResponse:
         r"""Update multiple ad groups with specified fields
 
         Only the fields provided in the request payload for each specific ad group will be updated.
@@ -339,31 +328,25 @@ class AdGroup(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
-        if utils.match_response(http_res, ["400", "403"], "application/json"):
-            response_data = utils.unmarshal_json(
-                http_res.text, models.ProblemDetailsErrorData
+            return models.UpdateAdGroupsJobResponse(
+                standard_job_submit_response=unmarshal_json_response(
+                    Optional[models.StandardJobSubmitResponse], http_res
+                ),
+                http_meta=models.HTTPMetadata(request=req, response=http_res),
             )
-            raise models.ProblemDetailsError(data=response_data)
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
+            response_data = unmarshal_json_response(
+                models.ProblemDetailsErrorData, http_res
+            )
+            raise models.ProblemDetailsError(response_data, http_res)
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise models.APIError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise models.APIError("Unexpected response received", http_res)
 
     async def update_ad_groups_job_async(
         self,
@@ -378,7 +361,7 @@ class AdGroup(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StandardJobSubmitResponse:
+    ) -> models.UpdateAdGroupsJobResponse:
         r"""Update multiple ad groups with specified fields
 
         Only the fields provided in the request payload for each specific ad group will be updated.
@@ -459,28 +442,22 @@ class AdGroup(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
-        if utils.match_response(http_res, ["400", "403"], "application/json"):
-            response_data = utils.unmarshal_json(
-                http_res.text, models.ProblemDetailsErrorData
+            return models.UpdateAdGroupsJobResponse(
+                standard_job_submit_response=unmarshal_json_response(
+                    Optional[models.StandardJobSubmitResponse], http_res
+                ),
+                http_meta=models.HTTPMetadata(request=req, response=http_res),
             )
-            raise models.ProblemDetailsError(data=response_data)
+        if utils.match_response(http_res, ["400", "403"], "application/json"):
+            response_data = unmarshal_json_response(
+                models.ProblemDetailsErrorData, http_res
+            )
+            raise models.ProblemDetailsError(response_data, http_res)
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise models.APIError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise models.APIError("Unexpected response received", http_res)

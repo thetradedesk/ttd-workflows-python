@@ -25,7 +25,7 @@ if TYPE_CHECKING:
 
 
 class Workflows(BaseSDK):
-    r"""Workflows Service: Operations for commonly used workflows.
+    r"""Workflows Service:
     This service provides operations for commonly used workflows on The Trade Desk's platform.
     In addition, this service provides generic operations for submitting:
 

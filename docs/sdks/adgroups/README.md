@@ -139,10 +139,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 
@@ -155,7 +155,7 @@ with Workflows(
 
 ### Response
 
-**[models.AdGroupPayload](../../models/adgrouppayload.md)**
+**[models.CreateAdGroupResponse](../../models/createadgroupresponse.md)**
 
 ### Errors
 
@@ -300,8 +300,10 @@ with Workflows(
         "validate_input_only": False,
     })
 
+    assert res.ad_group_payload is not None
+
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 
@@ -314,7 +316,7 @@ with Workflows(
 
 ### Response
 
-**[models.AdGroupPayload](../../models/adgrouppayload.md)**
+**[models.UpdateAdGroupResponse](../../models/updateadgroupresponse.md)**
 
 ### Errors
 
@@ -343,8 +345,10 @@ with Workflows(
         "<value 2>",
     ])
 
+    assert res.strings is not None
+
     # Handle response
-    print(res)
+    print(res.strings)
 
 ```
 
@@ -358,7 +362,7 @@ with Workflows(
 
 ### Response
 
-**[List[str]](../../models/.md)**
+**[models.ArchiveAdGroupsResponse](../../models/archiveadgroupsresponse.md)**
 
 ### Errors
 

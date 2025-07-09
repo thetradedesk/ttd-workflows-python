@@ -30,8 +30,10 @@ with Workflows(
         "data_body": "<value>",
     })
 
+    assert res.object is not None
+
     # Handle response
-    print(res)
+    print(res.object)
 
 ```
 

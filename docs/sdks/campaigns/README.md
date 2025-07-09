@@ -92,8 +92,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
+    assert res.campaign_payload is not None
+
     # Handle response
-    print(res)
+    print(res.campaign_payload)
 
 ```
 
@@ -106,7 +108,7 @@ with Workflows(
 
 ### Response
 
-**[models.CampaignPayload](../../models/campaignpayload.md)**
+**[models.UpdateCampaignResponse](../../models/updatecampaignresponse.md)**
 
 ### Errors
 
@@ -136,8 +138,10 @@ with Workflows(
         "<value 3>",
     ])
 
+    assert res.strings is not None
+
     # Handle response
-    print(res)
+    print(res.strings)
 
 ```
 
@@ -151,7 +155,7 @@ with Workflows(
 
 ### Response
 
-**[List[str]](../../models/.md)**
+**[models.ArchiveCampaignsResponse](../../models/archivecampaignsresponse.md)**
 
 ### Errors
 

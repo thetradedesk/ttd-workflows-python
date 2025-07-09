@@ -5,6 +5,7 @@ from ttd_workflows import models, utils
 from ttd_workflows._hooks import HookContext
 from ttd_workflows.types import BaseModel, OptionalNullable, UNSET
 from ttd_workflows.utils import get_security_from_env
+from ttd_workflows.utils.unmarshal_json_response import unmarshal_json_response
 from typing import Any, Mapping, Optional, Union, cast
 
 
@@ -19,7 +20,7 @@ class Dmp(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StandardJobSubmitResponse:
+    ) -> models.GetFirstPartyDataJobResponse:
         r"""Submit a job for first-party data retrieval for an advertiser
 
         When a first-party data query is submitted, a job ID is returned.
@@ -93,33 +94,27 @@ class Dmp(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
+            return models.GetFirstPartyDataJobResponse(
+                standard_job_submit_response=unmarshal_json_response(
+                    Optional[models.StandardJobSubmitResponse], http_res
+                ),
+                http_meta=models.HTTPMetadata(request=req, response=http_res),
+            )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
-            response_data = utils.unmarshal_json(
-                http_res.text, models.ProblemDetailsErrorData
+            response_data = unmarshal_json_response(
+                models.ProblemDetailsErrorData, http_res
             )
-            raise models.ProblemDetailsError(data=response_data)
+            raise models.ProblemDetailsError(response_data, http_res)
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise models.APIError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise models.APIError("Unexpected response received", http_res)
 
     async def get_first_party_data_job_async(
         self,
@@ -131,7 +126,7 @@ class Dmp(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StandardJobSubmitResponse:
+    ) -> models.GetFirstPartyDataJobResponse:
         r"""Submit a job for first-party data retrieval for an advertiser
 
         When a first-party data query is submitted, a job ID is returned.
@@ -205,33 +200,27 @@ class Dmp(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
+            return models.GetFirstPartyDataJobResponse(
+                standard_job_submit_response=unmarshal_json_response(
+                    Optional[models.StandardJobSubmitResponse], http_res
+                ),
+                http_meta=models.HTTPMetadata(request=req, response=http_res),
+            )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
-            response_data = utils.unmarshal_json(
-                http_res.text, models.ProblemDetailsErrorData
+            response_data = unmarshal_json_response(
+                models.ProblemDetailsErrorData, http_res
             )
-            raise models.ProblemDetailsError(data=response_data)
+            raise models.ProblemDetailsError(response_data, http_res)
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise models.APIError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise models.APIError("Unexpected response received", http_res)
 
     def get_third_party_data_job(
         self,
@@ -243,7 +232,7 @@ class Dmp(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StandardJobSubmitResponse:
+    ) -> models.GetThirdPartyDataJobResponse:
         r"""Submit a job for third-party data retrieval for a partner
 
         When a third-party data query is submitted, a job ID is returned.
@@ -318,33 +307,27 @@ class Dmp(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
+            return models.GetThirdPartyDataJobResponse(
+                standard_job_submit_response=unmarshal_json_response(
+                    Optional[models.StandardJobSubmitResponse], http_res
+                ),
+                http_meta=models.HTTPMetadata(request=req, response=http_res),
+            )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
-            response_data = utils.unmarshal_json(
-                http_res.text, models.ProblemDetailsErrorData
+            response_data = unmarshal_json_response(
+                models.ProblemDetailsErrorData, http_res
             )
-            raise models.ProblemDetailsError(data=response_data)
+            raise models.ProblemDetailsError(response_data, http_res)
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise models.APIError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise models.APIError("Unexpected response received", http_res)
 
     async def get_third_party_data_job_async(
         self,
@@ -356,7 +339,7 @@ class Dmp(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StandardJobSubmitResponse:
+    ) -> models.GetThirdPartyDataJobResponse:
         r"""Submit a job for third-party data retrieval for a partner
 
         When a third-party data query is submitted, a job ID is returned.
@@ -431,30 +414,24 @@ class Dmp(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "202", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.StandardJobSubmitResponse)
+            return models.GetThirdPartyDataJobResponse(
+                standard_job_submit_response=unmarshal_json_response(
+                    Optional[models.StandardJobSubmitResponse], http_res
+                ),
+                http_meta=models.HTTPMetadata(request=req, response=http_res),
+            )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
-            response_data = utils.unmarshal_json(
-                http_res.text, models.ProblemDetailsErrorData
+            response_data = unmarshal_json_response(
+                models.ProblemDetailsErrorData, http_res
             )
-            raise models.ProblemDetailsError(data=response_data)
+            raise models.ProblemDetailsError(response_data, http_res)
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, ["500", "503", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise models.APIError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise models.APIError("Unexpected response received", http_res)

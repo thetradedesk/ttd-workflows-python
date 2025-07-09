@@ -5,6 +5,7 @@ from ttd_workflows import models, utils
 from ttd_workflows._hooks import HookContext
 from ttd_workflows.types import BaseModel, OptionalNullable, UNSET
 from ttd_workflows.utils import get_security_from_env
+from ttd_workflows.utils.unmarshal_json_response import unmarshal_json_response
 from typing import Any, Mapping, Optional, Union, cast
 
 
@@ -98,33 +99,27 @@ class RESTRequest(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.SubmitRestRequestResponse)
+            return models.SubmitRestRequestResponse(
+                object=unmarshal_json_response(
+                    Optional[models.SubmitRestRequestResponseBody], http_res
+                ),
+                http_meta=models.HTTPMetadata(request=req, response=http_res),
+            )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
-            response_data = utils.unmarshal_json(
-                http_res.text, models.ProblemDetailsErrorData
+            response_data = unmarshal_json_response(
+                models.ProblemDetailsErrorData, http_res
             )
-            raise models.ProblemDetailsError(data=response_data)
+            raise models.ProblemDetailsError(response_data, http_res)
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, ["500", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise models.APIError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise models.APIError("Unexpected response received", http_res)
 
     async def submit_rest_request_async(
         self,
@@ -215,30 +210,24 @@ class RESTRequest(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.SubmitRestRequestResponse)
+            return models.SubmitRestRequestResponse(
+                object=unmarshal_json_response(
+                    Optional[models.SubmitRestRequestResponseBody], http_res
+                ),
+                http_meta=models.HTTPMetadata(request=req, response=http_res),
+            )
         if utils.match_response(
             http_res, ["400", "401", "403", "404"], "application/json"
         ):
-            response_data = utils.unmarshal_json(
-                http_res.text, models.ProblemDetailsErrorData
+            response_data = unmarshal_json_response(
+                models.ProblemDetailsErrorData, http_res
             )
-            raise models.ProblemDetailsError(data=response_data)
+            raise models.ProblemDetailsError(response_data, http_res)
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, ["500", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise models.APIError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise models.APIError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise models.APIError("Unexpected response received", http_res)
