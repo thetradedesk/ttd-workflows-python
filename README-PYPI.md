@@ -3,7 +3,7 @@
 <!-- Start Summary [summary] -->
 ## Summary
 
-Workflows Service: Operations for commonly used workflows.
+Workflows Service: 
 This service provides operations for commonly used workflows on The Trade Desk's platform.
 In addition, this service provides generic operations for submitting:
 
@@ -79,9 +79,9 @@ It's also possible to write a standalone Python script without needing to set up
 # ]
 # ///
 
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
 
-sdk = Workflows(
+sdk = TtdWorkflows(
   # SDK arguments
 )
 
@@ -110,20 +110,20 @@ Generally, the SDK will work well with most IDEs out of the box. However, when u
 ```python
 # Synchronous Example
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.ad_groups.create(request={
+    res = tw_client.ad_groups.create(request={
         "primary_input": {
             "is_enabled": False,
             "description": "twine from gosh poor safely editor astride vice lost and",
             "budget": {
-                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                "allocation_type": components.AllocationType.MAXIMUM,
                 "budget_in_advertiser_currency": 3786.02,
                 "budget_in_impressions": 783190,
                 "daily_target_in_advertiser_currency": 9747.02,
@@ -167,8 +167,8 @@ with Workflows(
                 },
             ],
             "name": "<value>",
-            "channel": ttd_workflows.AdGroupChannel.DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+            "channel": components.AdGroupChannel.DISPLAY,
+            "funnel_location": components.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": "<id>",
         },
         "campaign_id": "<id>",
@@ -200,10 +200,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.SITE,
+                "gender": components.TargetingGender.MALE,
+                "start_age": components.TargetingStartAge.TWENTY_FIVE,
+                "end_age": components.TargetingEndAge.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -220,7 +220,7 @@ with Workflows(
             ],
             "flights": [
                 {
-                    "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                    "allocation_type": components.AllocationType.MAXIMUM,
                     "budget_in_advertiser_currency": 4070.96,
                     "budget_in_impressions": 901477,
                     "daily_target_in_advertiser_currency": 5847.35,
@@ -232,10 +232,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 ```
 
 </br>
@@ -245,21 +245,21 @@ The same SDK client can also be used to make asychronous requests by importing a
 # Asynchronous Example
 import asyncio
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 
 async def main():
 
-    async with Workflows(
+    async with TtdWorkflows(
         ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-    ) as workflows:
+    ) as tw_client:
 
-        res = await workflows.ad_groups.create_async(request={
+        res = await tw_client.ad_groups.create_async(request={
             "primary_input": {
                 "is_enabled": False,
                 "description": "twine from gosh poor safely editor astride vice lost and",
                 "budget": {
-                    "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                    "allocation_type": components.AllocationType.MAXIMUM,
                     "budget_in_advertiser_currency": 3786.02,
                     "budget_in_impressions": 783190,
                     "daily_target_in_advertiser_currency": 9747.02,
@@ -303,8 +303,8 @@ async def main():
                     },
                 ],
                 "name": "<value>",
-                "channel": ttd_workflows.AdGroupChannel.DISPLAY,
-                "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+                "channel": components.AdGroupChannel.DISPLAY,
+                "funnel_location": components.AdGroupFunnelLocation.CONSIDERATION,
                 "programmatic_guaranteed_private_contract_id": "<id>",
             },
             "campaign_id": "<id>",
@@ -336,10 +336,10 @@ async def main():
                 "is_use_clicks_as_conversions_enabled": False,
                 "is_use_secondary_conversions_enabled": False,
                 "nielsen_tracking_attributes": {
-                    "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                    "gender": ttd_workflows.TargetingGender.MALE,
-                    "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                    "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                    "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.SITE,
+                    "gender": components.TargetingGender.MALE,
+                    "start_age": components.TargetingStartAge.TWENTY_FIVE,
+                    "end_age": components.TargetingEndAge.SEVENTEEN,
                     "countries": [
                         "<value 1>",
                         "<value 2>",
@@ -356,7 +356,7 @@ async def main():
                 ],
                 "flights": [
                     {
-                        "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                        "allocation_type": components.AllocationType.MAXIMUM,
                         "budget_in_advertiser_currency": 4070.96,
                         "budget_in_impressions": 901477,
                         "daily_target_in_advertiser_currency": 5847.35,
@@ -368,10 +368,10 @@ async def main():
             "validate_input_only": True,
         })
 
-        assert res is not None
+        assert res.ad_group_payload is not None
 
         # Handle response
-        print(res)
+        print(res.ad_group_payload)
 
 asyncio.run(main())
 ```
@@ -391,20 +391,20 @@ This SDK supports the following security scheme globally:
 To authenticate with the API the `ttd_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.ad_groups.create(request={
+    res = tw_client.ad_groups.create(request={
         "primary_input": {
             "is_enabled": False,
             "description": "twine from gosh poor safely editor astride vice lost and",
             "budget": {
-                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                "allocation_type": components.AllocationType.MAXIMUM,
                 "budget_in_advertiser_currency": 3786.02,
                 "budget_in_impressions": 783190,
                 "daily_target_in_advertiser_currency": 9747.02,
@@ -448,8 +448,8 @@ with Workflows(
                 },
             ],
             "name": "<value>",
-            "channel": ttd_workflows.AdGroupChannel.DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+            "channel": components.AdGroupChannel.DISPLAY,
+            "funnel_location": components.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": "<id>",
         },
         "campaign_id": "<id>",
@@ -481,10 +481,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.SITE,
+                "gender": components.TargetingGender.MALE,
+                "start_age": components.TargetingStartAge.TWENTY_FIVE,
+                "end_age": components.TargetingEndAge.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -501,7 +501,7 @@ with Workflows(
             ],
             "flights": [
                 {
-                    "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                    "allocation_type": components.AllocationType.MAXIMUM,
                     "budget_in_advertiser_currency": 4070.96,
                     "budget_in_impressions": 901477,
                     "daily_target_in_advertiser_currency": 5847.35,
@@ -513,10 +513,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 <!-- End Authentication [security] -->
@@ -581,21 +581,21 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 from ttd_workflows.utils import BackoffStrategy, RetryConfig
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.ad_groups.create(request={
+    res = tw_client.ad_groups.create(request={
         "primary_input": {
             "is_enabled": False,
             "description": "twine from gosh poor safely editor astride vice lost and",
             "budget": {
-                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                "allocation_type": components.AllocationType.MAXIMUM,
                 "budget_in_advertiser_currency": 3786.02,
                 "budget_in_impressions": 783190,
                 "daily_target_in_advertiser_currency": 9747.02,
@@ -639,8 +639,8 @@ with Workflows(
                 },
             ],
             "name": "<value>",
-            "channel": ttd_workflows.AdGroupChannel.DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+            "channel": components.AdGroupChannel.DISPLAY,
+            "funnel_location": components.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": "<id>",
         },
         "campaign_id": "<id>",
@@ -672,10 +672,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.SITE,
+                "gender": components.TargetingGender.MALE,
+                "start_age": components.TargetingStartAge.TWENTY_FIVE,
+                "end_age": components.TargetingEndAge.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -692,7 +692,7 @@ with Workflows(
             ],
             "flights": [
                 {
-                    "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                    "allocation_type": components.AllocationType.MAXIMUM,
                     "budget_in_advertiser_currency": 4070.96,
                     "budget_in_impressions": 901477,
                     "daily_target_in_advertiser_currency": 5847.35,
@@ -705,32 +705,32 @@ with Workflows(
     },
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 from ttd_workflows.utils import BackoffStrategy, RetryConfig
 
 
-with Workflows(
+with TtdWorkflows(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.ad_groups.create(request={
+    res = tw_client.ad_groups.create(request={
         "primary_input": {
             "is_enabled": False,
             "description": "twine from gosh poor safely editor astride vice lost and",
             "budget": {
-                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                "allocation_type": components.AllocationType.MAXIMUM,
                 "budget_in_advertiser_currency": 3786.02,
                 "budget_in_impressions": 783190,
                 "daily_target_in_advertiser_currency": 9747.02,
@@ -774,8 +774,8 @@ with Workflows(
                 },
             ],
             "name": "<value>",
-            "channel": ttd_workflows.AdGroupChannel.DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+            "channel": components.AdGroupChannel.DISPLAY,
+            "funnel_location": components.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": "<id>",
         },
         "campaign_id": "<id>",
@@ -807,10 +807,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.SITE,
+                "gender": components.TargetingGender.MALE,
+                "start_age": components.TargetingStartAge.TWENTY_FIVE,
+                "end_age": components.TargetingEndAge.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -827,7 +827,7 @@ with Workflows(
             ],
             "flights": [
                 {
-                    "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                    "allocation_type": components.AllocationType.MAXIMUM,
                     "budget_in_advertiser_currency": 4070.96,
                     "budget_in_impressions": 901477,
                     "daily_target_in_advertiser_currency": 5847.35,
@@ -839,10 +839,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 <!-- End Retries [retries] -->
@@ -850,44 +850,36 @@ with Workflows(
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
+[`TtdWorkflowsError`](https://github.com/thetradedesk/ttd-workflows-python/blob/master/./src/ttd_workflows/models/errors/ttdworkflowserror.py) is the base class for all HTTP error responses. It has the following properties:
 
-By default, an API error will raise a models.APIError exception, which has the following properties:
-
-| Property        | Type             | Description           |
-|-----------------|------------------|-----------------------|
-| `.status_code`  | *int*            | The HTTP status code  |
-| `.message`      | *str*            | The error message     |
-| `.raw_response` | *httpx.Response* | The raw HTTP response |
-| `.body`         | *str*            | The response content  |
-
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_async` method may raise the following exceptions:
-
-| Error Type                 | Status Code | Content Type     |
-| -------------------------- | ----------- | ---------------- |
-| models.ProblemDetailsError | 400, 403    | application/json |
-| models.APIError            | 4XX, 5XX    | \*/\*            |
+| Property           | Type             | Description                                                                             |
+| ------------------ | ---------------- | --------------------------------------------------------------------------------------- |
+| `err.message`      | `str`            | Error message                                                                           |
+| `err.status_code`  | `int`            | HTTP response status code eg `404`                                                      |
+| `err.headers`      | `httpx.Headers`  | HTTP response headers                                                                   |
+| `err.body`         | `str`            | HTTP body. Can be empty string if no body is returned.                                  |
+| `err.raw_response` | `httpx.Response` | Raw HTTP response                                                                       |
+| `err.data`         |                  | Optional. Some errors may contain structured data. [See Error Classes](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#error-classes). |
 
 ### Example
-
 ```python
 import os
-import ttd_workflows
-from ttd_workflows import Workflows, models
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components, errors
 
 
-with Workflows(
+with TtdWorkflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
     res = None
     try:
 
-        res = workflows.ad_groups.create(request={
+        res = tw_client.ad_groups.create(request={
             "primary_input": {
                 "is_enabled": False,
                 "description": "twine from gosh poor safely editor astride vice lost and",
                 "budget": {
-                    "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                    "allocation_type": components.AllocationType.MAXIMUM,
                     "budget_in_advertiser_currency": 3786.02,
                     "budget_in_impressions": 783190,
                     "daily_target_in_advertiser_currency": 9747.02,
@@ -931,8 +923,8 @@ with Workflows(
                     },
                 ],
                 "name": "<value>",
-                "channel": ttd_workflows.AdGroupChannel.DISPLAY,
-                "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+                "channel": components.AdGroupChannel.DISPLAY,
+                "funnel_location": components.AdGroupFunnelLocation.CONSIDERATION,
                 "programmatic_guaranteed_private_contract_id": "<id>",
             },
             "campaign_id": "<id>",
@@ -964,10 +956,10 @@ with Workflows(
                 "is_use_clicks_as_conversions_enabled": False,
                 "is_use_secondary_conversions_enabled": False,
                 "nielsen_tracking_attributes": {
-                    "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                    "gender": ttd_workflows.TargetingGender.MALE,
-                    "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                    "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                    "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.SITE,
+                    "gender": components.TargetingGender.MALE,
+                    "start_age": components.TargetingStartAge.TWENTY_FIVE,
+                    "end_age": components.TargetingEndAge.SEVENTEEN,
                     "countries": [
                         "<value 1>",
                         "<value 2>",
@@ -984,7 +976,7 @@ with Workflows(
                 ],
                 "flights": [
                     {
-                        "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                        "allocation_type": components.AllocationType.MAXIMUM,
                         "budget_in_advertiser_currency": 4070.96,
                         "budget_in_impressions": 901477,
                         "daily_target_in_advertiser_currency": 5847.35,
@@ -996,18 +988,48 @@ with Workflows(
             "validate_input_only": True,
         })
 
-        assert res is not None
+        assert res.ad_group_payload is not None
 
         # Handle response
-        print(res)
+        print(res.ad_group_payload)
 
-    except models.ProblemDetailsError as e:
-        # handle e.data: models.ProblemDetailsErrorData
-        raise(e)
-    except models.APIError as e:
-        # handle exception
-        raise(e)
+
+    except errors.TtdWorkflowsError as e:
+        # The base class for HTTP error responses
+        print(e.message)
+        print(e.status_code)
+        print(e.body)
+        print(e.headers)
+        print(e.raw_response)
+
+        # Depending on the method different errors may be thrown
+        if isinstance(e, errors.ProblemDetailsError):
+            print(e.data.type)  # OptionalNullable[str]
+            print(e.data.title)  # OptionalNullable[str]
+            print(e.data.status)  # OptionalNullable[int]
+            print(e.data.detail)  # OptionalNullable[str]
+            print(e.data.instance)  # OptionalNullable[str]
 ```
+
+### Error Classes
+**Primary errors:**
+* [`TtdWorkflowsError`](https://github.com/thetradedesk/ttd-workflows-python/blob/master/./src/ttd_workflows/models/errors/ttdworkflowserror.py): The base class for HTTP error responses.
+  * [`ProblemDetailsError`](https://github.com/thetradedesk/ttd-workflows-python/blob/master/./src/ttd_workflows/models/errors/problemdetailserror.py): Bad Request.
+
+<details><summary>Less common errors (5)</summary>
+
+<br />
+
+**Network errors:**
+* [`httpx.RequestError`](https://www.python-httpx.org/exceptions/#httpx.RequestError): Base class for request errors.
+    * [`httpx.ConnectError`](https://www.python-httpx.org/exceptions/#httpx.ConnectError): HTTP client was unable to make a request to a server.
+    * [`httpx.TimeoutException`](https://www.python-httpx.org/exceptions/#httpx.TimeoutException): HTTP request timed out.
+
+
+**Inherit from [`TtdWorkflowsError`](https://github.com/thetradedesk/ttd-workflows-python/blob/master/./src/ttd_workflows/models/errors/ttdworkflowserror.py)**:
+* [`ResponseValidationError`](https://github.com/thetradedesk/ttd-workflows-python/blob/master/./src/ttd_workflows/models/errors/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
+
+</details>
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
@@ -1026,21 +1048,21 @@ You can override the default server globally by passing a server name to the `se
 
 ```python
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 
 
-with Workflows(
+with TtdWorkflows(
     server="sandbox",
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.ad_groups.create(request={
+    res = tw_client.ad_groups.create(request={
         "primary_input": {
             "is_enabled": False,
             "description": "twine from gosh poor safely editor astride vice lost and",
             "budget": {
-                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                "allocation_type": components.AllocationType.MAXIMUM,
                 "budget_in_advertiser_currency": 3786.02,
                 "budget_in_impressions": 783190,
                 "daily_target_in_advertiser_currency": 9747.02,
@@ -1084,8 +1106,8 @@ with Workflows(
                 },
             ],
             "name": "<value>",
-            "channel": ttd_workflows.AdGroupChannel.DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+            "channel": components.AdGroupChannel.DISPLAY,
+            "funnel_location": components.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": "<id>",
         },
         "campaign_id": "<id>",
@@ -1117,10 +1139,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.SITE,
+                "gender": components.TargetingGender.MALE,
+                "start_age": components.TargetingStartAge.TWENTY_FIVE,
+                "end_age": components.TargetingEndAge.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -1137,7 +1159,7 @@ with Workflows(
             ],
             "flights": [
                 {
-                    "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                    "allocation_type": components.AllocationType.MAXIMUM,
                     "budget_in_advertiser_currency": 4070.96,
                     "budget_in_impressions": 901477,
                     "daily_target_in_advertiser_currency": 5847.35,
@@ -1149,10 +1171,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 
@@ -1161,21 +1183,21 @@ with Workflows(
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 import os
-import ttd_workflows
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
+from ttd_workflows.models import components
 
 
-with Workflows(
+with TtdWorkflows(
     server_url="https://api.thetradedesk.com/workflows",
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-) as workflows:
+) as tw_client:
 
-    res = workflows.ad_groups.create(request={
+    res = tw_client.ad_groups.create(request={
         "primary_input": {
             "is_enabled": False,
             "description": "twine from gosh poor safely editor astride vice lost and",
             "budget": {
-                "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                "allocation_type": components.AllocationType.MAXIMUM,
                 "budget_in_advertiser_currency": 3786.02,
                 "budget_in_impressions": 783190,
                 "daily_target_in_advertiser_currency": 9747.02,
@@ -1219,8 +1241,8 @@ with Workflows(
                 },
             ],
             "name": "<value>",
-            "channel": ttd_workflows.AdGroupChannel.DISPLAY,
-            "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+            "channel": components.AdGroupChannel.DISPLAY,
+            "funnel_location": components.AdGroupFunnelLocation.CONSIDERATION,
             "programmatic_guaranteed_private_contract_id": "<id>",
         },
         "campaign_id": "<id>",
@@ -1252,10 +1274,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": components.EnhancedNielsenReportingOptions.SITE,
+                "gender": components.TargetingGender.MALE,
+                "start_age": components.TargetingStartAge.TWENTY_FIVE,
+                "end_age": components.TargetingEndAge.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -1272,7 +1294,7 @@ with Workflows(
             ],
             "flights": [
                 {
-                    "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
+                    "allocation_type": components.AllocationType.MAXIMUM,
                     "budget_in_advertiser_currency": 4070.96,
                     "budget_in_impressions": 901477,
                     "daily_target_in_advertiser_currency": 5847.35,
@@ -1284,10 +1306,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 <!-- End Server Selection [server] -->
@@ -1301,16 +1323,16 @@ This allows you to wrap the client with your own custom logic, such as adding cu
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
 import httpx
 
 http_client = httpx.Client(headers={"x-custom-header": "someValue"})
-s = Workflows(client=http_client)
+s = TtdWorkflows(client=http_client)
 ```
 
 or you could wrap the client with your own custom logic:
 ```python
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
 from ttd_workflows.httpclient import AsyncHttpClient
 import httpx
 
@@ -1369,34 +1391,34 @@ class CustomClient(AsyncHttpClient):
             extensions=extensions,
         )
 
-s = Workflows(async_client=CustomClient(httpx.AsyncClient()))
+s = TtdWorkflows(async_client=CustomClient(httpx.AsyncClient()))
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
 <!-- Start Resource Management [resource-management] -->
 ## Resource Management
 
-The `Workflows` class implements the context manager protocol and registers a finalizer function to close the underlying sync and async HTTPX clients it uses under the hood. This will close HTTP connections, release memory and free up other resources held by the SDK. In short-lived Python programs and notebooks that make a few SDK method calls, resource management may not be a concern. However, in longer-lived programs, it is beneficial to create a single SDK instance via a [context manager][context-manager] and reuse it across the application.
+The `TtdWorkflows` class implements the context manager protocol and registers a finalizer function to close the underlying sync and async HTTPX clients it uses under the hood. This will close HTTP connections, release memory and free up other resources held by the SDK. In short-lived Python programs and notebooks that make a few SDK method calls, resource management may not be a concern. However, in longer-lived programs, it is beneficial to create a single SDK instance via a [context manager][context-manager] and reuse it across the application.
 
 [context-manager]: https://docs.python.org/3/reference/datamodel.html#context-managers
 
 ```python
 import os
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
 def main():
 
-    with Workflows(
+    with TtdWorkflows(
         ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-    ) as workflows:
+    ) as tw_client:
         # Rest of application here...
 
 
 # Or when using async:
 async def amain():
 
-    async with Workflows(
+    async with TtdWorkflows(
         ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
-    ) as workflows:
+    ) as tw_client:
         # Rest of application here...
 ```
 <!-- End Resource Management [resource-management] -->
@@ -1408,11 +1430,11 @@ You can setup your SDK to emit debug logs for SDK requests and responses.
 
 You can pass your own logger class directly into your SDK.
 ```python
-from ttd_workflows import Workflows
+from ttd_workflows import TtdWorkflows
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
-s = Workflows(debug_logger=logging.getLogger("ttd_workflows"))
+s = TtdWorkflows(debug_logger=logging.getLogger("ttd_workflows"))
 ```
 
 You can also enable a default debug logger by setting an environment variable `WORKFLOWS_DEBUG` to true.

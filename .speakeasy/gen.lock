@@ -5,8 +5,8 @@ management:
   docVersion: v1
   speakeasyVersion: 1.580.0
   generationVersion: 2.654.2
-  releaseVersion: 0.7.5
-  configChecksum: 434a6cf7b6dc1f8e3a5c12d282d7aeeb
+  releaseVersion: 0.7.6
+  configChecksum: 48b9c8d8d5acf0325d12a64c45eeae4b
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
