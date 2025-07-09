@@ -3,7 +3,7 @@
 <!-- Start Summary [summary] -->
 ## Summary
 
-Workflows Service: Operations for commonly used workflows.
+Workflows Service: 
 This service provides operations for commonly used workflows on The Trade Desk's platform.
 In addition, this service provides generic operations for submitting:
 
@@ -232,10 +232,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 ```
 
 </br>
@@ -368,10 +368,10 @@ async def main():
             "validate_input_only": True,
         })
 
-        assert res is not None
+        assert res.ad_group_payload is not None
 
         # Handle response
-        print(res)
+        print(res.ad_group_payload)
 
 asyncio.run(main())
 ```
@@ -513,10 +513,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 <!-- End Authentication [security] -->
@@ -705,10 +705,10 @@ with Workflows(
     },
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 
@@ -839,10 +839,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 <!-- End Retries [retries] -->
@@ -850,26 +850,18 @@ with Workflows(
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
+[`WorkflowsError`](https://github.com/thetradedesk/ttd-workflows-python/blob/master/./src/ttd_workflows/models/workflowserror.py) is the base class for all HTTP error responses. It has the following properties:
 
-By default, an API error will raise a models.APIError exception, which has the following properties:
-
-| Property        | Type             | Description           |
-|-----------------|------------------|-----------------------|
-| `.status_code`  | *int*            | The HTTP status code  |
-| `.message`      | *str*            | The error message     |
-| `.raw_response` | *httpx.Response* | The raw HTTP response |
-| `.body`         | *str*            | The response content  |
-
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_async` method may raise the following exceptions:
-
-| Error Type                 | Status Code | Content Type     |
-| -------------------------- | ----------- | ---------------- |
-| models.ProblemDetailsError | 400, 403    | application/json |
-| models.APIError            | 4XX, 5XX    | \*/\*            |
+| Property           | Type             | Description                                                                             |
+| ------------------ | ---------------- | --------------------------------------------------------------------------------------- |
+| `err.message`      | `str`            | Error message                                                                           |
+| `err.status_code`  | `int`            | HTTP response status code eg `404`                                                      |
+| `err.headers`      | `httpx.Headers`  | HTTP response headers                                                                   |
+| `err.body`         | `str`            | HTTP body. Can be empty string if no body is returned.                                  |
+| `err.raw_response` | `httpx.Response` | Raw HTTP response                                                                       |
+| `err.data`         |                  | Optional. Some errors may contain structured data. [See Error Classes](https://github.com/thetradedesk/ttd-workflows-python/blob/master/#error-classes). |
 
 ### Example
-
 ```python
 import os
 import ttd_workflows
@@ -996,18 +988,48 @@ with Workflows(
             "validate_input_only": True,
         })
 
-        assert res is not None
+        assert res.ad_group_payload is not None
 
         # Handle response
-        print(res)
+        print(res.ad_group_payload)
 
-    except models.ProblemDetailsError as e:
-        # handle e.data: models.ProblemDetailsErrorData
-        raise(e)
-    except models.APIError as e:
-        # handle exception
-        raise(e)
+
+    except models.WorkflowsError as e:
+        # The base class for HTTP error responses
+        print(e.message)
+        print(e.status_code)
+        print(e.body)
+        print(e.headers)
+        print(e.raw_response)
+
+        # Depending on the method different errors may be thrown
+        if isinstance(e, models.ProblemDetailsError):
+            print(e.data.type)  # OptionalNullable[str]
+            print(e.data.title)  # OptionalNullable[str]
+            print(e.data.status)  # OptionalNullable[int]
+            print(e.data.detail)  # OptionalNullable[str]
+            print(e.data.instance)  # OptionalNullable[str]
 ```
+
+### Error Classes
+**Primary errors:**
+* [`WorkflowsError`](https://github.com/thetradedesk/ttd-workflows-python/blob/master/./src/ttd_workflows/models/workflowserror.py): The base class for HTTP error responses.
+  * [`ProblemDetailsError`](https://github.com/thetradedesk/ttd-workflows-python/blob/master/./src/ttd_workflows/models/problemdetailserror.py): Bad Request.
+
+<details><summary>Less common errors (5)</summary>
+
+<br />
+
+**Network errors:**
+* [`httpx.RequestError`](https://www.python-httpx.org/exceptions/#httpx.RequestError): Base class for request errors.
+    * [`httpx.ConnectError`](https://www.python-httpx.org/exceptions/#httpx.ConnectError): HTTP client was unable to make a request to a server.
+    * [`httpx.TimeoutException`](https://www.python-httpx.org/exceptions/#httpx.TimeoutException): HTTP request timed out.
+
+
+**Inherit from [`WorkflowsError`](https://github.com/thetradedesk/ttd-workflows-python/blob/master/./src/ttd_workflows/models/workflowserror.py)**:
+* [`ResponseValidationError`](https://github.com/thetradedesk/ttd-workflows-python/blob/master/./src/ttd_workflows/models/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
+
+</details>
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
@@ -1149,10 +1171,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 
@@ -1284,10 +1306,10 @@ with Workflows(
         "validate_input_only": True,
     })
 
-    assert res is not None
+    assert res.ad_group_payload is not None
 
     # Handle response
-    print(res)
+    print(res.ad_group_payload)
 
 ```
 <!-- End Server Selection [server] -->

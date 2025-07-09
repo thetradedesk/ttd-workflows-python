@@ -202,8 +202,10 @@ with Workflows(
         "validate_input_only": False,
     })
 
+    assert res.campaign_payload is not None
+
     # Handle response
-    print(res)
+    print(res.campaign_payload)
 
 ```
 
@@ -216,7 +218,7 @@ with Workflows(
 
 ### Response
 
-**[models.CampaignPayload](../../models/campaignpayload.md)**
+**[models.CreateCampaignResponse](../../models/createcampaignresponse.md)**
 
 ### Errors
 
@@ -425,8 +427,10 @@ with Workflows(
         },
     })
 
+    assert res.standard_job_submit_response is not None
+
     # Handle response
-    print(res)
+    print(res.standard_job_submit_response)
 
 ```
 
@@ -439,7 +443,7 @@ with Workflows(
 
 ### Response
 
-**[models.StandardJobSubmitResponse](../../models/standardjobsubmitresponse.md)**
+**[models.CreateCampaignsJobResponse](../../models/createcampaignsjobresponse.md)**
 
 ### Errors
 
@@ -544,8 +548,10 @@ with Workflows(
         },
     })
 
+    assert res.standard_job_submit_response is not None
+
     # Handle response
-    print(res)
+    print(res.standard_job_submit_response)
 
 ```
 
@@ -558,7 +564,7 @@ with Workflows(
 
 ### Response
 
-**[models.StandardJobSubmitResponse](../../models/standardjobsubmitresponse.md)**
+**[models.UpdateCampaignsJobResponse](../../models/updatecampaignsjobresponse.md)**
 
 ### Errors
 
@@ -584,8 +590,10 @@ with Workflows(
 
     res = workflows.campaign.get_version(id="<id>")
 
+    assert res.campaign_version_workflow is not None
+
     # Handle response
-    print(res)
+    print(res.campaign_version_workflow)
 
 ```
 
@@ -598,7 +606,7 @@ with Workflows(
 
 ### Response
 
-**[models.CampaignVersionWorkflow](../../models/campaignversionworkflow.md)**
+**[models.GetCampaignVersionResponse](../../models/getcampaignversionresponse.md)**
 
 ### Errors
 

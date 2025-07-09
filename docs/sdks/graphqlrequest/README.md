@@ -29,8 +29,10 @@ with Workflows(
         "variables": {},
     })
 
+    assert res.object is not None
+
     # Handle response
-    print(res)
+    print(res.object)
 
 ```
 
@@ -81,8 +83,10 @@ with Workflows(
         },
     })
 
+    assert res.graph_ql_query_job_response is not None
+
     # Handle response
-    print(res)
+    print(res.graph_ql_query_job_response)
 
 ```
 
@@ -95,7 +99,7 @@ with Workflows(
 
 ### Response
 
-**[models.GraphQlQueryJobResponse](../../models/graphqlqueryjobresponse.md)**
+**[models.SubmitGraphQlQueryJobResponse](../../models/submitgraphqlqueryjobresponse.md)**
 
 ### Errors
 

@@ -116,10 +116,14 @@ if TYPE_CHECKING:
     from .archiveadgroupsop import (
         ArchiveAdGroupsRequest,
         ArchiveAdGroupsRequestTypedDict,
+        ArchiveAdGroupsResponse,
+        ArchiveAdGroupsResponseTypedDict,
     )
     from .archivecampaignsop import (
         ArchiveCampaignsRequest,
         ArchiveCampaignsRequestTypedDict,
+        ArchiveCampaignsResponse,
+        ArchiveCampaignsResponseTypedDict,
     )
     from .bulkjobstatus import BulkJobStatus
     from .callrestapiworkflowinput import (
@@ -202,6 +206,19 @@ if TYPE_CHECKING:
         CampaignWorkflowROIGoalInput,
         CampaignWorkflowROIGoalInputTypedDict,
     )
+    from .createadgroupop import CreateAdGroupResponse, CreateAdGroupResponseTypedDict
+    from .createadgroupsjobop import (
+        CreateAdGroupsJobResponse,
+        CreateAdGroupsJobResponseTypedDict,
+    )
+    from .createcampaignop import (
+        CreateCampaignResponse,
+        CreateCampaignResponseTypedDict,
+    )
+    from .createcampaignsjobop import (
+        CreateCampaignsJobResponse,
+        CreateCampaignsJobResponseTypedDict,
+    )
     from .customcpatype import CustomCPAType
     from .customroasconfig import CustomROASConfig, CustomROASConfigTypedDict
     from .dimensionalbiddingdimensions import DimensionalBiddingDimensions
@@ -210,12 +227,29 @@ if TYPE_CHECKING:
     from .getcampaignversionop import (
         GetCampaignVersionRequest,
         GetCampaignVersionRequestTypedDict,
+        GetCampaignVersionResponse,
+        GetCampaignVersionResponseTypedDict,
+    )
+    from .getfirstpartydatajobop import (
+        GetFirstPartyDataJobResponse,
+        GetFirstPartyDataJobResponseTypedDict,
     )
     from .getgraphqlqueryjobstatusop import (
         GetGraphQlQueryJobStatusRequest,
         GetGraphQlQueryJobStatusRequestTypedDict,
+        GetGraphQlQueryJobStatusResponse,
+        GetGraphQlQueryJobStatusResponseTypedDict,
     )
-    from .getjobstatusop import GetJobStatusRequest, GetJobStatusRequestTypedDict
+    from .getjobstatusop import (
+        GetJobStatusRequest,
+        GetJobStatusRequestTypedDict,
+        GetJobStatusResponse,
+        GetJobStatusResponseTypedDict,
+    )
+    from .getthirdpartydatajobop import (
+        GetThirdPartyDataJobResponse,
+        GetThirdPartyDataJobResponseTypedDict,
+    )
     from .graphqljobcallbackinput import (
         GraphQlJobCallbackInput,
         GraphQlJobCallbackInputTypedDict,
@@ -247,12 +281,15 @@ if TYPE_CHECKING:
         Variables,
         VariablesTypedDict,
     )
+    from .httpmetadata import HTTPMetadata, HTTPMetadataTypedDict
     from .keyvaluepairofstringandstringinput import (
         KeyValuePairOfStringAndStringInput,
         KeyValuePairOfStringAndStringInputTypedDict,
     )
+    from .no_response_error import NoResponseError
     from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
     from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
+    from .responsevalidationerror import ResponseValidationError
     from .restapimethodtype import RestAPIMethodType
     from .security import Security, SecurityTypedDict
     from .standardjobstatusresponse import (
@@ -263,22 +300,44 @@ if TYPE_CHECKING:
         StandardJobSubmitResponse,
         StandardJobSubmitResponseTypedDict,
     )
+    from .submitgraphqlqueryjobop import (
+        SubmitGraphQlQueryJobResponse,
+        SubmitGraphQlQueryJobResponseTypedDict,
+    )
     from .submitgraphqlrequestop import (
         SubmitGraphQlRequestResponse,
+        SubmitGraphQlRequestResponseBody,
+        SubmitGraphQlRequestResponseBodyTypedDict,
         SubmitGraphQlRequestResponseTypedDict,
     )
     from .submitrestrequestop import (
         SubmitRestRequestResponse,
+        SubmitRestRequestResponseBody,
+        SubmitRestRequestResponseBodyTypedDict,
         SubmitRestRequestResponseTypedDict,
     )
     from .targetingendage import TargetingEndAge
     from .targetinggender import TargetingGender
     from .targetingstartage import TargetingStartAge
     from .thirdpartydatainput import ThirdPartyDataInput, ThirdPartyDataInputTypedDict
+    from .updateadgroupop import UpdateAdGroupResponse, UpdateAdGroupResponseTypedDict
+    from .updateadgroupsjobop import (
+        UpdateAdGroupsJobResponse,
+        UpdateAdGroupsJobResponseTypedDict,
+    )
+    from .updatecampaignop import (
+        UpdateCampaignResponse,
+        UpdateCampaignResponseTypedDict,
+    )
+    from .updatecampaignsjobop import (
+        UpdateCampaignsJobResponse,
+        UpdateCampaignsJobResponseTypedDict,
+    )
     from .workflowcallbackinput import (
         WorkflowCallbackInput,
         WorkflowCallbackInputTypedDict,
     )
+    from .workflowserror import WorkflowsError
     from .workflowstatus import WorkflowStatus
 
 __all__ = [
@@ -348,8 +407,12 @@ __all__ = [
     "AllocationType",
     "ArchiveAdGroupsRequest",
     "ArchiveAdGroupsRequestTypedDict",
+    "ArchiveAdGroupsResponse",
+    "ArchiveAdGroupsResponseTypedDict",
     "ArchiveCampaignsRequest",
     "ArchiveCampaignsRequestTypedDict",
+    "ArchiveCampaignsResponse",
+    "ArchiveCampaignsResponseTypedDict",
     "BulkJobStatus",
     "CallRestAPIWorkflowInput",
     "CallRestAPIWorkflowInputTypedDict",
@@ -395,6 +458,14 @@ __all__ = [
     "CampaignWorkflowROIGoalInput",
     "CampaignWorkflowROIGoalInputTypedDict",
     "CampaignWorkflowTypedDict",
+    "CreateAdGroupResponse",
+    "CreateAdGroupResponseTypedDict",
+    "CreateAdGroupsJobResponse",
+    "CreateAdGroupsJobResponseTypedDict",
+    "CreateCampaignResponse",
+    "CreateCampaignResponseTypedDict",
+    "CreateCampaignsJobResponse",
+    "CreateCampaignsJobResponseTypedDict",
     "CustomCPAType",
     "CustomROASConfig",
     "CustomROASConfigTypedDict",
@@ -404,10 +475,20 @@ __all__ = [
     "FirstPartyDataInputTypedDict",
     "GetCampaignVersionRequest",
     "GetCampaignVersionRequestTypedDict",
+    "GetCampaignVersionResponse",
+    "GetCampaignVersionResponseTypedDict",
+    "GetFirstPartyDataJobResponse",
+    "GetFirstPartyDataJobResponseTypedDict",
     "GetGraphQlQueryJobStatusRequest",
     "GetGraphQlQueryJobStatusRequestTypedDict",
+    "GetGraphQlQueryJobStatusResponse",
+    "GetGraphQlQueryJobStatusResponseTypedDict",
     "GetJobStatusRequest",
     "GetJobStatusRequestTypedDict",
+    "GetJobStatusResponse",
+    "GetJobStatusResponseTypedDict",
+    "GetThirdPartyDataJobResponse",
+    "GetThirdPartyDataJobResponseTypedDict",
     "GraphQLQueryJobError",
     "GraphQLQueryJobErrorTypedDict",
     "GraphQLQueryJobRetrievalResponse",
@@ -424,12 +505,16 @@ __all__ = [
     "GraphQlQueryJobResponse",
     "GraphQlQueryJobResponseTypedDict",
     "GraphQlQueryJobTypedDict",
+    "HTTPMetadata",
+    "HTTPMetadataTypedDict",
     "KeyValuePairOfStringAndStringInput",
     "KeyValuePairOfStringAndStringInputTypedDict",
+    "NoResponseError",
     "ProblemDetails",
     "ProblemDetailsError",
     "ProblemDetailsErrorData",
     "ProblemDetailsTypedDict",
+    "ResponseValidationError",
     "RestAPIMethodType",
     "Security",
     "SecurityTypedDict",
@@ -437,20 +522,35 @@ __all__ = [
     "StandardJobStatusResponseTypedDict",
     "StandardJobSubmitResponse",
     "StandardJobSubmitResponseTypedDict",
+    "SubmitGraphQlQueryJobResponse",
+    "SubmitGraphQlQueryJobResponseTypedDict",
     "SubmitGraphQlRequestResponse",
+    "SubmitGraphQlRequestResponseBody",
+    "SubmitGraphQlRequestResponseBodyTypedDict",
     "SubmitGraphQlRequestResponseTypedDict",
     "SubmitRestRequestResponse",
+    "SubmitRestRequestResponseBody",
+    "SubmitRestRequestResponseBodyTypedDict",
     "SubmitRestRequestResponseTypedDict",
     "TargetingEndAge",
     "TargetingGender",
     "TargetingStartAge",
     "ThirdPartyDataInput",
     "ThirdPartyDataInputTypedDict",
+    "UpdateAdGroupResponse",
+    "UpdateAdGroupResponseTypedDict",
+    "UpdateAdGroupsJobResponse",
+    "UpdateAdGroupsJobResponseTypedDict",
+    "UpdateCampaignResponse",
+    "UpdateCampaignResponseTypedDict",
+    "UpdateCampaignsJobResponse",
+    "UpdateCampaignsJobResponseTypedDict",
     "Variables",
     "VariablesTypedDict",
     "WorkflowCallbackInput",
     "WorkflowCallbackInputTypedDict",
     "WorkflowStatus",
+    "WorkflowsError",
 ]
 
 _dynamic_imports: dict[str, str] = {
@@ -520,8 +620,12 @@ _dynamic_imports: dict[str, str] = {
     "APIError": ".apierror",
     "ArchiveAdGroupsRequest": ".archiveadgroupsop",
     "ArchiveAdGroupsRequestTypedDict": ".archiveadgroupsop",
+    "ArchiveAdGroupsResponse": ".archiveadgroupsop",
+    "ArchiveAdGroupsResponseTypedDict": ".archiveadgroupsop",
     "ArchiveCampaignsRequest": ".archivecampaignsop",
     "ArchiveCampaignsRequestTypedDict": ".archivecampaignsop",
+    "ArchiveCampaignsResponse": ".archivecampaignsop",
+    "ArchiveCampaignsResponseTypedDict": ".archivecampaignsop",
     "BulkJobStatus": ".bulkjobstatus",
     "CallRestAPIWorkflowInput": ".callrestapiworkflowinput",
     "CallRestAPIWorkflowInputTypedDict": ".callrestapiworkflowinput",
@@ -567,6 +671,14 @@ _dynamic_imports: dict[str, str] = {
     "CampaignWorkflowFlightInputTypedDict": ".campaignworkflowflightinput",
     "CampaignWorkflowROIGoalInput": ".campaignworkflowroigoalinput",
     "CampaignWorkflowROIGoalInputTypedDict": ".campaignworkflowroigoalinput",
+    "CreateAdGroupResponse": ".createadgroupop",
+    "CreateAdGroupResponseTypedDict": ".createadgroupop",
+    "CreateAdGroupsJobResponse": ".createadgroupsjobop",
+    "CreateAdGroupsJobResponseTypedDict": ".createadgroupsjobop",
+    "CreateCampaignResponse": ".createcampaignop",
+    "CreateCampaignResponseTypedDict": ".createcampaignop",
+    "CreateCampaignsJobResponse": ".createcampaignsjobop",
+    "CreateCampaignsJobResponseTypedDict": ".createcampaignsjobop",
     "CustomCPAType": ".customcpatype",
     "CustomROASConfig": ".customroasconfig",
     "CustomROASConfigTypedDict": ".customroasconfig",
@@ -576,10 +688,20 @@ _dynamic_imports: dict[str, str] = {
     "FirstPartyDataInputTypedDict": ".firstpartydatainput",
     "GetCampaignVersionRequest": ".getcampaignversionop",
     "GetCampaignVersionRequestTypedDict": ".getcampaignversionop",
+    "GetCampaignVersionResponse": ".getcampaignversionop",
+    "GetCampaignVersionResponseTypedDict": ".getcampaignversionop",
+    "GetFirstPartyDataJobResponse": ".getfirstpartydatajobop",
+    "GetFirstPartyDataJobResponseTypedDict": ".getfirstpartydatajobop",
     "GetGraphQlQueryJobStatusRequest": ".getgraphqlqueryjobstatusop",
     "GetGraphQlQueryJobStatusRequestTypedDict": ".getgraphqlqueryjobstatusop",
+    "GetGraphQlQueryJobStatusResponse": ".getgraphqlqueryjobstatusop",
+    "GetGraphQlQueryJobStatusResponseTypedDict": ".getgraphqlqueryjobstatusop",
     "GetJobStatusRequest": ".getjobstatusop",
     "GetJobStatusRequestTypedDict": ".getjobstatusop",
+    "GetJobStatusResponse": ".getjobstatusop",
+    "GetJobStatusResponseTypedDict": ".getjobstatusop",
+    "GetThirdPartyDataJobResponse": ".getthirdpartydatajobop",
+    "GetThirdPartyDataJobResponseTypedDict": ".getthirdpartydatajobop",
     "GraphQlJobCallbackInput": ".graphqljobcallbackinput",
     "GraphQlJobCallbackInputTypedDict": ".graphqljobcallbackinput",
     "GraphQlQueryJob": ".graphqlqueryjob",
@@ -598,12 +720,16 @@ _dynamic_imports: dict[str, str] = {
     "GraphQLRequestInputTypedDict": ".graphqlrequestinput",
     "Variables": ".graphqlrequestinput",
     "VariablesTypedDict": ".graphqlrequestinput",
+    "HTTPMetadata": ".httpmetadata",
+    "HTTPMetadataTypedDict": ".httpmetadata",
     "KeyValuePairOfStringAndStringInput": ".keyvaluepairofstringandstringinput",
     "KeyValuePairOfStringAndStringInputTypedDict": ".keyvaluepairofstringandstringinput",
+    "NoResponseError": ".no_response_error",
     "ProblemDetails": ".problemdetails",
     "ProblemDetailsTypedDict": ".problemdetails",
     "ProblemDetailsError": ".problemdetails_error",
     "ProblemDetailsErrorData": ".problemdetails_error",
+    "ResponseValidationError": ".responsevalidationerror",
     "RestAPIMethodType": ".restapimethodtype",
     "Security": ".security",
     "SecurityTypedDict": ".security",
@@ -611,17 +737,32 @@ _dynamic_imports: dict[str, str] = {
     "StandardJobStatusResponseTypedDict": ".standardjobstatusresponse",
     "StandardJobSubmitResponse": ".standardjobsubmitresponse",
     "StandardJobSubmitResponseTypedDict": ".standardjobsubmitresponse",
+    "SubmitGraphQlQueryJobResponse": ".submitgraphqlqueryjobop",
+    "SubmitGraphQlQueryJobResponseTypedDict": ".submitgraphqlqueryjobop",
     "SubmitGraphQlRequestResponse": ".submitgraphqlrequestop",
+    "SubmitGraphQlRequestResponseBody": ".submitgraphqlrequestop",
+    "SubmitGraphQlRequestResponseBodyTypedDict": ".submitgraphqlrequestop",
     "SubmitGraphQlRequestResponseTypedDict": ".submitgraphqlrequestop",
     "SubmitRestRequestResponse": ".submitrestrequestop",
+    "SubmitRestRequestResponseBody": ".submitrestrequestop",
+    "SubmitRestRequestResponseBodyTypedDict": ".submitrestrequestop",
     "SubmitRestRequestResponseTypedDict": ".submitrestrequestop",
     "TargetingEndAge": ".targetingendage",
     "TargetingGender": ".targetinggender",
     "TargetingStartAge": ".targetingstartage",
     "ThirdPartyDataInput": ".thirdpartydatainput",
     "ThirdPartyDataInputTypedDict": ".thirdpartydatainput",
+    "UpdateAdGroupResponse": ".updateadgroupop",
+    "UpdateAdGroupResponseTypedDict": ".updateadgroupop",
+    "UpdateAdGroupsJobResponse": ".updateadgroupsjobop",
+    "UpdateAdGroupsJobResponseTypedDict": ".updateadgroupsjobop",
+    "UpdateCampaignResponse": ".updatecampaignop",
+    "UpdateCampaignResponseTypedDict": ".updatecampaignop",
+    "UpdateCampaignsJobResponse": ".updatecampaignsjobop",
+    "UpdateCampaignsJobResponseTypedDict": ".updatecampaignsjobop",
     "WorkflowCallbackInput": ".workflowcallbackinput",
     "WorkflowCallbackInputTypedDict": ".workflowcallbackinput",
+    "WorkflowsError": ".workflowserror",
     "WorkflowStatus": ".workflowstatus",
 }
 
