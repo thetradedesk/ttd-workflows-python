@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 8ef393d710e3f396c9bf8ab5bea341ac
+  docChecksum: 010d2f057b08a546bffafb9ad6b1e531
   docVersion: v1
   speakeasyVersion: 1.580.1
   generationVersion: 2.656.3
-  releaseVersion: 0.8.1
-  configChecksum: 9257e9fbe8f20c4b2549982c9f05e540
+  releaseVersion: 0.8.2
+  configChecksum: 85297456cf66fe50ee8e37a7ca4f863d
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
@@ -132,7 +132,6 @@ generatedFiles:
   - docs/models/standardjobsubmitresponse.md
   - docs/models/submitgraphqlqueryjobresponse.md
   - docs/models/submitgraphqlrequestresponse.md
-  - docs/models/submitgraphqlrequestresponsebody.md
   - docs/models/submitrestrequestresponse.md
   - docs/models/submitrestrequestresponsebody.md
   - docs/models/targetingendage.md

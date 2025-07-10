@@ -306,8 +306,6 @@ if TYPE_CHECKING:
     )
     from .submitgraphqlrequestop import (
         SubmitGraphQlRequestResponse,
-        SubmitGraphQlRequestResponseBody,
-        SubmitGraphQlRequestResponseBodyTypedDict,
         SubmitGraphQlRequestResponseTypedDict,
     )
     from .submitrestrequestop import (
@@ -525,8 +523,6 @@ __all__ = [
     "SubmitGraphQlQueryJobResponse",
     "SubmitGraphQlQueryJobResponseTypedDict",
     "SubmitGraphQlRequestResponse",
-    "SubmitGraphQlRequestResponseBody",
-    "SubmitGraphQlRequestResponseBodyTypedDict",
     "SubmitGraphQlRequestResponseTypedDict",
     "SubmitRestRequestResponse",
     "SubmitRestRequestResponseBody",
@@ -740,8 +736,6 @@ _dynamic_imports: dict[str, str] = {
     "SubmitGraphQlQueryJobResponse": ".submitgraphqlqueryjobop",
     "SubmitGraphQlQueryJobResponseTypedDict": ".submitgraphqlqueryjobop",
     "SubmitGraphQlRequestResponse": ".submitgraphqlrequestop",
-    "SubmitGraphQlRequestResponseBody": ".submitgraphqlrequestop",
-    "SubmitGraphQlRequestResponseBodyTypedDict": ".submitgraphqlrequestop",
     "SubmitGraphQlRequestResponseTypedDict": ".submitgraphqlrequestop",
     "SubmitRestRequestResponse": ".submitrestrequestop",
     "SubmitRestRequestResponseBody": ".submitrestrequestop",
