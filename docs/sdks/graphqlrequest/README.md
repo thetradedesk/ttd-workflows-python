@@ -26,7 +26,9 @@ with Workflows(
 
     res = workflows.graph_ql_request.submit_graph_ql_request(request={
         "request": "<value>",
-        "variables": {},
+        "variables": {
+
+        },
     })
 
     assert res.object is not None

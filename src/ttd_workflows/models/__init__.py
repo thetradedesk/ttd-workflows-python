@@ -275,12 +275,7 @@ if TYPE_CHECKING:
         GraphQLQueryJobRetrievalResponse,
         GraphQLQueryJobRetrievalResponseTypedDict,
     )
-    from .graphqlrequestinput import (
-        GraphQLRequestInput,
-        GraphQLRequestInputTypedDict,
-        Variables,
-        VariablesTypedDict,
-    )
+    from .graphqlrequestinput import GraphQLRequestInput, GraphQLRequestInputTypedDict
     from .httpmetadata import HTTPMetadata, HTTPMetadataTypedDict
     from .keyvaluepairofstringandstringinput import (
         KeyValuePairOfStringAndStringInput,
@@ -310,8 +305,6 @@ if TYPE_CHECKING:
     )
     from .submitrestrequestop import (
         SubmitRestRequestResponse,
-        SubmitRestRequestResponseBody,
-        SubmitRestRequestResponseBodyTypedDict,
         SubmitRestRequestResponseTypedDict,
     )
     from .targetingendage import TargetingEndAge
@@ -525,8 +518,6 @@ __all__ = [
     "SubmitGraphQlRequestResponse",
     "SubmitGraphQlRequestResponseTypedDict",
     "SubmitRestRequestResponse",
-    "SubmitRestRequestResponseBody",
-    "SubmitRestRequestResponseBodyTypedDict",
     "SubmitRestRequestResponseTypedDict",
     "TargetingEndAge",
     "TargetingGender",
@@ -541,8 +532,6 @@ __all__ = [
     "UpdateCampaignResponseTypedDict",
     "UpdateCampaignsJobResponse",
     "UpdateCampaignsJobResponseTypedDict",
-    "Variables",
-    "VariablesTypedDict",
     "WorkflowCallbackInput",
     "WorkflowCallbackInputTypedDict",
     "WorkflowStatus",
@@ -714,8 +703,6 @@ _dynamic_imports: dict[str, str] = {
     "GraphQLQueryJobRetrievalResponseTypedDict": ".graphqlqueryjobretrievalresponse",
     "GraphQLRequestInput": ".graphqlrequestinput",
     "GraphQLRequestInputTypedDict": ".graphqlrequestinput",
-    "Variables": ".graphqlrequestinput",
-    "VariablesTypedDict": ".graphqlrequestinput",
     "HTTPMetadata": ".httpmetadata",
     "HTTPMetadataTypedDict": ".httpmetadata",
     "KeyValuePairOfStringAndStringInput": ".keyvaluepairofstringandstringinput",
@@ -738,8 +725,6 @@ _dynamic_imports: dict[str, str] = {
     "SubmitGraphQlRequestResponse": ".submitgraphqlrequestop",
     "SubmitGraphQlRequestResponseTypedDict": ".submitgraphqlrequestop",
     "SubmitRestRequestResponse": ".submitrestrequestop",
-    "SubmitRestRequestResponseBody": ".submitrestrequestop",
-    "SubmitRestRequestResponseBodyTypedDict": ".submitrestrequestop",
     "SubmitRestRequestResponseTypedDict": ".submitrestrequestop",
     "TargetingEndAge": ".targetingendage",
     "TargetingGender": ".targetinggender",
