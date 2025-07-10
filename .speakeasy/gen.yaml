@@ -21,7 +21,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 python:
-  version: 0.8.2
+  version: 0.8.3
   additionalDependencies:
     dev: {}
     main: {}
@@ -39,7 +39,6 @@ python:
   flattenGlobalSecurity: true
   flattenRequests: true
   flatteningOrder: parameters-first
-  githubURL: github.com/thetradedesk/ttd-workflows-python
   imports:
     option: openapi
     paths:

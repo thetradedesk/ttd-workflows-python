@@ -4,26 +4,18 @@ from __future__ import annotations
 from .httpmetadata import HTTPMetadata, HTTPMetadataTypedDict
 import pydantic
 from ttd_workflows.types import BaseModel
-from typing import Optional
+from typing import Any, Dict, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
-
-
-class SubmitRestRequestResponseBodyTypedDict(TypedDict):
-    r"""OK"""
-
-
-class SubmitRestRequestResponseBody(BaseModel):
-    r"""OK"""
 
 
 class SubmitRestRequestResponseTypedDict(TypedDict):
     http_meta: HTTPMetadataTypedDict
-    object: NotRequired[SubmitRestRequestResponseBodyTypedDict]
+    object: NotRequired[Dict[str, Any]]
     r"""OK"""
 
 
 class SubmitRestRequestResponse(BaseModel):
     http_meta: Annotated[Optional[HTTPMetadata], pydantic.Field(exclude=True)] = None
 
-    object: Optional[SubmitRestRequestResponseBody] = None
+    object: Optional[Dict[str, Any]] = None
     r"""OK"""
