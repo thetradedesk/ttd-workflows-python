@@ -6,7 +6,7 @@ from ttd_workflows._hooks import HookContext
 from ttd_workflows.types import BaseModel, OptionalNullable, UNSET
 from ttd_workflows.utils import get_security_from_env
 from ttd_workflows.utils.unmarshal_json_response import unmarshal_json_response
-from typing import Any, Mapping, Optional, Union, cast
+from typing import Any, Dict, Mapping, Optional, Union, cast
 
 
 class GraphQLRequest(BaseSDK):
@@ -95,9 +95,7 @@ class GraphQLRequest(BaseSDK):
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
             return models.SubmitGraphQlRequestResponse(
-                object=unmarshal_json_response(
-                    Optional[models.SubmitGraphQlRequestResponseBody], http_res
-                ),
+                object=unmarshal_json_response(Optional[Dict[str, Any]], http_res),
                 http_meta=models.HTTPMetadata(request=req, response=http_res),
             )
         if utils.match_response(
@@ -201,9 +199,7 @@ class GraphQLRequest(BaseSDK):
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
             return models.SubmitGraphQlRequestResponse(
-                object=unmarshal_json_response(
-                    Optional[models.SubmitGraphQlRequestResponseBody], http_res
-                ),
+                object=unmarshal_json_response(Optional[Dict[str, Any]], http_res),
                 http_meta=models.HTTPMetadata(request=req, response=http_res),
             )
         if utils.match_response(
