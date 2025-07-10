@@ -6,5 +6,8 @@ actions:
   - target: $["paths"]["/graphqlrequest"]["post"]["responses"]["200"]["content"]["application/json"]["schema"]
     update:
       additionalProperties: true
+  - target: $["components"]["schemas"]["GraphQLRequestInput"]["properties"]["variables"]
+    update:
+      additionalProperties: true
   - target: $["paths"]["/bulkjob/callback"]
     remove: true
