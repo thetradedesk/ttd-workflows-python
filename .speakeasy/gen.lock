@@ -3,10 +3,10 @@ id: f803c176-84c0-412f-93ec-3006a124047d
 management:
   docChecksum: 5a2c48bda7c8f65d13eb0d6834b62035
   docVersion: v1
-  speakeasyVersion: 1.580.2
-  generationVersion: 2.656.5
-  releaseVersion: 0.9.0
-  configChecksum: e7b8527521ece72e0d7d4c45b4bed983
+  speakeasyVersion: 1.582.0
+  generationVersion: 2.657.1
+  releaseVersion: 0.9.1
+  configChecksum: 8b0d2ae51512f7716e60f24c72a058a1
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
