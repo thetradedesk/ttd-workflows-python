@@ -134,6 +134,7 @@ from ttd_workflows import Workflows
 
 
 with Workflows(
+    server="sandbox",
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
@@ -143,6 +144,37 @@ with Workflows(
 
     # Handle response
     print(res.standard_job_status_response)
+```
+
+### Example: Create campaign with minimal configuration
+
+```python
+import pprint
+import os
+import ttd_workflows
+from ttd_workflows import Workflows
+from ttd_workflows.utils import parse_datetime
+
+
+with Workflows(
+    server="sandbox",
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+) as workflows:
+
+    res = workflows.campaign.create(request={
+        "primary_input": {
+            "name": "<value>",
+            "advertiser_id": "<advertiser_id>",
+            "seed_id": "<seed_id>",
+            "start_date_in_utc": parse_datetime("2026-07-08T10:52:56.944Z"),
+            "primary_channel": ttd_workflows.CampaignChannelType.DOOH,
+            "primary_goal": {
+                 "maximize_reach": True
+            }
+        }})
+
+    assert res.campaign_payload is not None
+    pprint.pprint(vars(res.campaign_payload.campaign))
 ```
 <!-- No SDK Example Usage [usage] -->
 
