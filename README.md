@@ -138,7 +138,7 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.job_status.get_job_status(id=<job_id>)
+    res = workflows.job_status.get_job_status(id=<id>)
 
     assert res.standard_job_status_response is not None
 
@@ -164,8 +164,8 @@ with Workflows(
     res = workflows.campaign.create(request={
         "primary_input": {
             "name": "<value>",
-            "advertiser_id": "<advertiser_id>",
-            "seed_id": "<seed_id>",
+            "advertiser_id": "<id>",
+            "seed_id": "<id>", # required, unless the advertiser has a default seed defined
             "start_date_in_utc": parse_datetime("2026-07-08T10:52:56.944Z"),
             "primary_channel": ttd_workflows.CampaignChannelType.DOOH,
             "primary_goal": {
