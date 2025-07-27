@@ -24,6 +24,7 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class CampaignWorkflowTypedDict(TypedDict):
     id: Nullable[str]
     name: NotRequired[Nullable[str]]
+    campaign_group_id: NotRequired[Nullable[int]]
     description: NotRequired[Nullable[str]]
     start_date: NotRequired[Nullable[datetime]]
     end_date: NotRequired[Nullable[datetime]]
@@ -43,6 +44,10 @@ class CampaignWorkflow(BaseModel):
     id: Nullable[str]
 
     name: OptionalNullable[str] = UNSET
+
+    campaign_group_id: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="campaignGroupId")
+    ] = UNSET
 
     description: OptionalNullable[str] = UNSET
 
@@ -94,6 +99,7 @@ class CampaignWorkflow(BaseModel):
     def serialize_model(self, handler):
         optional_fields = [
             "name",
+            "campaignGroupId",
             "description",
             "startDate",
             "endDate",
@@ -111,6 +117,7 @@ class CampaignWorkflow(BaseModel):
         nullable_fields = [
             "id",
             "name",
+            "campaignGroupId",
             "description",
             "startDate",
             "endDate",
