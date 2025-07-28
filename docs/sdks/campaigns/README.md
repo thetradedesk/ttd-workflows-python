@@ -29,6 +29,7 @@ with Workflows(
         "id": "<id>",
         "primary_input": {
             "description": "yahoo whether frail but into form sway neck notwithstanding",
+            "campaign_group_id": 760468,
             "time_zone": "Asia/Amman",
             "custom_cpa_click_weight": 1380.93,
             "custom_cpa_viewthrough_weight": 3991.98,

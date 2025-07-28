@@ -31,6 +31,7 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 class CampaignUpdateWorkflowPrimaryInputTypedDict(TypedDict):
     description: NotRequired[Nullable[str]]
+    campaign_group_id: NotRequired[Nullable[int]]
     time_zone: NotRequired[Nullable[str]]
     custom_cpa_click_weight: NotRequired[Nullable[float]]
     custom_cpa_viewthrough_weight: NotRequired[Nullable[float]]
@@ -50,6 +51,10 @@ class CampaignUpdateWorkflowPrimaryInputTypedDict(TypedDict):
 
 class CampaignUpdateWorkflowPrimaryInput(BaseModel):
     description: OptionalNullable[str] = UNSET
+
+    campaign_group_id: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="campaignGroupId")
+    ] = UNSET
 
     time_zone: Annotated[OptionalNullable[str], pydantic.Field(alias="timeZone")] = (
         UNSET
@@ -102,6 +107,7 @@ class CampaignUpdateWorkflowPrimaryInput(BaseModel):
     def serialize_model(self, handler):
         optional_fields = [
             "description",
+            "campaignGroupId",
             "timeZone",
             "customCPAClickWeight",
             "customCPAViewthroughWeight",
@@ -118,6 +124,7 @@ class CampaignUpdateWorkflowPrimaryInput(BaseModel):
         ]
         nullable_fields = [
             "description",
+            "campaignGroupId",
             "timeZone",
             "customCPAClickWeight",
             "customCPAViewthroughWeight",
