@@ -16,6 +16,7 @@ Create a new campaign with required fields
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="createCampaign" method="post" path="/campaign" -->
 ```python
 import os
 import ttd_workflows
@@ -30,6 +31,7 @@ with Workflows(
     res = workflows.campaign.create(request={
         "primary_input": {
             "description": "woot furthermore mentor",
+            "campaign_group_id": 86586,
             "time_zone": "Europe/Ulyanovsk",
             "custom_cpa_click_weight": 2561.01,
             "custom_cpa_viewthrough_weight": 5604.35,
@@ -233,6 +235,7 @@ Create multiple new campaigns with required fields
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="createCampaignsJob" method="post" path="/standardjob/campaign/bulk" -->
 ```python
 import os
 import ttd_workflows
@@ -249,6 +252,7 @@ with Workflows(
             {
                 "primary_input": {
                     "description": None,
+                    "campaign_group_id": 657704,
                     "time_zone": "America/North_Dakota/Center",
                     "custom_cpa_click_weight": 9662.9,
                     "custom_cpa_viewthrough_weight": 3558.78,
@@ -458,6 +462,7 @@ Only the fields provided in the request payload for each specific campaign will 
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="updateCampaignsJob" method="patch" path="/standardjob/campaign/bulk" -->
 ```python
 import os
 import ttd_workflows
@@ -475,6 +480,7 @@ with Workflows(
                 "id": "<id>",
                 "primary_input": {
                     "description": "hmph energetically yet surprisingly swift knight swear multicolored absent",
+                    "campaign_group_id": 645576,
                     "time_zone": "America/Argentina/San_Juan",
                     "custom_cpa_click_weight": None,
                     "custom_cpa_viewthrough_weight": 8361.84,
@@ -579,6 +585,7 @@ Get a campaign's version
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getCampaignVersion" method="get" path="/campaign/{id}/version" -->
 ```python
 import os
 from ttd_workflows import Workflows

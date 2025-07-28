@@ -15,6 +15,7 @@ To explore the available GraphQL operations, see the [GraphQL Schema Explorer](h
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="submitGraphQlRequest" method="post" path="/graphqlrequest" -->
 ```python
 import os
 from ttd_workflows import Workflows
@@ -63,6 +64,7 @@ For information on bulk GraphQL query syntax, see [GraphQL API Bulk Operations](
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="submitGraphQlQueryJob" method="post" path="/graphqlqueryjob" -->
 ```python
 import os
 from ttd_workflows import Workflows
