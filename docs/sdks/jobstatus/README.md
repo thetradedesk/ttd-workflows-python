@@ -15,6 +15,7 @@ Once a job is complete, this operation will return the URL from which to downloa
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getGraphQlQueryJobStatus" method="get" path="/graphqlqueryjob/{id}" -->
 ```python
 import os
 from ttd_workflows import Workflows
@@ -60,6 +61,7 @@ Job results expire after 24 hours, at which point you will need to submit a new 
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getJobStatus" method="get" path="/standardjob/{id}/status" -->
 ```python
 import os
 from ttd_workflows import Workflows

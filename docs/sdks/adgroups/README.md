@@ -15,6 +15,7 @@ Create a new ad group with required fields
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="createAdGroup" method="post" path="/adgroup" -->
 ```python
 import os
 import ttd_workflows
@@ -170,6 +171,7 @@ Only the fields provided in the request payload will be updated.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="updateAdGroup" method="patch" path="/adgroup" -->
 ```python
 import os
 import ttd_workflows
@@ -331,6 +333,7 @@ with Workflows(
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="archiveAdGroups" method="post" path="/adgroup/archive" -->
 ```python
 import os
 from ttd_workflows import Workflows
