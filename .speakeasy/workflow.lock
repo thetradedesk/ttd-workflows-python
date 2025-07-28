@@ -1,21 +1,21 @@
-speakeasyVersion: 1.582.0
+speakeasyVersion: 1.592.1
 sources:
     Workflows API:
         sourceNamespace: workflows-api
-        sourceRevisionDigest: sha256:8596f79dc413093b811fa4b87bb66a545b1f1cb41cd47443f8d309458ff64f2f
-        sourceBlobDigest: sha256:590abe121b4b043f374580262e64052a42d525a05730fd6f55c89e1e20a591cf
+        sourceRevisionDigest: sha256:d4eb6a99293eae0ceafccca8cd7c509dcf73c463a6f298b1499aedfdc3cfe423
+        sourceBlobDigest: sha256:e4a757fc3849ac5f69f6af423aaa3670ca70960e2a1abcae324b643527959b78
         tags:
             - latest
-            - speakeasy-sdk-regen-1752681913
+            - speakeasy-sdk-regen-1753729717
             - v1
 targets:
     workflows:
         source: Workflows API
         sourceNamespace: workflows-api
-        sourceRevisionDigest: sha256:8596f79dc413093b811fa4b87bb66a545b1f1cb41cd47443f8d309458ff64f2f
-        sourceBlobDigest: sha256:590abe121b4b043f374580262e64052a42d525a05730fd6f55c89e1e20a591cf
+        sourceRevisionDigest: sha256:d4eb6a99293eae0ceafccca8cd7c509dcf73c463a6f298b1499aedfdc3cfe423
+        sourceBlobDigest: sha256:e4a757fc3849ac5f69f6af423aaa3670ca70960e2a1abcae324b643527959b78
         codeSamplesNamespace: workflows-api-python-code-samples
-        codeSamplesRevisionDigest: sha256:c0dc68be595768534f8ab347b7fbc46907893b2517224f3b1ec6fd0fbc9d2aeb
+        codeSamplesRevisionDigest: sha256:a4fde030ac5b329ef0f16a8a99b41a3e8e738541131a42994bd8733fe7a83c20
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -27,8 +27,8 @@ workflow:
                   authSecret: $openapi_doc_auth_token
             overlays:
                 - location: .speakeasy/speakeasy-modifications-overlay.yaml
-                - location: .speakeasy/speakeasy-config-overlay.yaml
-                - location: .speakeasy/api-spec-overlay.yaml
+                - location: https://raw.githubusercontent.com/thetradedesk/ttd-workflows-config/refs/heads/main/overlays/speakeasy-config-overlay.yaml
+                - location: https://raw.githubusercontent.com/thetradedesk/ttd-workflows-config/refs/heads/main/overlays/api-spec-overlay.yaml
             registry:
                 location: registry.speakeasyapi.dev/thetradedesk/workflows/workflows-api
     targets:

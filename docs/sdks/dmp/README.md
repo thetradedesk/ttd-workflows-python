@@ -15,6 +15,7 @@ This job ID can be used to poll for the job's status using the associated operat
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getFirstPartyDataJob" method="post" path="/standardjob/firstpartydata" -->
 ```python
 import os
 from ttd_workflows import Workflows
@@ -71,6 +72,7 @@ using the associated operation under "Job Status".
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getThirdPartyDataJob" method="post" path="/standardjob/thirdpartydata" -->
 ```python
 import os
 from ttd_workflows import Workflows

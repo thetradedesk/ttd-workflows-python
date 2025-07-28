@@ -14,6 +14,7 @@ Create multiple new ad groups with required fields
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="createAdGroupsJob" method="post" path="/standardjob/adgroup/bulk" -->
 ```python
 import os
 from ttd_workflows import Workflows
@@ -67,6 +68,7 @@ Only the fields provided in the request payload for each specific ad group will 
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="updateAdGroupsJob" method="patch" path="/standardjob/adgroup/bulk" -->
 ```python
 import os
 import ttd_workflows
