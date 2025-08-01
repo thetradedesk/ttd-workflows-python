@@ -127,6 +127,8 @@ with Workflows(
     print(res.standard_job_submit_response)
 ```
 
+([Reference](https://ttd-workflows.apidocumentation.com/reference#tag/dmp/post/standardjob/thirdpartydata))
+
 ### Example: Check status for third-party data retrieval job using job ID returned from submit job
 
 ```python
@@ -146,6 +148,8 @@ with Workflows(
     # Handle response
     print(res.standard_job_status_response)
 ```
+
+([Reference](https://ttd-workflows.apidocumentation.com/reference#tag/job-status/get/standardjob/{id}/status))
 
 ### Example: Create campaign with minimal configuration
 
@@ -177,6 +181,133 @@ with Workflows(
     assert res.campaign_payload is not None
     pprint.pprint(vars(res.campaign_payload.campaign))
 ```
+
+([Reference](https://ttd-workflows.apidocumentation.com/reference#tag/campaign/post/campaign))
+
+### Example: Submit GraphQL request
+
+```python
+import pprint
+import os
+from ttd_workflows import Workflows
+
+
+with Workflows(
+    server="sandbox",
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+) as workflows:
+
+    query = """
+query Advertiser($id: ID!) {
+    advertiser(id: $id) {
+        name
+        totalCampaignChannelCount
+        totalFunnelLocationCount
+        useImpressionsOnlyBudgeting
+        vettingStatus
+        suggestedMeasurementProviderCategories
+    }
+}
+"""
+
+    res = workflows.graph_ql_request.submit_graph_ql_request(request={
+        "request": query,
+        "variables": {
+            "id": "<id>"
+        }
+    })
+
+    assert res.object is not None
+
+    print(pprint.pprint(res.object))
+```
+
+([Reference](https://ttd-workflows.apidocumentation.com/reference#tag/graphql-request/post/graphqlrequest))
+
+### Example: Submit bulk GraphQL query job
+
+Note: If you submit a GraphQL bulk query job (instead of a standard GraphQL request as shown above), any paginated and nested data is fully iterated and returned in a single output file.
+
+```python
+import os
+import time
+from ttd_workflows import Workflows
+
+
+with Workflows(
+    server="sandbox",
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+) as workflows:
+
+    query = """
+query AudiencesAcrossAdvertisers {
+  partner(id: "<id>") {
+    id
+    name
+    advertisers {
+      nodes {
+        id
+        name
+        adGroups {
+          nodes {
+            id
+            name
+            audience {
+              id
+              name
+              activeUniques {
+                householdCount
+                idsConnectedTvCount
+                idsCount
+                idsInAppCount
+                idsWebCount
+                lastUpdated
+                personsCount
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+"""
+
+    res = workflows.graph_ql_request.submit_graph_ql_query_job(request={
+        "query": query,
+    })
+
+    assert res.graph_ql_query_job_response is not None
+    print(res.graph_ql_query_job_response.payload.data.id)
+```
+
+([Reference](https://ttd-workflows.apidocumentation.com/reference#tag/graphql-request/post/graphqlqueryjob))
+
+### Example: Check status for bulk GraphQL query job
+
+```python
+import os
+from ttd_workflows import Workflows
+
+
+with Workflows(
+    server="sandbox",
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+) as workflows:
+    res = workflows.job_status.get_graph_ql_query_job_status(id="<id>")
+
+    assert res.graph_ql_query_job_retrieval_response is not None
+
+    print(f"Job completion: {res.graph_ql_query_job_retrieval_response.job.completion_percentage}%\n")
+    if int(res.graph_ql_query_job_retrieval_response.job.completion_percentage) == 100:
+        print(f"Result URL: {res.graph_ql_query_job_retrieval_response.job.url}\n")
+        print(f"Raw result: {res.graph_ql_query_job_retrieval_response.job.raw_result}\n")
+
+```
+
+([Reference](https://ttd-workflows.apidocumentation.com/reference#tag/job-status/get/graphqlqueryjob/{id}))
+
+
 <!-- No SDK Example Usage [usage] -->
 
 <!-- Start Authentication [security] -->
