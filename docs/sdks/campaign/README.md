@@ -554,10 +554,10 @@ with Workflows(
         },
     })
 
-    assert res.standard_job_submit_response is not None
+    assert res.campaign_payload is not None
 
     # Handle response
-    print(res.standard_job_submit_response)
+    print(res.campaign_payload)
 
 ```
 

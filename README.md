@@ -42,7 +42,15 @@ For further explanation on the entities encountered in this documentation (e.g.,
 >
 > Once a Python version reaches its [official end of life date](https://devguide.python.org/versions/), a 3-month grace period is provided for users to upgrade. Following this grace period, the minimum python version supported in the SDK will be updated.
 
-The SDK can be installed with either *pip* or *poetry* package managers.
+The SDK can be installed with *uv*, *pip*, or *poetry* package managers.
+
+### uv
+
+*uv* is a fast Python package installer and resolver, designed as a drop-in replacement for pip and pip-tools. It's recommended for its speed and modern Python tooling capabilities.
+
+```bash
+uv add ttd-workflows
+```
 
 ### PIP
 
@@ -495,7 +503,7 @@ with Workflows(
 
 ### [job_status](docs/sdks/jobstatus/README.md)
 
-* [get_graph_ql_query_job_status](docs/sdks/jobstatus/README.md#get_graph_ql_query_job_status) - Get the status of a previously submitted GraphQL query job.
+* [get_graph_ql_query_job_status](docs/sdks/jobstatus/README.md#get_graph_ql_query_job_status) - Get the status of a previously submitted GraphQL query job
 * [get_job_status](docs/sdks/jobstatus/README.md#get_job_status) - Get the status of a previously submitted job
 
 ### [rest_request](docs/sdks/restrequest/README.md)
