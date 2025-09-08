@@ -101,7 +101,7 @@ class Campaign(BaseSDK):
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "201", "application/json"):
+        if utils.match_response(http_res, ["200", "201"], "application/json"):
             return models.CreateCampaignResponse(
                 campaign_payload=unmarshal_json_response(
                     Optional[models.CampaignPayload], http_res
@@ -213,7 +213,7 @@ class Campaign(BaseSDK):
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "201", "application/json"):
+        if utils.match_response(http_res, ["200", "201"], "application/json"):
             return models.CreateCampaignResponse(
                 campaign_payload=unmarshal_json_response(
                     Optional[models.CampaignPayload], http_res
@@ -551,6 +551,13 @@ class Campaign(BaseSDK):
         )
 
         response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return models.UpdateCampaignsJobResponse(
+                campaign_payload=unmarshal_json_response(
+                    Optional[models.CampaignPayload], http_res
+                ),
+                http_meta=models.HTTPMetadata(request=req, response=http_res),
+            )
         if utils.match_response(http_res, "202", "application/json"):
             return models.UpdateCampaignsJobResponse(
                 standard_job_submit_response=unmarshal_json_response(
@@ -665,6 +672,13 @@ class Campaign(BaseSDK):
         )
 
         response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return models.UpdateCampaignsJobResponse(
+                campaign_payload=unmarshal_json_response(
+                    Optional[models.CampaignPayload], http_res
+                ),
+                http_meta=models.HTTPMetadata(request=req, response=http_res),
+            )
         if utils.match_response(http_res, "202", "application/json"):
             return models.UpdateCampaignsJobResponse(
                 standard_job_submit_response=unmarshal_json_response(

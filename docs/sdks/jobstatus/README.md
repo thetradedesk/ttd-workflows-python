@@ -5,7 +5,7 @@
 
 ### Available Operations
 
-* [get_graph_ql_query_job_status](#get_graph_ql_query_job_status) - Get the status of a previously submitted GraphQL query job.
+* [get_graph_ql_query_job_status](#get_graph_ql_query_job_status) - Get the status of a previously submitted GraphQL query job
 * [get_job_status](#get_job_status) - Get the status of a previously submitted job
 
 ## get_graph_ql_query_job_status
