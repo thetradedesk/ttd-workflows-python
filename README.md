@@ -130,8 +130,6 @@ with Workflows(
     })
 
     assert res.standard_job_submit_response is not None
-
-    # Handle response
     print(res.standard_job_submit_response)
 ```
 
@@ -152,8 +150,6 @@ with Workflows(
     res = workflows.job_status.get_job_status(id=<id>)
 
     assert res.standard_job_status_response is not None
-
-    # Handle response
     print(res.standard_job_status_response)
 ```
 
@@ -226,7 +222,6 @@ query Advertiser($id: ID!) {
     })
 
     assert res.object is not None
-
     print(pprint.pprint(res.object))
 ```
 
@@ -315,6 +310,64 @@ with Workflows(
 
 ([Reference](https://ttd-workflows.apidocumentation.com/reference#tag/job-status/get/graphqlqueryjob/{id}))
 
+### Example: Submit REST request (GET)
+
+```python
+import os
+import ttd_workflows
+from ttd_workflows import Workflows
+
+
+with Workflows(
+    server="sandbox",
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+) as workflows:
+
+    res = workflows.rest_request.submit_rest_request(request={
+        "method_type": ttd_workflows.RestAPIMethodType.GET,
+        "endpoint": "campaign/<id>",
+    })
+
+    assert res.object is not None
+    print(res.object)
+```
+
+([Reference](https://ttd-workflows.apidocumentation.com/reference#tag/rest-request/post/restrequest))
+
+### Example: Submit REST request (PUT/POST)
+
+NOTE: PUT/POST syntax is equivalent to GET, with the additional `dataBody` field.
+
+```python
+import json
+import os
+from datetime import datetime, timezone
+
+import ttd_workflows
+from ttd_workflows import Workflows
+
+
+with Workflows(
+    server="sandbox",
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+) as workflows:
+
+    now = datetime.now().isoformat(timespec="milliseconds")
+
+    res = workflows.rest_request.submit_rest_request(request={
+        "method_type": ttd_workflows.RestAPIMethodType.PUT,
+        "endpoint": "adgroup",
+        "dataBody": json.dumps({
+            "adGroupId": "<id>",
+            "description": f"updated by Python SDK: {now}"
+        })
+    })
+
+    assert res.object is not None
+    print(res.object)
+```
+
+([Reference](https://ttd-workflows.apidocumentation.com/reference#tag/rest-request/post/restrequest))
 
 <!-- No SDK Example Usage [usage] -->
 
