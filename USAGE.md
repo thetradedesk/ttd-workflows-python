@@ -92,10 +92,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptionsInput.SITE,
+                "gender": ttd_workflows.TargetingGenderInput.MALE,
+                "start_age": ttd_workflows.TargetingStartAgeInput.TWENTY_FIVE,
+                "end_age": ttd_workflows.TargetingEndAgeInput.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -133,6 +133,7 @@ with Workflows(
 </br>
 
 The same SDK client can also be used to make asynchronous requests by importing asyncio.
+
 ```python
 # Asynchronous Example
 import asyncio
@@ -228,10 +229,10 @@ async def main():
                 "is_use_clicks_as_conversions_enabled": False,
                 "is_use_secondary_conversions_enabled": False,
                 "nielsen_tracking_attributes": {
-                    "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                    "gender": ttd_workflows.TargetingGender.MALE,
-                    "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                    "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                    "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptionsInput.SITE,
+                    "gender": ttd_workflows.TargetingGenderInput.MALE,
+                    "start_age": ttd_workflows.TargetingStartAgeInput.TWENTY_FIVE,
+                    "end_age": ttd_workflows.TargetingEndAgeInput.SEVENTEEN,
                     "countries": [
                         "<value 1>",
                         "<value 2>",
