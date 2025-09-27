@@ -7,6 +7,7 @@ from .campaignflightworkflow import (
     CampaignFlightWorkflowTypedDict,
 )
 from .customcpatype import CustomCPAType
+from .customroastype import CustomROASType
 from datetime import datetime
 import pydantic
 from pydantic import model_serializer
@@ -32,12 +33,17 @@ class CampaignWorkflowTypedDict(TypedDict):
     custom_cpa_click_weight: NotRequired[Nullable[float]]
     custom_cpa_viewthrough_weight: NotRequired[Nullable[float]]
     custom_cpa_type: NotRequired[CustomCPAType]
+    custom_roas_type: NotRequired[CustomROASType]
     impressions_only_budgeting_cpm: NotRequired[Nullable[float]]
     primary_channel: NotRequired[CampaignChannelType]
     primary_goal: NotRequired[Nullable[str]]
     seed_id: NotRequired[Nullable[str]]
     conversion_reporting_columns_count: NotRequired[Nullable[int]]
     flights: NotRequired[Nullable[List[CampaignFlightWorkflowTypedDict]]]
+    is_managed_by_ttd: NotRequired[Nullable[bool]]
+    secondary_goal: NotRequired[Nullable[str]]
+    tertiary_goal: NotRequired[Nullable[str]]
+    pass_through_fee_cards_count: NotRequired[Nullable[int]]
 
 
 class CampaignWorkflow(BaseModel):
@@ -75,6 +81,10 @@ class CampaignWorkflow(BaseModel):
         Optional[CustomCPAType], pydantic.Field(alias="customCPAType")
     ] = None
 
+    custom_roas_type: Annotated[
+        Optional[CustomROASType], pydantic.Field(alias="customRoasType")
+    ] = None
+
     impressions_only_budgeting_cpm: Annotated[
         OptionalNullable[float], pydantic.Field(alias="impressionsOnlyBudgetingCpm")
     ] = UNSET
@@ -95,6 +105,22 @@ class CampaignWorkflow(BaseModel):
 
     flights: OptionalNullable[List[CampaignFlightWorkflow]] = UNSET
 
+    is_managed_by_ttd: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="isManagedByTTD")
+    ] = UNSET
+
+    secondary_goal: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="secondaryGoal")
+    ] = UNSET
+
+    tertiary_goal: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="tertiaryGoal")
+    ] = UNSET
+
+    pass_through_fee_cards_count: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="passThroughFeeCardsCount")
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -107,12 +133,17 @@ class CampaignWorkflow(BaseModel):
             "customCPAClickWeight",
             "customCPAViewthroughWeight",
             "customCPAType",
+            "customRoasType",
             "impressionsOnlyBudgetingCpm",
             "primaryChannel",
             "primaryGoal",
             "seedId",
             "conversionReportingColumnsCount",
             "flights",
+            "isManagedByTTD",
+            "secondaryGoal",
+            "tertiaryGoal",
+            "passThroughFeeCardsCount",
         ]
         nullable_fields = [
             "id",
@@ -129,6 +160,10 @@ class CampaignWorkflow(BaseModel):
             "seedId",
             "conversionReportingColumnsCount",
             "flights",
+            "isManagedByTTD",
+            "secondaryGoal",
+            "tertiaryGoal",
+            "passThroughFeeCardsCount",
         ]
         null_default_fields = []
 

@@ -161,10 +161,10 @@ with Workflows(
                     "is_use_clicks_as_conversions_enabled": True,
                     "is_use_secondary_conversions_enabled": True,
                     "nielsen_tracking_attributes": {
-                        "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.AUDIENCE,
-                        "gender": ttd_workflows.TargetingGender.FEMALE,
-                        "start_age": ttd_workflows.TargetingStartAge.FORTY_FIVE,
-                        "end_age": ttd_workflows.TargetingEndAge.THIRTY_FOUR,
+                        "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptionsInput.AUDIENCE,
+                        "gender": ttd_workflows.TargetingGenderInput.FEMALE,
+                        "start_age": ttd_workflows.TargetingStartAgeInput.FORTY_FIVE,
+                        "end_age": ttd_workflows.TargetingEndAgeInput.THIRTY_FOUR,
                         "countries": [
                             "<value 1>",
                             "<value 2>",
