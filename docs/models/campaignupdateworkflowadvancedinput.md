@@ -1,4 +1,4 @@
-# CampaignWorkflowAdvancedInput
+# CampaignUpdateWorkflowAdvancedInput
 
 
 ## Fields

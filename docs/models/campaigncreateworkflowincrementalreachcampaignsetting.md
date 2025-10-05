@@ -1,0 +1,11 @@
+# CampaignCreateWorkflowIncrementalReachCampaignSetting
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `i_spot_reach_setting`                                                                 | [Optional[models.IncrementalReachBrandInput]](../models/incrementalreachbrandinput.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `realytics_reach_setting`                                                              | [Optional[models.RealyticsReachSettingInput]](../models/realyticsreachsettinginput.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `tv_squared_reach_setting`                                                             | [Optional[models.IncrementalReachBrandInput]](../models/incrementalreachbrandinput.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `samba_au_reach_setting`                                                               | [Optional[models.IncrementalReachBrandInput]](../models/incrementalreachbrandinput.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |

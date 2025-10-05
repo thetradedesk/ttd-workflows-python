@@ -6,7 +6,14 @@ from .graphqljobcallbackinput import (
     GraphQlJobCallbackInputTypedDict,
 )
 import pydantic
-from ttd_workflows.types import BaseModel
+from pydantic import model_serializer
+from ttd_workflows.types import (
+    BaseModel,
+    Nullable,
+    OptionalNullable,
+    UNSET,
+    UNSET_SENTINEL,
+)
 from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
@@ -18,6 +25,8 @@ class GraphQlQueryJobInputTypedDict(TypedDict):
     r"""The GraphQL query to execute"""
     callback_input: NotRequired[GraphQlJobCallbackInputTypedDict]
     r"""Input class for providing a callback's url and any headers needed for the callback."""
+    beta_features: NotRequired[Nullable[str]]
+    r"""Beta features to be enabled for this GraphQL query (passed as TTD-GQL-Beta header)"""
 
 
 class GraphQlQueryJobInput(BaseModel):
@@ -30,3 +39,38 @@ class GraphQlQueryJobInput(BaseModel):
         Optional[GraphQlJobCallbackInput], pydantic.Field(alias="callbackInput")
     ] = None
     r"""Input class for providing a callback's url and any headers needed for the callback."""
+
+    beta_features: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="betaFeatures")
+    ] = UNSET
+    r"""Beta features to be enabled for this GraphQL query (passed as TTD-GQL-Beta header)"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = ["callbackInput", "betaFeatures"]
+        nullable_fields = ["betaFeatures"]
+        null_default_fields = []
+
+        serialized = handler(self)
+
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
+
+            if val is not None and val != UNSET_SENTINEL:
+                m[k] = val
+            elif val != UNSET_SENTINEL and (
+                not k in optional_fields or (optional_nullable and is_set)
+            ):
+                m[k] = val
+
+        return m
