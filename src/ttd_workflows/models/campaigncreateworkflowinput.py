@@ -5,13 +5,13 @@ from .campaigncreateworkflowadgroupinput import (
     CampaignCreateWorkflowAdGroupInput,
     CampaignCreateWorkflowAdGroupInputTypedDict,
 )
+from .campaigncreateworkflowadvancedinput import (
+    CampaignCreateWorkflowAdvancedInput,
+    CampaignCreateWorkflowAdvancedInputTypedDict,
+)
 from .campaigncreateworkflowprimaryinput import (
     CampaignCreateWorkflowPrimaryInput,
     CampaignCreateWorkflowPrimaryInputTypedDict,
-)
-from .campaignworkflowadvancedinput import (
-    CampaignWorkflowAdvancedInput,
-    CampaignWorkflowAdvancedInputTypedDict,
 )
 import pydantic
 from pydantic import model_serializer
@@ -28,7 +28,7 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 class CampaignCreateWorkflowInputTypedDict(TypedDict):
     primary_input: CampaignCreateWorkflowPrimaryInputTypedDict
-    advanced_input: NotRequired[CampaignWorkflowAdvancedInputTypedDict]
+    advanced_input: NotRequired[CampaignCreateWorkflowAdvancedInputTypedDict]
     ad_groups: NotRequired[Nullable[List[CampaignCreateWorkflowAdGroupInputTypedDict]]]
 
 
@@ -38,7 +38,8 @@ class CampaignCreateWorkflowInput(BaseModel):
     ]
 
     advanced_input: Annotated[
-        Optional[CampaignWorkflowAdvancedInput], pydantic.Field(alias="advancedInput")
+        Optional[CampaignCreateWorkflowAdvancedInput],
+        pydantic.Field(alias="advancedInput"),
     ] = None
 
     ad_groups: Annotated[

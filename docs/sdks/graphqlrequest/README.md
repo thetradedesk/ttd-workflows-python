@@ -30,6 +30,7 @@ with Workflows(
         "variables": {
 
         },
+        "beta_features": "<value>",
     })
 
     assert res.object is not None
@@ -85,6 +86,7 @@ with Workflows(
                 },
             ],
         },
+        "beta_features": "<value>",
     })
 
     assert res.graph_ql_query_job_response is not None
