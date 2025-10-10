@@ -16,18 +16,18 @@ from typing import List
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class GraphQlQueryJobTypedDict(TypedDict):
-    r"""This is the response model that mirrors the GQL bulkjob"""
+class GraphQlBulkJobTypedDict(TypedDict):
+    r"""The response model that mirrors the GQL bulkjob."""
 
     id: int
     r"""The ID of the job."""
     created_at: datetime
-    r"""Time of creation for that bulk job in UTC."""
+    r"""The UTC date and time that the job was created."""
     status: BulkJobStatus
     runtime_errors: Nullable[List[str]]
-    r"""Errors encountered while executing the job"""
+    r"""Errors encountered while executing the job."""
     completed_at: NotRequired[Nullable[datetime]]
-    r"""The UTC data and time that the job completed."""
+    r"""The UTC date and time that the job completed."""
     completion_percentage: NotRequired[Nullable[float]]
     r"""The job completion percentage."""
     url: NotRequired[Nullable[str]]
@@ -37,29 +37,31 @@ class GraphQlQueryJobTypedDict(TypedDict):
     If the job result is larger than 20MB, then null is returned.
     """
     query_gql_errors: NotRequired[Nullable[List[str]]]
-    r"""If the GQL requests within the job hard failed (such as from an authorization error or an internal server error), the causes encountered during execution"""
+    r"""If the GQL requests within the job hard-failed (such as from an authorization error
+    or an internal server error), the causes encountered during execution.
+    """
 
 
-class GraphQlQueryJob(BaseModel):
-    r"""This is the response model that mirrors the GQL bulkjob"""
+class GraphQlBulkJob(BaseModel):
+    r"""The response model that mirrors the GQL bulkjob."""
 
     id: int
     r"""The ID of the job."""
 
     created_at: Annotated[datetime, pydantic.Field(alias="createdAt")]
-    r"""Time of creation for that bulk job in UTC."""
+    r"""The UTC date and time that the job was created."""
 
     status: BulkJobStatus
 
     runtime_errors: Annotated[
         Nullable[List[str]], pydantic.Field(alias="runtimeErrors")
     ]
-    r"""Errors encountered while executing the job"""
+    r"""Errors encountered while executing the job."""
 
     completed_at: Annotated[
         OptionalNullable[datetime], pydantic.Field(alias="completedAt")
     ] = UNSET
-    r"""The UTC data and time that the job completed."""
+    r"""The UTC date and time that the job completed."""
 
     completion_percentage: Annotated[
         OptionalNullable[float], pydantic.Field(alias="completionPercentage")
@@ -79,7 +81,9 @@ class GraphQlQueryJob(BaseModel):
     query_gql_errors: Annotated[
         OptionalNullable[List[str]], pydantic.Field(alias="queryGqlErrors")
     ] = UNSET
-    r"""If the GQL requests within the job hard failed (such as from an authorization error or an internal server error), the causes encountered during execution"""
+    r"""If the GQL requests within the job hard-failed (such as from an authorization error
+    or an internal server error), the causes encountered during execution.
+    """
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

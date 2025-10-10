@@ -2,12 +2,14 @@
 
 import httpx
 from typing import Optional
+from dataclasses import dataclass
 
 from ttd_workflows.models import WorkflowsError
 
 MAX_MESSAGE_LEN = 10_000
 
 
+@dataclass(unsafe_hash=True)
 class APIError(WorkflowsError):
     """The fallback error class if no more specific error class is matched."""
 

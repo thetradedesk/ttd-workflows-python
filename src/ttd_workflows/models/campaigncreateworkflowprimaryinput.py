@@ -2,6 +2,10 @@
 
 from __future__ import annotations
 from .campaignchanneltype import CampaignChannelType
+from .campaigncreateworkflowincrementalreachcampaignsetting import (
+    CampaignCreateWorkflowIncrementalReachCampaignSetting,
+    CampaignCreateWorkflowIncrementalReachCampaignSettingTypedDict,
+)
 from .campaignworkflowbudgetinput import (
     CampaignWorkflowBudgetInput,
     CampaignWorkflowBudgetInputTypedDict,
@@ -15,6 +19,7 @@ from .campaignworkflowroigoalinput import (
     CampaignWorkflowROIGoalInputTypedDict,
 )
 from .customcpatype import CustomCPAType
+from .customroastype import CustomROASType
 from datetime import datetime
 import pydantic
 from pydantic import model_serializer
@@ -40,6 +45,7 @@ class CampaignCreateWorkflowPrimaryInputTypedDict(TypedDict):
     custom_cpa_click_weight: NotRequired[Nullable[float]]
     custom_cpa_viewthrough_weight: NotRequired[Nullable[float]]
     custom_cpa_type: NotRequired[CustomCPAType]
+    custom_roas_type: NotRequired[CustomROASType]
     impressions_only_budgeting_cpm: NotRequired[Nullable[float]]
     budget: NotRequired[CampaignWorkflowBudgetInputTypedDict]
     end_date_in_utc: NotRequired[Nullable[datetime]]
@@ -47,7 +53,13 @@ class CampaignCreateWorkflowPrimaryInputTypedDict(TypedDict):
     campaign_conversion_reporting_columns: NotRequired[
         Nullable[List[CampaignWorkflowCampaignConversionReportingColumnInputTypedDict]]
     ]
+    is_managed_by_ttd: NotRequired[Nullable[bool]]
+    secondary_goal: NotRequired[CampaignWorkflowROIGoalInputTypedDict]
+    tertiary_goal: NotRequired[CampaignWorkflowROIGoalInputTypedDict]
     start_date_in_utc: NotRequired[Nullable[datetime]]
+    campaign_incremental_reach_setting: NotRequired[
+        CampaignCreateWorkflowIncrementalReachCampaignSettingTypedDict
+    ]
 
 
 class CampaignCreateWorkflowPrimaryInput(BaseModel):
@@ -85,6 +97,10 @@ class CampaignCreateWorkflowPrimaryInput(BaseModel):
         Optional[CustomCPAType], pydantic.Field(alias="customCPAType")
     ] = None
 
+    custom_roas_type: Annotated[
+        Optional[CustomROASType], pydantic.Field(alias="customRoasType")
+    ] = None
+
     impressions_only_budgeting_cpm: Annotated[
         OptionalNullable[float], pydantic.Field(alias="impressionsOnlyBudgetingCpm")
     ] = UNSET
@@ -102,9 +118,26 @@ class CampaignCreateWorkflowPrimaryInput(BaseModel):
         pydantic.Field(alias="campaignConversionReportingColumns"),
     ] = UNSET
 
+    is_managed_by_ttd: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="isManagedByTTD")
+    ] = UNSET
+
+    secondary_goal: Annotated[
+        Optional[CampaignWorkflowROIGoalInput], pydantic.Field(alias="secondaryGoal")
+    ] = None
+
+    tertiary_goal: Annotated[
+        Optional[CampaignWorkflowROIGoalInput], pydantic.Field(alias="tertiaryGoal")
+    ] = None
+
     start_date_in_utc: Annotated[
         OptionalNullable[datetime], pydantic.Field(alias="startDateInUtc")
     ] = UNSET
+
+    campaign_incremental_reach_setting: Annotated[
+        Optional[CampaignCreateWorkflowIncrementalReachCampaignSetting],
+        pydantic.Field(alias="campaignIncrementalReachSetting"),
+    ] = None
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
@@ -115,12 +148,17 @@ class CampaignCreateWorkflowPrimaryInput(BaseModel):
             "customCPAClickWeight",
             "customCPAViewthroughWeight",
             "customCPAType",
+            "customRoasType",
             "impressionsOnlyBudgetingCpm",
             "budget",
             "endDateInUtc",
             "seedId",
             "campaignConversionReportingColumns",
+            "isManagedByTTD",
+            "secondaryGoal",
+            "tertiaryGoal",
             "startDateInUtc",
+            "campaignIncrementalReachSetting",
         ]
         nullable_fields = [
             "description",
@@ -132,6 +170,7 @@ class CampaignCreateWorkflowPrimaryInput(BaseModel):
             "endDateInUtc",
             "seedId",
             "campaignConversionReportingColumns",
+            "isManagedByTTD",
             "startDateInUtc",
         ]
         null_default_fields = []

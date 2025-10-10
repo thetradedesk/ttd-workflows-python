@@ -1,4 +1,4 @@
-# GraphQLQueryJobError
+# GraphQLBulkJobError
 
 Represents an error type returned by the inner data on a mutation response
 

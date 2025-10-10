@@ -10,7 +10,7 @@ from typing import Any, Mapping, Optional
 
 
 class JobStatus(BaseSDK):
-    def get_graph_ql_query_job_status(
+    def get_graph_ql_bulk_job_status(
         self,
         *,
         id: str,
@@ -18,10 +18,10 @@ class JobStatus(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.GetGraphQlQueryJobStatusResponse:
-        r"""Get the status of a previously submitted GraphQL query job
+    ) -> models.GetGraphQlBulkJobStatusResponse:
+        r"""Get the status of a previously submitted GraphQL bulk job
 
-        Use this operation to get a previously submitted GraphQL query job's status and completion percentage.
+        Use this operation to get a previously submitted GraphQL bulk job's status and completion percentage.
         Once a job is complete, this operation will return the URL from which to download the job results.
 
         :param id:
@@ -40,13 +40,13 @@ class JobStatus(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetGraphQlQueryJobStatusRequest(
+        request = models.GetGraphQlBulkJobStatusRequest(
             id=id,
         )
 
         req = self._build_request(
             method="GET",
-            path="/graphqlqueryjob/{id}",
+            path="/graphqlbulkjob/{id}",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -76,8 +76,8 @@ class JobStatus(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="getGraphQlQueryJobStatus",
-                oauth2_scopes=[],
+                operation_id="getGraphQlBulkJobStatus",
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -89,9 +89,9 @@ class JobStatus(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return models.GetGraphQlQueryJobStatusResponse(
-                graph_ql_query_job_retrieval_response=unmarshal_json_response(
-                    Optional[models.GraphQLQueryJobRetrievalResponse], http_res
+            return models.GetGraphQlBulkJobStatusResponse(
+                graph_ql_bulk_job_retrieval_response=unmarshal_json_response(
+                    Optional[models.GraphQLBulkJobRetrievalResponse], http_res
                 ),
                 http_meta=models.HTTPMetadata(request=req, response=http_res),
             )
@@ -111,7 +111,7 @@ class JobStatus(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    async def get_graph_ql_query_job_status_async(
+    async def get_graph_ql_bulk_job_status_async(
         self,
         *,
         id: str,
@@ -119,10 +119,10 @@ class JobStatus(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.GetGraphQlQueryJobStatusResponse:
-        r"""Get the status of a previously submitted GraphQL query job
+    ) -> models.GetGraphQlBulkJobStatusResponse:
+        r"""Get the status of a previously submitted GraphQL bulk job
 
-        Use this operation to get a previously submitted GraphQL query job's status and completion percentage.
+        Use this operation to get a previously submitted GraphQL bulk job's status and completion percentage.
         Once a job is complete, this operation will return the URL from which to download the job results.
 
         :param id:
@@ -141,13 +141,13 @@ class JobStatus(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetGraphQlQueryJobStatusRequest(
+        request = models.GetGraphQlBulkJobStatusRequest(
             id=id,
         )
 
         req = self._build_request_async(
             method="GET",
-            path="/graphqlqueryjob/{id}",
+            path="/graphqlbulkjob/{id}",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -177,8 +177,8 @@ class JobStatus(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="getGraphQlQueryJobStatus",
-                oauth2_scopes=[],
+                operation_id="getGraphQlBulkJobStatus",
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -190,9 +190,9 @@ class JobStatus(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return models.GetGraphQlQueryJobStatusResponse(
-                graph_ql_query_job_retrieval_response=unmarshal_json_response(
-                    Optional[models.GraphQLQueryJobRetrievalResponse], http_res
+            return models.GetGraphQlBulkJobStatusResponse(
+                graph_ql_bulk_job_retrieval_response=unmarshal_json_response(
+                    Optional[models.GraphQLBulkJobRetrievalResponse], http_res
                 ),
                 http_meta=models.HTTPMetadata(request=req, response=http_res),
             )
@@ -281,7 +281,7 @@ class JobStatus(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getJobStatus",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -384,7 +384,7 @@ class JobStatus(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getJobStatus",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),

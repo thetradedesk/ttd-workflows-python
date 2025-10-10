@@ -5,17 +5,17 @@
 
 ### Available Operations
 
-* [get_graph_ql_query_job_status](#get_graph_ql_query_job_status) - Get the status of a previously submitted GraphQL query job
+* [get_graph_ql_bulk_job_status](#get_graph_ql_bulk_job_status) - Get the status of a previously submitted GraphQL bulk job
 * [get_job_status](#get_job_status) - Get the status of a previously submitted job
 
-## get_graph_ql_query_job_status
+## get_graph_ql_bulk_job_status
 
-Use this operation to get a previously submitted GraphQL query job's status and completion percentage.
+Use this operation to get a previously submitted GraphQL bulk job's status and completion percentage.
 Once a job is complete, this operation will return the URL from which to download the job results.
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="getGraphQlQueryJobStatus" method="get" path="/graphqlqueryjob/{id}" -->
+<!-- UsageSnippet language="python" operationID="getGraphQlBulkJobStatus" method="get" path="/graphqlbulkjob/{id}" -->
 ```python
 import os
 from ttd_workflows import Workflows
@@ -25,12 +25,12 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.job_status.get_graph_ql_query_job_status(id="<id>")
+    res = workflows.job_status.get_graph_ql_bulk_job_status(id="<id>")
 
-    assert res.graph_ql_query_job_retrieval_response is not None
+    assert res.graph_ql_bulk_job_retrieval_response is not None
 
     # Handle response
-    print(res.graph_ql_query_job_retrieval_response)
+    print(res.graph_ql_bulk_job_retrieval_response)
 
 ```
 
@@ -43,7 +43,7 @@ with Workflows(
 
 ### Response
 
-**[models.GetGraphQlQueryJobStatusResponse](../../models/getgraphqlqueryjobstatusresponse.md)**
+**[models.GetGraphQlBulkJobStatusResponse](../../models/getgraphqlbulkjobstatusresponse.md)**
 
 ### Errors
 

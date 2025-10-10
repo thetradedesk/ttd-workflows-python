@@ -6,12 +6,13 @@
 ### Available Operations
 
 * [submit_graph_ql_request](#submit_graph_ql_request) - Submit a valid GraphQL query or mutation
-* [submit_graph_ql_query_job](#submit_graph_ql_query_job) - Submit a valid bulk GraphQL query
+* [submit_graph_ql_bulk_query_job](#submit_graph_ql_bulk_query_job) - Submit a valid bulk GraphQL query job
 
 ## submit_graph_ql_request
 
-This generic operation can be used to execute any valid GraphQL request.
-To explore the available GraphQL operations, see the [GraphQL Schema Explorer](https://partner.thetradedesk.com/v3/portal/api/graphql-schema).
+This generic operation can be used to execute any valid GraphQL request. The results are returned
+directly when the request is complete. To explore the available GraphQL operations, see the
+[GraphQL Schema Explorer](https://partner.thetradedesk.com/v3/portal/api/graphql-schema).
 
 ### Example Usage
 
@@ -30,6 +31,7 @@ with Workflows(
         "variables": {
 
         },
+        "beta_features": "<value>",
     })
 
     assert res.object is not None
@@ -57,14 +59,17 @@ with Workflows(
 | models.ProblemDetailsError | 400, 401, 403, 404         | application/json           |
 | models.APIError            | 4XX, 5XX                   | \*/\*                      |
 
-## submit_graph_ql_query_job
+## submit_graph_ql_bulk_query_job
 
-This generic operation can be used to execute any valid bulk GraphQL query.
-For information on bulk GraphQL query syntax, see [GraphQL API Bulk Operations](https://partner.thetradedesk.com/v3/portal/api/doc/GqlBulkOperations).
+This generic operation can be used to execute any valid bulk GraphQL query. To determine the job's
+status, completion percentage, and URL for download (once the job results are ready), query the
+[GraphQL Bulk Job Status](https://ttd-workflows.apidocumentation.com/reference#tag/job-status/get/graphqlbulkqueryjob/{id})
+endpoint. For information on bulk GraphQL query syntax, see
+[GraphQL API Bulk Operations](https://partner.thetradedesk.com/v3/portal/api/doc/GqlBulkOperations).
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="submitGraphQlQueryJob" method="post" path="/graphqlqueryjob" -->
+<!-- UsageSnippet language="python" operationID="submitGraphQlBulkQueryJob" method="post" path="/graphqlbulkqueryjob" -->
 ```python
 import os
 from ttd_workflows import Workflows
@@ -74,23 +79,19 @@ with Workflows(
     ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
 ) as workflows:
 
-    res = workflows.graph_ql_request.submit_graph_ql_query_job(request={
+    res = workflows.graph_ql_request.submit_graph_ql_bulk_query_job(request={
         "query": "<value>",
         "callback_input": {
-            "callback_url": "https://wilted-cork.net/",
-            "callback_headers": [
-                {
-                    "key": "<key>",
-                    "value": "<value>",
-                },
-            ],
+            "callback_url": "https://sociable-quinoa.info/",
+            "callback_headers": None,
         },
+        "beta_features": "<value>",
     })
 
-    assert res.graph_ql_query_job_response is not None
+    assert res.graph_ql_bulk_job_response is not None
 
     # Handle response
-    print(res.graph_ql_query_job_response)
+    print(res.graph_ql_bulk_job_response)
 
 ```
 
@@ -103,7 +104,7 @@ with Workflows(
 
 ### Response
 
-**[models.SubmitGraphQlQueryJobResponse](../../models/submitgraphqlqueryjobresponse.md)**
+**[models.SubmitGraphQlBulkQueryJobResponse](../../models/submitgraphqlbulkqueryjobresponse.md)**
 
 ### Errors
 

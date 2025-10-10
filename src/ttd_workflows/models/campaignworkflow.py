@@ -38,6 +38,8 @@ class CampaignWorkflowTypedDict(TypedDict):
     seed_id: NotRequired[Nullable[str]]
     conversion_reporting_columns_count: NotRequired[Nullable[int]]
     flights: NotRequired[Nullable[List[CampaignFlightWorkflowTypedDict]]]
+    secondary_goal: NotRequired[Nullable[str]]
+    tertiary_goal: NotRequired[Nullable[str]]
 
 
 class CampaignWorkflow(BaseModel):
@@ -95,6 +97,14 @@ class CampaignWorkflow(BaseModel):
 
     flights: OptionalNullable[List[CampaignFlightWorkflow]] = UNSET
 
+    secondary_goal: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="secondaryGoal")
+    ] = UNSET
+
+    tertiary_goal: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="tertiaryGoal")
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -113,6 +123,8 @@ class CampaignWorkflow(BaseModel):
             "seedId",
             "conversionReportingColumnsCount",
             "flights",
+            "secondaryGoal",
+            "tertiaryGoal",
         ]
         nullable_fields = [
             "id",
@@ -129,6 +141,8 @@ class CampaignWorkflow(BaseModel):
             "seedId",
             "conversionReportingColumnsCount",
             "flights",
+            "secondaryGoal",
+            "tertiaryGoal",
         ]
         null_default_fields = []
 

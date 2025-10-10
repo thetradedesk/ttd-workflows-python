@@ -1,4 +1,4 @@
-# GetGraphQlQueryJobStatusRequest
+# GetGraphQlBulkJobStatusRequest
 
 
 ## Fields
