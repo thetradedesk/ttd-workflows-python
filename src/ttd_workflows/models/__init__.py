@@ -142,6 +142,10 @@ if TYPE_CHECKING:
         CampaignBulkUpdateWorkflowInputWithValidationTypedDict,
     )
     from .campaignchanneltype import CampaignChannelType
+    from .campaigncreatepassthroughfeesinput import (
+        CampaignCreatePassThroughFeesInput,
+        CampaignCreatePassThroughFeesInputTypedDict,
+    )
     from .campaigncreateworkflowadgroupadvancedinput import (
         CampaignCreateWorkflowAdGroupAdvancedInput,
         CampaignCreateWorkflowAdGroupAdvancedInputTypedDict,
@@ -154,6 +158,14 @@ if TYPE_CHECKING:
         CampaignCreateWorkflowAdGroupInput,
         CampaignCreateWorkflowAdGroupInputTypedDict,
     )
+    from .campaigncreateworkflowadvancedinput import (
+        CampaignCreateWorkflowAdvancedInput,
+        CampaignCreateWorkflowAdvancedInputTypedDict,
+    )
+    from .campaigncreateworkflowincrementalreachcampaignsetting import (
+        CampaignCreateWorkflowIncrementalReachCampaignSetting,
+        CampaignCreateWorkflowIncrementalReachCampaignSettingTypedDict,
+    )
     from .campaigncreateworkflowinput import (
         CampaignCreateWorkflowInput,
         CampaignCreateWorkflowInputTypedDict,
@@ -161,6 +173,10 @@ if TYPE_CHECKING:
     from .campaigncreateworkflowinputwithvalidation import (
         CampaignCreateWorkflowInputWithValidation,
         CampaignCreateWorkflowInputWithValidationTypedDict,
+    )
+    from .campaigncreateworkflowpassthroughfeecardinput import (
+        CampaignCreateWorkflowPassThroughFeeCardInput,
+        CampaignCreateWorkflowPassThroughFeeCardInputTypedDict,
     )
     from .campaigncreateworkflowprimaryinput import (
         CampaignCreateWorkflowPrimaryInput,
@@ -172,6 +188,10 @@ if TYPE_CHECKING:
     )
     from .campaignpacingmode import CampaignPacingMode
     from .campaignpayload import CampaignPayload, CampaignPayloadTypedDict
+    from .campaignupdateworkflowadvancedinput import (
+        CampaignUpdateWorkflowAdvancedInput,
+        CampaignUpdateWorkflowAdvancedInputTypedDict,
+    )
     from .campaignupdateworkflowinput import (
         CampaignUpdateWorkflowInput,
         CampaignUpdateWorkflowInputTypedDict,
@@ -189,10 +209,6 @@ if TYPE_CHECKING:
         CampaignVersionWorkflowTypedDict,
     )
     from .campaignworkflow import CampaignWorkflow, CampaignWorkflowTypedDict
-    from .campaignworkflowadvancedinput import (
-        CampaignWorkflowAdvancedInput,
-        CampaignWorkflowAdvancedInputTypedDict,
-    )
     from .campaignworkflowbudgetinput import (
         CampaignWorkflowBudgetInput,
         CampaignWorkflowBudgetInputTypedDict,
@@ -224,8 +240,12 @@ if TYPE_CHECKING:
     )
     from .customcpatype import CustomCPAType
     from .customroasconfig import CustomROASConfig, CustomROASConfigTypedDict
+    from .customroastype import CustomROASType
     from .dimensionalbiddingdimensions import DimensionalBiddingDimensions
     from .enhancednielsenreportingoptions import EnhancedNielsenReportingOptions
+    from .enhancednielsenreportingoptionsinput import (
+        EnhancedNielsenReportingOptionsInput,
+    )
     from .firstpartydatainput import FirstPartyDataInput, FirstPartyDataInputTypedDict
     from .getcampaignversionop import (
         GetCampaignVersionRequest,
@@ -237,11 +257,11 @@ if TYPE_CHECKING:
         GetFirstPartyDataJobResponse,
         GetFirstPartyDataJobResponseTypedDict,
     )
-    from .getgraphqlqueryjobstatusop import (
-        GetGraphQlQueryJobStatusRequest,
-        GetGraphQlQueryJobStatusRequestTypedDict,
-        GetGraphQlQueryJobStatusResponse,
-        GetGraphQlQueryJobStatusResponseTypedDict,
+    from .getgraphqlbulkjobstatusop import (
+        GetGraphQlBulkJobStatusRequest,
+        GetGraphQlBulkJobStatusRequestTypedDict,
+        GetGraphQlBulkJobStatusResponse,
+        GetGraphQlBulkJobStatusResponseTypedDict,
     )
     from .getjobstatusop import (
         GetJobStatusRequest,
@@ -253,40 +273,51 @@ if TYPE_CHECKING:
         GetThirdPartyDataJobResponse,
         GetThirdPartyDataJobResponseTypedDict,
     )
-    from .graphqljobcallbackinput import (
-        GraphQlJobCallbackInput,
-        GraphQlJobCallbackInputTypedDict,
+    from .graphqlbulkjob import GraphQlBulkJob, GraphQlBulkJobTypedDict
+    from .graphqlbulkjobcallbackinput import (
+        GraphQlBulkJobCallbackInput,
+        GraphQlBulkJobCallbackInputTypedDict,
     )
-    from .graphqlqueryjob import GraphQlQueryJob, GraphQlQueryJobTypedDict
-    from .graphqlqueryjoberror import (
-        GraphQLQueryJobError,
-        GraphQLQueryJobErrorTypedDict,
+    from .graphqlbulkjoberror import GraphQLBulkJobError, GraphQLBulkJobErrorTypedDict
+    from .graphqlbulkjobpayload import (
+        GraphQlBulkJobPayload,
+        GraphQlBulkJobPayloadTypedDict,
+    )
+    from .graphqlbulkjobresponse import (
+        GraphQlBulkJobResponse,
+        GraphQlBulkJobResponseTypedDict,
+    )
+    from .graphqlbulkjobretrievalresponse import (
+        GraphQLBulkJobRetrievalResponse,
+        GraphQLBulkJobRetrievalResponseTypedDict,
     )
     from .graphqlqueryjobinput import (
         GraphQlQueryJobInput,
         GraphQlQueryJobInputTypedDict,
     )
-    from .graphqlqueryjobpayload import (
-        GraphQlQueryJobPayload,
-        GraphQlQueryJobPayloadTypedDict,
-    )
-    from .graphqlqueryjobresponse import (
-        GraphQlQueryJobResponse,
-        GraphQlQueryJobResponseTypedDict,
-    )
-    from .graphqlqueryjobretrievalresponse import (
-        GraphQLQueryJobRetrievalResponse,
-        GraphQLQueryJobRetrievalResponseTypedDict,
-    )
     from .graphqlrequestinput import GraphQLRequestInput, GraphQLRequestInputTypedDict
     from .httpmetadata import HTTPMetadata, HTTPMetadataTypedDict
+    from .incrementalreachbrandinput import (
+        IncrementalReachBrandInput,
+        IncrementalReachBrandInputTypedDict,
+    )
+    from .incrementalreachproductinput import (
+        IncrementalReachProductInput,
+        IncrementalReachProductInputTypedDict,
+    )
     from .keyvaluepairofstringandstringinput import (
         KeyValuePairOfStringAndStringInput,
         KeyValuePairOfStringAndStringInputTypedDict,
     )
     from .no_response_error import NoResponseError
+    from .passthroughfeetype import PassThroughFeeType
     from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
     from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
+    from .realyticsentertainmenttype import RealyticsEntertainmentType
+    from .realyticsreachsettinginput import (
+        RealyticsReachSettingInput,
+        RealyticsReachSettingInputTypedDict,
+    )
     from .responsevalidationerror import ResponseValidationError
     from .restapimethodtype import RestAPIMethodType
     from .security import Security, SecurityTypedDict
@@ -298,9 +329,9 @@ if TYPE_CHECKING:
         StandardJobSubmitResponse,
         StandardJobSubmitResponseTypedDict,
     )
-    from .submitgraphqlqueryjobop import (
-        SubmitGraphQlQueryJobResponse,
-        SubmitGraphQlQueryJobResponseTypedDict,
+    from .submitgraphqlbulkqueryjobop import (
+        SubmitGraphQlBulkQueryJobResponse,
+        SubmitGraphQlBulkQueryJobResponseTypedDict,
     )
     from .submitgraphqlrequestop import (
         SubmitGraphQlRequestResponse,
@@ -311,8 +342,11 @@ if TYPE_CHECKING:
         SubmitRestRequestResponseTypedDict,
     )
     from .targetingendage import TargetingEndAge
+    from .targetingendageinput import TargetingEndAgeInput
     from .targetinggender import TargetingGender
+    from .targetinggenderinput import TargetingGenderInput
     from .targetingstartage import TargetingStartAge
+    from .targetingstartageinput import TargetingStartAgeInput
     from .thirdpartydatainput import ThirdPartyDataInput, ThirdPartyDataInputTypedDict
     from .updateadgroupop import UpdateAdGroupResponse, UpdateAdGroupResponseTypedDict
     from .updateadgroupsjobop import (
@@ -414,16 +448,24 @@ __all__ = [
     "CampaignBulkUpdateWorkflowInputWithValidation",
     "CampaignBulkUpdateWorkflowInputWithValidationTypedDict",
     "CampaignChannelType",
+    "CampaignCreatePassThroughFeesInput",
+    "CampaignCreatePassThroughFeesInputTypedDict",
     "CampaignCreateWorkflowAdGroupAdvancedInput",
     "CampaignCreateWorkflowAdGroupAdvancedInputTypedDict",
     "CampaignCreateWorkflowAdGroupFlightInput",
     "CampaignCreateWorkflowAdGroupFlightInputTypedDict",
     "CampaignCreateWorkflowAdGroupInput",
     "CampaignCreateWorkflowAdGroupInputTypedDict",
+    "CampaignCreateWorkflowAdvancedInput",
+    "CampaignCreateWorkflowAdvancedInputTypedDict",
+    "CampaignCreateWorkflowIncrementalReachCampaignSetting",
+    "CampaignCreateWorkflowIncrementalReachCampaignSettingTypedDict",
     "CampaignCreateWorkflowInput",
     "CampaignCreateWorkflowInputTypedDict",
     "CampaignCreateWorkflowInputWithValidation",
     "CampaignCreateWorkflowInputWithValidationTypedDict",
+    "CampaignCreateWorkflowPassThroughFeeCardInput",
+    "CampaignCreateWorkflowPassThroughFeeCardInputTypedDict",
     "CampaignCreateWorkflowPrimaryInput",
     "CampaignCreateWorkflowPrimaryInputTypedDict",
     "CampaignFlightWorkflow",
@@ -431,6 +473,8 @@ __all__ = [
     "CampaignPacingMode",
     "CampaignPayload",
     "CampaignPayloadTypedDict",
+    "CampaignUpdateWorkflowAdvancedInput",
+    "CampaignUpdateWorkflowAdvancedInputTypedDict",
     "CampaignUpdateWorkflowInput",
     "CampaignUpdateWorkflowInputTypedDict",
     "CampaignUpdateWorkflowInputWithValidation",
@@ -440,8 +484,6 @@ __all__ = [
     "CampaignVersionWorkflow",
     "CampaignVersionWorkflowTypedDict",
     "CampaignWorkflow",
-    "CampaignWorkflowAdvancedInput",
-    "CampaignWorkflowAdvancedInputTypedDict",
     "CampaignWorkflowBudgetInput",
     "CampaignWorkflowBudgetInputTypedDict",
     "CampaignWorkflowCampaignConversionReportingColumnInput",
@@ -462,8 +504,10 @@ __all__ = [
     "CustomCPAType",
     "CustomROASConfig",
     "CustomROASConfigTypedDict",
+    "CustomROASType",
     "DimensionalBiddingDimensions",
     "EnhancedNielsenReportingOptions",
+    "EnhancedNielsenReportingOptionsInput",
     "FirstPartyDataInput",
     "FirstPartyDataInputTypedDict",
     "GetCampaignVersionRequest",
@@ -472,41 +516,49 @@ __all__ = [
     "GetCampaignVersionResponseTypedDict",
     "GetFirstPartyDataJobResponse",
     "GetFirstPartyDataJobResponseTypedDict",
-    "GetGraphQlQueryJobStatusRequest",
-    "GetGraphQlQueryJobStatusRequestTypedDict",
-    "GetGraphQlQueryJobStatusResponse",
-    "GetGraphQlQueryJobStatusResponseTypedDict",
+    "GetGraphQlBulkJobStatusRequest",
+    "GetGraphQlBulkJobStatusRequestTypedDict",
+    "GetGraphQlBulkJobStatusResponse",
+    "GetGraphQlBulkJobStatusResponseTypedDict",
     "GetJobStatusRequest",
     "GetJobStatusRequestTypedDict",
     "GetJobStatusResponse",
     "GetJobStatusResponseTypedDict",
     "GetThirdPartyDataJobResponse",
     "GetThirdPartyDataJobResponseTypedDict",
-    "GraphQLQueryJobError",
-    "GraphQLQueryJobErrorTypedDict",
-    "GraphQLQueryJobRetrievalResponse",
-    "GraphQLQueryJobRetrievalResponseTypedDict",
+    "GraphQLBulkJobError",
+    "GraphQLBulkJobErrorTypedDict",
+    "GraphQLBulkJobRetrievalResponse",
+    "GraphQLBulkJobRetrievalResponseTypedDict",
     "GraphQLRequestInput",
     "GraphQLRequestInputTypedDict",
-    "GraphQlJobCallbackInput",
-    "GraphQlJobCallbackInputTypedDict",
-    "GraphQlQueryJob",
+    "GraphQlBulkJob",
+    "GraphQlBulkJobCallbackInput",
+    "GraphQlBulkJobCallbackInputTypedDict",
+    "GraphQlBulkJobPayload",
+    "GraphQlBulkJobPayloadTypedDict",
+    "GraphQlBulkJobResponse",
+    "GraphQlBulkJobResponseTypedDict",
+    "GraphQlBulkJobTypedDict",
     "GraphQlQueryJobInput",
     "GraphQlQueryJobInputTypedDict",
-    "GraphQlQueryJobPayload",
-    "GraphQlQueryJobPayloadTypedDict",
-    "GraphQlQueryJobResponse",
-    "GraphQlQueryJobResponseTypedDict",
-    "GraphQlQueryJobTypedDict",
     "HTTPMetadata",
     "HTTPMetadataTypedDict",
+    "IncrementalReachBrandInput",
+    "IncrementalReachBrandInputTypedDict",
+    "IncrementalReachProductInput",
+    "IncrementalReachProductInputTypedDict",
     "KeyValuePairOfStringAndStringInput",
     "KeyValuePairOfStringAndStringInputTypedDict",
     "NoResponseError",
+    "PassThroughFeeType",
     "ProblemDetails",
     "ProblemDetailsError",
     "ProblemDetailsErrorData",
     "ProblemDetailsTypedDict",
+    "RealyticsEntertainmentType",
+    "RealyticsReachSettingInput",
+    "RealyticsReachSettingInputTypedDict",
     "ResponseValidationError",
     "RestAPIMethodType",
     "Security",
@@ -515,15 +567,18 @@ __all__ = [
     "StandardJobStatusResponseTypedDict",
     "StandardJobSubmitResponse",
     "StandardJobSubmitResponseTypedDict",
-    "SubmitGraphQlQueryJobResponse",
-    "SubmitGraphQlQueryJobResponseTypedDict",
+    "SubmitGraphQlBulkQueryJobResponse",
+    "SubmitGraphQlBulkQueryJobResponseTypedDict",
     "SubmitGraphQlRequestResponse",
     "SubmitGraphQlRequestResponseTypedDict",
     "SubmitRestRequestResponse",
     "SubmitRestRequestResponseTypedDict",
     "TargetingEndAge",
+    "TargetingEndAgeInput",
     "TargetingGender",
+    "TargetingGenderInput",
     "TargetingStartAge",
+    "TargetingStartAgeInput",
     "ThirdPartyDataInput",
     "ThirdPartyDataInputTypedDict",
     "UpdateAdGroupResponse",
@@ -621,16 +676,24 @@ _dynamic_imports: dict[str, str] = {
     "CampaignBulkUpdateWorkflowInputWithValidation": ".campaignbulkupdateworkflowinputwithvalidation",
     "CampaignBulkUpdateWorkflowInputWithValidationTypedDict": ".campaignbulkupdateworkflowinputwithvalidation",
     "CampaignChannelType": ".campaignchanneltype",
+    "CampaignCreatePassThroughFeesInput": ".campaigncreatepassthroughfeesinput",
+    "CampaignCreatePassThroughFeesInputTypedDict": ".campaigncreatepassthroughfeesinput",
     "CampaignCreateWorkflowAdGroupAdvancedInput": ".campaigncreateworkflowadgroupadvancedinput",
     "CampaignCreateWorkflowAdGroupAdvancedInputTypedDict": ".campaigncreateworkflowadgroupadvancedinput",
     "CampaignCreateWorkflowAdGroupFlightInput": ".campaigncreateworkflowadgroupflightinput",
     "CampaignCreateWorkflowAdGroupFlightInputTypedDict": ".campaigncreateworkflowadgroupflightinput",
     "CampaignCreateWorkflowAdGroupInput": ".campaigncreateworkflowadgroupinput",
     "CampaignCreateWorkflowAdGroupInputTypedDict": ".campaigncreateworkflowadgroupinput",
+    "CampaignCreateWorkflowAdvancedInput": ".campaigncreateworkflowadvancedinput",
+    "CampaignCreateWorkflowAdvancedInputTypedDict": ".campaigncreateworkflowadvancedinput",
+    "CampaignCreateWorkflowIncrementalReachCampaignSetting": ".campaigncreateworkflowincrementalreachcampaignsetting",
+    "CampaignCreateWorkflowIncrementalReachCampaignSettingTypedDict": ".campaigncreateworkflowincrementalreachcampaignsetting",
     "CampaignCreateWorkflowInput": ".campaigncreateworkflowinput",
     "CampaignCreateWorkflowInputTypedDict": ".campaigncreateworkflowinput",
     "CampaignCreateWorkflowInputWithValidation": ".campaigncreateworkflowinputwithvalidation",
     "CampaignCreateWorkflowInputWithValidationTypedDict": ".campaigncreateworkflowinputwithvalidation",
+    "CampaignCreateWorkflowPassThroughFeeCardInput": ".campaigncreateworkflowpassthroughfeecardinput",
+    "CampaignCreateWorkflowPassThroughFeeCardInputTypedDict": ".campaigncreateworkflowpassthroughfeecardinput",
     "CampaignCreateWorkflowPrimaryInput": ".campaigncreateworkflowprimaryinput",
     "CampaignCreateWorkflowPrimaryInputTypedDict": ".campaigncreateworkflowprimaryinput",
     "CampaignFlightWorkflow": ".campaignflightworkflow",
@@ -638,6 +701,8 @@ _dynamic_imports: dict[str, str] = {
     "CampaignPacingMode": ".campaignpacingmode",
     "CampaignPayload": ".campaignpayload",
     "CampaignPayloadTypedDict": ".campaignpayload",
+    "CampaignUpdateWorkflowAdvancedInput": ".campaignupdateworkflowadvancedinput",
+    "CampaignUpdateWorkflowAdvancedInputTypedDict": ".campaignupdateworkflowadvancedinput",
     "CampaignUpdateWorkflowInput": ".campaignupdateworkflowinput",
     "CampaignUpdateWorkflowInputTypedDict": ".campaignupdateworkflowinput",
     "CampaignUpdateWorkflowInputWithValidation": ".campaignupdateworkflowinputwithvalidation",
@@ -648,8 +713,6 @@ _dynamic_imports: dict[str, str] = {
     "CampaignVersionWorkflowTypedDict": ".campaignversionworkflow",
     "CampaignWorkflow": ".campaignworkflow",
     "CampaignWorkflowTypedDict": ".campaignworkflow",
-    "CampaignWorkflowAdvancedInput": ".campaignworkflowadvancedinput",
-    "CampaignWorkflowAdvancedInputTypedDict": ".campaignworkflowadvancedinput",
     "CampaignWorkflowBudgetInput": ".campaignworkflowbudgetinput",
     "CampaignWorkflowBudgetInputTypedDict": ".campaignworkflowbudgetinput",
     "CampaignWorkflowCampaignConversionReportingColumnInput": ".campaignworkflowcampaignconversionreportingcolumninput",
@@ -669,8 +732,10 @@ _dynamic_imports: dict[str, str] = {
     "CustomCPAType": ".customcpatype",
     "CustomROASConfig": ".customroasconfig",
     "CustomROASConfigTypedDict": ".customroasconfig",
+    "CustomROASType": ".customroastype",
     "DimensionalBiddingDimensions": ".dimensionalbiddingdimensions",
     "EnhancedNielsenReportingOptions": ".enhancednielsenreportingoptions",
+    "EnhancedNielsenReportingOptionsInput": ".enhancednielsenreportingoptionsinput",
     "FirstPartyDataInput": ".firstpartydatainput",
     "FirstPartyDataInputTypedDict": ".firstpartydatainput",
     "GetCampaignVersionRequest": ".getcampaignversionop",
@@ -679,41 +744,49 @@ _dynamic_imports: dict[str, str] = {
     "GetCampaignVersionResponseTypedDict": ".getcampaignversionop",
     "GetFirstPartyDataJobResponse": ".getfirstpartydatajobop",
     "GetFirstPartyDataJobResponseTypedDict": ".getfirstpartydatajobop",
-    "GetGraphQlQueryJobStatusRequest": ".getgraphqlqueryjobstatusop",
-    "GetGraphQlQueryJobStatusRequestTypedDict": ".getgraphqlqueryjobstatusop",
-    "GetGraphQlQueryJobStatusResponse": ".getgraphqlqueryjobstatusop",
-    "GetGraphQlQueryJobStatusResponseTypedDict": ".getgraphqlqueryjobstatusop",
+    "GetGraphQlBulkJobStatusRequest": ".getgraphqlbulkjobstatusop",
+    "GetGraphQlBulkJobStatusRequestTypedDict": ".getgraphqlbulkjobstatusop",
+    "GetGraphQlBulkJobStatusResponse": ".getgraphqlbulkjobstatusop",
+    "GetGraphQlBulkJobStatusResponseTypedDict": ".getgraphqlbulkjobstatusop",
     "GetJobStatusRequest": ".getjobstatusop",
     "GetJobStatusRequestTypedDict": ".getjobstatusop",
     "GetJobStatusResponse": ".getjobstatusop",
     "GetJobStatusResponseTypedDict": ".getjobstatusop",
     "GetThirdPartyDataJobResponse": ".getthirdpartydatajobop",
     "GetThirdPartyDataJobResponseTypedDict": ".getthirdpartydatajobop",
-    "GraphQlJobCallbackInput": ".graphqljobcallbackinput",
-    "GraphQlJobCallbackInputTypedDict": ".graphqljobcallbackinput",
-    "GraphQlQueryJob": ".graphqlqueryjob",
-    "GraphQlQueryJobTypedDict": ".graphqlqueryjob",
-    "GraphQLQueryJobError": ".graphqlqueryjoberror",
-    "GraphQLQueryJobErrorTypedDict": ".graphqlqueryjoberror",
+    "GraphQlBulkJob": ".graphqlbulkjob",
+    "GraphQlBulkJobTypedDict": ".graphqlbulkjob",
+    "GraphQlBulkJobCallbackInput": ".graphqlbulkjobcallbackinput",
+    "GraphQlBulkJobCallbackInputTypedDict": ".graphqlbulkjobcallbackinput",
+    "GraphQLBulkJobError": ".graphqlbulkjoberror",
+    "GraphQLBulkJobErrorTypedDict": ".graphqlbulkjoberror",
+    "GraphQlBulkJobPayload": ".graphqlbulkjobpayload",
+    "GraphQlBulkJobPayloadTypedDict": ".graphqlbulkjobpayload",
+    "GraphQlBulkJobResponse": ".graphqlbulkjobresponse",
+    "GraphQlBulkJobResponseTypedDict": ".graphqlbulkjobresponse",
+    "GraphQLBulkJobRetrievalResponse": ".graphqlbulkjobretrievalresponse",
+    "GraphQLBulkJobRetrievalResponseTypedDict": ".graphqlbulkjobretrievalresponse",
     "GraphQlQueryJobInput": ".graphqlqueryjobinput",
     "GraphQlQueryJobInputTypedDict": ".graphqlqueryjobinput",
-    "GraphQlQueryJobPayload": ".graphqlqueryjobpayload",
-    "GraphQlQueryJobPayloadTypedDict": ".graphqlqueryjobpayload",
-    "GraphQlQueryJobResponse": ".graphqlqueryjobresponse",
-    "GraphQlQueryJobResponseTypedDict": ".graphqlqueryjobresponse",
-    "GraphQLQueryJobRetrievalResponse": ".graphqlqueryjobretrievalresponse",
-    "GraphQLQueryJobRetrievalResponseTypedDict": ".graphqlqueryjobretrievalresponse",
     "GraphQLRequestInput": ".graphqlrequestinput",
     "GraphQLRequestInputTypedDict": ".graphqlrequestinput",
     "HTTPMetadata": ".httpmetadata",
     "HTTPMetadataTypedDict": ".httpmetadata",
+    "IncrementalReachBrandInput": ".incrementalreachbrandinput",
+    "IncrementalReachBrandInputTypedDict": ".incrementalreachbrandinput",
+    "IncrementalReachProductInput": ".incrementalreachproductinput",
+    "IncrementalReachProductInputTypedDict": ".incrementalreachproductinput",
     "KeyValuePairOfStringAndStringInput": ".keyvaluepairofstringandstringinput",
     "KeyValuePairOfStringAndStringInputTypedDict": ".keyvaluepairofstringandstringinput",
     "NoResponseError": ".no_response_error",
+    "PassThroughFeeType": ".passthroughfeetype",
     "ProblemDetails": ".problemdetails",
     "ProblemDetailsTypedDict": ".problemdetails",
     "ProblemDetailsError": ".problemdetails_error",
     "ProblemDetailsErrorData": ".problemdetails_error",
+    "RealyticsEntertainmentType": ".realyticsentertainmenttype",
+    "RealyticsReachSettingInput": ".realyticsreachsettinginput",
+    "RealyticsReachSettingInputTypedDict": ".realyticsreachsettinginput",
     "ResponseValidationError": ".responsevalidationerror",
     "RestAPIMethodType": ".restapimethodtype",
     "Security": ".security",
@@ -722,15 +795,18 @@ _dynamic_imports: dict[str, str] = {
     "StandardJobStatusResponseTypedDict": ".standardjobstatusresponse",
     "StandardJobSubmitResponse": ".standardjobsubmitresponse",
     "StandardJobSubmitResponseTypedDict": ".standardjobsubmitresponse",
-    "SubmitGraphQlQueryJobResponse": ".submitgraphqlqueryjobop",
-    "SubmitGraphQlQueryJobResponseTypedDict": ".submitgraphqlqueryjobop",
+    "SubmitGraphQlBulkQueryJobResponse": ".submitgraphqlbulkqueryjobop",
+    "SubmitGraphQlBulkQueryJobResponseTypedDict": ".submitgraphqlbulkqueryjobop",
     "SubmitGraphQlRequestResponse": ".submitgraphqlrequestop",
     "SubmitGraphQlRequestResponseTypedDict": ".submitgraphqlrequestop",
     "SubmitRestRequestResponse": ".submitrestrequestop",
     "SubmitRestRequestResponseTypedDict": ".submitrestrequestop",
     "TargetingEndAge": ".targetingendage",
+    "TargetingEndAgeInput": ".targetingendageinput",
     "TargetingGender": ".targetinggender",
+    "TargetingGenderInput": ".targetinggenderinput",
     "TargetingStartAge": ".targetingstartage",
+    "TargetingStartAgeInput": ".targetingstartageinput",
     "ThirdPartyDataInput": ".thirdpartydatainput",
     "ThirdPartyDataInputTypedDict": ".thirdpartydatainput",
     "UpdateAdGroupResponse": ".updateadgroupop",

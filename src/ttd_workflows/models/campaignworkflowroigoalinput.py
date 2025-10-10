@@ -26,6 +26,10 @@ class CampaignWorkflowROIGoalInputTypedDict(TypedDict):
     vcpm_in_advertiser_currency: NotRequired[Nullable[float]]
     cpcv_in_advertiser_currency: NotRequired[Nullable[float]]
     miaozhen_otp_in_percent: NotRequired[Nullable[float]]
+    iqvia_audience_quality_index: NotRequired[Nullable[bool]]
+    crossix_audience_quality_index: NotRequired[Nullable[bool]]
+    iqvia_audience_quality_index_and_cost_per_target: NotRequired[Nullable[bool]]
+    crossix_cost_per_target: NotRequired[Nullable[bool]]
 
 
 class CampaignWorkflowROIGoalInput(BaseModel):
@@ -77,6 +81,23 @@ class CampaignWorkflowROIGoalInput(BaseModel):
         OptionalNullable[float], pydantic.Field(alias="miaozhenOTPInPercent")
     ] = UNSET
 
+    iqvia_audience_quality_index: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="iqviaAudienceQualityIndex")
+    ] = UNSET
+
+    crossix_audience_quality_index: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="crossixAudienceQualityIndex")
+    ] = UNSET
+
+    iqvia_audience_quality_index_and_cost_per_target: Annotated[
+        OptionalNullable[bool],
+        pydantic.Field(alias="iqviaAudienceQualityIndexAndCostPerTarget"),
+    ] = UNSET
+
+    crossix_cost_per_target: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="crossixCostPerTarget")
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -92,6 +113,10 @@ class CampaignWorkflowROIGoalInput(BaseModel):
             "vcpmInAdvertiserCurrency",
             "cpcvInAdvertiserCurrency",
             "miaozhenOTPInPercent",
+            "iqviaAudienceQualityIndex",
+            "crossixAudienceQualityIndex",
+            "iqviaAudienceQualityIndexAndCostPerTarget",
+            "crossixCostPerTarget",
         ]
         nullable_fields = [
             "maximizeReach",
@@ -106,6 +131,10 @@ class CampaignWorkflowROIGoalInput(BaseModel):
             "vcpmInAdvertiserCurrency",
             "cpcvInAdvertiserCurrency",
             "miaozhenOTPInPercent",
+            "iqviaAudienceQualityIndex",
+            "crossixAudienceQualityIndex",
+            "iqviaAudienceQualityIndexAndCostPerTarget",
+            "crossixCostPerTarget",
         ]
         null_default_fields = []
 

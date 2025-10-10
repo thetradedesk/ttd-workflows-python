@@ -26,8 +26,9 @@ class RESTRequest(BaseSDK):
     ) -> models.SubmitRestRequestResponse:
         r"""Submit a valid REST request
 
-        This generic operation can be used to execute any valid REST request.
-        To explore the available REST operations, see the [REST API Reference](https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform).
+        This generic operation can be used to execute any valid REST request. The results are returned
+        directly when the request is complete. To explore the available REST operations, see the
+        [REST API Reference](https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform).
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -87,7 +88,7 @@ class RESTRequest(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="submitRestRequest",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -135,8 +136,9 @@ class RESTRequest(BaseSDK):
     ) -> models.SubmitRestRequestResponse:
         r"""Submit a valid REST request
 
-        This generic operation can be used to execute any valid REST request.
-        To explore the available REST operations, see the [REST API Reference](https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform).
+        This generic operation can be used to execute any valid REST request. The results are returned
+        directly when the request is complete. To explore the available REST operations, see the
+        [REST API Reference](https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform).
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -196,7 +198,7 @@ class RESTRequest(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="submitRestRequest",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),

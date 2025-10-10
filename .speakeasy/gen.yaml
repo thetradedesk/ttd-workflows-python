@@ -16,18 +16,20 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: true
+    hoistGlobalSecurity: true
   tests:
     generateTests: true
     generateNewTests: false
     skipResponseBodyAssertions: false
 python:
-  version: 0.10.0
+  version: 0.11.0
   additionalDependencies:
     dev: {}
     main: {}
   allowedRedefinedBuiltins:
     - id
     - object
+  asyncMode: both
   authors:
     - Speakeasy
   baseErrorName: WorkflowsError
@@ -51,6 +53,7 @@ python:
       shared: ""
       webhooks: ""
   inputModelSuffix: input
+  legacyPyright: true
   license:
     name: The MIT License (MIT)
     shortName: MIT
@@ -64,4 +67,5 @@ python:
   pytestFilterWarnings: []
   pytestTimeout: 0
   responseFormat: envelope-http
+  sseFlatResponse: false
   templateVersion: v2

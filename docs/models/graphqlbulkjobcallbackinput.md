@@ -1,4 +1,4 @@
-# GraphQlJobCallbackInput
+# GraphQlBulkJobCallbackInput
 
 Input class for providing a callback's url and any headers needed for the callback.
 

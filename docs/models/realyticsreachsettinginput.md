@@ -1,0 +1,12 @@
+# RealyticsReachSettingInput
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `id`                                                                                   | *Optional[int]*                                                                        | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `name`                                                                                 | *OptionalNullable[str]*                                                                | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `is_active`                                                                            | *Optional[bool]*                                                                       | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `products`                                                                             | List[[models.IncrementalReachProductInput](../models/incrementalreachproductinput.md)] | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `realytics_entertainment_input`                                                        | [Optional[models.RealyticsEntertainmentType]](../models/realyticsentertainmenttype.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |

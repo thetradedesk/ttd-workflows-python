@@ -475,10 +475,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptionsInput.SITE,
+                "gender": ttd_workflows.TargetingGenderInput.MALE,
+                "start_age": ttd_workflows.TargetingStartAgeInput.TWENTY_FIVE,
+                "end_age": ttd_workflows.TargetingEndAgeInput.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -552,17 +552,16 @@ with Workflows(
 ### [graph_ql_request](docs/sdks/graphqlrequest/README.md)
 
 * [submit_graph_ql_request](docs/sdks/graphqlrequest/README.md#submit_graph_ql_request) - Submit a valid GraphQL query or mutation
-* [submit_graph_ql_query_job](docs/sdks/graphqlrequest/README.md#submit_graph_ql_query_job) - Submit a valid bulk GraphQL query
+* [submit_graph_ql_bulk_query_job](docs/sdks/graphqlrequest/README.md#submit_graph_ql_bulk_query_job) - Submit a valid bulk GraphQL query job
 
 ### [job_status](docs/sdks/jobstatus/README.md)
 
-* [get_graph_ql_query_job_status](docs/sdks/jobstatus/README.md#get_graph_ql_query_job_status) - Get the status of a previously submitted GraphQL query job
+* [get_graph_ql_bulk_job_status](docs/sdks/jobstatus/README.md#get_graph_ql_bulk_job_status) - Get the status of a previously submitted GraphQL bulk job
 * [get_job_status](docs/sdks/jobstatus/README.md#get_job_status) - Get the status of a previously submitted job
 
 ### [rest_request](docs/sdks/restrequest/README.md)
 
 * [submit_rest_request](docs/sdks/restrequest/README.md#submit_rest_request) - Submit a valid REST request
-
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -666,10 +665,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptionsInput.SITE,
+                "gender": ttd_workflows.TargetingGenderInput.MALE,
+                "start_age": ttd_workflows.TargetingStartAgeInput.TWENTY_FIVE,
+                "end_age": ttd_workflows.TargetingEndAgeInput.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -801,10 +800,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptionsInput.SITE,
+                "gender": ttd_workflows.TargetingGenderInput.MALE,
+                "start_age": ttd_workflows.TargetingStartAgeInput.TWENTY_FIVE,
+                "end_age": ttd_workflows.TargetingEndAgeInput.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -950,10 +949,10 @@ with Workflows(
                 "is_use_clicks_as_conversions_enabled": False,
                 "is_use_secondary_conversions_enabled": False,
                 "nielsen_tracking_attributes": {
-                    "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                    "gender": ttd_workflows.TargetingGender.MALE,
-                    "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                    "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                    "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptionsInput.SITE,
+                    "gender": ttd_workflows.TargetingGenderInput.MALE,
+                    "start_age": ttd_workflows.TargetingStartAgeInput.TWENTY_FIVE,
+                    "end_age": ttd_workflows.TargetingEndAgeInput.SEVENTEEN,
                     "countries": [
                         "<value 1>",
                         "<value 2>",
@@ -1133,10 +1132,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptionsInput.SITE,
+                "gender": ttd_workflows.TargetingGenderInput.MALE,
+                "start_age": ttd_workflows.TargetingStartAgeInput.TWENTY_FIVE,
+                "end_age": ttd_workflows.TargetingEndAgeInput.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",
@@ -1268,10 +1267,10 @@ with Workflows(
             "is_use_clicks_as_conversions_enabled": False,
             "is_use_secondary_conversions_enabled": False,
             "nielsen_tracking_attributes": {
-                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptions.SITE,
-                "gender": ttd_workflows.TargetingGender.MALE,
-                "start_age": ttd_workflows.TargetingStartAge.TWENTY_FIVE,
-                "end_age": ttd_workflows.TargetingEndAge.SEVENTEEN,
+                "enhanced_reporting_option": ttd_workflows.EnhancedNielsenReportingOptionsInput.SITE,
+                "gender": ttd_workflows.TargetingGenderInput.MALE,
+                "start_age": ttd_workflows.TargetingStartAgeInput.TWENTY_FIVE,
+                "end_age": ttd_workflows.TargetingEndAgeInput.SEVENTEEN,
                 "countries": [
                     "<value 1>",
                     "<value 2>",

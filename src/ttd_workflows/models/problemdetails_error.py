@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from .problemdetails import ProblemDetails
+from dataclasses import dataclass, field
 import httpx
 import pydantic
 from ttd_workflows.models import WorkflowsError
@@ -26,8 +27,9 @@ class ProblemDetailsErrorData(BaseModel):
     ] = None
 
 
+@dataclass(unsafe_hash=True)
 class ProblemDetailsError(WorkflowsError):
-    data: ProblemDetailsErrorData
+    data: ProblemDetailsErrorData = field(hash=False)
 
     def __init__(
         self,
@@ -37,4 +39,4 @@ class ProblemDetailsError(WorkflowsError):
     ):
         message = body or raw_response.text
         super().__init__(message, raw_response, body)
-        self.data = data
+        object.__setattr__(self, "data", data)

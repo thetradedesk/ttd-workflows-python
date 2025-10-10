@@ -23,8 +23,9 @@ class GraphQLRequest(BaseSDK):
     ) -> models.SubmitGraphQlRequestResponse:
         r"""Submit a valid GraphQL query or mutation
 
-        This generic operation can be used to execute any valid GraphQL request.
-        To explore the available GraphQL operations, see the [GraphQL Schema Explorer](https://partner.thetradedesk.com/v3/portal/api/graphql-schema).
+        This generic operation can be used to execute any valid GraphQL request. The results are returned
+        directly when the request is complete. To explore the available GraphQL operations, see the
+        [GraphQL Schema Explorer](https://partner.thetradedesk.com/v3/portal/api/graphql-schema).
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -82,7 +83,7 @@ class GraphQLRequest(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="submitGraphQlRequest",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -127,8 +128,9 @@ class GraphQLRequest(BaseSDK):
     ) -> models.SubmitGraphQlRequestResponse:
         r"""Submit a valid GraphQL query or mutation
 
-        This generic operation can be used to execute any valid GraphQL request.
-        To explore the available GraphQL operations, see the [GraphQL Schema Explorer](https://partner.thetradedesk.com/v3/portal/api/graphql-schema).
+        This generic operation can be used to execute any valid GraphQL request. The results are returned
+        directly when the request is complete. To explore the available GraphQL operations, see the
+        [GraphQL Schema Explorer](https://partner.thetradedesk.com/v3/portal/api/graphql-schema).
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -186,7 +188,7 @@ class GraphQLRequest(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="submitGraphQlRequest",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -218,7 +220,7 @@ class GraphQLRequest(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    def submit_graph_ql_query_job(
+    def submit_graph_ql_bulk_query_job(
         self,
         *,
         request: Optional[
@@ -228,11 +230,14 @@ class GraphQLRequest(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.SubmitGraphQlQueryJobResponse:
-        r"""Submit a valid bulk GraphQL query
+    ) -> models.SubmitGraphQlBulkQueryJobResponse:
+        r"""Submit a valid bulk GraphQL query job
 
-        This generic operation can be used to execute any valid bulk GraphQL query.
-        For information on bulk GraphQL query syntax, see [GraphQL API Bulk Operations](https://partner.thetradedesk.com/v3/portal/api/doc/GqlBulkOperations).
+        This generic operation can be used to execute any valid bulk GraphQL query. To determine the job's
+        status, completion percentage, and URL for download (once the job results are ready), query the
+        [GraphQL Bulk Job Status](https://ttd-workflows.apidocumentation.com/reference#tag/job-status/get/graphqlbulkqueryjob/{id})
+        endpoint. For information on bulk GraphQL query syntax, see
+        [GraphQL API Bulk Operations](https://partner.thetradedesk.com/v3/portal/api/doc/GqlBulkOperations).
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -256,7 +261,7 @@ class GraphQLRequest(BaseSDK):
 
         req = self._build_request(
             method="POST",
-            path="/graphqlqueryjob",
+            path="/graphqlbulkqueryjob",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -289,8 +294,8 @@ class GraphQLRequest(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="submitGraphQlQueryJob",
-                oauth2_scopes=[],
+                operation_id="submitGraphQlBulkQueryJob",
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -302,9 +307,9 @@ class GraphQLRequest(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return models.SubmitGraphQlQueryJobResponse(
-                graph_ql_query_job_response=unmarshal_json_response(
-                    Optional[models.GraphQlQueryJobResponse], http_res
+            return models.SubmitGraphQlBulkQueryJobResponse(
+                graph_ql_bulk_job_response=unmarshal_json_response(
+                    Optional[models.GraphQlBulkJobResponse], http_res
                 ),
                 http_meta=models.HTTPMetadata(request=req, response=http_res),
             )
@@ -324,7 +329,7 @@ class GraphQLRequest(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    async def submit_graph_ql_query_job_async(
+    async def submit_graph_ql_bulk_query_job_async(
         self,
         *,
         request: Optional[
@@ -334,11 +339,14 @@ class GraphQLRequest(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.SubmitGraphQlQueryJobResponse:
-        r"""Submit a valid bulk GraphQL query
+    ) -> models.SubmitGraphQlBulkQueryJobResponse:
+        r"""Submit a valid bulk GraphQL query job
 
-        This generic operation can be used to execute any valid bulk GraphQL query.
-        For information on bulk GraphQL query syntax, see [GraphQL API Bulk Operations](https://partner.thetradedesk.com/v3/portal/api/doc/GqlBulkOperations).
+        This generic operation can be used to execute any valid bulk GraphQL query. To determine the job's
+        status, completion percentage, and URL for download (once the job results are ready), query the
+        [GraphQL Bulk Job Status](https://ttd-workflows.apidocumentation.com/reference#tag/job-status/get/graphqlbulkqueryjob/{id})
+        endpoint. For information on bulk GraphQL query syntax, see
+        [GraphQL API Bulk Operations](https://partner.thetradedesk.com/v3/portal/api/doc/GqlBulkOperations).
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -362,7 +370,7 @@ class GraphQLRequest(BaseSDK):
 
         req = self._build_request_async(
             method="POST",
-            path="/graphqlqueryjob",
+            path="/graphqlbulkqueryjob",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -395,8 +403,8 @@ class GraphQLRequest(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="submitGraphQlQueryJob",
-                oauth2_scopes=[],
+                operation_id="submitGraphQlBulkQueryJob",
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -408,9 +416,9 @@ class GraphQLRequest(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return models.SubmitGraphQlQueryJobResponse(
-                graph_ql_query_job_response=unmarshal_json_response(
-                    Optional[models.GraphQlQueryJobResponse], http_res
+            return models.SubmitGraphQlBulkQueryJobResponse(
+                graph_ql_bulk_job_response=unmarshal_json_response(
+                    Optional[models.GraphQlBulkJobResponse], http_res
                 ),
                 http_meta=models.HTTPMetadata(request=req, response=http_res),
             )
