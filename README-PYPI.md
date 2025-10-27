@@ -523,25 +523,25 @@ with Workflows(
 
 ### [ad_group](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md)
 
-* [create_ad_groups_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md#create_ad_groups_job) - Create multiple new ad groups with required fields
-* [update_ad_groups_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md#update_ad_groups_job) - Update multiple ad groups with specified fields
+* [create_ad_groups_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md#create_ad_groups_job) - Submit a job to create multiple new ad groups
+* [update_ad_groups_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md#update_ad_groups_job) - Submit a job to update multiple ad groups
 
 ### [ad_groups](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md)
 
-* [create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md#create) - Create a new ad group with required fields
-* [update](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md#update) - Update an ad group with specified fields
+* [create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md#create) - Create a new ad group
+* [update](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md#update) - Update an ad group
 * [archive](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md#archive) - Archive multiple ad groups
 
 ### [campaign](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md)
 
-* [create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#create) - Create a new campaign with required fields
-* [create_campaigns_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#create_campaigns_job) - Create multiple new campaigns with required fields
-* [update_campaigns_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#update_campaigns_job) - Update multiple campaigns with specified fields
+* [create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#create) - Create a new campaign
+* [create_campaigns_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#create_campaigns_job) - Submit a job to create multiple new campaigns
+* [update_campaigns_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#update_campaigns_job) - Submit a job to update multiple campaigns
 * [get_version](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#get_version) - Get a campaign's version
 
 ### [campaigns](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md)
 
-* [update](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md#update) - Update a campaign with specified fields
+* [update](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md#update) - Update a campaign
 * [archive](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md#archive) - Archive multiple campaigns
 
 ### [dmp](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/dmp/README.md)

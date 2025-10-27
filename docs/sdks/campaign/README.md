@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [create](#create) - Create a new campaign with required fields
-* [create_campaigns_job](#create_campaigns_job) - Create multiple new campaigns with required fields
-* [update_campaigns_job](#update_campaigns_job) - Update multiple campaigns with specified fields
+* [create](#create) - Create a new campaign
+* [create_campaigns_job](#create_campaigns_job) - Submit a job to create multiple new campaigns
+* [update_campaigns_job](#update_campaigns_job) - Submit a job to update multiple campaigns
 * [get_version](#get_version) - Get a campaign's version
 
 ## create
 
-Create a new campaign with required fields
+Create a new campaign
 
 ### Example Usage
 
@@ -169,6 +169,7 @@ with Workflows(
                     ),
                 ],
             ),
+            caller_source="<value>",
         ),
         ad_groups=[
             ttd_workflows.CampaignCreateWorkflowAdGroupInput(
@@ -308,7 +309,7 @@ with Workflows(
 
 ## create_campaigns_job
 
-Create multiple new campaigns with required fields
+Submit a job to create multiple new campaigns
 
 ### Example Usage
 
@@ -472,6 +473,7 @@ with Workflows(
                             ),
                         ],
                     ),
+                    caller_source="<value>",
                 ),
                 ad_groups=[
                     ttd_workflows.CampaignCreateWorkflowAdGroupInput(

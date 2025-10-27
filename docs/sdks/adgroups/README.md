@@ -5,13 +5,13 @@
 
 ### Available Operations
 
-* [create](#create) - Create a new ad group with required fields
-* [update](#update) - Update an ad group with specified fields
+* [create](#create) - Create a new ad group
+* [update](#update) - Update an ad group
 * [archive](#archive) - Archive multiple ad groups
 
 ## create
 
-Create a new ad group with required fields
+Create a new ad group
 
 ### Example Usage
 

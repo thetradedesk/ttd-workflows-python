@@ -523,25 +523,25 @@ with Workflows(
 
 ### [ad_group](docs/sdks/adgroup/README.md)
 
-* [create_ad_groups_job](docs/sdks/adgroup/README.md#create_ad_groups_job) - Create multiple new ad groups with required fields
-* [update_ad_groups_job](docs/sdks/adgroup/README.md#update_ad_groups_job) - Update multiple ad groups with specified fields
+* [create_ad_groups_job](docs/sdks/adgroup/README.md#create_ad_groups_job) - Submit a job to create multiple new ad groups
+* [update_ad_groups_job](docs/sdks/adgroup/README.md#update_ad_groups_job) - Submit a job to update multiple ad groups
 
 ### [ad_groups](docs/sdks/adgroups/README.md)
 
-* [create](docs/sdks/adgroups/README.md#create) - Create a new ad group with required fields
-* [update](docs/sdks/adgroups/README.md#update) - Update an ad group with specified fields
+* [create](docs/sdks/adgroups/README.md#create) - Create a new ad group
+* [update](docs/sdks/adgroups/README.md#update) - Update an ad group
 * [archive](docs/sdks/adgroups/README.md#archive) - Archive multiple ad groups
 
 ### [campaign](docs/sdks/campaign/README.md)
 
-* [create](docs/sdks/campaign/README.md#create) - Create a new campaign with required fields
-* [create_campaigns_job](docs/sdks/campaign/README.md#create_campaigns_job) - Create multiple new campaigns with required fields
-* [update_campaigns_job](docs/sdks/campaign/README.md#update_campaigns_job) - Update multiple campaigns with specified fields
+* [create](docs/sdks/campaign/README.md#create) - Create a new campaign
+* [create_campaigns_job](docs/sdks/campaign/README.md#create_campaigns_job) - Submit a job to create multiple new campaigns
+* [update_campaigns_job](docs/sdks/campaign/README.md#update_campaigns_job) - Submit a job to update multiple campaigns
 * [get_version](docs/sdks/campaign/README.md#get_version) - Get a campaign's version
 
 ### [campaigns](docs/sdks/campaigns/README.md)
 
-* [update](docs/sdks/campaigns/README.md#update) - Update a campaign with specified fields
+* [update](docs/sdks/campaigns/README.md#update) - Update a campaign
 * [archive](docs/sdks/campaigns/README.md#archive) - Archive multiple campaigns
 
 ### [dmp](docs/sdks/dmp/README.md)

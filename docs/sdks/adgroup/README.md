@@ -5,12 +5,12 @@
 
 ### Available Operations
 
-* [create_ad_groups_job](#create_ad_groups_job) - Create multiple new ad groups with required fields
-* [update_ad_groups_job](#update_ad_groups_job) - Update multiple ad groups with specified fields
+* [create_ad_groups_job](#create_ad_groups_job) - Submit a job to create multiple new ad groups
+* [update_ad_groups_job](#update_ad_groups_job) - Submit a job to update multiple ad groups
 
 ## create_ad_groups_job
 
-Create multiple new ad groups with required fields
+Submit a job to create multiple new ad groups
 
 ### Example Usage
 
