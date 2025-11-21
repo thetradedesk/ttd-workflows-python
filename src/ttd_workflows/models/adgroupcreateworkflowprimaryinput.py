@@ -19,6 +19,7 @@ from .adgroupworkflowroigoalinput import (
     AdGroupWorkflowROIGoalInput,
     AdGroupWorkflowROIGoalInputTypedDict,
 )
+from .markettype import MarketType
 import pydantic
 from pydantic import model_serializer
 from ttd_workflows.types import (
@@ -47,7 +48,9 @@ class AdGroupCreateWorkflowPrimaryInputTypedDict(TypedDict):
     associated_bid_lists: NotRequired[
         Nullable[List[AdGroupWorkflowAssociateBidListInputTypedDict]]
     ]
+    market_type: NotRequired[MarketType]
     programmatic_guaranteed_private_contract_id: NotRequired[Nullable[str]]
+    include_defaults_from_campaign: NotRequired[bool]
 
 
 class AdGroupCreateWorkflowPrimaryInput(BaseModel):
@@ -93,10 +96,18 @@ class AdGroupCreateWorkflowPrimaryInput(BaseModel):
         pydantic.Field(alias="associatedBidLists"),
     ] = UNSET
 
+    market_type: Annotated[Optional[MarketType], pydantic.Field(alias="marketType")] = (
+        None
+    )
+
     programmatic_guaranteed_private_contract_id: Annotated[
         OptionalNullable[str],
         pydantic.Field(alias="programmaticGuaranteedPrivateContractId"),
     ] = UNSET
+
+    include_defaults_from_campaign: Annotated[
+        Optional[bool], pydantic.Field(alias="includeDefaultsFromCampaign")
+    ] = None
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
@@ -110,7 +121,9 @@ class AdGroupCreateWorkflowPrimaryInput(BaseModel):
             "roiGoal",
             "creativeIds",
             "associatedBidLists",
+            "marketType",
             "programmaticGuaranteedPrivateContractId",
+            "includeDefaultsFromCampaign",
         ]
         nullable_fields = [
             "isEnabled",

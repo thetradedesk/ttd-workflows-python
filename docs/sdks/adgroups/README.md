@@ -5,13 +5,13 @@
 
 ### Available Operations
 
-* [create](#create) - Create a new ad group with required fields
-* [update](#update) - Update an ad group with specified fields
+* [create](#create) - Create a new ad group
+* [update](#update) - Update an ad group
 * [archive](#archive) - Archive multiple ad groups
 
 ## create
 
-Create a new ad group with required fields
+Create a new ad group
 
 ### Example Usage
 
@@ -77,7 +77,9 @@ with Workflows(
             "name": "<value>",
             "channel": ttd_workflows.AdGroupChannel.DISPLAY,
             "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+            "market_type": ttd_workflows.MarketType.PRIVATE_MARKET_ONLY,
             "programmatic_guaranteed_private_contract_id": "<id>",
+            "include_defaults_from_campaign": False,
         },
         "campaign_id": "<id>",
         "advanced_input": {
@@ -136,6 +138,7 @@ with Workflows(
                     "campaign_flight_id": 874887,
                 },
             ],
+            "caller_source": "<value>",
         },
         "validate_input_only": True,
     })
@@ -240,6 +243,7 @@ with Workflows(
             "name": "<value>",
             "channel": ttd_workflows.AdGroupChannel.NATIVE,
             "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONVERSION,
+            "market_type": ttd_workflows.MarketType.OPEN_MARKET,
         },
         "advanced_input": {
             "koa_optimization_settings": {
@@ -298,6 +302,7 @@ with Workflows(
                     "campaign_flight_id": 528311,
                 },
             ],
+            "caller_source": None,
         },
         "validate_input_only": False,
     })

@@ -24,7 +24,7 @@ class AdGroups(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.CreateAdGroupResponse:
-        r"""Create a new ad group with required fields
+        r"""Create a new ad group
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -140,7 +140,7 @@ class AdGroups(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.CreateAdGroupResponse:
-        r"""Create a new ad group with required fields
+        r"""Create a new ad group
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -256,7 +256,7 @@ class AdGroups(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.UpdateAdGroupResponse:
-        r"""Update an ad group with specified fields
+        r"""Update an ad group
 
         Only the fields provided in the request payload will be updated.
 
@@ -370,7 +370,7 @@ class AdGroups(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.UpdateAdGroupResponse:
-        r"""Update an ad group with specified fields
+        r"""Update an ad group
 
         Only the fields provided in the request payload will be updated.
 

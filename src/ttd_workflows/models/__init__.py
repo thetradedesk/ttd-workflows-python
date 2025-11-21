@@ -309,6 +309,7 @@ if TYPE_CHECKING:
         KeyValuePairOfStringAndStringInput,
         KeyValuePairOfStringAndStringInputTypedDict,
     )
+    from .markettype import MarketType
     from .no_response_error import NoResponseError
     from .passthroughfeetype import PassThroughFeeType
     from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
@@ -550,6 +551,7 @@ __all__ = [
     "IncrementalReachProductInputTypedDict",
     "KeyValuePairOfStringAndStringInput",
     "KeyValuePairOfStringAndStringInputTypedDict",
+    "MarketType",
     "NoResponseError",
     "PassThroughFeeType",
     "ProblemDetails",
@@ -778,6 +780,7 @@ _dynamic_imports: dict[str, str] = {
     "IncrementalReachProductInputTypedDict": ".incrementalreachproductinput",
     "KeyValuePairOfStringAndStringInput": ".keyvaluepairofstringandstringinput",
     "KeyValuePairOfStringAndStringInputTypedDict": ".keyvaluepairofstringandstringinput",
+    "MarketType": ".markettype",
     "NoResponseError": ".no_response_error",
     "PassThroughFeeType": ".passthroughfeetype",
     "ProblemDetails": ".problemdetails",
