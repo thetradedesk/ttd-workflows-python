@@ -5,7 +5,7 @@
 
 ### Available Operations
 
-* [update](#update) - Update a campaign with specified fields
+* [update](#update) - Update a campaign
 * [archive](#archive) - Archive multiple campaigns
 
 ## update
@@ -119,6 +119,10 @@ with Workflows(
                 crossix_cost_per_target=True,
             ),
             start_date_in_utc=parse_datetime("2024-02-29T10:31:50.069Z"),
+            trading_mode_settings_input=ttd_workflows.CampaignUpdateWorkflowTradingModeSettingsInput(
+                mode=ttd_workflows.TradingModeUpdateInput.CONTROL,
+                audience_unlimited_tier=ttd_workflows.AudienceUnlimitedTierInput.FULL,
+            ),
         ),
         advanced_input=ttd_workflows.CampaignUpdateWorkflowAdvancedInput(
             flights=[

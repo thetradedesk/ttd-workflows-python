@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [create](#create) - Create a new campaign with required fields
-* [create_campaigns_job](#create_campaigns_job) - Create multiple new campaigns with required fields
-* [update_campaigns_job](#update_campaigns_job) - Update multiple campaigns with specified fields
+* [create](#create) - Create a new campaign
+* [create_campaigns_job](#create_campaigns_job) - Submit a job to create multiple new campaigns
+* [update_campaigns_job](#update_campaigns_job) - Submit a job to update multiple campaigns
 * [get_version](#get_version) - Get a campaign's version
 
 ## create
 
-Create a new campaign with required fields
+Create a new campaign
 
 ### Example Usage
 
@@ -121,6 +121,10 @@ with Workflows(
                 crossix_cost_per_target=False,
             ),
             start_date_in_utc=None,
+            trading_mode_settings_input=ttd_workflows.CampaignCreateWorkflowTradingModeSettingsInput(
+                mode=ttd_workflows.TradingModeCreateInput.OFF,
+                audience_unlimited_tier=ttd_workflows.AudienceUnlimitedTierInput.NONE,
+            ),
             campaign_incremental_reach_setting=ttd_workflows.CampaignCreateWorkflowIncrementalReachCampaignSetting(
                 i_spot_reach_setting=ttd_workflows.IncrementalReachBrandInput(
                     id=787894,
@@ -169,6 +173,7 @@ with Workflows(
                     ),
                 ],
             ),
+            caller_source="<value>",
         ),
         ad_groups=[
             ttd_workflows.CampaignCreateWorkflowAdGroupInput(
@@ -225,7 +230,9 @@ with Workflows(
                     name="<value>",
                     channel=ttd_workflows.AdGroupChannel.NATIVE_VIDEO,
                     funnel_location=ttd_workflows.AdGroupFunnelLocation.NONE,
+                    market_type=ttd_workflows.MarketType.MARKETPLACE,
                     programmatic_guaranteed_private_contract_id="<id>",
+                    include_defaults_from_campaign=True,
                 ),
                 advanced_input=ttd_workflows.CampaignCreateWorkflowAdGroupAdvancedInput(
                     koa_optimization_settings=ttd_workflows.AdGroupWorkflowKoaOptimizationSettingsInput(
@@ -266,6 +273,7 @@ with Workflows(
                             reset_interval_in_minutes=587736,
                         ),
                     ],
+                    include_defaults_from_campaign=False,
                     flights=[
                         ttd_workflows.CampaignCreateWorkflowAdGroupFlightInput(
                             allocation_type=ttd_workflows.AllocationType.FIXED,
@@ -308,7 +316,7 @@ with Workflows(
 
 ## create_campaigns_job
 
-Create multiple new campaigns with required fields
+Submit a job to create multiple new campaigns
 
 ### Example Usage
 
@@ -419,6 +427,10 @@ with Workflows(
                         crossix_cost_per_target=True,
                     ),
                     start_date_in_utc=parse_datetime("2025-09-26T21:06:42.946Z"),
+                    trading_mode_settings_input=ttd_workflows.CampaignCreateWorkflowTradingModeSettingsInput(
+                        mode=ttd_workflows.TradingModeCreateInput.PERFORMANCE,
+                        audience_unlimited_tier=ttd_workflows.AudienceUnlimitedTierInput.LITE,
+                    ),
                     campaign_incremental_reach_setting=ttd_workflows.CampaignCreateWorkflowIncrementalReachCampaignSetting(
                         i_spot_reach_setting=ttd_workflows.IncrementalReachBrandInput(
                             id=178346,
@@ -472,6 +484,7 @@ with Workflows(
                             ),
                         ],
                     ),
+                    caller_source=None,
                 ),
                 ad_groups=[
                     ttd_workflows.CampaignCreateWorkflowAdGroupInput(
@@ -529,7 +542,9 @@ with Workflows(
                             name="<value>",
                             channel=ttd_workflows.AdGroupChannel.DISPLAY,
                             funnel_location=ttd_workflows.AdGroupFunnelLocation.AWARENESS,
+                            market_type=ttd_workflows.MarketType.OPEN_MARKET,
                             programmatic_guaranteed_private_contract_id="<id>",
+                            include_defaults_from_campaign=True,
                         ),
                         advanced_input=ttd_workflows.CampaignCreateWorkflowAdGroupAdvancedInput(
                             koa_optimization_settings=ttd_workflows.AdGroupWorkflowKoaOptimizationSettingsInput(
@@ -567,6 +582,7 @@ with Workflows(
                                 ],
                             ),
                             new_frequency_configs=None,
+                            include_defaults_from_campaign=False,
                             flights=[
                                 ttd_workflows.CampaignCreateWorkflowAdGroupFlightInput(
                                     allocation_type=ttd_workflows.AllocationType.MAXIMUM,
@@ -728,6 +744,10 @@ with Workflows(
                         crossix_cost_per_target=True,
                     ),
                     start_date_in_utc=parse_datetime("2023-01-13T23:06:05.083Z"),
+                    trading_mode_settings_input=ttd_workflows.CampaignUpdateWorkflowTradingModeSettingsInput(
+                        mode=ttd_workflows.TradingModeUpdateInput.PERFORMANCE,
+                        audience_unlimited_tier=ttd_workflows.AudienceUnlimitedTierInput.LITE,
+                    ),
                 ),
                 advanced_input=ttd_workflows.CampaignUpdateWorkflowAdvancedInput(
                     flights=[

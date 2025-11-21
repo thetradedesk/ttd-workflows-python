@@ -6,6 +6,10 @@ from .campaigncreateworkflowincrementalreachcampaignsetting import (
     CampaignCreateWorkflowIncrementalReachCampaignSetting,
     CampaignCreateWorkflowIncrementalReachCampaignSettingTypedDict,
 )
+from .campaigncreateworkflowtradingmodesettingsinput import (
+    CampaignCreateWorkflowTradingModeSettingsInput,
+    CampaignCreateWorkflowTradingModeSettingsInputTypedDict,
+)
 from .campaignworkflowbudgetinput import (
     CampaignWorkflowBudgetInput,
     CampaignWorkflowBudgetInputTypedDict,
@@ -57,6 +61,9 @@ class CampaignCreateWorkflowPrimaryInputTypedDict(TypedDict):
     secondary_goal: NotRequired[CampaignWorkflowROIGoalInputTypedDict]
     tertiary_goal: NotRequired[CampaignWorkflowROIGoalInputTypedDict]
     start_date_in_utc: NotRequired[Nullable[datetime]]
+    trading_mode_settings_input: NotRequired[
+        CampaignCreateWorkflowTradingModeSettingsInputTypedDict
+    ]
     campaign_incremental_reach_setting: NotRequired[
         CampaignCreateWorkflowIncrementalReachCampaignSettingTypedDict
     ]
@@ -134,6 +141,11 @@ class CampaignCreateWorkflowPrimaryInput(BaseModel):
         OptionalNullable[datetime], pydantic.Field(alias="startDateInUtc")
     ] = UNSET
 
+    trading_mode_settings_input: Annotated[
+        Optional[CampaignCreateWorkflowTradingModeSettingsInput],
+        pydantic.Field(alias="tradingModeSettingsInput"),
+    ] = None
+
     campaign_incremental_reach_setting: Annotated[
         Optional[CampaignCreateWorkflowIncrementalReachCampaignSetting],
         pydantic.Field(alias="campaignIncrementalReachSetting"),
@@ -158,6 +170,7 @@ class CampaignCreateWorkflowPrimaryInput(BaseModel):
             "secondaryGoal",
             "tertiaryGoal",
             "startDateInUtc",
+            "tradingModeSettingsInput",
             "campaignIncrementalReachSetting",
         ]
         nullable_fields = [

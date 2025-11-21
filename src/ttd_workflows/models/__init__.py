@@ -128,6 +128,8 @@ if TYPE_CHECKING:
         ArchiveCampaignsResponse,
         ArchiveCampaignsResponseTypedDict,
     )
+    from .audienceunlimitedtier import AudienceUnlimitedTier
+    from .audienceunlimitedtierinput import AudienceUnlimitedTierInput
     from .bulkjobstatus import BulkJobStatus
     from .callrestapiworkflowinput import (
         CallRestAPIWorkflowInput,
@@ -182,6 +184,10 @@ if TYPE_CHECKING:
         CampaignCreateWorkflowPrimaryInput,
         CampaignCreateWorkflowPrimaryInputTypedDict,
     )
+    from .campaigncreateworkflowtradingmodesettingsinput import (
+        CampaignCreateWorkflowTradingModeSettingsInput,
+        CampaignCreateWorkflowTradingModeSettingsInputTypedDict,
+    )
     from .campaignflightworkflow import (
         CampaignFlightWorkflow,
         CampaignFlightWorkflowTypedDict,
@@ -204,6 +210,10 @@ if TYPE_CHECKING:
         CampaignUpdateWorkflowPrimaryInput,
         CampaignUpdateWorkflowPrimaryInputTypedDict,
     )
+    from .campaignupdateworkflowtradingmodesettingsinput import (
+        CampaignUpdateWorkflowTradingModeSettingsInput,
+        CampaignUpdateWorkflowTradingModeSettingsInputTypedDict,
+    )
     from .campaignversionworkflow import (
         CampaignVersionWorkflow,
         CampaignVersionWorkflowTypedDict,
@@ -224,6 +234,10 @@ if TYPE_CHECKING:
     from .campaignworkflowroigoalinput import (
         CampaignWorkflowROIGoalInput,
         CampaignWorkflowROIGoalInputTypedDict,
+    )
+    from .campaignworkflowtradingmodedetails import (
+        CampaignWorkflowTradingModeDetails,
+        CampaignWorkflowTradingModeDetailsTypedDict,
     )
     from .createadgroupop import CreateAdGroupResponse, CreateAdGroupResponseTypedDict
     from .createadgroupsjobop import (
@@ -309,6 +323,7 @@ if TYPE_CHECKING:
         KeyValuePairOfStringAndStringInput,
         KeyValuePairOfStringAndStringInputTypedDict,
     )
+    from .markettype import MarketType
     from .no_response_error import NoResponseError
     from .passthroughfeetype import PassThroughFeeType
     from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
@@ -348,6 +363,9 @@ if TYPE_CHECKING:
     from .targetingstartage import TargetingStartAge
     from .targetingstartageinput import TargetingStartAgeInput
     from .thirdpartydatainput import ThirdPartyDataInput, ThirdPartyDataInputTypedDict
+    from .tradingmode import TradingMode
+    from .tradingmodecreateinput import TradingModeCreateInput
+    from .tradingmodeupdateinput import TradingModeUpdateInput
     from .updateadgroupop import UpdateAdGroupResponse, UpdateAdGroupResponseTypedDict
     from .updateadgroupsjobop import (
         UpdateAdGroupsJobResponse,
@@ -440,6 +458,8 @@ __all__ = [
     "ArchiveCampaignsRequestTypedDict",
     "ArchiveCampaignsResponse",
     "ArchiveCampaignsResponseTypedDict",
+    "AudienceUnlimitedTier",
+    "AudienceUnlimitedTierInput",
     "BulkJobStatus",
     "CallRestAPIWorkflowInput",
     "CallRestAPIWorkflowInputTypedDict",
@@ -468,6 +488,8 @@ __all__ = [
     "CampaignCreateWorkflowPassThroughFeeCardInputTypedDict",
     "CampaignCreateWorkflowPrimaryInput",
     "CampaignCreateWorkflowPrimaryInputTypedDict",
+    "CampaignCreateWorkflowTradingModeSettingsInput",
+    "CampaignCreateWorkflowTradingModeSettingsInputTypedDict",
     "CampaignFlightWorkflow",
     "CampaignFlightWorkflowTypedDict",
     "CampaignPacingMode",
@@ -481,6 +503,8 @@ __all__ = [
     "CampaignUpdateWorkflowInputWithValidationTypedDict",
     "CampaignUpdateWorkflowPrimaryInput",
     "CampaignUpdateWorkflowPrimaryInputTypedDict",
+    "CampaignUpdateWorkflowTradingModeSettingsInput",
+    "CampaignUpdateWorkflowTradingModeSettingsInputTypedDict",
     "CampaignVersionWorkflow",
     "CampaignVersionWorkflowTypedDict",
     "CampaignWorkflow",
@@ -492,6 +516,8 @@ __all__ = [
     "CampaignWorkflowFlightInputTypedDict",
     "CampaignWorkflowROIGoalInput",
     "CampaignWorkflowROIGoalInputTypedDict",
+    "CampaignWorkflowTradingModeDetails",
+    "CampaignWorkflowTradingModeDetailsTypedDict",
     "CampaignWorkflowTypedDict",
     "CreateAdGroupResponse",
     "CreateAdGroupResponseTypedDict",
@@ -550,6 +576,7 @@ __all__ = [
     "IncrementalReachProductInputTypedDict",
     "KeyValuePairOfStringAndStringInput",
     "KeyValuePairOfStringAndStringInputTypedDict",
+    "MarketType",
     "NoResponseError",
     "PassThroughFeeType",
     "ProblemDetails",
@@ -581,6 +608,9 @@ __all__ = [
     "TargetingStartAgeInput",
     "ThirdPartyDataInput",
     "ThirdPartyDataInputTypedDict",
+    "TradingMode",
+    "TradingModeCreateInput",
+    "TradingModeUpdateInput",
     "UpdateAdGroupResponse",
     "UpdateAdGroupResponseTypedDict",
     "UpdateAdGroupsJobResponse",
@@ -668,6 +698,8 @@ _dynamic_imports: dict[str, str] = {
     "ArchiveCampaignsRequestTypedDict": ".archivecampaignsop",
     "ArchiveCampaignsResponse": ".archivecampaignsop",
     "ArchiveCampaignsResponseTypedDict": ".archivecampaignsop",
+    "AudienceUnlimitedTier": ".audienceunlimitedtier",
+    "AudienceUnlimitedTierInput": ".audienceunlimitedtierinput",
     "BulkJobStatus": ".bulkjobstatus",
     "CallRestAPIWorkflowInput": ".callrestapiworkflowinput",
     "CallRestAPIWorkflowInputTypedDict": ".callrestapiworkflowinput",
@@ -696,6 +728,8 @@ _dynamic_imports: dict[str, str] = {
     "CampaignCreateWorkflowPassThroughFeeCardInputTypedDict": ".campaigncreateworkflowpassthroughfeecardinput",
     "CampaignCreateWorkflowPrimaryInput": ".campaigncreateworkflowprimaryinput",
     "CampaignCreateWorkflowPrimaryInputTypedDict": ".campaigncreateworkflowprimaryinput",
+    "CampaignCreateWorkflowTradingModeSettingsInput": ".campaigncreateworkflowtradingmodesettingsinput",
+    "CampaignCreateWorkflowTradingModeSettingsInputTypedDict": ".campaigncreateworkflowtradingmodesettingsinput",
     "CampaignFlightWorkflow": ".campaignflightworkflow",
     "CampaignFlightWorkflowTypedDict": ".campaignflightworkflow",
     "CampaignPacingMode": ".campaignpacingmode",
@@ -709,6 +743,8 @@ _dynamic_imports: dict[str, str] = {
     "CampaignUpdateWorkflowInputWithValidationTypedDict": ".campaignupdateworkflowinputwithvalidation",
     "CampaignUpdateWorkflowPrimaryInput": ".campaignupdateworkflowprimaryinput",
     "CampaignUpdateWorkflowPrimaryInputTypedDict": ".campaignupdateworkflowprimaryinput",
+    "CampaignUpdateWorkflowTradingModeSettingsInput": ".campaignupdateworkflowtradingmodesettingsinput",
+    "CampaignUpdateWorkflowTradingModeSettingsInputTypedDict": ".campaignupdateworkflowtradingmodesettingsinput",
     "CampaignVersionWorkflow": ".campaignversionworkflow",
     "CampaignVersionWorkflowTypedDict": ".campaignversionworkflow",
     "CampaignWorkflow": ".campaignworkflow",
@@ -721,6 +757,8 @@ _dynamic_imports: dict[str, str] = {
     "CampaignWorkflowFlightInputTypedDict": ".campaignworkflowflightinput",
     "CampaignWorkflowROIGoalInput": ".campaignworkflowroigoalinput",
     "CampaignWorkflowROIGoalInputTypedDict": ".campaignworkflowroigoalinput",
+    "CampaignWorkflowTradingModeDetails": ".campaignworkflowtradingmodedetails",
+    "CampaignWorkflowTradingModeDetailsTypedDict": ".campaignworkflowtradingmodedetails",
     "CreateAdGroupResponse": ".createadgroupop",
     "CreateAdGroupResponseTypedDict": ".createadgroupop",
     "CreateAdGroupsJobResponse": ".createadgroupsjobop",
@@ -778,6 +816,7 @@ _dynamic_imports: dict[str, str] = {
     "IncrementalReachProductInputTypedDict": ".incrementalreachproductinput",
     "KeyValuePairOfStringAndStringInput": ".keyvaluepairofstringandstringinput",
     "KeyValuePairOfStringAndStringInputTypedDict": ".keyvaluepairofstringandstringinput",
+    "MarketType": ".markettype",
     "NoResponseError": ".no_response_error",
     "PassThroughFeeType": ".passthroughfeetype",
     "ProblemDetails": ".problemdetails",
@@ -809,6 +848,9 @@ _dynamic_imports: dict[str, str] = {
     "TargetingStartAgeInput": ".targetingstartageinput",
     "ThirdPartyDataInput": ".thirdpartydatainput",
     "ThirdPartyDataInputTypedDict": ".thirdpartydatainput",
+    "TradingMode": ".tradingmode",
+    "TradingModeCreateInput": ".tradingmodecreateinput",
+    "TradingModeUpdateInput": ".tradingmodeupdateinput",
     "UpdateAdGroupResponse": ".updateadgroupop",
     "UpdateAdGroupResponseTypedDict": ".updateadgroupop",
     "UpdateAdGroupsJobResponse": ".updateadgroupsjobop",

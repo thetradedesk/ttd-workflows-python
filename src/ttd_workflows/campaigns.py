@@ -24,7 +24,7 @@ class Campaigns(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.UpdateCampaignResponse:
-        r"""Update a campaign with specified fields
+        r"""Update a campaign
 
         Only the fields provided in the request payload will be updated.
 
@@ -138,7 +138,7 @@ class Campaigns(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.UpdateCampaignResponse:
-        r"""Update a campaign with specified fields
+        r"""Update a campaign
 
         Only the fields provided in the request payload will be updated.
 

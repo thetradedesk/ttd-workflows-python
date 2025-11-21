@@ -2,6 +2,10 @@
 
 from __future__ import annotations
 from .campaignchanneltype import CampaignChannelType
+from .campaignupdateworkflowtradingmodesettingsinput import (
+    CampaignUpdateWorkflowTradingModeSettingsInput,
+    CampaignUpdateWorkflowTradingModeSettingsInputTypedDict,
+)
 from .campaignworkflowbudgetinput import (
     CampaignWorkflowBudgetInput,
     CampaignWorkflowBudgetInputTypedDict,
@@ -52,6 +56,9 @@ class CampaignUpdateWorkflowPrimaryInputTypedDict(TypedDict):
     primary_channel: NotRequired[CampaignChannelType]
     primary_goal: NotRequired[CampaignWorkflowROIGoalInputTypedDict]
     start_date_in_utc: NotRequired[Nullable[datetime]]
+    trading_mode_settings_input: NotRequired[
+        CampaignUpdateWorkflowTradingModeSettingsInputTypedDict
+    ]
 
 
 class CampaignUpdateWorkflowPrimaryInput(BaseModel):
@@ -124,6 +131,11 @@ class CampaignUpdateWorkflowPrimaryInput(BaseModel):
         OptionalNullable[datetime], pydantic.Field(alias="startDateInUtc")
     ] = UNSET
 
+    trading_mode_settings_input: Annotated[
+        Optional[CampaignUpdateWorkflowTradingModeSettingsInput],
+        pydantic.Field(alias="tradingModeSettingsInput"),
+    ] = None
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -146,6 +158,7 @@ class CampaignUpdateWorkflowPrimaryInput(BaseModel):
             "primaryChannel",
             "primaryGoal",
             "startDateInUtc",
+            "tradingModeSettingsInput",
         ]
         nullable_fields = [
             "description",

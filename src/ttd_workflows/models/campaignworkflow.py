@@ -6,6 +6,10 @@ from .campaignflightworkflow import (
     CampaignFlightWorkflow,
     CampaignFlightWorkflowTypedDict,
 )
+from .campaignworkflowtradingmodedetails import (
+    CampaignWorkflowTradingModeDetails,
+    CampaignWorkflowTradingModeDetailsTypedDict,
+)
 from .customcpatype import CustomCPAType
 from datetime import datetime
 import pydantic
@@ -40,6 +44,7 @@ class CampaignWorkflowTypedDict(TypedDict):
     flights: NotRequired[Nullable[List[CampaignFlightWorkflowTypedDict]]]
     secondary_goal: NotRequired[Nullable[str]]
     tertiary_goal: NotRequired[Nullable[str]]
+    trading_mode_details: NotRequired[CampaignWorkflowTradingModeDetailsTypedDict]
 
 
 class CampaignWorkflow(BaseModel):
@@ -105,6 +110,11 @@ class CampaignWorkflow(BaseModel):
         OptionalNullable[str], pydantic.Field(alias="tertiaryGoal")
     ] = UNSET
 
+    trading_mode_details: Annotated[
+        Optional[CampaignWorkflowTradingModeDetails],
+        pydantic.Field(alias="tradingModeDetails"),
+    ] = None
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -125,6 +135,7 @@ class CampaignWorkflow(BaseModel):
             "flights",
             "secondaryGoal",
             "tertiaryGoal",
+            "tradingModeDetails",
         ]
         nullable_fields = [
             "id",

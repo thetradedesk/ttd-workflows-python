@@ -24,7 +24,7 @@ class Campaign(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.CreateCampaignResponse:
-        r"""Create a new campaign with required fields
+        r"""Create a new campaign
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -136,7 +136,7 @@ class Campaign(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.CreateCampaignResponse:
-        r"""Create a new campaign with required fields
+        r"""Create a new campaign
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -248,7 +248,7 @@ class Campaign(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.CreateCampaignsJobResponse:
-        r"""Create multiple new campaigns with required fields
+        r"""Submit a job to create multiple new campaigns
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -360,7 +360,7 @@ class Campaign(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.CreateCampaignsJobResponse:
-        r"""Create multiple new campaigns with required fields
+        r"""Submit a job to create multiple new campaigns
 
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -472,7 +472,7 @@ class Campaign(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.UpdateCampaignsJobResponse:
-        r"""Update multiple campaigns with specified fields
+        r"""Submit a job to update multiple campaigns
 
         Only the fields provided in the request payload for each specific campaign will be updated.
 
@@ -593,7 +593,7 @@ class Campaign(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.UpdateCampaignsJobResponse:
-        r"""Update multiple campaigns with specified fields
+        r"""Submit a job to update multiple campaigns
 
         Only the fields provided in the request payload for each specific campaign will be updated.
 
