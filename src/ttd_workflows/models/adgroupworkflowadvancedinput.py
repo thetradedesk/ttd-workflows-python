@@ -57,6 +57,7 @@ class AdGroupWorkflowAdvancedInputTypedDict(TypedDict):
         Nullable[List[AdGroupWorkflowNewFrequencyConfigInputTypedDict]]
     ]
     flights: NotRequired[Nullable[List[AdGroupWorkflowFlightInputTypedDict]]]
+    caller_source: NotRequired[Nullable[str]]
 
 
 class AdGroupWorkflowAdvancedInput(BaseModel):
@@ -100,6 +101,10 @@ class AdGroupWorkflowAdvancedInput(BaseModel):
 
     flights: OptionalNullable[List[AdGroupWorkflowFlightInput]] = UNSET
 
+    caller_source: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="callerSource")
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -112,6 +117,7 @@ class AdGroupWorkflowAdvancedInput(BaseModel):
             "nielsenTrackingAttributes",
             "newFrequencyConfigs",
             "flights",
+            "callerSource",
         ]
         nullable_fields = [
             "dimensionalBiddingAutoOptimizationSettings",
@@ -119,6 +125,7 @@ class AdGroupWorkflowAdvancedInput(BaseModel):
             "isUseSecondaryConversionsEnabled",
             "newFrequencyConfigs",
             "flights",
+            "callerSource",
         ]
         null_default_fields = []
 

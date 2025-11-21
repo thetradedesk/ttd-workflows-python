@@ -31,6 +31,7 @@ from .adgroupnielsentrackingattributes import (
 )
 from .adgrouproigoal import AdGroupROIGoal, AdGroupROIGoalTypedDict
 from .dimensionalbiddingdimensions import DimensionalBiddingDimensions
+from .markettype import MarketType
 import pydantic
 from pydantic import model_serializer
 from ttd_workflows.types import (
@@ -67,6 +68,7 @@ class AdGroupWorkflowTypedDict(TypedDict):
     programmatic_guaranteed_private_contract_id: NotRequired[Nullable[str]]
     base_bid_cpm_in_advertiser_currency: NotRequired[Nullable[float]]
     max_bid_cpm_in_advertiser_currency: NotRequired[Nullable[float]]
+    market_type: NotRequired[MarketType]
     audience_targeting: NotRequired[AdGroupAudienceTargetingTypedDict]
     koa_optimization_settings: NotRequired[AdGroupKoaOptimizationSettingsTypedDict]
     nielsen_tracking_attributes: NotRequired[AdGroupNielsenTrackingAttributesTypedDict]
@@ -136,6 +138,10 @@ class AdGroupWorkflow(BaseModel):
         OptionalNullable[float], pydantic.Field(alias="maxBidCPMInAdvertiserCurrency")
     ] = UNSET
 
+    market_type: Annotated[Optional[MarketType], pydantic.Field(alias="marketType")] = (
+        None
+    )
+
     audience_targeting: Annotated[
         Optional[AdGroupAudienceTargeting], pydantic.Field(alias="audienceTargeting")
     ] = None
@@ -157,6 +163,7 @@ class AdGroupWorkflow(BaseModel):
             "programmaticGuaranteedPrivateContractId",
             "baseBidCPMInAdvertiserCurrency",
             "maxBidCPMInAdvertiserCurrency",
+            "marketType",
             "audienceTargeting",
             "koaOptimizationSettings",
             "nielsenTrackingAttributes",

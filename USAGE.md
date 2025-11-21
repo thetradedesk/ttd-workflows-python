@@ -61,7 +61,9 @@ with Workflows(
             "name": "<value>",
             "channel": ttd_workflows.AdGroupChannel.DISPLAY,
             "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+            "market_type": ttd_workflows.MarketType.PRIVATE_MARKET_ONLY,
             "programmatic_guaranteed_private_contract_id": "<id>",
+            "include_defaults_from_campaign": False,
         },
         "campaign_id": "<id>",
         "advanced_input": {
@@ -120,6 +122,7 @@ with Workflows(
                     "campaign_flight_id": 874887,
                 },
             ],
+            "caller_source": "<value>",
         },
         "validate_input_only": True,
     })
@@ -198,7 +201,9 @@ async def main():
                 "name": "<value>",
                 "channel": ttd_workflows.AdGroupChannel.DISPLAY,
                 "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
+                "market_type": ttd_workflows.MarketType.PRIVATE_MARKET_ONLY,
                 "programmatic_guaranteed_private_contract_id": "<id>",
+                "include_defaults_from_campaign": False,
             },
             "campaign_id": "<id>",
             "advanced_input": {
@@ -257,6 +262,7 @@ async def main():
                         "campaign_flight_id": 874887,
                     },
                 ],
+                "caller_source": "<value>",
             },
             "validate_input_only": True,
         })

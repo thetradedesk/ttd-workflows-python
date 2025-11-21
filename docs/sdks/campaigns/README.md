@@ -5,7 +5,7 @@
 
 ### Available Operations
 
-* [update](#update) - Update a campaign with specified fields
+* [update](#update) - Update a campaign
 * [archive](#archive) - Archive multiple campaigns
 
 ## update

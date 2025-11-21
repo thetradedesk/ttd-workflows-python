@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [create](#create) - Create a new campaign with required fields
-* [create_campaigns_job](#create_campaigns_job) - Create multiple new campaigns with required fields
-* [update_campaigns_job](#update_campaigns_job) - Update multiple campaigns with specified fields
+* [create](#create) - Create a new campaign
+* [create_campaigns_job](#create_campaigns_job) - Submit a job to create multiple new campaigns
+* [update_campaigns_job](#update_campaigns_job) - Submit a job to update multiple campaigns
 * [get_version](#get_version) - Get a campaign's version
 
 ## create
 
-Create a new campaign with required fields
+Create a new campaign
 
 ### Example Usage
 
@@ -169,6 +169,7 @@ with Workflows(
                     ),
                 ],
             ),
+            caller_source="<value>",
         ),
         ad_groups=[
             ttd_workflows.CampaignCreateWorkflowAdGroupInput(
@@ -225,7 +226,9 @@ with Workflows(
                     name="<value>",
                     channel=ttd_workflows.AdGroupChannel.NATIVE_VIDEO,
                     funnel_location=ttd_workflows.AdGroupFunnelLocation.NONE,
+                    market_type=ttd_workflows.MarketType.OPEN_MARKET,
                     programmatic_guaranteed_private_contract_id="<id>",
+                    include_defaults_from_campaign=True,
                 ),
                 advanced_input=ttd_workflows.CampaignCreateWorkflowAdGroupAdvancedInput(
                     koa_optimization_settings=ttd_workflows.AdGroupWorkflowKoaOptimizationSettingsInput(
@@ -266,6 +269,7 @@ with Workflows(
                             reset_interval_in_minutes=587736,
                         ),
                     ],
+                    include_defaults_from_campaign=False,
                     flights=[
                         ttd_workflows.CampaignCreateWorkflowAdGroupFlightInput(
                             allocation_type=ttd_workflows.AllocationType.FIXED,
@@ -308,7 +312,7 @@ with Workflows(
 
 ## create_campaigns_job
 
-Create multiple new campaigns with required fields
+Submit a job to create multiple new campaigns
 
 ### Example Usage
 
@@ -472,6 +476,7 @@ with Workflows(
                             ),
                         ],
                     ),
+                    caller_source="<value>",
                 ),
                 ad_groups=[
                     ttd_workflows.CampaignCreateWorkflowAdGroupInput(
@@ -529,7 +534,9 @@ with Workflows(
                             name="<value>",
                             channel=ttd_workflows.AdGroupChannel.DISPLAY,
                             funnel_location=ttd_workflows.AdGroupFunnelLocation.AWARENESS,
+                            market_type=ttd_workflows.MarketType.PRIVATE_MARKET_ONLY,
                             programmatic_guaranteed_private_contract_id="<id>",
+                            include_defaults_from_campaign=True,
                         ),
                         advanced_input=ttd_workflows.CampaignCreateWorkflowAdGroupAdvancedInput(
                             koa_optimization_settings=ttd_workflows.AdGroupWorkflowKoaOptimizationSettingsInput(
@@ -567,6 +574,7 @@ with Workflows(
                                 ],
                             ),
                             new_frequency_configs=None,
+                            include_defaults_from_campaign=True,
                             flights=[
                                 ttd_workflows.CampaignCreateWorkflowAdGroupFlightInput(
                                     allocation_type=ttd_workflows.AllocationType.MAXIMUM,

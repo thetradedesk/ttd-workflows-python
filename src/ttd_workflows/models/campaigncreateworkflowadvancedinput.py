@@ -29,6 +29,7 @@ class CampaignCreateWorkflowAdvancedInputTypedDict(TypedDict):
     pass_through_fee_card: NotRequired[
         CampaignCreateWorkflowPassThroughFeeCardInputTypedDict
     ]
+    caller_source: NotRequired[Nullable[str]]
 
 
 class CampaignCreateWorkflowAdvancedInput(BaseModel):
@@ -47,6 +48,10 @@ class CampaignCreateWorkflowAdvancedInput(BaseModel):
         pydantic.Field(alias="passThroughFeeCard"),
     ] = None
 
+    caller_source: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="callerSource")
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -54,8 +59,9 @@ class CampaignCreateWorkflowAdvancedInput(BaseModel):
             "purchaseOrderNumber",
             "includeDefaultsFromAdvertiser",
             "passThroughFeeCard",
+            "callerSource",
         ]
-        nullable_fields = ["flights", "purchaseOrderNumber"]
+        nullable_fields = ["flights", "purchaseOrderNumber", "callerSource"]
         null_default_fields = []
 
         serialized = handler(self)

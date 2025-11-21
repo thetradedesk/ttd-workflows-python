@@ -56,6 +56,7 @@ class CampaignCreateWorkflowAdGroupAdvancedInputTypedDict(TypedDict):
     new_frequency_configs: NotRequired[
         Nullable[List[AdGroupWorkflowNewFrequencyConfigInputTypedDict]]
     ]
+    include_defaults_from_campaign: NotRequired[bool]
     flights: NotRequired[
         Nullable[List[CampaignCreateWorkflowAdGroupFlightInputTypedDict]]
     ]
@@ -100,6 +101,10 @@ class CampaignCreateWorkflowAdGroupAdvancedInput(BaseModel):
         pydantic.Field(alias="newFrequencyConfigs"),
     ] = UNSET
 
+    include_defaults_from_campaign: Annotated[
+        Optional[bool], pydantic.Field(alias="includeDefaultsFromCampaign")
+    ] = None
+
     flights: OptionalNullable[List[CampaignCreateWorkflowAdGroupFlightInput]] = UNSET
 
     @model_serializer(mode="wrap")
@@ -113,6 +118,7 @@ class CampaignCreateWorkflowAdGroupAdvancedInput(BaseModel):
             "isUseSecondaryConversionsEnabled",
             "nielsenTrackingAttributes",
             "newFrequencyConfigs",
+            "includeDefaultsFromCampaign",
             "flights",
         ]
         nullable_fields = [
