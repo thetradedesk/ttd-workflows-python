@@ -1,5 +1,4 @@
 # RESTRequest
-(*rest_request*)
 
 ## Overview
 

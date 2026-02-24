@@ -62,6 +62,7 @@ class Dmp(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, True, "json", Optional[models.FirstPartyDataInput]
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -168,6 +169,7 @@ class Dmp(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, True, "json", Optional[models.FirstPartyDataInput]
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -275,6 +277,7 @@ class Dmp(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, True, "json", Optional[models.ThirdPartyDataInput]
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -382,6 +385,7 @@ class Dmp(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, True, "json", Optional[models.ThirdPartyDataInput]
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 

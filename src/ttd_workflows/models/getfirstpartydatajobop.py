@@ -7,7 +7,8 @@ from .standardjobsubmitresponse import (
     StandardJobSubmitResponseTypedDict,
 )
 import pydantic
-from ttd_workflows.types import BaseModel
+from pydantic import model_serializer
+from ttd_workflows.types import BaseModel, UNSET_SENTINEL
 from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
@@ -23,3 +24,19 @@ class GetFirstPartyDataJobResponse(BaseModel):
 
     standard_job_submit_response: Optional[StandardJobSubmitResponse] = None
     r"""Accepted"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["StandardJobSubmitResponse"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m

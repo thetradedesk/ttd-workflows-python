@@ -81,7 +81,7 @@ It's also possible to write a standalone Python script without needing to set up
 ```python
 #!/usr/bin/env -S uv run --script
 # /// script
-# requires-python = ">=3.9"
+# requires-python = ">=3.10"
 # dependencies = [
 #     "ttd-workflows",
 # ]
@@ -495,6 +495,26 @@ with Workflows(
                     "reset_interval_in_minutes": 788122,
                 },
             ],
+            "inventory_targeting": {
+                "deal_group_ids_to_include": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_group_ids_to_exclude": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_ids_to_exclude": [
+                    117039,
+                    278677,
+                    217940,
+                ],
+                "deal_ids_to_include": None,
+                "include_default_on_deals": True,
+            },
+            "is_non_decisioned": True,
             "flights": [
                 {
                     "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
@@ -524,45 +544,45 @@ with Workflows(
 <details open>
 <summary>Available methods</summary>
 
-### [ad_group](docs/sdks/adgroup/README.md)
+### [AdGroup](docs/sdks/adgroup/README.md)
 
 * [create_ad_groups_job](docs/sdks/adgroup/README.md#create_ad_groups_job) - Submit a job to create multiple new ad groups
 * [update_ad_groups_job](docs/sdks/adgroup/README.md#update_ad_groups_job) - Submit a job to update multiple ad groups
 
-### [ad_groups](docs/sdks/adgroups/README.md)
+### [AdGroups](docs/sdks/adgroups/README.md)
 
 * [create](docs/sdks/adgroups/README.md#create) - Create a new ad group
 * [update](docs/sdks/adgroups/README.md#update) - Update an ad group
 * [archive](docs/sdks/adgroups/README.md#archive) - Archive multiple ad groups
 
-### [campaign](docs/sdks/campaign/README.md)
+### [Campaign](docs/sdks/campaign/README.md)
 
 * [create](docs/sdks/campaign/README.md#create) - Create a new campaign
 * [create_campaigns_job](docs/sdks/campaign/README.md#create_campaigns_job) - Submit a job to create multiple new campaigns
 * [update_campaigns_job](docs/sdks/campaign/README.md#update_campaigns_job) - Submit a job to update multiple campaigns
 * [get_version](docs/sdks/campaign/README.md#get_version) - Get a campaign's version
 
-### [campaigns](docs/sdks/campaigns/README.md)
+### [Campaigns](docs/sdks/campaigns/README.md)
 
 * [update](docs/sdks/campaigns/README.md#update) - Update a campaign
 * [archive](docs/sdks/campaigns/README.md#archive) - Archive multiple campaigns
 
-### [dmp](docs/sdks/dmp/README.md)
+### [Dmp](docs/sdks/dmp/README.md)
 
 * [get_first_party_data_job](docs/sdks/dmp/README.md#get_first_party_data_job) - Submit a job for first-party data retrieval for an advertiser
 * [get_third_party_data_job](docs/sdks/dmp/README.md#get_third_party_data_job) - Submit a job for third-party data retrieval for a partner
 
-### [graph_ql_request](docs/sdks/graphqlrequest/README.md)
+### [GraphQLRequest](docs/sdks/graphqlrequest/README.md)
 
 * [submit_graph_ql_request](docs/sdks/graphqlrequest/README.md#submit_graph_ql_request) - Submit a valid GraphQL query or mutation
 * [submit_graph_ql_bulk_query_job](docs/sdks/graphqlrequest/README.md#submit_graph_ql_bulk_query_job) - Submit a valid bulk GraphQL query job
 
-### [job_status](docs/sdks/jobstatus/README.md)
+### [JobStatus](docs/sdks/jobstatus/README.md)
 
 * [get_graph_ql_bulk_job_status](docs/sdks/jobstatus/README.md#get_graph_ql_bulk_job_status) - Get the status of a previously submitted GraphQL bulk job
 * [get_job_status](docs/sdks/jobstatus/README.md#get_job_status) - Get the status of a previously submitted job
 
-### [rest_request](docs/sdks/restrequest/README.md)
+### [RESTRequest](docs/sdks/restrequest/README.md)
 
 * [submit_rest_request](docs/sdks/restrequest/README.md#submit_rest_request) - Submit a valid REST request
 
@@ -688,6 +708,26 @@ with Workflows(
                     "reset_interval_in_minutes": 788122,
                 },
             ],
+            "inventory_targeting": {
+                "deal_group_ids_to_include": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_group_ids_to_exclude": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_ids_to_exclude": [
+                    117039,
+                    278677,
+                    217940,
+                ],
+                "deal_ids_to_include": None,
+                "include_default_on_deals": True,
+            },
+            "is_non_decisioned": True,
             "flights": [
                 {
                     "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
@@ -826,6 +866,26 @@ with Workflows(
                     "reset_interval_in_minutes": 788122,
                 },
             ],
+            "inventory_targeting": {
+                "deal_group_ids_to_include": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_group_ids_to_exclude": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_ids_to_exclude": [
+                    117039,
+                    278677,
+                    217940,
+                ],
+                "deal_ids_to_include": None,
+                "include_default_on_deals": True,
+            },
+            "is_non_decisioned": True,
             "flights": [
                 {
                     "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
@@ -978,6 +1038,26 @@ with Workflows(
                         "reset_interval_in_minutes": 788122,
                     },
                 ],
+                "inventory_targeting": {
+                    "deal_group_ids_to_include": [
+                        "<value 1>",
+                        "<value 2>",
+                        "<value 3>",
+                    ],
+                    "deal_group_ids_to_exclude": [
+                        "<value 1>",
+                        "<value 2>",
+                        "<value 3>",
+                    ],
+                    "deal_ids_to_exclude": [
+                        117039,
+                        278677,
+                        217940,
+                    ],
+                    "deal_ids_to_include": None,
+                    "include_default_on_deals": True,
+                },
+                "is_non_decisioned": True,
                 "flights": [
                     {
                         "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
@@ -1164,6 +1244,26 @@ with Workflows(
                     "reset_interval_in_minutes": 788122,
                 },
             ],
+            "inventory_targeting": {
+                "deal_group_ids_to_include": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_group_ids_to_exclude": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_ids_to_exclude": [
+                    117039,
+                    278677,
+                    217940,
+                ],
+                "deal_ids_to_include": None,
+                "include_default_on_deals": True,
+            },
+            "is_non_decisioned": True,
             "flights": [
                 {
                     "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
@@ -1302,6 +1402,26 @@ with Workflows(
                     "reset_interval_in_minutes": 788122,
                 },
             ],
+            "inventory_targeting": {
+                "deal_group_ids_to_include": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_group_ids_to_exclude": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_ids_to_exclude": [
+                    117039,
+                    278677,
+                    217940,
+                ],
+                "deal_ids_to_include": None,
+                "include_default_on_deals": True,
+            },
+            "is_non_decisioned": True,
             "flights": [
                 {
                     "allocation_type": ttd_workflows.AllocationType.MAXIMUM,

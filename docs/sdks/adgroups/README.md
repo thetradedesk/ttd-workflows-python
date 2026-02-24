@@ -1,5 +1,4 @@
 # AdGroups
-(*ad_groups*)
 
 ## Overview
 
@@ -128,6 +127,26 @@ with Workflows(
                     "reset_interval_in_minutes": 788122,
                 },
             ],
+            "inventory_targeting": {
+                "deal_group_ids_to_include": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_group_ids_to_exclude": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_ids_to_exclude": [
+                    117039,
+                    278677,
+                    217940,
+                ],
+                "deal_ids_to_include": None,
+                "include_default_on_deals": True,
+            },
+            "is_non_decisioned": True,
             "flights": [
                 {
                     "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
@@ -292,6 +311,24 @@ with Workflows(
                     "reset_interval_in_minutes": 577492,
                 },
             ],
+            "inventory_targeting": {
+                "deal_group_ids_to_include": [
+                    "<value 1>",
+                ],
+                "deal_group_ids_to_exclude": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_ids_to_exclude": [
+                    624775,
+                    110078,
+                    170675,
+                ],
+                "deal_ids_to_include": None,
+                "include_default_on_deals": False,
+            },
+            "is_non_decisioned": None,
             "flights": [
                 {
                     "allocation_type": ttd_workflows.AllocationType.MINIMUM,

@@ -14,3 +14,9 @@ class AdGroupContractTargeting(BaseModel):
     allow_open_market_bidding_when_targeting_contracts: Annotated[
         bool, pydantic.Field(alias="allowOpenMarketBiddingWhenTargetingContracts")
     ]
+
+
+try:
+    AdGroupContractTargeting.model_rebuild()
+except NameError:
+    pass

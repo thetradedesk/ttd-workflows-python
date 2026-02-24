@@ -1,21 +1,21 @@
-speakeasyVersion: 1.659.0
+speakeasyVersion: 1.725.0
 sources:
     Workflows API:
         sourceNamespace: workflows-api
-        sourceRevisionDigest: sha256:99370cb8dddc3cee36a3822b18b636c4820fde8a49a7592885112496ce50a165
-        sourceBlobDigest: sha256:40ce424e35a3f71b8da7420b4308fb566a3cd210dd2f6018ec87002aa7d650e2
+        sourceRevisionDigest: sha256:40877694ac3d99e51b35b5cee200ced0570394fce870d6fbb26c759cafd5dc11
+        sourceBlobDigest: sha256:0a7ac2528defdba4173204f12d018d4c9a8f2b9df3891c2fd5ce54daba639a3d
         tags:
             - latest
-            - speakeasy-sdk-regen-1762131036
+            - speakeasy-sdk-regen-1765241396
             - v1
 targets:
     workflows:
         source: Workflows API
         sourceNamespace: workflows-api
-        sourceRevisionDigest: sha256:99370cb8dddc3cee36a3822b18b636c4820fde8a49a7592885112496ce50a165
-        sourceBlobDigest: sha256:40ce424e35a3f71b8da7420b4308fb566a3cd210dd2f6018ec87002aa7d650e2
+        sourceRevisionDigest: sha256:40877694ac3d99e51b35b5cee200ced0570394fce870d6fbb26c759cafd5dc11
+        sourceBlobDigest: sha256:0a7ac2528defdba4173204f12d018d4c9a8f2b9df3891c2fd5ce54daba639a3d
         codeSamplesNamespace: workflows-api-python-code-samples
-        codeSamplesRevisionDigest: sha256:c554ef1f658bb189876b39f5a8c552ac7da53a8630ba4261f5f18fcab81d0398
+        codeSamplesRevisionDigest: sha256:ffa7aef2cdfe595d27460be8108381e7e3461518622cd7ce803973eeee310db5
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

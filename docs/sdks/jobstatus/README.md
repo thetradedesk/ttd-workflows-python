@@ -1,5 +1,4 @@
 # JobStatus
-(*job_status*)
 
 ## Overview
 
