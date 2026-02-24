@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from .customroasconfig import CustomROASConfig, CustomROASConfigTypedDict
+from .productlistreportingtypeinput import ProductListReportingTypeInput
 import pydantic
 from pydantic import model_serializer
 from ttd_workflows.types import (
@@ -20,6 +21,7 @@ class CampaignWorkflowCampaignConversionReportingColumnInputTypedDict(TypedDict)
     include_in_custom_cpa: bool
     reporting_column_id: int
     roas_config: NotRequired[CustomROASConfigTypedDict]
+    product_list_reporting_type: NotRequired[ProductListReportingTypeInput]
     weight: NotRequired[Nullable[float]]
     cross_device_attribution_model_id: NotRequired[Nullable[str]]
 
@@ -35,6 +37,11 @@ class CampaignWorkflowCampaignConversionReportingColumnInput(BaseModel):
         Optional[CustomROASConfig], pydantic.Field(alias="ROASConfig")
     ] = None
 
+    product_list_reporting_type: Annotated[
+        Optional[ProductListReportingTypeInput],
+        pydantic.Field(alias="productListReportingType"),
+    ] = None
+
     weight: OptionalNullable[float] = UNSET
 
     cross_device_attribution_model_id: Annotated[
@@ -43,30 +50,38 @@ class CampaignWorkflowCampaignConversionReportingColumnInput(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["ROASConfig", "weight", "crossDeviceAttributionModelId"]
-        nullable_fields = ["weight", "crossDeviceAttributionModelId"]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "ROASConfig",
+                "productListReportingType",
+                "weight",
+                "crossDeviceAttributionModelId",
+            ]
+        )
+        nullable_fields = set(["weight", "crossDeviceAttributionModelId"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
+
+
+try:
+    CampaignWorkflowCampaignConversionReportingColumnInput.model_rebuild()
+except NameError:
+    pass

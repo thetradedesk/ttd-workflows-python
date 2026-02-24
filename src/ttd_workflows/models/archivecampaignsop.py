@@ -3,7 +3,8 @@
 from __future__ import annotations
 from .httpmetadata import HTTPMetadata, HTTPMetadataTypedDict
 import pydantic
-from ttd_workflows.types import BaseModel
+from pydantic import model_serializer
+from ttd_workflows.types import BaseModel, UNSET_SENTINEL
 from ttd_workflows.utils import FieldMetadata, QueryParamMetadata, RequestMetadata
 from typing import List, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
@@ -26,6 +27,22 @@ class ArchiveCampaignsRequest(BaseModel):
         FieldMetadata(request=RequestMetadata(media_type="application/json")),
     ] = None
 
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["forceArchive", "RequestBody"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m
+
 
 class ArchiveCampaignsResponseTypedDict(TypedDict):
     http_meta: HTTPMetadataTypedDict
@@ -38,3 +55,19 @@ class ArchiveCampaignsResponse(BaseModel):
 
     strings: Optional[List[str]] = None
     r"""OK"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["strings"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m

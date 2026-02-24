@@ -68,6 +68,7 @@ class RESTRequest(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, True, "json", Optional[models.CallRestAPIWorkflowInput]
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -178,6 +179,7 @@ class RESTRequest(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, True, "json", Optional[models.CallRestAPIWorkflowInput]
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 

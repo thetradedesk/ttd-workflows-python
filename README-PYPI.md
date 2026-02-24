@@ -81,7 +81,7 @@ It's also possible to write a standalone Python script without needing to set up
 ```python
 #!/usr/bin/env -S uv run --script
 # /// script
-# requires-python = ">=3.9"
+# requires-python = ">=3.10"
 # dependencies = [
 #     "ttd-workflows",
 # ]
@@ -495,6 +495,26 @@ with Workflows(
                     "reset_interval_in_minutes": 788122,
                 },
             ],
+            "inventory_targeting": {
+                "deal_group_ids_to_include": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_group_ids_to_exclude": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_ids_to_exclude": [
+                    117039,
+                    278677,
+                    217940,
+                ],
+                "deal_ids_to_include": None,
+                "include_default_on_deals": True,
+            },
+            "is_non_decisioned": True,
             "flights": [
                 {
                     "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
@@ -524,45 +544,45 @@ with Workflows(
 <details open>
 <summary>Available methods</summary>
 
-### [ad_group](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md)
+### [AdGroup](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md)
 
 * [create_ad_groups_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md#create_ad_groups_job) - Submit a job to create multiple new ad groups
 * [update_ad_groups_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroup/README.md#update_ad_groups_job) - Submit a job to update multiple ad groups
 
-### [ad_groups](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md)
+### [AdGroups](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md)
 
 * [create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md#create) - Create a new ad group
 * [update](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md#update) - Update an ad group
 * [archive](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/adgroups/README.md#archive) - Archive multiple ad groups
 
-### [campaign](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md)
+### [Campaign](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md)
 
 * [create](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#create) - Create a new campaign
 * [create_campaigns_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#create_campaigns_job) - Submit a job to create multiple new campaigns
 * [update_campaigns_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#update_campaigns_job) - Submit a job to update multiple campaigns
 * [get_version](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaign/README.md#get_version) - Get a campaign's version
 
-### [campaigns](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md)
+### [Campaigns](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md)
 
 * [update](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md#update) - Update a campaign
 * [archive](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/campaigns/README.md#archive) - Archive multiple campaigns
 
-### [dmp](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/dmp/README.md)
+### [Dmp](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/dmp/README.md)
 
 * [get_first_party_data_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/dmp/README.md#get_first_party_data_job) - Submit a job for first-party data retrieval for an advertiser
 * [get_third_party_data_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/dmp/README.md#get_third_party_data_job) - Submit a job for third-party data retrieval for a partner
 
-### [graph_ql_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphqlrequest/README.md)
+### [GraphQLRequest](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphqlrequest/README.md)
 
 * [submit_graph_ql_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphqlrequest/README.md#submit_graph_ql_request) - Submit a valid GraphQL query or mutation
 * [submit_graph_ql_bulk_query_job](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/graphqlrequest/README.md#submit_graph_ql_bulk_query_job) - Submit a valid bulk GraphQL query job
 
-### [job_status](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/jobstatus/README.md)
+### [JobStatus](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/jobstatus/README.md)
 
 * [get_graph_ql_bulk_job_status](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/jobstatus/README.md#get_graph_ql_bulk_job_status) - Get the status of a previously submitted GraphQL bulk job
 * [get_job_status](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/jobstatus/README.md#get_job_status) - Get the status of a previously submitted job
 
-### [rest_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/restrequest/README.md)
+### [RESTRequest](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/restrequest/README.md)
 
 * [submit_rest_request](https://github.com/thetradedesk/ttd-workflows-python/blob/master/docs/sdks/restrequest/README.md#submit_rest_request) - Submit a valid REST request
 
@@ -688,6 +708,26 @@ with Workflows(
                     "reset_interval_in_minutes": 788122,
                 },
             ],
+            "inventory_targeting": {
+                "deal_group_ids_to_include": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_group_ids_to_exclude": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_ids_to_exclude": [
+                    117039,
+                    278677,
+                    217940,
+                ],
+                "deal_ids_to_include": None,
+                "include_default_on_deals": True,
+            },
+            "is_non_decisioned": True,
             "flights": [
                 {
                     "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
@@ -826,6 +866,26 @@ with Workflows(
                     "reset_interval_in_minutes": 788122,
                 },
             ],
+            "inventory_targeting": {
+                "deal_group_ids_to_include": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_group_ids_to_exclude": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_ids_to_exclude": [
+                    117039,
+                    278677,
+                    217940,
+                ],
+                "deal_ids_to_include": None,
+                "include_default_on_deals": True,
+            },
+            "is_non_decisioned": True,
             "flights": [
                 {
                     "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
@@ -978,6 +1038,26 @@ with Workflows(
                         "reset_interval_in_minutes": 788122,
                     },
                 ],
+                "inventory_targeting": {
+                    "deal_group_ids_to_include": [
+                        "<value 1>",
+                        "<value 2>",
+                        "<value 3>",
+                    ],
+                    "deal_group_ids_to_exclude": [
+                        "<value 1>",
+                        "<value 2>",
+                        "<value 3>",
+                    ],
+                    "deal_ids_to_exclude": [
+                        117039,
+                        278677,
+                        217940,
+                    ],
+                    "deal_ids_to_include": None,
+                    "include_default_on_deals": True,
+                },
+                "is_non_decisioned": True,
                 "flights": [
                     {
                         "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
@@ -1164,6 +1244,26 @@ with Workflows(
                     "reset_interval_in_minutes": 788122,
                 },
             ],
+            "inventory_targeting": {
+                "deal_group_ids_to_include": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_group_ids_to_exclude": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_ids_to_exclude": [
+                    117039,
+                    278677,
+                    217940,
+                ],
+                "deal_ids_to_include": None,
+                "include_default_on_deals": True,
+            },
+            "is_non_decisioned": True,
             "flights": [
                 {
                     "allocation_type": ttd_workflows.AllocationType.MAXIMUM,
@@ -1302,6 +1402,26 @@ with Workflows(
                     "reset_interval_in_minutes": 788122,
                 },
             ],
+            "inventory_targeting": {
+                "deal_group_ids_to_include": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_group_ids_to_exclude": [
+                    "<value 1>",
+                    "<value 2>",
+                    "<value 3>",
+                ],
+                "deal_ids_to_exclude": [
+                    117039,
+                    278677,
+                    217940,
+                ],
+                "deal_ids_to_include": None,
+                "include_default_on_deals": True,
+            },
+            "is_non_decisioned": True,
             "flights": [
                 {
                     "allocation_type": ttd_workflows.AllocationType.MAXIMUM,

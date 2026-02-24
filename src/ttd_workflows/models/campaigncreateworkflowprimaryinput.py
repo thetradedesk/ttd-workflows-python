@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 from .campaignchanneltype import CampaignChannelType
+from .campaigncreateworkflowbudgetinput import (
+    CampaignCreateWorkflowBudgetInput,
+    CampaignCreateWorkflowBudgetInputTypedDict,
+)
 from .campaigncreateworkflowincrementalreachcampaignsetting import (
     CampaignCreateWorkflowIncrementalReachCampaignSetting,
     CampaignCreateWorkflowIncrementalReachCampaignSettingTypedDict,
-)
-from .campaignworkflowbudgetinput import (
-    CampaignWorkflowBudgetInput,
-    CampaignWorkflowBudgetInputTypedDict,
 )
 from .campaignworkflowcampaignconversionreportingcolumninput import (
     CampaignWorkflowCampaignConversionReportingColumnInput,
@@ -47,7 +47,6 @@ class CampaignCreateWorkflowPrimaryInputTypedDict(TypedDict):
     custom_cpa_type: NotRequired[CustomCPAType]
     custom_roas_type: NotRequired[CustomROASType]
     impressions_only_budgeting_cpm: NotRequired[Nullable[float]]
-    budget: NotRequired[CampaignWorkflowBudgetInputTypedDict]
     end_date_in_utc: NotRequired[Nullable[datetime]]
     seed_id: NotRequired[Nullable[str]]
     campaign_conversion_reporting_columns: NotRequired[
@@ -56,7 +55,9 @@ class CampaignCreateWorkflowPrimaryInputTypedDict(TypedDict):
     is_managed_by_ttd: NotRequired[Nullable[bool]]
     secondary_goal: NotRequired[CampaignWorkflowROIGoalInputTypedDict]
     tertiary_goal: NotRequired[CampaignWorkflowROIGoalInputTypedDict]
+    custom_label_names: NotRequired[Nullable[List[str]]]
     start_date_in_utc: NotRequired[Nullable[datetime]]
+    budget: NotRequired[CampaignCreateWorkflowBudgetInputTypedDict]
     campaign_incremental_reach_setting: NotRequired[
         CampaignCreateWorkflowIncrementalReachCampaignSettingTypedDict
     ]
@@ -105,8 +106,6 @@ class CampaignCreateWorkflowPrimaryInput(BaseModel):
         OptionalNullable[float], pydantic.Field(alias="impressionsOnlyBudgetingCpm")
     ] = UNSET
 
-    budget: Optional[CampaignWorkflowBudgetInput] = None
-
     end_date_in_utc: Annotated[
         OptionalNullable[datetime], pydantic.Field(alias="endDateInUtc")
     ] = UNSET
@@ -130,9 +129,15 @@ class CampaignCreateWorkflowPrimaryInput(BaseModel):
         Optional[CampaignWorkflowROIGoalInput], pydantic.Field(alias="tertiaryGoal")
     ] = None
 
+    custom_label_names: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="customLabelNames")
+    ] = UNSET
+
     start_date_in_utc: Annotated[
         OptionalNullable[datetime], pydantic.Field(alias="startDateInUtc")
     ] = UNSET
+
+    budget: Optional[CampaignCreateWorkflowBudgetInput] = None
 
     campaign_incremental_reach_setting: Annotated[
         Optional[CampaignCreateWorkflowIncrementalReachCampaignSetting],
@@ -141,60 +146,67 @@ class CampaignCreateWorkflowPrimaryInput(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "description",
-            "campaignGroupId",
-            "timeZone",
-            "customCPAClickWeight",
-            "customCPAViewthroughWeight",
-            "customCPAType",
-            "customRoasType",
-            "impressionsOnlyBudgetingCpm",
-            "budget",
-            "endDateInUtc",
-            "seedId",
-            "campaignConversionReportingColumns",
-            "isManagedByTTD",
-            "secondaryGoal",
-            "tertiaryGoal",
-            "startDateInUtc",
-            "campaignIncrementalReachSetting",
-        ]
-        nullable_fields = [
-            "description",
-            "campaignGroupId",
-            "timeZone",
-            "customCPAClickWeight",
-            "customCPAViewthroughWeight",
-            "impressionsOnlyBudgetingCpm",
-            "endDateInUtc",
-            "seedId",
-            "campaignConversionReportingColumns",
-            "isManagedByTTD",
-            "startDateInUtc",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "description",
+                "campaignGroupId",
+                "timeZone",
+                "customCPAClickWeight",
+                "customCPAViewthroughWeight",
+                "customCPAType",
+                "customRoasType",
+                "impressionsOnlyBudgetingCpm",
+                "endDateInUtc",
+                "seedId",
+                "campaignConversionReportingColumns",
+                "isManagedByTTD",
+                "secondaryGoal",
+                "tertiaryGoal",
+                "customLabelNames",
+                "startDateInUtc",
+                "budget",
+                "campaignIncrementalReachSetting",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "description",
+                "campaignGroupId",
+                "timeZone",
+                "customCPAClickWeight",
+                "customCPAViewthroughWeight",
+                "impressionsOnlyBudgetingCpm",
+                "endDateInUtc",
+                "seedId",
+                "campaignConversionReportingColumns",
+                "isManagedByTTD",
+                "customLabelNames",
+                "startDateInUtc",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
+
+
+try:
+    CampaignCreateWorkflowPrimaryInput.model_rebuild()
+except NameError:
+    pass

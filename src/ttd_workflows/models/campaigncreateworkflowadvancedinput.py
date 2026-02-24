@@ -9,6 +9,7 @@ from .campaignworkflowflightinput import (
     CampaignWorkflowFlightInput,
     CampaignWorkflowFlightInputTypedDict,
 )
+from .frequencyconfig import FrequencyConfig, FrequencyConfigTypedDict
 import pydantic
 from pydantic import model_serializer
 from ttd_workflows.types import (
@@ -23,21 +24,22 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class CampaignCreateWorkflowAdvancedInputTypedDict(TypedDict):
-    flights: NotRequired[Nullable[List[CampaignWorkflowFlightInputTypedDict]]]
     purchase_order_number: NotRequired[Nullable[str]]
+    flights: NotRequired[Nullable[List[CampaignWorkflowFlightInputTypedDict]]]
     include_defaults_from_advertiser: NotRequired[bool]
     pass_through_fee_card: NotRequired[
         CampaignCreateWorkflowPassThroughFeeCardInputTypedDict
     ]
     caller_source: NotRequired[Nullable[str]]
+    frequency_configs: NotRequired[Nullable[List[FrequencyConfigTypedDict]]]
 
 
 class CampaignCreateWorkflowAdvancedInput(BaseModel):
-    flights: OptionalNullable[List[CampaignWorkflowFlightInput]] = UNSET
-
     purchase_order_number: Annotated[
         OptionalNullable[str], pydantic.Field(alias="purchaseOrderNumber")
     ] = UNSET
+
+    flights: OptionalNullable[List[CampaignWorkflowFlightInput]] = UNSET
 
     include_defaults_from_advertiser: Annotated[
         Optional[bool], pydantic.Field(alias="includeDefaultsFromAdvertiser")
@@ -52,38 +54,49 @@ class CampaignCreateWorkflowAdvancedInput(BaseModel):
         OptionalNullable[str], pydantic.Field(alias="callerSource")
     ] = UNSET
 
+    frequency_configs: Annotated[
+        OptionalNullable[List[FrequencyConfig]],
+        pydantic.Field(alias="frequencyConfigs"),
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "flights",
-            "purchaseOrderNumber",
-            "includeDefaultsFromAdvertiser",
-            "passThroughFeeCard",
-            "callerSource",
-        ]
-        nullable_fields = ["flights", "purchaseOrderNumber", "callerSource"]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "purchaseOrderNumber",
+                "flights",
+                "includeDefaultsFromAdvertiser",
+                "passThroughFeeCard",
+                "callerSource",
+                "frequencyConfigs",
+            ]
+        )
+        nullable_fields = set(
+            ["purchaseOrderNumber", "flights", "callerSource", "frequencyConfigs"]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
+
+
+try:
+    CampaignCreateWorkflowAdvancedInput.model_rebuild()
+except NameError:
+    pass

@@ -70,6 +70,7 @@ class AdGroup(BaseSDK):
                 "json",
                 Optional[models.AdGroupBulkCreateWorkflowInputWithValidation],
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -182,6 +183,7 @@ class AdGroup(BaseSDK):
                 "json",
                 Optional[models.AdGroupBulkCreateWorkflowInputWithValidation],
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -296,6 +298,7 @@ class AdGroup(BaseSDK):
                 "json",
                 Optional[models.AdGroupBulkUpdateWorkflowInputWithValidation],
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -410,6 +413,7 @@ class AdGroup(BaseSDK):
                 "json",
                 Optional[models.AdGroupBulkUpdateWorkflowInputWithValidation],
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 

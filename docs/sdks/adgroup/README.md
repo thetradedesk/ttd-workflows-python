@@ -1,5 +1,4 @@
 # AdGroup
-(*ad_group*)
 
 ## Overview
 
@@ -179,6 +178,27 @@ with Workflows(
                             "reset_interval_in_minutes": 375296,
                         },
                     ],
+                    "inventory_targeting": {
+                        "deal_group_ids_to_include": [
+                            "<value 1>",
+                            "<value 2>",
+                            "<value 3>",
+                        ],
+                        "deal_group_ids_to_exclude": [
+                            "<value 1>",
+                            "<value 2>",
+                        ],
+                        "deal_ids_to_exclude": [
+                            849888,
+                            396688,
+                            733994,
+                        ],
+                        "deal_ids_to_include": [
+                            690107,
+                        ],
+                        "include_default_on_deals": False,
+                    },
+                    "is_non_decisioned": False,
                     "flights": None,
                     "caller_source": "<value>",
                 },

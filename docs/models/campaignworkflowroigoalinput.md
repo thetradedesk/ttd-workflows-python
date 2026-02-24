@@ -21,3 +21,4 @@
 | `crossix_audience_quality_index`                   | *OptionalNullable[bool]*                           | :heavy_minus_sign:                                 | N/A                                                |
 | `iqvia_audience_quality_index_and_cost_per_target` | *OptionalNullable[bool]*                           | :heavy_minus_sign:                                 | N/A                                                |
 | `crossix_cost_per_target`                          | *OptionalNullable[bool]*                           | :heavy_minus_sign:                                 | N/A                                                |
+| `new_buyer_target_value`                           | *OptionalNullable[int]*                            | :heavy_minus_sign:                                 | N/A                                                |

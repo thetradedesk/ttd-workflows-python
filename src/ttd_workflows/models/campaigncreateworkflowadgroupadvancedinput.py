@@ -9,6 +9,10 @@ from .adgroupworkflowcontracttargetinginput import (
     AdGroupWorkflowContractTargetingInput,
     AdGroupWorkflowContractTargetingInputTypedDict,
 )
+from .adgroupworkflowinventorytargetinginput import (
+    AdGroupWorkflowInventoryTargetingInput,
+    AdGroupWorkflowInventoryTargetingInputTypedDict,
+)
 from .adgroupworkflowkoaoptimizationsettingsinput import (
     AdGroupWorkflowKoaOptimizationSettingsInput,
     AdGroupWorkflowKoaOptimizationSettingsInputTypedDict,
@@ -56,6 +60,8 @@ class CampaignCreateWorkflowAdGroupAdvancedInputTypedDict(TypedDict):
     new_frequency_configs: NotRequired[
         Nullable[List[AdGroupWorkflowNewFrequencyConfigInputTypedDict]]
     ]
+    inventory_targeting: NotRequired[AdGroupWorkflowInventoryTargetingInputTypedDict]
+    is_non_decisioned: NotRequired[Nullable[bool]]
     include_defaults_from_campaign: NotRequired[bool]
     flights: NotRequired[
         Nullable[List[CampaignCreateWorkflowAdGroupFlightInputTypedDict]]
@@ -101,6 +107,15 @@ class CampaignCreateWorkflowAdGroupAdvancedInput(BaseModel):
         pydantic.Field(alias="newFrequencyConfigs"),
     ] = UNSET
 
+    inventory_targeting: Annotated[
+        Optional[AdGroupWorkflowInventoryTargetingInput],
+        pydantic.Field(alias="inventoryTargeting"),
+    ] = None
+
+    is_non_decisioned: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="isNonDecisioned")
+    ] = UNSET
+
     include_defaults_from_campaign: Annotated[
         Optional[bool], pydantic.Field(alias="includeDefaultsFromCampaign")
     ] = None
@@ -109,47 +124,55 @@ class CampaignCreateWorkflowAdGroupAdvancedInput(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "koaOptimizationSettings",
-            "comscoreSettings",
-            "contractTargeting",
-            "dimensionalBiddingAutoOptimizationSettings",
-            "isUseClicksAsConversionsEnabled",
-            "isUseSecondaryConversionsEnabled",
-            "nielsenTrackingAttributes",
-            "newFrequencyConfigs",
-            "includeDefaultsFromCampaign",
-            "flights",
-        ]
-        nullable_fields = [
-            "dimensionalBiddingAutoOptimizationSettings",
-            "isUseClicksAsConversionsEnabled",
-            "isUseSecondaryConversionsEnabled",
-            "newFrequencyConfigs",
-            "flights",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "koaOptimizationSettings",
+                "comscoreSettings",
+                "contractTargeting",
+                "dimensionalBiddingAutoOptimizationSettings",
+                "isUseClicksAsConversionsEnabled",
+                "isUseSecondaryConversionsEnabled",
+                "nielsenTrackingAttributes",
+                "newFrequencyConfigs",
+                "inventoryTargeting",
+                "isNonDecisioned",
+                "includeDefaultsFromCampaign",
+                "flights",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "dimensionalBiddingAutoOptimizationSettings",
+                "isUseClicksAsConversionsEnabled",
+                "isUseSecondaryConversionsEnabled",
+                "newFrequencyConfigs",
+                "isNonDecisioned",
+                "flights",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
+
+
+try:
+    CampaignCreateWorkflowAdGroupAdvancedInput.model_rebuild()
+except NameError:
+    pass

@@ -13,15 +13,10 @@ from typing_extensions import Annotated
 
 class ProblemDetailsErrorData(BaseModel):
     type: OptionalNullable[str] = UNSET
-
     title: OptionalNullable[str] = UNSET
-
     status: OptionalNullable[int] = UNSET
-
     detail: OptionalNullable[str] = UNSET
-
     instance: OptionalNullable[str] = UNSET
-
     additional_properties: Annotated[
         Optional[Dict[str, ProblemDetails]], pydantic.Field(exclude=True)
     ] = None

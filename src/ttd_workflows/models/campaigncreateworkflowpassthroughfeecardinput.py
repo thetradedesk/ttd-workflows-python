@@ -7,14 +7,21 @@ from .campaigncreatepassthroughfeesinput import (
 )
 from datetime import datetime
 import pydantic
-from ttd_workflows.types import BaseModel
-from typing import List, Optional
+from pydantic import model_serializer
+from ttd_workflows.types import (
+    BaseModel,
+    Nullable,
+    OptionalNullable,
+    UNSET,
+    UNSET_SENTINEL,
+)
+from typing import List
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class CampaignCreateWorkflowPassThroughFeeCardInputTypedDict(TypedDict):
     pass_through_fees: List[CampaignCreatePassThroughFeesInputTypedDict]
-    start_date_utc: NotRequired[datetime]
+    start_date_utc: NotRequired[Nullable[datetime]]
 
 
 class CampaignCreateWorkflowPassThroughFeeCardInput(BaseModel):
@@ -24,5 +31,36 @@ class CampaignCreateWorkflowPassThroughFeeCardInput(BaseModel):
     ]
 
     start_date_utc: Annotated[
-        Optional[datetime], pydantic.Field(alias="startDateUtc")
-    ] = None
+        OptionalNullable[datetime], pydantic.Field(alias="startDateUtc")
+    ] = UNSET
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["startDateUtc"])
+        nullable_fields = set(["startDateUtc"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
+
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
+
+        return m
+
+
+try:
+    CampaignCreateWorkflowPassThroughFeeCardInput.model_rebuild()
+except NameError:
+    pass

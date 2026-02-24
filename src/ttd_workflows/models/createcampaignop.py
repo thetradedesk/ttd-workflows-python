@@ -4,7 +4,8 @@ from __future__ import annotations
 from .campaignpayload import CampaignPayload, CampaignPayloadTypedDict
 from .httpmetadata import HTTPMetadata, HTTPMetadataTypedDict
 import pydantic
-from ttd_workflows.types import BaseModel
+from pydantic import model_serializer
+from ttd_workflows.types import BaseModel, UNSET_SENTINEL
 from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
@@ -20,3 +21,19 @@ class CreateCampaignResponse(BaseModel):
 
     campaign_payload: Optional[CampaignPayload] = None
     r"""Created"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["CampaignPayload"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m

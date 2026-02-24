@@ -1,5 +1,4 @@
 # Campaigns
-(*campaigns*)
 
 ## Overview
 
@@ -37,13 +36,6 @@ with Workflows(
             custom_cpa_type=ttd_workflows.CustomCPAType.CLICK_VIEWTHROUGH_WEIGHTING,
             custom_roas_type=ttd_workflows.CustomROASType.DISABLED,
             impressions_only_budgeting_cpm=126.57,
-            budget=ttd_workflows.CampaignWorkflowBudgetInput(
-                pacing_mode=ttd_workflows.CampaignPacingMode.PACE_AS_SOON_AS_POSSIBLE,
-                budget_in_advertiser_currency=6974.82,
-                budget_in_impressions=834352,
-                daily_target_in_advertiser_currency=8583.49,
-                daily_target_in_impressions=746941,
-            ),
             end_date_in_utc=parse_datetime("2024-07-09T17:14:23.542Z"),
             seed_id="<id>",
             campaign_conversion_reporting_columns=[
@@ -57,6 +49,7 @@ with Workflows(
                         custom_roas_click_weight=129.65,
                         custom_roas_viewthrough_weight=2890.82,
                     ),
+                    product_list_reporting_type=ttd_workflows.ProductListReportingTypeInput.FEATURED,
                     weight=5187.48,
                     cross_device_attribution_model_id=None,
                 ),
@@ -79,6 +72,7 @@ with Workflows(
                 crossix_audience_quality_index=True,
                 iqvia_audience_quality_index_and_cost_per_target=True,
                 crossix_cost_per_target=True,
+                new_buyer_target_value=869267,
             ),
             tertiary_goal=ttd_workflows.CampaignWorkflowROIGoalInput(
                 maximize_reach=True,
@@ -97,6 +91,7 @@ with Workflows(
                 crossix_audience_quality_index=False,
                 iqvia_audience_quality_index_and_cost_per_target=None,
                 crossix_cost_per_target=False,
+                new_buyer_target_value=113952,
             ),
             name="<value>",
             primary_channel=ttd_workflows.CampaignChannelType.DISPLAY,
@@ -117,20 +112,14 @@ with Workflows(
                 crossix_audience_quality_index=True,
                 iqvia_audience_quality_index_and_cost_per_target=True,
                 crossix_cost_per_target=True,
+                new_buyer_target_value=723722,
             ),
             start_date_in_utc=parse_datetime("2024-02-29T10:31:50.069Z"),
+            budget=ttd_workflows.CampaignUpdateWorkflowBudgetInput(
+                pacing_mode=ttd_workflows.CampaignPacingMode.PACE_AS_SOON_AS_POSSIBLE,
+            ),
         ),
         advanced_input=ttd_workflows.CampaignUpdateWorkflowAdvancedInput(
-            flights=[
-                ttd_workflows.CampaignWorkflowFlightInput(
-                    start_date_inclusive_utc=parse_datetime("2025-11-09T04:11:39.432Z"),
-                    end_date_exclusive_utc=parse_datetime("2025-09-10T20:38:51.701Z"),
-                    budget_in_advertiser_currency=6534.57,
-                    budget_in_impressions=865481,
-                    daily_target_in_advertiser_currency=1033.72,
-                    daily_target_in_impressions=None,
-                ),
-            ],
             purchase_order_number="<value>",
         ),
         validate_input_only=True,

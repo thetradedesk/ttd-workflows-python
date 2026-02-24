@@ -30,6 +30,7 @@ class CampaignWorkflowROIGoalInputTypedDict(TypedDict):
     crossix_audience_quality_index: NotRequired[Nullable[bool]]
     iqvia_audience_quality_index_and_cost_per_target: NotRequired[Nullable[bool]]
     crossix_cost_per_target: NotRequired[Nullable[bool]]
+    new_buyer_target_value: NotRequired[Nullable[int]]
 
 
 class CampaignWorkflowROIGoalInput(BaseModel):
@@ -98,66 +99,77 @@ class CampaignWorkflowROIGoalInput(BaseModel):
         OptionalNullable[bool], pydantic.Field(alias="crossixCostPerTarget")
     ] = UNSET
 
+    new_buyer_target_value: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="NewBuyerTargetValue")
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "maximizeReach",
-            "maximizeLtvIncrementalReach",
-            "cpcInAdvertiserCurrency",
-            "ctrInPercent",
-            "nielsenOTPInPercent",
-            "cpaInAdvertiserCurrency",
-            "returnOnAdSpendPercent",
-            "vcrInPercent",
-            "viewabilityInPercent",
-            "vcpmInAdvertiserCurrency",
-            "cpcvInAdvertiserCurrency",
-            "miaozhenOTPInPercent",
-            "iqviaAudienceQualityIndex",
-            "crossixAudienceQualityIndex",
-            "iqviaAudienceQualityIndexAndCostPerTarget",
-            "crossixCostPerTarget",
-        ]
-        nullable_fields = [
-            "maximizeReach",
-            "maximizeLtvIncrementalReach",
-            "cpcInAdvertiserCurrency",
-            "ctrInPercent",
-            "nielsenOTPInPercent",
-            "cpaInAdvertiserCurrency",
-            "returnOnAdSpendPercent",
-            "vcrInPercent",
-            "viewabilityInPercent",
-            "vcpmInAdvertiserCurrency",
-            "cpcvInAdvertiserCurrency",
-            "miaozhenOTPInPercent",
-            "iqviaAudienceQualityIndex",
-            "crossixAudienceQualityIndex",
-            "iqviaAudienceQualityIndexAndCostPerTarget",
-            "crossixCostPerTarget",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "maximizeReach",
+                "maximizeLtvIncrementalReach",
+                "cpcInAdvertiserCurrency",
+                "ctrInPercent",
+                "nielsenOTPInPercent",
+                "cpaInAdvertiserCurrency",
+                "returnOnAdSpendPercent",
+                "vcrInPercent",
+                "viewabilityInPercent",
+                "vcpmInAdvertiserCurrency",
+                "cpcvInAdvertiserCurrency",
+                "miaozhenOTPInPercent",
+                "iqviaAudienceQualityIndex",
+                "crossixAudienceQualityIndex",
+                "iqviaAudienceQualityIndexAndCostPerTarget",
+                "crossixCostPerTarget",
+                "NewBuyerTargetValue",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "maximizeReach",
+                "maximizeLtvIncrementalReach",
+                "cpcInAdvertiserCurrency",
+                "ctrInPercent",
+                "nielsenOTPInPercent",
+                "cpaInAdvertiserCurrency",
+                "returnOnAdSpendPercent",
+                "vcrInPercent",
+                "viewabilityInPercent",
+                "vcpmInAdvertiserCurrency",
+                "cpcvInAdvertiserCurrency",
+                "miaozhenOTPInPercent",
+                "iqviaAudienceQualityIndex",
+                "crossixAudienceQualityIndex",
+                "iqviaAudienceQualityIndexAndCostPerTarget",
+                "crossixCostPerTarget",
+                "NewBuyerTargetValue",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
+
+
+try:
+    CampaignWorkflowROIGoalInput.model_rebuild()
+except NameError:
+    pass
