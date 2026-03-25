@@ -1,5 +1,13 @@
 # TargetingStartAge
 
+## Example Usage
+
+```python
+from ttd_workflows.models import TargetingStartAge
+
+value = TargetingStartAge.TWO
+```
+
 
 ## Values
 

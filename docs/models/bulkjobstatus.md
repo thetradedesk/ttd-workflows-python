@@ -1,5 +1,13 @@
 # BulkJobStatus
 
+## Example Usage
+
+```python
+from ttd_workflows.models import BulkJobStatus
+
+value = BulkJobStatus.QUEUED
+```
+
 
 ## Values
 

@@ -1,5 +1,13 @@
 # CampaignChannelType
 
+## Example Usage
+
+```python
+from ttd_workflows.models import CampaignChannelType
+
+value = CampaignChannelType.NONE
+```
+
 
 ## Values
 

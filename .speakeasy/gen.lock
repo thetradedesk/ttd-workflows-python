@@ -3,31 +3,31 @@ id: f803c176-84c0-412f-93ec-3006a124047d
 management:
   docChecksum: f52fbd737db7513c61b4e8ebd74d7251
   docVersion: v1
-  speakeasyVersion: 1.725.0
-  generationVersion: 2.836.5
-  releaseVersion: 0.13.0
-  configChecksum: 11d315aca3f4a1a7053c1e136e410b02
+  speakeasyVersion: 1.759.2
+  generationVersion: 2.869.23
+  releaseVersion: 0.13.1
+  configChecksum: f4d645658b00c6be06c25aa2f7dec1e7
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
 persistentEdits:
-  generation_id: ab716918-4f28-44b8-8e37-b779e1acc7d7
-  pristine_commit_hash: fdd288176cb4a58319a6c9bba82b94573efd052c
-  pristine_tree_hash: 69cf80b54f73c258f874f7586c9d0a810dcc5249
+  generation_id: 7aa3697a-5765-4c6a-ba76-73d13c2eab15
+  pristine_commit_hash: 27d3c2ee8338f13de7f81fbee7f8c76b24b73a12
+  pristine_tree_hash: 592f2028a603032358a3137377fb85b8e494d49f
 features:
   python:
     additionalDependencies: 1.0.0
     additionalProperties: 1.0.1
-    constsAndDefaults: 1.0.6
-    core: 6.0.12
+    constsAndDefaults: 1.0.7
+    core: 6.0.20
     defaultEnabledRetries: 0.2.0
-    enumUnions: 0.1.0
+    enumUnions: 0.1.1
     envVarSecurityUsage: 0.3.2
     flattening: 3.1.1
     globalSecurity: 3.0.5
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
-    globalServerURLs: 3.2.0
+    globalServerURLs: 3.2.1
     groups: 3.0.1
     methodArguments: 1.0.2
     nameOverrides: 3.0.3
@@ -71,8 +71,8 @@ trackedFiles:
     pristine_git_object: aee44b2de3c2ae771183e579baf6e575df93fc92
   docs/models/adgroupchannel.md:
     id: 3cfb7258ab82
-    last_write_checksum: sha1:32b0f3c585d5330522d7ca334f768fdefb3cc868
-    pristine_git_object: 6074eb690a9d411957c5a6477c4963ebb3aba9e6
+    last_write_checksum: sha1:e489d78a19918b9c6ce06819df3850e04dbb63f1
+    pristine_git_object: 0313ac8052d6efcf5fbe809e3439bb257f2845af
   docs/models/adgroupcomscoresettings.md:
     id: 50fe92286f33
     last_write_checksum: sha1:0c82ea792e7c1a13b3b5161853079c095e426c8a
@@ -99,8 +99,8 @@ trackedFiles:
     pristine_git_object: 650c3a2d676657d4de862f6d8c91fdfbf9497440
   docs/models/adgroupfunnellocation.md:
     id: d6a4912e85a0
-    last_write_checksum: sha1:854bcb70e51ec7e84d3cb43b464a8167f16129ad
-    pristine_git_object: dcfaa23e14fef838e3e30c7938cc1aea10e8a226
+    last_write_checksum: sha1:27215f2b655af1bf355f840d7e97d8b107479ab0
+    pristine_git_object: 939fb7d8d05fe550df2b42064aa5ee4f7057f398
   docs/models/adgroupkoaoptimizationsettings.md:
     id: 2a44f48e6dcc
     last_write_checksum: sha1:9329894ffe587f0f27f572958979d5821812a255
@@ -183,8 +183,8 @@ trackedFiles:
     pristine_git_object: b1d5ce18290f530e160f55e938096c50ff6fd821
   docs/models/allocationtype.md:
     id: db446c19b69a
-    last_write_checksum: sha1:e85a4c466cc4a666f8d0f636c24ddd358d313dc3
-    pristine_git_object: cd5146bccfe2214208e314abd37d823c5ccfe58d
+    last_write_checksum: sha1:f1f4aacd0f920dfa981459f54f253ffa07422bba
+    pristine_git_object: 65e6b9436773947ea8e3c57edbb57d01dbd6e25a
   docs/models/archiveadgroupsrequest.md:
     id: 92cc8afc3799
     last_write_checksum: sha1:a9c5566797556fbba0e71fde3fb00727263056c0
@@ -203,8 +203,8 @@ trackedFiles:
     pristine_git_object: 6909b47ab7528a61c3680fa03f6613548a4de3a8
   docs/models/bulkjobstatus.md:
     id: 73cecefe3dde
-    last_write_checksum: sha1:5d7522b7ce5216552491521d52cac9098b4c9627
-    pristine_git_object: 9d9d119df812d185327968ef4d18025be79e9f83
+    last_write_checksum: sha1:6cefbbfdef0c8fdd8f760c928c2b8dc23f9a2db5
+    pristine_git_object: 7e9da653676890cf4aa58238dc6aca956609fc5e
   docs/models/callrestapiworkflowinput.md:
     id: 8beb154bac18
     last_write_checksum: sha1:b95c138c0745e214fe535fcd59216090828ec07b
@@ -219,8 +219,8 @@ trackedFiles:
     pristine_git_object: fe39c962f2b12b17355faf399c8dc38b2c995c51
   docs/models/campaignchanneltype.md:
     id: 2e1a80752b31
-    last_write_checksum: sha1:d089c8765c6c1be32c0d4c7012b5422830224600
-    pristine_git_object: 4d92b17f82356f79bdc0f5654b9dd13a34d44b75
+    last_write_checksum: sha1:c5a3b6e0ffe5e9f86bf66392b8ed1387fad460a4
+    pristine_git_object: 7a4271fcb519e1f25314b5bc85eee327b691342a
   docs/models/campaigncreatepassthroughfeesinput.md:
     id: 4170ddc46b22
     last_write_checksum: sha1:776462db9c5b0ab776fa31ac2e8f811560309182
@@ -271,8 +271,8 @@ trackedFiles:
     pristine_git_object: 68d738727a4e765a1a1c3f717ddd4cf632a86f34
   docs/models/campaignpacingmode.md:
     id: 69ea16fb5b02
-    last_write_checksum: sha1:03f09076f4db58d69126e0cef2842355c9d84fe7
-    pristine_git_object: 8439a827e60bae1b69397378b26dfdf570cddda5
+    last_write_checksum: sha1:0fb16771dc782654b84b80384378accc54ac2af1
+    pristine_git_object: 6d4fc1e2b8724be35c2252e373570f7f47a4c3f2
   docs/models/campaignpayload.md:
     id: 165359cbc0f6
     last_write_checksum: sha1:bc2b75e789e458a37315dae1676a68b42e06ce4b
@@ -335,28 +335,28 @@ trackedFiles:
     pristine_git_object: 8cb704bfd88662083be2f48d729aa983db89e2ca
   docs/models/customcpatype.md:
     id: 4c9fff8a8fea
-    last_write_checksum: sha1:5153a8d8b5d3d0d21d67ceef36cde1e2cfa31973
-    pristine_git_object: fd9e4f2204588bfb21315e631d3d24bcd07a3c70
+    last_write_checksum: sha1:676c209830fadfb9dd585111e19bb6795fc950d4
+    pristine_git_object: 45e2f79a3d54a6084b7f34172cda941a738bb345
   docs/models/customroasconfig.md:
     id: 95b7a51246e1
     last_write_checksum: sha1:f80790d4bb8f0ab776f7a787bea45b19fd89fc50
     pristine_git_object: de244fc3385b73b139c7774298c3dc4fbe6e1e42
   docs/models/customroastype.md:
     id: edc8dd037af7
-    last_write_checksum: sha1:4302f784c9ade482ad97520e6c5f3c76b1fbbef4
-    pristine_git_object: f196fd4788386142188fddfc87a565734ab54380
+    last_write_checksum: sha1:43759f45f878460027f8530ee8a168e26aa30bc7
+    pristine_git_object: 11bd21d9e8639c634862b3c2e5dc1b7485cfe2a8
   docs/models/dimensionalbiddingdimensions.md:
     id: fd4592736955
-    last_write_checksum: sha1:29aef464678321f8aecadc47c800409d6d1120a4
-    pristine_git_object: 335699f9fdaa1205d7be1490faccb62305b1da36
+    last_write_checksum: sha1:03b78bf7bae35a201315aa03dccab2823e8d9c82
+    pristine_git_object: 7199a4bf6fe9ff6b025fb4b39d1e2583c7cd0b56
   docs/models/enhancednielsenreportingoptions.md:
     id: f1e874aa558e
-    last_write_checksum: sha1:9fcfe39530753e5883c5a84b9ac3719896e26d7a
-    pristine_git_object: ef00bfb9f59dc52e6f5fef9a0c0c9c5c43912201
+    last_write_checksum: sha1:e070f3abd2d3ad05ec39dfdacad2925b6157cdf9
+    pristine_git_object: 3b886d6080d727738a695d0643910cdcdc0c79b3
   docs/models/enhancednielsenreportingoptionsinput.md:
     id: 609985d29fc3
-    last_write_checksum: sha1:eed31487a1530c0d40d947aaea1f0c81ca33b0a6
-    pristine_git_object: 403eeb55db274eda3a6f81162ca415f232974aa1
+    last_write_checksum: sha1:668ac05060b09d12f31fd244d28ccd11ff1f6f43
+    pristine_git_object: 30b631e367a7ff8d2244890b5e4bdfe2643aab03
   docs/models/firstpartydatainput.md:
     id: fa8f44865cf5
     last_write_checksum: sha1:610a40cf61582d35a74a77fc95b04dba58ecd753
@@ -447,12 +447,12 @@ trackedFiles:
     pristine_git_object: d9cecab7946adcaa0e69f849291d61d770ae3431
   docs/models/markettype.md:
     id: 3e2a3a298fd5
-    last_write_checksum: sha1:92e2ac6fbe9d9621c2fe3ba197ce47ac891ce595
-    pristine_git_object: 677a8b75ce74bfae5b5abc7daef85c98def375ca
+    last_write_checksum: sha1:3575ddfb91f3dde9e1b487d6f3073fdfea6a0989
+    pristine_git_object: 6f8e87dd255c9be317a863dac11cf0aba41bf99d
   docs/models/passthroughfeetype.md:
     id: fb9b76f90834
-    last_write_checksum: sha1:adee35d14199369b441445481bf3bc295e941f7b
-    pristine_git_object: dc50cf399a4bcff5f187bd2f14e0f2f7f5e723c0
+    last_write_checksum: sha1:c64fd186f247063bd147c602931894233b834894
+    pristine_git_object: 624ea08543d0c1577be4715bab54a9a18c4f580d
   docs/models/problemdetails.md:
     id: 9a2634c43a19
     last_write_checksum: sha1:a03ec7410fcce855a2841b00431d8ba71df3f742
@@ -463,20 +463,20 @@ trackedFiles:
     pristine_git_object: edd1350d9fcce462cb1177e93729fd97a6671ee8
   docs/models/productlistreportingtypeinput.md:
     id: dd3f92801d21
-    last_write_checksum: sha1:ab9b45f46492b30e06d3d04e64de780ff56a3124
-    pristine_git_object: c18c515fa844cc8077bccc39af4ae7cccd3670cc
+    last_write_checksum: sha1:127672bada673f946d7e23d5c40803ca7acd3c1d
+    pristine_git_object: 95c67807d91d88a3c062115c7d41a4f32d71b222
   docs/models/realyticsentertainmenttype.md:
     id: d99dccf97573
-    last_write_checksum: sha1:7df8d783551d33b27fe66e2232f2335d08f46503
-    pristine_git_object: af96d8c00f10c3dfd62b1b5140be059e9efc04ba
+    last_write_checksum: sha1:792cca7a00c5c0bd2137b89de8cca5297c5f2d6e
+    pristine_git_object: e9d9426b7ce824058ab0d59a1e99d0c66ca5a270
   docs/models/realyticsreachsettinginput.md:
     id: e1a6ed1de70a
     last_write_checksum: sha1:38d32f0d9a6ec314e4ff01dbd42aeb18dbba8368
     pristine_git_object: 1f04c4916a76d4ddecd225e4781381ec75f50b73
   docs/models/restapimethodtype.md:
     id: 60ab2ab44641
-    last_write_checksum: sha1:ff03810cace55abdced7055c8f9243c5a8138eae
-    pristine_git_object: 38c4edac9b60b3e1f9d2a64e292bf873054944b3
+    last_write_checksum: sha1:d2f71b3bcbc978811b83d2e2faf65ac48431a22a
+    pristine_git_object: 0fb3eb37ba9d336a7b4b811d7ec7fa17d1d293a8
   docs/models/security.md:
     id: 452e4d4eb67a
     last_write_checksum: sha1:3e93f1c842d02a3435ab584686f216504d80c33c
@@ -503,28 +503,28 @@ trackedFiles:
     pristine_git_object: 5dc3ca80fad486eec118a2b17b65e8c761ada25b
   docs/models/targetingendage.md:
     id: 5c67533ce782
-    last_write_checksum: sha1:7b0b7c9d53dbed88a88619bf8f8ea33d4b42f890
-    pristine_git_object: ee43803a7cb61eb8de4576e9efcdcd1d4e391d67
+    last_write_checksum: sha1:6274bd3a35134d634cc14261e95929df3c9ef941
+    pristine_git_object: 825b11c8050763889e421bd2b4f069b59c24d5fd
   docs/models/targetingendageinput.md:
     id: cd759b7dc378
-    last_write_checksum: sha1:b23cff533ef55c67909dc2da8b96f32242de0ee0
-    pristine_git_object: 7bc5f1c8f593786c145f3912f2dad373fc25c05b
+    last_write_checksum: sha1:5420e191152b0b35bee9650d4341aafea55e1c93
+    pristine_git_object: 6d78e4908eb3bb7a605343c927262ed962253580
   docs/models/targetinggender.md:
     id: c8fa025f62b2
-    last_write_checksum: sha1:d6bc5b7bfc73105d45c73566da6daf5ea224081d
-    pristine_git_object: 999667d8f7a77ded5ac89f91fc72eac17235d4e6
+    last_write_checksum: sha1:60d0c4ef51f6c66a1150ab554c6401e21c58ec5c
+    pristine_git_object: 49bf1ac71357ae63d5ea8ef35e4b69423a2dc12a
   docs/models/targetinggenderinput.md:
     id: 511c9047de4d
-    last_write_checksum: sha1:085762f9136d959f094dbea632220ed03afd9824
-    pristine_git_object: 9a0a21587f944315499ae4b1e9c5b383e5931c41
+    last_write_checksum: sha1:dbe630a0709e92f815925d9bb0bacc58b598e1a7
+    pristine_git_object: 892373da8d941e8d783d8ad2aa8a76301357068b
   docs/models/targetingstartage.md:
     id: 0e54e1f6bc28
-    last_write_checksum: sha1:13dc803a6bcf2b9b37d540912f05ce4bfb9b3919
-    pristine_git_object: 7b9455eed12c1822a12864a84172f8b7db5af0cf
+    last_write_checksum: sha1:d83f97d413f79e908c32db3509faef5c83b23482
+    pristine_git_object: b5ec3da64e7f26cac22844dc0c6b6d042ab84525
   docs/models/targetingstartageinput.md:
     id: 95835dc49cae
-    last_write_checksum: sha1:5f8388fdc4e3a0224e22f630ddf8a90c5f6db1af
-    pristine_git_object: 710fc038e352b62e2d1bd9857f9a7ae12de806a8
+    last_write_checksum: sha1:a0a94c30b8449ce33e49da98907799d0530b8a36
+    pristine_git_object: 248930986d9161f5e402cf2a07e2253299e38691
   docs/models/thirdpartydatainput.md:
     id: 1fb78ab4ddaf
     last_write_checksum: sha1:d061d1773d65ee1c912ff1cc3eb1701b708edcee
@@ -555,8 +555,8 @@ trackedFiles:
     pristine_git_object: 88e0f8222a73cb4f8c5326a7a162d8565edc5103
   docs/models/workflowstatus.md:
     id: 9c0d61d3ce80
-    last_write_checksum: sha1:a07db3419526e6a30be49b847998588a5486223f
-    pristine_git_object: 7912f012f66047745b1fd8c23f828ee88dcb2f4e
+    last_write_checksum: sha1:a6def359d8f512ebaea082fa97ed1b21f313b453
+    pristine_git_object: 4d8e028c6c3518f6d4bde3bb5c46dd9f45ff2c45
   docs/sdks/adgroup/README.md:
     id: 8e0c2412ebea
     last_write_checksum: sha1:ce9e14dac4893ae3d3cbc148daaaf11cc0531afc
@@ -603,8 +603,8 @@ trackedFiles:
     pristine_git_object: cb9c15d314c1930557401074329ed7a737147919
   pyproject.toml:
     id: 5d07e7d72637
-    last_write_checksum: sha1:3690d4b98ddb6da38895deb255aac929f70a40c3
-    pristine_git_object: 0f333364d0817017ee9e1c347cd0415748c51372
+    last_write_checksum: sha1:aa328c04a931446e569c8a07495dc6d549d7a4b6
+    pristine_git_object: a602f2360191c7321acac31c62ae229ae6a7a79a
   scripts/prepare_readme.py:
     id: e0c5957a6035
     last_write_checksum: sha1:9eebd27076f34cee181d36379e4102aea070e45f
@@ -631,8 +631,8 @@ trackedFiles:
     pristine_git_object: edb32b587a8e40342f5605ed44e58c527d021a39
   src/ttd_workflows/_version.py:
     id: 5664ebff5b6e
-    last_write_checksum: sha1:23cc7d74b8cdcef7366df5754f39699aa84d7f3c
-    pristine_git_object: 622792d6e54414415a49552ce5d2297ffd9a2b53
+    last_write_checksum: sha1:6128afdb24b107a3524adbc13d1da1917185c4e5
+    pristine_git_object: 02f5b07ce4b136356fb482ef5de7ae6b860103d9
   src/ttd_workflows/ad_group.py:
     id: 3439b8a7a7f1
     last_write_checksum: sha1:a3b8f41e47f0d0352c3a0d20dbd5152f4a76e55e
@@ -643,8 +643,8 @@ trackedFiles:
     pristine_git_object: 6c7f9d9b7f1fa59f43ce22de1364805bf0f9546f
   src/ttd_workflows/basesdk.py:
     id: 55f3edb5df65
-    last_write_checksum: sha1:2fcfab6212bcccde5399843f970c4da4263d80b2
-    pristine_git_object: 8421abf1b743932e3a93f8e9f7689e2c9c444b2f
+    last_write_checksum: sha1:a53a8618c58740fa474b48f65f15b97dbd522b6b
+    pristine_git_object: ca8e829662c2ec90b580f7257c61805ef36f2537
   src/ttd_workflows/campaign.py:
     id: 2b62a5a8a7ac
     last_write_checksum: sha1:625ca65fac88d026215e43f87b8b66f2f328776b
@@ -675,136 +675,136 @@ trackedFiles:
     pristine_git_object: ea1a0573b7b9de4b7cea3f848a2da5a3fb011424
   src/ttd_workflows/models/adgroupassociatebidlist.py:
     id: fd552d2c7596
-    last_write_checksum: sha1:1c95833603c9beb5784f35cdf24dc2bcab3780e0
-    pristine_git_object: 6cfa81d926fdc8b0d7cac62d136c6f69e859942e
+    last_write_checksum: sha1:d807cad436020270ae9bc7cc48b368c2208adbd0
+    pristine_git_object: e16bc133f6d8bb35c2d0d37659fe75dd87e8341b
   src/ttd_workflows/models/adgroupaudiencetargeting.py:
     id: 2c7a7571c224
-    last_write_checksum: sha1:4b31db48dce806f524b26922714f334f415f19ae
-    pristine_git_object: 46aa814b0b07106711a6ef6f6a4a222ecd0fd10a
+    last_write_checksum: sha1:8366733a8d0c316f026d9abba0995cd47e9fea80
+    pristine_git_object: 5f4c7febc7a3520dee4322fec2b8ba079cbeea4c
   src/ttd_workflows/models/adgroupbudget.py:
     id: 78a6e36bb4a0
-    last_write_checksum: sha1:0aae8291e77ff9bdeb215f0f123b70e9ede4c8af
-    pristine_git_object: a9e02288ffbefbac4f908bfe14df895523b9b110
+    last_write_checksum: sha1:f279146f58de6ee64a0a068df8f3928812076ff6
+    pristine_git_object: 07d0366a48537151466590d25c0b9fdb25c6d48c
   src/ttd_workflows/models/adgroupbulkcreateworkflowinputwithvalidation.py:
     id: a43348a207ee
-    last_write_checksum: sha1:184e1aea65a98fd554fe82bccc678b2e8e0d4a4b
-    pristine_git_object: 406d16920bf94d507631c68c882ffbc514984229
+    last_write_checksum: sha1:a6466d1d7d28414f07f6ff728519b6c363c3393e
+    pristine_git_object: 5fe3fd9db287663e9caaa079b337c4714172a6f0
   src/ttd_workflows/models/adgroupbulkupdateworkflowinputwithvalidation.py:
     id: b7928a844b68
-    last_write_checksum: sha1:a33c24327f37fc993916955e236a151ad8922276
-    pristine_git_object: 6624c696fe4c2068a0f22e64a7d547de3297f967
+    last_write_checksum: sha1:c41b8e5437bf7f0e3db879001bae323af575dcdb
+    pristine_git_object: 1886306ef9aa3fc6b92c2f8da8a54e9c8fab3394
   src/ttd_workflows/models/adgroupchannel.py:
     id: 3c36b67d3f30
     last_write_checksum: sha1:c2702cc960bdd0a1ac7de38b29a3ee5146835c2a
     pristine_git_object: 6997af84f0e7c95c745c8f79e8e5cc63177d883c
   src/ttd_workflows/models/adgroupcomscoresettings.py:
     id: 333cc2bc2bb3
-    last_write_checksum: sha1:d2a7f704f293ac1bd0be473fd13e1b6f28c7934e
-    pristine_git_object: 43f9b073075d5fc47e705d87963f84e4f52ab30e
+    last_write_checksum: sha1:8f16361b3cc9169ebeee51abd0c0f7947b4d71ba
+    pristine_git_object: cbfc06f2dc9885e49e580c4efa5e042f62f5a1bf
   src/ttd_workflows/models/adgroupcontracttargeting.py:
     id: 188439a1dd24
     last_write_checksum: sha1:6d7703e9dd072e42402f109026dcedd479747dbc
     pristine_git_object: 7232a3c796fac5e71c79580a4b6352bc13c1e619
   src/ttd_workflows/models/adgroupcreateworkflowinput.py:
     id: 3d58bfa5afd9
-    last_write_checksum: sha1:16d0252d1e5290e473e6de26736ac66ef4009899
-    pristine_git_object: d995e0214753b0d91cd1f58cf040c6c5495eeb99
+    last_write_checksum: sha1:f954fe569bf46ad7a2ae3aaa0b310436c839fecb
+    pristine_git_object: 76dd468e7cd91a39747844b9b7ee5ae9544e187d
   src/ttd_workflows/models/adgroupcreateworkflowinputwithvalidation.py:
     id: a4db208b2e19
-    last_write_checksum: sha1:f6289273f2084de89425247271dc5be122d05648
-    pristine_git_object: 46fde8c4830635b6e6d344f5a412bcda1fa0fa76
+    last_write_checksum: sha1:a860637afe3501d13f118e5d4f5266044d02a543
+    pristine_git_object: 4456541744be168f097b8f561578fbf9b0025d10
   src/ttd_workflows/models/adgroupcreateworkflowprimaryinput.py:
     id: 6f4df950ef19
-    last_write_checksum: sha1:c73c0b73fc6e6f45615d46b5ea7cdb909817b3ae
-    pristine_git_object: 5b5eae6e3c25f799d7a7dc7a2cc9c5f03a885669
+    last_write_checksum: sha1:a96c988ee2538d5395a2a7ec1c199c9d53b089c4
+    pristine_git_object: 6b2d043d7577cfc163c0448aab63f61247a8d853
   src/ttd_workflows/models/adgroupflight.py:
     id: a6188bc550f0
-    last_write_checksum: sha1:14932f800aca72142394323aa5c621624f81147d
-    pristine_git_object: bf5def7677597dc74bb47a26e31a3a3ba44b7d62
+    last_write_checksum: sha1:fc7dd8754762fd5dad55a247d911bcec465c7bca
+    pristine_git_object: ece189dffbce4445dd187999536f8055d64082fd
   src/ttd_workflows/models/adgroupfunnellocation.py:
     id: 26b4f40bc27e
     last_write_checksum: sha1:78d81225966e8d0978f257a88f08560469312031
     pristine_git_object: a018d7aca83351f2aac4594a6c05118fa1ae80d9
   src/ttd_workflows/models/adgroupkoaoptimizationsettings.py:
     id: fdbafd7aed1c
-    last_write_checksum: sha1:7e6afc185744e3eb820d2f240c0feba053d18ac0
-    pristine_git_object: 2fc6731fbdb395eb59dbadf1edfba6e895aca76d
+    last_write_checksum: sha1:418ca8770adca3fbbff5c881a37899d1846d2ab0
+    pristine_git_object: 01945e6a851a12d57beec22d70c74ceb5abd5867
   src/ttd_workflows/models/adgroupnielsentrackingattributes.py:
     id: c09071aa9963
-    last_write_checksum: sha1:ebd7a787cfff2274e7e4450ac923aab478afa772
-    pristine_git_object: 44246a4ff39e4a26d4da2b64c678350f8f1e5695
+    last_write_checksum: sha1:ce7ceb0026389503309a81693188e0e84633b695
+    pristine_git_object: 16a871916e4835b3a384484418e5a8e805102d29
   src/ttd_workflows/models/adgrouppayload.py:
     id: 1982a1b3f0b7
-    last_write_checksum: sha1:fbd640662423178fc6f19b313e8d9ec9149f4ec5
-    pristine_git_object: 1585fb574374040b9d2ed9680bfca1000cd12c39
+    last_write_checksum: sha1:ff762605a3806c101413f264f3cac833c9308e2e
+    pristine_git_object: 78ed5d92ab97d786cf7db969e7157aa8aa33b6e4
   src/ttd_workflows/models/adgrouproigoal.py:
     id: 11f4184dd4f9
-    last_write_checksum: sha1:e0aab2e833b1d164c86df48706d59106e769a467
-    pristine_git_object: e97753f05bfef931df310d44bcf1ed3cc06eb505
+    last_write_checksum: sha1:35c26cab882ba5df83f9eecf5125d351946a5bf3
+    pristine_git_object: 89d5657560b33916e0869265bb01bd10ecb8be96
   src/ttd_workflows/models/adgroupupdateworkflowinput.py:
     id: 42086610c07f
-    last_write_checksum: sha1:fc29d161cc0301f6a142f7e70fe00cba5b36f45c
-    pristine_git_object: a058c83aa754237fb386ae406ef438c000123dc4
+    last_write_checksum: sha1:890cb0fa1b5baef5836355f1fc05b29416700ae4
+    pristine_git_object: 09c01d044f23a6d313463756b819c5585357a2ac
   src/ttd_workflows/models/adgroupupdateworkflowinputwithvalidation.py:
     id: 1b71413926b4
-    last_write_checksum: sha1:55d19b453075a3960440f846806629bc039450b3
-    pristine_git_object: 8fe02ca0090db33049e5fd8dbb4158e59ec9e36b
+    last_write_checksum: sha1:d475f31e3ca371507bb927b450688eb69c13a14e
+    pristine_git_object: 4eaa8681b94e8af735d0d41260847c258db1f5fd
   src/ttd_workflows/models/adgroupupdateworkflowprimaryinput.py:
     id: 2baa60fda196
-    last_write_checksum: sha1:81c904eae43a7f768da0bf348f80d34e6edcb611
-    pristine_git_object: 53eda44405807e7e78c5932f32d6e1e12b20a5ce
+    last_write_checksum: sha1:7f7889edc5774a2fa89854ca2987b643b5a57c0c
+    pristine_git_object: 6b949b1bcf1522149db62a0448f267666565dcff
   src/ttd_workflows/models/adgroupworkflow.py:
     id: e14b9169793e
-    last_write_checksum: sha1:510ad2eaa9f0d425a9ab5f0fd226d39d777d3c6a
-    pristine_git_object: 7e32edee02f3adfb93331124a7cc6decf52d3c2f
+    last_write_checksum: sha1:eb5b97e34de973c48c52a710f6c59b61ba1dbcec
+    pristine_git_object: ff2d244b3664782fde66f8c8b52bb4b65e73bc06
   src/ttd_workflows/models/adgroupworkflowadvancedinput.py:
     id: 39de78598924
-    last_write_checksum: sha1:8650d99fc226dd324c02e3a93f0d7cbfe42b8df5
-    pristine_git_object: e4324e3a4ad606826857e8b159dbb81ca256918f
+    last_write_checksum: sha1:a0646790c5f32f2b22cee60133c789e43ebe72cf
+    pristine_git_object: c2d835817e2d0e364832bf57a8f496e76b5dc9c5
   src/ttd_workflows/models/adgroupworkflowassociatebidlistinput.py:
     id: cb4382ec9111
-    last_write_checksum: sha1:2c21c4036354285990e04db82378ad8f5f18687b
-    pristine_git_object: 32f1142ce41e3a4460cb7a7302bec7944140ec71
+    last_write_checksum: sha1:359147b1a39004e30c9998ba3357148232746860
+    pristine_git_object: 1e2e777c370e0e6f3f374ce41d71f0567f58be92
   src/ttd_workflows/models/adgroupworkflowaudiencetargetinginput.py:
     id: cd2a04bd8d31
-    last_write_checksum: sha1:41a00c3283d4c364ffb0c9ec7859adaa6beab124
-    pristine_git_object: c37f773fee9bdb50b54635bd1acf8f7e323656e5
+    last_write_checksum: sha1:0332805c236c72e84c36b936ef04e007776e3949
+    pristine_git_object: 29bd9167f2131a0ff9a5b7ffb14ce328a4601c8a
   src/ttd_workflows/models/adgroupworkflowbudgetinput.py:
     id: effa54a3eb73
-    last_write_checksum: sha1:8ddb9a1897a7a0863228d589c98bccce9812d7f6
-    pristine_git_object: 9ecd6494a2ed05d24791c6854ffc37fcbce6cd0d
+    last_write_checksum: sha1:7f7d6b1e1b020d9ba0138dbbee864f16fa7b7151
+    pristine_git_object: c9f3e2e04c57ac682e334dc62722e71826a8bc99
   src/ttd_workflows/models/adgroupworkflowcomscoresettingsinput.py:
     id: e7d8b7a0048e
-    last_write_checksum: sha1:d28c4463a55365115b4fbe0b2d38c64240edf353
-    pristine_git_object: 83f3176bc11a5119aceaab30836a939a6380c799
+    last_write_checksum: sha1:a75271ac80eb7794ee3001242429f02647f9a3de
+    pristine_git_object: e44aa7db47547b1b7fc1248ab07b9bfaca3049bc
   src/ttd_workflows/models/adgroupworkflowcontracttargetinginput.py:
     id: e66cb60de9ec
-    last_write_checksum: sha1:27b49f4e56a63d05cd2fa5b43bae1338bcedd387
-    pristine_git_object: a18552efd7fa87ee3f661803126e803932520e1f
+    last_write_checksum: sha1:9667b3b7d9d4358707ec618fa82dfc683ea7e8b6
+    pristine_git_object: 983cc40cceb97672f4ddcd32a5aa4c9ae472859a
   src/ttd_workflows/models/adgroupworkflowflightinput.py:
     id: 907aeb057a55
-    last_write_checksum: sha1:52b2a9d5f23eb524b57677f0dcdb9e94932161e7
-    pristine_git_object: 16abccd5c27ad7400e6ebf32471f224eb47b1637
+    last_write_checksum: sha1:7d42d0a029e7ba260da26e0fce1202a517afe490
+    pristine_git_object: bc3181814ea7f3db25bf845e271eed5effacf322
   src/ttd_workflows/models/adgroupworkflowinventorytargetinginput.py:
     id: 892ccf8e8eef
-    last_write_checksum: sha1:fd595e70ac30063657ad224ae5010b4d54f3178d
-    pristine_git_object: 21e9e28d2a862f48940ae596fe27c3d6417a3408
+    last_write_checksum: sha1:2965c5f134120a46f08b0605ae7344f0f8b3cb87
+    pristine_git_object: 42c1e5bb8f2238d8d0444c9f42b6cf9c17790bf9
   src/ttd_workflows/models/adgroupworkflowkoaoptimizationsettingsinput.py:
     id: 531e306555b9
-    last_write_checksum: sha1:e727ad9c2319859c8bffd7d93eb45cfae3766ab6
-    pristine_git_object: 02959cf3d434723fa21ecb95215e840707a609f4
+    last_write_checksum: sha1:c4ffb7b7850f0057804430c259f9c8f0ba859581
+    pristine_git_object: 901451b2489f0a73b70928ea678f17786e9e9e28
   src/ttd_workflows/models/adgroupworkflownewfrequencyconfiginput.py:
     id: 9285801b6c97
-    last_write_checksum: sha1:99b5d931cae6e59825cdba3b73305d9b0eef2292
-    pristine_git_object: 7ef2796ec309c79c94adbaf0e12f18d1386f1528
+    last_write_checksum: sha1:a26754494e7a21508ed51f080a8051ba6b293ceb
+    pristine_git_object: 04e3816c9a464d3d1ddb599d4f9f322530ab1a76
   src/ttd_workflows/models/adgroupworkflownielsentrackingattributesinput.py:
     id: b8de2185d88c
-    last_write_checksum: sha1:31f3a777e6ed3ac34a3fc720bdf4d9924b5832b9
-    pristine_git_object: 41f4c3a1de509896200abfc47823368e335b4503
+    last_write_checksum: sha1:a609b1a0b22b69e15eb24417afc700339249bda9
+    pristine_git_object: 93c1e4088b6b60ccf14ef907ed46cee75d660efe
   src/ttd_workflows/models/adgroupworkflowroigoalinput.py:
     id: 2ba6148a555f
-    last_write_checksum: sha1:5b2caf3f4344e389b678903da79963e5f44ae790
-    pristine_git_object: 1423a268bdf369e50bd414e6f03b3d7d762312d2
+    last_write_checksum: sha1:d5660023a90a9868d4fcfae1f39defb36a324c07
+    pristine_git_object: e491719825d8f76311bd811316d368d0ce109fd8
   src/ttd_workflows/models/allocationtype.py:
     id: 525c597c17c7
     last_write_checksum: sha1:8689d34ca6c9b968c6d6b0dcb5e56c3feaf2a94a
@@ -815,152 +815,152 @@ trackedFiles:
     pristine_git_object: a3b3606a38f937ee6cc4bf786acc41656d982635
   src/ttd_workflows/models/archiveadgroupsop.py:
     id: 7f2bf9bff7b0
-    last_write_checksum: sha1:1fe2129ea98c06991a5a62f339e079c903aaaa20
-    pristine_git_object: 0857e6a678c888e06a873ddf7066826df8034f64
+    last_write_checksum: sha1:ab04addbbcd7c29b0651f7d481703f215376d492
+    pristine_git_object: ab9f86d56ca1f17470a74be5038262da70b0e0fc
   src/ttd_workflows/models/archivecampaignsop.py:
     id: 6eaaf71ad5b6
-    last_write_checksum: sha1:35d70ce6ed2cb3e1b876f1302848859b89c73852
-    pristine_git_object: c266627d6dbb475244501260ae33796e2fe359b7
+    last_write_checksum: sha1:96cb1ae827db894ee356ca564d9447b230fe613c
+    pristine_git_object: f1d703ccd2e879e3362ec2a2b70570d916fdba0d
   src/ttd_workflows/models/bulkjobstatus.py:
     id: 9d4006edca0b
     last_write_checksum: sha1:c80b6236f751282b33e2b994f58ce40696ba5c70
     pristine_git_object: a9c53878d8ed5668fbc10595eb10118a277bfaac
   src/ttd_workflows/models/callrestapiworkflowinput.py:
     id: c309cbbfbcfa
-    last_write_checksum: sha1:2c1ec45ad3a349a4235f4a9f99b0f4a8b1c947b2
-    pristine_git_object: 77352e2a41705105f7d704b441863df5bd0afecc
+    last_write_checksum: sha1:f88b977955cb39a93f4b9000d24717d312d8c61b
+    pristine_git_object: 16ca5e64b86e880bec3519a6fc93cb24624e1cc6
   src/ttd_workflows/models/campaignbulkcreateworkflowinputwithvalidation.py:
     id: 5e577e2ed813
-    last_write_checksum: sha1:a9a4fd8360a47d6e9c70ad27f3e30225cffe7066
-    pristine_git_object: 8b46ad440162b8c4d256c0d3b9db86a674b3a05f
+    last_write_checksum: sha1:12976e97073a3a5a47b812880e3bba814f9e340f
+    pristine_git_object: 8d37e599735a482dfd0421692b7c16ef28373b07
   src/ttd_workflows/models/campaignbulkupdateworkflowinputwithvalidation.py:
     id: 7c69aed5ecbb
-    last_write_checksum: sha1:27d79317c520f4dc20908a570899a013e181923f
-    pristine_git_object: 6508da7725f1d69afd5e07ff4ae92ade23f96799
+    last_write_checksum: sha1:671f8fb9949ff74fbf54956fe6d00d41dd07cc58
+    pristine_git_object: ec817779afc49c728d3bcddd3039d5c63d679c6e
   src/ttd_workflows/models/campaignchanneltype.py:
     id: 75619726aed9
     last_write_checksum: sha1:f89c055d4278e97d531e07e669f561759f9b6ad0
     pristine_git_object: 2059f3bdcf6250bd517d40105b0aa8eb76f7048c
   src/ttd_workflows/models/campaigncreatepassthroughfeesinput.py:
     id: f16c2f32b780
-    last_write_checksum: sha1:ce0af89bfe8ee6340c16c40ec07a43086f1a81cc
-    pristine_git_object: 7217d6e23971ff71bd5a3229daf24fe5fe7456eb
+    last_write_checksum: sha1:7b1653a5c842b6d215eb8549a3e2cb95696114d7
+    pristine_git_object: afc1bc9c83e6a3cbbc522aabb811aa773be22682
   src/ttd_workflows/models/campaigncreateworkflowadgroupadvancedinput.py:
     id: c4f55606911a
-    last_write_checksum: sha1:9d77e19eaf823d86df971af5846cb268ee3c364a
-    pristine_git_object: 08cd82994bed60862ffa9dea708013b3fe87f029
+    last_write_checksum: sha1:e42249e7b0a2f57039d9eb44e712147232ba3eed
+    pristine_git_object: 4684de1da1a72d11b07500244ebdbbd19608b47e
   src/ttd_workflows/models/campaigncreateworkflowadgroupflightinput.py:
     id: e1434368f629
-    last_write_checksum: sha1:7b04435f9cba47e857b368802a5fbaa5fcea7a1f
-    pristine_git_object: 3a7130f9250c1f11e738cf78fe617f63e6e513e8
+    last_write_checksum: sha1:d99ce9d7676d654c462461475bc08599c54494f9
+    pristine_git_object: 6a58ffe75634e843a57bc67e59afee558734056d
   src/ttd_workflows/models/campaigncreateworkflowadgroupinput.py:
     id: 0e4e51f76cf7
-    last_write_checksum: sha1:e6e8673120005156d0ac539ef2d40daf0df96fbb
-    pristine_git_object: 14fb1b8da856953fdbafdf44546ce849197078fb
+    last_write_checksum: sha1:24156fea2412dfa752e2cda5b2b1693bda4c6af5
+    pristine_git_object: 4fd0226d1b1b045e05fc16f58b1a60ff68767457
   src/ttd_workflows/models/campaigncreateworkflowadvancedinput.py:
     id: 31aac1e8c1b6
-    last_write_checksum: sha1:6679b1ee810c6f987fe1b110927b8fb95b56cba8
-    pristine_git_object: 521c3c7585ba747e46b0e0a101795500c4553efd
+    last_write_checksum: sha1:1c4a3028865078b3b08e8238644ecc34e205315b
+    pristine_git_object: b83ba6a71a594d029fcbceb95cf0badc1a8105cb
   src/ttd_workflows/models/campaigncreateworkflowbudgetinput.py:
     id: 1baf6a3c9814
-    last_write_checksum: sha1:4695ad0790f66ad663c143cda1d7b75ed514030d
-    pristine_git_object: 8089231a79faaab3ed41fd093f54497471241afc
+    last_write_checksum: sha1:71b2ced3a49dad62141b1e51220c4f1b24ddcfea
+    pristine_git_object: 72f77ca2bc7b53d7fe29478361d94e1dcd48be71
   src/ttd_workflows/models/campaigncreateworkflowincrementalreachcampaignsetting.py:
     id: 62042a96c1c8
-    last_write_checksum: sha1:816987301ba0c03cb532420c9c7a78132391f406
-    pristine_git_object: 6dc8706ee9a52ef5a6a54ff2d55a185926a25603
+    last_write_checksum: sha1:2f7bf03c94f33cb7bd8d54d11fd62743efe34a23
+    pristine_git_object: 7502eb76cb0633f774f06007494a12aa3c4a9bb0
   src/ttd_workflows/models/campaigncreateworkflowinput.py:
     id: 7380efadfa40
-    last_write_checksum: sha1:6c1e28b417de6289d6b8328a4ae1c545847ff899
-    pristine_git_object: ca2433886286e88a294c37e192d905dcbaa4eaa2
+    last_write_checksum: sha1:3717fb23ec69490ef73d68fb7530ef38e79d8372
+    pristine_git_object: dcc2ae357dec9fb0820d77b2bfd21db7919c813e
   src/ttd_workflows/models/campaigncreateworkflowinputwithvalidation.py:
     id: 559c214c17f9
-    last_write_checksum: sha1:4c6b0096afa9b75b38e6faaaeea692e3a4ecff9f
-    pristine_git_object: 94a6a39acd777e24a7a601f8060f378900dca2ec
+    last_write_checksum: sha1:40575e5f1fc67f9592d15996aa44bd38453925fe
+    pristine_git_object: 9959b259f828b090a771c60f75800bb724adcc38
   src/ttd_workflows/models/campaigncreateworkflowpassthroughfeecardinput.py:
     id: f81a27744bc6
-    last_write_checksum: sha1:c80daa4c0bedfae1d7c4dc2f070f5349b10d170d
-    pristine_git_object: 4f0bca3cb067f5a4f05c871ffb010a7b7ea2e6de
+    last_write_checksum: sha1:8f605badb9b85f98d32649d95ff8231ff10dc2ae
+    pristine_git_object: 28dac849ae8ebbd5e7abc80824909ec4b1451d3c
   src/ttd_workflows/models/campaigncreateworkflowprimaryinput.py:
     id: 0a6a6cd0eca9
-    last_write_checksum: sha1:4d30075ce8db98fcb315f90c37d67dcb9502f394
-    pristine_git_object: eb462387beef32e3b8d72adb61f5ea3a12cc7162
+    last_write_checksum: sha1:ee84c1040cde26e98349a0a6fd6ce7cf966fd9d2
+    pristine_git_object: 2b163b72c3f53080704478b1f08030bfd135fe46
   src/ttd_workflows/models/campaignflightworkflow.py:
     id: cd6a7f67b15e
-    last_write_checksum: sha1:012912fcc8f54349e0eeb97e478edb832dbbc0b2
-    pristine_git_object: 8587ed66512481d509045f1759288b5e7be9f9af
+    last_write_checksum: sha1:a44025becd2b4645f33d356cdaa20471db691840
+    pristine_git_object: 534bcaf6b9b2b91bbb0fe70716e1fccbbdf2515b
   src/ttd_workflows/models/campaignpacingmode.py:
     id: e67cab654322
     last_write_checksum: sha1:569ddda0112f7f2a3b68a1bfa2e84ee07e4d223c
     pristine_git_object: 023ebce053bb4079ae14c34e7b5b0d328fb47d05
   src/ttd_workflows/models/campaignpayload.py:
     id: 216eeccd225c
-    last_write_checksum: sha1:76bf8744b3f3e3aad13ce580b797dff5a71591f1
-    pristine_git_object: 939f53787a4360a670804f489c8e08ceac63f6f7
+    last_write_checksum: sha1:d5d4a0fc08e2b324e09ea98da5729a112fa0fd93
+    pristine_git_object: 1882dcab0e1785c54c536c3dec44b642a970f8a4
   src/ttd_workflows/models/campaignupdateworkflowadvancedinput.py:
     id: c1f013a260b9
-    last_write_checksum: sha1:37199e3b74584af4ff50eacabbd3abd2cab82005
-    pristine_git_object: 317be8e06fa7bc822c625a7cbfbdf14c4920ad85
+    last_write_checksum: sha1:e650734ebd0f7cf40ae0ac9780622b17a48ff0f5
+    pristine_git_object: 43a1ae5ea02834dcbed8a426881dd86c3222e7b3
   src/ttd_workflows/models/campaignupdateworkflowbudgetinput.py:
     id: cd9d94fc94fb
     last_write_checksum: sha1:99c865e83b139bde0551caab2614a34a75c1db98
     pristine_git_object: 8505785d1e6f818c11b8ad6a9ccfad45dfeae495
   src/ttd_workflows/models/campaignupdateworkflowinput.py:
     id: bf279a672f4e
-    last_write_checksum: sha1:ff62c1cffa343624aebcca4894cc060e1db13a65
-    pristine_git_object: 3cca53e48274bd83524af6e7fbdfb0f66351cc8b
+    last_write_checksum: sha1:30ce9ce5eb273ad293b9abb1267096580a98fc9b
+    pristine_git_object: ea8ee68fdf73c2978337448a2ecdca3fa2b2e1db
   src/ttd_workflows/models/campaignupdateworkflowinputwithvalidation.py:
     id: 48a691cf5237
-    last_write_checksum: sha1:1592dea59d9389a8140727c6c2e31cc39e0697b6
-    pristine_git_object: 6757ce027d90a3ce980d37ee08ff855ea57c54e3
+    last_write_checksum: sha1:b9b105bdd6aa13bf2f1066dd6320ae6ea88bb6b8
+    pristine_git_object: 21a21c201d30d240a120f032d9435954195034ff
   src/ttd_workflows/models/campaignupdateworkflowprimaryinput.py:
     id: af32a9977531
-    last_write_checksum: sha1:603455674edbb3224de80939553e0531348663dc
-    pristine_git_object: bbbe2f95aa560881e43794c2d9956f21ffc4ebe4
+    last_write_checksum: sha1:99b4cdbdf4763e1ff1b60a4dab27c095f62323cd
+    pristine_git_object: 731ab0ce76054025e556cd953cc17207256706f1
   src/ttd_workflows/models/campaignversionworkflow.py:
     id: ce1c3fd7af89
-    last_write_checksum: sha1:24ccf1fbea086d249ec260a2dc8d7956a468dcc1
-    pristine_git_object: b44dc926c45053e388ed3e0e2be30162ad003040
+    last_write_checksum: sha1:1267fd86b9cba293abebe0439660f6a67b2cbaad
+    pristine_git_object: e8ed89b3986c1e97313f6bce0417080050123810
   src/ttd_workflows/models/campaignworkflow.py:
     id: c33cbf9627a5
-    last_write_checksum: sha1:51c1c8de448ef5f5c0b9afcceaa8ca8e7936de20
-    pristine_git_object: 70ca9fd889b4940ce19546bc0e10ecc8dd3b25e0
+    last_write_checksum: sha1:615e9a59007ce9f743c769d42856bed08f3b70b1
+    pristine_git_object: b2958e6da18baa882f429c9018999af595d82020
   src/ttd_workflows/models/campaignworkflowcampaignconversionreportingcolumninput.py:
     id: e9fe6e934c12
-    last_write_checksum: sha1:d0194fafa90ef3bdd234c1fd831563fb23d7afbd
-    pristine_git_object: bbcb7e866edcab7296ff52f4b923409b00758285
+    last_write_checksum: sha1:ba394dcf55b6af209bbe547340b9ccd39439af47
+    pristine_git_object: 52504f60705b70172f81cf180110bc231f14d09f
   src/ttd_workflows/models/campaignworkflowflightinput.py:
     id: cd53d2726084
-    last_write_checksum: sha1:c307e089eae8f3845d17dc3d6008ab9538598dab
-    pristine_git_object: 440c08e0f462c2ba3a0dac7ecc1b52a65668445a
+    last_write_checksum: sha1:8c882bed4ae6da49e197fd10c1ead6aeb1ca9782
+    pristine_git_object: 7c2bc7ca1a3b73669eb9518dad63a0d444362f43
   src/ttd_workflows/models/campaignworkflowroigoalinput.py:
     id: 09b998234a37
-    last_write_checksum: sha1:2fb9e12c6d3b1411efaf5b1acc9b3e0eb5db0c64
-    pristine_git_object: 59254b2f925e6c22542d467859f524230c4abc92
+    last_write_checksum: sha1:4d8c2981c2de85737bbaeca16bbd5540aaa38ec3
+    pristine_git_object: 9670ab3ba13c5ff591253b98698f11dd6c22635e
   src/ttd_workflows/models/createadgroupop.py:
     id: c1f8606dbd97
-    last_write_checksum: sha1:64c7309b3ead922c35d1d0eac8d6ba4635c3cd10
-    pristine_git_object: 1b924bd21009a3906d72079fd95363c34097b01b
+    last_write_checksum: sha1:7e5479f1e86ad8f5fe2fa3adef099c89b90474db
+    pristine_git_object: 5bf0fb4d81e761ed7ab7ff68fe98bd6189b3ecfa
   src/ttd_workflows/models/createadgroupsjobop.py:
     id: cf0cca6ca73b
-    last_write_checksum: sha1:ef10c7b5a428e4cd3ad9ee07cab5518338768e67
-    pristine_git_object: e7957d3dec376fb1af08b2025b22c164bb48dbc5
+    last_write_checksum: sha1:825079b58a6e7037848cf4f07f8a919e4f979737
+    pristine_git_object: 173c1bfaaa111db0e2a4b730f25dc5686b5d8553
   src/ttd_workflows/models/createcampaignop.py:
     id: 6f71204b35b2
-    last_write_checksum: sha1:8596a410ff2d4360633afa17e6b03fc2235a1df6
-    pristine_git_object: 9465b8bc5664a09d5d0f63fe4bd3815483215a67
+    last_write_checksum: sha1:208a2faa1b69f9999488992575eae14095a1fa05
+    pristine_git_object: 7564ab61f272577914600175d1bf5b38e411cd07
   src/ttd_workflows/models/createcampaignsjobop.py:
     id: 2be2408ce02b
-    last_write_checksum: sha1:b0d109f5cc18faee30a17a1fe5fbc2eabe994210
-    pristine_git_object: 368edd46c6430567e1a136bb21fa9d06e63121fe
+    last_write_checksum: sha1:884426c08adaf1b8f47929e1219875d9acf64e0a
+    pristine_git_object: 32979c0eead07147b846b7ceaa9d29503460c235
   src/ttd_workflows/models/customcpatype.py:
     id: b25b19e6d115
     last_write_checksum: sha1:734ccc926884bc12052e9cdbe9ada3dbaad49194
     pristine_git_object: ac2e97fbfeae2aa6026819650560e86c8ca7f68f
   src/ttd_workflows/models/customroasconfig.py:
     id: 22fab2b6d459
-    last_write_checksum: sha1:ea6337a261677d93bbe11e543751b7330e477fb2
-    pristine_git_object: ac3e3043833fcad1112e5ee0906c5d0e2061bea6
+    last_write_checksum: sha1:b152e23c36127df2392b6f9966ec68ed8fa7b1ac
+    pristine_git_object: fcca2971b278ec4c8dbd5bc5c3786c47e2a97b85
   src/ttd_workflows/models/customroastype.py:
     id: b50f3660ee27
     last_write_checksum: sha1:2509fa5ecd7dce85a657745d08e3057ab6f78a64
@@ -979,80 +979,80 @@ trackedFiles:
     pristine_git_object: 8a011e38b4f839c1a820ca8a49a53e61bf26cc80
   src/ttd_workflows/models/firstpartydatainput.py:
     id: 3b48af5975f9
-    last_write_checksum: sha1:c1bc306180e3a0ecf2f0924721e37fe196b438f3
-    pristine_git_object: 83d3cd8e6c81ae01237916e01e772e64e4067638
+    last_write_checksum: sha1:0eac846e3af2552d144319051c26dead550a514f
+    pristine_git_object: 80e968aa52cc31a2f46602eaaaa3f9eb58c6eb1a
   src/ttd_workflows/models/frequencyconfig.py:
     id: 47fd578f370e
-    last_write_checksum: sha1:14741543d9c82a1a99426cb0081d176df138fbe2
-    pristine_git_object: 3fa8b718e3fc557c3074ef2f8857abf839121c99
+    last_write_checksum: sha1:c5166eb9770ba89452e19d115b314e3c4b5863ed
+    pristine_git_object: 9fd05c5f6be6b480841f4e026f4f28a66b40127a
   src/ttd_workflows/models/getcampaignversionop.py:
     id: 235842ca615d
-    last_write_checksum: sha1:781c452fa6b981e4b0befec14fb951f6ad43150a
-    pristine_git_object: fca5aa7e774f4e80c37e4fad1c57ab2dfbed2044
+    last_write_checksum: sha1:465336eff309bc2d599715d8174a54c75a354495
+    pristine_git_object: d2afc0c7ad4c432095ef4682100f4d959f6aafe6
   src/ttd_workflows/models/getfirstpartydatajobop.py:
     id: 14c24bd398dc
-    last_write_checksum: sha1:6a17a8e00ec4d133570ea66ab1619fcc933b12ac
-    pristine_git_object: 90d3a300e1782a20992f69e45fa4b5d6d656a3ef
+    last_write_checksum: sha1:ede62fe5d127ead9487d7b1157c08c54be642d36
+    pristine_git_object: 10a53dbc648755786f567292c70606578ff273aa
   src/ttd_workflows/models/getgraphqlbulkjobstatusop.py:
     id: e612ef0fab1b
-    last_write_checksum: sha1:22e3688910547588b8a3ba93ce8bb6e171a57375
-    pristine_git_object: 604e40dad0a7cd825cb8fa4d79dfc884cf8412c4
+    last_write_checksum: sha1:c3db2aaf011e3b85fe3802d04e776490164f8c50
+    pristine_git_object: 79d61d78d337957fd9c3012402a1955a4f8ebe90
   src/ttd_workflows/models/getjobstatusop.py:
     id: a40cfdbd2d70
-    last_write_checksum: sha1:1ec778385ebbd7b6b4574f02cd598d1afa470bc4
-    pristine_git_object: 94c924684cf345178ffd5129da9fd21605fceec9
+    last_write_checksum: sha1:8ab3673f578bebd7d8d44e9043c66ec3295fe922
+    pristine_git_object: 41e6bf6e4d0debae99b0e27084801498bb329af1
   src/ttd_workflows/models/getthirdpartydatajobop.py:
     id: 89506fde69b2
-    last_write_checksum: sha1:a78930600658634b7e970d2c42e38a61414aa814
-    pristine_git_object: 00dcc598067658e8a959584c5e0cfcd0e013b443
+    last_write_checksum: sha1:62e932f074cde01d713eab62ebd159bc6506e331
+    pristine_git_object: 3321da9c8e0bbea2761d56b52cb5351180f45aaa
   src/ttd_workflows/models/graphqlbulkjob.py:
     id: 978f79e87f32
-    last_write_checksum: sha1:c3b85b13b5ecbc4eb9c7f286feb8b06fc2c4d019
-    pristine_git_object: e382ba6cbe07cd59d28e8a7b304c68fa4f8b61f6
+    last_write_checksum: sha1:de9def774a4e9ad0a27b524a676585b268ad7988
+    pristine_git_object: 771bd8f641eee70cda6a1d6302fcbe99a486dcdb
   src/ttd_workflows/models/graphqlbulkjobcallbackinput.py:
     id: 90e4e1b44d95
-    last_write_checksum: sha1:e254dd948f1d5fb15a0050dbc46851f18e8b9b91
-    pristine_git_object: 6a33e5cd4c429efb1e8fb19d07e39ba59449bd45
+    last_write_checksum: sha1:26e5456b34c5db8d9f12834763a93ccb148c7f22
+    pristine_git_object: 4f1c1e1e5005cd1c84c5e213fc617001e6574909
   src/ttd_workflows/models/graphqlbulkjoberror.py:
     id: c1a0ff0cff9a
-    last_write_checksum: sha1:ab792038f7212cdb09ccf47cf55def28da3cada2
-    pristine_git_object: 4b37aeeb8239e101a12e159954591ab62ee2b46c
+    last_write_checksum: sha1:16f80503e82caacfb859f15cf317d2f2557d640a
+    pristine_git_object: b5ac408013c1cdda19876660055a0f3985bbe742
   src/ttd_workflows/models/graphqlbulkjobpayload.py:
     id: 8ca19bc0ef4e
-    last_write_checksum: sha1:5b63d073d7d00c908c48d14c18cc9c620186ecae
-    pristine_git_object: f4593b12a8b32dd7cc1b6445a8caec8c2892e260
+    last_write_checksum: sha1:62af2ef2dab80ab295331086fd7e1c04f0e42e9c
+    pristine_git_object: b45b1e8afece7e99e17318b2ab2a0374e2cfa5e4
   src/ttd_workflows/models/graphqlbulkjobresponse.py:
     id: 852324944b1b
-    last_write_checksum: sha1:94d2109e40468172f62e0a3b009f647ab8f450f3
-    pristine_git_object: 0316f6ddc7eadbe8bd69939a06aaf5a130310cf5
+    last_write_checksum: sha1:2d12be3c77d4a54056b31f8cb066822891b88c55
+    pristine_git_object: ed8b76329d5b2659ee7e7467862a93ba58737c68
   src/ttd_workflows/models/graphqlbulkjobretrievalresponse.py:
     id: bb30565d22b5
-    last_write_checksum: sha1:c84e5e2d624c573110aa2bcf48adbeed665eef6c
-    pristine_git_object: 329d6e4caef488c087c2901e6ac443ae2c833eb2
+    last_write_checksum: sha1:84ed5ca5a488893572993de32c3aec0fdccca931
+    pristine_git_object: 7cc0161ec4a7403dc7ce748a129cd0436d586218
   src/ttd_workflows/models/graphqlqueryjobinput.py:
     id: e13a824ad40b
-    last_write_checksum: sha1:38c859d5cdf6f25b099a8490d7841294a114b974
-    pristine_git_object: 3c1fb3bce375ce53695ce8716746ae2c24387be0
+    last_write_checksum: sha1:a77c325f4bd5a9590db843b7264c437913502f3f
+    pristine_git_object: 21d79c0602cdb18311d6fcbffc5346eba47c9823
   src/ttd_workflows/models/graphqlrequestinput.py:
     id: 2d82a130037e
-    last_write_checksum: sha1:a60d4c755bba7f1d2eeade80b0a4abcf9f3fc36f
-    pristine_git_object: eb45f7519cf223409913664a42bfe65fda3f5bd8
+    last_write_checksum: sha1:9113eb47f098aa54e0444d988ae3bfa3e9f0719c
+    pristine_git_object: 1708fad903dc1fb6dd65cb34cac7777105889d79
   src/ttd_workflows/models/httpmetadata.py:
     id: 32a0fd5b6d21
     last_write_checksum: sha1:ac8dea94ccf520c3f50465ab4dd0288725db2a19
     pristine_git_object: 59aa79175681ead334ea4af7d0ea0ab8adebba39
   src/ttd_workflows/models/incrementalreachbrandinput.py:
     id: 94b38bc58a49
-    last_write_checksum: sha1:d889182c48a2d57eefa0cbaeb52e9e09b8e33ab8
-    pristine_git_object: acde565338333b410e89039ac995a8b9980ae741
+    last_write_checksum: sha1:f9a988973c33f14f9aaa35be8e39cf04fc458371
+    pristine_git_object: a98aa2624dcf4c496b7a39a1609718e5ea6f393e
   src/ttd_workflows/models/incrementalreachproductinput.py:
     id: 0f714afc180a
-    last_write_checksum: sha1:8d622b2c25402d47328860ee97195200c6338b71
-    pristine_git_object: f2c0c9453f5e90e90e379653bee269e1175ea6c3
+    last_write_checksum: sha1:531b689a20c384a707d1df6496e180dba1f4d224
+    pristine_git_object: d3f0df5460d2509f8b49680d3adf7c7ad1f3aa07
   src/ttd_workflows/models/keyvaluepairofstringandstringinput.py:
     id: 29e351e41556
-    last_write_checksum: sha1:5c5dfd2edf5fb93e7508843611c6349ed88135fe
-    pristine_git_object: 000d2672d8c7c9ec1162f5bcefba40d557f28db5
+    last_write_checksum: sha1:37f27004e595b9b3b0d72398fb2325ded76665f3
+    pristine_git_object: ae296b2ae468408cf6d28a74380bc07d3ad23d90
   src/ttd_workflows/models/markettype.py:
     id: 814609c43b5d
     last_write_checksum: sha1:87d28a39357fa2472cb38dedbe7bb120b34af871
@@ -1083,8 +1083,8 @@ trackedFiles:
     pristine_git_object: 8f23fa054773202c73c6fff8d606442a0ae02acf
   src/ttd_workflows/models/realyticsreachsettinginput.py:
     id: d4060ac01cb3
-    last_write_checksum: sha1:118898e72ebd585d2a5af8f36a251a135e6ece81
-    pristine_git_object: 25407903b21cb1736e12215c474288e668479d86
+    last_write_checksum: sha1:aa8bb676bcc4ca1c072a48b2c835a3067b3a10b5
+    pristine_git_object: e21df6b18bd024f1c53610e87b4431cd26e6a997
   src/ttd_workflows/models/responsevalidationerror.py:
     id: 675fb7eb40ad
     last_write_checksum: sha1:d303ac8efad7f58b3cf79c8126f4c6ffa7bff6cf
@@ -1095,28 +1095,28 @@ trackedFiles:
     pristine_git_object: ada4883079be43ba70e61bb1e385d6caf8a6ee24
   src/ttd_workflows/models/security.py:
     id: 0c49d437cd85
-    last_write_checksum: sha1:7ffcf8dc3932c2571f2a8effe01cde9b87c8a26b
-    pristine_git_object: 25d523e33870f952f04b5c526876ecb66724f15f
+    last_write_checksum: sha1:27db475871ff92d6cf6c0456499dbefba02f3069
+    pristine_git_object: 4be28bc6a16820637bf1a068450b238ecb52ece3
   src/ttd_workflows/models/standardjobstatusresponse.py:
     id: 305579cf2199
-    last_write_checksum: sha1:a2bcad1096ca1788a01ac492de1982fa7c62c787
-    pristine_git_object: e06f89ad8baac20e809f07e53c71c6129bd0acd2
+    last_write_checksum: sha1:d66a4b0870809e275a237050bc7bb0071c83a566
+    pristine_git_object: 14ee4c1480158e3faf591f633973825ddad0b38d
   src/ttd_workflows/models/standardjobsubmitresponse.py:
     id: 691c38c6973d
     last_write_checksum: sha1:eb7283c411ffa196d7fd9a44e142569d33c6ee5a
     pristine_git_object: 69f4e3c27937a7987d4a62b84626a243567c2f9f
   src/ttd_workflows/models/submitgraphqlbulkqueryjobop.py:
     id: a50c2c6d5a6d
-    last_write_checksum: sha1:49f2186b026caa607dbd9f34bc4feb92fc893a88
-    pristine_git_object: 019ba205847d6b47f16004071122b0a6fa836d0b
+    last_write_checksum: sha1:cb50ae9ab6229762d4c43cf5be10a46220816ba9
+    pristine_git_object: f89fc5c7dfbb8874762808e7d249d9245a8055d3
   src/ttd_workflows/models/submitgraphqlrequestop.py:
     id: 8d1384031a13
-    last_write_checksum: sha1:f8faeebe0cbb01df1325d0dec930ea40a049bcdd
-    pristine_git_object: 75bba35eda6af9831086feb191515bf39cfa86d6
+    last_write_checksum: sha1:df1b8c028a1afd26217760c2d36ae1836b2d4f16
+    pristine_git_object: c77660f81da1a1b4a854894695fc855180443a6a
   src/ttd_workflows/models/submitrestrequestop.py:
     id: 0b233054a689
-    last_write_checksum: sha1:9db4158b6fe6e5bcbc2f11f3f3b47651354ee1ee
-    pristine_git_object: 6c5d01c99a8845568118cf7c663f95c24a915539
+    last_write_checksum: sha1:578204da23df5df9d55c3125be6e22b5a8298d3e
+    pristine_git_object: 88b52d24f6a082e064e5d649118ce0c3577f180a
   src/ttd_workflows/models/targetingendage.py:
     id: e82986ad7b1e
     last_write_checksum: sha1:e0086e72179dbe1f87fb11d3d46efc2d95dbc468
@@ -1143,28 +1143,28 @@ trackedFiles:
     pristine_git_object: 9039213e9cf178ec451d8ffb8453d24f3caeeee1
   src/ttd_workflows/models/thirdpartydatainput.py:
     id: 655bb82a1cdb
-    last_write_checksum: sha1:2b07a2b31dde46a89c6a1e52cc238a55fafe8fa7
-    pristine_git_object: 96eb4784c1178aa1e9b037263b3a2b1f54594fa6
+    last_write_checksum: sha1:5ec922bd38603b75904f0002e45d6b5ef9b701ac
+    pristine_git_object: 0143ebc94a399f6267ad7ce54dc1e7bd35bd9887
   src/ttd_workflows/models/updateadgroupop.py:
     id: 43ab397b4052
-    last_write_checksum: sha1:52494ff3881a6e1c4346698f9ce625f2f3a046ad
-    pristine_git_object: 4683744a7b48c4b3411f69d206c6454bc9f0964a
+    last_write_checksum: sha1:d07eb70807572776e683561ca47379d9fd6ff87f
+    pristine_git_object: 73cfd3fc5d1ea7ba0fd23f36b0b4d48356daa348
   src/ttd_workflows/models/updateadgroupsjobop.py:
     id: eb6dda6a8a98
-    last_write_checksum: sha1:5f2d5eb4e949498f2b3d615ed441b51f25416307
-    pristine_git_object: d4a0386e83552b07bf3dbfec072a003f5759bd01
+    last_write_checksum: sha1:9cfa1ce91ceaceca0d82ad84c4592e724f4440ba
+    pristine_git_object: 01eb32be8c6434b1020a1c45a929cb5ad3a7f89b
   src/ttd_workflows/models/updatecampaignop.py:
     id: 4f135098f776
-    last_write_checksum: sha1:8aa35c3cd76589c7362a69290013f6a5b71a41eb
-    pristine_git_object: 830e26654b20273c6b7c0d8bba616fb8e28ede8e
+    last_write_checksum: sha1:577b36b9e7a2fef072d071f7c42a60d352e75205
+    pristine_git_object: 364a3c071b702e59060e2246547609580bc48803
   src/ttd_workflows/models/updatecampaignsjobop.py:
     id: 5657cd7d5003
-    last_write_checksum: sha1:0f0f68ba894c8790bfe2d34c4c41f170045e2f59
-    pristine_git_object: ec3fa965ba673403869163737a2f0ef60c289ab3
+    last_write_checksum: sha1:43eb269765c971d98437ab97b4a8b8533fe76bf0
+    pristine_git_object: 484730f6fc4bb3e3e8263aa03c4affa8b15166ab
   src/ttd_workflows/models/workflowcallbackinput.py:
     id: 4669e0e53a00
-    last_write_checksum: sha1:1ecc0da4d00bbf40559ef8411279d8079df0a334
-    pristine_git_object: c73908b1e49479eaf0f6364ceb7d2dc7d54eec24
+    last_write_checksum: sha1:c55878848d57e98948048e731f108bec34c220b3
+    pristine_git_object: d4a93917aedc37ab9f99860453d41d3cfc1703a3
   src/ttd_workflows/models/workflowserror.py:
     id: 4da91dd5b508
     last_write_checksum: sha1:4c1410bb789dda3cac319180a88c5b6ef26a0a0b
@@ -1183,8 +1183,8 @@ trackedFiles:
     pristine_git_object: 8658ef319331b40a4c0687cdc0a1c81353f6d58e
   src/ttd_workflows/sdk.py:
     id: cdce0760579e
-    last_write_checksum: sha1:0a0011539b7d6dcb6e5f13472e940639e2041802
-    pristine_git_object: eadb380bed5e27aface2d7a91337c9d51740b101
+    last_write_checksum: sha1:e1b93c930ba66a374c80a9de5560e4a9907f9487
+    pristine_git_object: b2e93e883891ec608d013fc6ca9e7c23614f5793
   src/ttd_workflows/sdkconfiguration.py:
     id: 16b01c739bea
     last_write_checksum: sha1:1faaf0c607157c7a8cdf0e8e568bc474bec8fe0c
@@ -1219,8 +1219,8 @@ trackedFiles:
     pristine_git_object: 3324e1bc2668c54c4d5f5a1a845675319757a828
   src/ttd_workflows/utils/eventstreaming.py:
     id: 933fd7a5988b
-    last_write_checksum: sha1:ffa870a25a7e4e2015bfd7a467ccd3aa1de97f0e
-    pristine_git_object: f2052fc22d9fd6c663ba3dce019fe234ca37108b
+    last_write_checksum: sha1:620d78a8b4e3b854e08d136e02e40a01a786bd70
+    pristine_git_object: 3bdcd6d3d4fc772cb7f5fca8685dcdc8c85e13e8
   src/ttd_workflows/utils/forms.py:
     id: f960e946eaac
     last_write_checksum: sha1:15fa7e9ab1611e062a9984cf06cb20969713d295
@@ -1713,7 +1713,6 @@ examples:
           application/json: {"type": "<value>", "title": "<value>", "status": 603376, "detail": "<value>", "instance": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Python SDK Changes:\n* `workflows.campaign.update_campaigns_job()`: \n  *  `request.input[]` **Changed** (Breaking ⚠️)\n* `workflows.campaigns.update()`:  `request` **Changed** (Breaking ⚠️)\n* `workflows.ad_groups.create()`: \n  *  `request.advanced_input` **Changed**\n* `workflows.ad_groups.update()`: \n  *  `request.advanced_input` **Changed**\n* `workflows.ad_group.create_ad_groups_job()`: \n  *  `request.input[].advanced_input` **Changed**\n* `workflows.ad_group.update_ad_groups_job()`: \n  *  `request.input[].advanced_input` **Changed**\n* `workflows.campaign.create()`:  `request` **Changed**\n* `workflows.campaign.create_campaigns_job()`: \n  *  `request.input[]` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - .vscode/settings.json

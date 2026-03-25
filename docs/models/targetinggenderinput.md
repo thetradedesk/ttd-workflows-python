@@ -1,5 +1,13 @@
 # TargetingGenderInput
 
+## Example Usage
+
+```python
+from ttd_workflows.models import TargetingGenderInput
+
+value = TargetingGenderInput.MALE
+```
+
 
 ## Values
 
