@@ -1,5 +1,13 @@
 # PassThroughFeeType
 
+## Example Usage
+
+```python
+from ttd_workflows.models import PassThroughFeeType
+
+value = PassThroughFeeType.NONE
+```
+
 
 ## Values
 

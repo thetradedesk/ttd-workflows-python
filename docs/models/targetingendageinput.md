@@ -1,5 +1,13 @@
 # TargetingEndAgeInput
 
+## Example Usage
+
+```python
+from ttd_workflows.models import TargetingEndAgeInput
+
+value = TargetingEndAgeInput.SEVENTEEN
+```
+
 
 ## Values
 

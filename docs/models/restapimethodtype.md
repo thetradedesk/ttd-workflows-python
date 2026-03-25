@@ -1,5 +1,13 @@
 # RestAPIMethodType
 
+## Example Usage
+
+```python
+from ttd_workflows.models import RestAPIMethodType
+
+value = RestAPIMethodType.POST
+```
+
 
 ## Values
 

@@ -1,5 +1,13 @@
 # CustomCPAType
 
+## Example Usage
+
+```python
+from ttd_workflows.models import CustomCPAType
+
+value = CustomCPAType.DISABLED
+```
+
 
 ## Values
 

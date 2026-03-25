@@ -1,5 +1,13 @@
 # EnhancedNielsenReportingOptionsInput
 
+## Example Usage
+
+```python
+from ttd_workflows.models import EnhancedNielsenReportingOptionsInput
+
+value = EnhancedNielsenReportingOptionsInput.NONE
+```
+
 
 ## Values
 

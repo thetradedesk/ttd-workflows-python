@@ -1,5 +1,13 @@
 # DimensionalBiddingDimensions
 
+## Example Usage
+
+```python
+from ttd_workflows.models import DimensionalBiddingDimensions
+
+value = DimensionalBiddingDimensions.UNKNOWN_DIMENSION
+```
+
 
 ## Values
 

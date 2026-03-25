@@ -1,5 +1,13 @@
 # MarketType
 
+## Example Usage
+
+```python
+from ttd_workflows.models import MarketType
+
+value = MarketType.OPEN_MARKET
+```
+
 
 ## Values
 

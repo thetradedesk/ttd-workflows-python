@@ -1,5 +1,13 @@
 # CampaignPacingMode
 
+## Example Usage
+
+```python
+from ttd_workflows.models import CampaignPacingMode
+
+value = CampaignPacingMode.PACE_AHEAD
+```
+
 
 ## Values
 

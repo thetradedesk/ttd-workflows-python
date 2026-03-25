@@ -1,5 +1,13 @@
 # AllocationType
 
+## Example Usage
+
+```python
+from ttd_workflows.models import AllocationType
+
+value = AllocationType.MINIMUM
+```
+
 
 ## Values
 

@@ -1,5 +1,13 @@
 # WorkflowStatus
 
+## Example Usage
+
+```python
+from ttd_workflows.models import WorkflowStatus
+
+value = WorkflowStatus.IN_PROGRESS
+```
+
 
 ## Values
 

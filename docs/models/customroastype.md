@@ -1,5 +1,13 @@
 # CustomROASType
 
+## Example Usage
+
+```python
+from ttd_workflows.models import CustomROASType
+
+value = CustomROASType.DISABLED
+```
+
 
 ## Values
 
