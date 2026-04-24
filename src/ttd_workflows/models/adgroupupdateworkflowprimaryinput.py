@@ -19,7 +19,7 @@ from .adgroupworkflowroigoalinput import (
     AdGroupWorkflowROIGoalInput,
     AdGroupWorkflowROIGoalInputTypedDict,
 )
-from .markettype import MarketType
+from .markettypeinput import MarketTypeInput
 import pydantic
 from pydantic import model_serializer
 from ttd_workflows.types import (
@@ -48,7 +48,7 @@ class AdGroupUpdateWorkflowPrimaryInputTypedDict(TypedDict):
     name: NotRequired[Nullable[str]]
     channel: NotRequired[AdGroupChannel]
     funnel_location: NotRequired[AdGroupFunnelLocation]
-    market_type: NotRequired[MarketType]
+    market_type: NotRequired[MarketTypeInput]
 
 
 class AdGroupUpdateWorkflowPrimaryInput(BaseModel):
@@ -94,9 +94,9 @@ class AdGroupUpdateWorkflowPrimaryInput(BaseModel):
         Optional[AdGroupFunnelLocation], pydantic.Field(alias="funnelLocation")
     ] = None
 
-    market_type: Annotated[Optional[MarketType], pydantic.Field(alias="marketType")] = (
-        None
-    )
+    market_type: Annotated[
+        Optional[MarketTypeInput], pydantic.Field(alias="marketType")
+    ] = None
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

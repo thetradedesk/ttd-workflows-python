@@ -134,7 +134,7 @@ with Workflows(
                     "name": "<value>",
                     "channel": ttd_workflows.AdGroupChannel.TV,
                     "funnel_location": ttd_workflows.AdGroupFunnelLocation.NONE,
-                    "market_type": ttd_workflows.MarketType.OPEN_MARKET,
+                    "market_type": ttd_workflows.MarketTypeInput.OPEN_MARKET,
                 },
                 "advanced_input": {
                     "koa_optimization_settings": {

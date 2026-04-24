@@ -76,7 +76,7 @@ with Workflows(
             "name": "<value>",
             "channel": ttd_workflows.AdGroupChannel.DISPLAY,
             "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONSIDERATION,
-            "market_type": ttd_workflows.MarketType.PRIVATE_MARKET_ONLY,
+            "market_type": ttd_workflows.MarketTypeInput.PRIVATE_MARKET_ONLY,
             "programmatic_guaranteed_private_contract_id": "<id>",
             "include_defaults_from_campaign": False,
         },
@@ -262,7 +262,7 @@ with Workflows(
             "name": "<value>",
             "channel": ttd_workflows.AdGroupChannel.NATIVE,
             "funnel_location": ttd_workflows.AdGroupFunnelLocation.CONVERSION,
-            "market_type": ttd_workflows.MarketType.OPEN_MARKET,
+            "market_type": ttd_workflows.MarketTypeInput.OPEN_MARKET,
         },
         "advanced_input": {
             "koa_optimization_settings": {
