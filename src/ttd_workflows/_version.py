@@ -3,10 +3,10 @@
 import importlib.metadata
 
 __title__: str = "ttd-workflows"
-__version__: str = "0.13.1"
+__version__: str = "0.13.2"
 __openapi_doc_version__: str = "v1"
-__gen_version__: str = "2.869.23"
-__user_agent__: str = "speakeasy-sdk/python 0.13.1 2.869.23 v1 ttd-workflows"
+__gen_version__: str = "2.881.4"
+__user_agent__: str = "speakeasy-sdk/python 0.13.2 2.881.4 v1 ttd-workflows"
 
 try:
     if __package__ is not None:

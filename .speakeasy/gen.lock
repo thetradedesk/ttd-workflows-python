@@ -1,30 +1,30 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: f52fbd737db7513c61b4e8ebd74d7251
+  docChecksum: 58fd96f55cfd874ab86ec2e985a56a86
   docVersion: v1
-  speakeasyVersion: 1.759.2
-  generationVersion: 2.869.23
-  releaseVersion: 0.13.1
-  configChecksum: f4d645658b00c6be06c25aa2f7dec1e7
+  speakeasyVersion: 1.761.9
+  generationVersion: 2.881.4
+  releaseVersion: 0.13.2
+  configChecksum: d66370c950c440f5f61cca3bab013be9
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
 persistentEdits:
-  generation_id: 7aa3697a-5765-4c6a-ba76-73d13c2eab15
-  pristine_commit_hash: 27d3c2ee8338f13de7f81fbee7f8c76b24b73a12
-  pristine_tree_hash: 592f2028a603032358a3137377fb85b8e494d49f
+  generation_id: ca42b4ab-0bce-40df-a945-5e8e683948ec
+  pristine_commit_hash: a174908f0e06eee79aa2dbc33c6dbd420a933efd
+  pristine_tree_hash: 8d188ac75a218ed9c6ee21a8c60014e8804ba0fc
 features:
   python:
     additionalDependencies: 1.0.0
     additionalProperties: 1.0.1
     constsAndDefaults: 1.0.7
-    core: 6.0.20
+    core: 6.0.21
     defaultEnabledRetries: 0.2.0
     enumUnions: 0.1.1
     envVarSecurityUsage: 0.3.2
     flattening: 3.1.1
-    globalSecurity: 3.0.5
+    globalSecurity: 3.0.7
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.2.1
@@ -33,7 +33,7 @@ features:
     nameOverrides: 3.0.3
     nullables: 1.0.2
     responseFormat: 1.1.0
-    retries: 3.0.4
+    retries: 3.0.5
     sdkHooks: 1.2.1
     serverIDs: 3.0.0
 trackedFiles:
@@ -47,8 +47,8 @@ trackedFiles:
     pristine_git_object: 8d79f0abb72526f1fb34a4c03e5bba612c6ba2ae
   USAGE.md:
     id: 3aed33ce6e6f
-    last_write_checksum: sha1:bd8ee6e5648c43ad14695d93b1753e41e9f03696
-    pristine_git_object: 07186a3ef397ea7b601a57aae7c566417cad24ad
+    last_write_checksum: sha1:af2b32cd8b65154358e2d09edcc2b0ee27081917
+    pristine_git_object: b72a8e8ec9796788451ea8abd6da7b6b33643370
   docs/models/adgroupassociatebidlist.md:
     id: 89e1b5988192
     last_write_checksum: sha1:e04d75ffdec0d0563bc3a7acbb6e427cf407cad6
@@ -91,8 +91,8 @@ trackedFiles:
     pristine_git_object: 013cad94586f8f0d21034b68f10e34cb22937ec2
   docs/models/adgroupcreateworkflowprimaryinput.md:
     id: 3afd442abc2d
-    last_write_checksum: sha1:c9d185cc3f55f178f817e9852cb878f382d4c989
-    pristine_git_object: 1f9a77f3965664b7082b38a2795e0a7b7d96ad67
+    last_write_checksum: sha1:91df2576473bd8f73929a0934967d81c80c15edf
+    pristine_git_object: c914153968ce5cd1a1d5548d9ae5961b98ffeae3
   docs/models/adgroupflight.md:
     id: 7f86780fc323
     last_write_checksum: sha1:290deb951634a63a9cef24741570f035e0633fde
@@ -127,8 +127,8 @@ trackedFiles:
     pristine_git_object: d9cdf485f2d0491ed6ea4b6e83313ff3dc742cb6
   docs/models/adgroupupdateworkflowprimaryinput.md:
     id: e247b35e9d0f
-    last_write_checksum: sha1:47e88858bf9b7c192f23fcefc623b29309587a2b
-    pristine_git_object: 8e088d9dff9ce310efb9c298bc7b82dad63a8284
+    last_write_checksum: sha1:6c0f14d498d9fd5f4c619e5a3dc9832d70d640b5
+    pristine_git_object: be3391e732cea4077d86d3cb643a74ccf6992c43
   docs/models/adgroupworkflow.md:
     id: 9e8b18e5dd6c
     last_write_checksum: sha1:57a8259f3fdcab67b3298808e85985f29234bd32
@@ -449,6 +449,10 @@ trackedFiles:
     id: 3e2a3a298fd5
     last_write_checksum: sha1:3575ddfb91f3dde9e1b487d6f3073fdfea6a0989
     pristine_git_object: 6f8e87dd255c9be317a863dac11cf0aba41bf99d
+  docs/models/markettypeinput.md:
+    id: d12085876601
+    last_write_checksum: sha1:2ff48c0ec09d0092d706f69109bb8dfd5da0b47a
+    pristine_git_object: dc5a42b28bbcbe352b9417a7d0b43c921c7ce896
   docs/models/passthroughfeetype.md:
     id: fb9b76f90834
     last_write_checksum: sha1:c64fd186f247063bd147c602931894233b834894
@@ -559,16 +563,16 @@ trackedFiles:
     pristine_git_object: 4d8e028c6c3518f6d4bde3bb5c46dd9f45ff2c45
   docs/sdks/adgroup/README.md:
     id: 8e0c2412ebea
-    last_write_checksum: sha1:ce9e14dac4893ae3d3cbc148daaaf11cc0531afc
-    pristine_git_object: 92aa78ba610822d5a3044729d2c51de96652433d
+    last_write_checksum: sha1:e041f2e36fa30460d9fa0f11681a9e30c8771403
+    pristine_git_object: 42fa5cb8c5cc03fc2b8bb68282e49e1cd1e0ac6f
   docs/sdks/adgroups/README.md:
     id: 59faf627531f
-    last_write_checksum: sha1:52440f41791ae3c98b1dc9dad0b8e3cf0835a85a
-    pristine_git_object: f4f098da2149442f5a81c04ad9ee27cda276dc6b
+    last_write_checksum: sha1:1ae341f48101e47a5ceff049d8eefd975a2a471d
+    pristine_git_object: eb3bb6a695f8531947876fa9a79cdfb1119f85e2
   docs/sdks/campaign/README.md:
     id: 7c44530e0eca
-    last_write_checksum: sha1:19ef547b9b1cb84a2ffeb36536afd8d03d65ff90
-    pristine_git_object: c07427d20f7d29ba42d086f37c1aeb0eebb12587
+    last_write_checksum: sha1:a11400491fed7951a9f52b37d3d6337444216939
+    pristine_git_object: cb339874680df8d452d299b9140ffcd57c3697a7
   docs/sdks/campaigns/README.md:
     id: 18dcc3c717ca
     last_write_checksum: sha1:3fb2bb1570a8774d6fdfeb5d3255ba752e87fbc7
@@ -603,8 +607,8 @@ trackedFiles:
     pristine_git_object: cb9c15d314c1930557401074329ed7a737147919
   pyproject.toml:
     id: 5d07e7d72637
-    last_write_checksum: sha1:aa328c04a931446e569c8a07495dc6d549d7a4b6
-    pristine_git_object: a602f2360191c7321acac31c62ae229ae6a7a79a
+    last_write_checksum: sha1:9376cfe98d304306b9618ec9834fd341e96d0af8
+    pristine_git_object: dacf8a3ba47b92e0531437e293053e2c62f89852
   scripts/prepare_readme.py:
     id: e0c5957a6035
     last_write_checksum: sha1:9eebd27076f34cee181d36379e4102aea070e45f
@@ -631,48 +635,48 @@ trackedFiles:
     pristine_git_object: edb32b587a8e40342f5605ed44e58c527d021a39
   src/ttd_workflows/_version.py:
     id: 5664ebff5b6e
-    last_write_checksum: sha1:6128afdb24b107a3524adbc13d1da1917185c4e5
-    pristine_git_object: 02f5b07ce4b136356fb482ef5de7ae6b860103d9
+    last_write_checksum: sha1:5b25cf295eeea35c93eedae39535e525bb0708f5
+    pristine_git_object: ad0a90af102f17d2a09000b2bf99e8cdc8565412
   src/ttd_workflows/ad_group.py:
     id: 3439b8a7a7f1
-    last_write_checksum: sha1:a3b8f41e47f0d0352c3a0d20dbd5152f4a76e55e
-    pristine_git_object: fdeedbb401161df59339335d332ffa2a75de8682
+    last_write_checksum: sha1:050e14c38f9f7558d4f753daa2aa522e38563487
+    pristine_git_object: ac681c508f26ded08a4bbb42cc17471e4d1baa1e
   src/ttd_workflows/adgroups.py:
     id: 62ea0669755b
-    last_write_checksum: sha1:cc18b5128f9170ca2a2bed465b8c791f37c016f4
-    pristine_git_object: 6c7f9d9b7f1fa59f43ce22de1364805bf0f9546f
+    last_write_checksum: sha1:b89883a1f129b7dc774a542d8aab1d91a03f5fc4
+    pristine_git_object: ce90fef4220cffdbd94f0c5bb1c4b5df5e45b0e9
   src/ttd_workflows/basesdk.py:
     id: 55f3edb5df65
-    last_write_checksum: sha1:a53a8618c58740fa474b48f65f15b97dbd522b6b
-    pristine_git_object: ca8e829662c2ec90b580f7257c61805ef36f2537
+    last_write_checksum: sha1:8f80c9fd8a3d332ebad4668dac47b1f3e5586d7d
+    pristine_git_object: 0694f70c6e39fb5aa543dd1bc7a7e0617884df49
   src/ttd_workflows/campaign.py:
     id: 2b62a5a8a7ac
-    last_write_checksum: sha1:625ca65fac88d026215e43f87b8b66f2f328776b
-    pristine_git_object: 09329a29954f0da003d310a6f39c04791e081f3f
+    last_write_checksum: sha1:25dde46c051363dbb2e572a955dc4a920d6b3507
+    pristine_git_object: 07c6b1749ab8185a6e9b1fdc33417fd5a23f278a
   src/ttd_workflows/campaigns.py:
     id: 5180186cb0b6
-    last_write_checksum: sha1:885d4a5438a0c7e1ce10395bf68da80c0e5a27a6
-    pristine_git_object: 2dd03458dabb0d340697599c784a4bb0bac15b45
+    last_write_checksum: sha1:e001de74b95313daaded62762257a58369692f9b
+    pristine_git_object: 722aabd5a126ee66863d176262877017515db016
   src/ttd_workflows/dmp.py:
     id: dbdcabfaa6cf
-    last_write_checksum: sha1:455cde0eb7b52dc8144c71ebdef2f7a91feff4ba
-    pristine_git_object: b006f4bd5f5739a120a0efe6247d748722508ae8
+    last_write_checksum: sha1:dc196883ddf12efe872026e428c8809637f861c2
+    pristine_git_object: 0ae5335bda4d56af03e76a9db1ecc70cac79a8e1
   src/ttd_workflows/graphql_request.py:
     id: 7f5875407e46
-    last_write_checksum: sha1:fe597e72d7b1a5b3edb77308d9a863766ce96654
-    pristine_git_object: a4d3cae072ffddf8fcdb795b4509312fab882426
+    last_write_checksum: sha1:662f6144035860aca70515057dc259252179d7fc
+    pristine_git_object: e6cf52d07f3c496604958c1bfc8e4fe20d81e5c9
   src/ttd_workflows/httpclient.py:
     id: a7dee5e78769
     last_write_checksum: sha1:5e55338d6ee9f01ab648cad4380201a8a3da7dd7
     pristine_git_object: 89560b566073785535643e694c112bedbd3db13d
   src/ttd_workflows/job_status.py:
     id: 3843e125bd67
-    last_write_checksum: sha1:2ac8f930a6bdf557cdc64060626acd574ae7a5b9
-    pristine_git_object: 6cef2ff6514a7fc0486e9aed33ca2aa80d6b87ac
+    last_write_checksum: sha1:5b758e61ea83e630bd6d05ddc138f52402ca1622
+    pristine_git_object: cedcf87d48ead6f5dbe91723d2b775e0dba4e96b
   src/ttd_workflows/models/__init__.py:
     id: 79eeb27997ee
-    last_write_checksum: sha1:79009b7420c87ebcb387608ba050fc99be0b98ef
-    pristine_git_object: ea1a0573b7b9de4b7cea3f848a2da5a3fb011424
+    last_write_checksum: sha1:41b2561269cdd7d17781b4e6e5140e38a0f35c0f
+    pristine_git_object: 190fa61c42c446ddb4cf3fb23bc660bbe7286064
   src/ttd_workflows/models/adgroupassociatebidlist.py:
     id: fd552d2c7596
     last_write_checksum: sha1:d807cad436020270ae9bc7cc48b368c2208adbd0
@@ -715,8 +719,8 @@ trackedFiles:
     pristine_git_object: 4456541744be168f097b8f561578fbf9b0025d10
   src/ttd_workflows/models/adgroupcreateworkflowprimaryinput.py:
     id: 6f4df950ef19
-    last_write_checksum: sha1:a96c988ee2538d5395a2a7ec1c199c9d53b089c4
-    pristine_git_object: 6b2d043d7577cfc163c0448aab63f61247a8d853
+    last_write_checksum: sha1:30ce63d9ba3ff39a8906d351bdeb8ad52cc107ca
+    pristine_git_object: 3e32f49ff8c792792b59a9172c203822134a07c3
   src/ttd_workflows/models/adgroupflight.py:
     id: a6188bc550f0
     last_write_checksum: sha1:fc7dd8754762fd5dad55a247d911bcec465c7bca
@@ -751,8 +755,8 @@ trackedFiles:
     pristine_git_object: 4eaa8681b94e8af735d0d41260847c258db1f5fd
   src/ttd_workflows/models/adgroupupdateworkflowprimaryinput.py:
     id: 2baa60fda196
-    last_write_checksum: sha1:7f7889edc5774a2fa89854ca2987b643b5a57c0c
-    pristine_git_object: 6b949b1bcf1522149db62a0448f267666565dcff
+    last_write_checksum: sha1:e8b65db34ecfb62bdff8e0a969b7ead4f48815c7
+    pristine_git_object: 8b1f35386fb9bf8369d234c95412ba0caa32a5cb
   src/ttd_workflows/models/adgroupworkflow.py:
     id: e14b9169793e
     last_write_checksum: sha1:eb5b97e34de973c48c52a710f6c59b61ba1dbcec
@@ -1057,6 +1061,10 @@ trackedFiles:
     id: 814609c43b5d
     last_write_checksum: sha1:87d28a39357fa2472cb38dedbe7bb120b34af871
     pristine_git_object: cdc5e4bd2511fe05956147b6d01a1cb398e9bcd5
+  src/ttd_workflows/models/markettypeinput.py:
+    id: c4fe62c22239
+    last_write_checksum: sha1:c934f13d1e5228dbbe28cbad8b6caa10fc387ba1
+    pristine_git_object: b8fa23e404bba1e076557fcb4d31c6138d21eddd
   src/ttd_workflows/models/no_response_error.py:
     id: 48eaa114e151
     last_write_checksum: sha1:7f326424a7d5ae1bcd5c89a0d6b3dbda9138942f
@@ -1179,8 +1187,8 @@ trackedFiles:
     pristine_git_object: 3e38f1a929f7d6b1d6de74604aa87e3d8f010544
   src/ttd_workflows/rest_request.py:
     id: b465d7d9fd11
-    last_write_checksum: sha1:97858d602b9ecb585f92d12c86d01c79c02b585f
-    pristine_git_object: 8658ef319331b40a4c0687cdc0a1c81353f6d58e
+    last_write_checksum: sha1:71d8fe20211ea2551ae07fa74ee4ccaa38cb3601
+    pristine_git_object: c15e6732da9215da74f5bf78d0b26ae7e66a77e7
   src/ttd_workflows/sdk.py:
     id: cdce0760579e
     last_write_checksum: sha1:e1b93c930ba66a374c80a9de5560e4a9907f9487
@@ -1235,8 +1243,8 @@ trackedFiles:
     pristine_git_object: d338ccf6b4cbf98208c42556d641cd8ce424bdd1
   src/ttd_workflows/utils/metadata.py:
     id: de75a1ab8bca
-    last_write_checksum: sha1:c6a560bd0c63ab158582f34dadb69433ea73b3d4
-    pristine_git_object: 173b3e5ce658675c2f504222a56b3daaaa68107d
+    last_write_checksum: sha1:e703e5cbb5255144aacf86898d1420529afaaff8
+    pristine_git_object: 5abddd588837ac297050ca3b543627faadb350a9
   src/ttd_workflows/utils/queryparams.py:
     id: b93302bd0e2e
     last_write_checksum: sha1:b94c3f314fd3da0d1d215afc2731f48748e2aa59
@@ -1251,12 +1259,12 @@ trackedFiles:
     pristine_git_object: af07d4e941007af4213c5ec9047ef8a2fca04e5e
   src/ttd_workflows/utils/security.py:
     id: c51116786ae9
-    last_write_checksum: sha1:d2663bec43e6c3fc9852530de62a6fea05b32a57
-    pristine_git_object: 417944acdbfa01c943ac5d199c81748390ae7063
+    last_write_checksum: sha1:d2e654cdcd25e77eeddd95e287472bd574db5b6c
+    pristine_git_object: 1fb172851d095f69f0535abf79b505e42e782c81
   src/ttd_workflows/utils/serializers.py:
     id: d63fe0b8b3a4
-    last_write_checksum: sha1:ce1d8d7f500a9ccba0aeca5057cee9c271f4dfd7
-    pristine_git_object: 14321eb479de81d0d9580ec8291e0ff91bf29e57
+    last_write_checksum: sha1:61009f2e4ef6613a1a5af813fe020373dae5a492
+    pristine_git_object: d2149f8b909cb96628db140ac3cddb1b1e981367
   src/ttd_workflows/utils/unmarshal_json_response.py:
     id: 90176fb39904
     last_write_checksum: sha1:3b4d9d179cea2d886242d8d608b28f378344935c

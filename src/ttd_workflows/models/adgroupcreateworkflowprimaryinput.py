@@ -19,7 +19,7 @@ from .adgroupworkflowroigoalinput import (
     AdGroupWorkflowROIGoalInput,
     AdGroupWorkflowROIGoalInputTypedDict,
 )
-from .markettype import MarketType
+from .markettypeinput import MarketTypeInput
 import pydantic
 from pydantic import model_serializer
 from ttd_workflows.types import (
@@ -48,7 +48,7 @@ class AdGroupCreateWorkflowPrimaryInputTypedDict(TypedDict):
     associated_bid_lists: NotRequired[
         Nullable[List[AdGroupWorkflowAssociateBidListInputTypedDict]]
     ]
-    market_type: NotRequired[MarketType]
+    market_type: NotRequired[MarketTypeInput]
     programmatic_guaranteed_private_contract_id: NotRequired[Nullable[str]]
     include_defaults_from_campaign: NotRequired[bool]
 
@@ -96,9 +96,9 @@ class AdGroupCreateWorkflowPrimaryInput(BaseModel):
         pydantic.Field(alias="associatedBidLists"),
     ] = UNSET
 
-    market_type: Annotated[Optional[MarketType], pydantic.Field(alias="marketType")] = (
-        None
-    )
+    market_type: Annotated[
+        Optional[MarketTypeInput], pydantic.Field(alias="marketType")
+    ] = None
 
     programmatic_guaranteed_private_contract_id: Annotated[
         OptionalNullable[str],
