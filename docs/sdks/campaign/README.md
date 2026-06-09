@@ -227,6 +227,7 @@ with Workflows(
                         vcpm_in_advertiser_currency=7123.95,
                         cpcv_in_advertiser_currency=6233.72,
                         miaozhen_otp_in_percent=8437.22,
+                        the_product_scope_for_new_buyer_goal_optimization=86586,
                     ),
                     creative_ids=[
                         "<value 1>",
@@ -566,6 +567,7 @@ with Workflows(
                                 vcpm_in_advertiser_currency=8383.69,
                                 cpcv_in_advertiser_currency=4755.8,
                                 miaozhen_otp_in_percent=4575.86,
+                                the_product_scope_for_new_buyer_goal_optimization=657704,
                             ),
                             creative_ids=[
                                 "<value 1>",

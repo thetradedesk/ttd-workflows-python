@@ -9,7 +9,6 @@ class DimensionalBiddingDimensions(str, Enum):
     HAS_AD_FORMAT_ID = "HasAdFormatId"
     HAS_DOMAIN_FRAGMENT_ID = "HasDomainFragmentId"
     HAS_UNIVERSAL_CATEGORY_TAXONOMY_ID = "HasUniversalCategoryTaxonomyId"
-    HAS_PLACEMENT_POSITION_RELATIVE_TO_FOLD_ID = "HasPlacementPositionRelativeToFoldId"
     HAS_ADVERTISER_TARGETING_DATA_ID = "HasAdvertiserTargetingDataId"
     HAS_BROWSER_ID = "HasBrowserId"
     HAS_CARRIER_ID = "HasCarrierId"

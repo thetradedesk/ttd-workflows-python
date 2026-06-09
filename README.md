@@ -432,6 +432,7 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 4649.53,
                 "cpcv_in_advertiser_currency": 313.95,
                 "miaozhen_otp_in_percent": 4704.1,
+                "the_product_scope_for_new_buyer_goal_optimization": 785382,
             },
             "creative_ids": None,
             "associated_bid_lists": [
@@ -645,6 +646,7 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 4649.53,
                 "cpcv_in_advertiser_currency": 313.95,
                 "miaozhen_otp_in_percent": 4704.1,
+                "the_product_scope_for_new_buyer_goal_optimization": 785382,
             },
             "creative_ids": None,
             "associated_bid_lists": [
@@ -803,6 +805,7 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 4649.53,
                 "cpcv_in_advertiser_currency": 313.95,
                 "miaozhen_otp_in_percent": 4704.1,
+                "the_product_scope_for_new_buyer_goal_optimization": 785382,
             },
             "creative_ids": None,
             "associated_bid_lists": [
@@ -975,6 +978,7 @@ with Workflows(
                     "vcpm_in_advertiser_currency": 4649.53,
                     "cpcv_in_advertiser_currency": 313.95,
                     "miaozhen_otp_in_percent": 4704.1,
+                    "the_product_scope_for_new_buyer_goal_optimization": 785382,
                 },
                 "creative_ids": None,
                 "associated_bid_lists": [
@@ -1181,6 +1185,7 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 4649.53,
                 "cpcv_in_advertiser_currency": 313.95,
                 "miaozhen_otp_in_percent": 4704.1,
+                "the_product_scope_for_new_buyer_goal_optimization": 785382,
             },
             "creative_ids": None,
             "associated_bid_lists": [
@@ -1339,6 +1344,7 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 4649.53,
                 "cpcv_in_advertiser_currency": 313.95,
                 "miaozhen_otp_in_percent": 4704.1,
+                "the_product_scope_for_new_buyer_goal_optimization": 785382,
             },
             "creative_ids": None,
             "associated_bid_lists": [
