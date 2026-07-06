@@ -29,7 +29,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 python:
-  version: 0.13.2
+  version: 0.14.0
   additionalDependencies:
     dev: {}
     main: {}
@@ -40,6 +40,7 @@ python:
   authors:
     - Speakeasy
   baseErrorName: WorkflowsError
+  bodyVariantOverloads: false
   clientServerStatusCodesAsErrors: true
   constFieldCasing: upper
   defaultErrorName: APIError
@@ -47,6 +48,10 @@ python:
   enableCustomCodeRegions: false
   enumFormat: enum
   envVarPrefix: WORKFLOWS
+  errorSchemaValidation: true
+  eventStreamClassNames:
+    async: EventStreamAsync
+    sync: EventStream
   fixFlags:
     asyncPaginationSep2025: false
     conflictResistantModelImportsFeb2026: false
@@ -66,6 +71,7 @@ python:
       webhooks: ""
   inferUnionDiscriminators: true
   inputModelSuffix: input
+  inputTypedDictSuffix: TypedDict
   legacyPyright: true
   license:
     name: The MIT License (MIT)
@@ -73,15 +79,20 @@ python:
     url: https://mit-license.org/
   maxMethodParams: 999
   methodArguments: infer-optional-args
+  methodTimeoutArgument: timeout-ms
+  methodTimeoutUnits: milliseconds
   moduleName: ""
   multipartArrayFormat: legacy
+  optionalDependencies: {}
   outputModelSuffix: output
   packageManager: poetry
   packageName: ttd-workflows
   preApplyUnionDiscriminators: false
   pytestFilterWarnings: []
   pytestTimeout: 0
+  rawResponseHelpers: false
   responseFormat: envelope-http
+  responseSchemaValidation: true
   sseFlatResponse: false
   templateVersion: v2
   useAsyncHooks: false

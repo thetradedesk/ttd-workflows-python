@@ -26,6 +26,7 @@ class AdGroupROIGoalTypedDict(TypedDict):
     vcpm_in_advertiser_currency: NotRequired[Nullable[float]]
     cpcv_in_advertiser_currency: NotRequired[Nullable[float]]
     miaozhen_otp_in_percent: NotRequired[Nullable[float]]
+    the_product_scope_for_new_buyer_goal_optimization: NotRequired[Nullable[int]]
 
 
 class AdGroupROIGoal(BaseModel):
@@ -77,6 +78,11 @@ class AdGroupROIGoal(BaseModel):
         OptionalNullable[float], pydantic.Field(alias="miaozhenOTPInPercent")
     ] = UNSET
 
+    the_product_scope_for_new_buyer_goal_optimization: Annotated[
+        OptionalNullable[int],
+        pydantic.Field(alias="The product scope for New Buyer goal optimization"),
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
@@ -93,6 +99,7 @@ class AdGroupROIGoal(BaseModel):
                 "vcpmInAdvertiserCurrency",
                 "cpcvInAdvertiserCurrency",
                 "miaozhenOTPInPercent",
+                "The product scope for New Buyer goal optimization",
             ]
         )
         nullable_fields = set(
@@ -109,6 +116,7 @@ class AdGroupROIGoal(BaseModel):
                 "vcpmInAdvertiserCurrency",
                 "cpcvInAdvertiserCurrency",
                 "miaozhenOTPInPercent",
+                "The product scope for New Buyer goal optimization",
             ]
         )
         serialized = handler(self)
