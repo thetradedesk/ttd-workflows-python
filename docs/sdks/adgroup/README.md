@@ -120,6 +120,7 @@ with Workflows(
                         "vcpm_in_advertiser_currency": 8251.2,
                         "cpcv_in_advertiser_currency": 4502.77,
                         "miaozhen_otp_in_percent": 2362.43,
+                        "new_buyer_target_value": 901233,
                     },
                     "creative_ids": [
                         "<value 1>",
