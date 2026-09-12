@@ -16,7 +16,7 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 class AdGroupBudgetTypedDict(TypedDict):
     allocation_type: AllocationType
-    budget_in_advertiser_currency: float
+    budget_in_advertiser_currency: Nullable[float]
     budget_in_impressions: NotRequired[Nullable[int]]
     daily_target_in_advertiser_currency: NotRequired[Nullable[float]]
     daily_target_in_impressions: NotRequired[Nullable[int]]
@@ -26,7 +26,7 @@ class AdGroupBudget(BaseModel):
     allocation_type: Annotated[AllocationType, pydantic.Field(alias="allocationType")]
 
     budget_in_advertiser_currency: Annotated[
-        float, pydantic.Field(alias="budgetInAdvertiserCurrency")
+        Nullable[float], pydantic.Field(alias="budgetInAdvertiserCurrency")
     ]
 
     budget_in_impressions: Annotated[
@@ -52,6 +52,7 @@ class AdGroupBudget(BaseModel):
         )
         nullable_fields = set(
             [
+                "budgetInAdvertiserCurrency",
                 "budgetInImpressions",
                 "dailyTargetInAdvertiserCurrency",
                 "dailyTargetInImpressions",

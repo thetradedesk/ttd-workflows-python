@@ -6,7 +6,7 @@ from ttd_workflows._hooks import HookContext
 from ttd_workflows.types import BaseModel, OptionalNullable, UNSET
 from ttd_workflows.utils import get_security_from_env
 from ttd_workflows.utils.unmarshal_json_response import unmarshal_json_response
-from typing import Any, List, Mapping, Optional, Union, cast
+from typing import Any, Iterable, List, Mapping, Optional, Union, cast
 
 
 class Campaigns(BaseSDK):
@@ -97,6 +97,8 @@ class Campaigns(BaseSDK):
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
+                tags=["Campaign"],
+                extensions=None,
             ),
             request=req,
             is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
@@ -212,6 +214,8 @@ class Campaigns(BaseSDK):
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
+                tags=["Campaign"],
+                extensions=None,
             ),
             request=req,
             is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
@@ -244,7 +248,7 @@ class Campaigns(BaseSDK):
         self,
         *,
         force_archive: Optional[bool] = False,
-        request_body: Optional[List[str]] = None,
+        request_body: Optional[Iterable[str]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -273,7 +277,7 @@ class Campaigns(BaseSDK):
 
         request = models.ArchiveCampaignsRequest(
             force_archive=force_archive,
-            request_body=request_body,
+            request_body=utils.unmarshal(request_body, Optional[List[str]]),
         )
 
         req = self._build_request(
@@ -321,6 +325,8 @@ class Campaigns(BaseSDK):
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
+                tags=["Campaign"],
+                extensions=None,
             ),
             request=req,
             is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
@@ -351,7 +357,7 @@ class Campaigns(BaseSDK):
         self,
         *,
         force_archive: Optional[bool] = False,
-        request_body: Optional[List[str]] = None,
+        request_body: Optional[Iterable[str]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -380,7 +386,7 @@ class Campaigns(BaseSDK):
 
         request = models.ArchiveCampaignsRequest(
             force_archive=force_archive,
-            request_body=request_body,
+            request_body=utils.unmarshal(request_body, Optional[List[str]]),
         )
 
         req = self._build_request_async(
@@ -428,6 +434,8 @@ class Campaigns(BaseSDK):
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
+                tags=["Campaign"],
+                extensions=None,
             ),
             request=req,
             is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),

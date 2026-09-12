@@ -64,6 +64,7 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 4649.53,
                 "cpcv_in_advertiser_currency": 313.95,
                 "miaozhen_otp_in_percent": 4704.1,
+                "new_buyer_target_value": 785382,
             },
             "creative_ids": None,
             "associated_bid_lists": [
@@ -246,6 +247,7 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 1135.94,
                 "cpcv_in_advertiser_currency": 6372.45,
                 "miaozhen_otp_in_percent": 8405.28,
+                "new_buyer_target_value": 93512,
             },
             "creative_ids": [
                 "<value 1>",
