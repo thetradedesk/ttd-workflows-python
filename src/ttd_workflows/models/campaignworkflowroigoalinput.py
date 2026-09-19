@@ -100,7 +100,7 @@ class CampaignWorkflowROIGoalInput(BaseModel):
     ] = UNSET
 
     new_buyer_target_value: Annotated[
-        OptionalNullable[int], pydantic.Field(alias="NewBuyerTargetValue")
+        OptionalNullable[int], pydantic.Field(alias="newBuyerTargetValue")
     ] = UNSET
 
     @model_serializer(mode="wrap")
@@ -123,7 +123,7 @@ class CampaignWorkflowROIGoalInput(BaseModel):
                 "crossixAudienceQualityIndex",
                 "iqviaAudienceQualityIndexAndCostPerTarget",
                 "crossixCostPerTarget",
-                "NewBuyerTargetValue",
+                "newBuyerTargetValue",
             ]
         )
         nullable_fields = set(
@@ -144,7 +144,7 @@ class CampaignWorkflowROIGoalInput(BaseModel):
                 "crossixAudienceQualityIndex",
                 "iqviaAudienceQualityIndexAndCostPerTarget",
                 "crossixCostPerTarget",
-                "NewBuyerTargetValue",
+                "newBuyerTargetValue",
             ]
         )
         serialized = handler(self)
