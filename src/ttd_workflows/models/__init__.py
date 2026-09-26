@@ -340,6 +340,10 @@ if TYPE_CHECKING:
         StandardJobSubmitResponse,
         StandardJobSubmitResponseTypedDict,
     )
+    from .stringworkflowsoptional import (
+        StringWorkflowsOptional,
+        StringWorkflowsOptionalTypedDict,
+    )
     from .submitgraphqlbulkqueryjobop import (
         SubmitGraphQlBulkQueryJobResponse,
         SubmitGraphQlBulkQueryJobResponseTypedDict,
@@ -587,6 +591,8 @@ __all__ = [
     "StandardJobStatusResponseTypedDict",
     "StandardJobSubmitResponse",
     "StandardJobSubmitResponseTypedDict",
+    "StringWorkflowsOptional",
+    "StringWorkflowsOptionalTypedDict",
     "SubmitGraphQlBulkQueryJobResponse",
     "SubmitGraphQlBulkQueryJobResponseTypedDict",
     "SubmitGraphQlRequestResponse",
@@ -824,6 +830,8 @@ _dynamic_imports: dict[str, str] = {
     "StandardJobStatusResponseTypedDict": ".standardjobstatusresponse",
     "StandardJobSubmitResponse": ".standardjobsubmitresponse",
     "StandardJobSubmitResponseTypedDict": ".standardjobsubmitresponse",
+    "StringWorkflowsOptional": ".stringworkflowsoptional",
+    "StringWorkflowsOptionalTypedDict": ".stringworkflowsoptional",
     "SubmitGraphQlBulkQueryJobResponse": ".submitgraphqlbulkqueryjobop",
     "SubmitGraphQlBulkQueryJobResponseTypedDict": ".submitgraphqlbulkqueryjobop",
     "SubmitGraphQlRequestResponse": ".submitgraphqlrequestop",

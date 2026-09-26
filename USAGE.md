@@ -24,7 +24,9 @@ with Workflows(
             "base_bid_cpm_in_advertiser_currency": 3785.04,
             "max_bid_cpm_in_advertiser_currency": 7447.3,
             "audience_targeting": {
-                "audience_id": "<id>",
+                "audience_id": {
+                    "value": "<value>",
+                },
                 "audience_accelerator_exclusions_enabled": True,
                 "audience_booster_enabled": True,
                 "audience_excluder_enabled": True,
@@ -49,6 +51,7 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 4649.53,
                 "cpcv_in_advertiser_currency": 313.95,
                 "miaozhen_otp_in_percent": 4704.1,
+                "new_buyer_target_value": 287261,
             },
             "creative_ids": None,
             "associated_bid_lists": [
@@ -184,7 +187,9 @@ async def main():
                 "base_bid_cpm_in_advertiser_currency": 3785.04,
                 "max_bid_cpm_in_advertiser_currency": 7447.3,
                 "audience_targeting": {
-                    "audience_id": "<id>",
+                    "audience_id": {
+                        "value": "<value>",
+                    },
                     "audience_accelerator_exclusions_enabled": True,
                     "audience_booster_enabled": True,
                     "audience_excluder_enabled": True,
@@ -209,6 +214,7 @@ async def main():
                     "vcpm_in_advertiser_currency": 4649.53,
                     "cpcv_in_advertiser_currency": 313.95,
                     "miaozhen_otp_in_percent": 4704.1,
+                    "new_buyer_target_value": 287261,
                 },
                 "creative_ids": None,
                 "associated_bid_lists": [
