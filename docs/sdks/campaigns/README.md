@@ -72,7 +72,7 @@ with Workflows(
                 crossix_audience_quality_index=True,
                 iqvia_audience_quality_index_and_cost_per_target=True,
                 crossix_cost_per_target=True,
-                new_buyer_target_value=869267,
+                new_buyer_target_value=760468,
             ),
             tertiary_goal=ttd_workflows.CampaignWorkflowROIGoalInput(
                 maximize_reach=True,
@@ -91,7 +91,7 @@ with Workflows(
                 crossix_audience_quality_index=False,
                 iqvia_audience_quality_index_and_cost_per_target=None,
                 crossix_cost_per_target=False,
-                new_buyer_target_value=113952,
+                new_buyer_target_value=287698,
             ),
             name="<value>",
             primary_channel=ttd_workflows.CampaignChannelType.DISPLAY,
@@ -112,7 +112,7 @@ with Workflows(
                 crossix_audience_quality_index=True,
                 iqvia_audience_quality_index_and_cost_per_target=True,
                 crossix_cost_per_target=True,
-                new_buyer_target_value=723722,
+                new_buyer_target_value=105210,
             ),
             start_date_in_utc=parse_datetime("2024-02-29T10:31:50.069Z"),
             budget=ttd_workflows.CampaignUpdateWorkflowBudgetInput(
