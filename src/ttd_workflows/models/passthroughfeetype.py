@@ -14,3 +14,6 @@ class PassThroughFeeType(str, Enum):
     RATE_CPM = "RateCPM"
     RATE_CPC = "RateCPC"
     CUSTOM_PMP_PARTNER_DATA_COST_PERCENTAGE = "CustomPmpPartnerDataCostPercentage"
+    MEDIA_DATA_FEE_FEATURES_COST_PERCENTAGE = "MediaDataFeeFeaturesCostPercentage"
+    FLAT_FEE = "FlatFee"
+    MEDIA_PLUS_FEE_FEATURES_COST_PERCENTAGE = "MediaPlusFeeFeaturesCostPercentage"
