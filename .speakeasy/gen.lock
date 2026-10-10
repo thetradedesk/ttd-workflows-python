@@ -1,40 +1,41 @@
 lockVersion: 2.0.0
 id: f803c176-84c0-412f-93ec-3006a124047d
 management:
-  docChecksum: 58fd96f55cfd874ab86ec2e985a56a86
+  docChecksum: 7244e59ee2b9370321d07d43d257a1e2
   docVersion: v1
-  speakeasyVersion: 1.761.9
-  generationVersion: 2.881.4
-  releaseVersion: 0.13.2
-  configChecksum: d66370c950c440f5f61cca3bab013be9
+  speakeasyVersion: 1.801.0
+  generationVersion: 2.946.0
+  releaseVersion: 0.14.0
+  configChecksum: 12886ff14a2ae236a0a5c683cc8b7d71
   repoURL: https://github.com/thetradedesk/ttd-workflows-python.git
   installationURL: https://github.com/thetradedesk/ttd-workflows-python.git
   published: true
 persistentEdits:
-  generation_id: ca42b4ab-0bce-40df-a945-5e8e683948ec
-  pristine_commit_hash: a174908f0e06eee79aa2dbc33c6dbd420a933efd
-  pristine_tree_hash: 8d188ac75a218ed9c6ee21a8c60014e8804ba0fc
+  generation_id: ae1c9524-e4b2-42d7-bf0d-d4f506fa9c86
+  pristine_commit_hash: b91505a84faf7b6f2110b8ac0f9cf2917024c8b0
+  pristine_tree_hash: 8b35fd733c35927245a3575c8155ee01d0845fb6
 features:
   python:
-    additionalDependencies: 1.0.0
-    additionalProperties: 1.0.1
-    constsAndDefaults: 1.0.7
-    core: 6.0.21
+    additionalDependencies: 1.1.0
+    additionalProperties: 1.0.2
+    constsAndDefaults: 1.0.8
+    core: 6.1.3
     defaultEnabledRetries: 0.2.0
     enumUnions: 0.1.1
-    envVarSecurityUsage: 0.3.2
+    envVarSecurityUsage: 0.3.3
     flattening: 3.1.1
     globalSecurity: 3.0.7
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.2.1
     groups: 3.0.1
-    methodArguments: 1.0.2
+    inputOutputModels: 3.0.0
+    methodArguments: 1.1.1
     nameOverrides: 3.0.3
     nullables: 1.0.2
     responseFormat: 1.1.0
-    retries: 3.0.5
-    sdkHooks: 1.2.1
+    retries: 3.1.2
+    sdkHooks: 1.3.0
     serverIDs: 3.0.0
 trackedFiles:
   .gitattributes:
@@ -47,8 +48,8 @@ trackedFiles:
     pristine_git_object: 8d79f0abb72526f1fb34a4c03e5bba612c6ba2ae
   USAGE.md:
     id: 3aed33ce6e6f
-    last_write_checksum: sha1:af2b32cd8b65154358e2d09edcc2b0ee27081917
-    pristine_git_object: b72a8e8ec9796788451ea8abd6da7b6b33643370
+    last_write_checksum: sha1:740d6ea42325601f26fc96ca57949f0d445cda17
+    pristine_git_object: b5d9e093ec95b23fab2968163ae2ecd707af1902
   docs/models/adgroupassociatebidlist.md:
     id: 89e1b5988192
     last_write_checksum: sha1:e04d75ffdec0d0563bc3a7acbb6e427cf407cad6
@@ -59,8 +60,8 @@ trackedFiles:
     pristine_git_object: 219954fe12289b1a84e98478e9c66a30e14fe2c6
   docs/models/adgroupbudget.md:
     id: b1c7ab85931c
-    last_write_checksum: sha1:22638ea9318ce14ce1a6fc0bc94d928d7587b4aa
-    pristine_git_object: c9e2a8e891751356996512022ce94c54a39ea33e
+    last_write_checksum: sha1:4684bd9c6304f9d429e81eaf8bdc44ee92733ebd
+    pristine_git_object: 816d1fdd3c8718dc1280d2c4c8a323411064f879
   docs/models/adgroupbulkcreateworkflowinputwithvalidation.md:
     id: b1d625c91fae
     last_write_checksum: sha1:ff4941499b1b7516fe2648e74114e89ca3311897
@@ -89,14 +90,18 @@ trackedFiles:
     id: e617b2b22230
     last_write_checksum: sha1:bd8cebae9c7ba035c9125efb7b5dca00fe170297
     pristine_git_object: 013cad94586f8f0d21034b68f10e34cb22937ec2
+  docs/models/adgroupcreateworkflowownedbidlistinput.md:
+    id: 285d372b478a
+    last_write_checksum: sha1:8d16102f64db25a40b51475d458423033b2fa01e
+    pristine_git_object: 647a92f193361bbbd60c0042f145ffb0ef3c9e16
   docs/models/adgroupcreateworkflowprimaryinput.md:
     id: 3afd442abc2d
-    last_write_checksum: sha1:91df2576473bd8f73929a0934967d81c80c15edf
-    pristine_git_object: c914153968ce5cd1a1d5548d9ae5961b98ffeae3
+    last_write_checksum: sha1:57e2e148bb7d6bdc6c03d83331684c6a5a469bcd
+    pristine_git_object: 39de0820c26bd4a67651cba79630ea33685f064a
   docs/models/adgroupflight.md:
     id: 7f86780fc323
-    last_write_checksum: sha1:290deb951634a63a9cef24741570f035e0633fde
-    pristine_git_object: 650c3a2d676657d4de862f6d8c91fdfbf9497440
+    last_write_checksum: sha1:daf681c0c9bc2b1fe4571f3edfb18cefed81024b
+    pristine_git_object: 812376749774944e7a322186fbe779389a170322
   docs/models/adgroupfunnellocation.md:
     id: d6a4912e85a0
     last_write_checksum: sha1:27215f2b655af1bf355f840d7e97d8b107479ab0
@@ -109,14 +114,18 @@ trackedFiles:
     id: 38548f98d667
     last_write_checksum: sha1:74e020b39d0d3f935c77d3fa1544aaeff5e568f9
     pristine_git_object: 9a27cecb8ce69709fe57d13aedb4162ffbe84752
+  docs/models/adgroupownedbidlist.md:
+    id: bf624e54222e
+    last_write_checksum: sha1:36e092692ecbd256d5de75a6b0824b326fd0686d
+    pristine_git_object: de9310749817160e99b6659a0461cd5030b50255
   docs/models/adgrouppayload.md:
     id: 634cbe68e94c
     last_write_checksum: sha1:34f3c3387efa8f56099f2d58de23f9c69d97815c
     pristine_git_object: 299011969b8bf553afa4a24769c16a2d5d5d1861
   docs/models/adgrouproigoal.md:
     id: a0e4eb461cf2
-    last_write_checksum: sha1:f3a0d0e122653eeb3b35f03df27aa0dcde9299a1
-    pristine_git_object: 69d809bdbdc6e1a1d2cf609572fa3ba0e083aee4
+    last_write_checksum: sha1:9107637fcfec68dc4af5be8644799d65d840e24c
+    pristine_git_object: 597f789695a128c4b773ec15a46c32388d8dfac3
   docs/models/adgroupupdateworkflowinput.md:
     id: 7290f2dcbe81
     last_write_checksum: sha1:7c5a3899f71980ec290e6f9dac345f5ab5ea0827
@@ -131,8 +140,8 @@ trackedFiles:
     pristine_git_object: be3391e732cea4077d86d3cb643a74ccf6992c43
   docs/models/adgroupworkflow.md:
     id: 9e8b18e5dd6c
-    last_write_checksum: sha1:57a8259f3fdcab67b3298808e85985f29234bd32
-    pristine_git_object: 8160387bf3cd413fbfa4899193adc3a5bafe6dae
+    last_write_checksum: sha1:c773534557ef7676976df347554640bf8156fc75
+    pristine_git_object: 5c1d9c18677b5bf5d97e8972725de2c4d278ae8e
   docs/models/adgroupworkflowadvancedinput.md:
     id: f39435f7c4ba
     last_write_checksum: sha1:5e9518185cdde85d43a3dcac995e78f1f869d7fe
@@ -143,8 +152,8 @@ trackedFiles:
     pristine_git_object: f40230cb906a1145add9db0dd7a818c967d54232
   docs/models/adgroupworkflowaudiencetargetinginput.md:
     id: a697e43c62f2
-    last_write_checksum: sha1:43ef36cb267c9e9e431bf580329cd3fbc71943f5
-    pristine_git_object: 447bc07853c12f2cae15d89985582836d9eab767
+    last_write_checksum: sha1:b7437e7ce07dab8565b30f95fb948cfecf429b02
+    pristine_git_object: e865f4aa83c6461a3e89ddb0912f56d674b6915f
   docs/models/adgroupworkflowbudgetinput.md:
     id: baadf4652dfe
     last_write_checksum: sha1:ddfbe4895c3e80fbf19ae1dc6a7e5cc6d925beda
@@ -179,8 +188,12 @@ trackedFiles:
     pristine_git_object: 3eeff429ecfcb024737510d732c8de048206c55b
   docs/models/adgroupworkflowroigoalinput.md:
     id: 72e568660735
-    last_write_checksum: sha1:35a6b34b3a44b60840b3347f486367e488ff40e3
-    pristine_git_object: b1d5ce18290f530e160f55e938096c50ff6fd821
+    last_write_checksum: sha1:d0a2e85a08807b0be4f48e19b906dad6242784b2
+    pristine_git_object: 0fad59b654c935d5bf552383f78adc2bd3103f62
+  docs/models/adstxtsellertype.md:
+    id: 618f49ca2dd2
+    last_write_checksum: sha1:8be0eadbe7b31d21de689750c86afa4edc563257
+    pristine_git_object: 3f5738f1dc318d331ae36b4ea662aa4bf323cb75
   docs/models/allocationtype.md:
     id: db446c19b69a
     last_write_checksum: sha1:f1f4aacd0f920dfa981459f54f253ffa07422bba
@@ -201,6 +214,46 @@ trackedFiles:
     id: 56a637ece614
     last_write_checksum: sha1:cea214c5b848d316de9dc770ebf09b32e26584c5
     pristine_git_object: 6909b47ab7528a61c3680fa03f6613548a4de3a8
+  docs/models/atmosphericcondition.md:
+    id: f556c5ea0be2
+    last_write_checksum: sha1:a29bb97d1ccea5a7b9d2180a13be99d4026db001
+    pristine_git_object: 2f15db419aa073898e997d85a86022c8456774e2
+  docs/models/audiencereachpercentagetier.md:
+    id: 978c9e89e630
+    last_write_checksum: sha1:4b46363e9763af8fc5dc078f31641b18a64b7bef
+    pristine_git_object: 6edbbf61f472917f14b025a0bb63f4651db71fe1
+  docs/models/bidlinecreateinput.md:
+    id: b0ab0ea2558b
+    last_write_checksum: sha1:e0e0f6c1bdd797e2882fafc9a4e029386fb8c6ff
+    pristine_git_object: e1ba2d2bcc7cb5a7fac2f1427eaf23c7dbeeec4a
+  docs/models/bidlistadjustmenttype.md:
+    id: 09c6841daea8
+    last_write_checksum: sha1:7162a6fd77a484d3b2596d58a2a8b8cd5e645d6d
+    pristine_git_object: a113788247e8f0866c443c9deb5b10df1625b8ab
+  docs/models/bidlistassociatebehavior.md:
+    id: 5203315fda70
+    last_write_checksum: sha1:b91f6eaa296bdda94a9c815cd375f89f7c542001
+    pristine_git_object: f4145672ccd33956875ef4b75614575a12de7c2c
+  docs/models/bidlistdimension.md:
+    id: c6ea18bd9cc3
+    last_write_checksum: sha1:1adc31c0e5015c447daab34811c7ca9958adec43
+    pristine_git_object: 97c8a5e20bcd1d1c0b9fe0f28e2ebf50e56112f1
+  docs/models/bidlistdimensionoptionsinput.md:
+    id: f6439f6fedcb
+    last_write_checksum: sha1:9210205b1e85e5bb86efb36e69b8d13b2ffc939e
+    pristine_git_object: 68241b75237498473212f5870d3f4302a50e8320
+  docs/models/bidlistsource.md:
+    id: 6bffc05d1e5f
+    last_write_checksum: sha1:ee0105c8865f0e8dfec341b09263bd0ea22e2709
+    pristine_git_object: da407d12c774aea67a3ccabd254fcdeddc853a44
+  docs/models/browser.md:
+    id: 63a908922d83
+    last_write_checksum: sha1:68aa35bfc2575e5d6c71caad0c64eee1559d44d5
+    pristine_git_object: 9c5c64ec454f37ffbf0ab38763cdb3986d646556
+  docs/models/browserinput.md:
+    id: 2fd047342569
+    last_write_checksum: sha1:f1fe8b4d8c60c5233a93519903d450591fc61e38
+    pristine_git_object: 2df19addb75afcd302d45742325f991dccf9879a
   docs/models/bulkjobstatus.md:
     id: 73cecefe3dde
     last_write_checksum: sha1:6cefbbfdef0c8fdd8f760c928c2b8dc23f9a2db5
@@ -317,6 +370,14 @@ trackedFiles:
     id: b70f33aa66e3
     last_write_checksum: sha1:141382a5ff35a2fd75454855dcec6f7eadc56f41
     pristine_git_object: ddd61e19a4bbaff32927ff4d25cf8a6d0f427703
+  docs/models/contentduration.md:
+    id: 7e42a81a11ba
+    last_write_checksum: sha1:9e9528747d48f97999f238b608d4f2cebf6285a6
+    pristine_git_object: 5a3f140717f91c4128573f421535ff50a06c6660
+  docs/models/contenttransparency.md:
+    id: d3dc1bca4586
+    last_write_checksum: sha1:176fa4601a8e7fa4009c121108bce58e976cc0db
+    pristine_git_object: f65cf55779dd49c6abbf02ba28a64b1af8255224
   docs/models/createadgroupresponse.md:
     id: 9bdacf326273
     last_write_checksum: sha1:5553ace8b80684e40a59464cafe235a81906a83a
@@ -345,10 +406,30 @@ trackedFiles:
     id: edc8dd037af7
     last_write_checksum: sha1:43759f45f878460027f8530ee8a168e26aa30bc7
     pristine_git_object: 11bd21d9e8639c634862b3c2e5dc1b7485cfe2a8
+  docs/models/decimalrange.md:
+    id: 5fee2b489be5
+    last_write_checksum: sha1:d375d2d2b352710654eb5c2f642879cbf2811bf5
+    pristine_git_object: 4077637b742f997d44d6e03f9e3d966d647c0199
+  docs/models/devicetype.md:
+    id: 725012c8d78d
+    last_write_checksum: sha1:20c20881e290f869dc2f1b0d32c0548201c6767a
+    pristine_git_object: ae9d9f3b4157742df534b3c5c195ad6085747bc5
   docs/models/dimensionalbiddingdimensions.md:
     id: fd4592736955
-    last_write_checksum: sha1:03b78bf7bae35a201315aa03dccab2823e8d9c82
-    pristine_git_object: 7199a4bf6fe9ff6b025fb4b39d1e2583c7cd0b56
+    last_write_checksum: sha1:d047ecc2c8f482c7af5d406e975cbba356c1ea31
+    pristine_git_object: 39686ff1da203b28ac32ad39154702a418648548
+  docs/models/doubleverifybotavoidance.md:
+    id: 1cb37dfa83d3
+    last_write_checksum: sha1:32c229ea43c55215b6f342796e94ba9f640751b9
+    pristine_git_object: 5623d1c6243e2bc39211876570e61ba56f1d5a7c
+  docs/models/doubleverifydisplayviewability.md:
+    id: 10f447a0876d
+    last_write_checksum: sha1:395bef0c8c7781126ccf96f8ba785a2a1254c53e
+    pristine_git_object: d0b7ee47d51bfd9943f999a3b231e5eb88023c17
+  docs/models/doubleverifyvideoviewability.md:
+    id: d79d69d5a441
+    last_write_checksum: sha1:506be6eb852d3a0a916736431a1150a4256651b8
+    pristine_git_object: 2b6e39d542321f07b5fccbbdd7db2dc1c47bec8a
   docs/models/enhancednielsenreportingoptions.md:
     id: f1e874aa558e
     last_write_checksum: sha1:e070f3abd2d3ad05ec39dfdacad2925b6157cdf9
@@ -357,14 +438,34 @@ trackedFiles:
     id: 609985d29fc3
     last_write_checksum: sha1:668ac05060b09d12f31fd244d28ccd11ff1f6f43
     pristine_git_object: 30b631e367a7ff8d2244890b5e4bdfe2643aab03
+  docs/models/factualproximitytargetinput.md:
+    id: 26f6312e3a95
+    last_write_checksum: sha1:559a5d397f609c848b20a7f451c253456863bfc9
+    pristine_git_object: 5245a3096179f99fe2a8707efbdcbeb6be3d1c3f
   docs/models/firstpartydatainput.md:
     id: fa8f44865cf5
     last_write_checksum: sha1:610a40cf61582d35a74a77fc95b04dba58ecd753
     pristine_git_object: a31c8b8c786a36924cac7b35744f5fc66b120f51
+  docs/models/frequencyadjustmentinput.md:
+    id: eac610448ca9
+    last_write_checksum: sha1:f58678c8e38d1b72a51ecee0bcb3e6faf2134996
+    pristine_git_object: 9564df0ca3c785bb972c28c294abc10ea43ccb0a
   docs/models/frequencyconfig.md:
     id: 40380273680d
     last_write_checksum: sha1:bd9e85d5c126875ec8f2358d29a836e4d075e746
     pristine_git_object: e98fb8942a1c1afd239732469f7673543f3f3c5d
+  docs/models/fullreferrerurl.md:
+    id: 664e2dee9b05
+    last_write_checksum: sha1:8197fd5fa11b5d79182c5a3c0d1d7f80c05bdf21
+    pristine_git_object: 2169508d765050330d0f557653ab2fd84e635d18
+  docs/models/geobidlistoptionsinput.md:
+    id: f89563a6d4c9
+    last_write_checksum: sha1:0318f0f8ed64b5c8294c69605cef3e34da6bfb5e
+    pristine_git_object: 4820992fb73f54f67655c49ebb36c6b9bc7faa4b
+  docs/models/geofencethirdpartydataandbrandinput.md:
+    id: dc1756041408
+    last_write_checksum: sha1:f3d7a4901bf405b216ea4a70803ec8306e677623
+    pristine_git_object: 3ade8ccdccfdef236b800bf92413123f23c5e262
   docs/models/getcampaignversionrequest.md:
     id: 4520d6c17477
     last_write_checksum: sha1:3562faa49b28f0ae7040a41ad1c255986a842765
@@ -433,6 +534,10 @@ trackedFiles:
     id: 7ca0a10e4586
     last_write_checksum: sha1:09d9c91cf41e3b9e867647becda4e437f4f3e3c8
     pristine_git_object: 2c187164ad5f4bf5cc49203cbb81b64b240247a6
+  docs/models/idiosyncraticsegment.md:
+    id: 6dc55ba4e7d0
+    last_write_checksum: sha1:2716f37fda83e807fc7d0a6dd868812caf394142
+    pristine_git_object: 261439e9513cdf2138278c9d9b0f24be3bde743c
   docs/models/incrementalreachbrandinput.md:
     id: 0d894d3a4bb6
     last_write_checksum: sha1:e210789af42b890f13c65885434487bc10dd9fef
@@ -441,22 +546,74 @@ trackedFiles:
     id: 56b3c9704fe8
     last_write_checksum: sha1:2c6956f17a371147b8217087d8f122c37aad6a69
     pristine_git_object: 9d319c9bad5c0c3b22455759699829e6c9d5e95e
+  docs/models/int32range.md:
+    id: 08bf6eb6614f
+    last_write_checksum: sha1:8cb5dbbcd257e2ffa192e0bdd9944823cb29c0b1
+    pristine_git_object: 57d7541a84734a9e01e39547151a2384da13c601
+  docs/models/integralvideoviewabilityinput.md:
+    id: 2bd1c91a4461
+    last_write_checksum: sha1:744928ebc0dc79e41ef1b770a33faf71b7c341a6
+    pristine_git_object: 152189a7c873e47936603fb4270e52451379301b
+  docs/models/integralviewabilityinput.md:
+    id: 300d69412f0a
+    last_write_checksum: sha1:f49c9022645ef3cef0c12b8c797034a11c6b705a
+    pristine_git_object: 3b9d007c05baa315273339cdbf2e2cb1cff3609a
+  docs/models/internetconnectiontype.md:
+    id: 5bf2a222909d
+    last_write_checksum: sha1:279a74981e41ad3c296332173288d340c547548a
+    pristine_git_object: df04e8207c5dadc95609eda81d8f26387f491ae7
+  docs/models/internetconnectiontypeinput.md:
+    id: 5ec4277809a3
+    last_write_checksum: sha1:b11b463c13de2db276bab5b470bc8bdbbc98d8af
+    pristine_git_object: e2769027e70d36432141596b7e60579b67948154
   docs/models/keyvaluepairofstringandstringinput.md:
     id: e21eaecc8f2e
     last_write_checksum: sha1:dbb5974fa5c418a4a90a0619e6fc008bd7f4fd5b
     pristine_git_object: d9cecab7946adcaa0e69f849291d61d770ae3431
+  docs/models/likelyrefreshrate.md:
+    id: 1ad7abe2d159
+    last_write_checksum: sha1:b0dade6b9fc00e497e8845ba286b8eb7f384ea61
+    pristine_git_object: 1591d6353e94a00cb5bcc57274c3b8bc3612ffed
+  docs/models/livestream.md:
+    id: 9e438785bcbe
+    last_write_checksum: sha1:5f307611c66925c7f85cac92e1dbf169b484994a
+    pristine_git_object: 7b3dc07795e463a9333c2361e4d3281678223336
+  docs/models/locationcontexttypeinput.md:
+    id: 54536e9c7442
+    last_write_checksum: sha1:580e2b1ae4085ba26704f75f8868b05967f3f48b
+    pristine_git_object: 7803bba2dd243768503f61bb7788ab44c586ef01
   docs/models/markettype.md:
     id: 3e2a3a298fd5
     last_write_checksum: sha1:3575ddfb91f3dde9e1b487d6f3073fdfea6a0989
     pristine_git_object: 6f8e87dd255c9be317a863dac11cf0aba41bf99d
+  docs/models/markettypebidlist.md:
+    id: f405f026b458
+    last_write_checksum: sha1:fea2ebea4f4f31c1b06c061b656737df0f0aadb4
+    pristine_git_object: f71b91aebaaa6586eacf18f8b9e9ded18ebdf812
   docs/models/markettypeinput.md:
     id: d12085876601
     last_write_checksum: sha1:2ff48c0ec09d0092d706f69109bb8dfd5da0b47a
     pristine_git_object: dc5a42b28bbcbe352b9417a7d0b43c921c7ce896
+  docs/models/multiplematchresolutiontype.md:
+    id: 1ba99559d842
+    last_write_checksum: sha1:0036a05e6c7461ee98993e4696adb58f888e7096
+    pristine_git_object: 474ac01d2449345d4b9421ec7e38b659d0563cea
+  docs/models/nativecontexttype.md:
+    id: d9aa16d172da
+    last_write_checksum: sha1:0a5aa4ba80ec34eea05a2f21c91b2297c7810846
+    pristine_git_object: c49569c944aed4b4b9a0ed26ece9e3fd0a44c892
+  docs/models/nativeplacementtype.md:
+    id: 49964d6172ff
+    last_write_checksum: sha1:0fe37563dc5e736239434e09efa54e5074c145e4
+    pristine_git_object: f3bda424bfcd2a0489554f02f304756911c83c3c
   docs/models/passthroughfeetype.md:
     id: fb9b76f90834
-    last_write_checksum: sha1:c64fd186f247063bd147c602931894233b834894
-    pristine_git_object: 624ea08543d0c1577be4715bab54a9a18c4f580d
+    last_write_checksum: sha1:a1d33ca5c9228558609826ce54d11095d4232c0a
+    pristine_git_object: 1d96885b361a9134b4dbdf9e74700bbe33cf7109
+  docs/models/peer39viewabilityinput.md:
+    id: 8c87e6cbf0aa
+    last_write_checksum: sha1:521a86fae8f24ffad8b3439c19139fac9faf0a67
+    pristine_git_object: ca8aced780fd52274c547c9db1ad9ce46e939d0f
   docs/models/problemdetails.md:
     id: 9a2634c43a19
     last_write_checksum: sha1:a03ec7410fcce855a2841b00431d8ba71df3f742
@@ -465,6 +622,14 @@ trackedFiles:
     id: a0c446405363
     last_write_checksum: sha1:2f58e4df9f4542ed4788168f9e1bd9bcf16eb3b5
     pristine_git_object: edd1350d9fcce462cb1177e93729fd97a6671ee8
+  docs/models/productionquality.md:
+    id: d9ce14a73a18
+    last_write_checksum: sha1:5d2ad86e8dbdeedf9165e26f14a37e17f53f51a8
+    pristine_git_object: 40879a52b3d8c834702d4aac56482ddf70699ab6
+  docs/models/productionqualityinput.md:
+    id: f8719855d555
+    last_write_checksum: sha1:0975f5d1bc39829e1c9f0f736ab84ea50347211e
+    pristine_git_object: c0487bc9a2fd3631ba7f52b7449db647c6be3eec
   docs/models/productlistreportingtypeinput.md:
     id: dd3f92801d21
     last_write_checksum: sha1:127672bada673f946d7e23d5c40803ca7acd3c1d
@@ -477,10 +642,22 @@ trackedFiles:
     id: e1a6ed1de70a
     last_write_checksum: sha1:38d32f0d9a6ec314e4ff01dbd42aeb18dbba8368
     pristine_git_object: 1f04c4916a76d4ddecd225e4781381ec75f50b73
+  docs/models/renderingcontext.md:
+    id: 7a5e76787bb5
+    last_write_checksum: sha1:8940ff245826f527585c5212c192172e3203d993
+    pristine_git_object: aa03bd8e311adbfab76c6a5f1d25736fe284422f
   docs/models/restapimethodtype.md:
     id: 60ab2ab44641
     last_write_checksum: sha1:d2f71b3bcbc978811b83d2e2faf65ac48431a22a
     pristine_git_object: 0fb3eb37ba9d336a7b4b811d7ec7fa17d1d293a8
+  docs/models/rewarded.md:
+    id: cce87c7fa3b8
+    last_write_checksum: sha1:66175bcc9c129de1191f1748fcf36cf5b45d24fb
+    pristine_git_object: 78f4beeb25bdd879b92f61ffb6aaae6fae1f3863
+  docs/models/rtbasiaviewability.md:
+    id: e4764d822124
+    last_write_checksum: sha1:9148b517faef834e4d844b7af7050e2c572e3d74
+    pristine_git_object: 1c59be6814fe1f105c079034dc149f22c2dcc6e2
   docs/models/security.md:
     id: 452e4d4eb67a
     last_write_checksum: sha1:3e93f1c842d02a3435ab584686f216504d80c33c
@@ -493,6 +670,10 @@ trackedFiles:
     id: 1f77f63a8265
     last_write_checksum: sha1:21b20bf896609c951f5e0e787d8bf137c313c3b5
     pristine_git_object: c94421a795d2d313bb9c9656ca404ac52f707f4e
+  docs/models/stringworkflowsoptional.md:
+    id: 388a462560e7
+    last_write_checksum: sha1:a3c7da33c298534e0636f12bf2397d35c0685d38
+    pristine_git_object: 40193e56614654bf6457ad90e56c3dea66a8305e
   docs/models/submitgraphqlbulkqueryjobresponse.md:
     id: 9a4e3e6dd7d8
     last_write_checksum: sha1:95ac70b4156a9d39f1392effefdb1b6209343c70
@@ -529,6 +710,10 @@ trackedFiles:
     id: 95835dc49cae
     last_write_checksum: sha1:a0a94c30b8449ce33e49da98907799d0530b8a36
     pristine_git_object: 248930986d9161f5e402cf2a07e2253299e38691
+  docs/models/tencentpagequalityinput.md:
+    id: b2e8da52c085
+    last_write_checksum: sha1:2fe8724eb5d3032a561373531dbc972e880f3cbc
+    pristine_git_object: 7a2939e5031c004c89079dd45aad2d50c70a6331
   docs/models/thirdpartydatainput.md:
     id: 1fb78ab4ddaf
     last_write_checksum: sha1:d061d1773d65ee1c912ff1cc3eb1701b708edcee
@@ -553,6 +738,34 @@ trackedFiles:
     id: 4343ac43161c
     last_write_checksum: sha1:562c0f21e308ad10c27f85f75704c15592c6929d
     pristine_git_object: 69dd549ec7f5f885101d08dd502e25748183aebf
+  docs/models/videomutedstate.md:
+    id: ba70c3d9680a
+    last_write_checksum: sha1:2b784bd2afda82f74c982418f85acce42fc157ef
+    pristine_git_object: 73d6592386a1b2aeb50186d2e00be7f22bac0957
+  docs/models/videoplaybacktype.md:
+    id: c86c099719c1
+    last_write_checksum: sha1:a505a2cf1ee894bfd2da5825bc5702440140fb42
+    pristine_git_object: ca88e3b476519b7a569a8391ead58f3faaba68ab
+  docs/models/videoplayersize.md:
+    id: 245acd6625d8
+    last_write_checksum: sha1:1408258fd4463b85704db8f36d94c4970dbef160
+    pristine_git_object: 3653c8d2e074c82e972e4f16808e674ede111be3
+  docs/models/videoquality.md:
+    id: fa7d83d8054c
+    last_write_checksum: sha1:9dcb06f6290324afa2b874af8db715ec12b08d26
+    pristine_git_object: 205914dc28d6a129c853dbdac329c6fc301e56ca
+  docs/models/videoskippability.md:
+    id: 251458a8481f
+    last_write_checksum: sha1:fd2ad3764c40f12d9d4ad9dfb456d9dd092afbad
+    pristine_git_object: 9c6ff275a5798ee56b3f082c0929f0a57b506314
+  docs/models/volumecontrolpriority.md:
+    id: 7277706474fc
+    last_write_checksum: sha1:590f1cf807955b9d14ff89b09c7a6feac35722c5
+    pristine_git_object: 1850232072e76fd1e3c391aec41db8857065c96d
+  docs/models/weathercondition.md:
+    id: 0e73e346c2e3
+    last_write_checksum: sha1:c642512019364bdbc311c9bc4e9d7a656a00e8a3
+    pristine_git_object: c17ba5525a1092b45166bf625f652d35fd89b569
   docs/models/workflowcallbackinput.md:
     id: 38b78069e12a
     last_write_checksum: sha1:fa27f48671c6b4665b47466352f0dac9ae51d139
@@ -563,20 +776,20 @@ trackedFiles:
     pristine_git_object: 4d8e028c6c3518f6d4bde3bb5c46dd9f45ff2c45
   docs/sdks/adgroup/README.md:
     id: 8e0c2412ebea
-    last_write_checksum: sha1:e041f2e36fa30460d9fa0f11681a9e30c8771403
-    pristine_git_object: 42fa5cb8c5cc03fc2b8bb68282e49e1cd1e0ac6f
+    last_write_checksum: sha1:275a87afeef7c9358d8cef4b92f619db1e3660be
+    pristine_git_object: 6ebdd7cc063c99323b0267245a267b83a57adfef
   docs/sdks/adgroups/README.md:
     id: 59faf627531f
-    last_write_checksum: sha1:1ae341f48101e47a5ceff049d8eefd975a2a471d
-    pristine_git_object: eb3bb6a695f8531947876fa9a79cdfb1119f85e2
+    last_write_checksum: sha1:7d2bd80b9b65b74848b1c4341291370744604fc2
+    pristine_git_object: 0923c3e4d6a6dddeb72a6c0d8b281901fe9fa59c
   docs/sdks/campaign/README.md:
     id: 7c44530e0eca
-    last_write_checksum: sha1:a11400491fed7951a9f52b37d3d6337444216939
-    pristine_git_object: cb339874680df8d452d299b9140ffcd57c3697a7
+    last_write_checksum: sha1:d45dfa16643c1cf712642eab86cbb7ad268ed161
+    pristine_git_object: 8f1b613e88bb4ae5b20151f4f580ff0020dba6ba
   docs/sdks/campaigns/README.md:
     id: 18dcc3c717ca
-    last_write_checksum: sha1:3fb2bb1570a8774d6fdfeb5d3255ba752e87fbc7
-    pristine_git_object: 96a34f0ee5c4ab680726cad5202eec6753be384d
+    last_write_checksum: sha1:2962ceab5d1cc3d5a8b2e2cf6f2a5d972dba92a7
+    pristine_git_object: d0ea6f25563a199b691b9e227a04f06d942d1604
   docs/sdks/dmp/README.md:
     id: 0b076a846392
     last_write_checksum: sha1:18c2d44f02be88b3217e983c72234111169486d7
@@ -607,8 +820,8 @@ trackedFiles:
     pristine_git_object: cb9c15d314c1930557401074329ed7a737147919
   pyproject.toml:
     id: 5d07e7d72637
-    last_write_checksum: sha1:9376cfe98d304306b9618ec9834fd341e96d0af8
-    pristine_git_object: dacf8a3ba47b92e0531437e293053e2c62f89852
+    last_write_checksum: sha1:583bde7359caeb639b7ab2a7b29242c7a8ad82ab
+    pristine_git_object: 88df7ddf3bf13700ac44f160461000ab949af0f9
   scripts/prepare_readme.py:
     id: e0c5957a6035
     last_write_checksum: sha1:9eebd27076f34cee181d36379e4102aea070e45f
@@ -619,8 +832,8 @@ trackedFiles:
     pristine_git_object: 2a3ead70ccc6228cbae1c5c8a319b1399f3804ea
   src/ttd_workflows/__init__.py:
     id: 37fa7e7bcf8d
-    last_write_checksum: sha1:36306d1d404b6aeb912d27f1d9c52f098ff7bf9b
-    pristine_git_object: dd02e42e4cc509dc90e6ae70493054021faa5f9c
+    last_write_checksum: sha1:eec86b555287a1f966479167defba81fe37be83f
+    pristine_git_object: d028dd22db25a8dfa0f8c44641ceed256e9d9e46
   src/ttd_workflows/_hooks/__init__.py:
     id: 30a4bbfa92ec
     last_write_checksum: sha1:e3111289afd28ad557c21d9e2f918caabfb7037d
@@ -631,52 +844,52 @@ trackedFiles:
     pristine_git_object: d3568b1440cdca3099dfeb1c978963fdf3839f5f
   src/ttd_workflows/_hooks/types.py:
     id: e9c2fb642463
-    last_write_checksum: sha1:908c80d17eb37a017f9e0a225525b2e9f0c16489
-    pristine_git_object: edb32b587a8e40342f5605ed44e58c527d021a39
+    last_write_checksum: sha1:1b953dd48e85e7c01273147caef7434213b21357
+    pristine_git_object: ea151874b99302e58d686f360ab548e58d7e4370
   src/ttd_workflows/_version.py:
     id: 5664ebff5b6e
-    last_write_checksum: sha1:5b25cf295eeea35c93eedae39535e525bb0708f5
-    pristine_git_object: ad0a90af102f17d2a09000b2bf99e8cdc8565412
+    last_write_checksum: sha1:1f20f40d5cae9a4b8cc04fff19ad4fb82cbb1309
+    pristine_git_object: 0ed2ad20e874b7758e9505e346c5e70da0104859
   src/ttd_workflows/ad_group.py:
     id: 3439b8a7a7f1
-    last_write_checksum: sha1:050e14c38f9f7558d4f753daa2aa522e38563487
-    pristine_git_object: ac681c508f26ded08a4bbb42cc17471e4d1baa1e
+    last_write_checksum: sha1:c43ed5971af71c4a8d1aef33123eb3b3bab961a2
+    pristine_git_object: 65def1717a85a251551b091bd5ef18f8f6470ceb
   src/ttd_workflows/adgroups.py:
     id: 62ea0669755b
-    last_write_checksum: sha1:b89883a1f129b7dc774a542d8aab1d91a03f5fc4
-    pristine_git_object: ce90fef4220cffdbd94f0c5bb1c4b5df5e45b0e9
+    last_write_checksum: sha1:6f8db179be2eae15d45ab4a88e397f2a1a5b26ad
+    pristine_git_object: 08f6d884d9cd1e5d7e385383c4d80ae7cc775c8b
   src/ttd_workflows/basesdk.py:
     id: 55f3edb5df65
     last_write_checksum: sha1:8f80c9fd8a3d332ebad4668dac47b1f3e5586d7d
     pristine_git_object: 0694f70c6e39fb5aa543dd1bc7a7e0617884df49
   src/ttd_workflows/campaign.py:
     id: 2b62a5a8a7ac
-    last_write_checksum: sha1:25dde46c051363dbb2e572a955dc4a920d6b3507
-    pristine_git_object: 07c6b1749ab8185a6e9b1fdc33417fd5a23f278a
+    last_write_checksum: sha1:69b82e9eaa4d9c90a6a2f77f4993de171f32ed48
+    pristine_git_object: 2445fff33200fe531dd8ee8732ec06c222c45ec9
   src/ttd_workflows/campaigns.py:
     id: 5180186cb0b6
-    last_write_checksum: sha1:e001de74b95313daaded62762257a58369692f9b
-    pristine_git_object: 722aabd5a126ee66863d176262877017515db016
+    last_write_checksum: sha1:29d1ef0cc9d52438579a819710872ba453e21739
+    pristine_git_object: f2ff00dd8903512d37b48838114c41e2dff562b0
   src/ttd_workflows/dmp.py:
     id: dbdcabfaa6cf
-    last_write_checksum: sha1:dc196883ddf12efe872026e428c8809637f861c2
-    pristine_git_object: 0ae5335bda4d56af03e76a9db1ecc70cac79a8e1
+    last_write_checksum: sha1:e3936ded16d4677fbe467816ad709b2f180cf16d
+    pristine_git_object: 0a7a3789a92c242c45a5352a1b48bebb8825faea
   src/ttd_workflows/graphql_request.py:
     id: 7f5875407e46
-    last_write_checksum: sha1:662f6144035860aca70515057dc259252179d7fc
-    pristine_git_object: e6cf52d07f3c496604958c1bfc8e4fe20d81e5c9
+    last_write_checksum: sha1:1118382d7c465d2af26df2d21a48442601e28c65
+    pristine_git_object: c53f71687dd2cff5f765ed927747df2f1a91322b
   src/ttd_workflows/httpclient.py:
     id: a7dee5e78769
     last_write_checksum: sha1:5e55338d6ee9f01ab648cad4380201a8a3da7dd7
     pristine_git_object: 89560b566073785535643e694c112bedbd3db13d
   src/ttd_workflows/job_status.py:
     id: 3843e125bd67
-    last_write_checksum: sha1:5b758e61ea83e630bd6d05ddc138f52402ca1622
-    pristine_git_object: cedcf87d48ead6f5dbe91723d2b775e0dba4e96b
+    last_write_checksum: sha1:d12d331e735115333ec37d7944a33745b871c473
+    pristine_git_object: 564eb619ac55e99797da174c2672f2d292565b9e
   src/ttd_workflows/models/__init__.py:
     id: 79eeb27997ee
-    last_write_checksum: sha1:41b2561269cdd7d17781b4e6e5140e38a0f35c0f
-    pristine_git_object: 190fa61c42c446ddb4cf3fb23bc660bbe7286064
+    last_write_checksum: sha1:72474662fcda12a44770c02293fe4c5824e35d0e
+    pristine_git_object: e82216dc43c7c30a709620a781710e4da637a54e
   src/ttd_workflows/models/adgroupassociatebidlist.py:
     id: fd552d2c7596
     last_write_checksum: sha1:d807cad436020270ae9bc7cc48b368c2208adbd0
@@ -687,8 +900,8 @@ trackedFiles:
     pristine_git_object: 5f4c7febc7a3520dee4322fec2b8ba079cbeea4c
   src/ttd_workflows/models/adgroupbudget.py:
     id: 78a6e36bb4a0
-    last_write_checksum: sha1:f279146f58de6ee64a0a068df8f3928812076ff6
-    pristine_git_object: 07d0366a48537151466590d25c0b9fdb25c6d48c
+    last_write_checksum: sha1:ad97610f0eab86ee4e97144a836adcc90890e36b
+    pristine_git_object: f1476a60b0d4bc91c12214fcc60016dda3d480cf
   src/ttd_workflows/models/adgroupbulkcreateworkflowinputwithvalidation.py:
     id: a43348a207ee
     last_write_checksum: sha1:a6466d1d7d28414f07f6ff728519b6c363c3393e
@@ -717,14 +930,18 @@ trackedFiles:
     id: a4db208b2e19
     last_write_checksum: sha1:a860637afe3501d13f118e5d4f5266044d02a543
     pristine_git_object: 4456541744be168f097b8f561578fbf9b0025d10
+  src/ttd_workflows/models/adgroupcreateworkflowownedbidlistinput.py:
+    id: 45e83ff4fd02
+    last_write_checksum: sha1:8aa5a1bc8c2a20a36beb9c04ec354f491cfe053f
+    pristine_git_object: 46494736f5bca7bce326e1698b9bb7f2559693e8
   src/ttd_workflows/models/adgroupcreateworkflowprimaryinput.py:
     id: 6f4df950ef19
-    last_write_checksum: sha1:30ce63d9ba3ff39a8906d351bdeb8ad52cc107ca
-    pristine_git_object: 3e32f49ff8c792792b59a9172c203822134a07c3
+    last_write_checksum: sha1:72bcf7c4f9ed7b5b64cf0a0a76bd88791ac00380
+    pristine_git_object: 652cf2277134c9ea9bfdf37e32507cb9df056072
   src/ttd_workflows/models/adgroupflight.py:
     id: a6188bc550f0
-    last_write_checksum: sha1:fc7dd8754762fd5dad55a247d911bcec465c7bca
-    pristine_git_object: ece189dffbce4445dd187999536f8055d64082fd
+    last_write_checksum: sha1:76ab53e5d00db0e699e41cc426773463faf21e1c
+    pristine_git_object: d84404944157ae2dc032113572e8efc883265850
   src/ttd_workflows/models/adgroupfunnellocation.py:
     id: 26b4f40bc27e
     last_write_checksum: sha1:78d81225966e8d0978f257a88f08560469312031
@@ -737,14 +954,18 @@ trackedFiles:
     id: c09071aa9963
     last_write_checksum: sha1:ce7ceb0026389503309a81693188e0e84633b695
     pristine_git_object: 16a871916e4835b3a384484418e5a8e805102d29
+  src/ttd_workflows/models/adgroupownedbidlist.py:
+    id: 57e46181cb2c
+    last_write_checksum: sha1:7211b9d27f3f2fbed6ba48fa8f117c312371a5a8
+    pristine_git_object: 59057808434642d3bd34c0055fded7dbec7d3e21
   src/ttd_workflows/models/adgrouppayload.py:
     id: 1982a1b3f0b7
     last_write_checksum: sha1:ff762605a3806c101413f264f3cac833c9308e2e
     pristine_git_object: 78ed5d92ab97d786cf7db969e7157aa8aa33b6e4
   src/ttd_workflows/models/adgrouproigoal.py:
     id: 11f4184dd4f9
-    last_write_checksum: sha1:35c26cab882ba5df83f9eecf5125d351946a5bf3
-    pristine_git_object: 89d5657560b33916e0869265bb01bd10ecb8be96
+    last_write_checksum: sha1:1e3aade99476fca86bfa717476a96fbe27904a19
+    pristine_git_object: 7b0dd26e0b074b942dcacb392c03b0cc27baa882
   src/ttd_workflows/models/adgroupupdateworkflowinput.py:
     id: 42086610c07f
     last_write_checksum: sha1:890cb0fa1b5baef5836355f1fc05b29416700ae4
@@ -759,8 +980,8 @@ trackedFiles:
     pristine_git_object: 8b1f35386fb9bf8369d234c95412ba0caa32a5cb
   src/ttd_workflows/models/adgroupworkflow.py:
     id: e14b9169793e
-    last_write_checksum: sha1:eb5b97e34de973c48c52a710f6c59b61ba1dbcec
-    pristine_git_object: ff2d244b3664782fde66f8c8b52bb4b65e73bc06
+    last_write_checksum: sha1:571dc7fd29b2c0d74584c693811dfc51f820da0e
+    pristine_git_object: 5d977e1a4d93a11abce75534e8fa7370458138c9
   src/ttd_workflows/models/adgroupworkflowadvancedinput.py:
     id: 39de78598924
     last_write_checksum: sha1:a0646790c5f32f2b22cee60133c789e43ebe72cf
@@ -771,8 +992,8 @@ trackedFiles:
     pristine_git_object: 1e2e777c370e0e6f3f374ce41d71f0567f58be92
   src/ttd_workflows/models/adgroupworkflowaudiencetargetinginput.py:
     id: cd2a04bd8d31
-    last_write_checksum: sha1:0332805c236c72e84c36b936ef04e007776e3949
-    pristine_git_object: 29bd9167f2131a0ff9a5b7ffb14ce328a4601c8a
+    last_write_checksum: sha1:323e88d3af4bceff83f76d62f3f84d1c0df727a0
+    pristine_git_object: ff19115feced29e13508e37a2186406871443192
   src/ttd_workflows/models/adgroupworkflowbudgetinput.py:
     id: effa54a3eb73
     last_write_checksum: sha1:7f7d6b1e1b020d9ba0138dbbee864f16fa7b7151
@@ -807,8 +1028,12 @@ trackedFiles:
     pristine_git_object: 93c1e4088b6b60ccf14ef907ed46cee75d660efe
   src/ttd_workflows/models/adgroupworkflowroigoalinput.py:
     id: 2ba6148a555f
-    last_write_checksum: sha1:d5660023a90a9868d4fcfae1f39defb36a324c07
-    pristine_git_object: e491719825d8f76311bd811316d368d0ce109fd8
+    last_write_checksum: sha1:baf1d2f6c862d972f1d3b7ddd08e06f9a1d39760
+    pristine_git_object: 7df68b4e3952802ffd7d7c8e2053c8901293b326
+  src/ttd_workflows/models/adstxtsellertype.py:
+    id: ede9c4aab3ba
+    last_write_checksum: sha1:de02cf2258f891b0efac50cb4e780ea1a1b9ba4b
+    pristine_git_object: 5a0480a208e82372f092b4092d022d3b8f24c566
   src/ttd_workflows/models/allocationtype.py:
     id: 525c597c17c7
     last_write_checksum: sha1:8689d34ca6c9b968c6d6b0dcb5e56c3feaf2a94a
@@ -825,6 +1050,46 @@ trackedFiles:
     id: 6eaaf71ad5b6
     last_write_checksum: sha1:96cb1ae827db894ee356ca564d9447b230fe613c
     pristine_git_object: f1d703ccd2e879e3362ec2a2b70570d916fdba0d
+  src/ttd_workflows/models/atmosphericcondition.py:
+    id: 2089db52116c
+    last_write_checksum: sha1:79d4f2e770c481f45cce8deb3a83014a8aa12ec3
+    pristine_git_object: cfd232e81a60aa5c66f6ecfc9a688557eb4a51e3
+  src/ttd_workflows/models/audiencereachpercentagetier.py:
+    id: 0f3aef1a9236
+    last_write_checksum: sha1:926e181a6454ad2305799649c4a85e08f32d8d62
+    pristine_git_object: 5221ee5fe49885946741200901fc578aeca16a56
+  src/ttd_workflows/models/bidlinecreateinput.py:
+    id: a1449a976b62
+    last_write_checksum: sha1:cdb52e8a4d30f7a3f013233d735f99d88da01670
+    pristine_git_object: 3f6ccd815ce8732c3e40a3192b64dc7a0bdea570
+  src/ttd_workflows/models/bidlistadjustmenttype.py:
+    id: a65554fc8068
+    last_write_checksum: sha1:351590ea773af7f0150baac6fd7aca0c32fc064c
+    pristine_git_object: e88a71f309a95ee80538f610a909c83d79bc8d39
+  src/ttd_workflows/models/bidlistassociatebehavior.py:
+    id: cdf3363fa3f8
+    last_write_checksum: sha1:45b3aeb8e261ebb46c2380b0f8949b375fcbe2bd
+    pristine_git_object: d4ec3340be09dbc4b7f408589806ba3f63a2ef90
+  src/ttd_workflows/models/bidlistdimension.py:
+    id: 71d7cf673147
+    last_write_checksum: sha1:b022a7b74e0a2f78a61d025a36ff7cc14dc2623e
+    pristine_git_object: 2c05179eeda81b606b0a63242b7a36be239b8310
+  src/ttd_workflows/models/bidlistdimensionoptionsinput.py:
+    id: 4b1a6182f4e2
+    last_write_checksum: sha1:09aa6dfa959a68a9f9978c45ff8f2cb7e6492efd
+    pristine_git_object: ab2c7ca7f5671df4ccb1547aa15ecf8ce3429b72
+  src/ttd_workflows/models/bidlistsource.py:
+    id: 17acb8c0ae38
+    last_write_checksum: sha1:ea142aae560c09884b13a0190340da38427f00f1
+    pristine_git_object: 90b23584abbad7ba7dbc85e383f000491e2904e2
+  src/ttd_workflows/models/browser.py:
+    id: 48f64a8f6338
+    last_write_checksum: sha1:9f641922406daa38d0393379bfc40d521a6e94c1
+    pristine_git_object: 2ff685f6aeb96c8c7cb0549d361523e0acc6599c
+  src/ttd_workflows/models/browserinput.py:
+    id: 4920ee33e7e3
+    last_write_checksum: sha1:540042a276852526e031e649045c4164311ff1c3
+    pristine_git_object: 36cb66923ebd459807e42a1d857396bb600559e3
   src/ttd_workflows/models/bulkjobstatus.py:
     id: 9d4006edca0b
     last_write_checksum: sha1:c80b6236f751282b33e2b994f58ce40696ba5c70
@@ -939,8 +1204,16 @@ trackedFiles:
     pristine_git_object: 7c2bc7ca1a3b73669eb9518dad63a0d444362f43
   src/ttd_workflows/models/campaignworkflowroigoalinput.py:
     id: 09b998234a37
-    last_write_checksum: sha1:4d8c2981c2de85737bbaeca16bbd5540aaa38ec3
-    pristine_git_object: 9670ab3ba13c5ff591253b98698f11dd6c22635e
+    last_write_checksum: sha1:882c5fafe0c8dbce5fbbcbf34e2fd10341df19d0
+    pristine_git_object: fffc503a9471d9c1d6553859f6c05053b707d364
+  src/ttd_workflows/models/contentduration.py:
+    id: 75eb92059510
+    last_write_checksum: sha1:574d52b80ec4e915b7b4545d863b277a2def4aa7
+    pristine_git_object: 519058639988c37eccef9a3d13392799105dab93
+  src/ttd_workflows/models/contenttransparency.py:
+    id: d34de93e0a7c
+    last_write_checksum: sha1:74e3a33fa0b69a8796f6ae6f8c67e7f8e6854b43
+    pristine_git_object: 0118a06371ca365f34e4e422f62818b6604fb502
   src/ttd_workflows/models/createadgroupop.py:
     id: c1f8606dbd97
     last_write_checksum: sha1:7e5479f1e86ad8f5fe2fa3adef099c89b90474db
@@ -969,10 +1242,30 @@ trackedFiles:
     id: b50f3660ee27
     last_write_checksum: sha1:2509fa5ecd7dce85a657745d08e3057ab6f78a64
     pristine_git_object: 697c20a08fa87993d2b452d2cfe782acf81b404f
+  src/ttd_workflows/models/decimalrange.py:
+    id: 1cc9f7c44f55
+    last_write_checksum: sha1:4cfd7f3d674c74453faf278079bc45b6f11955f5
+    pristine_git_object: b8c398bb16022a6f516f8f1ccc04b15bf2007005
+  src/ttd_workflows/models/devicetype.py:
+    id: ef8708e2ae2a
+    last_write_checksum: sha1:42d3bc6bd96773e178531ea256edb10f9b67f857
+    pristine_git_object: d3c80fa59afbca5fbd1f906a63c32b67ba3dd4f9
   src/ttd_workflows/models/dimensionalbiddingdimensions.py:
     id: 70ec768eb560
-    last_write_checksum: sha1:f6ddc67e45c09c64383f31eeb80bc07452fd5b2b
-    pristine_git_object: 70ac2386f7dcd50aefeea8efc0974317c2f073e9
+    last_write_checksum: sha1:88d835434ad63ceb2d32075bd4aeec2691f49c01
+    pristine_git_object: f32fdc1d790bf71d36abb87d92e64cfce70a09e0
+  src/ttd_workflows/models/doubleverifybotavoidance.py:
+    id: b655ec12953e
+    last_write_checksum: sha1:5a79a37d109cdca7b279ff32772b02ddc1d1b443
+    pristine_git_object: 1156b752b1bb75a710c0065053c2bb8382930332
+  src/ttd_workflows/models/doubleverifydisplayviewability.py:
+    id: f0e5168d5b55
+    last_write_checksum: sha1:5935a2e8a1dc8bb66656fbce51ff52bb60747f35
+    pristine_git_object: c0750a232ed0b4464a22899168937205af170045
+  src/ttd_workflows/models/doubleverifyvideoviewability.py:
+    id: 29e06ca9d240
+    last_write_checksum: sha1:560287d35cb3d1d4aba0ce5b5fcdcd545083961b
+    pristine_git_object: 19b85ddb4e42047fde48fc66c999bd02c056f77d
   src/ttd_workflows/models/enhancednielsenreportingoptions.py:
     id: 338efb6136c0
     last_write_checksum: sha1:db2f41e1274f3aa891843164c4858ad4c9c2cfaf
@@ -981,14 +1274,34 @@ trackedFiles:
     id: acaacede98c2
     last_write_checksum: sha1:e9fe6dcf88ee71e576f64b8fc2abcae7861b22fa
     pristine_git_object: 8a011e38b4f839c1a820ca8a49a53e61bf26cc80
+  src/ttd_workflows/models/factualproximitytargetinput.py:
+    id: df812c2c8459
+    last_write_checksum: sha1:54f86ae84aacfa103fcac1871b0a85a15a9683cc
+    pristine_git_object: f0b8ea4b968865410a68d605c8864bb63d81c259
   src/ttd_workflows/models/firstpartydatainput.py:
     id: 3b48af5975f9
     last_write_checksum: sha1:0eac846e3af2552d144319051c26dead550a514f
     pristine_git_object: 80e968aa52cc31a2f46602eaaaa3f9eb58c6eb1a
+  src/ttd_workflows/models/frequencyadjustmentinput.py:
+    id: 5abd69010895
+    last_write_checksum: sha1:10cbf67b61339ee080e88759f71f796473e24043
+    pristine_git_object: 4bc2354a87228a8be9d00b219bffb00ac8e7cfed
   src/ttd_workflows/models/frequencyconfig.py:
     id: 47fd578f370e
     last_write_checksum: sha1:c5166eb9770ba89452e19d115b314e3c4b5863ed
     pristine_git_object: 9fd05c5f6be6b480841f4e026f4f28a66b40127a
+  src/ttd_workflows/models/fullreferrerurl.py:
+    id: 0beba204769b
+    last_write_checksum: sha1:fc51c0466d242a85013dc260314b3c30b9e6778e
+    pristine_git_object: 1c853e10ad3426e90a9966a817b92f6ccdfccace
+  src/ttd_workflows/models/geobidlistoptionsinput.py:
+    id: 2942cec936b5
+    last_write_checksum: sha1:9edb435d57587a0ca3b79316b36ebe1ee64ebde9
+    pristine_git_object: 11064f3d7c77a0650d2acb62e18dd38de09b54b7
+  src/ttd_workflows/models/geofencethirdpartydataandbrandinput.py:
+    id: 0614d6f8bb4e
+    last_write_checksum: sha1:eb47dc8c5a032589c91cafa0ed54cebcd61ea7b1
+    pristine_git_object: 5b7a01643a9c0b42b3261a416f6dbf9c8536743b
   src/ttd_workflows/models/getcampaignversionop.py:
     id: 235842ca615d
     last_write_checksum: sha1:465336eff309bc2d599715d8174a54c75a354495
@@ -1045,6 +1358,10 @@ trackedFiles:
     id: 32a0fd5b6d21
     last_write_checksum: sha1:ac8dea94ccf520c3f50465ab4dd0288725db2a19
     pristine_git_object: 59aa79175681ead334ea4af7d0ea0ab8adebba39
+  src/ttd_workflows/models/idiosyncraticsegment.py:
+    id: d6df3d59addb
+    last_write_checksum: sha1:ab6a583978e1824a9bd1d450016af939ee1062e3
+    pristine_git_object: 1280965239fbb96c6dcf31edf76a1bdcd3bce019
   src/ttd_workflows/models/incrementalreachbrandinput.py:
     id: 94b38bc58a49
     last_write_checksum: sha1:f9a988973c33f14f9aaa35be8e39cf04fc458371
@@ -1053,26 +1370,78 @@ trackedFiles:
     id: 0f714afc180a
     last_write_checksum: sha1:531b689a20c384a707d1df6496e180dba1f4d224
     pristine_git_object: d3f0df5460d2509f8b49680d3adf7c7ad1f3aa07
+  src/ttd_workflows/models/int32range.py:
+    id: 44c23c7744f6
+    last_write_checksum: sha1:5a3f9d4093057cee5e0509dca5e2e44f372857b3
+    pristine_git_object: a6245e5f0eb3a673236d0ea0f5fb5372a6087a8c
+  src/ttd_workflows/models/integralvideoviewabilityinput.py:
+    id: 83d0b2123059
+    last_write_checksum: sha1:60b56d50ce6bc98018ceafb8228ebf6586dacacd
+    pristine_git_object: 4c8f76035080128410df04bae9701dfc0f7b195a
+  src/ttd_workflows/models/integralviewabilityinput.py:
+    id: 98de27d58062
+    last_write_checksum: sha1:2e27943040787a09fb4edb103c68cd8a538cf175
+    pristine_git_object: 6b822b4b4ad4d225ea4abb4349abf4c95339afc0
+  src/ttd_workflows/models/internetconnectiontype.py:
+    id: d1bca0d55516
+    last_write_checksum: sha1:946fd44648ec8b5481a8f2a09147369dcbb031a0
+    pristine_git_object: 36439a14d6598a91dcfe12bf7975949893f7c0e4
+  src/ttd_workflows/models/internetconnectiontypeinput.py:
+    id: b476e818d85a
+    last_write_checksum: sha1:ed04ae5ae202f1be95db688e34df87a9cff63ea7
+    pristine_git_object: fe3510a0c43fffc1cf846ecfdcb56514825b121d
   src/ttd_workflows/models/keyvaluepairofstringandstringinput.py:
     id: 29e351e41556
     last_write_checksum: sha1:37f27004e595b9b3b0d72398fb2325ded76665f3
     pristine_git_object: ae296b2ae468408cf6d28a74380bc07d3ad23d90
+  src/ttd_workflows/models/likelyrefreshrate.py:
+    id: ecc071f38be3
+    last_write_checksum: sha1:b2e0be38c4e4780888da56872059bf69e52574bc
+    pristine_git_object: 886ef970fd59d5be085e8f2b9e85d1c2231fd9de
+  src/ttd_workflows/models/livestream.py:
+    id: 3813a898c93d
+    last_write_checksum: sha1:c1757e369bd4dbefd5444c7dd5a792057646bfb8
+    pristine_git_object: 8bd3e299eb4d3df230b8dca73d1c0a64a5b60413
+  src/ttd_workflows/models/locationcontexttypeinput.py:
+    id: 3e4db35ea127
+    last_write_checksum: sha1:03ee912101eb6f6f56c0ac7faa3863611230a828
+    pristine_git_object: 69c77cca6ccfd8319d4c7e33102d245252f6874b
   src/ttd_workflows/models/markettype.py:
     id: 814609c43b5d
     last_write_checksum: sha1:87d28a39357fa2472cb38dedbe7bb120b34af871
     pristine_git_object: cdc5e4bd2511fe05956147b6d01a1cb398e9bcd5
+  src/ttd_workflows/models/markettypebidlist.py:
+    id: 2acf45b6f54b
+    last_write_checksum: sha1:fbf0802a61c2d1fb64c1f40bf87b9089e2d5f780
+    pristine_git_object: f7ccf53bfbf1f9e1d1d3cc8344bb756683a5458e
   src/ttd_workflows/models/markettypeinput.py:
     id: c4fe62c22239
     last_write_checksum: sha1:c934f13d1e5228dbbe28cbad8b6caa10fc387ba1
     pristine_git_object: b8fa23e404bba1e076557fcb4d31c6138d21eddd
+  src/ttd_workflows/models/multiplematchresolutiontype.py:
+    id: 2223c5be67d6
+    last_write_checksum: sha1:e91a9a58be3c82d781f79fa691b55cd48c361a92
+    pristine_git_object: 1a7d8cae3558f6ab9d4ee2ea8a15d1f624f8a2c2
+  src/ttd_workflows/models/nativecontexttype.py:
+    id: 73c2ffdfa8b2
+    last_write_checksum: sha1:3a6b835477771df1c393a5f112910c4b8926944c
+    pristine_git_object: 47cb04eee40f2897e9f0ca765bfdd5b7253b7484
+  src/ttd_workflows/models/nativeplacementtype.py:
+    id: 73a7c8cef930
+    last_write_checksum: sha1:5a8be47b7eb6b441c647d078b640e59fd6298010
+    pristine_git_object: 5e597280cb5107086e5454de6dbb961e8fd56685
   src/ttd_workflows/models/no_response_error.py:
     id: 48eaa114e151
     last_write_checksum: sha1:7f326424a7d5ae1bcd5c89a0d6b3dbda9138942f
     pristine_git_object: 1deab64bc43e1e65bf3c412d326a4032ce342366
   src/ttd_workflows/models/passthroughfeetype.py:
     id: e35f2fb8e90a
-    last_write_checksum: sha1:181ce6d9e9fded33fbc83bc3b46f16d11e924709
-    pristine_git_object: 74b2e81f52fef5900fa028fd9b2b17c10559b2df
+    last_write_checksum: sha1:a1800ed84401043caa8d966843a5f57294958e0b
+    pristine_git_object: 3575af9e69a41f05c8e188d201fa80ab70f4000f
+  src/ttd_workflows/models/peer39viewabilityinput.py:
+    id: ca360555b6d1
+    last_write_checksum: sha1:3200feda3eab05dd816d818a530e0aefb8e5a42d
+    pristine_git_object: e180ae549b3f3d36a667d125f561da23aa713c0d
   src/ttd_workflows/models/problemdetails.py:
     id: fc541ceb5912
     last_write_checksum: sha1:09f0da4aca771f27fd455f19bc255200fcc476cf
@@ -1081,6 +1450,14 @@ trackedFiles:
     id: "325919308502"
     last_write_checksum: sha1:75c22fd9571df60523dbe355273177d2cf0a5d1c
     pristine_git_object: 51b0e6f1c9c3f3c377e01dc38f5bac2bbf192823
+  src/ttd_workflows/models/productionquality.py:
+    id: 188a56776cb0
+    last_write_checksum: sha1:d0e0fa1a5c046eb798ccd5e6ceb00f0dbb33eae9
+    pristine_git_object: 04e41a53fb229eaa34dee17d6618622e7895109f
+  src/ttd_workflows/models/productionqualityinput.py:
+    id: e583997d7b9e
+    last_write_checksum: sha1:89c96000419047ff7d8ceb0e3a94da8ca1ca6a94
+    pristine_git_object: 1af9f51f57362db1811bc885855952b55c064d15
   src/ttd_workflows/models/productlistreportingtypeinput.py:
     id: 1f7fcfa4fbde
     last_write_checksum: sha1:350a4d71b0f843c84719e512d5935d885d50fbcf
@@ -1093,6 +1470,10 @@ trackedFiles:
     id: d4060ac01cb3
     last_write_checksum: sha1:aa8bb676bcc4ca1c072a48b2c835a3067b3a10b5
     pristine_git_object: e21df6b18bd024f1c53610e87b4431cd26e6a997
+  src/ttd_workflows/models/renderingcontext.py:
+    id: 45ddeabdbc29
+    last_write_checksum: sha1:24ca41a58b216c50b91fb7fd2b2aadc2d8b967a3
+    pristine_git_object: b7549ccf0f494ccc36b1f05bc8aa5730f429f000
   src/ttd_workflows/models/responsevalidationerror.py:
     id: 675fb7eb40ad
     last_write_checksum: sha1:d303ac8efad7f58b3cf79c8126f4c6ffa7bff6cf
@@ -1101,6 +1482,14 @@ trackedFiles:
     id: d8e5c2ab4849
     last_write_checksum: sha1:7d69632281e7aacf2d919166756628a1963726ee
     pristine_git_object: ada4883079be43ba70e61bb1e385d6caf8a6ee24
+  src/ttd_workflows/models/rewarded.py:
+    id: 64a24db1b270
+    last_write_checksum: sha1:a1ed2c279e0337cdfeb7dcdf857aa928b4deca71
+    pristine_git_object: ae6c50e884975ad33f9d6eb517521d9e5c6013c9
+  src/ttd_workflows/models/rtbasiaviewability.py:
+    id: 1b454e4f2b13
+    last_write_checksum: sha1:75213d6503f5c733339a879c62813d80f512390e
+    pristine_git_object: bc8f8d45e3a3437de4db9646b50a8f888151c512
   src/ttd_workflows/models/security.py:
     id: 0c49d437cd85
     last_write_checksum: sha1:27db475871ff92d6cf6c0456499dbefba02f3069
@@ -1113,6 +1502,10 @@ trackedFiles:
     id: 691c38c6973d
     last_write_checksum: sha1:eb7283c411ffa196d7fd9a44e142569d33c6ee5a
     pristine_git_object: 69f4e3c27937a7987d4a62b84626a243567c2f9f
+  src/ttd_workflows/models/stringworkflowsoptional.py:
+    id: d1c25a72303f
+    last_write_checksum: sha1:3056351e9383c708b77a81d77c11e3ed515288f9
+    pristine_git_object: 177faf7673497d005e88f0ff75896d4d1cb94fb2
   src/ttd_workflows/models/submitgraphqlbulkqueryjobop.py:
     id: a50c2c6d5a6d
     last_write_checksum: sha1:cb50ae9ab6229762d4c43cf5be10a46220816ba9
@@ -1149,6 +1542,10 @@ trackedFiles:
     id: 65c8cf4adef7
     last_write_checksum: sha1:4d909f7eba24b427ba04d45a0202e3ac0f424ea0
     pristine_git_object: 9039213e9cf178ec451d8ffb8453d24f3caeeee1
+  src/ttd_workflows/models/tencentpagequalityinput.py:
+    id: 0db5bbdc2780
+    last_write_checksum: sha1:e96097e662d50ae08664194b8169c59843439976
+    pristine_git_object: 09f582214ba79cbe1a35dfb93aede37e822e7648
   src/ttd_workflows/models/thirdpartydatainput.py:
     id: 655bb82a1cdb
     last_write_checksum: sha1:5ec922bd38603b75904f0002e45d6b5ef9b701ac
@@ -1169,6 +1566,34 @@ trackedFiles:
     id: 5657cd7d5003
     last_write_checksum: sha1:43eb269765c971d98437ab97b4a8b8533fe76bf0
     pristine_git_object: 484730f6fc4bb3e3e8263aa03c4affa8b15166ab
+  src/ttd_workflows/models/videomutedstate.py:
+    id: cddd52dbc2e4
+    last_write_checksum: sha1:2ec0ff4601113ee243c29c5f2d985a0dfb32bf6c
+    pristine_git_object: a38c7c59e29fb1a52bf3867ef6ddbe03535b21c9
+  src/ttd_workflows/models/videoplaybacktype.py:
+    id: 8ad2040a9da6
+    last_write_checksum: sha1:0d6d13803bf5ac7894e07a4b8005e4ea6b5a5230
+    pristine_git_object: 1b5b428b36837ba3b989262487e93d14114573db
+  src/ttd_workflows/models/videoplayersize.py:
+    id: a1a104456571
+    last_write_checksum: sha1:35f6f880c2e36d26fa19cc3a3b00c8300f138ecc
+    pristine_git_object: fab16ae6ffc00787fb59a31fd1a86a45ea53f82e
+  src/ttd_workflows/models/videoquality.py:
+    id: 35db8813f7b7
+    last_write_checksum: sha1:e4a5f0dadad094595d1ae25c3ecd224371adf4a1
+    pristine_git_object: 07fb667a3f34d26672266bf689a39f6143cb197f
+  src/ttd_workflows/models/videoskippability.py:
+    id: a95488bb7d2a
+    last_write_checksum: sha1:96717fac60d1b4bc2ba7663fb7afcc72c3a505b0
+    pristine_git_object: ed96b3eec91b07d6d274652b24f4f61b6ccf300c
+  src/ttd_workflows/models/volumecontrolpriority.py:
+    id: 8c1727fdbd7d
+    last_write_checksum: sha1:b648a9e19e8fd9401c9eda50e79dd912f457bd14
+    pristine_git_object: 48d476957c2d86fea9072b1d4f144551b106cefe
+  src/ttd_workflows/models/weathercondition.py:
+    id: d306575c00b2
+    last_write_checksum: sha1:636d1754468af8abd217f1050a70352ad8f0b015
+    pristine_git_object: e2bee36b3aeaf43db642c18422b5404b85d5d4f7
   src/ttd_workflows/models/workflowcallbackinput.py:
     id: 4669e0e53a00
     last_write_checksum: sha1:c55878848d57e98948048e731f108bec34c220b3
@@ -1187,36 +1612,40 @@ trackedFiles:
     pristine_git_object: 3e38f1a929f7d6b1d6de74604aa87e3d8f010544
   src/ttd_workflows/rest_request.py:
     id: b465d7d9fd11
-    last_write_checksum: sha1:71d8fe20211ea2551ae07fa74ee4ccaa38cb3601
-    pristine_git_object: c15e6732da9215da74f5bf78d0b26ae7e66a77e7
+    last_write_checksum: sha1:4d245a67becdceb3f532d451d095eb0d3135ada4
+    pristine_git_object: 71f8ff4cd671f71d10d6227111a43d12ea750a1c
   src/ttd_workflows/sdk.py:
     id: cdce0760579e
-    last_write_checksum: sha1:e1b93c930ba66a374c80a9de5560e4a9907f9487
-    pristine_git_object: b2e93e883891ec608d013fc6ca9e7c23614f5793
+    last_write_checksum: sha1:076abe8fcbfdab2ae303b146a5f2c33698c0816d
+    pristine_git_object: 8973e8219836597752322f0a3833f678313df110
   src/ttd_workflows/sdkconfiguration.py:
     id: 16b01c739bea
     last_write_checksum: sha1:1faaf0c607157c7a8cdf0e8e568bc474bec8fe0c
     pristine_git_object: 81318ac9b274d8f220c272284b166735f1a9e7e7
   src/ttd_workflows/types/__init__.py:
     id: 1c43829fe82e
-    last_write_checksum: sha1:140ebdd01a46f92ffc710c52c958c4eba3cf68ed
-    pristine_git_object: fc76fe0c5505e29859b5d2bb707d48fd27661b8c
+    last_write_checksum: sha1:f9ad14217f832e74f594285960125add50324be9
+    pristine_git_object: faa268137bc01c9d08cfadc4797017db48747a96
+  src/ttd_workflows/types/base64fileinput.py:
+    id: f791efa4bc63
+    last_write_checksum: sha1:1522687ae3398374c35710cad993a6e82b5ab99d
+    pristine_git_object: 862566fe2b1db830276b390e136e65090e5963d2
   src/ttd_workflows/types/basemodel.py:
     id: 80248e109351
     last_write_checksum: sha1:10d84aedeb9d35edfdadf2c3020caa1d24d8b584
     pristine_git_object: a9a640a1a7048736383f96c67c6290c86bf536ee
   src/ttd_workflows/utils/__init__.py:
     id: a9f65cd2e166
-    last_write_checksum: sha1:0f93d821f9cb3e061ea125d881bb6f61166738dd
-    pristine_git_object: aded7597c2bbc4e3fa7f555755d894671ac57741
+    last_write_checksum: sha1:e6fb1146e02dbccdc147eb3724b57e71568b8391
+    pristine_git_object: e115709b0c3b707de93b00ecf707f85fb1abf1d1
   src/ttd_workflows/utils/annotations.py:
     id: 405b51daeec6
     last_write_checksum: sha1:a4824ad65f730303e4e1e3ec1febf87b4eb46dbc
     pristine_git_object: 12e0aa4f1151bb52474cc02e88397329b90703f6
   src/ttd_workflows/utils/datetimes.py:
     id: 758b2b303693
-    last_write_checksum: sha1:c721e4123000e7dc61ec52b28a739439d9e17341
-    pristine_git_object: a6c52cd61bbe2d459046c940ce5e8c469f2f0664
+    last_write_checksum: sha1:dcbdac8f63789f5d41b64d4d0515db77961e1d0c
+    pristine_git_object: 688c29a59b33a38c3b8bd3276f89c98483fcdb58
   src/ttd_workflows/utils/dynamic_imports.py:
     id: 150cffb9d97c
     last_write_checksum: sha1:a1940c63feb8eddfd8026de53384baf5056d5dcc
@@ -1227,12 +1656,12 @@ trackedFiles:
     pristine_git_object: 3324e1bc2668c54c4d5f5a1a845675319757a828
   src/ttd_workflows/utils/eventstreaming.py:
     id: 933fd7a5988b
-    last_write_checksum: sha1:620d78a8b4e3b854e08d136e02e40a01a786bd70
-    pristine_git_object: 3bdcd6d3d4fc772cb7f5fca8685dcdc8c85e13e8
+    last_write_checksum: sha1:7d1dc68f8b48486ab646653aa05cc38752e1f912
+    pristine_git_object: a8d4fe5cc88d3c7337339e1b36a61bbf7ca8c4eb
   src/ttd_workflows/utils/forms.py:
     id: f960e946eaac
-    last_write_checksum: sha1:15fa7e9ab1611e062a9984cf06cb20969713d295
-    pristine_git_object: f961e76beaf0a8b1fe0dda44754a74eebd3608e7
+    last_write_checksum: sha1:a971cdb120ad3d416d296d5d0ad89e4808350a7f
+    pristine_git_object: fdf0dc9b2a67bca773eefe6b471498cccaa83424
   src/ttd_workflows/utils/headers.py:
     id: 204fa4a6b366
     last_write_checksum: sha1:7c6df233ee006332b566a8afa9ce9a245941d935
@@ -1251,32 +1680,32 @@ trackedFiles:
     pristine_git_object: c04e0db82b68eca041f2cb2614d748fbac80fd41
   src/ttd_workflows/utils/requestbodies.py:
     id: 2bd37b0150df
-    last_write_checksum: sha1:41e2d2d2d3ecc394c8122ca4d4b85e1c3e03f054
-    pristine_git_object: 1de32b6d26f46590232f398fdba6ce0072f1659c
+    last_write_checksum: sha1:e1fef575283b7fe7fe2ad392dbbb3fb105309124
+    pristine_git_object: 591415af8e64baa410627b507d2740afb5387d13
   src/ttd_workflows/utils/retries.py:
     id: e684f07917dd
-    last_write_checksum: sha1:471372f5c5d1dd5583239c9cf3c75f1b636e5d87
-    pristine_git_object: af07d4e941007af4213c5ec9047ef8a2fca04e5e
+    last_write_checksum: sha1:251e4dd969bb6c06025afe1bad1b5035e94c2060
+    pristine_git_object: 406c1e7c36c7a4fa4fb48bb567d254e2803e1792
   src/ttd_workflows/utils/security.py:
     id: c51116786ae9
     last_write_checksum: sha1:d2e654cdcd25e77eeddd95e287472bd574db5b6c
     pristine_git_object: 1fb172851d095f69f0535abf79b505e42e782c81
   src/ttd_workflows/utils/serializers.py:
     id: d63fe0b8b3a4
-    last_write_checksum: sha1:61009f2e4ef6613a1a5af813fe020373dae5a492
-    pristine_git_object: d2149f8b909cb96628db140ac3cddb1b1e981367
+    last_write_checksum: sha1:2fb543339b424a0818b126e69695df5c91cd4d7b
+    pristine_git_object: 5e57d36e8883501df8f6293e4c76ac337c4987eb
   src/ttd_workflows/utils/unmarshal_json_response.py:
     id: 90176fb39904
     last_write_checksum: sha1:3b4d9d179cea2d886242d8d608b28f378344935c
     pristine_git_object: 8b8c12e061ace29f0232e0e37062424153d648e4
   src/ttd_workflows/utils/url.py:
     id: a266d9f10f37
-    last_write_checksum: sha1:6479961baa90432ca25626f8e40a7bbc32e73b41
-    pristine_git_object: c78ccbae426ce6d385709d97ce0b1c2813ea2418
+    last_write_checksum: sha1:0269c7e27f701e0c72d44bc2a36ac4d44ef2108c
+    pristine_git_object: 8eeaa7b0cc48e5e528afc0527da8b76ef46308d4
   src/ttd_workflows/utils/values.py:
     id: 31b0e0952875
-    last_write_checksum: sha1:acaa178a7c41ddd000f58cc691e4632d925b2553
-    pristine_git_object: dae01a44384ac3bc13ae07453a053bf6c898ebe3
+    last_write_checksum: sha1:c0eaaf8779a4ba3ae068579a57182667efef0cb7
+    pristine_git_object: 094755b73f7f9382d8df997602080c82a55896fd
 examples:
   post_/adgroup:
     speakeasy-default-post-/adgroup:
@@ -1526,19 +1955,19 @@ examples:
   createAdGroup:
     speakeasy-default-create-ad-group:
       requestBody:
-        application/json: {"primaryInput": {"isEnabled": false, "description": "twine from gosh poor safely editor astride vice lost and", "budget": {"allocationType": "Maximum", "budgetInAdvertiserCurrency": 3786.02, "budgetInImpressions": 783190, "dailyTargetInAdvertiserCurrency": 9747.02, "dailyTargetInImpressions": 985999}, "baseBidCPMInAdvertiserCurrency": 3785.04, "maxBidCPMInAdvertiserCurrency": 7447.3, "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": true, "audienceBoosterEnabled": true, "audienceExcluderEnabled": true, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [107263], "recencyExclusionWindowInMinutes": 90062, "targetTrackableUsersEnabled": true, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": true, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 2280.31, "ctrInPercent": null, "nielsenOTPInPercent": 5175.21, "cpaInAdvertiserCurrency": 2544.37, "returnOnAdSpendPercent": 8201.47, "vcrInPercent": 4846.08, "viewabilityInPercent": null, "vcpmInAdvertiserCurrency": 4649.53, "cpcvInAdvertiserCurrency": 313.95, "miaozhenOTPInPercent": 4704.1}, "creativeIds": null, "associatedBidLists": [{"bidListId": "<id>", "isEnabled": false, "isDefaultForDimension": true}], "name": "<value>", "channel": "Display", "funnelLocation": "Consideration", "marketType": "PrivateMarketOnly", "programmaticGuaranteedPrivateContractId": "<id>", "includeDefaultsFromCampaign": false}, "campaignId": "<id>", "advancedInput": {"koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": false, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": false, "populationId": null, "demographicMemberIds": [959580, 236376], "mobileDemographicMemberIds": [664689, 827980, 21321]}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [[], []], "isUseClicksAsConversionsEnabled": false, "isUseSecondaryConversionsEnabled": false, "nielsenTrackingAttributes": {"enhancedReportingOption": "Site", "gender": "Male", "startAge": "TwentyFive", "endAge": "Seventeen", "countries": ["<value 1>", "<value 2>", "<value 3>"]}, "newFrequencyConfigs": [{"counterName": null, "frequencyCap": 375286, "frequencyGoal": 534735, "resetIntervalInMinutes": 788122}], "inventoryTargeting": {"dealGroupIdsToInclude": ["<value 1>", "<value 2>", "<value 3>"], "dealGroupIdsToExclude": ["<value 1>", "<value 2>", "<value 3>"], "dealIdsToExclude": [117039, 278677, 217940], "dealIdsToInclude": null, "includeDefaultOnDeals": true}, "isNonDecisioned": true, "flights": [{"allocationType": "Maximum", "budgetInAdvertiserCurrency": 4070.96, "budgetInImpressions": 901477, "dailyTargetInAdvertiserCurrency": 5847.35, "dailyTargetInImpressions": 257517, "campaignFlightId": 874887}], "callerSource": "<value>"}, "validateInputOnly": true}
+        application/json: {"primaryInput": {"isEnabled": false, "description": "twine from gosh poor safely editor astride vice lost and", "budget": {"allocationType": "Maximum", "budgetInAdvertiserCurrency": 3786.02, "budgetInImpressions": 783190, "dailyTargetInAdvertiserCurrency": 9747.02, "dailyTargetInImpressions": 985999}, "baseBidCPMInAdvertiserCurrency": 3785.04, "maxBidCPMInAdvertiserCurrency": 7447.3, "audienceTargeting": {"audienceId": {"value": "<value>"}, "audienceAcceleratorExclusionsEnabled": true, "audienceBoosterEnabled": true, "audienceExcluderEnabled": true, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [107263], "recencyExclusionWindowInMinutes": 90062, "targetTrackableUsersEnabled": true, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": true, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 2280.31, "ctrInPercent": null, "nielsenOTPInPercent": 5175.21, "cpaInAdvertiserCurrency": 2544.37, "returnOnAdSpendPercent": 8201.47, "vcrInPercent": 4846.08, "viewabilityInPercent": null, "vcpmInAdvertiserCurrency": 4649.53, "cpcvInAdvertiserCurrency": 313.95, "miaozhenOTPInPercent": 4704.1, "newBuyerTargetValue": 287261}, "creativeIds": null, "associatedBidLists": [{"bidListId": "<id>", "isEnabled": false, "isDefaultForDimension": true}], "ownedBidLists": [{"name": "<value>", "adjustmentType": "FractionalExclusion", "resolutionType": "SingleMatchOnly", "dimensions": ["HasVideoMutedStateId"], "bidLines": null, "source": "SystemAutoForCommitmentTargeting", "isAvailableForLibraryUse": true, "associateBehavior": "Associate", "dimensionConfig": {"geo": {"locationContextType": "Realtime"}}, "isDefaultForDimension": true}], "name": "<value>", "channel": "Display", "funnelLocation": "Consideration", "marketType": "PrivateMarketOnly", "programmaticGuaranteedPrivateContractId": "<id>", "includeDefaultsFromCampaign": false}, "campaignId": "<id>", "advancedInput": {"koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": false, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": false, "populationId": null, "demographicMemberIds": [959580, 236376], "mobileDemographicMemberIds": [664689, 827980, 21321]}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [[], []], "isUseClicksAsConversionsEnabled": false, "isUseSecondaryConversionsEnabled": false, "nielsenTrackingAttributes": {"enhancedReportingOption": "Site", "gender": "Male", "startAge": "TwentyFive", "endAge": "Seventeen", "countries": ["<value 1>", "<value 2>", "<value 3>"]}, "newFrequencyConfigs": [{"counterName": null, "frequencyCap": 375286, "frequencyGoal": 534735, "resetIntervalInMinutes": 788122}], "inventoryTargeting": {"dealGroupIdsToInclude": ["<value 1>", "<value 2>", "<value 3>"], "dealGroupIdsToExclude": ["<value 1>", "<value 2>", "<value 3>"], "dealIdsToExclude": [117039, 278677, 217940], "dealIdsToInclude": null, "includeDefaultOnDeals": true}, "isNonDecisioned": true, "flights": [{"allocationType": "Maximum", "budgetInAdvertiserCurrency": 4070.96, "budgetInImpressions": 901477, "dailyTargetInAdvertiserCurrency": 5847.35, "dailyTargetInImpressions": 257517, "campaignFlightId": 874887}], "callerSource": "<value>"}, "validateInputOnly": true}
       responses:
         "201":
-          application/json: {"adGroup": {"id": "<id>", "name": "<value>", "campaignId": "<id>", "isEnabled": true, "description": null, "programmaticGuaranteedPrivateContractId": "<id>", "channel": "Video", "funnelLocation": "Consideration", "budget": {"allocationType": "Fixed", "budgetInAdvertiserCurrency": 6595.23, "budgetInImpressions": 380358, "dailyTargetInAdvertiserCurrency": 6780.84, "dailyTargetInImpressions": 934353}, "baseBidCPMInAdvertiserCurrency": 1998.1, "maxBidCPMInAdvertiserCurrency": 7702.29, "marketType": "Marketplace", "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": false, "audienceBoosterEnabled": true, "audienceExcluderEnabled": true, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [], "recencyExclusionWindowInMinutes": 455695, "targetTrackableUsersEnabled": true, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 7001.93, "ctrInPercent": 8182.44, "nielsenOTPInPercent": 1402.81, "cpaInAdvertiserCurrency": 5101.03, "returnOnAdSpendPercent": 9286.84, "vcrInPercent": null, "viewabilityInPercent": 3948.02, "vcpmInAdvertiserCurrency": 9934.57, "cpcvInAdvertiserCurrency": 7587.03, "miaozhenOTPInPercent": 1875.25}, "creativeIds": ["<value 1>", "<value 2>"], "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": true}], "flights": [], "koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": false, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": false, "populationId": 264730, "demographicMemberIds": [], "mobileDemographicMemberIds": []}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": false}, "dimensionalBiddingAutoOptimizationSettings": [["HasSupplyVendorId"], []], "isUseClicksAsConversionsEnabled": false, "isUseSecondaryConversionsEnabled": false, "nielsenTrackingAttributes": {"enhancedReportingOption": "None", "gender": "Both", "startAge": "Thirteen", "endAge": "FortyFour", "countries": []}}}
+          application/json: {"adGroup": {"id": "<id>", "name": "<value>", "campaignId": "<id>", "isEnabled": true, "description": null, "programmaticGuaranteedPrivateContractId": "<id>", "channel": "Video", "funnelLocation": "Consideration", "budget": {"allocationType": "Fixed", "budgetInAdvertiserCurrency": 6595.23, "budgetInImpressions": 380358, "dailyTargetInAdvertiserCurrency": 6780.84, "dailyTargetInImpressions": 934353}, "baseBidCPMInAdvertiserCurrency": 1998.1, "maxBidCPMInAdvertiserCurrency": 7702.29, "marketType": "Marketplace", "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": false, "audienceBoosterEnabled": true, "audienceExcluderEnabled": true, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [], "recencyExclusionWindowInMinutes": 455695, "targetTrackableUsersEnabled": true, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 7001.93, "ctrInPercent": 8182.44, "nielsenOTPInPercent": 1402.81, "cpaInAdvertiserCurrency": 5101.03, "returnOnAdSpendPercent": 9286.84, "vcrInPercent": null, "viewabilityInPercent": 3948.02, "vcpmInAdvertiserCurrency": 9934.57, "cpcvInAdvertiserCurrency": 7587.03, "miaozhenOTPInPercent": 1875.25, "newBuyerTargetValue": 391174}, "creativeIds": ["<value 1>", "<value 2>"], "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": true}], "ownedBidLists": [{"bidListId": "<id>"}], "flights": [], "koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": false, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": false, "populationId": 264730, "demographicMemberIds": [], "mobileDemographicMemberIds": []}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": false}, "dimensionalBiddingAutoOptimizationSettings": [["HasSupplyVendorId"], []], "isUseClicksAsConversionsEnabled": false, "isUseSecondaryConversionsEnabled": false, "nielsenTrackingAttributes": {"enhancedReportingOption": "None", "gender": "Both", "startAge": "Thirteen", "endAge": "FortyFour", "countries": []}}}
         "400":
           application/json: {"type": "<value>", "title": "<value>", "status": 243149, "detail": "<value>", "instance": "<value>"}
   updateAdGroup:
     speakeasy-default-update-ad-group:
       requestBody:
-        application/json: {"id": "<id>", "primaryInput": {"isEnabled": null, "description": "likely upliftingly league that finally after owlishly when furthermore brush", "budget": {"allocationType": "Maximum", "budgetInAdvertiserCurrency": 2166.43, "budgetInImpressions": 508947, "dailyTargetInAdvertiserCurrency": 5830.53, "dailyTargetInImpressions": 377823}, "baseBidCPMInAdvertiserCurrency": 1710.9, "maxBidCPMInAdvertiserCurrency": 1926.83, "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": false, "audienceBoosterEnabled": true, "audienceExcluderEnabled": true, "audiencePredictorEnabled": true, "crossDeviceVendorListForAudience": [774064, 165155, 542528], "recencyExclusionWindowInMinutes": 740341, "targetTrackableUsersEnabled": false, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 1146.61, "ctrInPercent": 3063.1, "nielsenOTPInPercent": 411.57, "cpaInAdvertiserCurrency": null, "returnOnAdSpendPercent": 7161.01, "vcrInPercent": 5983.85, "viewabilityInPercent": 9094.92, "vcpmInAdvertiserCurrency": 1135.94, "cpcvInAdvertiserCurrency": 6372.45, "miaozhenOTPInPercent": 8405.28}, "creativeIds": ["<value 1>", "<value 2>", "<value 3>"], "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": true}], "name": "<value>", "channel": "Native", "funnelLocation": "Conversion", "marketType": "OpenMarket"}, "advancedInput": {"koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": false, "predictiveClearingEnabled": true}, "comscoreSettings": {"isEnabled": false, "populationId": 935670, "demographicMemberIds": [873274, 940674, 350994], "mobileDemographicMemberIds": [572403, 872508, 141651]}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasContentLivestream"]], "isUseClicksAsConversionsEnabled": false, "isUseSecondaryConversionsEnabled": false, "nielsenTrackingAttributes": {"enhancedReportingOption": "None", "gender": "Female", "startAge": "FiftyFive", "endAge": "SixtyFourPlus", "countries": ["<value 1>", "<value 2>"]}, "newFrequencyConfigs": [{"counterName": "<value>", "frequencyCap": 685969, "frequencyGoal": 448470, "resetIntervalInMinutes": 577492}], "inventoryTargeting": {"dealGroupIdsToInclude": ["<value 1>"], "dealGroupIdsToExclude": ["<value 1>", "<value 2>", "<value 3>"], "dealIdsToExclude": [624775, 110078, 170675], "dealIdsToInclude": null, "includeDefaultOnDeals": false}, "isNonDecisioned": null, "flights": [{"allocationType": "Minimum", "budgetInAdvertiserCurrency": 5325.23, "budgetInImpressions": 876101, "dailyTargetInAdvertiserCurrency": 44.58, "dailyTargetInImpressions": 815686, "campaignFlightId": 528311}], "callerSource": null}, "validateInputOnly": false}
+        application/json: {"id": "<id>", "primaryInput": {"isEnabled": null, "description": "likely upliftingly league that finally after owlishly when furthermore brush", "budget": {"allocationType": "Maximum", "budgetInAdvertiserCurrency": 2166.43, "budgetInImpressions": 508947, "dailyTargetInAdvertiserCurrency": 5830.53, "dailyTargetInImpressions": 377823}, "baseBidCPMInAdvertiserCurrency": 1710.9, "maxBidCPMInAdvertiserCurrency": 1926.83, "audienceTargeting": {"audienceId": {"value": "<value>"}, "audienceAcceleratorExclusionsEnabled": false, "audienceBoosterEnabled": true, "audienceExcluderEnabled": true, "audiencePredictorEnabled": true, "crossDeviceVendorListForAudience": [774064, 165155, 542528], "recencyExclusionWindowInMinutes": 740341, "targetTrackableUsersEnabled": false, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 1146.61, "ctrInPercent": 3063.1, "nielsenOTPInPercent": 411.57, "cpaInAdvertiserCurrency": null, "returnOnAdSpendPercent": 7161.01, "vcrInPercent": 5983.85, "viewabilityInPercent": 9094.92, "vcpmInAdvertiserCurrency": 1135.94, "cpcvInAdvertiserCurrency": 6372.45, "miaozhenOTPInPercent": 8405.28, "newBuyerTargetValue": null}, "creativeIds": ["<value 1>", "<value 2>", "<value 3>"], "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": true}], "name": "<value>", "channel": "Native", "funnelLocation": "Conversion", "marketType": "OpenMarket"}, "advancedInput": {"koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": false, "predictiveClearingEnabled": true}, "comscoreSettings": {"isEnabled": false, "populationId": 935670, "demographicMemberIds": [873274, 940674, 350994], "mobileDemographicMemberIds": [572403, 872508, 141651]}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasContentLivestream"]], "isUseClicksAsConversionsEnabled": false, "isUseSecondaryConversionsEnabled": false, "nielsenTrackingAttributes": {"enhancedReportingOption": "None", "gender": "Female", "startAge": "FiftyFive", "endAge": "SixtyFourPlus", "countries": ["<value 1>", "<value 2>"]}, "newFrequencyConfigs": [{"counterName": "<value>", "frequencyCap": 685969, "frequencyGoal": 448470, "resetIntervalInMinutes": 577492}], "inventoryTargeting": {"dealGroupIdsToInclude": ["<value 1>"], "dealGroupIdsToExclude": ["<value 1>", "<value 2>", "<value 3>"], "dealIdsToExclude": [624775, 110078, 170675], "dealIdsToInclude": null, "includeDefaultOnDeals": false}, "isNonDecisioned": null, "flights": [{"allocationType": "Minimum", "budgetInAdvertiserCurrency": 5325.23, "budgetInImpressions": 876101, "dailyTargetInAdvertiserCurrency": 44.58, "dailyTargetInImpressions": 815686, "campaignFlightId": 528311}], "callerSource": null}, "validateInputOnly": false}
       responses:
         "200":
-          application/json: {"adGroup": {"id": "<id>", "name": "<value>", "campaignId": null, "isEnabled": true, "description": null, "programmaticGuaranteedPrivateContractId": "<id>", "channel": "Other", "funnelLocation": "Consideration", "budget": {"allocationType": "Fixed", "budgetInAdvertiserCurrency": 1639.57, "budgetInImpressions": null, "dailyTargetInAdvertiserCurrency": 501.01, "dailyTargetInImpressions": null}, "baseBidCPMInAdvertiserCurrency": 5346.53, "maxBidCPMInAdvertiserCurrency": null, "marketType": "PrivateMarketOnly", "audienceTargeting": {"audienceId": null, "audienceAcceleratorExclusionsEnabled": false, "audienceBoosterEnabled": false, "audienceExcluderEnabled": false, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [741479], "recencyExclusionWindowInMinutes": 773620, "targetTrackableUsersEnabled": false, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 3032.86, "ctrInPercent": 5100.96, "nielsenOTPInPercent": null, "cpaInAdvertiserCurrency": 3710.43, "returnOnAdSpendPercent": null, "vcrInPercent": 6055.75, "viewabilityInPercent": 1235.47, "vcpmInAdvertiserCurrency": 7609.52, "cpcvInAdvertiserCurrency": 1915.49, "miaozhenOTPInPercent": 8131.48}, "creativeIds": null, "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": false}], "flights": [{"allocationType": "Minimum", "budgetInAdvertiserCurrency": 4082.99, "budgetInImpressions": 497146, "dailyTargetInAdvertiserCurrency": 3391.02, "dailyTargetInImpressions": 637987, "campaignFlightId": 315704, "adGroupId": "<id>"}], "koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": true, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": false, "populationId": 16979, "demographicMemberIds": [616321], "mobileDemographicMemberIds": [164686, 325659, 357053]}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": false}, "dimensionalBiddingAutoOptimizationSettings": [["HasLanguageId"], []], "isUseClicksAsConversionsEnabled": true, "isUseSecondaryConversionsEnabled": true, "nielsenTrackingAttributes": {"enhancedReportingOption": "Audience", "gender": "Both", "startAge": "Thirty", "endAge": "ThirtyNine", "countries": ["<value 1>"]}}}
+          application/json: {"adGroup": {"id": "<id>", "name": "<value>", "campaignId": null, "isEnabled": true, "description": null, "programmaticGuaranteedPrivateContractId": "<id>", "channel": "Other", "funnelLocation": "Consideration", "budget": {"allocationType": "Fixed", "budgetInAdvertiserCurrency": 1639.57, "budgetInImpressions": null, "dailyTargetInAdvertiserCurrency": 501.01, "dailyTargetInImpressions": null}, "baseBidCPMInAdvertiserCurrency": 5346.53, "maxBidCPMInAdvertiserCurrency": null, "marketType": "PrivateMarketOnly", "audienceTargeting": {"audienceId": null, "audienceAcceleratorExclusionsEnabled": false, "audienceBoosterEnabled": false, "audienceExcluderEnabled": false, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [741479], "recencyExclusionWindowInMinutes": 773620, "targetTrackableUsersEnabled": false, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 3032.86, "ctrInPercent": 5100.96, "nielsenOTPInPercent": null, "cpaInAdvertiserCurrency": 3710.43, "returnOnAdSpendPercent": null, "vcrInPercent": 6055.75, "viewabilityInPercent": 1235.47, "vcpmInAdvertiserCurrency": 7609.52, "cpcvInAdvertiserCurrency": 1915.49, "miaozhenOTPInPercent": 8131.48, "newBuyerTargetValue": 942834}, "creativeIds": null, "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": false}], "ownedBidLists": [{"bidListId": "<id>"}], "flights": [{"allocationType": "Minimum", "budgetInAdvertiserCurrency": 4082.99, "budgetInImpressions": 497146, "dailyTargetInAdvertiserCurrency": 3391.02, "dailyTargetInImpressions": 637987, "campaignFlightId": 315704, "adGroupId": "<id>"}], "koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": true, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": false, "populationId": 16979, "demographicMemberIds": [616321], "mobileDemographicMemberIds": [164686, 325659, 357053]}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": false}, "dimensionalBiddingAutoOptimizationSettings": [["HasLanguageId"], []], "isUseClicksAsConversionsEnabled": true, "isUseSecondaryConversionsEnabled": true, "nielsenTrackingAttributes": {"enhancedReportingOption": "Audience", "gender": "Both", "startAge": "Thirty", "endAge": "ThirtyNine", "countries": ["<value 1>"]}}}
         "400":
           application/json: {"type": "<value>", "title": "<value>", "status": 861713, "detail": "<value>", "instance": "<value>"}
   archiveAdGroups:
@@ -1565,7 +1994,7 @@ examples:
   updateAdGroupsJob:
     speakeasy-default-update-ad-groups-job:
       requestBody:
-        application/json: {"input": [{"id": "<id>", "primaryInput": {"isEnabled": false, "description": "stealthily miserable imaginary er since athwart er blah marten", "budget": {"allocationType": "Minimum", "budgetInAdvertiserCurrency": 5440.47, "budgetInImpressions": null, "dailyTargetInAdvertiserCurrency": 6251.13, "dailyTargetInImpressions": 931411}, "baseBidCPMInAdvertiserCurrency": 188.02, "maxBidCPMInAdvertiserCurrency": 6077.98, "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": true, "audienceBoosterEnabled": true, "audienceExcluderEnabled": false, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [27262], "recencyExclusionWindowInMinutes": 676417, "targetTrackableUsersEnabled": true, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": null, "ctrInPercent": 2972.79, "nielsenOTPInPercent": 4206.38, "cpaInAdvertiserCurrency": null, "returnOnAdSpendPercent": 842.94, "vcrInPercent": 6307.13, "viewabilityInPercent": 9286.78, "vcpmInAdvertiserCurrency": 8251.2, "cpcvInAdvertiserCurrency": 4502.77, "miaozhenOTPInPercent": 2362.43}, "creativeIds": ["<value 1>"], "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": true}], "name": "<value>", "channel": "TV", "funnelLocation": "None", "marketType": "OpenMarket"}, "advancedInput": {"koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": true, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": true, "populationId": 907569, "demographicMemberIds": null, "mobileDemographicMemberIds": [169306, 568551]}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasFrequencyAdjustmentId"]], "isUseClicksAsConversionsEnabled": true, "isUseSecondaryConversionsEnabled": true, "nielsenTrackingAttributes": {"enhancedReportingOption": "Audience", "gender": "Female", "startAge": "FortyFive", "endAge": "ThirtyFour", "countries": ["<value 1>", "<value 2>"]}, "newFrequencyConfigs": [{"counterName": "<value>", "frequencyCap": 25438, "frequencyGoal": 637221, "resetIntervalInMinutes": 375296}], "inventoryTargeting": {"dealGroupIdsToInclude": ["<value 1>", "<value 2>", "<value 3>"], "dealGroupIdsToExclude": ["<value 1>", "<value 2>"], "dealIdsToExclude": [849888, 396688, 733994], "dealIdsToInclude": [690107], "includeDefaultOnDeals": false}, "isNonDecisioned": false, "flights": null, "callerSource": "<value>"}}], "validateInputOnly": true, "callbackInput": {"callbackUrl": "https://winged-bathhouse.net", "callbackHeaders": null}}
+        application/json: {"input": [{"id": "<id>", "primaryInput": {"isEnabled": false, "description": "stealthily miserable imaginary er since athwart er blah marten", "budget": {"allocationType": "Minimum", "budgetInAdvertiserCurrency": 5440.47, "budgetInImpressions": null, "dailyTargetInAdvertiserCurrency": 6251.13, "dailyTargetInImpressions": 931411}, "baseBidCPMInAdvertiserCurrency": 188.02, "maxBidCPMInAdvertiserCurrency": 6077.98, "audienceTargeting": {"audienceId": {"value": "<value>"}, "audienceAcceleratorExclusionsEnabled": true, "audienceBoosterEnabled": true, "audienceExcluderEnabled": false, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [27262], "recencyExclusionWindowInMinutes": 676417, "targetTrackableUsersEnabled": true, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": null, "ctrInPercent": 2972.79, "nielsenOTPInPercent": 4206.38, "cpaInAdvertiserCurrency": null, "returnOnAdSpendPercent": 842.94, "vcrInPercent": 6307.13, "viewabilityInPercent": 9286.78, "vcpmInAdvertiserCurrency": 8251.2, "cpcvInAdvertiserCurrency": 4502.77, "miaozhenOTPInPercent": 2362.43, "newBuyerTargetValue": 240391}, "creativeIds": ["<value 1>"], "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": true}], "name": "<value>", "channel": "TV", "funnelLocation": "None", "marketType": "OpenMarket"}, "advancedInput": {"koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": true, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": true, "populationId": 907569, "demographicMemberIds": null, "mobileDemographicMemberIds": [169306, 568551]}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasFrequencyAdjustmentId"]], "isUseClicksAsConversionsEnabled": true, "isUseSecondaryConversionsEnabled": true, "nielsenTrackingAttributes": {"enhancedReportingOption": "Audience", "gender": "Female", "startAge": "FortyFive", "endAge": "ThirtyFour", "countries": ["<value 1>", "<value 2>"]}, "newFrequencyConfigs": [{"counterName": "<value>", "frequencyCap": 25438, "frequencyGoal": 637221, "resetIntervalInMinutes": 375296}], "inventoryTargeting": {"dealGroupIdsToInclude": ["<value 1>", "<value 2>", "<value 3>"], "dealGroupIdsToExclude": ["<value 1>", "<value 2>"], "dealIdsToExclude": [849888, 396688, 733994], "dealIdsToInclude": [690107], "includeDefaultOnDeals": false}, "isNonDecisioned": false, "flights": null, "callerSource": "<value>"}}], "validateInputOnly": true, "callbackInput": {"callbackUrl": "https://winged-bathhouse.net", "callbackHeaders": null}}
       responses:
         "202":
           application/json: {"id": 942819}
@@ -1574,18 +2003,18 @@ examples:
   createCampaign:
     speakeasy-default-create-campaign:
       requestBody:
-        application/json: {"primaryInput": {"description": "woot furthermore mentor", "campaignGroupId": 86586, "timeZone": "Europe/Ulyanovsk", "customCPAClickWeight": 2561.01, "customCPAViewthroughWeight": 5604.35, "customCPAType": "ClickViewthroughWeighting", "customRoasType": "Disabled", "impressionsOnlyBudgetingCpm": 1502.33, "endDateInUtc": null, "seedId": null, "campaignConversionReportingColumns": [{"trackingTagId": "<id>", "includeInCustomCPA": false, "reportingColumnId": 888649, "ROASConfig": {"includeInCustomROAS": false, "customROASWeight": 4766.9, "customROASClickWeight": 3310.24, "customROASViewthroughWeight": 2919.37}, "productListReportingType": "Featured", "weight": 5369.43, "crossDeviceAttributionModelId": "<id>"}], "isManagedByTTD": null, "secondaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 4128.35, "ctrInPercent": 4434.91, "nielsenOTPInPercent": 7433.37, "cpaInAdvertiserCurrency": null, "returnOnAdSpendPercent": 2367.04, "vcrInPercent": 2333.15, "viewabilityInPercent": 5018.08, "vcpmInAdvertiserCurrency": 6070.6, "cpcvInAdvertiserCurrency": null, "miaozhenOTPInPercent": 4324.01, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": true, "iqviaAudienceQualityIndexAndCostPerTarget": false, "crossixCostPerTarget": true, "NewBuyerTargetValue": null}, "tertiaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 7814.79, "ctrInPercent": 7849.85, "nielsenOTPInPercent": null, "cpaInAdvertiserCurrency": null, "returnOnAdSpendPercent": 9519.81, "vcrInPercent": 6125.66, "viewabilityInPercent": 4766.9, "vcpmInAdvertiserCurrency": 3310.24, "cpcvInAdvertiserCurrency": 2919.37, "miaozhenOTPInPercent": 5369.43, "iqviaAudienceQualityIndex": false, "crossixAudienceQualityIndex": false, "iqviaAudienceQualityIndexAndCostPerTarget": null, "crossixCostPerTarget": false, "NewBuyerTargetValue": 960101}, "advertiserId": "<id>", "name": "<value>", "customLabelNames": ["<value 1>", "<value 2>"], "primaryChannel": "DOOH", "primaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": null, "cpcInAdvertiserCurrency": 6678.34, "ctrInPercent": 5357.4, "nielsenOTPInPercent": 2741.6, "cpaInAdvertiserCurrency": 4220.63, "returnOnAdSpendPercent": 8572.83, "vcrInPercent": 8294.92, "viewabilityInPercent": 8592.21, "vcpmInAdvertiserCurrency": 8388.8, "cpcvInAdvertiserCurrency": null, "miaozhenOTPInPercent": 3033.14, "iqviaAudienceQualityIndex": false, "crossixAudienceQualityIndex": true, "iqviaAudienceQualityIndexAndCostPerTarget": true, "crossixCostPerTarget": false, "NewBuyerTargetValue": 412835}, "startDateInUtc": null, "budget": {"pacingMode": "PaceAsSoonAsPossible", "budgetInAdvertiserCurrency": 6363.35, "budgetInImpressions": 836518, "dailyTargetInAdvertiserCurrency": 7814.79, "dailyTargetInImpressions": 784985}, "campaignIncrementalReachSetting": {"iSpotReachSetting": {"id": 787894, "name": "<value>", "isActive": false}, "realyticsReachSetting": {"id": 859221, "name": "<value>", "isActive": false, "products": null, "realyticsEntertainmentInput": "TVS"}, "tvSquaredReachSetting": {"id": 303314, "name": null, "isActive": false}, "sambaAuReachSetting": {"id": 505888, "name": "<value>", "isActive": true}}}, "advancedInput": {"purchaseOrderNumber": null, "flights": [{"startDateInclusiveUTC": "2024-07-08T10:52:56.944Z", "endDateExclusiveUTC": "2023-05-12T16:41:56.386Z", "budgetInAdvertiserCurrency": 5904.11, "budgetInImpressions": null, "dailyTargetInAdvertiserCurrency": 6112.24, "dailyTargetInImpressions": 333131}], "includeDefaultsFromAdvertiser": false, "passThroughFeeCard": {"startDateUtc": "2023-03-18T04:39:08.387Z", "passThroughFees": [{"type": "FeeCPM", "description": "fairly gah mortally freight since", "amount": 2122.11}]}, "callerSource": "<value>", "frequencyConfigs": [{"counterName": "<value>", "frequencyCap": 743337, "frequencyGoal": null, "resetIntervalInMinutes": 520097}]}, "adGroups": [{"primaryInput": {"isEnabled": false, "description": "quash lightly rot bashfully slope", "budget": {"allocationType": "Minimum", "budgetInAdvertiserCurrency": 4043.98, "budgetInImpressions": 907414, "dailyTargetInAdvertiserCurrency": 49.95, "dailyTargetInImpressions": 62363}, "baseBidCPMInAdvertiserCurrency": 1136.89, "maxBidCPMInAdvertiserCurrency": 6950.27, "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": false, "audienceBoosterEnabled": true, "audienceExcluderEnabled": false, "audiencePredictorEnabled": true, "crossDeviceVendorListForAudience": [458524, 284141], "recencyExclusionWindowInMinutes": 982426, "targetTrackableUsersEnabled": false, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": null, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 8782.74, "ctrInPercent": null, "nielsenOTPInPercent": 7930.85, "cpaInAdvertiserCurrency": 4606.89, "returnOnAdSpendPercent": 2522.83, "vcrInPercent": 5828.49, "viewabilityInPercent": 6824.44, "vcpmInAdvertiserCurrency": 7123.95, "cpcvInAdvertiserCurrency": 6233.72, "miaozhenOTPInPercent": 8437.22}, "creativeIds": ["<value 1>"], "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": false}], "name": "<value>", "channel": "NativeVideo", "funnelLocation": "None", "marketType": "OpenMarket", "programmaticGuaranteedPrivateContractId": "<id>", "includeDefaultsFromCampaign": true}, "advancedInput": {"koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": true, "predictiveClearingEnabled": true}, "comscoreSettings": {"isEnabled": false, "populationId": 523753, "demographicMemberIds": null, "mobileDemographicMemberIds": null}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasFullReferrerUrl"], ["HasPublisherId"]], "isUseClicksAsConversionsEnabled": null, "isUseSecondaryConversionsEnabled": true, "nielsenTrackingAttributes": {"enhancedReportingOption": "Site", "gender": "Female", "startAge": "ThirtyFive", "endAge": "FortyNine", "countries": []}, "newFrequencyConfigs": [{"counterName": "<value>", "frequencyCap": 391231, "frequencyGoal": 499235, "resetIntervalInMinutes": 587736}], "inventoryTargeting": {"dealGroupIdsToInclude": ["<value 1>"], "dealGroupIdsToExclude": ["<value 1>", "<value 2>"], "dealIdsToExclude": [607060], "dealIdsToInclude": null, "includeDefaultOnDeals": true}, "isNonDecisioned": true, "includeDefaultsFromCampaign": false, "flights": [{"allocationType": "Fixed", "budgetInAdvertiserCurrency": 5340.32, "budgetInImpressions": 492382, "dailyTargetInAdvertiserCurrency": 5622.5, "dailyTargetInImpressions": 398919}]}}], "validateInputOnly": false}
+        application/json: {"primaryInput": {"description": "woot furthermore mentor", "campaignGroupId": 86586, "timeZone": "Europe/Ulyanovsk", "customCPAClickWeight": 2561.01, "customCPAViewthroughWeight": 5604.35, "customCPAType": "ClickViewthroughWeighting", "customRoasType": "Disabled", "impressionsOnlyBudgetingCpm": 1502.33, "endDateInUtc": null, "seedId": null, "campaignConversionReportingColumns": [{"trackingTagId": "<id>", "includeInCustomCPA": false, "reportingColumnId": 888649, "ROASConfig": {"includeInCustomROAS": false, "customROASWeight": 4766.9, "customROASClickWeight": 3310.24, "customROASViewthroughWeight": 2919.37}, "productListReportingType": "Featured", "weight": 5369.43, "crossDeviceAttributionModelId": "<id>"}], "isManagedByTTD": null, "secondaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 4128.35, "ctrInPercent": 4434.91, "nielsenOTPInPercent": 7433.37, "cpaInAdvertiserCurrency": null, "returnOnAdSpendPercent": 2367.04, "vcrInPercent": 2333.15, "viewabilityInPercent": 5018.08, "vcpmInAdvertiserCurrency": 6070.6, "cpcvInAdvertiserCurrency": null, "miaozhenOTPInPercent": 4324.01, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": true, "iqviaAudienceQualityIndexAndCostPerTarget": false, "crossixCostPerTarget": true, "newBuyerTargetValue": 86586}, "tertiaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 7814.79, "ctrInPercent": 7849.85, "nielsenOTPInPercent": null, "cpaInAdvertiserCurrency": null, "returnOnAdSpendPercent": 9519.81, "vcrInPercent": 6125.66, "viewabilityInPercent": 4766.9, "vcpmInAdvertiserCurrency": 3310.24, "cpcvInAdvertiserCurrency": 2919.37, "miaozhenOTPInPercent": 5369.43, "iqviaAudienceQualityIndex": false, "crossixAudienceQualityIndex": false, "iqviaAudienceQualityIndexAndCostPerTarget": null, "crossixCostPerTarget": false, "newBuyerTargetValue": 960101}, "advertiserId": "<id>", "name": "<value>", "customLabelNames": ["<value 1>", "<value 2>"], "primaryChannel": "DOOH", "primaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": null, "cpcInAdvertiserCurrency": 6678.34, "ctrInPercent": 5357.4, "nielsenOTPInPercent": 2741.6, "cpaInAdvertiserCurrency": 4220.63, "returnOnAdSpendPercent": 8572.83, "vcrInPercent": 8294.92, "viewabilityInPercent": 8592.21, "vcpmInAdvertiserCurrency": 8388.8, "cpcvInAdvertiserCurrency": null, "miaozhenOTPInPercent": 3033.14, "iqviaAudienceQualityIndex": false, "crossixAudienceQualityIndex": true, "iqviaAudienceQualityIndexAndCostPerTarget": true, "crossixCostPerTarget": false, "newBuyerTargetValue": 613761}, "startDateInUtc": null, "budget": {"pacingMode": "PaceAsSoonAsPossible", "budgetInAdvertiserCurrency": 6363.35, "budgetInImpressions": 836518, "dailyTargetInAdvertiserCurrency": 7814.79, "dailyTargetInImpressions": 784985}, "campaignIncrementalReachSetting": {"iSpotReachSetting": {"id": 787894, "name": "<value>", "isActive": false}, "realyticsReachSetting": {"id": 859221, "name": "<value>", "isActive": false, "products": null, "realyticsEntertainmentInput": "TVS"}, "tvSquaredReachSetting": {"id": 303314, "name": null, "isActive": false}, "sambaAuReachSetting": {"id": 505888, "name": "<value>", "isActive": true}}}, "advancedInput": {"purchaseOrderNumber": null, "flights": [{"startDateInclusiveUTC": "2024-07-08T10:52:56.944Z", "endDateExclusiveUTC": "2023-05-12T16:41:56.386Z", "budgetInAdvertiserCurrency": 5904.11, "budgetInImpressions": null, "dailyTargetInAdvertiserCurrency": 6112.24, "dailyTargetInImpressions": 333131}], "includeDefaultsFromAdvertiser": false, "passThroughFeeCard": {"startDateUtc": "2023-03-18T04:39:08.387Z", "passThroughFees": [{"type": "FeeCPM", "description": "fairly gah mortally freight since", "amount": 2122.11}]}, "callerSource": "<value>", "frequencyConfigs": [{"counterName": "<value>", "frequencyCap": 743337, "frequencyGoal": null, "resetIntervalInMinutes": 520097}]}, "adGroups": [{"primaryInput": {"isEnabled": false, "description": "quash lightly rot bashfully slope", "budget": {"allocationType": "Minimum", "budgetInAdvertiserCurrency": 4043.98, "budgetInImpressions": 907414, "dailyTargetInAdvertiserCurrency": 49.95, "dailyTargetInImpressions": 62363}, "baseBidCPMInAdvertiserCurrency": 1136.89, "maxBidCPMInAdvertiserCurrency": 6950.27, "audienceTargeting": {"audienceId": {"value": "<value>"}, "audienceAcceleratorExclusionsEnabled": false, "audienceBoosterEnabled": true, "audienceExcluderEnabled": false, "audiencePredictorEnabled": true, "crossDeviceVendorListForAudience": [458524, 284141], "recencyExclusionWindowInMinutes": 982426, "targetTrackableUsersEnabled": false, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": null, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 8782.74, "ctrInPercent": null, "nielsenOTPInPercent": 7930.85, "cpaInAdvertiserCurrency": 4606.89, "returnOnAdSpendPercent": 2522.83, "vcrInPercent": 5828.49, "viewabilityInPercent": 6824.44, "vcpmInAdvertiserCurrency": 7123.95, "cpcvInAdvertiserCurrency": 6233.72, "miaozhenOTPInPercent": 8437.22, "newBuyerTargetValue": 426048}, "creativeIds": ["<value 1>"], "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": false}], "ownedBidLists": [{"name": "<value>", "adjustmentType": "VCPromotion", "resolutionType": "SingleMatchOnly", "dimensions": ["HasVideoPlayerSizeId"], "bidLines": [{"adFormatId": "<id>", "domainFragment": "<value>", "universalCategoryTaxonomyId": "<id>", "browser": "Firefox", "browserId": "InternetExplorer11", "carrierId": null, "deviceModelId": 432401, "deviceType": "OutOfHome", "geoSegmentId": "<id>", "hourOfWeek": 177775, "languageId": "<id>", "osName": "<value>", "privateContractId": "<id>", "recencyWindowInMinutes": {"min": 839536, "max": 223815}, "renderingContext": "MobileOptimizedWeb", "supplyVendorId": "<id>", "temperatureBucketInCelsius": {"min": 1075.29, "max": 681.62}, "adsTxtSellerType": "Unknown", "videoMutedState": "InfrequentlyAutoMuted", "videoPlaybackType": "Standalone", "videoPlayerSize": "InBanner", "videoQuality": "UserGenerated", "videoSkippability": "Skippable", "factualProximityTarget": {"targetingCodeId": 998441, "designId": 741923}, "impressionPlacementValue": "<value>", "videoTruthScoreRange": {"min": 5369.43, "max": 9198.5}, "videoViewabilityScoreRange": {"min": 7365.62, "max": null}, "displayViewabilityScoreRange": {"min": 6678.34, "max": 5357.4}, "peer39LanguageId": "<id>", "doubleVerifyBotAvoidanceCategory": "FraudInvalid", "contextualAppCategoryId": "<id>", "publisherId": "<id>", "integralViewabilityCategoryId": "<id>", "integralViewabilityCategory": "InView70", "integralVideoViewabilityCategoryId": "<id>", "integralVideoViewabilityCategory": "InView70", "doubleVerifyViewabilityCategory": "Top70", "doubleVerifyVideoViewabilityCategory": "Viewability70", "peer39ViewabilityCategoryId": "<id>", "peer39ViewabilityCategory": "Top80", "videoCompletionRateScoreRange": {"min": null, "max": 3033.14}, "internetConnectionInput": "Unknown", "internetConnectionTypeId": "CellularNetwork3G", "internetConnection": "CellularNetwork2G", "rtbAsiaPageQualityCategory": "BlockModerateAndHighRisk", "rtbAsiaVideoPageQualityCategory": "BlockHighRisk", "supplyPathOptimizationListId": 69520, "marketType": "NonPMPFixed", "weatherCondition": "Sand", "frequencyAdjustment": {"counterId": "<id>", "timesShown": {"min": 25796, "max": 197977}}, "sellerDomain": "<value>", "digitalOutOfHomeVenueTypeId": "<id>", "nativePlacementType": "InFeed", "nativeContextType": "ContentUnclassified", "idiosyncraticSegment": "LightTvViewers2", "tencentPageQualityCategory": "BlockModerateAndHighRisk", "domainClassId": 68410, "geofenceThirdPartyDataAndBrand": {"dataId": 466619, "brandId": "<id>"}, "genreId": "<id>", "livestream": "NotLive", "productionQuality": "Prosumer", "productionQualityId": "UserGeneratedContent", "contentRatingId": "<id>", "contentDuration": "Between15And30Minutes", "qualityScoreRange": {"min": 4961.87, "max": 891}, "atmosphericCondition": "High", "marketplaceId": null, "audienceReachPercentageTier": "Unknown", "contentTransparency": "Transparent", "fullReferrerUrl": "DomainOnly", "likelyRefreshRate": "Deprecated", "rewarded": "Unknown", "feedId": 886945, "liveEventId": "<id>", "liveEventTypeId": null, "extendedZipCodeGroupSegmentThirdPartyDataId": 212211, "contentLanguageId": "<id>", "adToContentRatioRange": {"min": null, "max": 6819.33}, "adsInViewRange": {"min": 2366.83, "max": 4043.98}, "bidAdjustment": 6880.68, "volumeControlPriority": "Negative", "maxBid": 49.95}], "source": "SystemManual", "isAvailableForLibraryUse": true, "associateBehavior": "AssociateAndEnable", "dimensionConfig": {"geo": {"locationContextType": "Realtime"}}, "isDefaultForDimension": false}], "name": "<value>", "channel": "NativeVideo", "funnelLocation": "None", "marketType": "OpenMarket", "programmaticGuaranteedPrivateContractId": "<id>", "includeDefaultsFromCampaign": true}, "advancedInput": {"koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": true, "predictiveClearingEnabled": true}, "comscoreSettings": {"isEnabled": false, "populationId": 523753, "demographicMemberIds": null, "mobileDemographicMemberIds": null}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasFullReferrerUrl"], ["HasPublisherId"]], "isUseClicksAsConversionsEnabled": null, "isUseSecondaryConversionsEnabled": true, "nielsenTrackingAttributes": {"enhancedReportingOption": "Site", "gender": "Female", "startAge": "ThirtyFive", "endAge": "FortyNine", "countries": []}, "newFrequencyConfigs": [{"counterName": "<value>", "frequencyCap": 391231, "frequencyGoal": 499235, "resetIntervalInMinutes": 587736}], "inventoryTargeting": {"dealGroupIdsToInclude": ["<value 1>"], "dealGroupIdsToExclude": ["<value 1>", "<value 2>"], "dealIdsToExclude": [607060], "dealIdsToInclude": null, "includeDefaultOnDeals": true}, "isNonDecisioned": true, "includeDefaultsFromCampaign": false, "flights": [{"allocationType": "Fixed", "budgetInAdvertiserCurrency": 5340.32, "budgetInImpressions": 492382, "dailyTargetInAdvertiserCurrency": 5622.5, "dailyTargetInImpressions": 398919}]}}], "validateInputOnly": false}
       responses:
         "201":
           application/json: {"campaign": {"id": "<id>", "name": "<value>", "campaignGroupId": 960101, "description": "commandeer following afore ghost schematise lest understated brr happily lined", "startDate": "2025-05-13T19:59:29.421Z", "endDate": "2025-09-17T08:16:44.433Z", "timeZone": "Africa/Lome", "customCPAClickWeight": 1725.54, "customCPAViewthroughWeight": 418.34, "customCPAType": "PixelWeighting", "impressionsOnlyBudgetingCpm": 3266.9, "primaryChannel": "Display", "primaryGoal": "<value>", "seedId": "<id>", "conversionReportingColumnsCount": 748798, "flights": [{"id": "<id>", "startDateInclusiveUTC": "2024-03-12T14:53:08.741Z", "endDateExclusiveUTC": "2024-07-12T11:11:36.420Z", "budgetInAdvertiserCurrency": 6585.86, "budgetInImpressions": 83962, "dailyTargetInAdvertiserCurrency": 2584.64, "dailyTargetInImpressions": 910113}]}, "adGroups": [{"id": "<id>", "name": "<value>", "campaignId": "<id>", "isEnabled": false, "description": "hence questioningly punctual austere beard around circumnavigate behind aboard", "programmaticGuaranteedPrivateContractId": null, "channel": "NativeVideo", "funnelLocation": "Consideration", "budget": {"allocationType": "Maximum", "budgetInAdvertiserCurrency": 4437.6, "budgetInImpressions": 663120, "dailyTargetInAdvertiserCurrency": 3765.21, "dailyTargetInImpressions": 111869}, "baseBidCPMInAdvertiserCurrency": 9802.01, "maxBidCPMInAdvertiserCurrency": 1646.69, "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": false, "audienceBoosterEnabled": false, "audienceExcluderEnabled": false, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [502213, 470177, 420897], "recencyExclusionWindowInMinutes": 4504, "targetTrackableUsersEnabled": true, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 6741.01, "ctrInPercent": 982.47, "nielsenOTPInPercent": 7021.23, "cpaInAdvertiserCurrency": 7395.27, "returnOnAdSpendPercent": 744.23, "vcrInPercent": 3686.93, "viewabilityInPercent": 3897.27, "vcpmInAdvertiserCurrency": 4522.49, "cpcvInAdvertiserCurrency": 2016.93, "miaozhenOTPInPercent": 3516.78}, "creativeIds": ["<value 1>"], "associatedBidLists": [{"bidListId": null, "isEnabled": false, "isDefaultForDimension": true}], "flights": null, "koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": false, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": false, "populationId": null, "demographicMemberIds": [339950, 676551], "mobileDemographicMemberIds": []}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": false}, "dimensionalBiddingAutoOptimizationSettings": [["HasTVQualityIndexRange"], [], ["HasDoubleVerifyBotAvoidanceCategoryId"]], "isUseClicksAsConversionsEnabled": true, "isUseSecondaryConversionsEnabled": true, "nielsenTrackingAttributes": {"enhancedReportingOption": "Audience", "gender": "Female", "startAge": "TwentyOne", "endAge": "SixtyFour", "countries": ["<value 1>", "<value 2>"]}}]}
         "400":
           application/json: {"type": "<value>", "title": "<value>", "status": 395871, "detail": "<value>", "instance": "<value>"}
         "200":
-          application/json: {"campaign": {"id": "<id>", "name": null, "campaignGroupId": 960101, "description": "authorized equate pfft that bathrobe now monumental", "startDate": "2023-05-29T12:37:28.754Z", "endDate": "2023-01-31T12:57:12.401Z", "timeZone": "Asia/Thimphu", "customCPAClickWeight": 5357.4, "customCPAViewthroughWeight": 2741.6, "customCPAType": "PixelWeighting", "impressionsOnlyBudgetingCpm": 6819.46, "primaryChannel": "NativeVideo", "primaryGoal": "<value>", "seedId": "<id>", "conversionReportingColumnsCount": 859221, "flights": [{"id": "<id>", "startDateInclusiveUTC": "2023-03-22T18:44:52.808Z", "endDateExclusiveUTC": "2023-11-29T10:22:14.197Z", "budgetInAdvertiserCurrency": 296.01, "budgetInImpressions": 505888, "dailyTargetInAdvertiserCurrency": 1201.6, "dailyTargetInImpressions": 69520}], "secondaryGoal": "<value>", "tertiaryGoal": null}, "adGroups": [{"id": "<id>", "name": "<value>", "campaignId": "<id>", "isEnabled": true, "description": "chip schematise hydrant tabletop", "programmaticGuaranteedPrivateContractId": "<id>", "channel": "Audio", "funnelLocation": "None", "budget": {"allocationType": "Fixed", "budgetInAdvertiserCurrency": 2122.11, "budgetInImpressions": 14421, "dailyTargetInAdvertiserCurrency": 6819.33, "dailyTargetInImpressions": 236683}, "baseBidCPMInAdvertiserCurrency": 4043.98, "maxBidCPMInAdvertiserCurrency": 9074.14, "marketType": "OpenMarket", "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": true, "audienceBoosterEnabled": true, "audienceExcluderEnabled": true, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [695027, 701346, 714268], "recencyExclusionWindowInMinutes": 551180, "targetTrackableUsersEnabled": true, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 5473.9, "ctrInPercent": 2841.41, "nielsenOTPInPercent": 9824.26, "cpaInAdvertiserCurrency": 9094.99, "returnOnAdSpendPercent": 878.85, "vcrInPercent": null, "viewabilityInPercent": 683.62, "vcpmInAdvertiserCurrency": 8782.74, "cpcvInAdvertiserCurrency": null, "miaozhenOTPInPercent": 7930.85}, "creativeIds": ["<value 1>"], "associatedBidLists": [], "flights": [{"allocationType": "Fixed", "budgetInAdvertiserCurrency": 6824.44, "budgetInImpressions": 712395, "dailyTargetInAdvertiserCurrency": 6233.72, "dailyTargetInImpressions": 843722, "campaignFlightId": 570475, "adGroupId": null}], "koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": false, "predictiveClearingEnabled": true}, "comscoreSettings": {"isEnabled": true, "populationId": 612763, "demographicMemberIds": [46343, 170673, 930570], "mobileDemographicMemberIds": null}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasIntegralVideoViewabilityCategoryId"], []], "isUseClicksAsConversionsEnabled": true, "isUseSecondaryConversionsEnabled": false, "nielsenTrackingAttributes": {"enhancedReportingOption": "Audience", "gender": "Female", "startAge": "Thirty", "endAge": "ThirtyNine", "countries": ["<value 1>", "<value 2>"]}}]}
+          application/json: {"campaign": {"id": "<id>", "name": null, "campaignGroupId": 960101, "description": "authorized equate pfft that bathrobe now monumental", "startDate": "2023-05-29T12:37:28.754Z", "endDate": "2023-01-31T12:57:12.401Z", "timeZone": "Asia/Thimphu", "customCPAClickWeight": 5357.4, "customCPAViewthroughWeight": 2741.6, "customCPAType": "PixelWeighting", "impressionsOnlyBudgetingCpm": 6819.46, "primaryChannel": "NativeVideo", "primaryGoal": "<value>", "seedId": "<id>", "conversionReportingColumnsCount": 859221, "flights": [{"id": "<id>", "startDateInclusiveUTC": "2023-03-22T18:44:52.808Z", "endDateExclusiveUTC": "2023-11-29T10:22:14.197Z", "budgetInAdvertiserCurrency": 296.01, "budgetInImpressions": 505888, "dailyTargetInAdvertiserCurrency": 1201.6, "dailyTargetInImpressions": 69520}], "secondaryGoal": "<value>", "tertiaryGoal": null}, "adGroups": [{"id": "<id>", "name": "<value>", "campaignId": "<id>", "isEnabled": true, "description": "chip schematise hydrant tabletop", "programmaticGuaranteedPrivateContractId": "<id>", "channel": "Audio", "funnelLocation": "None", "budget": {"allocationType": "Fixed", "budgetInAdvertiserCurrency": 2122.11, "budgetInImpressions": 14421, "dailyTargetInAdvertiserCurrency": 6819.33, "dailyTargetInImpressions": 236683}, "baseBidCPMInAdvertiserCurrency": 4043.98, "maxBidCPMInAdvertiserCurrency": 9074.14, "marketType": "OpenMarket", "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": true, "audienceBoosterEnabled": true, "audienceExcluderEnabled": true, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [695027, 701346, 714268], "recencyExclusionWindowInMinutes": 551180, "targetTrackableUsersEnabled": true, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 5473.9, "ctrInPercent": 2841.41, "nielsenOTPInPercent": 9824.26, "cpaInAdvertiserCurrency": 9094.99, "returnOnAdSpendPercent": 878.85, "vcrInPercent": null, "viewabilityInPercent": 683.62, "vcpmInAdvertiserCurrency": 8782.74, "cpcvInAdvertiserCurrency": null, "miaozhenOTPInPercent": 7930.85, "newBuyerTargetValue": 701346}, "creativeIds": ["<value 1>"], "associatedBidLists": [], "ownedBidLists": [{"bidListId": "<id>"}], "flights": [{"allocationType": "Fixed", "budgetInAdvertiserCurrency": 6824.44, "budgetInImpressions": 712395, "dailyTargetInAdvertiserCurrency": 6233.72, "dailyTargetInImpressions": 843722, "campaignFlightId": 570475, "adGroupId": null}], "koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": false, "predictiveClearingEnabled": true}, "comscoreSettings": {"isEnabled": true, "populationId": 612763, "demographicMemberIds": [46343, 170673, 930570], "mobileDemographicMemberIds": null}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasIntegralVideoViewabilityCategoryId"], []], "isUseClicksAsConversionsEnabled": true, "isUseSecondaryConversionsEnabled": false, "nielsenTrackingAttributes": {"enhancedReportingOption": "Audience", "gender": "Female", "startAge": "Thirty", "endAge": "ThirtyNine", "countries": ["<value 1>", "<value 2>"]}}]}
   createCampaignsJob:
     speakeasy-default-create-campaigns-job:
       requestBody:
-        application/json: {"input": [{"primaryInput": {"description": null, "campaignGroupId": 657704, "timeZone": "America/North_Dakota/Center", "customCPAClickWeight": 9662.9, "customCPAViewthroughWeight": 3558.78, "customCPAType": "ClickViewthroughWeighting", "customRoasType": "CompositeWeighting", "impressionsOnlyBudgetingCpm": 4427.56, "endDateInUtc": "2023-12-21T01:12:20.772Z", "seedId": "<id>", "campaignConversionReportingColumns": [{"trackingTagId": "<id>", "includeInCustomCPA": false, "reportingColumnId": 356532, "ROASConfig": {"includeInCustomROAS": false, "customROASWeight": 1483.03, "customROASClickWeight": 5286.76, "customROASViewthroughWeight": 8906.82}, "productListReportingType": "Halo", "weight": null, "crossDeviceAttributionModelId": "<id>"}], "isManagedByTTD": true, "secondaryGoal": {"maximizeReach": true, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 3558.78, "ctrInPercent": 2407.01, "nielsenOTPInPercent": 2349.25, "cpaInAdvertiserCurrency": 7778.32, "returnOnAdSpendPercent": 6752.02, "vcrInPercent": 5019.36, "viewabilityInPercent": 5781.75, "vcpmInAdvertiserCurrency": 1696.34, "cpcvInAdvertiserCurrency": 5609.2, "miaozhenOTPInPercent": 5842.09, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": false, "iqviaAudienceQualityIndexAndCostPerTarget": false, "crossixCostPerTarget": null, "NewBuyerTargetValue": 38368}, "tertiaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 6123.61, "ctrInPercent": 25.32, "nielsenOTPInPercent": 4889.32, "cpaInAdvertiserCurrency": 5258.8, "returnOnAdSpendPercent": 2553.01, "vcrInPercent": 1142.91, "viewabilityInPercent": 1152.77, "vcpmInAdvertiserCurrency": 6711.38, "cpcvInAdvertiserCurrency": 4528.37, "miaozhenOTPInPercent": 9833.69, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": false, "iqviaAudienceQualityIndexAndCostPerTarget": false, "crossixCostPerTarget": true, "NewBuyerTargetValue": 373225}, "advertiserId": "<id>", "name": "<value>", "customLabelNames": ["<value 1>", "<value 2>", "<value 3>"], "primaryChannel": "NativeVideo", "primaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 25.32, "ctrInPercent": 4889.32, "nielsenOTPInPercent": 5258.8, "cpaInAdvertiserCurrency": 2553.01, "returnOnAdSpendPercent": 1142.91, "vcrInPercent": 1152.77, "viewabilityInPercent": 6711.38, "vcpmInAdvertiserCurrency": 4528.37, "cpcvInAdvertiserCurrency": 9833.69, "miaozhenOTPInPercent": 1951.58, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": null, "iqviaAudienceQualityIndexAndCostPerTarget": false, "crossixCostPerTarget": true, "NewBuyerTargetValue": 355878}, "startDateInUtc": "2025-09-26T21:06:42.946Z", "budget": {"pacingMode": "PaceAhead", "budgetInAdvertiserCurrency": 5501.96, "budgetInImpressions": 629784, "dailyTargetInAdvertiserCurrency": 2524.41, "dailyTargetInImpressions": 726807}, "campaignIncrementalReachSetting": {"iSpotReachSetting": {"id": 178346, "name": "<value>", "isActive": true}, "realyticsReachSetting": {"id": 268786, "name": "<value>", "isActive": false, "products": [{"id": 106975, "name": "<value>"}], "realyticsEntertainmentInput": "TVS"}, "tvSquaredReachSetting": {"id": 772731, "name": "<value>", "isActive": false}, "sambaAuReachSetting": {"id": 403863, "name": null, "isActive": true}}}, "advancedInput": {"purchaseOrderNumber": "<value>", "flights": [{"startDateInclusiveUTC": "2024-09-20T06:04:19.345Z", "endDateExclusiveUTC": "2024-01-18T07:43:56.299Z", "budgetInAdvertiserCurrency": 8219.9, "budgetInImpressions": 76925, "dailyTargetInAdvertiserCurrency": 9309.03, "dailyTargetInImpressions": 152838}], "includeDefaultsFromAdvertiser": false, "passThroughFeeCard": {"startDateUtc": "2024-07-24T11:58:59.190Z", "passThroughFees": [{"type": "DataCostPercentage", "description": "sweetly absent fortunately forenenst earnest who solidly wherever step-mother", "amount": 2888.48}]}, "callerSource": "<value>", "frequencyConfigs": [{"counterName": "<value>", "frequencyCap": 234925, "frequencyGoal": 777832, "resetIntervalInMinutes": 629784}]}, "adGroups": [{"primaryInput": {"isEnabled": true, "description": "scenario dish gracefully through tame yahoo pension husband as atop", "budget": {"allocationType": "Maximum", "budgetInAdvertiserCurrency": 2283.06, "budgetInImpressions": 301691, "dailyTargetInAdvertiserCurrency": 9268.18, "dailyTargetInImpressions": 851470}, "baseBidCPMInAdvertiserCurrency": 694.78, "maxBidCPMInAdvertiserCurrency": 6084.4, "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": true, "audienceBoosterEnabled": false, "audienceExcluderEnabled": true, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [497890, 566253], "recencyExclusionWindowInMinutes": 742665, "targetTrackableUsersEnabled": true, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 9062.02, "ctrInPercent": 7192.99, "nielsenOTPInPercent": 2823.22, "cpaInAdvertiserCurrency": 3140.25, "returnOnAdSpendPercent": 6857.21, "vcrInPercent": 2704.73, "viewabilityInPercent": 2247.4, "vcpmInAdvertiserCurrency": 8383.69, "cpcvInAdvertiserCurrency": 4755.8, "miaozhenOTPInPercent": 4575.86}, "creativeIds": ["<value 1>", "<value 2>"], "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": false}], "name": "<value>", "channel": "Display", "funnelLocation": "Awareness", "marketType": "PrivateMarketOnly", "programmaticGuaranteedPrivateContractId": "<id>", "includeDefaultsFromCampaign": true}, "advancedInput": {"koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": true, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": false, "populationId": 559587, "demographicMemberIds": [139340, 129935], "mobileDemographicMemberIds": null}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasAudienceReachPercentageTierId"], []], "isUseClicksAsConversionsEnabled": false, "isUseSecondaryConversionsEnabled": true, "nielsenTrackingAttributes": {"enhancedReportingOption": "None", "gender": "Female", "startAge": "ThirtyFive", "endAge": "TwentyFour", "countries": ["<value 1>", "<value 2>"]}, "newFrequencyConfigs": null, "inventoryTargeting": {"dealGroupIdsToInclude": ["<value 1>"], "dealGroupIdsToExclude": ["<value 1>", "<value 2>", "<value 3>"], "dealIdsToExclude": [169634], "dealIdsToInclude": [356532, 584209], "includeDefaultOnDeals": true}, "isNonDecisioned": false, "includeDefaultsFromCampaign": true, "flights": [{"allocationType": "Maximum", "budgetInAdvertiserCurrency": 4838.47, "budgetInImpressions": 420224, "dailyTargetInAdvertiserCurrency": 1513.78, "dailyTargetInImpressions": 735500}]}}]}], "validateInputOnly": true, "callbackInput": {"callbackUrl": "https://impeccable-pick.com/", "callbackHeaders": {"key": "<value>"}}}
+        application/json: {"input": [{"primaryInput": {"description": null, "campaignGroupId": 657704, "timeZone": "America/North_Dakota/Center", "customCPAClickWeight": 9662.9, "customCPAViewthroughWeight": 3558.78, "customCPAType": "ClickViewthroughWeighting", "customRoasType": "CompositeWeighting", "impressionsOnlyBudgetingCpm": 4427.56, "endDateInUtc": "2023-12-21T01:12:20.772Z", "seedId": "<id>", "campaignConversionReportingColumns": [{"trackingTagId": "<id>", "includeInCustomCPA": false, "reportingColumnId": 356532, "ROASConfig": {"includeInCustomROAS": false, "customROASWeight": 1483.03, "customROASClickWeight": 5286.76, "customROASViewthroughWeight": 8906.82}, "productListReportingType": "Halo", "weight": null, "crossDeviceAttributionModelId": "<id>"}], "isManagedByTTD": true, "secondaryGoal": {"maximizeReach": true, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 3558.78, "ctrInPercent": 2407.01, "nielsenOTPInPercent": 2349.25, "cpaInAdvertiserCurrency": 7778.32, "returnOnAdSpendPercent": 6752.02, "vcrInPercent": 5019.36, "viewabilityInPercent": 5781.75, "vcpmInAdvertiserCurrency": 1696.34, "cpcvInAdvertiserCurrency": 5609.2, "miaozhenOTPInPercent": 5842.09, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": false, "iqviaAudienceQualityIndexAndCostPerTarget": false, "crossixCostPerTarget": null, "newBuyerTargetValue": 657704}, "tertiaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 6123.61, "ctrInPercent": 25.32, "nielsenOTPInPercent": 4889.32, "cpaInAdvertiserCurrency": 5258.8, "returnOnAdSpendPercent": 2553.01, "vcrInPercent": 1142.91, "viewabilityInPercent": 1152.77, "vcpmInAdvertiserCurrency": 6711.38, "cpcvInAdvertiserCurrency": 4528.37, "miaozhenOTPInPercent": 9833.69, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": false, "iqviaAudienceQualityIndexAndCostPerTarget": false, "crossixCostPerTarget": true, "newBuyerTargetValue": null}, "advertiserId": "<id>", "name": "<value>", "customLabelNames": ["<value 1>", "<value 2>", "<value 3>"], "primaryChannel": "NativeVideo", "primaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 25.32, "ctrInPercent": 4889.32, "nielsenOTPInPercent": 5258.8, "cpaInAdvertiserCurrency": 2553.01, "returnOnAdSpendPercent": 1142.91, "vcrInPercent": 1152.77, "viewabilityInPercent": 6711.38, "vcpmInAdvertiserCurrency": 4528.37, "cpcvInAdvertiserCurrency": 9833.69, "miaozhenOTPInPercent": 1951.58, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": null, "iqviaAudienceQualityIndexAndCostPerTarget": false, "crossixCostPerTarget": true, "newBuyerTargetValue": 373225}, "startDateInUtc": "2025-09-26T21:06:42.946Z", "budget": {"pacingMode": "PaceAhead", "budgetInAdvertiserCurrency": 5501.96, "budgetInImpressions": 629784, "dailyTargetInAdvertiserCurrency": 2524.41, "dailyTargetInImpressions": 726807}, "campaignIncrementalReachSetting": {"iSpotReachSetting": {"id": 178346, "name": "<value>", "isActive": true}, "realyticsReachSetting": {"id": 268786, "name": "<value>", "isActive": false, "products": [{"id": 106975, "name": "<value>"}], "realyticsEntertainmentInput": "TVS"}, "tvSquaredReachSetting": {"id": 772731, "name": "<value>", "isActive": false}, "sambaAuReachSetting": {"id": 403863, "name": null, "isActive": true}}}, "advancedInput": {"purchaseOrderNumber": "<value>", "flights": [{"startDateInclusiveUTC": "2024-09-20T06:04:19.345Z", "endDateExclusiveUTC": "2024-01-18T07:43:56.299Z", "budgetInAdvertiserCurrency": 8219.9, "budgetInImpressions": 76925, "dailyTargetInAdvertiserCurrency": 9309.03, "dailyTargetInImpressions": 152838}], "includeDefaultsFromAdvertiser": false, "passThroughFeeCard": {"startDateUtc": "2024-07-24T11:58:59.190Z", "passThroughFees": [{"type": "DataCostPercentage", "description": "sweetly absent fortunately forenenst earnest who solidly wherever step-mother", "amount": 2888.48}]}, "callerSource": "<value>", "frequencyConfigs": [{"counterName": "<value>", "frequencyCap": 234925, "frequencyGoal": 777832, "resetIntervalInMinutes": 629784}]}, "adGroups": [{"primaryInput": {"isEnabled": true, "description": "scenario dish gracefully through tame yahoo pension husband as atop", "budget": {"allocationType": "Maximum", "budgetInAdvertiserCurrency": 2283.06, "budgetInImpressions": 301691, "dailyTargetInAdvertiserCurrency": 9268.18, "dailyTargetInImpressions": 851470}, "baseBidCPMInAdvertiserCurrency": 694.78, "maxBidCPMInAdvertiserCurrency": 6084.4, "audienceTargeting": {"audienceId": {"value": "<value>"}, "audienceAcceleratorExclusionsEnabled": true, "audienceBoosterEnabled": false, "audienceExcluderEnabled": true, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [497890, 566253], "recencyExclusionWindowInMinutes": 742665, "targetTrackableUsersEnabled": true, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 9062.02, "ctrInPercent": 7192.99, "nielsenOTPInPercent": 2823.22, "cpaInAdvertiserCurrency": 3140.25, "returnOnAdSpendPercent": 6857.21, "vcrInPercent": 2704.73, "viewabilityInPercent": 2247.4, "vcpmInAdvertiserCurrency": 8383.69, "cpcvInAdvertiserCurrency": 4755.8, "miaozhenOTPInPercent": 4575.86, "newBuyerTargetValue": 774436}, "creativeIds": ["<value 1>", "<value 2>"], "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": false}], "ownedBidLists": [{"name": "<value>", "adjustmentType": "Inclusion", "resolutionType": "ApplyAverageAdjustment", "dimensions": ["HasVideoCompletionRateScoreRange"], "bidLines": [{"adFormatId": "<id>", "domainFragment": "<value>", "universalCategoryTaxonomyId": "<id>", "browser": "Opera", "browserId": "InApp", "carrierId": "<id>", "deviceModelId": 169634, "deviceType": "PC", "geoSegmentId": "<id>", "hourOfWeek": 584209, "languageId": "<id>", "osName": "<value>", "privateContractId": "<id>", "recencyWindowInMinutes": {"min": 399808, "max": 27960}, "renderingContext": "MobileOptimizedWeb", "supplyVendorId": "<id>", "temperatureBucketInCelsius": {"min": 8662.23, "max": 6123.61}, "adsTxtSellerType": "Unauthorized", "videoMutedState": "InfrequentlyAutoMuted", "videoPlaybackType": "InterstitialSliderFloating", "videoPlayerSize": "Small", "videoQuality": "UserGenerated", "videoSkippability": "Skippable", "factualProximityTarget": {"targetingCodeId": 255301, "designId": 114291}, "impressionPlacementValue": "<value>", "videoTruthScoreRange": {"min": 5497.84, "max": 8737.14}, "videoViewabilityScoreRange": {"min": 3063.09, "max": 1685.62}, "displayViewabilityScoreRange": {"min": 2847.66, "max": 8240.9}, "peer39LanguageId": "<id>", "doubleVerifyBotAvoidanceCategory": "FraudInvalid", "contextualAppCategoryId": "<id>", "publisherId": "<id>", "integralViewabilityCategoryId": "<id>", "integralViewabilityCategory": "InView40", "integralVideoViewabilityCategoryId": "<id>", "integralVideoViewabilityCategory": "InView70", "doubleVerifyViewabilityCategory": "Top55", "doubleVerifyVideoViewabilityCategory": "Duration25", "peer39ViewabilityCategoryId": "<id>", "peer39ViewabilityCategory": "Top60", "videoCompletionRateScoreRange": {"min": 2687.86, "max": 9329.62}, "internetConnectionInput": "WiFi", "internetConnectionTypeId": "Unknown", "internetConnection": "WiFi", "rtbAsiaPageQualityCategory": "BlockModerateAndHighRisk", "rtbAsiaVideoPageQualityCategory": "BlockModerateAndHighRisk", "supplyPathOptimizationListId": 783648, "marketType": "PMPNotSpecified", "weatherCondition": "Thunderstorm", "frequencyAdjustment": {"counterId": "<id>", "timesShown": {"min": 520529, "max": 257786}}, "sellerDomain": "<value>", "digitalOutOfHomeVenueTypeId": "<id>", "nativePlacementType": "RecommendationWidget", "nativeContextType": "ProductReview", "idiosyncraticSegment": "LightTvViewers2", "tencentPageQualityCategory": "BlockHighRisk", "domainClassId": 493213, "geofenceThirdPartyDataAndBrand": {"dataId": 791027, "brandId": "<id>"}, "genreId": "<id>", "livestream": "NotLive", "productionQuality": "Unknown", "productionQualityId": "UserGeneratedContent", "contentRatingId": "<id>", "contentDuration": "Unknown", "qualityScoreRange": {"min": 9009.31, "max": 1774.79}, "atmosphericCondition": "VeryHighForecast", "marketplaceId": null, "audienceReachPercentageTier": "Tier1", "contentTransparency": "NonTransparent", "fullReferrerUrl": "FullUrl", "likelyRefreshRate": "Unknown", "rewarded": "IsRewarded", "feedId": 547220, "liveEventId": "<id>", "liveEventTypeId": "<id>", "extendedZipCodeGroupSegmentThirdPartyDataId": 235110, "contentLanguageId": "<id>", "adToContentRatioRange": {"min": 5659.27, "max": 2409.7}, "adsInViewRange": {"min": 8050.14, "max": null}, "bidAdjustment": 4418.39, "volumeControlPriority": "Neutral", "maxBid": 131.72}], "source": "SystemAutoForEndeavorTargeting", "isAvailableForLibraryUse": false, "associateBehavior": "DoNotAssociate", "dimensionConfig": {"geo": {"locationContextType": "Realtime"}}, "isDefaultForDimension": true}], "name": "<value>", "channel": "Display", "funnelLocation": "Awareness", "marketType": "PrivateMarketOnly", "programmaticGuaranteedPrivateContractId": "<id>", "includeDefaultsFromCampaign": true}, "advancedInput": {"koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": true, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": false, "populationId": 559587, "demographicMemberIds": [139340, 129935], "mobileDemographicMemberIds": null}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasAudienceReachPercentageTierId"], []], "isUseClicksAsConversionsEnabled": false, "isUseSecondaryConversionsEnabled": true, "nielsenTrackingAttributes": {"enhancedReportingOption": "None", "gender": "Female", "startAge": "ThirtyFive", "endAge": "TwentyFour", "countries": ["<value 1>", "<value 2>"]}, "newFrequencyConfigs": null, "inventoryTargeting": {"dealGroupIdsToInclude": ["<value 1>"], "dealGroupIdsToExclude": ["<value 1>", "<value 2>", "<value 3>"], "dealIdsToExclude": [169634], "dealIdsToInclude": [356532, 584209], "includeDefaultOnDeals": true}, "isNonDecisioned": false, "includeDefaultsFromCampaign": true, "flights": [{"allocationType": "Maximum", "budgetInAdvertiserCurrency": 4838.47, "budgetInImpressions": 420224, "dailyTargetInAdvertiserCurrency": 1513.78, "dailyTargetInImpressions": 735500}]}}]}], "validateInputOnly": true, "callbackInput": {"callbackUrl": "https://impeccable-pick.com/", "callbackHeaders": {"key": "<value>"}}}
       responses:
         "202":
           application/json: {"id": 400815}
@@ -1594,14 +2023,14 @@ examples:
   updateCampaignsJob:
     speakeasy-default-update-campaigns-job:
       requestBody:
-        application/json: {"input": [{"id": "<id>", "primaryInput": {"description": "hmph energetically yet surprisingly swift knight swear multicolored absent", "campaignGroupId": 645576, "timeZone": "America/Argentina/San_Juan", "customCPAClickWeight": null, "customCPAViewthroughWeight": 8361.84, "customCPAType": "PixelWeighting", "customRoasType": "ClickViewthroughWeighting", "impressionsOnlyBudgetingCpm": 2706.4, "endDateInUtc": "2023-11-11T21:39:56.025Z", "seedId": "<id>", "campaignConversionReportingColumns": [{"trackingTagId": "<id>", "includeInCustomCPA": true, "reportingColumnId": 809247, "ROASConfig": {"includeInCustomROAS": false, "customROASWeight": null, "customROASClickWeight": null, "customROASViewthroughWeight": 6784.9}, "productListReportingType": "Halo", "weight": 2260.69, "crossDeviceAttributionModelId": "<id>"}], "isManagedByTTD": true, "secondaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": null, "ctrInPercent": null, "nielsenOTPInPercent": 5546.51, "cpaInAdvertiserCurrency": 7735.11, "returnOnAdSpendPercent": 5459.4, "vcrInPercent": 7724.91, "viewabilityInPercent": null, "vcpmInAdvertiserCurrency": 9927, "cpcvInAdvertiserCurrency": 1852.41, "miaozhenOTPInPercent": 2827.93, "iqviaAudienceQualityIndex": false, "crossixAudienceQualityIndex": null, "iqviaAudienceQualityIndexAndCostPerTarget": false, "crossixCostPerTarget": true, "NewBuyerTargetValue": 178803}, "tertiaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 7329.7, "ctrInPercent": 9103.24, "nielsenOTPInPercent": 2359.55, "cpaInAdvertiserCurrency": 6489.19, "returnOnAdSpendPercent": 8265.87, "vcrInPercent": null, "viewabilityInPercent": 6404.44, "vcpmInAdvertiserCurrency": 1278.49, "cpcvInAdvertiserCurrency": 9238.19, "miaozhenOTPInPercent": 8948.48, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": false, "iqviaAudienceQualityIndexAndCostPerTarget": false, "crossixCostPerTarget": true, "NewBuyerTargetValue": 784776}, "name": "<value>", "primaryChannel": "None", "primaryGoal": {"maximizeReach": true, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 3354.68, "ctrInPercent": 7716.49, "nielsenOTPInPercent": null, "cpaInAdvertiserCurrency": 381.7, "returnOnAdSpendPercent": 8461.44, "vcrInPercent": 4170.61, "viewabilityInPercent": 5364.85, "vcpmInAdvertiserCurrency": 1107.08, "cpcvInAdvertiserCurrency": null, "miaozhenOTPInPercent": 4584.96, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": false, "iqviaAudienceQualityIndexAndCostPerTarget": true, "crossixCostPerTarget": true, "NewBuyerTargetValue": 785673}, "startDateInUtc": "2023-01-13T23:06:05.083Z", "budget": {"pacingMode": "PaceAsSoonAsPossible"}}, "advancedInput": {"purchaseOrderNumber": "<value>"}}], "validateInputOnly": true, "callbackInput": {"callbackUrl": "https://soggy-apparatus.org/", "callbackHeaders": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}}
+        application/json: {"input": [{"id": "<id>", "primaryInput": {"description": "hmph energetically yet surprisingly swift knight swear multicolored absent", "campaignGroupId": 645576, "timeZone": "America/Argentina/San_Juan", "customCPAClickWeight": null, "customCPAViewthroughWeight": 8361.84, "customCPAType": "PixelWeighting", "customRoasType": "ClickViewthroughWeighting", "impressionsOnlyBudgetingCpm": 2706.4, "endDateInUtc": "2023-11-11T21:39:56.025Z", "seedId": "<id>", "campaignConversionReportingColumns": [{"trackingTagId": "<id>", "includeInCustomCPA": true, "reportingColumnId": 809247, "ROASConfig": {"includeInCustomROAS": false, "customROASWeight": null, "customROASClickWeight": null, "customROASViewthroughWeight": 6784.9}, "productListReportingType": "Halo", "weight": 2260.69, "crossDeviceAttributionModelId": "<id>"}], "isManagedByTTD": true, "secondaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": null, "ctrInPercent": null, "nielsenOTPInPercent": 5546.51, "cpaInAdvertiserCurrency": 7735.11, "returnOnAdSpendPercent": 5459.4, "vcrInPercent": 7724.91, "viewabilityInPercent": null, "vcpmInAdvertiserCurrency": 9927, "cpcvInAdvertiserCurrency": 1852.41, "miaozhenOTPInPercent": 2827.93, "iqviaAudienceQualityIndex": false, "crossixAudienceQualityIndex": null, "iqviaAudienceQualityIndexAndCostPerTarget": false, "crossixCostPerTarget": true, "newBuyerTargetValue": 645576}, "tertiaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 7329.7, "ctrInPercent": 9103.24, "nielsenOTPInPercent": 2359.55, "cpaInAdvertiserCurrency": 6489.19, "returnOnAdSpendPercent": 8265.87, "vcrInPercent": null, "viewabilityInPercent": 6404.44, "vcpmInAdvertiserCurrency": 1278.49, "cpcvInAdvertiserCurrency": 9238.19, "miaozhenOTPInPercent": 8948.48, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": false, "iqviaAudienceQualityIndexAndCostPerTarget": false, "crossixCostPerTarget": true, "newBuyerTargetValue": 201033}, "name": "<value>", "primaryChannel": "None", "primaryGoal": {"maximizeReach": true, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 3354.68, "ctrInPercent": 7716.49, "nielsenOTPInPercent": null, "cpaInAdvertiserCurrency": 381.7, "returnOnAdSpendPercent": 8461.44, "vcrInPercent": 4170.61, "viewabilityInPercent": 5364.85, "vcpmInAdvertiserCurrency": 1107.08, "cpcvInAdvertiserCurrency": null, "miaozhenOTPInPercent": 4584.96, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": false, "iqviaAudienceQualityIndexAndCostPerTarget": true, "crossixCostPerTarget": true, "newBuyerTargetValue": 850970}, "startDateInUtc": "2023-01-13T23:06:05.083Z", "budget": {"pacingMode": "PaceAsSoonAsPossible"}}, "advancedInput": {"purchaseOrderNumber": "<value>"}}], "validateInputOnly": true, "callbackInput": {"callbackUrl": "https://soggy-apparatus.org/", "callbackHeaders": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}}
       responses:
         "202":
           application/json: {"id": 833664}
         "400":
           application/json: {"type": "<value>", "title": "<value>", "status": 182997, "detail": "<value>", "instance": "<value>"}
         "200":
-          application/json: {"campaign": {"id": "<id>", "name": "<value>", "campaignGroupId": 201033, "description": "saloon yesterday artistic doing esteemed that over apt partially", "startDate": "2023-02-25T02:45:30.882Z", "endDate": "2025-07-05T10:58:57.755Z", "timeZone": "Asia/Barnaul", "customCPAClickWeight": 7722.13, "customCPAViewthroughWeight": 1971.14, "customCPAType": "PixelWeighting", "impressionsOnlyBudgetingCpm": 6514.48, "primaryChannel": "NativeVideo", "primaryGoal": "<value>", "seedId": "<id>", "conversionReportingColumnsCount": 434209, "flights": [{"id": "<id>", "startDateInclusiveUTC": "2025-06-05T22:25:11.463Z", "endDateExclusiveUTC": "2023-01-11T11:01:46.801Z", "budgetInAdvertiserCurrency": 81.58, "budgetInImpressions": 678490, "dailyTargetInAdvertiserCurrency": 2260.69, "dailyTargetInImpressions": 945903}], "secondaryGoal": null, "tertiaryGoal": "<value>"}, "adGroups": [{"id": "<id>", "name": "<value>", "campaignId": "<id>", "isEnabled": false, "description": "unabashedly analyse gladly convalesce ascertain", "programmaticGuaranteedPrivateContractId": "<id>", "channel": "NativeDisplay", "funnelLocation": "Conversion", "budget": {"allocationType": "Maximum", "budgetInAdvertiserCurrency": 8509.65, "budgetInImpressions": 559602, "dailyTargetInAdvertiserCurrency": 6000.32, "dailyTargetInImpressions": 480090}, "baseBidCPMInAdvertiserCurrency": 7022.03, "maxBidCPMInAdvertiserCurrency": 3492.85, "marketType": "Marketplace", "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": true, "audienceBoosterEnabled": true, "audienceExcluderEnabled": true, "audiencePredictorEnabled": true, "crossDeviceVendorListForAudience": null, "recencyExclusionWindowInMinutes": 641872, "targetTrackableUsersEnabled": false, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": true, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 8789.29, "ctrInPercent": 6097.83, "nielsenOTPInPercent": 97.94, "cpaInAdvertiserCurrency": 4920.96, "returnOnAdSpendPercent": 6036.6, "vcrInPercent": 7367.66, "viewabilityInPercent": 5682.26, "vcpmInAdvertiserCurrency": 2158.66, "cpcvInAdvertiserCurrency": 2909.06, "miaozhenOTPInPercent": null}, "creativeIds": ["<value 1>", "<value 2>", "<value 3>"], "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": false}], "flights": [{"allocationType": "Fixed", "budgetInAdvertiserCurrency": 9067.5, "budgetInImpressions": 116224, "dailyTargetInAdvertiserCurrency": 5091.83, "dailyTargetInImpressions": 932776, "campaignFlightId": 942771, "adGroupId": "<id>"}], "koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": false, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": false, "populationId": 784781, "demographicMemberIds": [], "mobileDemographicMemberIds": [138240, 326531]}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasSellerId"], []], "isUseClicksAsConversionsEnabled": true, "isUseSecondaryConversionsEnabled": false, "nielsenTrackingAttributes": {"enhancedReportingOption": "Audience", "gender": "Male", "startAge": "SixtyFive", "endAge": "Twenty", "countries": ["<value 1>", "<value 2>", "<value 3>"]}}]}
+          application/json: {"campaign": {"id": "<id>", "name": "<value>", "campaignGroupId": 201033, "description": "saloon yesterday artistic doing esteemed that over apt partially", "startDate": "2023-02-25T02:45:30.882Z", "endDate": "2025-07-05T10:58:57.755Z", "timeZone": "Asia/Barnaul", "customCPAClickWeight": 7722.13, "customCPAViewthroughWeight": 1971.14, "customCPAType": "PixelWeighting", "impressionsOnlyBudgetingCpm": 6514.48, "primaryChannel": "NativeVideo", "primaryGoal": "<value>", "seedId": "<id>", "conversionReportingColumnsCount": 434209, "flights": [{"id": "<id>", "startDateInclusiveUTC": "2025-06-05T22:25:11.463Z", "endDateExclusiveUTC": "2023-01-11T11:01:46.801Z", "budgetInAdvertiserCurrency": 81.58, "budgetInImpressions": 678490, "dailyTargetInAdvertiserCurrency": 2260.69, "dailyTargetInImpressions": 945903}], "secondaryGoal": null, "tertiaryGoal": "<value>"}, "adGroups": [{"id": "<id>", "name": "<value>", "campaignId": "<id>", "isEnabled": false, "description": "unabashedly analyse gladly convalesce ascertain", "programmaticGuaranteedPrivateContractId": "<id>", "channel": "NativeDisplay", "funnelLocation": "Conversion", "budget": {"allocationType": "Maximum", "budgetInAdvertiserCurrency": 8509.65, "budgetInImpressions": 559602, "dailyTargetInAdvertiserCurrency": 6000.32, "dailyTargetInImpressions": 480090}, "baseBidCPMInAdvertiserCurrency": 7022.03, "maxBidCPMInAdvertiserCurrency": 3492.85, "marketType": "Marketplace", "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": true, "audienceBoosterEnabled": true, "audienceExcluderEnabled": true, "audiencePredictorEnabled": true, "crossDeviceVendorListForAudience": null, "recencyExclusionWindowInMinutes": 641872, "targetTrackableUsersEnabled": false, "useMcIdAsPrimary": true}, "roiGoal": {"maximizeReach": true, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 8789.29, "ctrInPercent": 6097.83, "nielsenOTPInPercent": 97.94, "cpaInAdvertiserCurrency": 4920.96, "returnOnAdSpendPercent": 6036.6, "vcrInPercent": 7367.66, "viewabilityInPercent": 5682.26, "vcpmInAdvertiserCurrency": 2158.66, "cpcvInAdvertiserCurrency": 2909.06, "miaozhenOTPInPercent": null, "newBuyerTargetValue": 83180}, "creativeIds": ["<value 1>", "<value 2>", "<value 3>"], "associatedBidLists": [{"bidListId": "<id>", "isEnabled": true, "isDefaultForDimension": false}], "ownedBidLists": null, "flights": [{"allocationType": "Fixed", "budgetInAdvertiserCurrency": 9067.5, "budgetInImpressions": 116224, "dailyTargetInAdvertiserCurrency": 5091.83, "dailyTargetInImpressions": 932776, "campaignFlightId": 942771, "adGroupId": "<id>"}], "koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": false, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": false, "populationId": 784781, "demographicMemberIds": [], "mobileDemographicMemberIds": [138240, 326531]}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [["HasSellerId"], []], "isUseClicksAsConversionsEnabled": true, "isUseSecondaryConversionsEnabled": false, "nielsenTrackingAttributes": {"enhancedReportingOption": "Audience", "gender": "Male", "startAge": "SixtyFive", "endAge": "Twenty", "countries": ["<value 1>", "<value 2>", "<value 3>"]}}]}
   getCampaignVersion:
     speakeasy-default-get-campaign-version:
       parameters:
@@ -1615,10 +2044,10 @@ examples:
   updateCampaign:
     speakeasy-default-update-campaign:
       requestBody:
-        application/json: {"id": "<id>", "primaryInput": {"description": "yahoo whether frail but into form sway neck notwithstanding", "campaignGroupId": 760468, "timeZone": "Asia/Amman", "customCPAClickWeight": 1380.93, "customCPAViewthroughWeight": 3991.98, "customCPAType": "ClickViewthroughWeighting", "customRoasType": "Disabled", "impressionsOnlyBudgetingCpm": 126.57, "endDateInUtc": "2024-07-09T17:14:23.542Z", "seedId": "<id>", "campaignConversionReportingColumns": [{"trackingTagId": "<id>", "includeInCustomCPA": false, "reportingColumnId": 716444, "ROASConfig": {"includeInCustomROAS": true, "customROASWeight": 8307.9, "customROASClickWeight": 129.65, "customROASViewthroughWeight": 2890.82}, "productListReportingType": "Featured", "weight": 5187.48, "crossDeviceAttributionModelId": null}], "isManagedByTTD": false, "secondaryGoal": {"maximizeReach": true, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 1165.14, "ctrInPercent": 5157.73, "nielsenOTPInPercent": 3855.93, "cpaInAdvertiserCurrency": 5164.28, "returnOnAdSpendPercent": 8554.35, "vcrInPercent": 9569.97, "viewabilityInPercent": 9650.33, "vcpmInAdvertiserCurrency": 5268.69, "cpcvInAdvertiserCurrency": 7216.52, "miaozhenOTPInPercent": 6966.26, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": true, "iqviaAudienceQualityIndexAndCostPerTarget": true, "crossixCostPerTarget": true, "NewBuyerTargetValue": 869267}, "tertiaryGoal": {"maximizeReach": true, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 5149.5, "ctrInPercent": 5602.97, "nielsenOTPInPercent": 3514.56, "cpaInAdvertiserCurrency": 1.97, "returnOnAdSpendPercent": 3177.79, "vcrInPercent": 5564.63, "viewabilityInPercent": 472.11, "vcpmInAdvertiserCurrency": 4614.14, "cpcvInAdvertiserCurrency": 8553.51, "miaozhenOTPInPercent": 5511.72, "iqviaAudienceQualityIndex": false, "crossixAudienceQualityIndex": false, "iqviaAudienceQualityIndexAndCostPerTarget": null, "crossixCostPerTarget": false, "NewBuyerTargetValue": 113952}, "name": "<value>", "primaryChannel": "Display", "primaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 8835.54, "ctrInPercent": 4975.78, "nielsenOTPInPercent": 6033.78, "cpaInAdvertiserCurrency": null, "returnOnAdSpendPercent": 5696.08, "vcrInPercent": 8315.31, "viewabilityInPercent": 1059.68, "vcpmInAdvertiserCurrency": 4588.07, "cpcvInAdvertiserCurrency": 2202.71, "miaozhenOTPInPercent": 2682.12, "iqviaAudienceQualityIndex": false, "crossixAudienceQualityIndex": true, "iqviaAudienceQualityIndexAndCostPerTarget": true, "crossixCostPerTarget": true, "NewBuyerTargetValue": 723722}, "startDateInUtc": "2024-02-29T10:31:50.069Z", "budget": {"pacingMode": "PaceAsSoonAsPossible"}}, "advancedInput": {"purchaseOrderNumber": "<value>"}, "validateInputOnly": true}
+        application/json: {"id": "<id>", "primaryInput": {"description": "yahoo whether frail but into form sway neck notwithstanding", "campaignGroupId": 760468, "timeZone": "Asia/Amman", "customCPAClickWeight": 1380.93, "customCPAViewthroughWeight": 3991.98, "customCPAType": "ClickViewthroughWeighting", "customRoasType": "Disabled", "impressionsOnlyBudgetingCpm": 126.57, "endDateInUtc": "2024-07-09T17:14:23.542Z", "seedId": "<id>", "campaignConversionReportingColumns": [{"trackingTagId": "<id>", "includeInCustomCPA": false, "reportingColumnId": 716444, "ROASConfig": {"includeInCustomROAS": true, "customROASWeight": 8307.9, "customROASClickWeight": 129.65, "customROASViewthroughWeight": 2890.82}, "productListReportingType": "Featured", "weight": 5187.48, "crossDeviceAttributionModelId": null}], "isManagedByTTD": false, "secondaryGoal": {"maximizeReach": true, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 1165.14, "ctrInPercent": 5157.73, "nielsenOTPInPercent": 3855.93, "cpaInAdvertiserCurrency": 5164.28, "returnOnAdSpendPercent": 8554.35, "vcrInPercent": 9569.97, "viewabilityInPercent": 9650.33, "vcpmInAdvertiserCurrency": 5268.69, "cpcvInAdvertiserCurrency": 7216.52, "miaozhenOTPInPercent": 6966.26, "iqviaAudienceQualityIndex": true, "crossixAudienceQualityIndex": true, "iqviaAudienceQualityIndexAndCostPerTarget": true, "crossixCostPerTarget": true, "newBuyerTargetValue": 760468}, "tertiaryGoal": {"maximizeReach": true, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 5149.5, "ctrInPercent": 5602.97, "nielsenOTPInPercent": 3514.56, "cpaInAdvertiserCurrency": 1.97, "returnOnAdSpendPercent": 3177.79, "vcrInPercent": 5564.63, "viewabilityInPercent": 472.11, "vcpmInAdvertiserCurrency": 4614.14, "cpcvInAdvertiserCurrency": 8553.51, "miaozhenOTPInPercent": 5511.72, "iqviaAudienceQualityIndex": false, "crossixAudienceQualityIndex": false, "iqviaAudienceQualityIndexAndCostPerTarget": null, "crossixCostPerTarget": false, "newBuyerTargetValue": 287698}, "name": "<value>", "primaryChannel": "Display", "primaryGoal": {"maximizeReach": false, "maximizeLtvIncrementalReach": true, "cpcInAdvertiserCurrency": 8835.54, "ctrInPercent": 4975.78, "nielsenOTPInPercent": 6033.78, "cpaInAdvertiserCurrency": null, "returnOnAdSpendPercent": 5696.08, "vcrInPercent": 8315.31, "viewabilityInPercent": 1059.68, "vcpmInAdvertiserCurrency": 4588.07, "cpcvInAdvertiserCurrency": 2202.71, "miaozhenOTPInPercent": 2682.12, "iqviaAudienceQualityIndex": false, "crossixAudienceQualityIndex": true, "iqviaAudienceQualityIndexAndCostPerTarget": true, "crossixCostPerTarget": true, "newBuyerTargetValue": 105210}, "startDateInUtc": "2024-02-29T10:31:50.069Z", "budget": {"pacingMode": "PaceAsSoonAsPossible"}}, "advancedInput": {"purchaseOrderNumber": "<value>"}, "validateInputOnly": true}
       responses:
         "200":
-          application/json: {"campaign": {"id": "<id>", "name": "<value>", "campaignGroupId": 287698, "description": "yuppify primary lest nutritious whoa likewise bookcase traduce seriously", "startDate": "2024-06-18T22:41:27.089Z", "endDate": "2023-09-28T10:30:24.825Z", "timeZone": "Africa/Brazzaville", "customCPAClickWeight": 1420.08, "customCPAViewthroughWeight": 3419.03, "customCPAType": "Disabled", "impressionsOnlyBudgetingCpm": null, "primaryChannel": "Display", "primaryGoal": "<value>", "seedId": "<id>", "conversionReportingColumnsCount": 10946, "flights": [{"id": "<id>", "startDateInclusiveUTC": "2024-06-26T03:24:17.236Z", "endDateExclusiveUTC": "2025-07-01T04:11:25.573Z", "budgetInAdvertiserCurrency": 6644.31, "budgetInImpressions": 164310, "dailyTargetInAdvertiserCurrency": 4555.64, "dailyTargetInImpressions": null}], "secondaryGoal": null, "tertiaryGoal": "<value>"}, "adGroups": [{"id": "<id>", "name": null, "campaignId": "<id>", "isEnabled": false, "description": "er palatable clonk against noon blacken though", "programmaticGuaranteedPrivateContractId": "<id>", "channel": "Display", "funnelLocation": "None", "budget": {"allocationType": "Maximum", "budgetInAdvertiserCurrency": 4400.5, "budgetInImpressions": 252235, "dailyTargetInAdvertiserCurrency": 3360.49, "dailyTargetInImpressions": 82960}, "baseBidCPMInAdvertiserCurrency": 4115.19, "maxBidCPMInAdvertiserCurrency": 9043, "marketType": "OpenMarket", "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": true, "audienceBoosterEnabled": false, "audienceExcluderEnabled": true, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [706430], "recencyExclusionWindowInMinutes": 773547, "targetTrackableUsersEnabled": true, "useMcIdAsPrimary": false}, "roiGoal": {"maximizeReach": null, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 8439.61, "ctrInPercent": 3120.58, "nielsenOTPInPercent": 7464.3, "cpaInAdvertiserCurrency": 6205.02, "returnOnAdSpendPercent": 9077.31, "vcrInPercent": 9134.53, "viewabilityInPercent": 7809.01, "vcpmInAdvertiserCurrency": null, "cpcvInAdvertiserCurrency": 9297.05, "miaozhenOTPInPercent": 330.19}, "creativeIds": ["<value 1>", "<value 2>"], "associatedBidLists": [], "flights": null, "koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": false, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": true, "populationId": 34197, "demographicMemberIds": [], "mobileDemographicMemberIds": [172582, 373780]}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [[], []], "isUseClicksAsConversionsEnabled": true, "isUseSecondaryConversionsEnabled": false, "nielsenTrackingAttributes": {"enhancedReportingOption": "Site", "gender": "Female", "startAge": "FiftyFive", "endAge": "TwentyFour", "countries": ["<value 1>"]}}]}
+          application/json: {"campaign": {"id": "<id>", "name": "<value>", "campaignGroupId": 287698, "description": "yuppify primary lest nutritious whoa likewise bookcase traduce seriously", "startDate": "2024-06-18T22:41:27.089Z", "endDate": "2023-09-28T10:30:24.825Z", "timeZone": "Africa/Brazzaville", "customCPAClickWeight": 1420.08, "customCPAViewthroughWeight": 3419.03, "customCPAType": "Disabled", "impressionsOnlyBudgetingCpm": null, "primaryChannel": "Display", "primaryGoal": "<value>", "seedId": "<id>", "conversionReportingColumnsCount": 10946, "flights": [{"id": "<id>", "startDateInclusiveUTC": "2024-06-26T03:24:17.236Z", "endDateExclusiveUTC": "2025-07-01T04:11:25.573Z", "budgetInAdvertiserCurrency": 6644.31, "budgetInImpressions": 164310, "dailyTargetInAdvertiserCurrency": 4555.64, "dailyTargetInImpressions": null}], "secondaryGoal": null, "tertiaryGoal": "<value>"}, "adGroups": [{"id": "<id>", "name": null, "campaignId": "<id>", "isEnabled": false, "description": "er palatable clonk against noon blacken though", "programmaticGuaranteedPrivateContractId": "<id>", "channel": "Display", "funnelLocation": "None", "budget": {"allocationType": "Maximum", "budgetInAdvertiserCurrency": 4400.5, "budgetInImpressions": 252235, "dailyTargetInAdvertiserCurrency": 3360.49, "dailyTargetInImpressions": 82960}, "baseBidCPMInAdvertiserCurrency": 4115.19, "maxBidCPMInAdvertiserCurrency": 9043, "marketType": "OpenMarket", "audienceTargeting": {"audienceId": "<id>", "audienceAcceleratorExclusionsEnabled": true, "audienceBoosterEnabled": false, "audienceExcluderEnabled": true, "audiencePredictorEnabled": false, "crossDeviceVendorListForAudience": [706430], "recencyExclusionWindowInMinutes": 773547, "targetTrackableUsersEnabled": true, "useMcIdAsPrimary": false}, "roiGoal": {"maximizeReach": null, "maximizeLtvIncrementalReach": false, "cpcInAdvertiserCurrency": 8439.61, "ctrInPercent": 3120.58, "nielsenOTPInPercent": 7464.3, "cpaInAdvertiserCurrency": 6205.02, "returnOnAdSpendPercent": 9077.31, "vcrInPercent": 9134.53, "viewabilityInPercent": 7809.01, "vcpmInAdvertiserCurrency": null, "cpcvInAdvertiserCurrency": 9297.05, "miaozhenOTPInPercent": 330.19, "newBuyerTargetValue": 651746}, "creativeIds": ["<value 1>", "<value 2>"], "associatedBidLists": [], "ownedBidLists": [{"bidListId": "<id>"}], "flights": null, "koaOptimizationSettings": {"areFutureKoaFeaturesEnabled": false, "predictiveClearingEnabled": false}, "comscoreSettings": {"isEnabled": true, "populationId": 34197, "demographicMemberIds": [], "mobileDemographicMemberIds": [172582, 373780]}, "contractTargeting": {"allowOpenMarketBiddingWhenTargetingContracts": true}, "dimensionalBiddingAutoOptimizationSettings": [[], []], "isUseClicksAsConversionsEnabled": true, "isUseSecondaryConversionsEnabled": false, "nielsenTrackingAttributes": {"enhancedReportingOption": "Site", "gender": "Female", "startAge": "FiftyFive", "endAge": "TwentyFour", "countries": ["<value 1>"]}}]}
         "400":
           application/json: {"type": "<value>", "title": "<value>", "status": 432346, "detail": "<value>", "instance": "<value>"}
   archiveCampaigns:
@@ -1721,6 +2150,7 @@ examples:
           application/json: {"type": "<value>", "title": "<value>", "status": 603376, "detail": "<value>", "instance": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Python SDK Changes:\n* `workflows.ad_groups.create()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.ad_group` **Changed** (Breaking ⚠️)\n* `workflows.ad_groups.update()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.ad_group` **Changed** (Breaking ⚠️)\n* `workflows.ad_group.create_ad_groups_job()`: \n  *  `request.input[]` **Changed** (Breaking ⚠️)\n* `workflows.ad_group.update_ad_groups_job()`: \n  *  `request.input[]` **Changed** (Breaking ⚠️)\n* `workflows.campaign.create()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.ad_groups[]` **Changed** (Breaking ⚠️)\n* `workflows.campaign.create_campaigns_job()`: \n  *  `request.input[]` **Changed** (Breaking ⚠️)\n* `workflows.campaign.update_campaigns_job()`: \n  *  `request.input[].primary_input.secondary_goal` **Changed** (Breaking ⚠️)\n  *  `response.ad_groups[]` **Changed** (Breaking ⚠️)\n* `workflows.campaigns.update()`: \n  *  `request.primary_input.secondary_goal` **Changed** (Breaking ⚠️)\n  *  `response.ad_groups[]` **Changed** (Breaking ⚠️)\n"
 generatedFiles:
   - .gitattributes
   - .vscode/settings.json

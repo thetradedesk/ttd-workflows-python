@@ -40,6 +40,10 @@ if TYPE_CHECKING:
         AdGroupCreateWorkflowInputWithValidation,
         AdGroupCreateWorkflowInputWithValidationTypedDict,
     )
+    from .adgroupcreateworkflowownedbidlistinput import (
+        AdGroupCreateWorkflowOwnedBidListInput,
+        AdGroupCreateWorkflowOwnedBidListInputTypedDict,
+    )
     from .adgroupcreateworkflowprimaryinput import (
         AdGroupCreateWorkflowPrimaryInput,
         AdGroupCreateWorkflowPrimaryInputTypedDict,
@@ -54,6 +58,7 @@ if TYPE_CHECKING:
         AdGroupNielsenTrackingAttributes,
         AdGroupNielsenTrackingAttributesTypedDict,
     )
+    from .adgroupownedbidlist import AdGroupOwnedBidList, AdGroupOwnedBidListTypedDict
     from .adgrouppayload import AdGroupPayload, AdGroupPayloadTypedDict
     from .adgrouproigoal import AdGroupROIGoal, AdGroupROIGoalTypedDict
     from .adgroupupdateworkflowinput import (
@@ -117,6 +122,7 @@ if TYPE_CHECKING:
         AdGroupWorkflowROIGoalInput,
         AdGroupWorkflowROIGoalInputTypedDict,
     )
+    from .adstxtsellertype import AdsTxtSellerType
     from .allocationtype import AllocationType
     from .apierror import APIError
     from .archiveadgroupsop import (
@@ -131,6 +137,19 @@ if TYPE_CHECKING:
         ArchiveCampaignsResponse,
         ArchiveCampaignsResponseTypedDict,
     )
+    from .atmosphericcondition import AtmosphericCondition
+    from .audiencereachpercentagetier import AudienceReachPercentageTier
+    from .bidlinecreateinput import BidLineCreateInput, BidLineCreateInputTypedDict
+    from .bidlistadjustmenttype import BidListAdjustmentType
+    from .bidlistassociatebehavior import BidListAssociateBehavior
+    from .bidlistdimension import BidListDimension
+    from .bidlistdimensionoptionsinput import (
+        BidListDimensionOptionsInput,
+        BidListDimensionOptionsInputTypedDict,
+    )
+    from .bidlistsource import BidListSource
+    from .browser import Browser
+    from .browserinput import BrowserInput
     from .bulkjobstatus import BulkJobStatus
     from .callrestapiworkflowinput import (
         CallRestAPIWorkflowInput,
@@ -232,6 +251,8 @@ if TYPE_CHECKING:
         CampaignWorkflowROIGoalInput,
         CampaignWorkflowROIGoalInputTypedDict,
     )
+    from .contentduration import ContentDuration
+    from .contenttransparency import ContentTransparency
     from .createadgroupop import CreateAdGroupResponse, CreateAdGroupResponseTypedDict
     from .createadgroupsjobop import (
         CreateAdGroupsJobResponse,
@@ -248,13 +269,35 @@ if TYPE_CHECKING:
     from .customcpatype import CustomCPAType
     from .customroasconfig import CustomROASConfig, CustomROASConfigTypedDict
     from .customroastype import CustomROASType
+    from .decimalrange import DecimalRange, DecimalRangeTypedDict
+    from .devicetype import DeviceType
     from .dimensionalbiddingdimensions import DimensionalBiddingDimensions
+    from .doubleverifybotavoidance import DoubleVerifyBotAvoidance
+    from .doubleverifydisplayviewability import DoubleVerifyDisplayViewability
+    from .doubleverifyvideoviewability import DoubleVerifyVideoViewability
     from .enhancednielsenreportingoptions import EnhancedNielsenReportingOptions
     from .enhancednielsenreportingoptionsinput import (
         EnhancedNielsenReportingOptionsInput,
     )
+    from .factualproximitytargetinput import (
+        FactualProximityTargetInput,
+        FactualProximityTargetInputTypedDict,
+    )
     from .firstpartydatainput import FirstPartyDataInput, FirstPartyDataInputTypedDict
+    from .frequencyadjustmentinput import (
+        FrequencyAdjustmentInput,
+        FrequencyAdjustmentInputTypedDict,
+    )
     from .frequencyconfig import FrequencyConfig, FrequencyConfigTypedDict
+    from .fullreferrerurl import FullReferrerURL
+    from .geobidlistoptionsinput import (
+        GeoBidListOptionsInput,
+        GeoBidListOptionsInputTypedDict,
+    )
+    from .geofencethirdpartydataandbrandinput import (
+        GeofenceThirdPartyDataAndBrandInput,
+        GeofenceThirdPartyDataAndBrandInputTypedDict,
+    )
     from .getcampaignversionop import (
         GetCampaignVersionRequest,
         GetCampaignVersionRequestTypedDict,
@@ -305,6 +348,7 @@ if TYPE_CHECKING:
     )
     from .graphqlrequestinput import GraphQLRequestInput, GraphQLRequestInputTypedDict
     from .httpmetadata import HTTPMetadata, HTTPMetadataTypedDict
+    from .idiosyncraticsegment import IdiosyncraticSegment
     from .incrementalreachbrandinput import (
         IncrementalReachBrandInput,
         IncrementalReachBrandInputTypedDict,
@@ -313,24 +357,42 @@ if TYPE_CHECKING:
         IncrementalReachProductInput,
         IncrementalReachProductInputTypedDict,
     )
+    from .int32range import Int32Range, Int32RangeTypedDict
+    from .integralvideoviewabilityinput import IntegralVideoViewabilityInput
+    from .integralviewabilityinput import IntegralViewabilityInput
+    from .internetconnectiontype import InternetConnectionType
+    from .internetconnectiontypeinput import InternetConnectionTypeInput
     from .keyvaluepairofstringandstringinput import (
         KeyValuePairOfStringAndStringInput,
         KeyValuePairOfStringAndStringInputTypedDict,
     )
+    from .likelyrefreshrate import LikelyRefreshRate
+    from .livestream import Livestream
+    from .locationcontexttypeinput import LocationContextTypeInput
     from .markettype import MarketType
+    from .markettypebidlist import MarketTypeBidList
     from .markettypeinput import MarketTypeInput
+    from .multiplematchresolutiontype import MultipleMatchResolutionType
+    from .nativecontexttype import NativeContextType
+    from .nativeplacementtype import NativePlacementType
     from .no_response_error import NoResponseError
     from .passthroughfeetype import PassThroughFeeType
+    from .peer39viewabilityinput import Peer39ViewabilityInput
     from .problemdetails import ProblemDetails, ProblemDetailsTypedDict
     from .problemdetails_error import ProblemDetailsError, ProblemDetailsErrorData
+    from .productionquality import ProductionQuality
+    from .productionqualityinput import ProductionQualityInput
     from .productlistreportingtypeinput import ProductListReportingTypeInput
     from .realyticsentertainmenttype import RealyticsEntertainmentType
     from .realyticsreachsettinginput import (
         RealyticsReachSettingInput,
         RealyticsReachSettingInputTypedDict,
     )
+    from .renderingcontext import RenderingContext
     from .responsevalidationerror import ResponseValidationError
     from .restapimethodtype import RestAPIMethodType
+    from .rewarded import Rewarded
+    from .rtbasiaviewability import RTBAsiaViewability
     from .security import Security, SecurityTypedDict
     from .standardjobstatusresponse import (
         StandardJobStatusResponse,
@@ -339,6 +401,10 @@ if TYPE_CHECKING:
     from .standardjobsubmitresponse import (
         StandardJobSubmitResponse,
         StandardJobSubmitResponseTypedDict,
+    )
+    from .stringworkflowsoptional import (
+        StringWorkflowsOptional,
+        StringWorkflowsOptionalTypedDict,
     )
     from .submitgraphqlbulkqueryjobop import (
         SubmitGraphQlBulkQueryJobResponse,
@@ -358,6 +424,7 @@ if TYPE_CHECKING:
     from .targetinggenderinput import TargetingGenderInput
     from .targetingstartage import TargetingStartAge
     from .targetingstartageinput import TargetingStartAgeInput
+    from .tencentpagequalityinput import TencentPageQualityInput
     from .thirdpartydatainput import ThirdPartyDataInput, ThirdPartyDataInputTypedDict
     from .updateadgroupop import UpdateAdGroupResponse, UpdateAdGroupResponseTypedDict
     from .updateadgroupsjobop import (
@@ -372,6 +439,13 @@ if TYPE_CHECKING:
         UpdateCampaignsJobResponse,
         UpdateCampaignsJobResponseTypedDict,
     )
+    from .videomutedstate import VideoMutedState
+    from .videoplaybacktype import VideoPlaybackType
+    from .videoplayersize import VideoPlayerSize
+    from .videoquality import VideoQuality
+    from .videoskippability import VideoSkippability
+    from .volumecontrolpriority import VolumeControlPriority
+    from .weathercondition import WeatherCondition
     from .workflowcallbackinput import (
         WorkflowCallbackInput,
         WorkflowCallbackInputTypedDict,
@@ -399,6 +473,8 @@ __all__ = [
     "AdGroupCreateWorkflowInputTypedDict",
     "AdGroupCreateWorkflowInputWithValidation",
     "AdGroupCreateWorkflowInputWithValidationTypedDict",
+    "AdGroupCreateWorkflowOwnedBidListInput",
+    "AdGroupCreateWorkflowOwnedBidListInputTypedDict",
     "AdGroupCreateWorkflowPrimaryInput",
     "AdGroupCreateWorkflowPrimaryInputTypedDict",
     "AdGroupFlight",
@@ -408,6 +484,8 @@ __all__ = [
     "AdGroupKoaOptimizationSettingsTypedDict",
     "AdGroupNielsenTrackingAttributes",
     "AdGroupNielsenTrackingAttributesTypedDict",
+    "AdGroupOwnedBidList",
+    "AdGroupOwnedBidListTypedDict",
     "AdGroupPayload",
     "AdGroupPayloadTypedDict",
     "AdGroupROIGoal",
@@ -444,6 +522,7 @@ __all__ = [
     "AdGroupWorkflowROIGoalInput",
     "AdGroupWorkflowROIGoalInputTypedDict",
     "AdGroupWorkflowTypedDict",
+    "AdsTxtSellerType",
     "AllocationType",
     "ArchiveAdGroupsRequest",
     "ArchiveAdGroupsRequestTypedDict",
@@ -453,6 +532,18 @@ __all__ = [
     "ArchiveCampaignsRequestTypedDict",
     "ArchiveCampaignsResponse",
     "ArchiveCampaignsResponseTypedDict",
+    "AtmosphericCondition",
+    "AudienceReachPercentageTier",
+    "BidLineCreateInput",
+    "BidLineCreateInputTypedDict",
+    "BidListAdjustmentType",
+    "BidListAssociateBehavior",
+    "BidListDimension",
+    "BidListDimensionOptionsInput",
+    "BidListDimensionOptionsInputTypedDict",
+    "BidListSource",
+    "Browser",
+    "BrowserInput",
     "BulkJobStatus",
     "CallRestAPIWorkflowInput",
     "CallRestAPIWorkflowInputTypedDict",
@@ -508,6 +599,8 @@ __all__ = [
     "CampaignWorkflowROIGoalInput",
     "CampaignWorkflowROIGoalInputTypedDict",
     "CampaignWorkflowTypedDict",
+    "ContentDuration",
+    "ContentTransparency",
     "CreateAdGroupResponse",
     "CreateAdGroupResponseTypedDict",
     "CreateAdGroupsJobResponse",
@@ -520,13 +613,28 @@ __all__ = [
     "CustomROASConfig",
     "CustomROASConfigTypedDict",
     "CustomROASType",
+    "DecimalRange",
+    "DecimalRangeTypedDict",
+    "DeviceType",
     "DimensionalBiddingDimensions",
+    "DoubleVerifyBotAvoidance",
+    "DoubleVerifyDisplayViewability",
+    "DoubleVerifyVideoViewability",
     "EnhancedNielsenReportingOptions",
     "EnhancedNielsenReportingOptionsInput",
+    "FactualProximityTargetInput",
+    "FactualProximityTargetInputTypedDict",
     "FirstPartyDataInput",
     "FirstPartyDataInputTypedDict",
+    "FrequencyAdjustmentInput",
+    "FrequencyAdjustmentInputTypedDict",
     "FrequencyConfig",
     "FrequencyConfigTypedDict",
+    "FullReferrerURL",
+    "GeoBidListOptionsInput",
+    "GeoBidListOptionsInputTypedDict",
+    "GeofenceThirdPartyDataAndBrandInput",
+    "GeofenceThirdPartyDataAndBrandInputTypedDict",
     "GetCampaignVersionRequest",
     "GetCampaignVersionRequestTypedDict",
     "GetCampaignVersionResponse",
@@ -561,32 +669,54 @@ __all__ = [
     "GraphQlQueryJobInputTypedDict",
     "HTTPMetadata",
     "HTTPMetadataTypedDict",
+    "IdiosyncraticSegment",
     "IncrementalReachBrandInput",
     "IncrementalReachBrandInputTypedDict",
     "IncrementalReachProductInput",
     "IncrementalReachProductInputTypedDict",
+    "Int32Range",
+    "Int32RangeTypedDict",
+    "IntegralVideoViewabilityInput",
+    "IntegralViewabilityInput",
+    "InternetConnectionType",
+    "InternetConnectionTypeInput",
     "KeyValuePairOfStringAndStringInput",
     "KeyValuePairOfStringAndStringInputTypedDict",
+    "LikelyRefreshRate",
+    "Livestream",
+    "LocationContextTypeInput",
     "MarketType",
+    "MarketTypeBidList",
     "MarketTypeInput",
+    "MultipleMatchResolutionType",
+    "NativeContextType",
+    "NativePlacementType",
     "NoResponseError",
     "PassThroughFeeType",
+    "Peer39ViewabilityInput",
     "ProblemDetails",
     "ProblemDetailsError",
     "ProblemDetailsErrorData",
     "ProblemDetailsTypedDict",
     "ProductListReportingTypeInput",
+    "ProductionQuality",
+    "ProductionQualityInput",
+    "RTBAsiaViewability",
     "RealyticsEntertainmentType",
     "RealyticsReachSettingInput",
     "RealyticsReachSettingInputTypedDict",
+    "RenderingContext",
     "ResponseValidationError",
     "RestAPIMethodType",
+    "Rewarded",
     "Security",
     "SecurityTypedDict",
     "StandardJobStatusResponse",
     "StandardJobStatusResponseTypedDict",
     "StandardJobSubmitResponse",
     "StandardJobSubmitResponseTypedDict",
+    "StringWorkflowsOptional",
+    "StringWorkflowsOptionalTypedDict",
     "SubmitGraphQlBulkQueryJobResponse",
     "SubmitGraphQlBulkQueryJobResponseTypedDict",
     "SubmitGraphQlRequestResponse",
@@ -599,6 +729,7 @@ __all__ = [
     "TargetingGenderInput",
     "TargetingStartAge",
     "TargetingStartAgeInput",
+    "TencentPageQualityInput",
     "ThirdPartyDataInput",
     "ThirdPartyDataInputTypedDict",
     "UpdateAdGroupResponse",
@@ -609,6 +740,13 @@ __all__ = [
     "UpdateCampaignResponseTypedDict",
     "UpdateCampaignsJobResponse",
     "UpdateCampaignsJobResponseTypedDict",
+    "VideoMutedState",
+    "VideoPlaybackType",
+    "VideoPlayerSize",
+    "VideoQuality",
+    "VideoSkippability",
+    "VolumeControlPriority",
+    "WeatherCondition",
     "WorkflowCallbackInput",
     "WorkflowCallbackInputTypedDict",
     "WorkflowStatus",
@@ -635,6 +773,8 @@ _dynamic_imports: dict[str, str] = {
     "AdGroupCreateWorkflowInputTypedDict": ".adgroupcreateworkflowinput",
     "AdGroupCreateWorkflowInputWithValidation": ".adgroupcreateworkflowinputwithvalidation",
     "AdGroupCreateWorkflowInputWithValidationTypedDict": ".adgroupcreateworkflowinputwithvalidation",
+    "AdGroupCreateWorkflowOwnedBidListInput": ".adgroupcreateworkflowownedbidlistinput",
+    "AdGroupCreateWorkflowOwnedBidListInputTypedDict": ".adgroupcreateworkflowownedbidlistinput",
     "AdGroupCreateWorkflowPrimaryInput": ".adgroupcreateworkflowprimaryinput",
     "AdGroupCreateWorkflowPrimaryInputTypedDict": ".adgroupcreateworkflowprimaryinput",
     "AdGroupFlight": ".adgroupflight",
@@ -644,6 +784,8 @@ _dynamic_imports: dict[str, str] = {
     "AdGroupKoaOptimizationSettingsTypedDict": ".adgroupkoaoptimizationsettings",
     "AdGroupNielsenTrackingAttributes": ".adgroupnielsentrackingattributes",
     "AdGroupNielsenTrackingAttributesTypedDict": ".adgroupnielsentrackingattributes",
+    "AdGroupOwnedBidList": ".adgroupownedbidlist",
+    "AdGroupOwnedBidListTypedDict": ".adgroupownedbidlist",
     "AdGroupPayload": ".adgrouppayload",
     "AdGroupPayloadTypedDict": ".adgrouppayload",
     "AdGroupROIGoal": ".adgrouproigoal",
@@ -680,6 +822,7 @@ _dynamic_imports: dict[str, str] = {
     "AdGroupWorkflowNielsenTrackingAttributesInputTypedDict": ".adgroupworkflownielsentrackingattributesinput",
     "AdGroupWorkflowROIGoalInput": ".adgroupworkflowroigoalinput",
     "AdGroupWorkflowROIGoalInputTypedDict": ".adgroupworkflowroigoalinput",
+    "AdsTxtSellerType": ".adstxtsellertype",
     "AllocationType": ".allocationtype",
     "APIError": ".apierror",
     "ArchiveAdGroupsRequest": ".archiveadgroupsop",
@@ -690,6 +833,18 @@ _dynamic_imports: dict[str, str] = {
     "ArchiveCampaignsRequestTypedDict": ".archivecampaignsop",
     "ArchiveCampaignsResponse": ".archivecampaignsop",
     "ArchiveCampaignsResponseTypedDict": ".archivecampaignsop",
+    "AtmosphericCondition": ".atmosphericcondition",
+    "AudienceReachPercentageTier": ".audiencereachpercentagetier",
+    "BidLineCreateInput": ".bidlinecreateinput",
+    "BidLineCreateInputTypedDict": ".bidlinecreateinput",
+    "BidListAdjustmentType": ".bidlistadjustmenttype",
+    "BidListAssociateBehavior": ".bidlistassociatebehavior",
+    "BidListDimension": ".bidlistdimension",
+    "BidListDimensionOptionsInput": ".bidlistdimensionoptionsinput",
+    "BidListDimensionOptionsInputTypedDict": ".bidlistdimensionoptionsinput",
+    "BidListSource": ".bidlistsource",
+    "Browser": ".browser",
+    "BrowserInput": ".browserinput",
     "BulkJobStatus": ".bulkjobstatus",
     "CallRestAPIWorkflowInput": ".callrestapiworkflowinput",
     "CallRestAPIWorkflowInputTypedDict": ".callrestapiworkflowinput",
@@ -745,6 +900,8 @@ _dynamic_imports: dict[str, str] = {
     "CampaignWorkflowFlightInputTypedDict": ".campaignworkflowflightinput",
     "CampaignWorkflowROIGoalInput": ".campaignworkflowroigoalinput",
     "CampaignWorkflowROIGoalInputTypedDict": ".campaignworkflowroigoalinput",
+    "ContentDuration": ".contentduration",
+    "ContentTransparency": ".contenttransparency",
     "CreateAdGroupResponse": ".createadgroupop",
     "CreateAdGroupResponseTypedDict": ".createadgroupop",
     "CreateAdGroupsJobResponse": ".createadgroupsjobop",
@@ -757,13 +914,28 @@ _dynamic_imports: dict[str, str] = {
     "CustomROASConfig": ".customroasconfig",
     "CustomROASConfigTypedDict": ".customroasconfig",
     "CustomROASType": ".customroastype",
+    "DecimalRange": ".decimalrange",
+    "DecimalRangeTypedDict": ".decimalrange",
+    "DeviceType": ".devicetype",
     "DimensionalBiddingDimensions": ".dimensionalbiddingdimensions",
+    "DoubleVerifyBotAvoidance": ".doubleverifybotavoidance",
+    "DoubleVerifyDisplayViewability": ".doubleverifydisplayviewability",
+    "DoubleVerifyVideoViewability": ".doubleverifyvideoviewability",
     "EnhancedNielsenReportingOptions": ".enhancednielsenreportingoptions",
     "EnhancedNielsenReportingOptionsInput": ".enhancednielsenreportingoptionsinput",
+    "FactualProximityTargetInput": ".factualproximitytargetinput",
+    "FactualProximityTargetInputTypedDict": ".factualproximitytargetinput",
     "FirstPartyDataInput": ".firstpartydatainput",
     "FirstPartyDataInputTypedDict": ".firstpartydatainput",
+    "FrequencyAdjustmentInput": ".frequencyadjustmentinput",
+    "FrequencyAdjustmentInputTypedDict": ".frequencyadjustmentinput",
     "FrequencyConfig": ".frequencyconfig",
     "FrequencyConfigTypedDict": ".frequencyconfig",
+    "FullReferrerURL": ".fullreferrerurl",
+    "GeoBidListOptionsInput": ".geobidlistoptionsinput",
+    "GeoBidListOptionsInputTypedDict": ".geobidlistoptionsinput",
+    "GeofenceThirdPartyDataAndBrandInput": ".geofencethirdpartydataandbrandinput",
+    "GeofenceThirdPartyDataAndBrandInputTypedDict": ".geofencethirdpartydataandbrandinput",
     "GetCampaignVersionRequest": ".getcampaignversionop",
     "GetCampaignVersionRequestTypedDict": ".getcampaignversionop",
     "GetCampaignVersionResponse": ".getcampaignversionop",
@@ -798,32 +970,54 @@ _dynamic_imports: dict[str, str] = {
     "GraphQLRequestInputTypedDict": ".graphqlrequestinput",
     "HTTPMetadata": ".httpmetadata",
     "HTTPMetadataTypedDict": ".httpmetadata",
+    "IdiosyncraticSegment": ".idiosyncraticsegment",
     "IncrementalReachBrandInput": ".incrementalreachbrandinput",
     "IncrementalReachBrandInputTypedDict": ".incrementalreachbrandinput",
     "IncrementalReachProductInput": ".incrementalreachproductinput",
     "IncrementalReachProductInputTypedDict": ".incrementalreachproductinput",
+    "Int32Range": ".int32range",
+    "Int32RangeTypedDict": ".int32range",
+    "IntegralVideoViewabilityInput": ".integralvideoviewabilityinput",
+    "IntegralViewabilityInput": ".integralviewabilityinput",
+    "InternetConnectionType": ".internetconnectiontype",
+    "InternetConnectionTypeInput": ".internetconnectiontypeinput",
     "KeyValuePairOfStringAndStringInput": ".keyvaluepairofstringandstringinput",
     "KeyValuePairOfStringAndStringInputTypedDict": ".keyvaluepairofstringandstringinput",
+    "LikelyRefreshRate": ".likelyrefreshrate",
+    "Livestream": ".livestream",
+    "LocationContextTypeInput": ".locationcontexttypeinput",
     "MarketType": ".markettype",
+    "MarketTypeBidList": ".markettypebidlist",
     "MarketTypeInput": ".markettypeinput",
+    "MultipleMatchResolutionType": ".multiplematchresolutiontype",
+    "NativeContextType": ".nativecontexttype",
+    "NativePlacementType": ".nativeplacementtype",
     "NoResponseError": ".no_response_error",
     "PassThroughFeeType": ".passthroughfeetype",
+    "Peer39ViewabilityInput": ".peer39viewabilityinput",
     "ProblemDetails": ".problemdetails",
     "ProblemDetailsTypedDict": ".problemdetails",
     "ProblemDetailsError": ".problemdetails_error",
     "ProblemDetailsErrorData": ".problemdetails_error",
+    "ProductionQuality": ".productionquality",
+    "ProductionQualityInput": ".productionqualityinput",
     "ProductListReportingTypeInput": ".productlistreportingtypeinput",
     "RealyticsEntertainmentType": ".realyticsentertainmenttype",
     "RealyticsReachSettingInput": ".realyticsreachsettinginput",
     "RealyticsReachSettingInputTypedDict": ".realyticsreachsettinginput",
+    "RenderingContext": ".renderingcontext",
     "ResponseValidationError": ".responsevalidationerror",
     "RestAPIMethodType": ".restapimethodtype",
+    "Rewarded": ".rewarded",
+    "RTBAsiaViewability": ".rtbasiaviewability",
     "Security": ".security",
     "SecurityTypedDict": ".security",
     "StandardJobStatusResponse": ".standardjobstatusresponse",
     "StandardJobStatusResponseTypedDict": ".standardjobstatusresponse",
     "StandardJobSubmitResponse": ".standardjobsubmitresponse",
     "StandardJobSubmitResponseTypedDict": ".standardjobsubmitresponse",
+    "StringWorkflowsOptional": ".stringworkflowsoptional",
+    "StringWorkflowsOptionalTypedDict": ".stringworkflowsoptional",
     "SubmitGraphQlBulkQueryJobResponse": ".submitgraphqlbulkqueryjobop",
     "SubmitGraphQlBulkQueryJobResponseTypedDict": ".submitgraphqlbulkqueryjobop",
     "SubmitGraphQlRequestResponse": ".submitgraphqlrequestop",
@@ -836,6 +1030,7 @@ _dynamic_imports: dict[str, str] = {
     "TargetingGenderInput": ".targetinggenderinput",
     "TargetingStartAge": ".targetingstartage",
     "TargetingStartAgeInput": ".targetingstartageinput",
+    "TencentPageQualityInput": ".tencentpagequalityinput",
     "ThirdPartyDataInput": ".thirdpartydatainput",
     "ThirdPartyDataInputTypedDict": ".thirdpartydatainput",
     "UpdateAdGroupResponse": ".updateadgroupop",
@@ -846,6 +1041,13 @@ _dynamic_imports: dict[str, str] = {
     "UpdateCampaignResponseTypedDict": ".updatecampaignop",
     "UpdateCampaignsJobResponse": ".updatecampaignsjobop",
     "UpdateCampaignsJobResponseTypedDict": ".updatecampaignsjobop",
+    "VideoMutedState": ".videomutedstate",
+    "VideoPlaybackType": ".videoplaybacktype",
+    "VideoPlayerSize": ".videoplayersize",
+    "VideoQuality": ".videoquality",
+    "VideoSkippability": ".videoskippability",
+    "VolumeControlPriority": ".volumecontrolpriority",
+    "WeatherCondition": ".weathercondition",
     "WorkflowCallbackInput": ".workflowcallbackinput",
     "WorkflowCallbackInputTypedDict": ".workflowcallbackinput",
     "WorkflowStatus": ".workflowstatus",

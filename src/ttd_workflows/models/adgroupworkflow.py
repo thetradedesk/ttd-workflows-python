@@ -29,6 +29,7 @@ from .adgroupnielsentrackingattributes import (
     AdGroupNielsenTrackingAttributes,
     AdGroupNielsenTrackingAttributesTypedDict,
 )
+from .adgroupownedbidlist import AdGroupOwnedBidList, AdGroupOwnedBidListTypedDict
 from .adgrouproigoal import AdGroupROIGoal, AdGroupROIGoalTypedDict
 from .dimensionalbiddingdimensions import DimensionalBiddingDimensions
 from .markettype import MarketType
@@ -70,6 +71,7 @@ class AdGroupWorkflowTypedDict(TypedDict):
     max_bid_cpm_in_advertiser_currency: NotRequired[Nullable[float]]
     market_type: NotRequired[MarketType]
     audience_targeting: NotRequired[AdGroupAudienceTargetingTypedDict]
+    owned_bid_lists: NotRequired[Nullable[List[AdGroupOwnedBidListTypedDict]]]
     koa_optimization_settings: NotRequired[AdGroupKoaOptimizationSettingsTypedDict]
     nielsen_tracking_attributes: NotRequired[AdGroupNielsenTrackingAttributesTypedDict]
 
@@ -146,6 +148,11 @@ class AdGroupWorkflow(BaseModel):
         Optional[AdGroupAudienceTargeting], pydantic.Field(alias="audienceTargeting")
     ] = None
 
+    owned_bid_lists: Annotated[
+        OptionalNullable[List[AdGroupOwnedBidList]],
+        pydantic.Field(alias="ownedBidLists"),
+    ] = UNSET
+
     koa_optimization_settings: Annotated[
         Optional[AdGroupKoaOptimizationSettings],
         pydantic.Field(alias="koaOptimizationSettings"),
@@ -166,6 +173,7 @@ class AdGroupWorkflow(BaseModel):
                 "maxBidCPMInAdvertiserCurrency",
                 "marketType",
                 "audienceTargeting",
+                "ownedBidLists",
                 "koaOptimizationSettings",
                 "nielsenTrackingAttributes",
             ]
@@ -181,6 +189,7 @@ class AdGroupWorkflow(BaseModel):
                 "maxBidCPMInAdvertiserCurrency",
                 "creativeIds",
                 "associatedBidLists",
+                "ownedBidLists",
                 "flights",
                 "dimensionalBiddingAutoOptimizationSettings",
             ]
