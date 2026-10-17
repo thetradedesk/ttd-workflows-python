@@ -95,7 +95,9 @@ with Workflows(
                     "base_bid_cpm_in_advertiser_currency": 188.02,
                     "max_bid_cpm_in_advertiser_currency": 6077.98,
                     "audience_targeting": {
-                        "audience_id": "<id>",
+                        "audience_id": {
+                            "value": "<value>",
+                        },
                         "audience_accelerator_exclusions_enabled": True,
                         "audience_booster_enabled": True,
                         "audience_excluder_enabled": False,
@@ -120,6 +122,7 @@ with Workflows(
                         "vcpm_in_advertiser_currency": 8251.2,
                         "cpcv_in_advertiser_currency": 4502.77,
                         "miaozhen_otp_in_percent": 2362.43,
+                        "new_buyer_target_value": 240391,
                     },
                     "creative_ids": [
                         "<value 1>",
