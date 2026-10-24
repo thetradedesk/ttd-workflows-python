@@ -14,6 +14,10 @@ from .campaignworkflowcampaignconversionreportingcolumninput import (
     CampaignWorkflowCampaignConversionReportingColumnInput,
     CampaignWorkflowCampaignConversionReportingColumnInputTypedDict,
 )
+from .campaignworkflowpharmaoptimizationgoalsettinginput import (
+    CampaignWorkflowPharmaOptimizationGoalSettingInput,
+    CampaignWorkflowPharmaOptimizationGoalSettingInputTypedDict,
+)
 from .campaignworkflowroigoalinput import (
     CampaignWorkflowROIGoalInput,
     CampaignWorkflowROIGoalInputTypedDict,
@@ -60,6 +64,9 @@ class CampaignCreateWorkflowPrimaryInputTypedDict(TypedDict):
     budget: NotRequired[CampaignCreateWorkflowBudgetInputTypedDict]
     campaign_incremental_reach_setting: NotRequired[
         CampaignCreateWorkflowIncrementalReachCampaignSettingTypedDict
+    ]
+    pharma_optimization_goal_settings: NotRequired[
+        Nullable[List[CampaignWorkflowPharmaOptimizationGoalSettingInputTypedDict]]
     ]
 
 
@@ -144,6 +151,11 @@ class CampaignCreateWorkflowPrimaryInput(BaseModel):
         pydantic.Field(alias="campaignIncrementalReachSetting"),
     ] = None
 
+    pharma_optimization_goal_settings: Annotated[
+        OptionalNullable[List[CampaignWorkflowPharmaOptimizationGoalSettingInput]],
+        pydantic.Field(alias="pharmaOptimizationGoalSettings"),
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
@@ -166,6 +178,7 @@ class CampaignCreateWorkflowPrimaryInput(BaseModel):
                 "startDateInUtc",
                 "budget",
                 "campaignIncrementalReachSetting",
+                "pharmaOptimizationGoalSettings",
             ]
         )
         nullable_fields = set(
@@ -182,6 +195,7 @@ class CampaignCreateWorkflowPrimaryInput(BaseModel):
                 "isManagedByTTD",
                 "customLabelNames",
                 "startDateInUtc",
+                "pharmaOptimizationGoalSettings",
             ]
         )
         serialized = handler(self)

@@ -30,6 +30,7 @@ class CampaignWorkflowROIGoalInputTypedDict(TypedDict):
     crossix_audience_quality_index: NotRequired[Nullable[bool]]
     iqvia_audience_quality_index_and_cost_per_target: NotRequired[Nullable[bool]]
     crossix_cost_per_target: NotRequired[Nullable[bool]]
+    pharma_optimization: NotRequired[Nullable[bool]]
     new_buyer_target_value: NotRequired[Nullable[int]]
 
 
@@ -99,8 +100,12 @@ class CampaignWorkflowROIGoalInput(BaseModel):
         OptionalNullable[bool], pydantic.Field(alias="crossixCostPerTarget")
     ] = UNSET
 
+    pharma_optimization: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="pharmaOptimization")
+    ] = UNSET
+
     new_buyer_target_value: Annotated[
-        OptionalNullable[int], pydantic.Field(alias="NewBuyerTargetValue")
+        OptionalNullable[int], pydantic.Field(alias="newBuyerTargetValue")
     ] = UNSET
 
     @model_serializer(mode="wrap")
@@ -123,7 +128,8 @@ class CampaignWorkflowROIGoalInput(BaseModel):
                 "crossixAudienceQualityIndex",
                 "iqviaAudienceQualityIndexAndCostPerTarget",
                 "crossixCostPerTarget",
-                "NewBuyerTargetValue",
+                "pharmaOptimization",
+                "newBuyerTargetValue",
             ]
         )
         nullable_fields = set(
@@ -144,7 +150,8 @@ class CampaignWorkflowROIGoalInput(BaseModel):
                 "crossixAudienceQualityIndex",
                 "iqviaAudienceQualityIndexAndCostPerTarget",
                 "crossixCostPerTarget",
-                "NewBuyerTargetValue",
+                "pharmaOptimization",
+                "newBuyerTargetValue",
             ]
         )
         serialized = handler(self)
