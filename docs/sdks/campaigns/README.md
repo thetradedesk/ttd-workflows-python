@@ -72,7 +72,8 @@ with Workflows(
                 crossix_audience_quality_index=True,
                 iqvia_audience_quality_index_and_cost_per_target=True,
                 crossix_cost_per_target=True,
-                new_buyer_target_value=869267,
+                pharma_optimization=False,
+                new_buyer_target_value=287698,
             ),
             tertiary_goal=ttd_workflows.CampaignWorkflowROIGoalInput(
                 maximize_reach=True,
@@ -91,7 +92,8 @@ with Workflows(
                 crossix_audience_quality_index=False,
                 iqvia_audience_quality_index_and_cost_per_target=None,
                 crossix_cost_per_target=False,
-                new_buyer_target_value=113952,
+                pharma_optimization=True,
+                new_buyer_target_value=651746,
             ),
             name="<value>",
             primary_channel=ttd_workflows.CampaignChannelType.DISPLAY,
@@ -112,12 +114,24 @@ with Workflows(
                 crossix_audience_quality_index=True,
                 iqvia_audience_quality_index_and_cost_per_target=True,
                 crossix_cost_per_target=True,
-                new_buyer_target_value=723722,
+                pharma_optimization=True,
+                new_buyer_target_value=776250,
             ),
             start_date_in_utc=parse_datetime("2024-02-29T10:31:50.069Z"),
             budget=ttd_workflows.CampaignUpdateWorkflowBudgetInput(
                 pacing_mode=ttd_workflows.CampaignPacingMode.PACE_AS_SOON_AS_POSSIBLE,
             ),
+            pharma_optimization_goal_setting_updates=[
+                ttd_workflows.CampaignWorkflowPharmaOptimizationGoalSettingInput(
+                    goal_priority=ttd_workflows.GoalPriorityInput.TERTIARY,
+                    metric_weights=[
+                        ttd_workflows.CampaignWorkflowPharmaOptimizationGoalMetricWeightInput(
+                            metric_type=ttd_workflows.PharmaOptimizationGoalMetricTypeInput.IQVIA_COST_PER_TARGET,
+                            weight=8554.35,
+                        ),
+                    ],
+                ),
+            ],
         ),
         advanced_input=ttd_workflows.CampaignUpdateWorkflowAdvancedInput(
             purchase_order_number="<value>",

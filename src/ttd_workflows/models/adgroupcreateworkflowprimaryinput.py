@@ -2,6 +2,10 @@
 
 from __future__ import annotations
 from .adgroupchannel import AdGroupChannel
+from .adgroupcreateworkflowownedbidlistinput import (
+    AdGroupCreateWorkflowOwnedBidListInput,
+    AdGroupCreateWorkflowOwnedBidListInputTypedDict,
+)
 from .adgroupfunnellocation import AdGroupFunnelLocation
 from .adgroupworkflowassociatebidlistinput import (
     AdGroupWorkflowAssociateBidListInput,
@@ -47,6 +51,9 @@ class AdGroupCreateWorkflowPrimaryInputTypedDict(TypedDict):
     creative_ids: NotRequired[Nullable[List[str]]]
     associated_bid_lists: NotRequired[
         Nullable[List[AdGroupWorkflowAssociateBidListInputTypedDict]]
+    ]
+    owned_bid_lists: NotRequired[
+        Nullable[List[AdGroupCreateWorkflowOwnedBidListInputTypedDict]]
     ]
     market_type: NotRequired[MarketTypeInput]
     programmatic_guaranteed_private_contract_id: NotRequired[Nullable[str]]
@@ -96,6 +103,11 @@ class AdGroupCreateWorkflowPrimaryInput(BaseModel):
         pydantic.Field(alias="associatedBidLists"),
     ] = UNSET
 
+    owned_bid_lists: Annotated[
+        OptionalNullable[List[AdGroupCreateWorkflowOwnedBidListInput]],
+        pydantic.Field(alias="ownedBidLists"),
+    ] = UNSET
+
     market_type: Annotated[
         Optional[MarketTypeInput], pydantic.Field(alias="marketType")
     ] = None
@@ -122,6 +134,7 @@ class AdGroupCreateWorkflowPrimaryInput(BaseModel):
                 "roiGoal",
                 "creativeIds",
                 "associatedBidLists",
+                "ownedBidLists",
                 "marketType",
                 "programmaticGuaranteedPrivateContractId",
                 "includeDefaultsFromCampaign",
@@ -135,6 +148,7 @@ class AdGroupCreateWorkflowPrimaryInput(BaseModel):
                 "maxBidCPMInAdvertiserCurrency",
                 "creativeIds",
                 "associatedBidLists",
+                "ownedBidLists",
                 "name",
                 "programmaticGuaranteedPrivateContractId",
             ]

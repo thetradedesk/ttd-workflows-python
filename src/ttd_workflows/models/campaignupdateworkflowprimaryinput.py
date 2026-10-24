@@ -10,6 +10,10 @@ from .campaignworkflowcampaignconversionreportingcolumninput import (
     CampaignWorkflowCampaignConversionReportingColumnInput,
     CampaignWorkflowCampaignConversionReportingColumnInputTypedDict,
 )
+from .campaignworkflowpharmaoptimizationgoalsettinginput import (
+    CampaignWorkflowPharmaOptimizationGoalSettingInput,
+    CampaignWorkflowPharmaOptimizationGoalSettingInputTypedDict,
+)
 from .campaignworkflowroigoalinput import (
     CampaignWorkflowROIGoalInput,
     CampaignWorkflowROIGoalInputTypedDict,
@@ -52,6 +56,9 @@ class CampaignUpdateWorkflowPrimaryInputTypedDict(TypedDict):
     primary_goal: NotRequired[CampaignWorkflowROIGoalInputTypedDict]
     start_date_in_utc: NotRequired[Nullable[datetime]]
     budget: NotRequired[CampaignUpdateWorkflowBudgetInputTypedDict]
+    pharma_optimization_goal_setting_updates: NotRequired[
+        Nullable[List[CampaignWorkflowPharmaOptimizationGoalSettingInputTypedDict]]
+    ]
 
 
 class CampaignUpdateWorkflowPrimaryInput(BaseModel):
@@ -124,6 +131,11 @@ class CampaignUpdateWorkflowPrimaryInput(BaseModel):
 
     budget: Optional[CampaignUpdateWorkflowBudgetInput] = None
 
+    pharma_optimization_goal_setting_updates: Annotated[
+        OptionalNullable[List[CampaignWorkflowPharmaOptimizationGoalSettingInput]],
+        pydantic.Field(alias="pharmaOptimizationGoalSettingUpdates"),
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
@@ -147,6 +159,7 @@ class CampaignUpdateWorkflowPrimaryInput(BaseModel):
                 "primaryGoal",
                 "startDateInUtc",
                 "budget",
+                "pharmaOptimizationGoalSettingUpdates",
             ]
         )
         nullable_fields = set(
@@ -163,6 +176,7 @@ class CampaignUpdateWorkflowPrimaryInput(BaseModel):
                 "isManagedByTTD",
                 "name",
                 "startDateInUtc",
+                "pharmaOptimizationGoalSettingUpdates",
             ]
         )
         serialized = handler(self)
