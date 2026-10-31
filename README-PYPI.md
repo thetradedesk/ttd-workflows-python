@@ -390,7 +390,7 @@ from ttd_workflows import Workflows
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.ad_groups.create(request={
@@ -407,7 +407,9 @@ with Workflows(
             "base_bid_cpm_in_advertiser_currency": 3785.04,
             "max_bid_cpm_in_advertiser_currency": 7447.3,
             "audience_targeting": {
-                "audience_id": "<id>",
+                "audience_id": {
+                    "value": "<value>",
+                },
                 "audience_accelerator_exclusions_enabled": True,
                 "audience_booster_enabled": True,
                 "audience_excluder_enabled": True,
@@ -432,12 +434,32 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 4649.53,
                 "cpcv_in_advertiser_currency": 313.95,
                 "miaozhen_otp_in_percent": 4704.1,
+                "new_buyer_target_value": 287261,
             },
-            "creative_ids": None,
             "associated_bid_lists": [
                 {
                     "bid_list_id": "<id>",
                     "is_enabled": False,
+                    "is_default_for_dimension": True,
+                },
+            ],
+            "creative_ids": None,
+            "owned_bid_lists": [
+                {
+                    "name": "<value>",
+                    "adjustment_type": ttd_workflows.BidListAdjustmentType.FRACTIONAL_EXCLUSION,
+                    "resolution_type": ttd_workflows.MultipleMatchResolutionType.SINGLE_MATCH_ONLY,
+                    "dimensions": [
+                        ttd_workflows.BidListDimension.HAS_VIDEO_MUTED_STATE_ID,
+                    ],
+                    "bid_lines": None,
+                    "source": ttd_workflows.BidListSource.SYSTEM_AUTO_FOR_COMMITMENT_TARGETING,
+                    "associate_behavior": ttd_workflows.BidListAssociateBehavior.DO_NOT_ASSOCIATE,
+                    "dimension_config": {
+                        "geo": {
+                            "location_context_type": ttd_workflows.LocationContextTypeInput.HOME,
+                        },
+                    },
                     "is_default_for_dimension": True,
                 },
             ],
@@ -603,7 +625,7 @@ from ttd_workflows.utils import BackoffStrategy, RetryConfig
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.ad_groups.create(request={
@@ -620,7 +642,9 @@ with Workflows(
             "base_bid_cpm_in_advertiser_currency": 3785.04,
             "max_bid_cpm_in_advertiser_currency": 7447.3,
             "audience_targeting": {
-                "audience_id": "<id>",
+                "audience_id": {
+                    "value": "<value>",
+                },
                 "audience_accelerator_exclusions_enabled": True,
                 "audience_booster_enabled": True,
                 "audience_excluder_enabled": True,
@@ -645,12 +669,32 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 4649.53,
                 "cpcv_in_advertiser_currency": 313.95,
                 "miaozhen_otp_in_percent": 4704.1,
+                "new_buyer_target_value": 287261,
             },
-            "creative_ids": None,
             "associated_bid_lists": [
                 {
                     "bid_list_id": "<id>",
                     "is_enabled": False,
+                    "is_default_for_dimension": True,
+                },
+            ],
+            "creative_ids": None,
+            "owned_bid_lists": [
+                {
+                    "name": "<value>",
+                    "adjustment_type": ttd_workflows.BidListAdjustmentType.FRACTIONAL_EXCLUSION,
+                    "resolution_type": ttd_workflows.MultipleMatchResolutionType.SINGLE_MATCH_ONLY,
+                    "dimensions": [
+                        ttd_workflows.BidListDimension.HAS_VIDEO_MUTED_STATE_ID,
+                    ],
+                    "bid_lines": None,
+                    "source": ttd_workflows.BidListSource.SYSTEM_AUTO_FOR_COMMITMENT_TARGETING,
+                    "associate_behavior": ttd_workflows.BidListAssociateBehavior.DO_NOT_ASSOCIATE,
+                    "dimension_config": {
+                        "geo": {
+                            "location_context_type": ttd_workflows.LocationContextTypeInput.HOME,
+                        },
+                    },
                     "is_default_for_dimension": True,
                 },
             ],
@@ -761,7 +805,7 @@ from ttd_workflows.utils import BackoffStrategy, RetryConfig
 
 with Workflows(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.ad_groups.create(request={
@@ -778,7 +822,9 @@ with Workflows(
             "base_bid_cpm_in_advertiser_currency": 3785.04,
             "max_bid_cpm_in_advertiser_currency": 7447.3,
             "audience_targeting": {
-                "audience_id": "<id>",
+                "audience_id": {
+                    "value": "<value>",
+                },
                 "audience_accelerator_exclusions_enabled": True,
                 "audience_booster_enabled": True,
                 "audience_excluder_enabled": True,
@@ -803,12 +849,32 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 4649.53,
                 "cpcv_in_advertiser_currency": 313.95,
                 "miaozhen_otp_in_percent": 4704.1,
+                "new_buyer_target_value": 287261,
             },
-            "creative_ids": None,
             "associated_bid_lists": [
                 {
                     "bid_list_id": "<id>",
                     "is_enabled": False,
+                    "is_default_for_dimension": True,
+                },
+            ],
+            "creative_ids": None,
+            "owned_bid_lists": [
+                {
+                    "name": "<value>",
+                    "adjustment_type": ttd_workflows.BidListAdjustmentType.FRACTIONAL_EXCLUSION,
+                    "resolution_type": ttd_workflows.MultipleMatchResolutionType.SINGLE_MATCH_ONLY,
+                    "dimensions": [
+                        ttd_workflows.BidListDimension.HAS_VIDEO_MUTED_STATE_ID,
+                    ],
+                    "bid_lines": None,
+                    "source": ttd_workflows.BidListSource.SYSTEM_AUTO_FOR_COMMITMENT_TARGETING,
+                    "associate_behavior": ttd_workflows.BidListAssociateBehavior.DO_NOT_ASSOCIATE,
+                    "dimension_config": {
+                        "geo": {
+                            "location_context_type": ttd_workflows.LocationContextTypeInput.HOME,
+                        },
+                    },
                     "is_default_for_dimension": True,
                 },
             ],
@@ -931,7 +997,7 @@ from ttd_workflows import Workflows, models
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
     res = None
     try:
@@ -950,7 +1016,9 @@ with Workflows(
                 "base_bid_cpm_in_advertiser_currency": 3785.04,
                 "max_bid_cpm_in_advertiser_currency": 7447.3,
                 "audience_targeting": {
-                    "audience_id": "<id>",
+                    "audience_id": {
+                        "value": "<value>",
+                    },
                     "audience_accelerator_exclusions_enabled": True,
                     "audience_booster_enabled": True,
                     "audience_excluder_enabled": True,
@@ -975,12 +1043,32 @@ with Workflows(
                     "vcpm_in_advertiser_currency": 4649.53,
                     "cpcv_in_advertiser_currency": 313.95,
                     "miaozhen_otp_in_percent": 4704.1,
+                    "new_buyer_target_value": 287261,
                 },
-                "creative_ids": None,
                 "associated_bid_lists": [
                     {
                         "bid_list_id": "<id>",
                         "is_enabled": False,
+                        "is_default_for_dimension": True,
+                    },
+                ],
+                "creative_ids": None,
+                "owned_bid_lists": [
+                    {
+                        "name": "<value>",
+                        "adjustment_type": ttd_workflows.BidListAdjustmentType.FRACTIONAL_EXCLUSION,
+                        "resolution_type": ttd_workflows.MultipleMatchResolutionType.SINGLE_MATCH_ONLY,
+                        "dimensions": [
+                            ttd_workflows.BidListDimension.HAS_VIDEO_MUTED_STATE_ID,
+                        ],
+                        "bid_lines": None,
+                        "source": ttd_workflows.BidListSource.SYSTEM_AUTO_FOR_COMMITMENT_TARGETING,
+                        "associate_behavior": ttd_workflows.BidListAssociateBehavior.DO_NOT_ASSOCIATE,
+                        "dimension_config": {
+                            "geo": {
+                                "location_context_type": ttd_workflows.LocationContextTypeInput.HOME,
+                            },
+                        },
                         "is_default_for_dimension": True,
                     },
                 ],
@@ -1139,7 +1227,7 @@ from ttd_workflows import Workflows
 
 with Workflows(
     server="prod",
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.ad_groups.create(request={
@@ -1156,7 +1244,9 @@ with Workflows(
             "base_bid_cpm_in_advertiser_currency": 3785.04,
             "max_bid_cpm_in_advertiser_currency": 7447.3,
             "audience_targeting": {
-                "audience_id": "<id>",
+                "audience_id": {
+                    "value": "<value>",
+                },
                 "audience_accelerator_exclusions_enabled": True,
                 "audience_booster_enabled": True,
                 "audience_excluder_enabled": True,
@@ -1181,12 +1271,32 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 4649.53,
                 "cpcv_in_advertiser_currency": 313.95,
                 "miaozhen_otp_in_percent": 4704.1,
+                "new_buyer_target_value": 287261,
             },
-            "creative_ids": None,
             "associated_bid_lists": [
                 {
                     "bid_list_id": "<id>",
                     "is_enabled": False,
+                    "is_default_for_dimension": True,
+                },
+            ],
+            "creative_ids": None,
+            "owned_bid_lists": [
+                {
+                    "name": "<value>",
+                    "adjustment_type": ttd_workflows.BidListAdjustmentType.FRACTIONAL_EXCLUSION,
+                    "resolution_type": ttd_workflows.MultipleMatchResolutionType.SINGLE_MATCH_ONLY,
+                    "dimensions": [
+                        ttd_workflows.BidListDimension.HAS_VIDEO_MUTED_STATE_ID,
+                    ],
+                    "bid_lines": None,
+                    "source": ttd_workflows.BidListSource.SYSTEM_AUTO_FOR_COMMITMENT_TARGETING,
+                    "associate_behavior": ttd_workflows.BidListAssociateBehavior.DO_NOT_ASSOCIATE,
+                    "dimension_config": {
+                        "geo": {
+                            "location_context_type": ttd_workflows.LocationContextTypeInput.HOME,
+                        },
+                    },
                     "is_default_for_dimension": True,
                 },
             ],
@@ -1297,7 +1407,7 @@ from ttd_workflows import Workflows
 
 with Workflows(
     server_url="https://api.thetradedesk.com/workflows",
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.ad_groups.create(request={
@@ -1314,7 +1424,9 @@ with Workflows(
             "base_bid_cpm_in_advertiser_currency": 3785.04,
             "max_bid_cpm_in_advertiser_currency": 7447.3,
             "audience_targeting": {
-                "audience_id": "<id>",
+                "audience_id": {
+                    "value": "<value>",
+                },
                 "audience_accelerator_exclusions_enabled": True,
                 "audience_booster_enabled": True,
                 "audience_excluder_enabled": True,
@@ -1339,12 +1451,32 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 4649.53,
                 "cpcv_in_advertiser_currency": 313.95,
                 "miaozhen_otp_in_percent": 4704.1,
+                "new_buyer_target_value": 287261,
             },
-            "creative_ids": None,
             "associated_bid_lists": [
                 {
                     "bid_list_id": "<id>",
                     "is_enabled": False,
+                    "is_default_for_dimension": True,
+                },
+            ],
+            "creative_ids": None,
+            "owned_bid_lists": [
+                {
+                    "name": "<value>",
+                    "adjustment_type": ttd_workflows.BidListAdjustmentType.FRACTIONAL_EXCLUSION,
+                    "resolution_type": ttd_workflows.MultipleMatchResolutionType.SINGLE_MATCH_ONLY,
+                    "dimensions": [
+                        ttd_workflows.BidListDimension.HAS_VIDEO_MUTED_STATE_ID,
+                    ],
+                    "bid_lines": None,
+                    "source": ttd_workflows.BidListSource.SYSTEM_AUTO_FOR_COMMITMENT_TARGETING,
+                    "associate_behavior": ttd_workflows.BidListAssociateBehavior.DO_NOT_ASSOCIATE,
+                    "dimension_config": {
+                        "geo": {
+                            "location_context_type": ttd_workflows.LocationContextTypeInput.HOME,
+                        },
+                    },
                     "is_default_for_dimension": True,
                 },
             ],
@@ -1524,6 +1656,20 @@ class CustomClient(AsyncHttpClient):
 
 s = Workflows(async_client=CustomClient(httpx.AsyncClient()))
 ```
+### httpx2 (Pydantic's httpx fork)
+
+[httpx2](https://httpx2.pydantic.dev/) is Pydantic's maintained fork of `httpx`. To run this SDK on httpx2, call `alias_httpx()` at your program's entry point, before importing the SDK, so every `import httpx` — including the ones inside the SDK — resolves to `httpx2`:
+```python
+import httpx2
+
+httpx2.alias_httpx()
+
+from ttd_workflows import Workflows
+
+s = Workflows()
+```
+
+An SDK can also be generated against httpx2 directly, so it depends on the fork instead of `httpx`, by setting `python.httpClientLibrary: httpx2` in `gen.yaml`.
 <!-- End Custom HTTP Client [http-client] -->
 
 <!-- Start Resource Management [resource-management] -->
@@ -1539,18 +1685,20 @@ from ttd_workflows import Workflows
 def main():
 
     with Workflows(
-        ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+        ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
     ) as workflows:
         # Rest of application here...
+        pass
 
 
 # Or when using async:
 async def amain():
 
     async with Workflows(
-        ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+        ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
     ) as workflows:
         # Rest of application here...
+        pass
 ```
 <!-- End Resource Management [resource-management] -->
 

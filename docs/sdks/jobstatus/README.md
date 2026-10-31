@@ -21,7 +21,7 @@ from ttd_workflows import Workflows
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.job_status.get_graph_ql_bulk_job_status(id="<id>")
@@ -67,7 +67,7 @@ from ttd_workflows import Workflows
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.job_status.get_job_status(id=412651)
