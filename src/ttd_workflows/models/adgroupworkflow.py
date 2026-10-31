@@ -29,6 +29,7 @@ from .adgroupnielsentrackingattributes import (
     AdGroupNielsenTrackingAttributes,
     AdGroupNielsenTrackingAttributesTypedDict,
 )
+from .adgroupownedbidlist import AdGroupOwnedBidList, AdGroupOwnedBidListTypedDict
 from .adgrouproigoal import AdGroupROIGoal, AdGroupROIGoalTypedDict
 from .dimensionalbiddingdimensions import DimensionalBiddingDimensions
 from .markettype import MarketType
@@ -40,6 +41,8 @@ from ttd_workflows.types import (
     OptionalNullable,
     UNSET,
     UNSET_SENTINEL,
+    current_exclude_none,
+    serialize_with_info,
 )
 from typing import List, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
@@ -70,6 +73,7 @@ class AdGroupWorkflowTypedDict(TypedDict):
     max_bid_cpm_in_advertiser_currency: NotRequired[Nullable[float]]
     market_type: NotRequired[MarketType]
     audience_targeting: NotRequired[AdGroupAudienceTargetingTypedDict]
+    owned_bid_lists: NotRequired[Nullable[List[AdGroupOwnedBidListTypedDict]]]
     koa_optimization_settings: NotRequired[AdGroupKoaOptimizationSettingsTypedDict]
     nielsen_tracking_attributes: NotRequired[AdGroupNielsenTrackingAttributesTypedDict]
 
@@ -146,6 +150,11 @@ class AdGroupWorkflow(BaseModel):
         Optional[AdGroupAudienceTargeting], pydantic.Field(alias="audienceTargeting")
     ] = None
 
+    owned_bid_lists: Annotated[
+        OptionalNullable[List[AdGroupOwnedBidList]],
+        pydantic.Field(alias="ownedBidLists"),
+    ] = UNSET
+
     koa_optimization_settings: Annotated[
         Optional[AdGroupKoaOptimizationSettings],
         pydantic.Field(alias="koaOptimizationSettings"),
@@ -157,6 +166,9 @@ class AdGroupWorkflow(BaseModel):
     ] = None
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -166,6 +178,7 @@ class AdGroupWorkflow(BaseModel):
                 "maxBidCPMInAdvertiserCurrency",
                 "marketType",
                 "audienceTargeting",
+                "ownedBidLists",
                 "koaOptimizationSettings",
                 "nielsenTrackingAttributes",
             ]
@@ -181,15 +194,19 @@ class AdGroupWorkflow(BaseModel):
                 "maxBidCPMInAdvertiserCurrency",
                 "creativeIds",
                 "associatedBidLists",
+                "ownedBidLists",
                 "flights",
                 "dimensionalBiddingAutoOptimizationSettings",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields

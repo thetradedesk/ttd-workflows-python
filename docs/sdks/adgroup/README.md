@@ -20,7 +20,7 @@ from ttd_workflows import Workflows
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.ad_group.create_ad_groups_job(request={
@@ -75,7 +75,7 @@ from ttd_workflows import Workflows
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.ad_group.update_ad_groups_job(request={
@@ -95,7 +95,9 @@ with Workflows(
                     "base_bid_cpm_in_advertiser_currency": 188.02,
                     "max_bid_cpm_in_advertiser_currency": 6077.98,
                     "audience_targeting": {
-                        "audience_id": "<id>",
+                        "audience_id": {
+                            "value": "<value>",
+                        },
                         "audience_accelerator_exclusions_enabled": True,
                         "audience_booster_enabled": True,
                         "audience_excluder_enabled": False,
@@ -120,16 +122,27 @@ with Workflows(
                         "vcpm_in_advertiser_currency": 8251.2,
                         "cpcv_in_advertiser_currency": 4502.77,
                         "miaozhen_otp_in_percent": 2362.43,
+                        "new_buyer_target_value": 240391,
                     },
-                    "creative_ids": [
-                        "<value 1>",
-                    ],
                     "associated_bid_lists": [
                         {
                             "bid_list_id": "<id>",
                             "is_enabled": True,
                             "is_default_for_dimension": True,
                         },
+                    ],
+                    "creative_ids": [
+                        "<value 1>",
+                    ],
+                    "creative_ids_to_add": [
+                        "<value 1>",
+                        "<value 2>",
+                        "<value 3>",
+                    ],
+                    "creative_ids_to_remove": [
+                        "<value 1>",
+                        "<value 2>",
+                        "<value 3>",
                     ],
                     "name": "<value>",
                     "channel": ttd_workflows.AdGroupChannel.TV,

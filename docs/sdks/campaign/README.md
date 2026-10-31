@@ -24,7 +24,7 @@ from ttd_workflows.utils import parse_datetime
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.campaign.create(request=ttd_workflows.CampaignCreateWorkflowInputWithValidation(
@@ -73,7 +73,8 @@ with Workflows(
                 crossix_audience_quality_index=True,
                 iqvia_audience_quality_index_and_cost_per_target=False,
                 crossix_cost_per_target=True,
-                new_buyer_target_value=None,
+                pharma_optimization=True,
+                new_buyer_target_value=960101,
             ),
             tertiary_goal=ttd_workflows.CampaignWorkflowROIGoalInput(
                 maximize_reach=False,
@@ -92,7 +93,8 @@ with Workflows(
                 crossix_audience_quality_index=False,
                 iqvia_audience_quality_index_and_cost_per_target=None,
                 crossix_cost_per_target=False,
-                new_buyer_target_value=960101,
+                pharma_optimization=False,
+                new_buyer_target_value=412835,
             ),
             advertiser_id="<id>",
             name="<value>",
@@ -118,7 +120,8 @@ with Workflows(
                 crossix_audience_quality_index=True,
                 iqvia_audience_quality_index_and_cost_per_target=True,
                 crossix_cost_per_target=False,
-                new_buyer_target_value=412835,
+                pharma_optimization=True,
+                new_buyer_target_value=743337,
             ),
             start_date_in_utc=None,
             budget=ttd_workflows.CampaignCreateWorkflowBudgetInput(
@@ -152,6 +155,7 @@ with Workflows(
                     is_active=True,
                 ),
             ),
+            pharma_optimization_goal_settings=None,
         ),
         advanced_input=ttd_workflows.CampaignCreateWorkflowAdvancedInput(
             purchase_order_number=None,
@@ -166,6 +170,13 @@ with Workflows(
                 ),
             ],
             include_defaults_from_advertiser=False,
+            associated_bid_lists=[
+                ttd_workflows.CampaignWorkflowAssociateBidListInput(
+                    bid_list_id="<id>",
+                    is_enabled=True,
+                    is_campaign_default=True,
+                ),
+            ],
             pass_through_fee_card=ttd_workflows.CampaignCreateWorkflowPassThroughFeeCardInput(
                 start_date_utc=parse_datetime("2023-03-18T04:39:08.387Z"),
                 pass_through_fees=[
@@ -201,7 +212,9 @@ with Workflows(
                     base_bid_cpm_in_advertiser_currency=1136.89,
                     max_bid_cpm_in_advertiser_currency=6950.27,
                     audience_targeting=ttd_workflows.AdGroupWorkflowAudienceTargetingInput(
-                        audience_id="<id>",
+                        audience_id=ttd_workflows.StringWorkflowsOptional(
+                            value="<value>",
+                        ),
                         audience_accelerator_exclusions_enabled=False,
                         audience_booster_enabled=True,
                         audience_excluder_enabled=False,
@@ -227,10 +240,8 @@ with Workflows(
                         vcpm_in_advertiser_currency=7123.95,
                         cpcv_in_advertiser_currency=6233.72,
                         miaozhen_otp_in_percent=8437.22,
+                        new_buyer_target_value=607060,
                     ),
-                    creative_ids=[
-                        "<value 1>",
-                    ],
                     associated_bid_lists=[
                         ttd_workflows.AdGroupWorkflowAssociateBidListInput(
                             bid_list_id="<id>",
@@ -238,6 +249,10 @@ with Workflows(
                             is_default_for_dimension=False,
                         ),
                     ],
+                    creative_ids=[
+                        "<value 1>",
+                    ],
+                    owned_bid_lists=None,
                     name="<value>",
                     channel=ttd_workflows.AdGroupChannel.NATIVE_VIDEO,
                     funnel_location=ttd_workflows.AdGroupFunnelLocation.NONE,
@@ -355,7 +370,7 @@ from ttd_workflows.utils import parse_datetime
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.campaign.create_campaigns_job(request={
@@ -406,7 +421,8 @@ with Workflows(
                         crossix_audience_quality_index=False,
                         iqvia_audience_quality_index_and_cost_per_target=False,
                         crossix_cost_per_target=None,
-                        new_buyer_target_value=38368,
+                        pharma_optimization=False,
+                        new_buyer_target_value=None,
                     ),
                     tertiary_goal=ttd_workflows.CampaignWorkflowROIGoalInput(
                         maximize_reach=False,
@@ -425,7 +441,8 @@ with Workflows(
                         crossix_audience_quality_index=False,
                         iqvia_audience_quality_index_and_cost_per_target=False,
                         crossix_cost_per_target=True,
-                        new_buyer_target_value=373225,
+                        pharma_optimization=True,
+                        new_buyer_target_value=966290,
                     ),
                     advertiser_id="<id>",
                     name="<value>",
@@ -452,7 +469,8 @@ with Workflows(
                         crossix_audience_quality_index=None,
                         iqvia_audience_quality_index_and_cost_per_target=False,
                         crossix_cost_per_target=True,
-                        new_buyer_target_value=355878,
+                        pharma_optimization=True,
+                        new_buyer_target_value=240701,
                     ),
                     start_date_in_utc=parse_datetime("2025-09-26T21:06:42.946Z"),
                     budget=ttd_workflows.CampaignCreateWorkflowBudgetInput(
@@ -491,6 +509,17 @@ with Workflows(
                             is_active=True,
                         ),
                     ),
+                    pharma_optimization_goal_settings=[
+                        ttd_workflows.CampaignWorkflowPharmaOptimizationGoalSettingInput(
+                            goal_priority=ttd_workflows.GoalPriorityInput.PRIMARY,
+                            metric_weights=[
+                                ttd_workflows.CampaignWorkflowPharmaOptimizationGoalMetricWeightInput(
+                                    metric_type=ttd_workflows.PharmaOptimizationGoalMetricTypeInput.CROSSIX_COST_PER_TARGET,
+                                    weight=6297.84,
+                                ),
+                            ],
+                        ),
+                    ],
                 ),
                 advanced_input=ttd_workflows.CampaignCreateWorkflowAdvancedInput(
                     purchase_order_number="<value>",
@@ -505,6 +534,13 @@ with Workflows(
                         ),
                     ],
                     include_defaults_from_advertiser=False,
+                    associated_bid_lists=[
+                        ttd_workflows.CampaignWorkflowAssociateBidListInput(
+                            bid_list_id="<id>",
+                            is_enabled=False,
+                            is_campaign_default=False,
+                        ),
+                    ],
                     pass_through_fee_card=ttd_workflows.CampaignCreateWorkflowPassThroughFeeCardInput(
                         start_date_utc=parse_datetime("2024-07-24T11:58:59.190Z"),
                         pass_through_fees=[
@@ -540,7 +576,9 @@ with Workflows(
                             base_bid_cpm_in_advertiser_currency=694.78,
                             max_bid_cpm_in_advertiser_currency=6084.4,
                             audience_targeting=ttd_workflows.AdGroupWorkflowAudienceTargetingInput(
-                                audience_id="<id>",
+                                audience_id=ttd_workflows.StringWorkflowsOptional(
+                                    value="<value>",
+                                ),
                                 audience_accelerator_exclusions_enabled=True,
                                 audience_booster_enabled=False,
                                 audience_excluder_enabled=True,
@@ -566,16 +604,160 @@ with Workflows(
                                 vcpm_in_advertiser_currency=8383.69,
                                 cpcv_in_advertiser_currency=4755.8,
                                 miaozhen_otp_in_percent=4575.86,
+                                new_buyer_target_value=332478,
                             ),
-                            creative_ids=[
-                                "<value 1>",
-                                "<value 2>",
-                            ],
                             associated_bid_lists=[
                                 ttd_workflows.AdGroupWorkflowAssociateBidListInput(
                                     bid_list_id="<id>",
                                     is_enabled=True,
                                     is_default_for_dimension=False,
+                                ),
+                            ],
+                            creative_ids=[
+                                "<value 1>",
+                                "<value 2>",
+                            ],
+                            owned_bid_lists=[
+                                ttd_workflows.AdGroupCreateWorkflowOwnedBidListInput(
+                                    name="<value>",
+                                    adjustment_type=ttd_workflows.BidListAdjustmentType.OPTIMIZED,
+                                    resolution_type=ttd_workflows.MultipleMatchResolutionType.APPLY_AVERAGE_ADJUSTMENT,
+                                    dimensions=[
+                                        ttd_workflows.BidListDimension.HAS_CONTENT_TRANSPARENCY_ID,
+                                    ],
+                                    bid_lines=[
+                                        ttd_workflows.BidLineCreateInput(
+                                            ad_format_id="<id>",
+                                            domain_fragment="<value>",
+                                            universal_category_taxonomy_id=None,
+                                            browser=ttd_workflows.Browser.BAIDU,
+                                            browser_id=ttd_workflows.BrowserInput.BAIDU,
+                                            carrier_id="<id>",
+                                            device_model_id=453757,
+                                            device_type=ttd_workflows.DeviceType.ROKU,
+                                            geo_segment_id="<id>",
+                                            hour_of_week=None,
+                                            language_id="<id>",
+                                            os_name="<value>",
+                                            private_contract_id="<id>",
+                                            recency_window_in_minutes=ttd_workflows.Int32Range(
+                                                min=372289,
+                                                max=511755,
+                                            ),
+                                            rendering_context=ttd_workflows.RenderingContext.OTHER,
+                                            supply_vendor_id="<id>",
+                                            temperature_bucket_in_celsius=ttd_workflows.DecimalRange(
+                                                min=5497.84,
+                                                max=8737.14,
+                                            ),
+                                            ads_txt_seller_type=ttd_workflows.AdsTxtSellerType.DIRECT,
+                                            video_muted_state=ttd_workflows.VideoMutedState.INFREQUENTLY_AUTO_MUTED,
+                                            video_playback_type=ttd_workflows.VideoPlaybackType.STANDALONE,
+                                            video_player_size=ttd_workflows.VideoPlayerSize.UNKNOWN,
+                                            video_quality=ttd_workflows.VideoQuality.UNKNOWN,
+                                            video_skippability=ttd_workflows.VideoSkippability.UNKNOWN,
+                                            factual_proximity_target=ttd_workflows.FactualProximityTargetInput(
+                                                targeting_code_id=824090,
+                                                design_id=283028,
+                                            ),
+                                            impression_placement_value="<value>",
+                                            video_truth_score_range=ttd_workflows.DecimalRange(
+                                                min=2863.84,
+                                                max=None,
+                                            ),
+                                            video_viewability_score_range=ttd_workflows.DecimalRange(
+                                                min=9309.03,
+                                                max=1528.38,
+                                            ),
+                                            display_viewability_score_range=ttd_workflows.DecimalRange(
+                                                min=3111.96,
+                                                max=2687.86,
+                                            ),
+                                            peer39_language_id="<id>",
+                                            double_verify_bot_avoidance_category=ttd_workflows.DoubleVerifyBotAvoidance.FRAUD_NO_ADS,
+                                            contextual_app_category_id="<id>",
+                                            publisher_id="<id>",
+                                            integral_viewability_category_id="<id>",
+                                            integral_viewability_category=ttd_workflows.IntegralViewabilityInput.IN_VIEW60,
+                                            integral_video_viewability_category_id="<id>",
+                                            integral_video_viewability_category=ttd_workflows.IntegralVideoViewabilityInput.IN_VIEW40,
+                                            double_verify_viewability_category=ttd_workflows.DoubleVerifyDisplayViewability.TOP70,
+                                            double_verify_video_viewability_category=ttd_workflows.DoubleVerifyVideoViewability.VIEWABILITY30,
+                                            peer39_viewability_category_id=None,
+                                            peer39_viewability_category=ttd_workflows.Peer39ViewabilityInput.TOP60,
+                                            video_completion_rate_score_range=ttd_workflows.DecimalRange(
+                                                min=5205.29,
+                                                max=2577.86,
+                                            ),
+                                            internet_connection_input=ttd_workflows.InternetConnectionTypeInput.CELLULAR_NETWORK3_G,
+                                            internet_connection_type_id=ttd_workflows.InternetConnectionTypeInput.CELLULAR_NETWORK4_G,
+                                            internet_connection=ttd_workflows.InternetConnectionType.CELLULAR_NETWORK4_G,
+                                            rtb_asia_page_quality_category=ttd_workflows.RTBAsiaViewability.BLOCK_MODERATE_AND_HIGH_RISK,
+                                            rtb_asia_video_page_quality_category=ttd_workflows.RTBAsiaViewability.BLOCK_MODERATE_AND_HIGH_RISK,
+                                            supply_path_optimization_list_id=301092,
+                                            market_type=ttd_workflows.MarketTypeBidList.PMP_NOT_SPECIFIED,
+                                            weather_condition=ttd_workflows.WeatherCondition.TORNADO,
+                                            frequency_adjustment=ttd_workflows.FrequencyAdjustmentInput(
+                                                counter_id="<id>",
+                                                times_shown=ttd_workflows.Int32Range(
+                                                    min=970005,
+                                                    max=None,
+                                                ),
+                                            ),
+                                            seller_domain="<value>",
+                                            digital_out_of_home_venue_type_id="<id>",
+                                            native_placement_type=ttd_workflows.NativePlacementType.UNKNOWN,
+                                            native_context_type=ttd_workflows.NativeContextType.SELLING_PRODUCTS,
+                                            idiosyncratic_segment=ttd_workflows.IdiosyncraticSegment.LIGHT_TV_VIEWERS2,
+                                            tencent_page_quality_category=ttd_workflows.TencentPageQualityInput.BLOCK_MODERATE_AND_HIGH_RISK,
+                                            domain_class_id=905935,
+                                            geofence_third_party_data_and_brand=ttd_workflows.GeofenceThirdPartyDataAndBrandInput(
+                                                data_id=72267,
+                                                brand_id="<id>",
+                                            ),
+                                            genre_id="<id>",
+                                            livestream=ttd_workflows.Livestream.NOT_LIVE,
+                                            production_quality=ttd_workflows.ProductionQuality.UNKNOWN,
+                                            production_quality_id=ttd_workflows.ProductionQualityInput.PROSUMER,
+                                            content_rating_id="<id>",
+                                            content_duration=ttd_workflows.ContentDuration.BETWEEN60_AND75_MINUTES,
+                                            quality_score_range=ttd_workflows.DecimalRange(
+                                                min=3212.21,
+                                                max=2351.1,
+                                            ),
+                                            atmospheric_condition=ttd_workflows.AtmosphericCondition.MEDIUM,
+                                            marketplace_id="<id>",
+                                            audience_reach_percentage_tier=ttd_workflows.AudienceReachPercentageTier.TIER2,
+                                            content_transparency=ttd_workflows.ContentTransparency.NON_TRANSPARENT,
+                                            full_referrer_url=ttd_workflows.FullReferrerURL.UNKNOWN,
+                                            likely_refresh_rate=ttd_workflows.LikelyRefreshRate.OVER60,
+                                            rewarded=ttd_workflows.Rewarded.NOT_REWARDED,
+                                            feed_id=None,
+                                            live_event_id="<id>",
+                                            live_event_type_id=None,
+                                            extended_zip_code_group_segment_third_party_data_id=13172,
+                                            content_language_id="<id>",
+                                            ad_to_content_ratio_range=ttd_workflows.DecimalRange(
+                                                min=455.79,
+                                                max=None,
+                                            ),
+                                            ads_in_view_range=ttd_workflows.DecimalRange(
+                                                min=7599.16,
+                                                max=3074.04,
+                                            ),
+                                            bid_adjustment=1179.12,
+                                            volume_control_priority=ttd_workflows.VolumeControlPriority.TWO,
+                                            max_bid=7434.14,
+                                        ),
+                                    ],
+                                    source=ttd_workflows.BidListSource.SYSTEM_AUTO_FOR_ENDEAVOR_TARGETING,
+                                    associate_behavior=ttd_workflows.BidListAssociateBehavior.DO_NOT_ASSOCIATE,
+                                    dimension_config=ttd_workflows.BidListDimensionOptionsInput(
+                                        geo=ttd_workflows.GeoBidListOptionsInput(
+                                            location_context_type=ttd_workflows.LocationContextTypeInput.REALTIME,
+                                        ),
+                                    ),
+                                    is_default_for_dimension=True,
                                 ),
                             ],
                             name="<value>",
@@ -704,7 +886,7 @@ from ttd_workflows.utils import parse_datetime
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.campaign.update_campaigns_job(request={
@@ -749,14 +931,15 @@ with Workflows(
                         return_on_ad_spend_percent=5459.4,
                         vcr_in_percent=7724.91,
                         viewability_in_percent=None,
-                        vcpm_in_advertiser_currency=9927,
+                        vcpm_in_advertiser_currency=9927.0,
                         cpcv_in_advertiser_currency=1852.41,
                         miaozhen_otp_in_percent=2827.93,
                         iqvia_audience_quality_index=False,
                         crossix_audience_quality_index=None,
                         iqvia_audience_quality_index_and_cost_per_target=False,
                         crossix_cost_per_target=True,
-                        new_buyer_target_value=178803,
+                        pharma_optimization=False,
+                        new_buyer_target_value=201033,
                     ),
                     tertiary_goal=ttd_workflows.CampaignWorkflowROIGoalInput(
                         maximize_reach=False,
@@ -775,7 +958,8 @@ with Workflows(
                         crossix_audience_quality_index=False,
                         iqvia_audience_quality_index_and_cost_per_target=False,
                         crossix_cost_per_target=True,
-                        new_buyer_target_value=784776,
+                        pharma_optimization=False,
+                        new_buyer_target_value=83180,
                     ),
                     name="<value>",
                     primary_channel=ttd_workflows.CampaignChannelType.NONE,
@@ -796,12 +980,19 @@ with Workflows(
                         crossix_audience_quality_index=False,
                         iqvia_audience_quality_index_and_cost_per_target=True,
                         crossix_cost_per_target=True,
-                        new_buyer_target_value=785673,
+                        pharma_optimization=None,
+                        new_buyer_target_value=554651,
                     ),
                     start_date_in_utc=parse_datetime("2023-01-13T23:06:05.083Z"),
                     budget=ttd_workflows.CampaignUpdateWorkflowBudgetInput(
                         pacing_mode=ttd_workflows.CampaignPacingMode.PACE_AS_SOON_AS_POSSIBLE,
                     ),
+                    pharma_optimization_goal_setting_updates=[
+                        ttd_workflows.CampaignWorkflowPharmaOptimizationGoalSettingInput(
+                            goal_priority=ttd_workflows.GoalPriorityInput.TERTIARY,
+                            metric_weights=[],
+                        ),
+                    ],
                 ),
                 advanced_input=ttd_workflows.CampaignUpdateWorkflowAdvancedInput(
                     purchase_order_number="<value>",
@@ -857,7 +1048,7 @@ from ttd_workflows import Workflows
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.campaign.get_version(id="<id>")

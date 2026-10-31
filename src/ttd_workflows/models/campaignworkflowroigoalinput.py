@@ -9,6 +9,8 @@ from ttd_workflows.types import (
     OptionalNullable,
     UNSET,
     UNSET_SENTINEL,
+    current_exclude_none,
+    serialize_with_info,
 )
 from typing_extensions import Annotated, NotRequired, TypedDict
 
@@ -30,6 +32,7 @@ class CampaignWorkflowROIGoalInputTypedDict(TypedDict):
     crossix_audience_quality_index: NotRequired[Nullable[bool]]
     iqvia_audience_quality_index_and_cost_per_target: NotRequired[Nullable[bool]]
     crossix_cost_per_target: NotRequired[Nullable[bool]]
+    pharma_optimization: NotRequired[Nullable[bool]]
     new_buyer_target_value: NotRequired[Nullable[int]]
 
 
@@ -99,11 +102,18 @@ class CampaignWorkflowROIGoalInput(BaseModel):
         OptionalNullable[bool], pydantic.Field(alias="crossixCostPerTarget")
     ] = UNSET
 
+    pharma_optimization: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="pharmaOptimization")
+    ] = UNSET
+
     new_buyer_target_value: Annotated[
-        OptionalNullable[int], pydantic.Field(alias="NewBuyerTargetValue")
+        OptionalNullable[int], pydantic.Field(alias="newBuyerTargetValue")
     ] = UNSET
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -123,7 +133,8 @@ class CampaignWorkflowROIGoalInput(BaseModel):
                 "crossixAudienceQualityIndex",
                 "iqviaAudienceQualityIndexAndCostPerTarget",
                 "crossixCostPerTarget",
-                "NewBuyerTargetValue",
+                "pharmaOptimization",
+                "newBuyerTargetValue",
             ]
         )
         nullable_fields = set(
@@ -144,14 +155,18 @@ class CampaignWorkflowROIGoalInput(BaseModel):
                 "crossixAudienceQualityIndex",
                 "iqviaAudienceQualityIndexAndCostPerTarget",
                 "crossixCostPerTarget",
-                "NewBuyerTargetValue",
+                "pharmaOptimization",
+                "newBuyerTargetValue",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields

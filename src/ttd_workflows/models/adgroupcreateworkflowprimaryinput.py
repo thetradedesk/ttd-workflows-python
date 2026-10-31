@@ -2,6 +2,10 @@
 
 from __future__ import annotations
 from .adgroupchannel import AdGroupChannel
+from .adgroupcreateworkflowownedbidlistinput import (
+    AdGroupCreateWorkflowOwnedBidListInput,
+    AdGroupCreateWorkflowOwnedBidListInputTypedDict,
+)
 from .adgroupfunnellocation import AdGroupFunnelLocation
 from .adgroupworkflowassociatebidlistinput import (
     AdGroupWorkflowAssociateBidListInput,
@@ -28,6 +32,8 @@ from ttd_workflows.types import (
     OptionalNullable,
     UNSET,
     UNSET_SENTINEL,
+    current_exclude_none,
+    serialize_with_info,
 )
 from typing import List, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
@@ -44,9 +50,12 @@ class AdGroupCreateWorkflowPrimaryInputTypedDict(TypedDict):
     max_bid_cpm_in_advertiser_currency: NotRequired[Nullable[float]]
     audience_targeting: NotRequired[AdGroupWorkflowAudienceTargetingInputTypedDict]
     roi_goal: NotRequired[AdGroupWorkflowROIGoalInputTypedDict]
-    creative_ids: NotRequired[Nullable[List[str]]]
     associated_bid_lists: NotRequired[
         Nullable[List[AdGroupWorkflowAssociateBidListInputTypedDict]]
+    ]
+    creative_ids: NotRequired[Nullable[List[str]]]
+    owned_bid_lists: NotRequired[
+        Nullable[List[AdGroupCreateWorkflowOwnedBidListInputTypedDict]]
     ]
     market_type: NotRequired[MarketTypeInput]
     programmatic_guaranteed_private_contract_id: NotRequired[Nullable[str]]
@@ -87,13 +96,18 @@ class AdGroupCreateWorkflowPrimaryInput(BaseModel):
         Optional[AdGroupWorkflowROIGoalInput], pydantic.Field(alias="roiGoal")
     ] = None
 
+    associated_bid_lists: Annotated[
+        OptionalNullable[List[AdGroupWorkflowAssociateBidListInput]],
+        pydantic.Field(alias="associatedBidLists"),
+    ] = UNSET
+
     creative_ids: Annotated[
         OptionalNullable[List[str]], pydantic.Field(alias="creativeIds")
     ] = UNSET
 
-    associated_bid_lists: Annotated[
-        OptionalNullable[List[AdGroupWorkflowAssociateBidListInput]],
-        pydantic.Field(alias="associatedBidLists"),
+    owned_bid_lists: Annotated[
+        OptionalNullable[List[AdGroupCreateWorkflowOwnedBidListInput]],
+        pydantic.Field(alias="ownedBidLists"),
     ] = UNSET
 
     market_type: Annotated[
@@ -110,6 +124,9 @@ class AdGroupCreateWorkflowPrimaryInput(BaseModel):
     ] = None
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -120,8 +137,9 @@ class AdGroupCreateWorkflowPrimaryInput(BaseModel):
                 "maxBidCPMInAdvertiserCurrency",
                 "audienceTargeting",
                 "roiGoal",
-                "creativeIds",
                 "associatedBidLists",
+                "creativeIds",
+                "ownedBidLists",
                 "marketType",
                 "programmaticGuaranteedPrivateContractId",
                 "includeDefaultsFromCampaign",
@@ -133,17 +151,21 @@ class AdGroupCreateWorkflowPrimaryInput(BaseModel):
                 "description",
                 "baseBidCPMInAdvertiserCurrency",
                 "maxBidCPMInAdvertiserCurrency",
-                "creativeIds",
                 "associatedBidLists",
+                "creativeIds",
+                "ownedBidLists",
                 "name",
                 "programmaticGuaranteedPrivateContractId",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields

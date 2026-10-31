@@ -5,6 +5,10 @@ from .campaigncreateworkflowpassthroughfeecardinput import (
     CampaignCreateWorkflowPassThroughFeeCardInput,
     CampaignCreateWorkflowPassThroughFeeCardInputTypedDict,
 )
+from .campaignworkflowassociatebidlistinput import (
+    CampaignWorkflowAssociateBidListInput,
+    CampaignWorkflowAssociateBidListInputTypedDict,
+)
 from .campaignworkflowflightinput import (
     CampaignWorkflowFlightInput,
     CampaignWorkflowFlightInputTypedDict,
@@ -18,6 +22,8 @@ from ttd_workflows.types import (
     OptionalNullable,
     UNSET,
     UNSET_SENTINEL,
+    current_exclude_none,
+    serialize_with_info,
 )
 from typing import List, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
@@ -27,6 +33,9 @@ class CampaignCreateWorkflowAdvancedInputTypedDict(TypedDict):
     purchase_order_number: NotRequired[Nullable[str]]
     flights: NotRequired[Nullable[List[CampaignWorkflowFlightInputTypedDict]]]
     include_defaults_from_advertiser: NotRequired[bool]
+    associated_bid_lists: NotRequired[
+        Nullable[List[CampaignWorkflowAssociateBidListInputTypedDict]]
+    ]
     pass_through_fee_card: NotRequired[
         CampaignCreateWorkflowPassThroughFeeCardInputTypedDict
     ]
@@ -45,6 +54,11 @@ class CampaignCreateWorkflowAdvancedInput(BaseModel):
         Optional[bool], pydantic.Field(alias="includeDefaultsFromAdvertiser")
     ] = None
 
+    associated_bid_lists: Annotated[
+        OptionalNullable[List[CampaignWorkflowAssociateBidListInput]],
+        pydantic.Field(alias="associatedBidLists"),
+    ] = UNSET
+
     pass_through_fee_card: Annotated[
         Optional[CampaignCreateWorkflowPassThroughFeeCardInput],
         pydantic.Field(alias="passThroughFeeCard"),
@@ -60,25 +74,38 @@ class CampaignCreateWorkflowAdvancedInput(BaseModel):
     ] = UNSET
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
                 "purchaseOrderNumber",
                 "flights",
                 "includeDefaultsFromAdvertiser",
+                "associatedBidLists",
                 "passThroughFeeCard",
                 "callerSource",
                 "frequencyConfigs",
             ]
         )
         nullable_fields = set(
-            ["purchaseOrderNumber", "flights", "callerSource", "frequencyConfigs"]
+            [
+                "purchaseOrderNumber",
+                "flights",
+                "associatedBidLists",
+                "callerSource",
+                "frequencyConfigs",
+            ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields

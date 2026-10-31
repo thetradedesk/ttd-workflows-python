@@ -22,7 +22,7 @@ from ttd_workflows import Workflows
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.ad_groups.create(request={
@@ -39,7 +39,9 @@ with Workflows(
             "base_bid_cpm_in_advertiser_currency": 3785.04,
             "max_bid_cpm_in_advertiser_currency": 7447.3,
             "audience_targeting": {
-                "audience_id": "<id>",
+                "audience_id": {
+                    "value": "<value>",
+                },
                 "audience_accelerator_exclusions_enabled": True,
                 "audience_booster_enabled": True,
                 "audience_excluder_enabled": True,
@@ -64,12 +66,32 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 4649.53,
                 "cpcv_in_advertiser_currency": 313.95,
                 "miaozhen_otp_in_percent": 4704.1,
+                "new_buyer_target_value": 287261,
             },
-            "creative_ids": None,
             "associated_bid_lists": [
                 {
                     "bid_list_id": "<id>",
                     "is_enabled": False,
+                    "is_default_for_dimension": True,
+                },
+            ],
+            "creative_ids": None,
+            "owned_bid_lists": [
+                {
+                    "name": "<value>",
+                    "adjustment_type": ttd_workflows.BidListAdjustmentType.FRACTIONAL_EXCLUSION,
+                    "resolution_type": ttd_workflows.MultipleMatchResolutionType.SINGLE_MATCH_ONLY,
+                    "dimensions": [
+                        ttd_workflows.BidListDimension.HAS_VIDEO_MUTED_STATE_ID,
+                    ],
+                    "bid_lines": None,
+                    "source": ttd_workflows.BidListSource.SYSTEM_AUTO_FOR_COMMITMENT_TARGETING,
+                    "associate_behavior": ttd_workflows.BidListAssociateBehavior.DO_NOT_ASSOCIATE,
+                    "dimension_config": {
+                        "geo": {
+                            "location_context_type": ttd_workflows.LocationContextTypeInput.HOME,
+                        },
+                    },
                     "is_default_for_dimension": True,
                 },
             ],
@@ -201,7 +223,7 @@ from ttd_workflows import Workflows
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.ad_groups.update(request={
@@ -219,7 +241,9 @@ with Workflows(
             "base_bid_cpm_in_advertiser_currency": 1710.9,
             "max_bid_cpm_in_advertiser_currency": 1926.83,
             "audience_targeting": {
-                "audience_id": "<id>",
+                "audience_id": {
+                    "value": "<value>",
+                },
                 "audience_accelerator_exclusions_enabled": False,
                 "audience_booster_enabled": True,
                 "audience_excluder_enabled": True,
@@ -246,18 +270,29 @@ with Workflows(
                 "vcpm_in_advertiser_currency": 1135.94,
                 "cpcv_in_advertiser_currency": 6372.45,
                 "miaozhen_otp_in_percent": 8405.28,
+                "new_buyer_target_value": None,
             },
-            "creative_ids": [
-                "<value 1>",
-                "<value 2>",
-                "<value 3>",
-            ],
             "associated_bid_lists": [
                 {
                     "bid_list_id": "<id>",
                     "is_enabled": True,
                     "is_default_for_dimension": True,
                 },
+            ],
+            "creative_ids": [
+                "<value 1>",
+                "<value 2>",
+                "<value 3>",
+            ],
+            "creative_ids_to_add": [
+                "<value 1>",
+                "<value 2>",
+                "<value 3>",
+            ],
+            "creative_ids_to_remove": [
+                "<value 1>",
+                "<value 2>",
+                "<value 3>",
             ],
             "name": "<value>",
             "channel": ttd_workflows.AdGroupChannel.NATIVE,
@@ -382,7 +417,7 @@ from ttd_workflows import Workflows
 
 
 with Workflows(
-    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH", ""),
+    ttd_auth=os.getenv("WORKFLOWS_TTD_AUTH"),
 ) as workflows:
 
     res = workflows.ad_groups.archive(force_archive=False, request_body=[
