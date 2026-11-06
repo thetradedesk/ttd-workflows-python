@@ -17,3 +17,4 @@
 | `vcpm_in_advertiser_currency`    | *OptionalNullable[float]*        | :heavy_minus_sign:               | N/A                              |
 | `cpcv_in_advertiser_currency`    | *OptionalNullable[float]*        | :heavy_minus_sign:               | N/A                              |
 | `miaozhen_otp_in_percent`        | *OptionalNullable[float]*        | :heavy_minus_sign:               | N/A                              |
+| `new_buyer_target_value`         | *OptionalNullable[int]*          | :heavy_minus_sign:               | N/A                              |
