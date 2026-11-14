@@ -1,0 +1,10 @@
+# KokaiCampaignRetailBrandSettingsInput
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `brand_ids`                                                                                | List[*int*]                                                                                | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `opt_in_retail_seed_recommendation`                                                        | [Optional[models.BooleanNullableOptionalInput]](../models/booleannullableoptionalinput.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `other_brand_names`                                                                        | List[*str*]                                                                                | :heavy_minus_sign:                                                                         | N/A                                                                                        |
