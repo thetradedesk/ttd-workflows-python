@@ -28,7 +28,10 @@ from ttd_workflows.types import (
     OptionalNullable,
     UNSET,
     UNSET_SENTINEL,
+    current_exclude_none,
+    serialize_with_info,
 )
+from ttd_workflows.types.basemodel import current_filtered_dump
 from typing import List, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
@@ -41,10 +44,16 @@ class AdGroupUpdateWorkflowPrimaryInputTypedDict(TypedDict):
     max_bid_cpm_in_advertiser_currency: NotRequired[Nullable[float]]
     audience_targeting: NotRequired[AdGroupWorkflowAudienceTargetingInputTypedDict]
     roi_goal: NotRequired[AdGroupWorkflowROIGoalInputTypedDict]
-    creative_ids: NotRequired[Nullable[List[str]]]
     associated_bid_lists: NotRequired[
         Nullable[List[AdGroupWorkflowAssociateBidListInputTypedDict]]
     ]
+    bid_lists_to_add_or_update: NotRequired[
+        Nullable[List[AdGroupWorkflowAssociateBidListInputTypedDict]]
+    ]
+    bid_list_ids_to_remove: NotRequired[Nullable[List[str]]]
+    creative_ids: NotRequired[Nullable[List[str]]]
+    creative_ids_to_add: NotRequired[Nullable[List[str]]]
+    creative_ids_to_remove: NotRequired[Nullable[List[str]]]
     name: NotRequired[Nullable[str]]
     channel: NotRequired[AdGroupChannel]
     funnel_location: NotRequired[AdGroupFunnelLocation]
@@ -77,13 +86,30 @@ class AdGroupUpdateWorkflowPrimaryInput(BaseModel):
         Optional[AdGroupWorkflowROIGoalInput], pydantic.Field(alias="roiGoal")
     ] = None
 
+    associated_bid_lists: Annotated[
+        OptionalNullable[List[AdGroupWorkflowAssociateBidListInput]],
+        pydantic.Field(alias="associatedBidLists"),
+    ] = UNSET
+
+    bid_lists_to_add_or_update: Annotated[
+        OptionalNullable[List[AdGroupWorkflowAssociateBidListInput]],
+        pydantic.Field(alias="bidListsToAddOrUpdate"),
+    ] = UNSET
+
+    bid_list_ids_to_remove: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="bidListIdsToRemove")
+    ] = UNSET
+
     creative_ids: Annotated[
         OptionalNullable[List[str]], pydantic.Field(alias="creativeIds")
     ] = UNSET
 
-    associated_bid_lists: Annotated[
-        OptionalNullable[List[AdGroupWorkflowAssociateBidListInput]],
-        pydantic.Field(alias="associatedBidLists"),
+    creative_ids_to_add: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="creativeIdsToAdd")
+    ] = UNSET
+
+    creative_ids_to_remove: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="creativeIdsToRemove")
     ] = UNSET
 
     name: OptionalNullable[str] = UNSET
@@ -99,6 +125,9 @@ class AdGroupUpdateWorkflowPrimaryInput(BaseModel):
     ] = None
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -109,8 +138,12 @@ class AdGroupUpdateWorkflowPrimaryInput(BaseModel):
                 "maxBidCPMInAdvertiserCurrency",
                 "audienceTargeting",
                 "roiGoal",
-                "creativeIds",
                 "associatedBidLists",
+                "bidListsToAddOrUpdate",
+                "bidListIdsToRemove",
+                "creativeIds",
+                "creativeIdsToAdd",
+                "creativeIdsToRemove",
                 "name",
                 "channel",
                 "funnelLocation",
@@ -123,16 +156,24 @@ class AdGroupUpdateWorkflowPrimaryInput(BaseModel):
                 "description",
                 "baseBidCPMInAdvertiserCurrency",
                 "maxBidCPMInAdvertiserCurrency",
-                "creativeIds",
                 "associatedBidLists",
+                "bidListsToAddOrUpdate",
+                "bidListIdsToRemove",
+                "creativeIds",
+                "creativeIdsToAdd",
+                "creativeIdsToRemove",
                 "name",
             ]
         )
+        exclude_none = current_exclude_none()
+        skip_filtered = exclude_none is False or current_filtered_dump()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and skip_filtered:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
